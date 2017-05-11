@@ -11,13 +11,18 @@ setlocale ( LC_ALL, 'de_DE@euro', 'de_DE', 'de', 'ge' );
 require ("./include/config.php");
 require ('./include/smarty/Smarty.class.php');
 require ('./include/functions.php');
-
 $style = 'bootstrap';
-
+$pages = array (
+		'status' 
+);
+$page = GetParam ( 'page', 'G' );
+if (! in_array ( $page, $pages ))
+	$page = 'status';
 $smarty = new Smarty ();
-$smarty->debugging = false;
+$smarty->debugging = true;
 $smarty->caching = false;
 $smarty->setTemplateDir ( "./styles/$style/templates" );
-$smarty->assign ( 'page', 'index' );
+$smarty->assign ( 'page', $page );
+include ("./include/$page.php");
 $smarty->assign ( 'style', $style );
 $smarty->display ( 'index.htpl', $style, $style );

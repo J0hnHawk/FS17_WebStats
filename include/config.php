@@ -7,6 +7,7 @@
 	$dbuser = 'root';
 	$dbpasswd = '';
 	$table_prefix = 'insertName_';
+	$serverAddress = "http://176.57.155.146:8080/feed/dedicated-server-stats.xml?code=QIWF5Osq";
 /* 
 } else {
 	$dbhost = '';
