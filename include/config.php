@@ -7,7 +7,11 @@
 	$dbuser = 'root';
 	$dbpasswd = '';
 	$table_prefix = 'insertName_';
-	$serverAddress = "http://176.57.155.146:8080/feed/dedicated-server-stats.xml?code=QIWF5Osq";
+	
+	$dSrvIp = "";
+	$dSrvPort = "8080";
+	$dSrvCode = "";
+	$serverAddress = "http://$dSrvIp:$dSrvPort/feed/dedicated-server-stats.xml?code=$dSrvCode";
 /* 
 } else {
 	$dbhost = '';

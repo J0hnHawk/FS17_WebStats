@@ -1,10 +1,109 @@
 <div class="page-header">
-	<h3>Sterverstatus</h3>
+	<h3>Serverübersicht</h3>
 </div>
 <div class="row">
-	<div class="col-sm-12">
-	{foreach from=$game key=$var item=$value}
-	<p>{$var}: {$value}</p>
-	{/foreach}
+	<div class="col-sm-2">
+		<h3>&nbsp;</h3>
+		<ul class="nav nav-pills nav-stacked">
+			<li class="active"><a data-toggle="tab" href="#game">Spieldaten</a></li>
+			<li><a data-toggle="tab" href="#player">Spieler</a></li>
+			<li><a data-toggle="tab" href="#mods">Modifikationen</a></li>
+			<li><a data-toggle="tab" href="#vehicles">Fahrzeuge</a></li>
+			<li><a data-toggle="tab" href="#map">Karte</a></li>
+		</ul>
+	</div>
+	<div class="col-sm-10 tab-content">
+		<div id="game" class="tab-pane fade in active">
+			<h3>Spieldaten</h3>
+			{foreach from=$game key=$var item=$value}
+			<p>{$var}: {$value}</p>
+			{/foreach}
+		</div>
+		<div id="player" class="tab-pane fade">
+			<h3>Spieler Online</h3>
+			<div class="table-responsive">
+				<table class="table table-bordered table-striped">
+					<thead>
+						<tr>
+							<th>Name</th>
+							<th>Spielzeit</th>
+							<th>Admin</th>
+							<th>Position</th>
+						</tr>
+					</thead>
+					<tbody>
+						{if isset($players)} {foreach $players as $player}
+						<tr>
+							<td>{$player.name}</td>
+							<td>{$player.online}</td>
+							<td>{if $player.isAdmin}ja{else}nein{/if}</td>
+							<td>{$player.position}</td>
+						</tr>
+						{/foreach}{else} {/if}
+					</tbody>
+				</table>
+			</div>
+		</div>
+		<div id="mods" class="tab-pane fade">
+			<h3>Aktive Mods</h3>
+			<div class="table-responsive">
+				<table class="table table-bordered table-striped">
+					<thead>
+						<tr>
+							<th>Name</th>
+							<th>Version</th>
+							<th>Author</th>
+							<!-- <th>Hash</th> -->
+							<th>Download</th>
+						</tr>
+					</thead>
+					<tbody>
+						{if isset($mods)} {foreach $mods as $mod}
+						<tr>
+							<td>{$mod.name}</td>
+							<td>{$mod.version}</td>
+							<td>{$mod.author}</td>
+							<!-- <td>{$mod.hash}</td> -->
+							<td><span class="glyphicon glyphicon-download" aria-hidden="true"></span></td>
+						</tr>
+						{/foreach}{else} {/if}
+					</tbody>
+				</table>
+			</div>
+		</div>
+		<div id="vehicles" class="tab-pane fade">
+			<h3>Fahrzeuge</h3>
+			<div class="table-responsive">
+				<table class="table table-bordered table-striped">
+					<thead>
+						<tr>
+							<th>Name</th>
+							<th>Kategorie</th>
+							<th>Type</th>
+							<th>Ladung</th>
+							<th>Menge</th>
+							<th>Position</th>
+							<th>gesteuert von</th>
+						</tr>
+					</thead>
+					<tbody>
+						{if isset($vehicles)} {foreach $vehicles as $vehicle}
+						<tr>
+							<td>{$vehicle.name}</td>
+							<td>{$vehicle.category}</td>
+							<td>{$vehicle.type}</td>
+							<td>{$vehicle.fillTypes}</td>
+							<td>{$vehicle.fillLevels}</td>
+							<td>{$vehicle.position}</td>
+							<td>{$vehicle.controller}</td>
+						</tr>
+						{/foreach}{else} {/if}
+					</tbody>
+				</table>
+			</div>
+		</div>
+		<div id="map" class="tab-pane fade">
+			<h3>Karte</h3>
+		</div>
 	</div>
 </div>
