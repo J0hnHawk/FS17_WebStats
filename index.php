@@ -19,7 +19,7 @@ $page = GetParam ( 'page', 'G' );
 if (! in_array ( $page, $pages ))
 	$page = 'status';
 $smarty = new Smarty ();
-$smarty->debugging = true;
+$smarty->debugging = false;
 $smarty->caching = false;
 $smarty->setTemplateDir ( "./styles/$style/templates" );
 $smarty->assign ( 'page', $page );
