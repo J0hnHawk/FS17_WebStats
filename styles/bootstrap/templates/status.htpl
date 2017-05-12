@@ -15,9 +15,12 @@
 	<div class="col-sm-10 tab-content">
 		<div id="game" class="tab-pane fade in active">
 			<h3>Spieldaten</h3>
-			{foreach from=$game key=$var item=$value}
-			<p>{$var}: {$value}</p>
-			{/foreach}
+			<dl class="dl-horizontal">
+				{foreach from=$game key=$var item=$value}
+				<dt>{$var}</dt>
+				<dd>{$value}</dd>
+				{/foreach}
+			</dl>
 		</div>
 		<div id="player" class="tab-pane fade">
 			<h3>Spieler Online</h3>
@@ -79,8 +82,7 @@
 					<thead>
 						<tr>
 							<th>Name</th>
-							<th>Kategorie</th>
-							<th>Type</th>
+							<th>Gruppe</th>
 							<th>Ladung</th>
 							<th>Menge</th>
 							<th>Position</th>
@@ -91,8 +93,7 @@
 						{if isset($vehicles)} {foreach $vehicles as $vehicle}
 						<tr>
 							<td>{$vehicle.name}</td>
-							<td>{$vehicle.category}</td>
-							<td>{$vehicle.type}</td>
+							<td>{$vehicle.group}</td>
 							<td>{$vehicle.fillTypes}</td>
 							<td>{$vehicle.fillLevels}</td>
 							<td>{$vehicle.position}</td>

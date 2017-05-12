@@ -13,13 +13,14 @@ require ('./include/smarty/Smarty.class.php');
 require ('./include/functions.php');
 $style = 'bootstrap';
 $pages = array (
-		'status' 
+		'status',
+		'storage' 
 );
 $page = GetParam ( 'page', 'G' );
 if (! in_array ( $page, $pages ))
 	$page = 'status';
 $smarty = new Smarty ();
-$smarty->debugging = false;
+$smarty->debugging = true;
 $smarty->caching = false;
 $smarty->setTemplateDir ( "./styles/$style/templates" );
 $smarty->assign ( 'page', $page );

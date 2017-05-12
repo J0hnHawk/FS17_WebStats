@@ -76,6 +76,7 @@ if ($xml) {
 		$position = $veh ["x"] . " " . $veh ["y"] . " " . $veh ["z"];
 		$vehicles [] = array (
 				'name' => $veh ["name"],
+				'group' => getVehicleClass ( $veh ["category"], $veh ["type"] ),
 				'category' => $veh ["category"],
 				'type' => $veh ["type"],
 				'fillTypes' => $veh ["fillTypes"],
@@ -90,7 +91,7 @@ if ($xml) {
 	// map image with vehicles
 	$linkToServer = str_replace ( "dedicated-server-stats.xml", "dedicated-server-stats-map.jpg", $serverAddress );
 	$imageQuality = 90; // 60, 75, 90
-	$imageSize = 512; // 256, 512, 1024, 2048
+	$imageSize = 1024; // 256, 512, 1024, 2048
 	$mapSize = floatval ( $xml ["mapSize"] );
 	$mapSizeHalf = $mapSize / 2.0;
 	$linkToImage = sprintf ( "%s&quality=%s&size=%s", $linkToServer, $imageQuality, $imageSize );
