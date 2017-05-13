@@ -1,26 +1,52 @@
 <?php
-include ("webStatsInclude.php");
+if (! defined ( 'IN_NFMWS' )) {
+	exit ();
+}
 $xml = getServerStatsSimpleXML ( 'http://176.57.155.146:8080/feed/dedicated-server-savegame.html?code=QIWF5Osq&file=vehicles' );
-/*
- * foreach ( $xml->item as $item ) {
- * echo $item['position']."<br>";
- * }
- */
-$farmStorage = $paletStorage = array ();
+
+$items = $farmStorage = $paletStorage = array ();
+function getFillType($uri) {
+	$split = explode ( '/', strval ( $uri ) );
+	return translate ( substr ( array_pop ( $split ), 0, - 4 ) );
+}
+
+foreach ( $xml->item as $item ) {
+	$fillType = false;
+	if ($item ['className'] == "FillablePallet")
+		$fillType = getFillType ( $item ['i3dFilename'] );
+	if ($item ['className'] == "Bale")
+		$fillType = getFillType ( $item ['filename'] );
+	if ($fillType) {
+		$fillLevel = $item ['fillLevel'];
+		if (isset ( $items [$fillType] )) {
+			$items [$fillType] ['count'] ++;
+			$items [$fillType] ['fillLevel'] += $fillLevel;
+		} else {
+			$items [$fillType] = array (
+					'count' => 1,
+					'fillLevel' => $fillLevel 
+			);
+		}
+	}
+}
+ksort($items);
+$smarty->assign ( 'items', $items );
+
 foreach ( $xml->onCreateLoadedObject as $object ) {
 	if ($object ['saveId'] == 'Storage_storage1') {
 		foreach ( $object->node as $node ) {
-			$farmStorage [strval ( $node ['fillType'] )] = intval ( $node ['fillLevel'] );
+			$fillType = translate ( $node ['fillType'] );
+			$farmStorage [$fillType] = intval ( $node ['fillLevel'] );
 		}
 	}
 	if (strpos ( $object ['saveId'], 'FabrikScript_Lager' ) !== false) {
 		$in = $object->Rohstoff;
 		$out = $object->Produkt;
-		$paletStorage [strval ( $in ['Name'] )] = $in ['Lvl'] + $out ['Lvl'];
+		$fillType = translate ( $in ['Name'] );
+		$paletStorage [$fillType] = $in ['Lvl'] + $out ['Lvl'];
 	}
 }
-$smarty->assign ( 'farmStorage', $farmStorage );
-$smarty->assign ( 'paletStorage', $paletStorage );
-/* foreach ( $xml['onCreateLoadedObject']['Storage_storage1'] as $node ) {
-	echo $node['fillType']."<br>";
-} */
+ksort($farmStorage);
+ksort($paletStorage);
+$smarty->assign ( 'farmStorage',  $farmStorage  );
+$smarty->assign ( 'paletStorage', $paletStorage  );

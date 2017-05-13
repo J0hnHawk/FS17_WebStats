@@ -3,11 +3,11 @@
 </div>
 <div class="panel panel-primary">
 	<div class="panel-heading">
-		<h3 class="panel-title">Hofsilo</h3>
+		<h4 class="panel-title">Hofsilo</h4>
 	</div>
 	<div class="panel-body">
 		{foreach from=$farmStorage key=$fillType item=$fillLevel}
-		<div class="col-sm-2">
+		<div class="col-sm-3 col-md-2">
 			<div class="panel panel-default">
 				<div class="panel-heading">{$fillType}</div>
 				<div class="panel-body text-right">{$fillLevel}</div>
@@ -18,11 +18,26 @@
 </div>
 <div class="panel panel-primary">
 	<div class="panel-heading">
-		<h3 class="panel-title">Palettenlager</h3>
+		<h4 class="panel-title">Paletten und Ballen</h4>
+	</div>
+	<div class="panel-body">
+		{foreach from=$items key=$fillType item=$value}
+		<div class="col-sm-4 col-md-3">
+			<div class="panel panel-default">
+				<div class="panel-heading">{$fillType} <span class="badge pull-right">{$value.count}</span></div>
+				<div class="panel-body text-right">{$value.fillLevel}</div>
+			</div>
+		</div>
+		{/foreach}
+	</div>
+</div>
+<div class="panel panel-primary">
+	<div class="panel-heading">
+		<h4 class="panel-title">Palettenlager</h4>
 	</div>
 	<div class="panel-body">
 		{foreach from=$paletStorage key=$fillType item=$fillLevel}
-		<div class="col-sm-2">
+		<div class="col-sm-3 col-md-2">
 			<div class="panel panel-default">
 				<div class="panel-heading">{$fillType}</div>
 				<div class="panel-body text-right">{$fillLevel}</div>

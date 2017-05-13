@@ -1,4 +1,5 @@
 <?php
+define ( 'IN_NFMWS', true );
 session_start ();
 ini_set ( 'display_errors', 1 );
 ini_set ( 'display_startup_errors', 1 );
@@ -11,10 +12,14 @@ setlocale ( LC_ALL, 'de_DE@euro', 'de_DE', 'de', 'ge' );
 require ("./include/config.php");
 require ('./include/smarty/Smarty.class.php');
 require ('./include/functions.php');
+include ("./include/webStatsInclude.php");
+include ("./language/de.php");
+
 $style = 'bootstrap';
 $pages = array (
 		'status',
-		'storage' 
+		'storage',
+		'production'
 );
 $page = GetParam ( 'page', 'G' );
 if (! in_array ( $page, $pages ))

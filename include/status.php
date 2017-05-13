@@ -1,4 +1,8 @@
 <?php
+if (! defined ( 'IN_NFMWS' )) {
+	exit ();
+}
+
 $mode = GetParam ( 'mode', 'G' );
 $modes = array (
 		'game',
@@ -10,7 +14,6 @@ $modes = array (
 if (! in_array ( $mode, $modes )) {
 	$mode = 'game';
 }
-include ("webStatsInclude.php");
 $xml = getServerStatsSimpleXML ( $serverAddress );
 $error = false;
 if ($xml) {

@@ -1,4 +1,7 @@
 <?php
+if (! defined ( 'IN_NFMWS' )) {
+	exit ();
+}
 function GetParam($ParamName, $Method = "P", $DefaultValue = "") {
 	if ($Method == "P") {
 		if (isset ( $_POST [$ParamName] ))
@@ -20,6 +23,15 @@ function GetParam($ParamName, $Method = "P", $DefaultValue = "") {
 			return $_SESSION [$ParamName];
 		else
 			return $DefaultValue;
+	}
+}
+function translate($text) {
+	global $lang;
+	$text = strval ( $text );
+	if (isset ( $lang [$text] )) {
+		return $lang [$text];
+	} else {
+		return '{' . $text . '}';
 	}
 }
 function dbstat($result, $sql, $alles = true) {
