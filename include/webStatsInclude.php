@@ -1,5 +1,9 @@
 <?php
-	/**
+if (! defined ( 'IN_NFMWS' )) {
+	exit ();
+}
+
+/**
 	 * Copyright (c) 2008-2013 GIANTS Software GmbH, Confidential, All Rights Reserved.
 	 * Copyright (c) 2003-2013 Christian Ammann and Stefan Geiger, Confidential, All Rights Reserved.
 	 */
@@ -41,6 +45,7 @@
 
 		$cacheFile = "dedicated-server-stats.cached";
 		$cacheTimeout = 60*2;
+		$cacheTimeout = -1;
 		
 		if(file_exists($cacheFile) && filemtime($cacheFile) > (time() - ($cacheTimeout) + rand(0, 10))) {
 			$xmlStr = file_get_contents($cacheFile);
