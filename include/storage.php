@@ -20,16 +20,16 @@ foreach ( $xml->item as $item ) {
 		$fillLevel = $item ['fillLevel'];
 		if (isset ( $items [$fillType] )) {
 			$items [$fillType] ['count'] ++;
-			$items [$fillType] ['fillLevel'] += $fillLevel;
+			$items [$fillType] ['fillLevel'] += intval ( $fillLevel );
 		} else {
 			$items [$fillType] = array (
 					'count' => 1,
-					'fillLevel' => $fillLevel 
+					'fillLevel' => intval ( $fillLevel ) 
 			);
 		}
 	}
 }
-ksort($items);
+ksort ( $items );
 $smarty->assign ( 'items', $items );
 
 foreach ( $xml->onCreateLoadedObject as $object ) {
@@ -43,10 +43,10 @@ foreach ( $xml->onCreateLoadedObject as $object ) {
 		$in = $object->Rohstoff;
 		$out = $object->Produkt;
 		$fillType = translate ( $in ['Name'] );
-		$paletStorage [$fillType] = $in ['Lvl'] + $out ['Lvl'];
+		$paletStorage [$fillType] = intval ( $in ['Lvl'] + $out ['Lvl'] );
 	}
 }
-ksort($farmStorage);
-ksort($paletStorage);
-$smarty->assign ( 'farmStorage',  $farmStorage  );
-$smarty->assign ( 'paletStorage', $paletStorage  );
+ksort ( $farmStorage );
+ksort ( $paletStorage );
+$smarty->assign ( 'farmStorage', $farmStorage );
+$smarty->assign ( 'paletStorage', $paletStorage );

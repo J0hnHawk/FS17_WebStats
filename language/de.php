@@ -24,7 +24,7 @@ $lang = array_merge ( $lang, array (
 		'dryGrass_windrow' => 'Heu',
 		'rye' => 'Roggen',
 		'compost' => 'Kompost',
-		'grass_windrow' => 'Grass' 
+		'grass_windrow' => 'Gras' 
 ) );
 
 // Paletten
@@ -51,12 +51,83 @@ $lang = array_merge ( $lang, array (
 		'paletteyogurt' => 'Palette Joghurt',
 		'palettesahne' => 'Palette Sahne',
 		'woolPallet' => 'Wollpalette',
-		'brotpalette' => 'Brot Palette' 
+		'brotpalette' => 'Brot Palette',
+		'palettebrod' => 'Brot Palette',
+		'boardPallet' => 'Bretter Paletten',
+		'palletPallet' => 'Leere Paletten',
+		'palettemehlgerste1' => 'Mehl Palette',
+		'palettemehlroggen1' => 'Mehl Palette',
+		'palettemehlweizen1' => 'Mehl Paletten'
+		
 ) );
 
 // Ballen
 $lang = array_merge ( $lang, array (
 		'baleStraw240' => 'Strohballen',
 		'baleHay240' => 'Heuballen',
-		'baleGrass240' => 'Grasballen'
+		'baleGrass240' => 'Grasballen' 
+) );
+
+// Produktionsstätten
+$lang = array_merge ( $lang, array (
+		'seeds' => 'Saatgut',
+		'grain' => 'Getreide',
+		'fertilizer' => 'Dünger',
+		'manure' => 'Mist',
+		'liquidManure' => 'Gülle',
+		'Stroh' => 'Stroh',
+		'Gras' => 'Gras',
+		'Silage' => 'Silage',
+		'Mischfutter' => 'Mischfutter',
+		'Tip_RS1' => 'Gärreste oder Gülle',
+		'RS_compost1' => 'Kompost',
+		'RM_Output2' => 'Wasser',
+		'Tip_RSbarley' => 'Gerste',
+		'cm_inputWaste' => 'Abfall',
+		'cm_outputCompost' => 'Kompost',
+		'Tip_RSrye' => 'Roggen',
+		'Compost' => 'Kompost',
+		'Tip_RSwater' => 'Wasser',
+		'Tip_RSwheat' => 'Weizen',
+		'boardwood' => 'Bretter Paletten',
+		'Holz' => 'Holzstämme',
+		'Tip_mehl' => 'Mehl Palette',
+		'Brennstoffe' => 'Brennstoffe',
+		'Tip_RSmilk' => 'Milch',
+		'Tip_RSzucker' => 'Zuckerrüben',
+		'Erdfruechten' => 'Erdfrüchte',
+		'Getreide' => 'Getreide',
+		'Proteine' => 'Proteeine',
+		'Schweinefutter' => 'Schweinefutter',
+		'Tip_RS' => 'Raps oder Sonnenblumen',
+		'RS_compost' => 'Kompost',
+		'RM_Output' => 'Diesel',
+		'Hackschnitzel' => 'Hackschnitzel'
+) );
+
+// Produktionsstätten
+$lang = array_merge ( $lang, array (
+		'FabrikScript_Backerei' => 'Bäckerei',
+		'FabrikScript_BrauereiFass' => 'Brauerei Fass',
+		'FabrikScript_BrauereiKasten' => 'Brauerei Kasten',
+		'FabrikScript_compostMaster2k17' => 'compostMaster 2k17',
+		'FabrikScript_Duenger_Prod' => 'Dünerproduktion',
+		'FabrikScript_Fabrik' => 'Sägewerk',
+		'FabrikScript_GersteMehlfabrik' => 'Mehlfabrik (Gerste)',
+		'FabrikScript_Holzhacker' => 'Holzhacker',
+		'FabrikScript_Klaerwerk' => 'Klärwerk',
+		'FabrikScript_KraftFutterHerstellung' => 'Futterfabrik',
+		'FabrikScript_Molkerei' => 'Molkerei',
+		'FabrikScript_obst_apfel' => 'Obstfarm (Äpfel)',
+		'FabrikScript_obst_birne' => 'Obstfarm (Birnen)',
+		'FabrikScript_obst_kirsche' => 'Obstfarm (Kirschen)',
+		'FabrikScript_obst_pflaume' => 'Obstfarm (Pflaumen)',
+		'FabrikScript_Oel_Raffinerie_Raps' => 'Biodiesel Raffinerie',
+		'FabrikScript_Paletten_Fabrik' => 'Palettenfabrik',
+		'FabrikScript_RoggenMehlfabrik' => 'Mehlfabrik (Roggen)',
+		'FabrikScript_Saat_Prod' => 'Saatgutproduktion',
+		'FabrikScript_Schweinefutterstation' => 'Schweinefutterstation',
+		'FabrikScript_WeizenMehlfabrik' => 'Mehlfabrik (Weizen)',
+		'FabrikScript_Zellstoff_Fabrik' => 'Zellstofffabrik',
+		'FabrikScript_Zuckerfabrik' => 'Zuckerfabrik' 
 ) );
