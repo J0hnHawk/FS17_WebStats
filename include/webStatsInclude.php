@@ -43,7 +43,7 @@ if (! defined ( 'IN_NFMWS' )) {
 
 		$urlParts = parse_url($url);
 
-		$cacheFile = "dedicated-server-stats.cached";
+		$cacheFile = "./cache/dedicated-server-stats.cached";
 		$cacheTimeout = 60*2;
 		$cacheTimeout = -1;
 		

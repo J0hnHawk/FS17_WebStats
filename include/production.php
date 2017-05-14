@@ -29,39 +29,35 @@ $onCreateLoadedObjects = array (
 		'FabrikScript_Zellstoff_Fabrik',
 		'FabrikScript_Zuckerfabrik' 
 );
-$plants = array ();
+$plants = $sort_name = $sort_fillLevel = array ();
+
 foreach ( $xml->onCreateLoadedObject as $object ) {
 	$saveId = $object ['saveId'];
 	if (in_array ( $saveId, $onCreateLoadedObjects )) {
 		$plant = translate ( $saveId );
+		$sort_name[] = strtolower ($plant);
+		$sort_state = 0;
 		$plants [$plant] = array (
+				'class'=> 'success',
 				'input' => array (),
 				'output' => array () 
 		);
-		foreach ($object->Rohstoff as $rohstoff) {
-			$fillType = translate($rohstoff['Name']);
-			$plants [$plant]['input'][$fillType] = $rohstoff['Lvl'];
+		foreach ( $object->Rohstoff as $rohstoff ) {
+			$fillType = translate ( $rohstoff ['Name'] );
+			$fillLevel = intval ( $rohstoff ['Lvl'] );
+			if($fillLevel == 0) {
+				$plants[$plant]['class'] = 'danger';
+				$sortstate = 2;
+			}
+			$plants [$plant] ['input'] [$fillType] = $fillLevel;
 		}
-		foreach ($object->Produkt as $product) {
-			$fillType = translate($product['Name']);
-			$plants [$plant]['output'][$fillType] = $product['Lvl'];
+		foreach ( $object->Produkt as $product ) {
+			$fillType = translate ( $product ['Name'] );
+			$plants [$plant] ['output'] [$fillType] = intval ( $product ['Lvl'] );
 		}
+		$sort_fillLevel[] = $sort_state;
 	}
-	
-	// switch ($saveId) {
-	// case ''
-	// }
-	// if ($object ['saveId'] == 'Storage_storage1') {
-	// foreach ( $object->node as $node ) {
-	// $fillType = translate ( $node ['fillType'] );
-	// $farmStorage [$fillType] = intval ( $node ['fillLevel'] );
-	// }
-	// }
-	// if (strpos ( $object ['saveId'], 'FabrikScript_Lager' ) !== false) {
-	// $in = $object->Rohstoff;
-	// $out = $object->Produkt;
-	// $fillType = translate ( $in ['Name'] );
-	// $paletStorage [$fillType] = $in ['Lvl'] + $out ['Lvl'];
-	// }
 }
-var_dump($plants);
+krsort($plants);
+array_multisort($sort_fillLevel, SORT_DESC, $plants);
+$smarty->assign ( 'plants', $plants );
