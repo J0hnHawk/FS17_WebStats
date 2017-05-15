@@ -31,4 +31,4 @@ $smarty->setTemplateDir ( "./styles/$style/templates" );
 $smarty->assign ( 'page', $page );
 include ("./include/$page.php");
 $smarty->assign ( 'style', $style );
-$smarty->display ( 'index.htpl', $style, $style );
+$smarty->display ( 'index.tpl', $style, $style );

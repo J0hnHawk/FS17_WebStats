@@ -16,9 +16,9 @@
   </head>
 <body>
 	<div class="container">
-		{include file='navbar.htpl'} {assign var="fullPathToTemplate"
-		value="./styles/$style/templates/$page.htpl"} {if
-		file_exists($fullPathToTemplate)} {include file="$page.htpl"} {else}
+		{include file='navbar.tpl'} {assign var="fullPathToTemplate"
+		value="./styles/$style/templates/$page.tpl"} {if
+		file_exists($fullPathToTemplate)} {include file="$page.tpl"} {else}
 		<div class="starter-template">
 			<h1>Fehler beim Seitenaufruf</h1>
 			<p class="lead">Die Datei {$file} existiert nicht.</p>

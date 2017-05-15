@@ -43,7 +43,7 @@
 							<td>{$player.position}</td>
 						</tr>
 						{/foreach}{else}
-						<td colspan="4">Zur Zeit sind keine Spieler online.</td>{/if}
+						<tr><td colspan="4">Zur Zeit sind keine Spieler online.</td></tr>{/if}
 					</tbody>
 				</table>
 			</div>
@@ -112,7 +112,7 @@
 					{foreach $mapEntries as $key => $mapEntry}
 					<div id="vehicle{$key}Container" style="position: absolute; left: {$mapEntry.xpos}px; top: {$mapEntry.zpos}px;" onmouseout="document.getElementById('vehicle{$key}').style.display='none'; document.getElementById('vehicle{$key}Image').src='{#PfadIMG#}{$mapEntry.icon}'; document.getElementById('vehicle{$key}Container').style.zIndex=1;"
 						onmouseover="document.getElementById('vehicle{$key}').style.display='block'; document.getElementById('vehicle{$key}Image').src='{#PfadIMG#}{$mapEntry.iconHover}'; document.getElementById('vehicle{$key}Container').style.zIndex=10; ">
-						<image id="vehicle{$key}Image" src="{#PfadIMG#}{$mapEntry.icon}" width="{$machineIconSize}" height="{$machineIconSize}">
+						<img id="vehicle{$key}Image" src="{#PfadIMG#}{$mapEntry.icon}" width="{$machineIconSize}" height="{$machineIconSize}">
 						<div id="vehicle{$key}" style="display: none; position: absolute; bottom: 0px; left: 11px; background: {$backgroundColor}; padding-left: 8px; padding-right: 8px; color: #ffffff;">
 							<nobr>{$mapEntry.name}</nobr>
 						</div>
