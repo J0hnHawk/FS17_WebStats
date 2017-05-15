@@ -58,6 +58,6 @@ foreach ( $xml->onCreateLoadedObject as $object ) {
 		$sort_fillLevel[] = $sort_state;
 	}
 }
-krsort($plants);
-array_multisort($sort_fillLevel, SORT_DESC, $plants);
+ksort($plants);
+//array_multisort($sort_fillLevel, SORT_DESC, $plants);
 $smarty->assign ( 'plants', $plants );

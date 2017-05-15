@@ -20,7 +20,7 @@
 						<li><a href="index.php?page=map">Karte</a></li>
 					</ul></li>
 				 -->
-				<li class="{if $page == ''}active{/if}"><a href="index.php?page=status"> <span class="glyphicon glyphicon-list"></span> Serverstatus</a></li>
+				<li class="{if $page == ''}active{/if}"><a href="index.php?page=status"> <span class="glyphicon glyphicon-list"></span> Serverübersicht</a></li>
 				<li class="{if $page == ''}active{/if}"><a href="index.php?page=storage"> <span class="glyphicon glyphicon-list"></span> Lagerbestände</a></li>
 				<li class="{if $page == ''}active{/if}"><a href="index.php?page=production"> <span class="glyphicon glyphicon-list"></span> Produktionsanlagen</a></li>
 				<li><a href="#" data-toggle="modal" data-target="#infoModal"> <span class="glyphicon glyphicon-info-sign"></span> Info</a></li>

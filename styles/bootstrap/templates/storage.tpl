@@ -10,7 +10,7 @@
 		<div class="col-sm-3 col-md-2">
 			<div class="panel panel-default">
 				<div class="panel-heading">{$fillType}</div>
-				<div class="panel-body text-right">{$fillLevel}</div>
+				<div class="panel-body text-right">{$fillLevel|number_format:0:",":"."}</div>
 			</div>
 		</div>
 		{/foreach}
@@ -25,7 +25,7 @@
 		<div class="col-sm-4 col-md-3">
 			<div class="panel panel-default">
 				<div class="panel-heading">{$fillType} <span class="badge pull-right">{$value.count}</span></div>
-				<div class="panel-body text-right">{$value.fillLevel}</div>
+				<div class="panel-body text-right">{$value.fillLevel|number_format:0:",":"."}</div>
 			</div>
 		</div>
 		{/foreach}
@@ -40,7 +40,7 @@
 		<div class="col-sm-3 col-md-2">
 			<div class="panel panel-default">
 				<div class="panel-heading">{$fillType}</div>
-				<div class="panel-body text-right">{$fillLevel}</div>
+				<div class="panel-body text-right">{$fillLevel|number_format:0:",":"."}</div>
 			</div>
 		</div>
 		{/foreach}
