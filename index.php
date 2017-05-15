@@ -9,10 +9,10 @@ date_default_timezone_set ( 'Europe/Lisbon' );
 error_reporting ( E_ERROR | E_WARNING | E_PARSE );
 error_reporting ( E_ALL );
 setlocale ( LC_ALL, 'de_DE@euro', 'de_DE', 'de', 'ge' );
+require ('./include/xmlTools.php');
 require ("./include/config.php");
 require ('./include/smarty/Smarty.class.php');
 require ('./include/functions.php');
-include ("./include/webStatsInclude.php");
 include ("./language/de.php");
 
 $style = 'bootstrap';

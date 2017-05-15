@@ -35,7 +35,7 @@
 						</tr>
 					</thead>
 					<tbody>
-						{if isset($players)} {foreach $players as $player}
+						{if isset($players[0].name)} {foreach $players as $player}
 						<tr>
 							<td>{$player.name}</td>
 							<td>{$player.online}</td>
@@ -62,7 +62,7 @@
 						</tr>
 					</thead>
 					<tbody>
-						{if isset($mods)} {foreach $mods as $mod}
+						{if isset($mods[0].name)} {foreach $mods as $mod}
 						<tr>
 							<td>{$mod.name}</td>
 							<td>{$mod.version}</td>
@@ -90,7 +90,7 @@
 						</tr>
 					</thead>
 					<tbody>
-						{if isset($vehicles)} {foreach $vehicles as $vehicle}
+						{if isset($vehicles[0].name)} {foreach $vehicles as $vehicle}
 						<tr>
 							<td>{$vehicle.name}</td>
 							<td>{$vehicle.group}</td>
