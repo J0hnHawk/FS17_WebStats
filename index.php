@@ -19,7 +19,8 @@ $style = 'bootstrap';
 $pages = array (
 		'status',
 		'storage',
-		'production'
+		'production',
+		'options'
 );
 $page = GetParam ( 'page', 'G' );
 if (! in_array ( $page, $pages ))

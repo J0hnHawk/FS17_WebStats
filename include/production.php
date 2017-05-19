@@ -35,18 +35,18 @@ foreach ( $xml->onCreateLoadedObject as $object ) {
 	$saveId = $object ['saveId'];
 	if (in_array ( $saveId, $onCreateLoadedObjects )) {
 		$plant = translate ( $saveId );
-		$sort_name[] = strtolower ($plant);
+		$sort_name [] = strtolower ( $plant );
 		$sort_state = 0;
 		$plants [$plant] = array (
-				'class'=> 'success',
+				'class' => 'success',
 				'input' => array (),
 				'output' => array () 
 		);
 		foreach ( $object->Rohstoff as $rohstoff ) {
 			$fillType = translate ( $rohstoff ['Name'] );
 			$fillLevel = intval ( $rohstoff ['Lvl'] );
-			if($fillLevel == 0) {
-				$plants[$plant]['class'] = 'danger';
+			if ($fillLevel == 0) {
+				$plants [$plant] ['class'] = 'danger';
 				$sortstate = 2;
 			}
 			$plants [$plant] ['input'] [$fillType] = $fillLevel;
@@ -55,9 +55,11 @@ foreach ( $xml->onCreateLoadedObject as $object ) {
 			$fillType = translate ( $product ['Name'] );
 			$plants [$plant] ['output'] [$fillType] = intval ( $product ['Lvl'] );
 		}
-		$sort_fillLevel[] = $sort_state;
+		$sort_fillLevel [] = $sort_state;
 	}
 }
-ksort($plants);
-//array_multisort($sort_fillLevel, SORT_DESC, $plants);
+ksort ( $plants );
+if (isset($_COOKIE ['sortType']) && $_COOKIE ['sortType'] == 'fill') {
+	array_multisort ( $sort_fillLevel, SORT_DESC, $plants );
+}
 $smarty->assign ( 'plants', $plants );
