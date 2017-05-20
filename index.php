@@ -14,6 +14,8 @@ require ("./include/config.php");
 require ('./include/smarty/Smarty.class.php');
 require ('./include/functions.php');
 include ("./language/de.php");
+$stats = getServerStatsSimpleXML ( $serverAddress );
+$savegame = getServerStatsSimpleXML('http://176.57.155.146:8080/feed/dedicated-server-savegame.html?code=QIWF5Osq&file=vehicles');
 
 $style = 'bootstrap';
 $pages = array (

@@ -1,4 +1,7 @@
 <?php
+if (! defined ( 'IN_NFMWS' )) {
+	exit ();
+}
 if (isset ( $_COOKIE ['sortType'] ) && $_COOKIE ['sortType'] == 'alpha') {
 	$sortType = 'alpha';
 } else {

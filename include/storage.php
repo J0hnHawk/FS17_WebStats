@@ -2,7 +2,6 @@
 if (! defined('IN_NFMWS')) {
     exit();
 }
-$xml = getServerStatsSimpleXML('http://176.57.155.146:8080/feed/dedicated-server-savegame.html?code=QIWF5Osq&file=vehicles');
 
 $items = $farmStorage = $paletStorage = array();
 
@@ -12,7 +11,7 @@ function getFillType($uri)
     return translate(substr(array_pop($split), 0, - 4));
 }
 
-foreach ($xml->item as $item) {
+foreach ($savegame->item as $item) {
     $fillType = false;
     if ($item['className'] == "FillablePallet")
         $fillType = getFillType($item['i3dFilename']);
@@ -43,7 +42,7 @@ foreach ($xml->item as $item) {
 ksort($items);
 $smarty->assign('items', $items);
 
-foreach ($xml->onCreateLoadedObject as $object) {
+foreach ($savegame->onCreateLoadedObject as $object) {
     if ($object['saveId'] == 'Storage_storage1') {
         foreach ($object->node as $node) {
             $fillType = translate($node['fillType']);

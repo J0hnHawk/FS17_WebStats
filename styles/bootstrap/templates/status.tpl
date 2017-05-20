@@ -70,7 +70,8 @@
 							<!-- <td>{$mod.hash}</td> -->
 							<td><span class="glyphicon glyphicon-download" aria-hidden="true"></span></td>
 						</tr>
-						{/foreach}{else}{/if}
+						{/foreach}{else}
+						<tr><td colspan="4">Es wurden keine Mods aktiviert.</td></tr>{/if}
 					</tbody>
 				</table>
 			</div>
@@ -99,7 +100,8 @@
 							<td>{$vehicle.position}</td>
 							<td>{$vehicle.controller}</td>
 						</tr>
-						{/foreach}{else}{/if}
+						{/foreach}{else}
+						<tr><td colspan="4">Es gibt keine Fahrzeuge.</td></tr>{/if}
 					</tbody>
 				</table>
 			</div>

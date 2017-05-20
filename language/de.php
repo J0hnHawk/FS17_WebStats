@@ -57,8 +57,12 @@ $lang = array_merge ( $lang, array (
 		'palletPallet' => 'Leere Paletten',
 		'palettemehlgerste1' => 'Mehl Palette',
 		'palettemehlroggen1' => 'Mehl Palette',
-		'palettemehlweizen1' => 'Mehl Paletten'
-		
+		'palettemehlweizen1' => 'Mehl Paletten',
+		'palettespeiseoel' => 'Palette Speiseöl',
+		'washedPotato' => 'gewaschene Kartoffeln',
+		'palettekartoffelsack' => 'Palette Kartoffelsäcke',
+		'palettechips' => 'Palette Chips',
+		'palettepommes' => 'Palette Pommes',
 ) );
 
 // Ballen
@@ -102,7 +106,10 @@ $lang = array_merge ( $lang, array (
 		'Tip_RS' => 'Raps oder Sonnenblumen',
 		'RS_compost' => 'Kompost',
 		'RM_Output' => 'Diesel',
-		'Hackschnitzel' => 'Hackschnitzel'
+		'Hackschnitzel' => 'Hackschnitzel',
+		'Diesel' => 'Diesel',
+		'Kartoffeln' => 'Kartoffeln',
+		'Wasser' => 'Wasser'
 ) );
 
 // Produktionsstätten
@@ -115,6 +122,7 @@ $lang = array_merge ( $lang, array (
 		'FabrikScript_Fabrik' => 'Sägewerk',
 		'FabrikScript_GersteMehlfabrik' => 'Mehlfabrik (Gerste)',
 		'FabrikScript_Holzhacker' => 'Holzhacker',
+		'FabrikScript_Kartoffelfabrik' => 'Kartoffelfabrik',
 		'FabrikScript_Klaerwerk' => 'Klärwerk',
 		'FabrikScript_KraftFutterHerstellung' => 'Futterfabrik',
 		'FabrikScript_Molkerei' => 'Molkerei',
@@ -124,6 +132,8 @@ $lang = array_merge ( $lang, array (
 		'FabrikScript_obst_pflaume' => 'Obstfarm (Pflaumen)',
 		'FabrikScript_Oel_Raffinerie_Raps' => 'Biodiesel Raffinerie',
 		'FabrikScript_Paletten_Fabrik' => 'Palettenfabrik',
+		'FabrikScript_potatoWasher' => 'Kartoffelwaschanlage 1',
+		'FabrikScript_potatoWasher2' => 'Kartoffelwaschanlage 2',		
 		'FabrikScript_RoggenMehlfabrik' => 'Mehlfabrik (Roggen)',
 		'FabrikScript_Saat_Prod' => 'Saatgutproduktion',
 		'FabrikScript_Schweinefutterstation' => 'Schweinefutterstation',

@@ -2,7 +2,6 @@
 if (! defined ( 'IN_NFMWS' )) {
 	exit ();
 }
-$xml = getServerStatsSimpleXML ( 'http://176.57.155.146:8080/feed/dedicated-server-savegame.html?code=QIWF5Osq&file=vehicles' );
 
 $onCreateLoadedObjects = array (
 		'FabrikScript_Backerei',
@@ -13,6 +12,7 @@ $onCreateLoadedObjects = array (
 		'FabrikScript_Fabrik',
 		'FabrikScript_GersteMehlfabrik',
 		'FabrikScript_Holzhacker',
+		'FabrikScript_Kartoffelfabrik',
 		'FabrikScript_Klaerwerk',
 		'FabrikScript_KraftFutterHerstellung',
 		'FabrikScript_Molkerei',
@@ -22,6 +22,8 @@ $onCreateLoadedObjects = array (
 		'FabrikScript_obst_pflaume',
 		'FabrikScript_Oel_Raffinerie_Raps',
 		'FabrikScript_Paletten_Fabrik',
+		'FabrikScript_potatoWasher',
+		'FabrikScript_potatoWasher2',
 		'FabrikScript_RoggenMehlfabrik',
 		'FabrikScript_Saat_Prod',
 		'FabrikScript_Schweinefutterstation',
@@ -31,8 +33,9 @@ $onCreateLoadedObjects = array (
 );
 $plants = $sort_name = $sort_fillLevel = array ();
 
-foreach ( $xml->onCreateLoadedObject as $object ) {
+foreach ( $savegame->onCreateLoadedObject as $object ) {
 	$saveId = $object ['saveId'];
+	// echo($saveId.'<br>'); // für Export der SaveIds während der Programmierung/Kartenupdate
 	if (in_array ( $saveId, $onCreateLoadedObjects )) {
 		$plant = translate ( $saveId );
 		$sort_name [] = strtolower ( $plant );
@@ -58,7 +61,8 @@ foreach ( $xml->onCreateLoadedObject as $object ) {
 		$sort_fillLevel [] = $sort_state;
 	}
 }
-ksort ( $plants );
+//ksort ( $plants, SORT_NATURAL  );
+uksort($plants, "strnatcasecmp");
 if (isset($_COOKIE ['sortType']) && $_COOKIE ['sortType'] == 'fill') {
 	array_multisort ( $sort_fillLevel, SORT_DESC, $plants );
 }

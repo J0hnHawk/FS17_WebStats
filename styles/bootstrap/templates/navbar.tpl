@@ -8,7 +8,7 @@
 					class="icon-bar"></span> <span class="icon-bar"></span> <span
 					class="icon-bar"></span>
 			</button>
-			<a class="navbar-brand" href="index.php?page=users">NF Marsch 2.4
+			<a class="navbar-brand" href="index.php?page=users">NF Marsch 2.5
 				WebStats</a>
 		</div>
 		<div id="navbar" class="collapse navbar-collapse">
