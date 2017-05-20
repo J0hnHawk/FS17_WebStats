@@ -9,7 +9,7 @@
 <meta name="description" content="WebStats für die Mod Map Nordfriesische Marsch 2.5">
 <meta name="author" content="John Hawk">
 <link rel="icon" href="{#PfadIMG#}favicon.ico">
-<title>NF Marsch 2.4 WebStats</title>
+<title>NF Marsch 2.5 WebStats</title>
 <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
 <link href="{#PfadCSS#}customstyle.css" rel="stylesheet">
 </head>

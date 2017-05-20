@@ -101,7 +101,7 @@
 							<td>{$vehicle.controller}</td>
 						</tr>
 						{/foreach}{else}
-						<tr><td colspan="4">Es gibt keine Fahrzeuge.</td></tr>{/if}
+						<tr><td colspan="6">Es gibt keine Fahrzeuge.</td></tr>{/if}
 					</tbody>
 				</table>
 			</div>

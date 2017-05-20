@@ -24,7 +24,9 @@ $lang = array_merge ( $lang, array (
 		'dryGrass_windrow' => 'Heu',
 		'rye' => 'Roggen',
 		'compost' => 'Kompost',
-		'grass_windrow' => 'Gras' 
+		'grass_windrow' => 'Gras',
+		'potato' => 'Kartoffeln',
+		'sugarBeet' => 'Zuckerrüben'
 ) );
 
 // Paletten

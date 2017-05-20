@@ -7,7 +7,7 @@
 	</div>
 	<div class="panel-body">
 		{foreach from=$farmStorage key=$fillType item=$fillLevel}
-		<div class="col-sm-3 col-md-2">
+		<div class="col-sm-4 col-md-3">
 			<div class="panel panel-default">
 				<div class="panel-heading">{$fillType}</div>
 				<div class="panel-body text-right">{$fillLevel|number_format:0:",":"."}</div>
@@ -37,7 +37,7 @@
 	</div>
 	<div class="panel-body">
 		{foreach from=$paletStorage key=$fillType item=$fillLevel}
-		<div class="col-sm-3 col-md-2">
+		<div class="col-sm-4 col-md-3">
 			<div class="panel panel-default">
 				<div class="panel-heading">{$fillType}</div>
 				<div class="panel-body text-right">{$fillLevel|number_format:0:",":"."}</div>

@@ -14,7 +14,6 @@ $modes = array (
 if (! in_array ( $mode, $modes )) {
 	$mode = 'game';
 }
-$error = false;
 
 // -------------------------------------------------------------------------
 // game
@@ -73,7 +72,7 @@ $smarty->assign ( 'mods', $mods );
 // -------------------------------------------------------------------------
 // vehicles
 $vehicles = array ();
-if (isset ( $stats ['Vehicles'] )) {
+if (isset ( $stats->Vehicles )) {
 	foreach ( $stats->Vehicles->Vehicle as $veh ) {
 		$position = $veh ["x"] . " " . $veh ["y"] . " " . $veh ["z"];
 		$vehicles [] = array (
