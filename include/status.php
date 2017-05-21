@@ -49,7 +49,7 @@ foreach ( $stats->Slots->Player as $player ) {
 		$players [] = array (
 				'name' => $player,
 				'online' => $hours . ":" . sprintf ( "%02d", $minutes ),
-				'isAdmin' => $player ["isAdmin"],
+				'isAdmin' => ($player ["isAdmin"]=='true'?true:false),
 				'position' => $position 
 		);
 	}
