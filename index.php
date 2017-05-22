@@ -10,19 +10,19 @@ error_reporting ( E_ERROR | E_WARNING | E_PARSE );
 error_reporting ( E_ALL );
 setlocale ( LC_ALL, 'de_DE@euro', 'de_DE', 'de', 'ge' );
 require ('./include/xmlTools.php');
-require ("./include/config.php");
+require ("./config/config.php");
 require ('./smarty/Smarty.class.php');
 require ('./include/functions.php');
 include ("./language/de.php");
-$stats = getServerStatsSimpleXML ( $serverAddress );
-$savegame = getServerStatsSimpleXML('http://176.57.155.146:8080/feed/dedicated-server-savegame.html?code=QIWF5Osq&file=vehicles');
+$stats =    getServerStatsSimpleXML ( sprintf ( $serverAddress, 'dedicated-server-stats.xml?' ) );
+$savegame = getServerStatsSimpleXML ( sprintf ( $serverAddress, 'dedicated-server-savegame.html?file=vehicles&') );
 
 $style = 'bootstrap';
 $pages = array (
 		'status',
 		'storage',
 		'production',
-		'options'
+		'options' 
 );
 $page = GetParam ( 'page', 'G' );
 if (! in_array ( $page, $pages ))
