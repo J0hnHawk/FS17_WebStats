@@ -6,7 +6,8 @@ if (! defined ( 'IN_NFMWS' )) {
 $items = $farmStorage = $paletStorage = array ();
 function getFillType($uri) {
 	$split = explode ( '/', strval ( $uri ) );
-	return translate ( substr ( array_pop ( $split ), 0, - 4 ) );
+	$filename = substr ( array_pop ( $split ), 0, - 4 );
+	return translate ( $filename );
 }
 
 foreach ( $savegame->item as $item ) {
