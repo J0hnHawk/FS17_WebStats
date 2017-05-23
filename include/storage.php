@@ -9,13 +9,18 @@ function getFillType($uri) {
 	$filename = substr ( array_pop ( $split ), 0, - 4 );
 	return translate ( $filename );
 }
-
+$classNames = array (
+		"FillablePallet",
+		"Bale" 
+);
 foreach ( $savegame->item as $item ) {
 	$fillType = false;
-	if ($item ['className'] == "FillablePallet")
-		$fillType = getFillType ( $item ['i3dFilename'] );
-	if ($item ['className'] == "Bale")
-		$fillType = getFillType ( $item ['filename'] );
+	if (in_array ( $item ['className'], $classNames )) {
+		if (isset ( $item ['i3dFilename'] ))
+			$fillType = getFillType ( $item ['i3dFilename'] );
+		else
+			$fillType = getFillType ( $item ['filename'] );
+	}
 	if ($fillType) {
 		$fillLevel = $item ['fillLevel'];
 		if (isset ( $items [$fillType] )) {
