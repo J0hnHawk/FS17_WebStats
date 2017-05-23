@@ -80,7 +80,7 @@ $lang = array_merge ( $lang, array (
 // Ballen
 $lang = array_merge ( $lang, array (
 		'baleStraw240' => 'Strohballen',
-		'baleHay240' => 'Heuballen',
+		'baleHay240' => 'Heu',
 		'baleGrass240' => 'Grasballen' 
 ) );
 

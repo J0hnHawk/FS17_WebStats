@@ -11,6 +11,7 @@ error_reporting ( E_ALL );
 setlocale ( LC_ALL, 'de_DE@euro', 'de_DE', 'de', 'ge' );
 require ('./include/xmlTools.php');
 require ("./config/config.php");
+require ("./include/commodity.php");
 require ('./smarty/Smarty.class.php');
 require ('./include/functions.php');
 include ("./language/de.php");

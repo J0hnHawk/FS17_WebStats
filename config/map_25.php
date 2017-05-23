@@ -39,23 +39,3 @@ function createCommodity() {
  * )
  * );
  */
-class commodity {
-	var $overall;
-	var $farmStorage;
-	var $pallets = array (
-			'inStorage' => array (
-					'fillLevel' => 0 
-			),
-			'onMap' => array (
-					'count' => 0,
-					'fillLevel' => 0,
-					'outOfMap' => false 
-			) 
-	);
-	function farmStorage($value) {
-		$this->farmStorage = $value;
-		$this->overall += $value;
-	}
-	function pallets() {
-	}
-}

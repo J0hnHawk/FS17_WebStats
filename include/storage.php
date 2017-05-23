@@ -3,16 +3,35 @@ if (! defined ( 'IN_NFMWS' )) {
 	exit ();
 }
 
-$items = $farmStorage = $paletStorage = array ();
+$commodities = array ();
+$classNames = array (
+		"FillablePallet",
+		"Bale" 
+);
 function getFillType($uri) {
 	$split = explode ( '/', strval ( $uri ) );
 	$filename = substr ( array_pop ( $split ), 0, - 4 );
 	return translate ( $filename );
 }
-$classNames = array (
-		"FillablePallet",
-		"Bale" 
-);
+
+foreach ( $savegame->item as $item ) {
+	$fillType = false;
+	if (in_array ( $item ['className'], $classNames )) {
+		if (isset ( $item ['i3dFilename'] )) {
+			$fillType = getFillType ( $item ['i3dFilename'] );
+		} else {
+			$fillType = getFillType ( $item ['filename'] );
+		}
+	}
+	if ($fillType) {
+		$fillLevel = $item ['fillLevel'];
+		if (!isset ( $items [$fillType] )) {
+			$commodities = new commodity();
+		}
+	}
+}
+
+$items = $farmStorage = $paletStorage = array ();
 foreach ( $savegame->item as $item ) {
 	$fillType = false;
 	if (in_array ( $item ['className'], $classNames )) {
