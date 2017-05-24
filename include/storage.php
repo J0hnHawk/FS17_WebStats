@@ -24,13 +24,44 @@ foreach ( $savegame->item as $item ) {
 		}
 	}
 	if ($fillType) {
-		$fillLevel = $item ['fillLevel'];
-		if (!isset ( $items [$fillType] )) {
-			$commodities = new commodity();
+		$fillLevel = intval ( $item ['fillLevel'] );
+		if (! isset ( $commodities [$fillType] )) {
+			$commodities [$fillType] = array (
+					'overall' => $fillLevel 
+			);
+		} else {
+			$commodities [$fillType] ['overall'] += $fillLevel;
 		}
 	}
 }
+foreach ( $savegame->onCreateLoadedObject as $object ) {
+	if ($object ['saveId'] == 'Storage_storage1') {
+		foreach ( $object->node as $node ) {
+			$fillType = translate ( $node ['fillType'] );
+			$fillLevel = intval ( $node ['fillLevel'] );
+			if (! isset ( $commodities [$fillType] )) {
+				$commodities [$fillType] = array (
+						'overall' => $fillLevel 
+				);
+			} else {
+				$commodities [$fillType] ['overall'] += $fillLevel;
+			}
+		}
+	}
+	if (strpos ( $object ['saveId'], 'FabrikScript_Lager' ) !== false) {
+		$in = $object->Rohstoff;
+		$out = $object->Produkt;
+		$fillType = translate ( $in ['Name'] );
+		$paletStorage [$fillType] = intval ( $in ['Lvl'] + $out ['Lvl'] );
+	}
+}
 
+uksort ( $commodities, array (
+		Collator::create ( 'de_DE' ),
+		'compare' 
+) );
+$smarty->assign ( 'commodities', $commodities );
+/*
 $items = $farmStorage = $paletStorage = array ();
 foreach ( $savegame->item as $item ) {
 	$fillType = false;
@@ -79,7 +110,9 @@ foreach ( $savegame->onCreateLoadedObject as $object ) {
 		$paletStorage [$fillType] = intval ( $in ['Lvl'] + $out ['Lvl'] );
 	}
 }
+
 ksort ( $farmStorage );
 ksort ( $paletStorage );
 $smarty->assign ( 'farmStorage', $farmStorage );
 $smarty->assign ( 'paletStorage', $paletStorage );
+*/
