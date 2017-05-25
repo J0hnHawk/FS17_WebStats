@@ -6,7 +6,7 @@ if (! defined ( 'IN_NFMWS' )) {
 $commodities = array ();
 $classNames = array (
 		"FillablePallet",
-		"Bale" 
+		"Bale"
 );
 function getFillType($uri) {
 	$split = explode ( '/', strval ( $uri ) );
@@ -16,7 +16,8 @@ function getFillType($uri) {
 
 foreach ( $savegame->item as $item ) {
 	$fillType = false;
-	if (in_array ( $item ['className'], $classNames )) {
+	$className = strval ( $item ['className'] );
+	if (in_array ( $className, $classNames )) {
 		if (isset ( $item ['i3dFilename'] )) {
 			$fillType = getFillType ( $item ['i3dFilename'] );
 		} else {
@@ -32,6 +33,17 @@ foreach ( $savegame->item as $item ) {
 		} else {
 			$commodities [$fillType] ['overall'] += $fillLevel;
 		}
+		if (! isset ( $commodities [$fillType] [$className] )) {
+			$commodities [$fillType] [$className] = array (
+					'onMap' => array (
+							'count' => 1,
+							'fillLevel' => $fillLevel 
+					) 
+			);
+		} else {
+			$commodities [$fillType] [$className] ['onMap'] ['count'] ++;
+			$commodities [$fillType] [$className] ['onMap'] ['fillLevel'] += $fillLevel;
+		}
 	}
 }
 foreach ( $savegame->onCreateLoadedObject as $object ) {
@@ -41,10 +53,17 @@ foreach ( $savegame->onCreateLoadedObject as $object ) {
 			$fillLevel = intval ( $node ['fillLevel'] );
 			if (! isset ( $commodities [$fillType] )) {
 				$commodities [$fillType] = array (
-						'overall' => $fillLevel 
+						'overall' => $fillLevel,
+						'farmStorage' => $fillLevel 
+				);
+			} elseif (! isset ( $commodities [$fillType] ['farmStorage'] )) {
+				$commodities [$fillType] ['overall'] += $fillLevel;
+				$commodities [$fillType] += array (
+						'farmStorage' => $fillLevel 
 				);
 			} else {
 				$commodities [$fillType] ['overall'] += $fillLevel;
+				$commodities [$fillType] ['farmStorage'] += $fillLevel;
 			}
 		}
 	}
@@ -52,14 +71,25 @@ foreach ( $savegame->onCreateLoadedObject as $object ) {
 		$in = $object->Rohstoff;
 		$out = $object->Produkt;
 		$fillType = translate ( $in ['Name'] );
-		$paletStorage [$fillType] = intval ( $in ['Lvl'] + $out ['Lvl'] );
+		$fillLevel = intval ( $in ['Lvl'] + $out ['Lvl'] );
+		if (! isset ( $commodities [$fillType] )) {
+			$commodities [$fillType] = array (
+					'overall' => $fillLevel,
+					'palletStorage' => $fillLevel 
+			);
+		} elseif (! isset ( $commodities [$fillType] ['palletStorage'] )) {
+			$commodities [$fillType] ['overall'] += $fillLevel;
+			$commodities [$fillType] += array (
+					'palletStorage' => $fillLevel 
+			);
+		} else {
+			$commodities [$fillType] ['overall'] += $fillLevel;
+			$commodities [$fillType] ['palletStorage'] += $fillLevel;
+		}
 	}
 }
-
-uksort ( $commodities, array (
-		Collator::create ( 'de_DE' ),
-		'compare' 
-) );
+// var_dump ( $commodities );
+ksort ( $commodities, SORT_LOCALE_STRING );
 $smarty->assign ( 'commodities', $commodities );
 /*
 $items = $farmStorage = $paletStorage = array ();

@@ -15,6 +15,22 @@ $plants = array (
 						'fillTypes' => 'woodChips',
 						'name' => 'woodChips' 
 				) 
+		),
+		'' => array (
+				'ProduktPerHour' => 0,
+				'factoryName' => '',
+				'Rohstoff' => array (
+						'capacity' => 0,
+						'factor' => 1,
+						'fillTypes' => '',
+						'name' => '' 
+				),
+				'Produkt' => array (
+						'capacity' => 0,
+						'factor' => 1,
+						'fillTypes' => '',
+						'name' => '' 
+				) 
 		) 
 );
 function createCommodity() {
