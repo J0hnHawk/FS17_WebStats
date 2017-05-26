@@ -154,5 +154,12 @@ $lang = array_merge ( $lang, array (
 		'FabrikScript_Schweinefutterstation' => 'Schweinefutterstation',
 		'FabrikScript_WeizenMehlfabrik' => 'Mehlfabrik (Weizen)',
 		'FabrikScript_Zellstoff_Fabrik' => 'Zellstofffabrik',
-		'FabrikScript_Zuckerfabrik' => 'Zuckerfabrik' 
+		'FabrikScript_Zuckerfabrik' => 'Zuckerfabrik',
+		'FabrikScript_Saatgut' => 'Saatgutlager',
+		'FabrikScript_zuckerrueben' => 'Zuckerrübenlager (Hof)',
+		'FabrikScript_kartoffellager' => 'Lagerhalle (Hof)',
+		'FabrikScript_kartoffellager2' => 'Lagerhalle (Waschanlage)',
+		'FabrikScript_Fertilizer' => 'Düngerlager',
+		'farmStorage' => 'Hofsilo',
+		'onMap' => 'Landschaft'
 ) );
