@@ -70,9 +70,9 @@ function getLocation($position) {
 		return 'FabrikScript_obst_apfel';
 	if ($posx > 877.5 && $posx < 893.8 && $posz > - 893.1 && $posz < - 888.9)
 		return 'FabrikScript_obst_birne';
-	if ($posx > 877.6 && $posx < 893.8 && $posz > -906.3 && $posz < -902.0)
+	if ($posx > 877.6 && $posx < 893.8 && $posz > - 906.3 && $posz < - 902.0)
 		return 'FabrikScript_obst_kirsche';
-	if ($posx > 877.6 && $posx < 893.8 && $posz > -918.4 && $posz < -914.2)
+	if ($posx > 877.6 && $posx < 893.8 && $posz > - 918.4 && $posz < - 914.2)
 		return 'FabrikScript_obst_pflaume';
 	return 'onMap';
 }
@@ -167,61 +167,5 @@ foreach ( $savegame->onCreateLoadedObject as $object ) {
 		}
 	}
 }
-// var_dump ( $commodities );
 ksort ( $commodities, SORT_LOCALE_STRING );
 $smarty->assign ( 'commodities', $commodities );
-/*
-$items = $farmStorage = $paletStorage = array ();
-foreach ( $savegame->item as $item ) {
-	$fillType = false;
-	if (in_array ( $item ['className'], $classNames )) {
-		if (isset ( $item ['i3dFilename'] ))
-			$fillType = getFillType ( $item ['i3dFilename'] );
-		else
-			$fillType = getFillType ( $item ['filename'] );
-	}
-	if ($fillType) {
-		$fillLevel = $item ['fillLevel'];
-		if (isset ( $items [$fillType] )) {
-			$items [$fillType] ['count'] ++;
-			$items [$fillType] ['fillLevel'] += intval ( $fillLevel );
-		} else {
-			$items [$fillType] = array (
-					'count' => 1,
-					'fillLevel' => intval ( $fillLevel ),
-					'outOfMap' => false 
-			);
-		}
-		// Schauen, ob Ballen oder Paletten ausserhalb der Karte
-		list ( $posx, $posy, $posz ) = explode ( ' ', $item ['position'] );
-		if ($posx < - 1071 || $posx > 1071)
-			$items [$fillType] ['outOfMap'] = true;
-		if ($posy < 0 || $posy > 255)
-			$items [$fillType] ['outOfMap'] = true;
-		if ($posz < - 1071 || $posz > 1071)
-			$items [$fillType] ['outOfMap'] = true;
-	}
-}
-ksort ( $items );
-$smarty->assign ( 'items', $items );
-
-foreach ( $savegame->onCreateLoadedObject as $object ) {
-	if ($object ['saveId'] == 'Storage_storage1') {
-		foreach ( $object->node as $node ) {
-			$fillType = translate ( $node ['fillType'] );
-			$farmStorage [$fillType] = intval ( $node ['fillLevel'] );
-		}
-	}
-	if (strpos ( $object ['saveId'], 'FabrikScript_Lager' ) !== false) {
-		$in = $object->Rohstoff;
-		$out = $object->Produkt;
-		$fillType = translate ( $in ['Name'] );
-		$paletStorage [$fillType] = intval ( $in ['Lvl'] + $out ['Lvl'] );
-	}
-}
-
-ksort ( $farmStorage );
-ksort ( $paletStorage );
-$smarty->assign ( 'farmStorage', $farmStorage );
-$smarty->assign ( 'paletStorage', $paletStorage );
-*/

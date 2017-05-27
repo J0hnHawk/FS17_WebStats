@@ -77,7 +77,7 @@ $lang = array_merge ( $lang, array (
 		'palletPoplar' => 'palletPoplar',
 		'treeSaplingPallet' => 'treeSaplingPallet',
 		'FS_Seeds' => 'Saatgut',
-		'FS_fertilizer' => 'Dünger'
+		'FS_fertilizer' => 'Dünger' 
 ) );
 
 // Ballen
@@ -163,5 +163,5 @@ $lang = array_merge ( $lang, array (
 		'FabrikScript_Lager' => 'Palettenlager',
 		'farmStorage' => 'Hofsilo',
 		'onMap' => 'Landschaft',
-		'Schafweide' => 'Schafweide'
+		'Schafweide' => 'Schafweide' 
 ) );
