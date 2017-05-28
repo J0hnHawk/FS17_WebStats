@@ -6,7 +6,7 @@ if (! defined ( 'IN_NFMWS' )) {
 if (empty ( $lang ) || ! is_array ( $lang )) {
 	$lang = array ();
 }
-// Fruchtsorten
+// Waren
 $lang = array_merge ( $lang, array (
 		'wheat' => 'Weizen',
 		'barley' => 'Gerste',
@@ -26,16 +26,12 @@ $lang = array_merge ( $lang, array (
 		'compost' => 'Kompost',
 		'grass_windrow' => 'Gras',
 		'potato' => 'Kartoffeln',
-		'sugarBeet' => 'Zuckerrüben' 
-) );
-
-// Paletten
-$lang = array_merge ( $lang, array (
+		'sugarBeet' => 'Zuckerrüben',
 		'palettepapier' => 'Papier',
 		'palette_karton' => 'Karton',
 		'emptypallet' => 'Leere Paletten',
-		'Apfelpalette' => 'Äpfel',
-		'palette_apfel' => 'Äpfel',
+		'Apfelpalette' => 'Apfel',
+		'palette_apfel' => 'Apfel',
 		'Birnenpalette' => 'Birnen',
 		'palette_birne' => 'Birnen',
 		'Kirschpalette' => 'Kirschen',
@@ -75,20 +71,12 @@ $lang = array_merge ( $lang, array (
 		'fertilizerTank' => 'Flüssigdünger',
 		'bigBagContainerPigFood' => 'Schweinefutter',
 		'palletPoplar' => 'palletPoplar',
-		'treeSaplingPallet' => 'treeSaplingPallet',
+		'treeSaplingPallet' => 'Baumsetzlinge',
 		'FS_Seeds' => 'Saatgut',
-		'FS_fertilizer' => 'Dünger' 
-) );
-
-// Ballen
-$lang = array_merge ( $lang, array (
+		'FS_fertilizer' => 'Dünger',
 		'baleStraw240' => 'Stroh',
 		'baleHay240' => 'Heu',
-		'baleGrass240' => 'Gras' 
-) );
-
-// Produktionsstätten
-$lang = array_merge ( $lang, array (
+		'baleGrass240' => 'Gras',
 		'seeds' => 'Saatgut',
 		'grain' => 'Getreide',
 		'fertilizer' => 'Dünger',
@@ -124,7 +112,11 @@ $lang = array_merge ( $lang, array (
 		'Hackschnitzel' => 'Hackschnitzel',
 		'Diesel' => 'Diesel',
 		'Kartoffeln' => 'Kartoffeln',
-		'Wasser' => 'Wasser' 
+		'Wasser' => 'Wasser',
+		'liquidFertilizer' => 'Flüssigdünger',
+		'milk' => 'Milch',
+		'water' => 'Wasser',
+		'treeSaplings' => 'Baumsetzlinge' 
 ) );
 
 // Produktionsstätten
@@ -163,5 +155,6 @@ $lang = array_merge ( $lang, array (
 		'FabrikScript_Lager' => 'Palettenlager',
 		'farmStorage' => 'Hofsilo',
 		'onMap' => 'Landschaft',
-		'Schafweide' => 'Schafweide' 
+		'Schafweide' => 'Schafweide',
+		'HayLoftPlaceable' => 'Wurzelfruchtlager (platzierbar)' 
 ) );

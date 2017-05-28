@@ -1,5 +1,5 @@
 <div class="page-header">
-	<h3>Lagerbestände</h3>
+	<h3>Lagerbestände<small class="pull-right"><a href="#" data-toggle="modal" data-target="#myModal"><span class="glyphicon glyphicon-cog" aria-hidden="true"></span> Einstellungen</a></small></h3>
 </div>
 <div class="row">
 	{$col1max = ($commodities|@count/3)|ceil} {$col2max = $col1max + $col1max}
@@ -128,4 +128,25 @@
 			</tbody>
 		</table>
 	</div>
+</div>
+
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Einstellungen</h4>
+      </div>
+      <div class="modal-body">
+                <p>Sortierung&hellip;</p>
+        <p>Leerstadn&hellip;</p>
+        <p>Fahrzeuge&hellip;</p>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Schließen</button>
+        <button type="button" class="btn btn-primary">Speichern</button>
+      </div>
+    </div>
+  </div>
 </div>

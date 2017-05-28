@@ -4,6 +4,7 @@ if (! defined ( 'IN_NFMWS' )) {
 }
 
 $hideZero = true;
+$showVehicles = true;
 $commodities = array ();
 $classNames = array (
 		"FillablePallet",
@@ -134,7 +135,42 @@ foreach ( $savegame->item as $item ) {
 			addCommodity ( $fillType, $fillLevel, $location, $className );
 		}
 	}
-	if($location=='{outOfMap}') $commodities[$fillType]['outOfMap'] = true;
+	if ($location == '{outOfMap}') {
+		$commodities [$fillType] ['outOfMap'] = true;
+	}
+	// Platzierbares Wurzelfruchtlager
+	if ($className == 'HayLoftPlaceable') {
+		$location = translate ( 'HayLoftPlaceable' );
+		foreach ( $item as $node ) {
+			$fillType = translate ( $node ['fillType'] );
+			$fillLevel = $node ['fillLevel'];
+			if ($hideZero && $fillLevel == 0) {
+				continue;
+			} else {
+				addCommodity ( $fillType, $fillLevel, $location );
+			}
+		}
+	}
+}
+
+// Fahrzeuge
+if ($showVehicles) {
+	foreach ( $stats->Vehicles->Vehicle as $vehicle ) {
+		if (isset ( $vehicle ['fillTypes'] )) {
+			$location = strval ( $vehicle ['name'] );
+			$fillTypes = explode ( ' ', $vehicle ['fillTypes'] );
+			$fillLevels = explode ( ' ', $vehicle ['fillLevels'] );
+			foreach ( $fillTypes as $key => $fillType ) {
+				$fillType = translate ( $fillType );
+				$fillLevel = intval ( $fillLevels [$key] );
+				if ($hideZero && $fillLevel == 0 || $fillType == '{unknown}') {
+					continue;
+				} else {
+					addCommodity ( $fillType, $fillLevel, $location );
+				}
+			}
+		}
+	}
 }
 
 foreach ( $savegame->onCreateLoadedObject as $object ) {
