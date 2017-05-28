@@ -13,7 +13,7 @@
 			</thead>
 			<tbody>
 				{foreach from=$commodities key=$fillType item=$fillLevels} {if $fillLevels@iteration <= $col1max} {$stripFillType = $fillType|strip:""}
-				<tr data-toggle="collapse" href="#collapse{$stripFillType}">
+				<tr data-toggle="collapse" href="#collapse{$stripFillType}" {if isset($fillLevels.outOfMap)}class="danger"{/if}>
 					<td>{$fillType}</td>
 					<td class="text-right">{$fillLevels.overall|number_format:0:",":"."}</td>
 				</tr>
@@ -28,7 +28,7 @@
 								</tr>
 							</thead>
 							<tbody>
-								{foreach from=$fillLevels key=$location item=$fillLevel} {if $location=="overall"}{continue}{/if} {$addInfo=false} {if
+								{foreach from=$fillLevels key=$location item=$fillLevel} {if $location=="overall"||$location=="outOfMap"}{continue}{/if} {$addInfo=false} {if
 								isset($fillLevel.FillablePallet)}{if $fillLevel.FillablePallet==1}{$addInfo="1 Palette"}{else}{$addInfo="{$fillLevel.FillablePallet} Paletten"}{/if}{/if} {if
 								isset($fillLevel.Bale)}{$addInfo="{$fillLevel.Bale} Ballen"}{/if}
 								<tr>
@@ -70,7 +70,7 @@
 								</tr>
 							</thead>
 							<tbody>
-								{foreach from=$fillLevels key=$location item=$fillLevel} {if $location=="overall"}{continue}{/if} {$addInfo=false} {if
+								{foreach from=$fillLevels key=$location item=$fillLevel} {if $location=="overall"||$location=="outOfMap"}{continue}{/if} {$addInfo=false} {if
 								isset($fillLevel.FillablePallet)}{if $fillLevel.FillablePallet==1}{$addInfo="1 Palette"}{else}{$addInfo="{$fillLevel.FillablePallet} Paletten"}{/if}{/if} {if
 								isset($fillLevel.Bale)}{$addInfo="{$fillLevel.Bale} Ballen"}{/if}
 								<tr>
@@ -112,7 +112,7 @@
 								</tr>
 							</thead>
 							<tbody>
-								{foreach from=$fillLevels key=$location item=$fillLevel} {if $location=="overall"}{continue}{/if} {$addInfo=false} {if
+								{foreach from=$fillLevels key=$location item=$fillLevel} {if $location=="overall"||$location=="outOfMap"}{continue}{/if} {$addInfo=false} {if
 								isset($fillLevel.FillablePallet)}{if $fillLevel.FillablePallet==1}{$addInfo="1 Palette"}{else}{$addInfo="{$fillLevel.FillablePallet} Paletten"}{/if}{/if} {if
 								isset($fillLevel.Bale)}{$addInfo="{$fillLevel.Bale} Ballen"}{/if}
 								<tr>

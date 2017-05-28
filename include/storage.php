@@ -134,6 +134,7 @@ foreach ( $savegame->item as $item ) {
 			addCommodity ( $fillType, $fillLevel, $location, $className );
 		}
 	}
+	if($location=='{outOfMap}') $commodities[$fillType]['outOfMap'] = true;
 }
 
 foreach ( $savegame->onCreateLoadedObject as $object ) {
