@@ -1,5 +1,5 @@
 <?php
-$xmlStr = file_get_contents ( './config/map01.i3d' );
+$xmlStr = file_get_contents ( './map01.i3d' );
 $xml = simplexml_load_string ( $xmlStr );
 $i = 0;
 $produktion = $AttributeNodes = array ();
@@ -50,7 +50,7 @@ function analyze($item) {
 	$produktion [intval ( $item ['nodeId'] )] ['name'] = strval ( $item ['name'] );
 	foreach ( $item->TransformGroup as $TransformGroup1 ) {
 		foreach ( $TransformGroup1->TransformGroup as $TransformGroup ) {
-			if (strpos ( $TransformGroup ['name'], 'Rohstoff' ) !== false || strpos ( $TransformGroup ['name'], 'Produkt' ) !== false) {
+			if (strpos ( $TransformGroup ['name'], 'Rohstoff' ) !== false || strpos ( $TransformGroup ['name'], 'Produkt' ) !== false || strpos ( $TransformGroup ['name'], 'Output' ) !== false) {
 				$nodeId = intval ( $TransformGroup ['nodeId'] );
 				$produktion [intval ( $item ['nodeId'] )] [strval ( $TransformGroup ['name'] )] = array (
 						'nodeId' => $nodeId 
@@ -89,10 +89,60 @@ foreach ( $xml->UserAttributes->UserAttribute as $UserAttribute ) {
 // Rohstoff- und Produktdetails mit Produktionsanlagen "verheiraten"
 foreach ( $produktion as $prodId => $prodDetails ) {
 	foreach ( $prodDetails as $item => $value ) {
-		if (strpos ( $item, 'Rohstoff' ) !== false || strpos ( $item, 'Produkt' ) !== false) {
+		if (strpos ( $item, 'Rohstoff' ) !== false || strpos ( $item, 'Produkt' ) !== false || strpos ( $item, 'Output' ) !== false) {
 			$produktion [$prodId] [$item] = $AttributeValues [$value ['nodeId']];
 		}
 	}
 }
 
-var_dump ( $produktion );
+// var_dump ( $produktion );
+
+echo ('$mapconfig = array(');
+foreach ( $produktion as $item ) {
+	echo ('array (');
+	echo ("'name' => 'FabrikScript_{$item['name']}',");
+	echo ("'ProdPerHour' => {$item['ProdPerHour']},");
+	echo ("'rawMaterial' => array(");
+	for($i = 1; $i < 6; $i ++) {
+		if (isset ( $item ["Rohstoff$i"] )) {
+			echo ('array (');
+			echo ("'capacity' => {$item["Rohstoff$i"]['capacity']},");
+			if (isset ( $item ["Rohstoff$i"] ['factor'] )) {
+				echo ("'factor' => {$item["Rohstoff$i"]['factor']},");
+			} else {
+				echo ("'factor' => 1,");
+			}
+			echo ("'fillTypes' => '{$item["Rohstoff$i"]['fillTypes']}',");
+			echo ("'name' => '{$item["Rohstoff$i"]['name']}',");
+			echo ("'showin' => ''");
+			echo ('),');
+		}
+	}
+	echo ('),');
+	echo ("'product' => array(");
+	if (isset ( $item ["Produkt1"] )) {
+		$output = 'Produkt';
+	} else {
+		$output = 'Output';
+	}
+	for($i = 1; $i < 6; $i ++) {
+		if (isset ( $item ["$output$i"] )) {
+			echo ('array (');
+			echo ("'capacity' => {$item["$output$i"]['capacity']},");
+			if (isset ( $item ["$output$i"] ['factor'] )) {
+				echo ("'factor' => {$item["$output$i"]['factor']},");
+			} else {
+				echo ("'factor' => 1,");
+			}
+			echo ("'name' => '{$item["$output$i"]['name']}',");
+			echo ("'showin' => ''");
+			echo ('),');
+		}
+	}
+	echo ('),');
+	echo ('),');
+}
+echo (');');
+
+
+

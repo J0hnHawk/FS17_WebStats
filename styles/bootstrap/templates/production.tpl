@@ -5,6 +5,28 @@
 	</h3>
 </div>
 <div class="row">
+	<div class="col-sm-12">
+		<table class="table table-hover">
+			<thead>
+				<tr>
+					<th>Produktionsanlage</th>
+					<th>Rohstoff(e)</th>
+					<th>Produkt(e)</th>
+				</tr>
+			</thead>
+			<tbody>
+				{foreach from=$plants key=$plant item=$inout}
+				<tr>
+					<td>{$plant}</td>
+					<td>{foreach from=$inout.input key=$fillType item=$fillLevel}{$fillType}, {/foreach}</td>
+					<td>{foreach from=$inout.output key=$fillType item=$fillLevel}{$fillType}, {/foreach}</td>
+				</tr>
+				{/foreach}
+			</tbody>
+		</table>
+	</div>
+</div>
+<div class="row">
 	{foreach from=$plants key=$plant item=$inout}
 	<div class="col-sm-6">
 		<div class="panel panel-{$inout.class}">
@@ -57,7 +79,7 @@
 							</label>
 						</div>
 					</div>
-				
+			
 			</div>
 			<div class="modal-footer">
 				<button type="button" class="btn btn-default" data-dismiss="modal">Schließen</button>

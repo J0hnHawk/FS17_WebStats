@@ -143,7 +143,7 @@ array(54) {
     }
   }
   [38705]=>
-  array(5) {
+  array(8) {
     ["ProdPerHour"]=>
     int(20000)
     ["name"]=>
@@ -181,9 +181,36 @@ array(54) {
       ["name"]=>
       string(14) "palette_karton"
     }
+    ["Output1"]=>
+    array(3) {
+      ["capacity"]=>
+      int(500000)
+      ["factor"]=>
+      float(0.3)
+      ["name"]=>
+      string(10) "RS_compost"
+    }
+    ["Output2"]=>
+    array(3) {
+      ["capacity"]=>
+      int(300000)
+      ["factor"]=>
+      float(0.6)
+      ["name"]=>
+      string(9) "RM_Output"
+    }
+    ["Output3"]=>
+    array(3) {
+      ["capacity"]=>
+      int(5000)
+      ["factor"]=>
+      float(0.4)
+      ["name"]=>
+      string(16) "palettespeiseoel"
+    }
   }
   [40314]=>
-  array(3) {
+  array(5) {
     ["ProdPerHour"]=>
     int(40000)
     ["name"]=>
@@ -199,9 +226,27 @@ array(54) {
       ["name"]=>
       string(7) "Tip_RS1"
     }
+    ["Output1"]=>
+    array(3) {
+      ["capacity"]=>
+      int(400000)
+      ["factor"]=>
+      float(0.26)
+      ["name"]=>
+      string(11) "RS_compost1"
+    }
+    ["Output2"]=>
+    array(3) {
+      ["capacity"]=>
+      int(400000)
+      ["factor"]=>
+      float(0.65)
+      ["name"]=>
+      string(10) "RM_Output2"
+    }
   }
   [40524]=>
-  array(3) {
+  array(4) {
     ["ProdPerHour"]=>
     int(5000)
     ["name"]=>
@@ -217,9 +262,18 @@ array(54) {
       ["name"]=>
       string(11) "Tip_RSwheat"
     }
+    ["Output1"]=>
+    array(3) {
+      ["capacity"]=>
+      int(5000)
+      ["factor"]=>
+      float(0.5)
+      ["name"]=>
+      string(11) "mehlpalette"
+    }
   }
   [40748]=>
-  array(3) {
+  array(4) {
     ["ProdPerHour"]=>
     int(5000)
     ["name"]=>
@@ -235,9 +289,18 @@ array(54) {
       ["name"]=>
       string(12) "Tip_RSbarley"
     }
+    ["Output1"]=>
+    array(3) {
+      ["capacity"]=>
+      int(5000)
+      ["factor"]=>
+      float(0.5)
+      ["name"]=>
+      string(11) "mehlpalette"
+    }
   }
   [40937]=>
-  array(3) {
+  array(4) {
     ["ProdPerHour"]=>
     int(5000)
     ["name"]=>
@@ -253,9 +316,18 @@ array(54) {
       ["name"]=>
       string(9) "Tip_RSrye"
     }
+    ["Output1"]=>
+    array(3) {
+      ["capacity"]=>
+      int(5000)
+      ["factor"]=>
+      float(0.5)
+      ["name"]=>
+      string(11) "mehlpalette"
+    }
   }
   [41188]=>
-  array(4) {
+  array(5) {
     ["ProdPerHour"]=>
     int(15000)
     ["name"]=>
@@ -282,9 +354,18 @@ array(54) {
       ["name"]=>
       string(11) "Tip_RSwater"
     }
+    ["Output1"]=>
+    array(3) {
+      ["capacity"]=>
+      int(5000)
+      ["factor"]=>
+      float(0.5)
+      ["name"]=>
+      string(13) "zuckerpalette"
+    }
   }
   [41451]=>
-  array(4) {
+  array(5) {
     ["ProdPerHour"]=>
     int(5000)
     ["name"]=>
@@ -310,6 +391,15 @@ array(54) {
       string(5) "water"
       ["name"]=>
       string(11) "Tip_RSwater"
+    }
+    ["Output1"]=>
+    array(3) {
+      ["capacity"]=>
+      int(5000)
+      ["factor"]=>
+      float(1)
+      ["name"]=>
+      string(11) "brotpalette"
     }
   }
   [42708]=>
@@ -347,7 +437,7 @@ array(54) {
     }
   }
   [44739]=>
-  array(6) {
+  array(7) {
     ["ProdPerHour"]=>
     int(5000)
     ["name"]=>
@@ -396,9 +486,18 @@ array(54) {
       ["name"]=>
       string(11) "Tip_RSwater"
     }
+    ["Output1"]=>
+    array(3) {
+      ["capacity"]=>
+      int(5000)
+      ["factor"]=>
+      float(0.5)
+      ["name"]=>
+      string(17) "bierpalettekasten"
+    }
   }
   [45776]=>
-  array(6) {
+  array(7) {
     ["ProdPerHour"]=>
     int(5000)
     ["name"]=>
@@ -447,9 +546,18 @@ array(54) {
       ["name"]=>
       string(11) "Tip_RSwater"
     }
+    ["Output1"]=>
+    array(3) {
+      ["capacity"]=>
+      int(5000)
+      ["factor"]=>
+      float(0.5)
+      ["name"]=>
+      string(15) "bierpalettefass"
+    }
   }
   [46890]=>
-  array(6) {
+  array(11) {
     ["ProdPerHour"]=>
     int(5000)
     ["name"]=>
@@ -497,6 +605,51 @@ array(54) {
       string(6) "papier"
       ["name"]=>
       string(13) "palettepapier"
+    }
+    ["Output1"]=>
+    array(3) {
+      ["capacity"]=>
+      int(5000)
+      ["factor"]=>
+      float(0.25)
+      ["name"]=>
+      string(13) "palettebutter"
+    }
+    ["Output2"]=>
+    array(3) {
+      ["capacity"]=>
+      int(5000)
+      ["factor"]=>
+      float(0.25)
+      ["name"]=>
+      string(12) "palettemilch"
+    }
+    ["Output3"]=>
+    array(3) {
+      ["capacity"]=>
+      int(5000)
+      ["factor"]=>
+      float(0.25)
+      ["name"]=>
+      string(12) "palettesahne"
+    }
+    ["Output4"]=>
+    array(3) {
+      ["capacity"]=>
+      int(5000)
+      ["factor"]=>
+      float(0.25)
+      ["name"]=>
+      string(12) "palettequark"
+    }
+    ["Output5"]=>
+    array(3) {
+      ["capacity"]=>
+      int(5000)
+      ["factor"]=>
+      float(0.25)
+      ["name"]=>
+      string(13) "paletteyogurt"
     }
   }
   [51951]=>
@@ -786,7 +939,7 @@ array(54) {
     }
   }
   [59761]=>
-  array(6) {
+  array(9) {
     ["ProdPerHour"]=>
     int(10000)
     ["name"]=>
@@ -834,6 +987,33 @@ array(54) {
       string(3) "oel"
       ["name"]=>
       string(16) "palettespeiseoel"
+    }
+    ["Output1"]=>
+    array(3) {
+      ["capacity"]=>
+      int(5000)
+      ["factor"]=>
+      float(0.35)
+      ["name"]=>
+      string(12) "palettechips"
+    }
+    ["Output2"]=>
+    array(3) {
+      ["capacity"]=>
+      int(5000)
+      ["factor"]=>
+      float(0.35)
+      ["name"]=>
+      string(13) "palettepommes"
+    }
+    ["Output3"]=>
+    array(3) {
+      ["capacity"]=>
+      int(5000)
+      ["factor"]=>
+      float(0.35)
+      ["name"]=>
+      string(20) "palettekartoffelsack"
     }
   }
   [66216]=>
@@ -1455,7 +1635,7 @@ array(54) {
     }
   }
   [177821]=>
-  array(3) {
+  array(4) {
     ["ProdPerHour"]=>
     int(2147483647)
     ["name"]=>
@@ -1471,9 +1651,18 @@ array(54) {
       ["name"]=>
       string(13) "FS_fertilizer"
     }
+    ["Output1"]=>
+    array(3) {
+      ["capacity"]=>
+      int(500000)
+      ["factor"]=>
+      float(1)
+      ["name"]=>
+      string(13) "FS_fertilizer"
+    }
   }
   [177900]=>
-  array(3) {
+  array(4) {
     ["ProdPerHour"]=>
     int(2147483647)
     ["name"]=>
@@ -1489,9 +1678,18 @@ array(54) {
       ["name"]=>
       string(8) "FS_Seeds"
     }
+    ["Output1"]=>
+    array(3) {
+      ["capacity"]=>
+      int(500000)
+      ["factor"]=>
+      float(1)
+      ["name"]=>
+      string(8) "FS_Seeds"
+    }
   }
   [177980]=>
-  array(3) {
+  array(4) {
     ["ProdPerHour"]=>
     int(2147483647)
     ["name"]=>
@@ -1504,6 +1702,15 @@ array(54) {
       float(1)
       ["fillTypes"]=>
       string(7) "pigFood"
+      ["name"]=>
+      string(14) "Schweinefutter"
+    }
+    ["Output1"]=>
+    array(3) {
+      ["capacity"]=>
+      int(500000)
+      ["factor"]=>
+      float(1)
       ["name"]=>
       string(14) "Schweinefutter"
     }
@@ -1717,4 +1924,3 @@ array(54) {
     }
   }
 }
-
