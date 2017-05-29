@@ -11,15 +11,19 @@ error_reporting ( E_ALL );
 setlocale ( LC_ALL, 'de_DE@euro', 'de_DE', 'de', 'ge' );
 require ('./include/xmlTools.php');
 require ("./config/config.php");
-//srequire ("./include/commodity.php");
+// srequire ("./include/commodity.php");
 require ('./smarty/Smarty.class.php');
 require ('./include/functions.php');
 include ("./language/de.php");
-$stats =    getServerStatsSimpleXML ( sprintf ( $serverAddress, 'dedicated-server-stats.xml?' ) );
-$savegame = getServerStatsSimpleXML ( sprintf ( $serverAddress, 'dedicated-server-savegame.html?file=vehicles&') );
-$savegame2 = getServerStatsSimpleXML ( sprintf ( $serverAddress, 'dedicated-server-savegame.html?file=CommodityPrices&') );
-//http://176.57.155.146:8080/feed/dedicated-server-savegame.html?code=QIWF5Osq&file=CommodityPrices
+$stats = getServerStatsSimpleXML ( sprintf ( $serverAddress, 'dedicated-server-stats.xml?' ) );
+$savegame = getServerStatsSimpleXML ( sprintf ( $serverAddress, 'dedicated-server-savegame.html?file=vehicles&' ) );
+$savegame2 = getServerStatsSimpleXML ( sprintf ( $serverAddress, 'dedicated-server-savegame.html?file=CommodityPrices&' ) );
+// http://176.57.155.146:8080/feed/dedicated-server-savegame.html?code=QIWF5Osq&file=CommodityPrices
 $style = 'bootstrap';
+if (isset ( $_COOKIE ['nfmarsch'] )) {
+	$options = json_decode ( $_COOKIE ['nfmarsch'], true );
+} else
+	$options = array ();
 $pages = array (
 		'status',
 		'storage',

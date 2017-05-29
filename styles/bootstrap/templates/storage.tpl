@@ -1,5 +1,8 @@
 <div class="page-header">
-	<h3>Lagerbestände<small class="pull-right"><a href="#" data-toggle="modal" data-target="#myModal"><span class="glyphicon glyphicon-cog" aria-hidden="true"></span> Einstellungen</a></small></h3>
+	<h3>
+		Lagerbestände<small class="pull-right"><a href="#" data-toggle="modal" data-target="#myModal"><span class="glyphicon glyphicon-cog"
+				aria-hidden="true"></span> Einstellungen</a></small>
+	</h3>
 </div>
 <div class="row">
 	{$col1max = ($commodities|@count/3)|ceil} {$col2max = $col1max + $col1max}
@@ -20,7 +23,7 @@
 				{if $fillLevels.overall>0}
 				<tr class="collapse info" id="collapse{$stripFillType}">
 					<td colspan="3">
-						<table class="table">
+						<table class="table" style="margin-bottom: 0px;">
 							<thead>
 								<tr>
 									<th>Ort</th>
@@ -29,8 +32,8 @@
 							</thead>
 							<tbody>
 								{foreach from=$fillLevels key=$location item=$fillLevel} {if $location=="overall"||$location=="outOfMap"}{continue}{/if} {$addInfo=false} {if
-								isset($fillLevel.FillablePallet)}{if $fillLevel.FillablePallet==1}{$addInfo="1 Palette"}{else}{$addInfo="{$fillLevel.FillablePallet} Paletten"}{/if}{/if} {if
-								isset($fillLevel.Bale)}{$addInfo="{$fillLevel.Bale} Ballen"}{/if}
+								isset($fillLevel.FillablePallet)}{if $fillLevel.FillablePallet==1}{$addInfo="1 Palette"}{else}{$addInfo="{$fillLevel.FillablePallet}
+								Paletten"}{/if}{/if} {if isset($fillLevel.Bale)}{$addInfo="{$fillLevel.Bale} Ballen"}{/if}
 								<tr>
 									<td>{$location}{if $addInfo} ({$addInfo}){/if}</td>
 									<td class="text-right">{$fillLevel.fillLevel|number_format:0:",":"."}</td>
@@ -62,7 +65,7 @@
 				{if $fillLevels.overall>0}
 				<tr class="collapse info" id="collapse{$stripFillType}">
 					<td colspan="3">
-						<table class="table">
+						<table class="table" style="margin-bottom: 0px;">
 							<thead>
 								<tr>
 									<th>Ort</th>
@@ -71,8 +74,8 @@
 							</thead>
 							<tbody>
 								{foreach from=$fillLevels key=$location item=$fillLevel} {if $location=="overall"||$location=="outOfMap"}{continue}{/if} {$addInfo=false} {if
-								isset($fillLevel.FillablePallet)}{if $fillLevel.FillablePallet==1}{$addInfo="1 Palette"}{else}{$addInfo="{$fillLevel.FillablePallet} Paletten"}{/if}{/if} {if
-								isset($fillLevel.Bale)}{$addInfo="{$fillLevel.Bale} Ballen"}{/if}
+								isset($fillLevel.FillablePallet)}{if $fillLevel.FillablePallet==1}{$addInfo="1 Palette"}{else}{$addInfo="{$fillLevel.FillablePallet}
+								Paletten"}{/if}{/if} {if isset($fillLevel.Bale)}{$addInfo="{$fillLevel.Bale} Ballen"}{/if}
 								<tr>
 									<td>{$location}{if $addInfo} ({$addInfo}){/if}</td>
 									<td class="text-right">{$fillLevel.fillLevel|number_format:0:",":"."}</td>
@@ -104,7 +107,7 @@
 				{if $fillLevels.overall>0}
 				<tr class="collapse info" id="collapse{$stripFillType}">
 					<td colspan="3">
-						<table class="table">
+						<table class="table" style="margin-bottom: 0px;">
 							<thead>
 								<tr>
 									<th>Ort</th>
@@ -113,8 +116,8 @@
 							</thead>
 							<tbody>
 								{foreach from=$fillLevels key=$location item=$fillLevel} {if $location=="overall"||$location=="outOfMap"}{continue}{/if} {$addInfo=false} {if
-								isset($fillLevel.FillablePallet)}{if $fillLevel.FillablePallet==1}{$addInfo="1 Palette"}{else}{$addInfo="{$fillLevel.FillablePallet} Paletten"}{/if}{/if} {if
-								isset($fillLevel.Bale)}{$addInfo="{$fillLevel.Bale} Ballen"}{/if}
+								isset($fillLevel.FillablePallet)}{if $fillLevel.FillablePallet==1}{$addInfo="1 Palette"}{else}{$addInfo="{$fillLevel.FillablePallet}
+								Paletten"}{/if}{/if} {if isset($fillLevel.Bale)}{$addInfo="{$fillLevel.Bale} Ballen"}{/if}
 								<tr>
 									<td>{$location}{if $addInfo} ({$addInfo}){/if}</td>
 									<td class="text-right">{$fillLevel.fillLevel|number_format:0:",":"."}</td>
@@ -129,24 +132,57 @@
 		</table>
 	</div>
 </div>
-
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel">Einstellungen</h4>
-      </div>
-      <div class="modal-body">
-                <p>Sortierung&hellip;</p>
-        <p>Leerstadn&hellip;</p>
-        <p>Fahrzeuge&hellip;</p>
-
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Schließen</button>
-        <button type="button" class="btn btn-primary">Speichern</button>
-      </div>
-    </div>
-  </div>
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+				<h4 class="modal-title" id="myModalLabel">Einstellungen</h4>
+			</div>
+			<div class="modal-body">
+				<form class="form-horizontal" action="index.php?page=storage" method="post">
+					<div class="form-group">
+						<label class="col-sm-5 control-label">Sortierung</label>
+						<div class="col-sm-7">
+							<label class="radio-inline">
+								<input type="radio" name="sortByName" value="1"{if $options.sortByName}checked{/if}> alphabetisch
+							</label>
+							<label class="radio-inline">
+								<input type="radio" name="sortByName" value="0"{if !$options.sortByName}checked{/if}> nach Füllstand
+							</label>
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="sortType" class="col-sm-5 control-label">Ladung von Fahrzeugen</label>
+						<div class="col-sm-7">
+							<label class="radio-inline">
+								<input type="radio" name="showVehicles" value="1"{if $options.showVehicles}checked{/if}> anzeigen
+							</label>
+							<label class="radio-inline">
+								<input type="radio" name="showVehicles" value="0"{if !$options.showVehicles}checked{/if}> nicht anzeigen
+							</label>
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="sortType" class="col-sm-5 control-label">Null-Bestände anzeigen</label>
+						<div class="col-sm-7">
+							<label class="radio-inline">
+								<input type="radio" name="hideZero" value="0"{if !$options.hideZero}checked{/if}> ja
+							</label>
+							<label class="radio-inline">
+								<input type="radio" name="hideZero" value="1"{if $options.hideZero}checked{/if}> nein
+							</label>
+						</div>
+					</div>
+				
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal">Schließen</button>
+				<button type="submit" class="btn btn-primary">Speichern</button>
+			</div>
+		</div>
+		</form>
+	</div>
 </div>

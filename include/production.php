@@ -3,6 +3,16 @@ if (! defined ( 'IN_NFMWS' )) {
 	exit ();
 }
 
+if (! isset ( $options ['production'] )) {
+	$options ['production'] ['sortByName'] = true;
+}
+
+if ($_SERVER ['REQUEST_METHOD'] == 'POST') {
+	$options ['production'] ['sortByName'] = filter_var ( GetParam ( 'sortByName', 'P', 1 ), FILTER_VALIDATE_BOOLEAN );
+	setcookie ( 'nfmarsch', json_encode ( $options ), time () + 31536000 );
+}
+
+
 $onCreateLoadedObjects = array (
 		'FabrikScript_Backerei',
 		'FabrikScript_BrauereiFass',
@@ -63,7 +73,8 @@ foreach ( $savegame->onCreateLoadedObject as $object ) {
 }
 //ksort ( $plants, SORT_NATURAL  );
 uksort($plants, "strnatcasecmp");
-if (isset($_COOKIE ['sortType']) && $_COOKIE ['sortType'] == 'fill') {
+if (!$options ['production'] ['sortByName']) {
 	array_multisort ( $sort_fillLevel, SORT_DESC, $plants );
 }
 $smarty->assign ( 'plants', $plants );
+$smarty->assign ( 'options', $options ['production'] );

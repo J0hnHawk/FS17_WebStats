@@ -3,9 +3,21 @@ if (! defined ( 'IN_NFMWS' )) {
 	exit ();
 }
 
-$hideZero = true;
-$showVehicles = true;
-$commodities = array ();
+if (! isset ( $options ['storage'] )) {
+	$options ['storage'] ['sortByName'] = true;
+	$options ['storage'] ['hideZero'] = true;
+	$options ['storage'] ['showVehicles'] = true;
+}
+
+if ($_SERVER ['REQUEST_METHOD'] == 'POST') {
+	$options ['storage'] ['sortByName'] = filter_var ( GetParam ( 'sortByName', 'P', 1 ), FILTER_VALIDATE_BOOLEAN );
+	$options ['storage'] ['hideZero'] = filter_var ( GetParam ( 'hideZero', 'P', 1 ), FILTER_VALIDATE_BOOLEAN );
+	$options ['storage'] ['showVehicles'] = filter_var ( GetParam ( 'showVehicles', 'P', 1 ), FILTER_VALIDATE_BOOLEAN );
+	setcookie ( 'nfmarsch', json_encode ( $options ), time () + 31536000 );
+}
+$hideZero = $options ['storage'] ['hideZero'];
+
+$commodities = $sortFillLevel = array ();
 $classNames = array (
 		"FillablePallet",
 		"Bale" 
@@ -154,7 +166,7 @@ foreach ( $savegame->item as $item ) {
 }
 
 // Fahrzeuge
-if ($showVehicles) {
+if ($options ['storage'] ['showVehicles']) {
 	foreach ( $stats->Vehicles->Vehicle as $vehicle ) {
 		if (isset ( $vehicle ['fillTypes'] )) {
 			$location = strval ( $vehicle ['name'] );
@@ -205,4 +217,13 @@ foreach ( $savegame->onCreateLoadedObject as $object ) {
 	}
 }
 ksort ( $commodities, SORT_LOCALE_STRING );
+
+if (! $options ['storage'] ['sortByName']) {
+	foreach ( $commodities as $commodity ) {
+		$sortFillLevel [] = $commodity ['overall'];
+	}
+	array_multisort ( $sortFillLevel, SORT_DESC, $commodities );
+}
+
 $smarty->assign ( 'commodities', $commodities );
+$smarty->assign ( 'options', $options ['storage'] );
