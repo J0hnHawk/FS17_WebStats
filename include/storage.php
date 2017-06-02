@@ -166,7 +166,7 @@ foreach ( $savegame->item as $item ) {
 }
 
 // Fahrzeuge
-if ($options ['storage'] ['showVehicles']) {
+if ($options ['storage'] ['showVehicles'] && isset ( $stats->Vehicles )) {
 	foreach ( $stats->Vehicles->Vehicle as $vehicle ) {
 		if (isset ( $vehicle ['fillTypes'] )) {
 			$location = strval ( $vehicle ['name'] );
