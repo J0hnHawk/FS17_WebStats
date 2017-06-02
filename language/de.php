@@ -70,6 +70,7 @@ $lang = array_merge ( $lang, array (
 		'bigBagContainerFertilizer' => 'Dünger',
 		'fertilizerTank' => 'Flüssigdünger',
 		'bigBagContainerPigFood' => 'Schweinefutter',
+		'pigFood' => 'Schweinefutter',
 		'palletPoplar' => 'palletPoplar',
 		'treeSaplingPallet' => 'Baumsetzlinge',
 		'FS_Seeds' => 'Saatgut',
@@ -116,7 +117,9 @@ $lang = array_merge ( $lang, array (
 		'liquidFertilizer' => 'Flüssigdünger',
 		'milk' => 'Milch',
 		'water' => 'Wasser',
-		'treeSaplings' => 'Baumsetzlinge' 
+		'treeSaplings' => 'Baumsetzlinge',
+		'palette_fleisch' => 'Fleisch',
+		'palette_wurst' => 'Wurst' 
 ) );
 
 // Produktionsstätten
@@ -144,6 +147,7 @@ $lang = array_merge ( $lang, array (
 		'FabrikScript_RoggenMehlfabrik' => 'Mehlfabrik (Roggen)',
 		'FabrikScript_Saat_Prod' => 'Saatgutproduktion',
 		'FabrikScript_Schweinefutterstation' => 'Schweinefutterstation',
+		'FabrikScript_Schweinefutter' => 'Schweinefutterlager',
 		'FabrikScript_WeizenMehlfabrik' => 'Mehlfabrik (Weizen)',
 		'FabrikScript_Zellstoff_Fabrik' => 'Zellstofffabrik',
 		'FabrikScript_Zuckerfabrik' => 'Zuckerfabrik',
@@ -156,5 +160,6 @@ $lang = array_merge ( $lang, array (
 		'farmStorage' => 'Hofsilo',
 		'onMap' => 'Landschaft',
 		'Schafweide' => 'Schafweide',
-		'HayLoftPlaceable' => 'Wurzelfruchtlager (platzierbar)' 
+		'HayLoftPlaceable' => 'Wurzelfruchtlager (platzierbar)',
+		'FabrikScript_Schlachterei' => 'Schlachter' 
 ) );

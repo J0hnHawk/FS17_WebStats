@@ -28,6 +28,7 @@ $storages = array (
 		'FabrikScript_kartoffellager',
 		'FabrikScript_kartoffellager2',
 		'FabrikScript_Fertilizer',
+		'FabrikScript_Schweinefutter',
 		'FabrikScript_Lager' 
 );
 function getLocation($position) {
@@ -78,7 +79,6 @@ function getLocation($position) {
 		return 'FabrikScript_Paletten_Fabrik';
 	if ($posx > 960.1 && $posx < 961.7 && $posz > 663.1 && $posz < 683.3)
 		return 'FabrikScript_Fabrik';
-	
 	if ($posx > 877.6 && $posx < 893.8 && $posz > - 880.3 && $posz < - 876.1)
 		return 'FabrikScript_obst_apfel';
 	if ($posx > 877.5 && $posx < 893.8 && $posz > - 893.1 && $posz < - 888.9)
@@ -87,6 +87,10 @@ function getLocation($position) {
 		return 'FabrikScript_obst_kirsche';
 	if ($posx > 877.6 && $posx < 893.8 && $posz > - 918.4 && $posz < - 914.2)
 		return 'FabrikScript_obst_pflaume';
+	if ($posx > - 618.0 && $posx < - 601.8 && $posz > - 118.4 && $posz < - 114.2)
+		return 'FabrikScript_Schlachterei';
+	if ($posx > - 618.0 && $posx < - 601.8 && $posz > - 113.0 && $posz < - 108.8)
+		return 'FabrikScript_Schlachterei';
 	return 'onMap';
 }
 function getFillType($uri) {

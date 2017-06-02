@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-<meta name="description" content="WebStats für die Mod Map Nordfriesische Marsch 2.5">
+<meta name="description" content="WebStats für die Mod Map Nordfriesische Marsch 2.6">
 <meta name="author" content="John Hawk">
 <link rel="icon" href="{#PfadIMG#}favicon.ico">
 <title>NF Marsch 2.5 WebStats</title>

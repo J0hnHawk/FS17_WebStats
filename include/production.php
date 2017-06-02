@@ -12,7 +12,6 @@ if ($_SERVER ['REQUEST_METHOD'] == 'POST') {
 	setcookie ( 'nfmarsch', json_encode ( $options ), time () + 31536000 );
 }
 
-
 $onCreateLoadedObjects = array (
 		'FabrikScript_Backerei',
 		'FabrikScript_BrauereiFass',
@@ -39,7 +38,8 @@ $onCreateLoadedObjects = array (
 		'FabrikScript_Schweinefutterstation',
 		'FabrikScript_WeizenMehlfabrik',
 		'FabrikScript_Zellstoff_Fabrik',
-		'FabrikScript_Zuckerfabrik' 
+		'FabrikScript_Zuckerfabrik',
+		'FabrikScript_Schlachterei' 
 );
 $plants = $sort_name = $sort_fillLevel = array ();
 
@@ -71,9 +71,9 @@ foreach ( $savegame->onCreateLoadedObject as $object ) {
 		$sort_fillLevel [] = $sort_state;
 	}
 }
-//ksort ( $plants, SORT_NATURAL  );
-uksort($plants, "strnatcasecmp");
-if (!$options ['production'] ['sortByName']) {
+// ksort ( $plants, SORT_NATURAL );
+uksort ( $plants, "strnatcasecmp" );
+if (! $options ['production'] ['sortByName']) {
 	array_multisort ( $sort_fillLevel, SORT_DESC, $plants );
 }
 $smarty->assign ( 'plants', $plants );
