@@ -43,7 +43,7 @@ function getServerStatsSimpleXML($url) {
 	$pathParts = pathinfo ( $urlParts ['path'] );
 	parse_str ( $urlParts ["query"], $pathQuery );
 	$cacheFile = './cache/' . $pathParts ['filename'] . (isset ( $pathQuery ['file'] ) ? '-' . $pathQuery ['file'] : '') . '.cached';
-	$cacheTimeout = 45; // ursprünglich: 60 * 2
+	$cacheTimeout = 5; // ursprünglich: 60 * 2
 	if (file_exists ( $cacheFile ) && filemtime ( $cacheFile ) > (time () - ($cacheTimeout) + rand ( 0, 10 ))) {
 		$xmlStr = file_get_contents ( $cacheFile );
 	} else {

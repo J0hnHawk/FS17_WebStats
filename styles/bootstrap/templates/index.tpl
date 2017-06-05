@@ -35,7 +35,7 @@
 					<h4 class="modal-title">Nordfriesische Marsch 2.4 WebStats</h4>
 				</div>
 				<div class="modal-body">
-					<p>Version 0.1.0</p>
+					<p>Version 1.0-1</p>
 					<p>Copyright (c) 2017, John Hawk</p>
 					<p>Webseite zur Anzeige des Serverstatus sowie Überwachung der Produktionsanlagen und Lagerbestände.</p>
 					<p>

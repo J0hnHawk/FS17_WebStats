@@ -23,7 +23,7 @@ $savegame = getServerStatsSimpleXML ( sprintf ( $serverAddress, 'dedicated-serve
 $style = 'bootstrap';
 
 // Cookie mit Einstellungen laden
-$cookieVersion = 1; 
+$cookieVersion = 2; 
 $options = array ();
 if (isset ( $_COOKIE ['nfmarsch'] )) {
 	$options = json_decode ( $_COOKIE ['nfmarsch'], true );
@@ -40,7 +40,7 @@ $pages = array (
 );
 $page = GetParam ( 'page', 'G' );
 if (! in_array ( $page, $pages ))
-	$page = 'status';
+	$page = 'production';
 $smarty = new Smarty ();
 $smarty->debugging = false;
 $smarty->caching = false;

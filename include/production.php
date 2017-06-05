@@ -5,10 +5,12 @@ if (! defined ( 'IN_NFMWS' )) {
 
 if (! isset ( $options ['production'] )) {
 	$options ['production'] ['sortByName'] = true;
+	$options ['production'] ['sortFullProducts'] = true;
 }
 
 if ($_SERVER ['REQUEST_METHOD'] == 'POST') {
 	$options ['production'] ['sortByName'] = filter_var ( GetParam ( 'sortByName', 'P', 1 ), FILTER_VALIDATE_BOOLEAN );
+	$options ['production'] ['sortFullProducts'] = filter_var ( GetParam ( 'sortFullProducts', 'P', 1 ), FILTER_VALIDATE_BOOLEAN );
 	$options ['version'] = $cookieVersion;
 	setcookie ( 'nfmarsch', json_encode ( $options ), time () + 31536000 );
 }
@@ -81,7 +83,7 @@ foreach ( $savegame->onCreateLoadedObject as $object ) {
 			} elseif ($fillLevel / $fillMax > 0.8) {
 				$state = 1;
 			}
-			if ($state > $plantstate)
+			if ($options ['production'] ['sortFullProducts'] && $state > $plantstate)
 				$plantstate = $state;
 			$plants [$plant] ['output'] [$fillTypeLang] = array (
 					'fillLevel' => $fillLevel,

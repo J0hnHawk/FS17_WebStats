@@ -117,7 +117,14 @@
 							</label>
 						</div>
 					</div>
-			
+					<div class="form-group">
+						<label class="col-sm-5 control-label">volle Produktlager</label>
+						<div class="col-sm-7">
+							<label class="radio-inline"> <input type="radio" name="sortFullProducts" value="1" {if $options.sortFullProducts}checked{/if}> bei Sortierung berücksichtigen
+							</label><br><label class="radio-inline"> <input type="radio" name="sortFullProducts" value="0" {if !$options.sortFullProducts}checked{/if}> bei Sortierung ignorieren
+							</label>
+						</div>
+					</div>
 			</div>
 			<div class="modal-footer">
 				<button type="button" class="btn btn-default" data-dismiss="modal">Schließen</button>
