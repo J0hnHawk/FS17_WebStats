@@ -1,6 +1,7 @@
 <div class="page-header">
 	<h3>
-		Lagerbestände<small class="pull-right"><a href="#" data-toggle="modal" data-target="#myModal"><span class="glyphicon glyphicon-cog"
+		Lagerbestände<small class="pull-right">{if $outOfMap|@count>0}</span><a href="#" data-toggle="modal" data-target="#outOfMapAlert"><span class="glyphicon glyphicon-warning-sign"
+				aria-hidden="true"></span> Achtung</a>&nbsp;&nbsp;{/if}<a href="#" data-toggle="modal" data-target="#optionsDialog"><span class="glyphicon glyphicon-cog"
 				aria-hidden="true"></span> Einstellungen</a></small>
 	</h3>
 </div>
@@ -58,7 +59,7 @@
 			<tbody>
 				{foreach from=$commodities key=$fillType item=$fillLevels} {if $fillLevels@iteration > $col1max && $fillLevels@iteration <= $col2max }
 				{$stripFillType = $fillType|strip:""}
-				<tr data-toggle="collapse" href="#collapse{$stripFillType}">
+				<tr data-toggle="collapse" href="#collapse{$stripFillType}" {if isset($fillLevels.outOfMap)}class="danger"{/if}>
 					<td>{$fillType}</td>
 					<td class="text-right">{$fillLevels.overall|number_format:0:",":"."}</td>
 				</tr>
@@ -100,7 +101,7 @@
 			<tbody>
 				{foreach from=$commodities key=$fillType item=$fillLevels} {if $fillLevels@iteration > (($fillLevels@total/3)|ceil)*2} {$stripFillType =
 				$fillType|strip:""}
-				<tr data-toggle="collapse" href="#collapse{$stripFillType}">
+				<tr data-toggle="collapse" href="#collapse{$stripFillType}" {if isset($fillLevels.outOfMap)}class="danger"{/if}>
 					<td>{$fillType}</td>
 					<td class="text-right">{$fillLevels.overall|number_format:0:",":"."}</td>
 				</tr>
@@ -132,7 +133,7 @@
 		</table>
 	</div>
 </div>
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+<div class="modal fade" id="optionsDialog" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
 	<div class="modal-dialog" role="document">
 		<div class="modal-content">
 			<div class="modal-header">
@@ -166,6 +167,17 @@
 						</div>
 					</div>
 					<div class="form-group">
+						<label for="sortType" class="col-sm-5 control-label">Nur Paletten anzeigen</label>
+						<div class="col-sm-7">
+							<label class="radio-inline">
+								<input type="radio" name="onlyPallets" value="1"{if $options.onlyPallets}checked{/if}> ja
+							</label>
+							<label class="radio-inline">
+								<input type="radio" name="onlyPallets" value="0"{if !$options.onlyPallets}checked{/if}> nein
+							</label>
+						</div>
+					</div>
+					<div class="form-group">
 						<label for="sortType" class="col-sm-5 control-label">Null-Bestände anzeigen</label>
 						<div class="col-sm-7">
 							<label class="radio-inline">
@@ -185,4 +197,21 @@
 		</div>
 		</form>
 	</div>
+</div>
+<div class="modal fade" id="outOfMapAlert" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
 </div>

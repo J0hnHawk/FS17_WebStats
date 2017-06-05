@@ -9,6 +9,7 @@ if (! isset ( $options ['production'] )) {
 
 if ($_SERVER ['REQUEST_METHOD'] == 'POST') {
 	$options ['production'] ['sortByName'] = filter_var ( GetParam ( 'sortByName', 'P', 1 ), FILTER_VALIDATE_BOOLEAN );
+	$options ['version'] = $cookieVersion;
 	setcookie ( 'nfmarsch', json_encode ( $options ), time () + 31536000 );
 }
 

@@ -1,1579 +1,1545 @@
 <?php
+$siteTitle = 'NF Marsch 2.6 WebStats';
 $mapconfig = array (
-		array (
-				'name' => 'FabrikScript_KraftFutterHerstellung',
+		'FabrikScript_KraftFutterHerstellung' => array (
 				'ProdPerHour' => 60000,
+				'showInProduction' => true,
 				'rawMaterial' => array (
-						array (
+						'Stroh' => array (
 								'capacity' => 300000,
 								'factor' => 0.3,
 								'fillTypes' => 'straw',
-								'name' => 'Stroh',
-								'showin' => '' 
+								'showInStorage' => false 
 						),
-						array (
+						'Silage' => array (
 								'capacity' => 300000,
 								'factor' => 0.4,
 								'fillTypes' => 'silage',
-								'name' => 'Silage',
-								'showin' => '' 
+								'showInStorage' => false 
 						),
-						array (
+						'Gras' => array (
 								'capacity' => 300000,
 								'factor' => 0.3,
 								'fillTypes' => 'grass_windrow dryGrass_windrow',
-								'name' => 'Gras',
-								'showin' => '' 
+								'showInStorage' => false 
 						) 
 				),
 				'product' => array (
-						array (
+						'Mischfutter' => array (
 								'capacity' => 300000,
 								'factor' => 1,
-								'name' => 'Mischfutter',
-								'showin' => '' 
+								'fillType' => 'forage',
+								'showInStorage' => true 
 						) 
 				) 
 		),
-		array (
-				'name' => 'FabrikScript_Fabrik',
+		'FabrikScript_Fabrik' => array (
 				'ProdPerHour' => 16000,
+				'showInProduction' => true,
 				'rawMaterial' => array (
-						array (
+						'Brennstoffe' => array (
 								'capacity' => 75000,
 								'factor' => 0.4,
 								'fillTypes' => 'straw woodChips wool',
-								'name' => 'Brennstoffe',
-								'showin' => '' 
+								'showInStorage' => false 
 						),
-						array (
+						'Holz' => array (
 								'capacity' => 400000,
 								'factor' => 1,
 								'fillTypes' => 'woodChips',
-								'name' => 'Holz',
-								'showin' => '' 
+								'showInStorage' => false 
 						) 
 				),
 				'product' => array (
-						array (
+						'woodChips' => array (
 								'capacity' => 150000,
 								'factor' => 0.9,
-								'name' => 'woodChips',
-								'showin' => '' 
+								'fillType' => 'woodChips',
+								'showInStorage' => true 
 						),
-						array (
+						'boardwood' => array (
 								'capacity' => 8000,
 								'factor' => 1,
-								'name' => 'boardwood',
-								'showin' => '' 
+								'fillType' => 'woodChips',
+								'showInStorage' => false 
 						) 
 				) 
 		),
-		array (
-				'name' => 'FabrikScript_Holzhacker',
+		'FabrikScript_Holzhacker' => array (
 				'ProdPerHour' => 50000,
+				'showInProduction' => true,
 				'rawMaterial' => array (
-						array (
+						'Holz' => array (
 								'capacity' => 400000,
 								'factor' => 1,
 								'fillTypes' => 'woodChips',
-								'name' => 'Holz',
-								'showin' => '' 
+								'showInStorage' => false 
 						) 
 				),
 				'product' => array (
-						array (
+						'woodChips' => array (
 								'capacity' => 150000,
 								'factor' => 0.9,
-								'name' => 'woodChips',
-								'showin' => '' 
+								'fillType' => 'woodChips',
+								'showInStorage' => true 
 						) 
 				) 
 		),
-		array (
-				'name' => 'FabrikScript_compostMaster2k17',
+		'FabrikScript_compostMaster2k17' => array (
 				'ProdPerHour' => 50000,
+				'showInProduction' => true,
 				'rawMaterial' => array (
-						array (
+						'cm_inputWaste' => array (
 								'capacity' => 200000,
 								'factor' => 2,
 								'fillTypes' => 'compost potato sugarBeet chaff silage grass grass_windrow dryGrass_windrow woodChips manure straw',
-								'name' => 'cm_inputWaste',
-								'showin' => '' 
+								'showInStorage' => false 
 						) 
 				),
 				'product' => array (
-						array (
+						'cm_outputCompost' => array (
 								'capacity' => 200000,
 								'factor' => 1,
-								'name' => 'cm_outputCompost',
-								'showin' => '' 
+								'fillType' => 'compost',
+								'showInStorage' => true 
 						) 
 				) 
 		),
-		array (
-				'name' => 'FabrikScript_Oel_Raffinerie_Raps',
+		'FabrikScript_Oel_Raffinerie_Raps' => array (
 				'ProdPerHour' => 20000,
+				'showInProduction' => true,
 				'rawMaterial' => array (
-						array (
+						'Tip_RS' => array (
 								'capacity' => 500000,
 								'factor' => 1,
 								'fillTypes' => 'rape sunflower',
-								'name' => 'Tip_RS',
-								'showin' => '' 
+								'showInStorage' => false 
 						),
-						array (
+						'emptypallet' => array (
 								'capacity' => 120000,
 								'factor' => 0.15,
 								'fillTypes' => 'emptypallet',
-								'name' => 'emptypallet',
-								'showin' => '' 
+								'showInStorage' => false 
 						),
-						array (
+						'palette_karton' => array (
 								'capacity' => 100000,
 								'factor' => 0.15,
 								'fillTypes' => 'karton',
-								'name' => 'palette_karton',
-								'showin' => '' 
+								'showInStorage' => false 
 						) 
 				),
 				'product' => array (
-						array (
+						'RS_compost' => array (
 								'capacity' => 500000,
 								'factor' => 0.3,
-								'name' => 'RS_compost',
-								'showin' => '' 
+								'fillType' => 'compost',
+								'showInStorage' => true 
 						),
-						array (
+						'RM_Output' => array (
 								'capacity' => 300000,
 								'factor' => 0.6,
-								'name' => 'RM_Output',
-								'showin' => '' 
+								'fillType' => 'fuel',
+								'showInStorage' => true 
 						),
-						array (
+						'palettespeiseoel' => array (
 								'capacity' => 5000,
 								'factor' => 0.4,
-								'name' => 'palettespeiseoel',
-								'showin' => '' 
+								'fillType' => 'oel',
+								'showInStorage' => false 
 						) 
 				) 
 		),
-		array (
-				'name' => 'FabrikScript_Klaerwerk',
+		'FabrikScript_Klaerwerk' => array (
 				'ProdPerHour' => 40000,
+				'showInProduction' => true,
 				'rawMaterial' => array (
-						array (
+						'Tip_RS1' => array (
 								'capacity' => 600000,
 								'factor' => 1,
 								'fillTypes' => 'liquidManure digestate',
-								'name' => 'Tip_RS1',
-								'showin' => '' 
+								'showInStorage' => false 
 						) 
 				),
 				'product' => array (
-						array (
+						'RS_compost1' => array (
 								'capacity' => 400000,
 								'factor' => 0.26,
-								'name' => 'RS_compost1',
-								'showin' => '' 
+								'fillType' => 'compost',
+								'showInStorage' => true 
 						),
-						array (
+						'RM_Output2' => array (
 								'capacity' => 400000,
 								'factor' => 0.65,
-								'name' => 'RM_Output2',
-								'showin' => '' 
+								'fillType' => 'water',
+								'showInStorage' => true 
 						) 
 				) 
 		),
-		array (
-				'name' => 'FabrikScript_WeizenMehlfabrik',
+		'FabrikScript_WeizenMehlfabrik' => array (
 				'ProdPerHour' => 5000,
+				'showInProduction' => true,
 				'rawMaterial' => array (
-						array (
+						'Tip_RSwheat' => array (
 								'capacity' => 500000,
 								'factor' => 1,
 								'fillTypes' => 'wheat',
-								'name' => 'Tip_RSwheat',
-								'showin' => '' 
+								'showInStorage' => false 
 						) 
 				),
 				'product' => array (
-						array (
+						'mehlpalette' => array (
 								'capacity' => 5000,
 								'factor' => 0.5,
-								'name' => 'mehlpalette',
-								'showin' => '' 
+								'fillType' => 'mehl',
+								'showInStorage' => false 
 						) 
 				) 
 		),
-		array (
-				'name' => 'FabrikScript_GersteMehlfabrik',
+		'FabrikScript_GersteMehlfabrik' => array (
 				'ProdPerHour' => 5000,
+				'showInProduction' => true,
 				'rawMaterial' => array (
-						array (
+						'Tip_RSbarley' => array (
 								'capacity' => 500000,
 								'factor' => 1,
 								'fillTypes' => 'barley',
-								'name' => 'Tip_RSbarley',
-								'showin' => '' 
+								'showInStorage' => false 
 						) 
 				),
 				'product' => array (
-						array (
+						'mehlpalette' => array (
 								'capacity' => 5000,
 								'factor' => 0.5,
-								'name' => 'mehlpalette',
-								'showin' => '' 
+								'fillType' => 'mehl',
+								'showInStorage' => false 
 						) 
 				) 
 		),
-		array (
-				'name' => 'FabrikScript_RoggenMehlfabrik',
+		'FabrikScript_RoggenMehlfabrik' => array (
 				'ProdPerHour' => 5000,
+				'showInProduction' => true,
 				'rawMaterial' => array (
-						array (
+						'Tip_RSrye' => array (
 								'capacity' => 500000,
 								'factor' => 1,
 								'fillTypes' => 'rye',
-								'name' => 'Tip_RSrye',
-								'showin' => '' 
+								'showInStorage' => false 
 						) 
 				),
 				'product' => array (
-						array (
+						'mehlpalette' => array (
 								'capacity' => 5000,
 								'factor' => 0.5,
-								'name' => 'mehlpalette',
-								'showin' => '' 
+								'fillType' => 'mehl',
+								'showInStorage' => false 
 						) 
 				) 
 		),
-		array (
-				'name' => 'FabrikScript_Zuckerfabrik',
+		'FabrikScript_Zuckerfabrik' => array (
 				'ProdPerHour' => 15000,
+				'showInProduction' => true,
 				'rawMaterial' => array (
-						array (
+						'Tip_RSzucker' => array (
 								'capacity' => 2000000,
 								'factor' => 1,
 								'fillTypes' => 'sugarBeet',
-								'name' => 'Tip_RSzucker',
-								'showin' => '' 
+								'showInStorage' => false 
 						),
-						array (
+						'Tip_RSwater' => array (
 								'capacity' => 500000,
 								'factor' => 1,
 								'fillTypes' => 'water',
-								'name' => 'Tip_RSwater',
-								'showin' => '' 
+								'showInStorage' => false 
 						) 
 				),
 				'product' => array (
-						array (
+						'zuckerpalette' => array (
 								'capacity' => 5000,
 								'factor' => 0.5,
-								'name' => 'zuckerpalette',
-								'showin' => '' 
+								'fillType' => 'zucker',
+								'showInStorage' => false 
 						) 
 				) 
 		),
-		array (
-				'name' => 'FabrikScript_Backerei',
+		'FabrikScript_Backerei' => array (
 				'ProdPerHour' => 5000,
+				'showInProduction' => true,
 				'rawMaterial' => array (
-						array (
+						'Tip_mehl' => array (
 								'capacity' => 120000,
 								'factor' => 1,
 								'fillTypes' => 'mehl',
-								'name' => 'Tip_mehl',
-								'showin' => '' 
+								'showInStorage' => false 
 						),
-						array (
+						'Tip_RSwater' => array (
 								'capacity' => 200000,
 								'factor' => 1,
 								'fillTypes' => 'water',
-								'name' => 'Tip_RSwater',
-								'showin' => '' 
+								'showInStorage' => false 
 						) 
 				),
 				'product' => array (
-						array (
+						'brotpalette' => array (
 								'capacity' => 5000,
 								'factor' => 1,
-								'name' => 'brotpalette',
-								'showin' => '' 
+								'fillType' => 'brot',
+								'showInStorage' => false 
 						) 
 				) 
 		),
-		array (
-				'name' => 'FabrikScript_Paletten_Fabrik',
+		'FabrikScript_Paletten_Fabrik' => array (
 				'ProdPerHour' => 20000,
+				'showInProduction' => true,
 				'rawMaterial' => array (
-						array (
+						'boardwood' => array (
 								'capacity' => 352000,
 								'factor' => 0.5,
 								'fillTypes' => 'woodChips',
-								'name' => 'boardwood',
-								'showin' => '' 
+								'showInStorage' => false 
 						) 
 				),
 				'product' => array (
-						array (
+						'woodChips' => array (
 								'capacity' => 150000,
 								'factor' => 0.25,
-								'name' => 'woodChips',
-								'showin' => '' 
+								'fillType' => 'woodChips',
+								'showInStorage' => true 
 						),
-						array (
+						'emptypallet' => array (
 								'capacity' => 7000,
 								'factor' => 1,
-								'name' => 'emptypallet',
-								'showin' => '' 
+								'fillType' => 'emptypallet',
+								'showInStorage' => false 
 						) 
 				) 
 		),
-		array (
-				'name' => 'FabrikScript_BrauereiKasten',
+		'FabrikScript_BrauereiKasten' => array (
 				'ProdPerHour' => 5000,
+				'showInProduction' => true,
 				'rawMaterial' => array (
-						array (
+						'Tip_RSbarley' => array (
 								'capacity' => 500000,
 								'factor' => 0.8,
 								'fillTypes' => 'barley',
-								'name' => 'Tip_RSbarley',
-								'showin' => '' 
+								'showInStorage' => false 
 						),
-						array (
+						'hops' => array (
 								'capacity' => 500000,
 								'factor' => 0.8,
 								'fillTypes' => 'hops',
-								'name' => 'hops',
-								'showin' => '' 
+								'showInStorage' => false 
 						),
-						array (
+						'emptypallet' => array (
 								'capacity' => 100000,
 								'factor' => 0.25,
 								'fillTypes' => 'emptypallet',
-								'name' => 'emptypallet',
-								'showin' => '' 
+								'showInStorage' => false 
 						),
-						array (
+						'Tip_RSwater' => array (
 								'capacity' => 200000,
 								'factor' => 0.4,
 								'fillTypes' => 'water',
-								'name' => 'Tip_RSwater',
-								'showin' => '' 
+								'showInStorage' => false 
 						) 
 				),
 				'product' => array (
-						array (
+						'bierpalettekasten' => array (
 								'capacity' => 5000,
 								'factor' => 0.5,
-								'name' => 'bierpalettekasten',
-								'showin' => '' 
+								'fillType' => 'beer',
+								'showInStorage' => false 
 						) 
 				) 
 		),
-		array (
-				'name' => 'FabrikScript_BrauereiFass',
+		'FabrikScript_BrauereiFass' => array (
 				'ProdPerHour' => 5000,
+				'showInProduction' => true,
 				'rawMaterial' => array (
-						array (
+						'Tip_RSwheat' => array (
 								'capacity' => 500000,
 								'factor' => 0.8,
 								'fillTypes' => 'wheat',
-								'name' => 'Tip_RSwheat',
-								'showin' => '' 
+								'showInStorage' => false 
 						),
-						array (
+						'hops' => array (
 								'capacity' => 500000,
 								'factor' => 0.8,
 								'fillTypes' => 'hops',
-								'name' => 'hops',
-								'showin' => '' 
+								'showInStorage' => false 
 						),
-						array (
+						'emptypallet' => array (
 								'capacity' => 100000,
 								'factor' => 0.25,
 								'fillTypes' => 'emptypallet',
-								'name' => 'emptypallet',
-								'showin' => '' 
+								'showInStorage' => false 
 						),
-						array (
+						'Tip_RSwater' => array (
 								'capacity' => 200000,
 								'factor' => 0.4,
 								'fillTypes' => 'water',
-								'name' => 'Tip_RSwater',
-								'showin' => '' 
+								'showInStorage' => false 
 						) 
 				),
 				'product' => array (
-						array (
+						'bierpalettefass' => array (
 								'capacity' => 5000,
 								'factor' => 0.5,
-								'name' => 'bierpalettefass',
-								'showin' => '' 
+								'fillType' => 'beerf',
+								'showInStorage' => false 
 						) 
 				) 
 		),
-		array (
-				'name' => 'FabrikScript_Molkerei',
+		'FabrikScript_Molkerei' => array (
 				'ProdPerHour' => 5000,
+				'showInProduction' => true,
 				'rawMaterial' => array (
-						array (
+						'Tip_RSmilk' => array (
 								'capacity' => 300000,
 								'factor' => 0.75,
 								'fillTypes' => 'milk',
-								'name' => 'Tip_RSmilk',
-								'showin' => '' 
+								'showInStorage' => false 
 						),
-						array (
+						'Tip_RSwater' => array (
 								'capacity' => 200000,
 								'factor' => 0.3,
 								'fillTypes' => 'water',
-								'name' => 'Tip_RSwater',
-								'showin' => '' 
+								'showInStorage' => false 
 						),
-						array (
+						'emptypallet' => array (
 								'capacity' => 100000,
 								'factor' => 0.25,
 								'fillTypes' => 'emptypallet',
-								'name' => 'emptypallet',
-								'showin' => '' 
+								'showInStorage' => false 
 						),
-						array (
+						'palettepapier' => array (
 								'capacity' => 100000,
 								'factor' => 0.5,
 								'fillTypes' => 'papier',
-								'name' => 'palettepapier',
-								'showin' => '' 
+								'showInStorage' => false 
 						) 
 				),
 				'product' => array (
-						array (
+						'palettebutter' => array (
 								'capacity' => 5000,
 								'factor' => 0.25,
-								'name' => 'palettebutter',
-								'showin' => '' 
+								'fillType' => 'butter',
+								'showInStorage' => false 
 						),
-						array (
+						'palettemilch' => array (
 								'capacity' => 5000,
 								'factor' => 0.25,
-								'name' => 'palettemilch',
-								'showin' => '' 
+								'fillType' => 'milch',
+								'showInStorage' => false 
 						),
-						array (
+						'palettesahne' => array (
 								'capacity' => 5000,
 								'factor' => 0.25,
-								'name' => 'palettesahne',
-								'showin' => '' 
+								'fillType' => 'sahne',
+								'showInStorage' => false 
 						),
-						array (
+						'palettequark' => array (
 								'capacity' => 5000,
 								'factor' => 0.25,
-								'name' => 'palettequark',
-								'showin' => '' 
+								'fillType' => 'quark',
+								'showInStorage' => false 
 						),
-						array (
+						'paletteyogurt' => array (
 								'capacity' => 5000,
 								'factor' => 0.25,
-								'name' => 'paletteyogurt',
-								'showin' => '' 
+								'fillType' => 'yogurt',
+								'showInStorage' => false 
 						) 
 				) 
 		),
-		array (
-				'name' => 'FabrikScript_Zellstoff_Fabrik',
+		'FabrikScript_Zellstoff_Fabrik' => array (
 				'ProdPerHour' => 12500,
+				'showInProduction' => true,
 				'rawMaterial' => array (
-						array (
+						'Hackschnitzel' => array (
 								'capacity' => 500000,
 								'factor' => 0.5,
 								'fillTypes' => 'woodChips',
-								'name' => 'Hackschnitzel',
-								'showin' => '' 
+								'showInStorage' => false 
 						),
-						array (
+						'Tip_RSwater' => array (
 								'capacity' => 200000,
 								'factor' => 0.3,
 								'fillTypes' => 'water',
-								'name' => 'Tip_RSwater',
-								'showin' => '' 
+								'showInStorage' => false 
 						),
-						array (
+						'emptypallet' => array (
 								'capacity' => 150000,
 								'factor' => 0.25,
 								'fillTypes' => 'emptypallet',
-								'name' => 'emptypallet',
-								'showin' => '' 
+								'showInStorage' => false 
 						) 
 				),
 				'product' => array (
-						array (
+						'palettepapier' => array (
 								'capacity' => 5000,
 								'factor' => 1,
-								'name' => 'palettepapier',
-								'showin' => '' 
+								'fillType' => 'papier',
+								'showInStorage' => false 
 						),
-						array (
+						'palette_karton' => array (
 								'capacity' => 5000,
 								'factor' => 1,
-								'name' => 'palette_karton',
-								'showin' => '' 
+								'fillType' => 'karton',
+								'showInStorage' => false 
 						) 
 				) 
 		),
-		array (
-				'name' => 'FabrikScript_obst_apfel',
+		'FabrikScript_obst_apfel' => array (
 				'ProdPerHour' => 600,
+				'showInProduction' => true,
 				'rawMaterial' => array (
-						array (
+						'Compost' => array (
 								'capacity' => 100000,
 								'factor' => 0.3,
 								'fillTypes' => 'compost',
-								'name' => 'Compost',
-								'showin' => '' 
+								'showInStorage' => false 
 						),
-						array (
+						'Tip_RSwater' => array (
 								'capacity' => 100000,
 								'factor' => 0.2,
 								'fillTypes' => 'water',
-								'name' => 'Tip_RSwater',
-								'showin' => '' 
+								'showInStorage' => false 
 						),
-						array (
+						'emptypallet' => array (
 								'capacity' => 100000,
 								'factor' => 0.2,
 								'fillTypes' => 'emptypallet',
-								'name' => 'emptypallet',
-								'showin' => '' 
+								'showInStorage' => false 
 						),
-						array (
+						'palette_karton' => array (
 								'capacity' => 100000,
 								'factor' => 0.2,
 								'fillTypes' => 'karton',
-								'name' => 'palette_karton',
-								'showin' => '' 
+								'showInStorage' => false 
 						) 
 				),
 				'product' => array (
-						array (
+						'Apfelpalette' => array (
 								'capacity' => 5000,
 								'factor' => 1,
-								'name' => 'Apfelpalette',
-								'showin' => '' 
+								'fillType' => 'apfel',
+								'showInStorage' => false 
 						) 
 				) 
 		),
-		array (
-				'name' => 'FabrikScript_obst_birne',
+		'FabrikScript_obst_birne' => array (
 				'ProdPerHour' => 600,
+				'showInProduction' => true,
 				'rawMaterial' => array (
-						array (
+						'Compost' => array (
 								'capacity' => 100000,
 								'factor' => 0.3,
 								'fillTypes' => 'compost',
-								'name' => 'Compost',
-								'showin' => '' 
+								'showInStorage' => false 
 						),
-						array (
+						'Tip_RSwater' => array (
 								'capacity' => 100000,
 								'factor' => 0.2,
 								'fillTypes' => 'water',
-								'name' => 'Tip_RSwater',
-								'showin' => '' 
+								'showInStorage' => false 
 						),
-						array (
+						'emptypallet' => array (
 								'capacity' => 100000,
 								'factor' => 0.2,
 								'fillTypes' => 'emptypallet',
-								'name' => 'emptypallet',
-								'showin' => '' 
+								'showInStorage' => false 
 						),
-						array (
+						'palette_karton' => array (
 								'capacity' => 100000,
 								'factor' => 0.2,
 								'fillTypes' => 'karton',
-								'name' => 'palette_karton',
-								'showin' => '' 
+								'showInStorage' => false 
 						) 
 				),
 				'product' => array (
-						array (
+						'Birnenpalette' => array (
 								'capacity' => 5000,
 								'factor' => 1,
-								'name' => 'Birnenpalette',
-								'showin' => '' 
+								'fillType' => 'birne',
+								'showInStorage' => false 
 						) 
 				) 
 		),
-		array (
-				'name' => 'FabrikScript_obst_kirsche',
+		'FabrikScript_obst_kirsche' => array (
 				'ProdPerHour' => 600,
+				'showInProduction' => true,
 				'rawMaterial' => array (
-						array (
+						'Compost' => array (
 								'capacity' => 100000,
 								'factor' => 0.3,
 								'fillTypes' => 'compost',
-								'name' => 'Compost',
-								'showin' => '' 
+								'showInStorage' => false 
 						),
-						array (
+						'Tip_RSwater' => array (
 								'capacity' => 100000,
 								'factor' => 0.2,
 								'fillTypes' => 'water',
-								'name' => 'Tip_RSwater',
-								'showin' => '' 
+								'showInStorage' => false 
 						),
-						array (
+						'emptypallet' => array (
 								'capacity' => 100000,
 								'factor' => 0.2,
 								'fillTypes' => 'emptypallet',
-								'name' => 'emptypallet',
-								'showin' => '' 
+								'showInStorage' => false 
 						),
-						array (
+						'palette_karton' => array (
 								'capacity' => 100000,
 								'factor' => 0.2,
 								'fillTypes' => 'karton',
-								'name' => 'palette_karton',
-								'showin' => '' 
+								'showInStorage' => false 
 						) 
 				),
 				'product' => array (
-						array (
+						'Kirschpalette' => array (
 								'capacity' => 5000,
 								'factor' => 1,
-								'name' => 'Kirschpalette',
-								'showin' => '' 
+								'fillType' => 'kirsche',
+								'showInStorage' => false 
 						) 
 				) 
 		),
-		array (
-				'name' => 'FabrikScript_obst_pflaume',
+		'FabrikScript_obst_pflaume' => array (
 				'ProdPerHour' => 600,
+				'showInProduction' => true,
 				'rawMaterial' => array (
-						array (
+						'Compost' => array (
 								'capacity' => 100000,
 								'factor' => 0.3,
 								'fillTypes' => 'compost',
-								'name' => 'Compost',
-								'showin' => '' 
+								'showInStorage' => false 
 						),
-						array (
+						'Tip_RSwater' => array (
 								'capacity' => 100000,
 								'factor' => 0.2,
 								'fillTypes' => 'water',
-								'name' => 'Tip_RSwater',
-								'showin' => '' 
+								'showInStorage' => false 
 						),
-						array (
+						'emptypallet' => array (
 								'capacity' => 100000,
 								'factor' => 0.2,
 								'fillTypes' => 'emptypallet',
-								'name' => 'emptypallet',
-								'showin' => '' 
+								'showInStorage' => false 
 						),
-						array (
+						'palette_karton' => array (
 								'capacity' => 100000,
 								'factor' => 0.2,
 								'fillTypes' => 'karton',
-								'name' => 'palette_karton',
-								'showin' => '' 
+								'showInStorage' => false 
 						) 
 				),
 				'product' => array (
-						array (
+						'Pflaumenpalette' => array (
 								'capacity' => 5000,
 								'factor' => 1,
-								'name' => 'Pflaumenpalette',
-								'showin' => '' 
+								'fillType' => 'pflaume',
+								'showInStorage' => false 
 						) 
 				) 
 		),
-		array (
-				'name' => 'FabrikScript_Kartoffelfabrik',
+		'FabrikScript_Kartoffelfabrik' => array (
 				'ProdPerHour' => 10000,
+				'showInProduction' => true,
 				'rawMaterial' => array (
-						array (
+						'washedPotato' => array (
 								'capacity' => 600000,
 								'factor' => 0.6,
 								'fillTypes' => 'washedPotato',
-								'name' => 'washedPotato',
-								'showin' => '' 
+								'showInStorage' => false 
 						),
-						array (
+						'emptypallet' => array (
 								'capacity' => 280000,
 								'factor' => 0.25,
 								'fillTypes' => 'emptypallet',
-								'name' => 'emptypallet',
-								'showin' => '' 
+								'showInStorage' => false 
 						),
-						array (
+						'palette_karton' => array (
 								'capacity' => 175000,
 								'factor' => 0.15,
 								'fillTypes' => 'karton',
-								'name' => 'palette_karton',
-								'showin' => '' 
+								'showInStorage' => false 
 						),
-						array (
+						'palettespeiseoel' => array (
 								'capacity' => 225000,
 								'factor' => 0.15,
 								'fillTypes' => 'oel',
-								'name' => 'palettespeiseoel',
-								'showin' => '' 
+								'showInStorage' => false 
 						) 
 				),
 				'product' => array (
-						array (
+						'palettechips' => array (
 								'capacity' => 5000,
 								'factor' => 0.35,
-								'name' => 'palettechips',
-								'showin' => '' 
+								'fillType' => 'chips',
+								'showInStorage' => false 
 						),
-						array (
+						'palettepommes' => array (
 								'capacity' => 5000,
 								'factor' => 0.35,
-								'name' => 'palettepommes',
-								'showin' => '' 
+								'fillType' => 'pommes',
+								'showInStorage' => false 
 						),
-						array (
+						'palettekartoffelsack' => array (
 								'capacity' => 5000,
 								'factor' => 0.35,
-								'name' => 'palettekartoffelsack',
-								'showin' => '' 
+								'fillType' => 'kartoffelsack',
+								'showInStorage' => false 
 						) 
 				) 
 		),
-		array (
-				'name' => 'FabrikScript_Lager_Papier',
+		'FabrikScript_Lager_Papier' => array (
 				'ProdPerHour' => 50000000,
+				'showInProduction' => false,
 				'rawMaterial' => array (
-						array (
+						'palettepapier' => array (
 								'capacity' => 340000,
 								'factor' => 1,
 								'fillTypes' => 'papier',
-								'name' => 'palettepapier',
-								'showin' => '' 
+								'showInStorage' => true 
 						) 
 				),
 				'product' => array (
-						array (
+						'palettepapier' => array (
 								'capacity' => 5000,
 								'factor' => 1,
-								'name' => 'palettepapier',
-								'showin' => '' 
+								'fillType' => 'papier',
+								'showInStorage' => false 
 						) 
 				) 
 		),
-		array (
-				'name' => 'FabrikScript_Lager_Karton',
+		'FabrikScript_Lager_Karton' => array (
 				'ProdPerHour' => 50000000,
+				'showInProduction' => false,
 				'rawMaterial' => array (
-						array (
+						'palette_karton' => array (
 								'capacity' => 330000,
 								'factor' => 1,
 								'fillTypes' => 'karton',
-								'name' => 'palette_karton',
-								'showin' => '' 
+								'showInStorage' => true 
 						) 
 				),
 				'product' => array (
-						array (
+						'palette_karton' => array (
 								'capacity' => 5000,
 								'factor' => 1,
-								'name' => 'palette_karton',
-								'showin' => '' 
+								'fillType' => 'karton',
+								'showInStorage' => false 
 						) 
 				) 
 		),
-		array (
-				'name' => 'FabrikScript_Lager_Leerpaletten',
+		'FabrikScript_Lager_Leerpaletten' => array (
 				'ProdPerHour' => 14400001,
+				'showInProduction' => false,
 				'rawMaterial' => array (
-						array (
+						'emptypallet' => array (
 								'capacity' => 335000,
 								'factor' => 1,
 								'fillTypes' => 'emptypallet',
-								'name' => 'emptypallet',
-								'showin' => '' 
+								'showInStorage' => true 
 						) 
 				),
 				'product' => array (
-						array (
+						'emptypallet' => array (
 								'capacity' => 5000,
 								'factor' => 1,
-								'name' => 'emptypallet',
-								'showin' => '' 
+								'fillType' => 'emptypallet',
+								'showInStorage' => false 
 						) 
 				) 
 		),
-		array (
-				'name' => 'FabrikScript_Lager_Apfel',
+		'FabrikScript_Lager_Apfel' => array (
 				'ProdPerHour' => 14400001,
+				'showInProduction' => false,
 				'rawMaterial' => array (
-						array (
+						'Apfelpalette' => array (
 								'capacity' => 500000,
 								'factor' => 1,
 								'fillTypes' => 'apfel',
-								'name' => 'Apfelpalette',
-								'showin' => '' 
+								'showInStorage' => true 
 						) 
 				),
 				'product' => array (
-						array (
+						'Apfelpalette' => array (
 								'capacity' => 5000,
 								'factor' => 1,
-								'name' => 'Apfelpalette',
-								'showin' => '' 
+								'fillType' => 'apfel',
+								'showInStorage' => false 
 						) 
 				) 
 		),
-		array (
-				'name' => 'FabrikScript_Lager_Birne',
+		'FabrikScript_Lager_Birne' => array (
 				'ProdPerHour' => 14400001,
+				'showInProduction' => false,
 				'rawMaterial' => array (
-						array (
+						'Birnenpalette' => array (
 								'capacity' => 500000,
 								'factor' => 1,
 								'fillTypes' => 'birne',
-								'name' => 'Birnenpalette',
-								'showin' => '' 
+								'showInStorage' => true 
 						) 
 				),
 				'product' => array (
-						array (
+						'Birnenpalette' => array (
 								'capacity' => 5000,
 								'factor' => 1,
-								'name' => 'Birnenpalette',
-								'showin' => '' 
+								'fillType' => 'birne',
+								'showInStorage' => false 
 						) 
 				) 
 		),
-		array (
-				'name' => 'FabrikScript_Lager_Kirsche',
+		'FabrikScript_Lager_Kirsche' => array (
 				'ProdPerHour' => 14400001,
+				'showInProduction' => false,
 				'rawMaterial' => array (
-						array (
+						'Kirschpalette' => array (
 								'capacity' => 500000,
 								'factor' => 1,
 								'fillTypes' => 'kirsche',
-								'name' => 'Kirschpalette',
-								'showin' => '' 
+								'showInStorage' => true 
 						) 
 				),
 				'product' => array (
-						array (
+						'Kirschpalette' => array (
 								'capacity' => 5000,
 								'factor' => 1,
-								'name' => 'Kirschpalette',
-								'showin' => '' 
+								'fillType' => 'kirsche',
+								'showInStorage' => false 
 						) 
 				) 
 		),
-		array (
-				'name' => 'FabrikScript_Lager_Pflaume',
+		'FabrikScript_Lager_Pflaume' => array (
 				'ProdPerHour' => 14400001,
+				'showInProduction' => false,
 				'rawMaterial' => array (
-						array (
+						'Pflaumenpalette' => array (
 								'capacity' => 500000,
 								'factor' => 1,
 								'fillTypes' => 'pflaume',
-								'name' => 'Pflaumenpalette',
-								'showin' => '' 
+								'showInStorage' => true 
 						) 
 				),
 				'product' => array (
-						array (
+						'Pflaumenpalette' => array (
 								'capacity' => 5000,
 								'factor' => 1,
-								'name' => 'Pflaumenpalette',
-								'showin' => '' 
+								'fillType' => 'pflaume',
+								'showInStorage' => false 
 						) 
 				) 
 		),
-		array (
-				'name' => 'FabrikScript_Lager_Bierkasten',
+		'FabrikScript_Lager_Bierkasten' => array (
 				'ProdPerHour' => 14400001,
+				'showInProduction' => false,
 				'rawMaterial' => array (
-						array (
+						'bierpalettekasten' => array (
 								'capacity' => 465000,
 								'factor' => 1,
 								'fillTypes' => 'beer',
-								'name' => 'bierpalettekasten',
-								'showin' => '' 
+								'showInStorage' => true 
 						) 
 				),
 				'product' => array (
-						array (
+						'bierpalettekasten' => array (
 								'capacity' => 5000,
 								'factor' => 1,
-								'name' => 'bierpalettekasten',
-								'showin' => '' 
+								'fillType' => 'beer',
+								'showInStorage' => false 
 						) 
 				) 
 		),
-		array (
-				'name' => 'FabrikScript_Lager_Bierfass',
+		'FabrikScript_Lager_Bierfass' => array (
 				'ProdPerHour' => 14400001,
+				'showInProduction' => false,
 				'rawMaterial' => array (
-						array (
+						'bierpalettefass' => array (
 								'capacity' => 465000,
 								'factor' => 1,
 								'fillTypes' => 'beerf',
-								'name' => 'bierpalettefass',
-								'showin' => '' 
+								'showInStorage' => true 
 						) 
 				),
 				'product' => array (
-						array (
+						'bierpalettefass' => array (
 								'capacity' => 5000,
 								'factor' => 1,
-								'name' => 'bierpalettefass',
-								'showin' => '' 
+								'fillType' => 'beerf',
+								'showInStorage' => false 
 						) 
 				) 
 		),
-		array (
-				'name' => 'FabrikScript_Lager_Zucker',
+		'FabrikScript_Lager_Zucker' => array (
 				'ProdPerHour' => 14400001,
+				'showInProduction' => false,
 				'rawMaterial' => array (
-						array (
+						'zuckerpalette' => array (
 								'capacity' => 355000,
 								'factor' => 1,
 								'fillTypes' => 'zucker',
-								'name' => 'zuckerpalette',
-								'showin' => '' 
+								'showInStorage' => true 
 						) 
 				),
 				'product' => array (
-						array (
+						'zuckerpalette' => array (
 								'capacity' => 5000,
 								'factor' => 1,
-								'name' => 'zuckerpalette',
-								'showin' => '' 
+								'fillType' => 'zucker',
+								'showInStorage' => false 
 						) 
 				) 
 		),
-		array (
-				'name' => 'FabrikScript_Lager_Mehl',
+		'FabrikScript_Lager_Mehl' => array (
 				'ProdPerHour' => 14400001,
+				'showInProduction' => false,
 				'rawMaterial' => array (
-						array (
+						'mehlpalette' => array (
 								'capacity' => 355000,
 								'factor' => 1,
 								'fillTypes' => 'mehl',
-								'name' => 'mehlpalette',
-								'showin' => '' 
+								'showInStorage' => true 
 						) 
 				),
 				'product' => array (
-						array (
+						'mehlpalette' => array (
 								'capacity' => 5000,
 								'factor' => 1,
-								'name' => 'mehlpalette',
-								'showin' => '' 
+								'fillType' => 'mehl',
+								'showInStorage' => false 
 						) 
 				) 
 		),
-		array (
-				'name' => 'FabrikScript_Lager_Milch',
+		'FabrikScript_Lager_Milch' => array (
 				'ProdPerHour' => 14400001,
+				'showInProduction' => false,
 				'rawMaterial' => array (
-						array (
+						'palettemilch' => array (
 								'capacity' => 625000,
 								'factor' => 1,
 								'fillTypes' => 'milch',
-								'name' => 'palettemilch',
-								'showin' => '' 
+								'showInStorage' => true 
 						) 
 				),
 				'product' => array (
-						array (
+						'palettemilch' => array (
 								'capacity' => 5000,
 								'factor' => 1,
-								'name' => 'palettemilch',
-								'showin' => '' 
+								'fillType' => 'milch',
+								'showInStorage' => false 
 						) 
 				) 
 		),
-		array (
-				'name' => 'FabrikScript_Lager_Butter',
+		'FabrikScript_Lager_Butter' => array (
 				'ProdPerHour' => 14400001,
+				'showInProduction' => false,
 				'rawMaterial' => array (
-						array (
+						'palettebutter' => array (
 								'capacity' => 625000,
 								'factor' => 1,
 								'fillTypes' => 'butter',
-								'name' => 'palettebutter',
-								'showin' => '' 
+								'showInStorage' => true 
 						) 
 				),
 				'product' => array (
-						array (
+						'palettebutter' => array (
 								'capacity' => 5000,
 								'factor' => 1,
-								'name' => 'palettebutter',
-								'showin' => '' 
+								'fillType' => 'butter',
+								'showInStorage' => false 
 						) 
 				) 
 		),
-		array (
-				'name' => 'FabrikScript_Lager_Quark',
+		'FabrikScript_Lager_Quark' => array (
 				'ProdPerHour' => 14400001,
+				'showInProduction' => false,
 				'rawMaterial' => array (
-						array (
+						'palettequark' => array (
 								'capacity' => 625000,
 								'factor' => 1,
 								'fillTypes' => 'quark',
-								'name' => 'palettequark',
-								'showin' => '' 
+								'showInStorage' => true 
 						) 
 				),
 				'product' => array (
-						array (
+						'palettequark' => array (
 								'capacity' => 5000,
 								'factor' => 1,
-								'name' => 'palettequark',
-								'showin' => '' 
+								'fillType' => 'quark',
+								'showInStorage' => false 
 						) 
 				) 
 		),
-		array (
-				'name' => 'FabrikScript_Lager_Sahne',
+		'FabrikScript_Lager_Sahne' => array (
 				'ProdPerHour' => 14400001,
+				'showInProduction' => false,
 				'rawMaterial' => array (
-						array (
+						'palettesahne' => array (
 								'capacity' => 625000,
 								'factor' => 1,
 								'fillTypes' => 'sahne',
-								'name' => 'palettesahne',
-								'showin' => '' 
+								'showInStorage' => true 
 						) 
 				),
 				'product' => array (
-						array (
+						'palettesahne' => array (
 								'capacity' => 5000,
 								'factor' => 1,
-								'name' => 'palettesahne',
-								'showin' => '' 
+								'fillType' => 'sahne',
+								'showInStorage' => false 
 						) 
 				) 
 		),
-		array (
-				'name' => 'FabrikScript_Lager_Yogurt',
+		'FabrikScript_Lager_Yogurt' => array (
 				'ProdPerHour' => 14400001,
+				'showInProduction' => false,
 				'rawMaterial' => array (
-						array (
+						'paletteyogurt' => array (
 								'capacity' => 625000,
 								'factor' => 1,
 								'fillTypes' => 'yogurt',
-								'name' => 'paletteyogurt',
-								'showin' => '' 
+								'showInStorage' => true 
 						) 
 				),
 				'product' => array (
-						array (
+						'paletteyogurt' => array (
 								'capacity' => 5000,
 								'factor' => 1,
-								'name' => 'paletteyogurt',
-								'showin' => '' 
+								'fillType' => 'yogurt',
+								'showInStorage' => false 
 						) 
 				) 
 		),
-		array (
-				'name' => 'FabrikScript_Lager_Brot',
+		'FabrikScript_Lager_Brot' => array (
 				'ProdPerHour' => 14400001,
+				'showInProduction' => false,
 				'rawMaterial' => array (
-						array (
+						'brotpalette' => array (
 								'capacity' => 480000,
 								'factor' => 1,
 								'fillTypes' => 'brot',
-								'name' => 'brotpalette',
-								'showin' => '' 
+								'showInStorage' => true 
 						) 
 				),
 				'product' => array (
-						array (
+						'brotpalette' => array (
 								'capacity' => 5000,
 								'factor' => 1,
-								'name' => 'brotpalette',
-								'showin' => '' 
+								'fillType' => 'brot',
+								'showInStorage' => false 
 						) 
 				) 
 		),
-		array (
-				'name' => 'FabrikScript_Lager_kartoffelsack',
+		'FabrikScript_Lager_kartoffelsack' => array (
 				'ProdPerHour' => 14400001,
+				'showInProduction' => false,
 				'rawMaterial' => array (
-						array (
+						'palettekartoffelsack' => array (
 								'capacity' => 355000,
 								'factor' => 1,
 								'fillTypes' => 'kartoffelsack',
-								'name' => 'palettekartoffelsack',
-								'showin' => '' 
+								'showInStorage' => true 
 						) 
 				),
 				'product' => array (
-						array (
+						'palettekartoffelsack' => array (
 								'capacity' => 5000,
 								'factor' => 1,
-								'name' => 'palettekartoffelsack',
-								'showin' => '' 
+								'fillType' => 'kartoffelsack',
+								'showInStorage' => false 
 						) 
 				) 
 		),
-		array (
-				'name' => 'FabrikScript_Lager_Chips',
+		'FabrikScript_Lager_Chips' => array (
 				'ProdPerHour' => 14400001,
+				'showInProduction' => false,
 				'rawMaterial' => array (
-						array (
+						'palettechips' => array (
 								'capacity' => 625000,
 								'factor' => 1,
 								'fillTypes' => 'chips',
-								'name' => 'palettechips',
-								'showin' => '' 
+								'showInStorage' => true 
 						) 
 				),
 				'product' => array (
-						array (
+						'palettechips' => array (
 								'capacity' => 5000,
 								'factor' => 1,
-								'name' => 'palettechips',
-								'showin' => '' 
+								'fillType' => 'chips',
+								'showInStorage' => false 
 						) 
 				) 
 		),
-		array (
-				'name' => 'FabrikScript_Lager_pommes',
+		'FabrikScript_Lager_pommes' => array (
 				'ProdPerHour' => 14400001,
+				'showInProduction' => false,
 				'rawMaterial' => array (
-						array (
+						'palettepommes' => array (
 								'capacity' => 625000,
 								'factor' => 1,
 								'fillTypes' => 'pommes',
-								'name' => 'palettepommes',
-								'showin' => '' 
+								'showInStorage' => true 
 						) 
 				),
 				'product' => array (
-						array (
+						'palettepommes' => array (
 								'capacity' => 5000,
 								'factor' => 1,
-								'name' => 'palettepommes',
-								'showin' => '' 
+								'fillType' => 'pommes',
+								'showInStorage' => false 
 						) 
 				) 
 		),
-		array (
-				'name' => 'FabrikScript_Lager_washedPotato',
+		'FabrikScript_Lager_washedPotato' => array (
 				'ProdPerHour' => 14400001,
+				'showInProduction' => false,
 				'rawMaterial' => array (
-						array (
+						'washedPotato' => array (
 								'capacity' => 660000,
 								'factor' => 1,
 								'fillTypes' => 'washedPotato',
-								'name' => 'washedPotato',
-								'showin' => '' 
+								'showInStorage' => true 
 						) 
 				),
 				'product' => array (
-						array (
+						'washedPotato' => array (
 								'capacity' => 5000,
 								'factor' => 1,
-								'name' => 'washedPotato',
-								'showin' => '' 
+								'fillType' => 'washedPotato',
+								'showInStorage' => false 
 						) 
 				) 
 		),
-		array (
-				'name' => 'FabrikScript_Lager_oel',
+		'FabrikScript_Lager_oel' => array (
 				'ProdPerHour' => 14400001,
+				'showInProduction' => false,
 				'rawMaterial' => array (
-						array (
+						'palettespeiseoel' => array (
 								'capacity' => 625000,
 								'factor' => 1,
 								'fillTypes' => 'oel',
-								'name' => 'palettespeiseoel',
-								'showin' => '' 
+								'showInStorage' => true 
 						) 
 				),
 				'product' => array (
-						array (
+						'palettespeiseoel' => array (
 								'capacity' => 5000,
 								'factor' => 1,
-								'name' => 'palettespeiseoel',
-								'showin' => '' 
+								'fillType' => 'oel',
+								'showInStorage' => false 
 						) 
 				) 
 		),
-		array (
-				'name' => 'FabrikScript_Lager_Wurst',
+		'FabrikScript_Lager_Wurst' => array (
 				'ProdPerHour' => 14400001,
+				'showInProduction' => false,
 				'rawMaterial' => array (
-						array (
+						'Wurst' => array (
 								'capacity' => 625000,
 								'factor' => 1,
 								'fillTypes' => 'sausage',
-								'name' => 'Wurst',
-								'showin' => '' 
+								'showInStorage' => true 
 						) 
 				),
 				'product' => array (
-						array (
+						'Wurst' => array (
 								'capacity' => 5000,
 								'factor' => 1,
-								'name' => 'Wurst',
-								'showin' => '' 
+								'fillType' => 'sausage',
+								'showInStorage' => false 
 						) 
 				) 
 		),
-		array (
-				'name' => 'FabrikScript_Lager_Fleisch',
+		'FabrikScript_Lager_Fleisch' => array (
 				'ProdPerHour' => 14400001,
+				'showInProduction' => false,
 				'rawMaterial' => array (
-						array (
+						'Fleisch' => array (
 								'capacity' => 625000,
 								'factor' => 1,
 								'fillTypes' => 'meat',
-								'name' => 'Fleisch',
-								'showin' => '' 
+								'showInStorage' => true 
 						) 
 				),
 				'product' => array (
-						array (
+						'Fleisch' => array (
 								'capacity' => 5000,
 								'factor' => 1,
-								'name' => 'Fleisch',
-								'showin' => '' 
+								'fillType' => 'meat',
+								'showInStorage' => false 
 						) 
 				) 
 		),
-		array (
-				'name' => 'FabrikScript_Duenger_Prod',
+		'FabrikScript_Duenger_Prod' => array (
 				'ProdPerHour' => 10000,
+				'showInProduction' => true,
 				'rawMaterial' => array (
-						array (
+						'manure' => array (
 								'capacity' => 100000,
 								'factor' => 1,
 								'fillTypes' => 'manure',
-								'name' => 'manure',
-								'showin' => '' 
+								'showInStorage' => false 
 						),
-						array (
+						'liquidManure' => array (
 								'capacity' => 100000,
 								'factor' => 1,
 								'fillTypes' => 'liquidManure',
-								'name' => 'liquidManure',
-								'showin' => '' 
+								'showInStorage' => false 
 						) 
 				),
 				'product' => array (
-						array (
+						'fertilizer' => array (
 								'capacity' => 100000,
 								'factor' => 1,
-								'name' => 'fertilizer',
-								'showin' => '' 
+								'fillType' => 'fertilizer',
+								'showInStorage' => true 
 						) 
 				) 
 		),
-		array (
-				'name' => 'FabrikScript_Saat_Prod',
+		'FabrikScript_Saat_Prod' => array (
 				'ProdPerHour' => 10000,
+				'showInProduction' => true,
 				'rawMaterial' => array (
-						array (
+						'grain' => array (
 								'capacity' => 100000,
 								'factor' => 1,
 								'fillTypes' => 'wheat maize barley rape',
-								'name' => 'grain',
-								'showin' => '' 
+								'showInStorage' => false 
 						),
-						array (
+						'fertilizer' => array (
 								'capacity' => 100000,
 								'factor' => 1,
 								'fillTypes' => 'fertilizer',
-								'name' => 'fertilizer',
-								'showin' => '' 
+								'showInStorage' => false 
 						) 
 				),
 				'product' => array (
-						array (
+						'seeds' => array (
 								'capacity' => 100000,
 								'factor' => 1,
-								'name' => 'seeds',
-								'showin' => '' 
+								'fillType' => 'seeds',
+								'showInStorage' => true 
 						) 
 				) 
 		),
-		array (
-				'name' => 'FabrikScript_Fertilizer',
+		'FabrikScript_Fertilizer' => array (
 				'ProdPerHour' => 2147483647,
+				'showInProduction' => false,
 				'rawMaterial' => array (
-						array (
+						'FS_fertilizer' => array (
 								'capacity' => 500000,
 								'factor' => 1,
 								'fillTypes' => 'fertilizer',
-								'name' => 'FS_fertilizer',
-								'showin' => '' 
+								'showInStorage' => true 
 						) 
 				),
 				'product' => array (
-						array (
+						'FS_fertilizer' => array (
 								'capacity' => 500000,
 								'factor' => 1,
-								'name' => 'FS_fertilizer',
-								'showin' => '' 
+								'fillType' => 'fertilizer',
+								'showInStorage' => true 
 						) 
 				) 
 		),
-		array (
-				'name' => 'FabrikScript_Saatgut',
+		'FabrikScript_Saatgut' => array (
 				'ProdPerHour' => 2147483647,
+				'showInProduction' => false,
 				'rawMaterial' => array (
-						array (
+						'FS_Seeds' => array (
 								'capacity' => 500000,
 								'factor' => 1,
 								'fillTypes' => 'seeds',
-								'name' => 'FS_Seeds',
-								'showin' => '' 
+								'showInStorage' => true 
 						) 
 				),
 				'product' => array (
-						array (
+						'FS_Seeds' => array (
 								'capacity' => 500000,
 								'factor' => 1,
-								'name' => 'FS_Seeds',
-								'showin' => '' 
+								'fillType' => 'seeds',
+								'showInStorage' => true 
 						) 
 				) 
 		),
-		array (
-				'name' => 'FabrikScript_Schweinefutter',
+		'FabrikScript_Schweinefutter' => array (
 				'ProdPerHour' => 2147483647,
+				'showInProduction' => false,
 				'rawMaterial' => array (
-						array (
+						'Schweinefutter' => array (
 								'capacity' => 500000,
 								'factor' => 1,
 								'fillTypes' => 'pigFood',
-								'name' => 'Schweinefutter',
-								'showin' => '' 
+								'showInStorage' => true 
 						) 
 				),
 				'product' => array (
-						array (
+						'Schweinefutter' => array (
 								'capacity' => 500000,
 								'factor' => 1,
-								'name' => 'Schweinefutter',
-								'showin' => '' 
+								'fillType' => 'pigFood',
+								'showInStorage' => true 
 						) 
 				) 
 		),
-		array (
-				'name' => 'FabrikScript_kartoffellager',
+		'FabrikScript_kartoffellager' => array (
 				'ProdPerHour' => 1000000000,
+				'showInProduction' => true,
 				'rawMaterial' => array (
-						array (
+						'potato' => array (
 								'capacity' => 500000,
 								'factor' => 1,
 								'fillTypes' => 'potato',
-								'name' => 'potato',
-								'showin' => '' 
+								'showInStorage' => true 
 						) 
 				),
 				'product' => array (
-						array (
+						'potato' => array (
 								'capacity' => 500000,
 								'factor' => 1,
-								'name' => 'potato',
-								'showin' => '' 
+								'fillType' => 'potato',
+								'showInStorage' => true 
 						) 
 				) 
 		),
-		array (
-				'name' => 'FabrikScript_kartoffellager2',
+		'FabrikScript_kartoffellager2' => array (
 				'ProdPerHour' => 1000000000,
+				'showInProduction' => true,
 				'rawMaterial' => array (
-						array (
+						'potato' => array (
 								'capacity' => 500000,
 								'factor' => 1,
 								'fillTypes' => 'potato',
-								'name' => 'potato',
-								'showin' => '' 
+								'showInStorage' => true 
 						) 
 				),
 				'product' => array (
-						array (
+						'potato' => array (
 								'capacity' => 500000,
 								'factor' => 1,
-								'name' => 'potato',
-								'showin' => '' 
+								'fillType' => 'potato',
+								'showInStorage' => true 
 						) 
 				) 
 		),
-		array (
-				'name' => 'FabrikScript_zuckerrueben',
+		'FabrikScript_zuckerrueben' => array (
 				'ProdPerHour' => 1000000000,
+				'showInProduction' => true,
 				'rawMaterial' => array (
-						array (
+						'sugarBeet' => array (
 								'capacity' => 600000,
 								'factor' => 1,
 								'fillTypes' => 'sugarBeet',
-								'name' => 'sugarBeet',
-								'showin' => '' 
+								'showInStorage' => true 
 						) 
 				),
 				'product' => array (
-						array (
+						'sugarBeet' => array (
 								'capacity' => 500000,
 								'factor' => 1,
-								'name' => 'sugarBeet',
-								'showin' => '' 
+								'fillType' => 'sugarBeet',
+								'showInStorage' => true 
 						) 
 				) 
 		),
-		array (
-				'name' => 'FabrikScript_Schweinefutterstation',
+		'FabrikScript_Schweinefutterstation' => array (
 				'ProdPerHour' => 30000,
+				'showInProduction' => true,
 				'rawMaterial' => array (
-						array (
+						'Getreide' => array (
 								'capacity' => 100000,
 								'factor' => 0.6,
 								'fillTypes' => 'wheat barley maize oat rye',
-								'name' => 'Getreide',
-								'showin' => '' 
+								'showInStorage' => false 
 						),
-						array (
+						'Proteine' => array (
 								'capacity' => 100000,
 								'factor' => 0.3,
 								'fillTypes' => 'rape sunflower soybean',
-								'name' => 'Proteine',
-								'showin' => '' 
+								'showInStorage' => false 
 						),
-						array (
+						'Erdfruechten' => array (
 								'capacity' => 100000,
 								'factor' => 0.1,
 								'fillTypes' => 'potato sugarBeet',
-								'name' => 'Erdfruechten',
-								'showin' => '' 
+								'showInStorage' => false 
 						) 
 				),
 				'product' => array (
-						array (
+						'Schweinefutter' => array (
 								'capacity' => 250000,
 								'factor' => 0.935,
-								'name' => 'Schweinefutter',
-								'showin' => '' 
+								'fillType' => 'pigFood',
+								'showInStorage' => true 
 						) 
 				) 
 		),
-		array (
-				'name' => 'FabrikScript_potatoWasher',
+		'FabrikScript_potatoWasher' => array (
 				'ProdPerHour' => 7500,
+				'showInProduction' => true,
 				'rawMaterial' => array (
-						array (
+						'Kartoffeln' => array (
 								'capacity' => 75000,
 								'factor' => 1,
 								'fillTypes' => 'potato',
-								'name' => 'Kartoffeln',
-								'showin' => '' 
+								'showInStorage' => false 
 						),
-						array (
+						'Wasser' => array (
 								'capacity' => 25000,
 								'factor' => 0.01,
 								'fillTypes' => 'water',
-								'name' => 'Wasser',
-								'showin' => '' 
+								'showInStorage' => false 
 						),
-						array (
+						'Diesel' => array (
 								'capacity' => 5000,
 								'factor' => 0.01,
 								'fillTypes' => 'fuel',
-								'name' => 'Diesel',
-								'showin' => '' 
+								'showInStorage' => false 
 						) 
 				),
 				'product' => array (
-						array (
+						'washedPotato' => array (
 								'capacity' => 5000,
 								'factor' => 1,
-								'name' => 'washedPotato',
-								'showin' => '' 
+								'fillType' => 'washedPotato',
+								'showInStorage' => false 
 						) 
 				) 
 		),
-		array (
-				'name' => 'FabrikScript_potatoWasher2',
+		'FabrikScript_potatoWasher2' => array (
 				'ProdPerHour' => 7500,
+				'showInProduction' => true,
 				'rawMaterial' => array (
-						array (
+						'Kartoffeln' => array (
 								'capacity' => 75000,
 								'factor' => 1,
 								'fillTypes' => 'potato',
-								'name' => 'Kartoffeln',
-								'showin' => '' 
+								'showInStorage' => false 
 						),
-						array (
+						'Wasser' => array (
 								'capacity' => 25000,
 								'factor' => 0.01,
 								'fillTypes' => 'water',
-								'name' => 'Wasser',
-								'showin' => '' 
+								'showInStorage' => false 
 						),
-						array (
+						'Diesel' => array (
 								'capacity' => 5000,
 								'factor' => 0.01,
 								'fillTypes' => 'fuel',
-								'name' => 'Diesel',
-								'showin' => '' 
+								'showInStorage' => false 
 						) 
 				),
 				'product' => array (
-						array (
+						'washedPotato' => array (
 								'capacity' => 5000,
 								'factor' => 1,
-								'name' => 'washedPotato',
-								'showin' => '' 
+								'fillType' => 'washedPotato',
+								'showInStorage' => false 
 						) 
 				) 
 		),
-		array (
-				'name' => 'FabrikScript_Schlachterei',
+		'FabrikScript_Schlachterei' => array (
 				'ProdPerHour' => 50,
+				'showInProduction' => true,
 				'rawMaterial' => array (
-						array (
+						'Tier_Anlieferung' => array (
 								'capacity' => 400,
 								'factor' => 0.4,
 								'fillTypes' => 'pig cow sheep',
-								'name' => 'Tier_Anlieferung',
-								'showin' => '' 
+								'showInStorage' => false 
 						),
-						array (
+						'emptypallet' => array (
 								'capacity' => 260000,
 								'factor' => 3,
 								'fillTypes' => 'emptypallet',
-								'name' => 'emptypallet',
-								'showin' => '' 
+								'showInStorage' => false 
 						),
-						array (
+						'palette_karton' => array (
 								'capacity' => 170000,
 								'factor' => 3,
 								'fillTypes' => 'karton',
-								'name' => 'palette_karton',
-								'showin' => '' 
+								'showInStorage' => false 
 						) 
 				),
 				'product' => array (
-						array (
+						'Wurst' => array (
 								'capacity' => 5000,
 								'factor' => 200,
-								'name' => 'Wurst',
-								'showin' => '' 
+								'fillType' => 'sausage',
+								'showInStorage' => false 
 						),
-						array (
+						'Fleisch' => array (
 								'capacity' => 5000,
 								'factor' => 200,
-								'name' => 'Fleisch',
-								'showin' => '' 
+								'fillType' => 'meat',
+								'showInStorage' => false 
 						) 
 				) 
 		) 
 );
+
+function getLocation($position) {
+	list ( $posx, $posy, $posz ) = explode ( ' ', $position );
+	if ($posx < - 1071 || $posx > 1071 || $posy < 0 || $posy > 255 || $posz < - 1071 || $posz > 1071)
+		return 'outOfMap';
+	if ($posx > - 970.0 && $posx < - 967.0 && $posz > - 829.0 && $posz < - 814.0)
+		return 'FabrikScript_Zellstoff_Fabrik';
+	if ($posx > - 970.0 && $posx < - 967.0 && $posz > - 852.0 && $posz < - 837.0)
+		return 'FabrikScript_Zellstoff_Fabrik';
+	if ($posx > - 942.1 && $posx < - 939.9 && $posz > - 35.8 && $posz < - 19.6)
+		return 'FabrikScript_Backerei';
+	if ($posx > - 578.2 && $posx < - 568.0 && $posz > 264.0 && $posz < 272.0)
+		return 'FabrikScript_Molkerei';
+	if ($posx > - 566.0 && $posx < - 556.0 && $posz > 264.0 && $posz < 272.0)
+		return 'FabrikScript_Molkerei';
+	if ($posx > - 553.8 && $posx < - 543.8 && $posz > 264.0 && $posz < 272.0)
+		return 'FabrikScript_Molkerei';
+	if ($posx > - 542.4 && $posx < - 531.4 && $posz > 264.0 && $posz < 272.0)
+		return 'FabrikScript_Molkerei';
+	if ($posx > - 529.4 && $posx < - 519.4 && $posz > 264.0 && $posz < 272.0)
+		return 'FabrikScript_Molkerei';
+	if ($posx > - 945.5 && $posx < - 935.3 && $posz > 417.6 && $posz < 427.7)
+		return 'FabrikScript_BrauereiKasten';
+	if ($posx > - 923.3 && $posx < - 913.0 && $posz > 457.0 && $posz < 467.3)
+		return 'FabrikScript_BrauereiFass';
+	if ($posx > - 945.5 && $posx < - 935.3 && $posz > 417.6 && $posz < 427.7)
+		return 'FabrikScript_BrauereiFass';
+	if ($posx > - 772.2 && $posx < - 710.0 && $posz > 765.5 && $posz < 767.8)
+		return 'FabrikScript_potatoWasher';
+	if ($posx > - 721.4 && $posx < - 709.1 && $posz > 751.5 && $posz < 753.9)
+		return 'FabrikScript_potatoWasher2';
+	if ($posx > - 713.2 && $posx < - 709.0 && $posz > 807.4 && $posz < 823.5)
+		return 'FabrikScript_Kartoffelfabrik';
+	if ($posx > - 695.1 && $posx < - 690.8 && $posz > 807.4 && $posz < 823.6)
+		return 'FabrikScript_Kartoffelfabrik';
+	if ($posx > - 675.9 && $posx < - 671.7 && $posz > 807.4 && $posz < 823.6)
+		return 'FabrikScript_Kartoffelfabrik';
+	if ($posx > - 853.8 && $posx < - 852.2 && $posz > - 98.8 && $posz < - 82.7)
+		return 'FabrikScript_RoggenMehlfabrik';
+	if ($posx > - 845.7 && $posx < - 844.2 && $posz > - 98.8 && $posz < - 82.7)
+		return 'FabrikScript_GersteMehlfabrik';
+	if ($posx > - 837.7 && $posx < - 836.2 && $posz > - 98.8 && $posz < - 82.7)
+		return 'FabrikScript_WeizenMehlfabrik';
+	if ($posx > 578.5 && $posx < 592.7 && $posz > - 25.3 && $posz < - 23.4)
+		return 'Schafweide';
+	if ($posx > 866.4 && $posx < 882.6 && $posz > 618.5 && $posz < 622.7)
+		return 'FabrikScript_Paletten_Fabrik';
+	if ($posx > 960.1 && $posx < 961.7 && $posz > 663.1 && $posz < 683.3)
+		return 'FabrikScript_Fabrik';
+	if ($posx > 877.6 && $posx < 893.8 && $posz > - 880.3 && $posz < - 876.1)
+		return 'FabrikScript_obst_apfel';
+	if ($posx > 877.5 && $posx < 893.8 && $posz > - 893.1 && $posz < - 888.9)
+		return 'FabrikScript_obst_birne';
+	if ($posx > 877.6 && $posx < 893.8 && $posz > - 906.3 && $posz < - 902.0)
+		return 'FabrikScript_obst_kirsche';
+	if ($posx > 877.6 && $posx < 893.8 && $posz > - 918.4 && $posz < - 914.2)
+		return 'FabrikScript_obst_pflaume';
+	if ($posx > - 618.0 && $posx < - 601.8 && $posz > - 118.4 && $posz < - 114.2)
+		return 'FabrikScript_Schlachterei';
+	if ($posx > - 618.0 && $posx < - 601.8 && $posz > - 113.0 && $posz < - 108.8)
+		return 'FabrikScript_Schlachterei';
+	if ($posx > - 774.6 && $posx < - 752.4 && $posz > - 929.4 && $posz < - 925.2)
+		return 'FabrikScript_Zuckerfabrik';
+	return 'onMap';
+}

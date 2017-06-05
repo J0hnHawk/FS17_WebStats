@@ -79,6 +79,9 @@ foreach ( $xml->UserAttributes->UserAttribute as $UserAttribute ) {
 			if ($Attribute ['name'] == 'fillTypes') {
 				$AttributeValues [$nodeId] ['fillTypes'] = strval ( $Attribute ['value'] );
 			}
+			if ($Attribute ['name'] == 'fillType') {
+				$AttributeValues [$nodeId] ['fillType'] = strval ( $Attribute ['value'] );
+			}
 			if ($Attribute ['name'] == 'name') {
 				$AttributeValues [$nodeId] ['name'] = strval ( $Attribute ['value'] );
 			}
@@ -96,16 +99,23 @@ foreach ( $produktion as $prodId => $prodDetails ) {
 }
 
 // var_dump ( $produktion );
-
+echo ('&lt;?php<br>');
 echo ('$mapconfig = array(');
 foreach ( $produktion as $item ) {
-	echo ('array (');
-	echo ("'name' => 'FabrikScript_{$item['name']}',");
+	$showInStorage = 'false';
+	$showInProduction = 'true';
+	if (strpos ( strval ( $item ['name'] ), 'Lager_' ) !== false) {
+		$showInStorage = 'true';
+		$showInProduction = 'false';
+	}
+	echo ("'FabrikScript_{$item['name']}' => array (");
 	echo ("'ProdPerHour' => {$item['ProdPerHour']},");
+	echo ("'showInProduction' => $showInProduction,");
 	echo ("'rawMaterial' => array(");
 	for($i = 1; $i < 6; $i ++) {
 		if (isset ( $item ["Rohstoff$i"] )) {
-			echo ('array (');
+			$name = strval ( $item ["Rohstoff$i"] ['name'] );
+			echo ("'$name' => array (");
 			echo ("'capacity' => {$item["Rohstoff$i"]['capacity']},");
 			if (isset ( $item ["Rohstoff$i"] ['factor'] )) {
 				echo ("'factor' => {$item["Rohstoff$i"]['factor']},");
@@ -113,8 +123,7 @@ foreach ( $produktion as $item ) {
 				echo ("'factor' => 1,");
 			}
 			echo ("'fillTypes' => '{$item["Rohstoff$i"]['fillTypes']}',");
-			echo ("'name' => '{$item["Rohstoff$i"]['name']}',");
-			echo ("'showin' => ''");
+			echo ("'showInStorage' => $showInStorage");
 			echo ('),');
 		}
 	}
@@ -127,15 +136,21 @@ foreach ( $produktion as $item ) {
 	}
 	for($i = 1; $i < 6; $i ++) {
 		if (isset ( $item ["$output$i"] )) {
-			echo ('array (');
+			$name = strval ( $item ["$output$i"] ['name'] );
+			echo ("'$name' => array (");
 			echo ("'capacity' => {$item["$output$i"]['capacity']},");
 			if (isset ( $item ["$output$i"] ['factor'] )) {
 				echo ("'factor' => {$item["$output$i"]['factor']},");
 			} else {
 				echo ("'factor' => 1,");
 			}
-			echo ("'name' => '{$item["$output$i"]['name']}',");
-			echo ("'showin' => ''");
+			echo ("'fillType' => '{$item["$output$i"]['fillType']}',");
+			$showInStorage = 'true';
+			// if (strpos ( $name, 'pallet' ) !== false || strpos ( $name, 'palett' ) !== false)
+			if ($item ["$output$i"] ['capacity'] <= '10000') {
+				$showInStorage = 'false';
+			}
+			echo ("'showInStorage' => $showInStorage");
 			echo ('),');
 		}
 	}
@@ -144,5 +159,13 @@ foreach ( $produktion as $item ) {
 }
 echo (');');
 
+echo ('$show = array(');
+foreach ( $produktion as $item ) {
+	echo ("'FabrikScript_{$item['name']}' => array(");
+	echo ("'inputInStorage' => false,");
+	echo ("'outputInStorage' => false,");
+	echo ("'objectInProduction' => true),");
+}
+echo (');');
 
 

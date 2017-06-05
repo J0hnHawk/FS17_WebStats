@@ -18,8 +18,8 @@
 				{foreach from=$plants key=$plant item=$inout}
 				<tr>
 					<td>{$plant}</td>
-					<td>{foreach from=$inout.input key=$fillType item=$fillLevel}{$fillType}, {/foreach}</td>
-					<td>{foreach from=$inout.output key=$fillType item=$fillLevel}{$fillType}, {/foreach}</td>
+					<td>{foreach from=$inout.input key=$fillType item=$fillLevel}{$fillType}{if !$fillLevel@last}, {/if}{/foreach}</td>
+					<td>{foreach from=$inout.output key=$fillType item=$fillLevel}{$fillType}{if !$fillLevel@last}, {/if}{/foreach}</td>
 				</tr>
 				{/foreach}
 			</tbody>

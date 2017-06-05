@@ -6,10 +6,10 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-<meta name="description" content="WebStats für die Mod Map Nordfriesische Marsch 2.6">
+<meta name="description" content="WebStats für die Mod Map Nordfriesische Marsch">
 <meta name="author" content="John Hawk">
 <link rel="icon" href="{#PfadIMG#}favicon.ico">
-<title>NF Marsch 2.5 WebStats</title>
+<title>{$siteTitle}</title>
 <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
 <link href="{#PfadCSS#}customstyle.css" rel="stylesheet">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
@@ -49,6 +49,7 @@
 			</div>
 		</div>
 	</div>
+	<!-- 
 	<footer class="footer">
 		<div class="container">
 			<p class="text-muted">
@@ -56,6 +57,7 @@
 			</p>
 		</div>
 	</footer>
+	 -->
 	<!-- Bootstrap core JavaScript
     ================================================== -->
 	<!-- Placed at the end of the document so the pages load faster -->
