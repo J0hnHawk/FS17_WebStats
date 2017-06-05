@@ -13,44 +13,34 @@ if ($_SERVER ['REQUEST_METHOD'] == 'POST') {
 	setcookie ( 'nfmarsch', json_encode ( $options ), time () + 31536000 );
 }
 
-$onCreateLoadedObjects = array (
-		'FabrikScript_Backerei',
-		'FabrikScript_BrauereiFass',
-		'FabrikScript_BrauereiKasten',
-		'FabrikScript_compostMaster2k17',
-		'FabrikScript_Duenger_Prod',
-		'FabrikScript_Fabrik',
-		'FabrikScript_GersteMehlfabrik',
-		'FabrikScript_Holzhacker',
-		'FabrikScript_Kartoffelfabrik',
-		'FabrikScript_Klaerwerk',
-		'FabrikScript_KraftFutterHerstellung',
-		'FabrikScript_Molkerei',
-		'FabrikScript_obst_apfel',
-		'FabrikScript_obst_birne',
-		'FabrikScript_obst_kirsche',
-		'FabrikScript_obst_pflaume',
-		'FabrikScript_Oel_Raffinerie_Raps',
-		'FabrikScript_Paletten_Fabrik',
-		'FabrikScript_potatoWasher',
-		'FabrikScript_potatoWasher2',
-		'FabrikScript_RoggenMehlfabrik',
-		'FabrikScript_Saat_Prod',
-		'FabrikScript_Schweinefutterstation',
-		'FabrikScript_WeizenMehlfabrik',
-		'FabrikScript_Zellstoff_Fabrik',
-		'FabrikScript_Zuckerfabrik',
-		'FabrikScript_Schlachterei' 
-);
-$plants = $sort_name = $sort_fillLevel = array ();
+$plants = $sort_name = $sort_fillLevel = $sort_name = $commodities = array ();
 
+// Paletten suchen
+foreach ( $savegame->item as $item ) {
+	$fillType = false;
+	$className = strval ( $item ['className'] );
+	$location = getLocation ( $item ['position'] );
+	$location = translate ( $location );
+	if ($className == 'FillablePallet') {
+		if (isset ( $item ['i3dFilename'] )) {
+			$fillType = getFillType ( $item ['i3dFilename'] );
+		} else {
+			$fillType = getFillType ( $item ['filename'] );
+		}
+	}
+	if ($fillType) {
+		$fillLevel = intval ( $item ['fillLevel'] );
+		addCommodity ( $fillType, $fillLevel, $location, $className );
+	}
+}
+
+// Fabriken suchen
 foreach ( $savegame->onCreateLoadedObject as $object ) {
-	$saveId = $object ['saveId'];
-	// echo($saveId.'<br>'); // für Export der SaveIds während der Programmierung/Kartenupdate
-	if (in_array ( $saveId, $onCreateLoadedObjects )) {
+	$saveId = strval ( $object ['saveId'] );
+	if (isset ( $mapconfig [$saveId] ) && $mapconfig [$saveId] ['showInProduction']) {
 		$plant = translate ( $saveId );
 		$sort_name [] = strtolower ( $plant );
-		$sort_state = 0;
+		$plantstate = 0;
 		$plants [$plant] = array (
 				'class' => 'success',
 				'input' => array (),
@@ -59,23 +49,61 @@ foreach ( $savegame->onCreateLoadedObject as $object ) {
 		foreach ( $object->Rohstoff as $rohstoff ) {
 			$fillType = translate ( $rohstoff ['Name'] );
 			$fillLevel = intval ( $rohstoff ['Lvl'] );
+			$fillMax = $mapconfig [$saveId] ['rawMaterial'] [strval ( $rohstoff ['Name'] )] ['capacity'];
+			$state = 0;
 			if ($fillLevel == 0) {
-				$plants [$plant] ['class'] = 'danger';
-				$sortstate = 2;
+				$state = 2;
+			} elseif ($fillLevel / $fillMax < 0.1) {
+				$state = 1;
 			}
-			$plants [$plant] ['input'] [$fillType] = $fillLevel;
+			if ($state > $plantstate)
+				$plantstate = $state;
+			$plants [$plant] ['input'] [$fillType] = array (
+					'fillLevel' => $fillLevel,
+					'fillMax' => $fillMax,
+					'state' => $state 
+			);
 		}
 		foreach ( $object->Produkt as $product ) {
-			$fillType = translate ( $product ['Name'] );
-			$plants [$plant] ['output'] [$fillType] = intval ( $product ['Lvl'] );
+			$fillType = strval ( $product ['Name'] );
+			$fillTypeLang = translate ( $fillType );
+			if ($mapconfig [$saveId] ['product'] [$fillType] ['showInStorage']) {
+				$fillLevel = intval ( $product ['Lvl'] );
+				$fillMax = $mapconfig [$saveId] ['product'] [$fillType] ['capacity'];
+			} else {
+				$fillLevel = isset ( $commodities [$fillTypeLang] [$plant] ['fillLevel'] ) ? $commodities [$fillTypeLang] [$plant] ['fillLevel'] : 0;
+				$capacity = $mapconfig [$saveId] ['product'] [$fillType] ['capacity'];
+				$fillMax = $mapconfig [$saveId] ['product'] [$fillType] ['palettPlaces'] * $capacity;
+			}
+			$state = 0;
+			if ($fillLevel == $fillMax) {
+				$state = 2;
+			} elseif ($fillLevel / $fillMax > 0.8) {
+				$state = 1;
+			}
+			if ($state > $plantstate)
+				$plantstate = $state;
+			$plants [$plant] ['output'] [$fillTypeLang] = array (
+					'fillLevel' => $fillLevel,
+					'fillMax' => $fillMax,
+					'state' => $state 
+			);
 		}
-		$sort_fillLevel [] = $sort_state;
+		$plants[$plant]['state'] = $plantstate;
+		if ($plantstate == 2) {
+			$plants [$plant] ['class'] = 'danger';
+		} elseif ($plantstate == 1) {
+			$plants [$plant] ['class'] = 'warning';
+		}
+		$sort_fillLevel [] = $plantstate;
 	}
 }
 // ksort ( $plants, SORT_NATURAL );
-uksort ( $plants, "strnatcasecmp" );
+
 if (! $options ['production'] ['sortByName']) {
-	array_multisort ( $sort_fillLevel, SORT_DESC, $plants );
+	array_multisort ( $sort_fillLevel, SORT_DESC, $sort_name, SORT_ASC, $plants );
+} else {
+	uksort ( $plants, "strnatcasecmp" );
 }
 $smarty->assign ( 'plants', $plants );
 $smarty->assign ( 'options', $options ['production'] );

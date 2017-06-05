@@ -61,6 +61,7 @@ $mapconfig = array (
 								'capacity' => 8000,
 								'factor' => 1,
 								'fillType' => 'woodChips',
+								'palettPlaces' => 10,
 								'showInStorage' => false 
 						) 
 				) 
@@ -145,6 +146,7 @@ $mapconfig = array (
 								'capacity' => 5000,
 								'factor' => 0.4,
 								'fillType' => 'oel',
+								'palettPlaces' => 21,
 								'showInStorage' => false 
 						) 
 				) 
@@ -191,6 +193,7 @@ $mapconfig = array (
 								'capacity' => 5000,
 								'factor' => 0.5,
 								'fillType' => 'mehl',
+								'palettPlaces' => 8,
 								'showInStorage' => false 
 						) 
 				) 
@@ -211,6 +214,7 @@ $mapconfig = array (
 								'capacity' => 5000,
 								'factor' => 0.5,
 								'fillType' => 'mehl',
+								'palettPlaces' => 8,
 								'showInStorage' => false 
 						) 
 				) 
@@ -231,6 +235,7 @@ $mapconfig = array (
 								'capacity' => 5000,
 								'factor' => 0.5,
 								'fillType' => 'mehl',
+								'palettPlaces' => 8,
 								'showInStorage' => false 
 						) 
 				) 
@@ -257,6 +262,7 @@ $mapconfig = array (
 								'capacity' => 5000,
 								'factor' => 0.5,
 								'fillType' => 'zucker',
+								'palettPlaces' => 21,
 								'showInStorage' => false 
 						) 
 				) 
@@ -283,6 +289,7 @@ $mapconfig = array (
 								'capacity' => 5000,
 								'factor' => 1,
 								'fillType' => 'brot',
+								'palettPlaces' => 8,
 								'showInStorage' => false 
 						) 
 				) 
@@ -309,6 +316,7 @@ $mapconfig = array (
 								'capacity' => 7000,
 								'factor' => 1,
 								'fillType' => 'emptypallet',
+								'palettPlaces' => 15,
 								'showInStorage' => false 
 						) 
 				) 
@@ -347,6 +355,7 @@ $mapconfig = array (
 								'capacity' => 5000,
 								'factor' => 0.5,
 								'fillType' => 'beer',
+								'palettPlaces' => 21,
 								'showInStorage' => false 
 						) 
 				) 
@@ -385,6 +394,7 @@ $mapconfig = array (
 								'capacity' => 5000,
 								'factor' => 0.5,
 								'fillType' => 'beerf',
+								'palettPlaces' => 21,
 								'showInStorage' => false 
 						) 
 				) 
@@ -423,30 +433,35 @@ $mapconfig = array (
 								'capacity' => 5000,
 								'factor' => 0.25,
 								'fillType' => 'butter',
+								'palettPlaces' => 16,
 								'showInStorage' => false 
 						),
 						'palettemilch' => array (
 								'capacity' => 5000,
 								'factor' => 0.25,
 								'fillType' => 'milch',
+								'palettPlaces' => 16,
 								'showInStorage' => false 
 						),
 						'palettesahne' => array (
 								'capacity' => 5000,
 								'factor' => 0.25,
 								'fillType' => 'sahne',
+								'palettPlaces' => 16,
 								'showInStorage' => false 
 						),
 						'palettequark' => array (
 								'capacity' => 5000,
 								'factor' => 0.25,
 								'fillType' => 'quark',
+								'palettPlaces' => 16,
 								'showInStorage' => false 
 						),
 						'paletteyogurt' => array (
 								'capacity' => 5000,
 								'factor' => 0.25,
 								'fillType' => 'yogurt',
+								'palettPlaces' => 16,
 								'showInStorage' => false 
 						) 
 				) 
@@ -479,12 +494,14 @@ $mapconfig = array (
 								'capacity' => 5000,
 								'factor' => 1,
 								'fillType' => 'papier',
+								'palettPlaces' => 15,
 								'showInStorage' => false 
 						),
 						'palette_karton' => array (
 								'capacity' => 5000,
 								'factor' => 1,
 								'fillType' => 'karton',
+								'palettPlaces' => 15,
 								'showInStorage' => false 
 						) 
 				) 
@@ -523,6 +540,7 @@ $mapconfig = array (
 								'capacity' => 5000,
 								'factor' => 1,
 								'fillType' => 'apfel',
+								'palettPlaces' => 15,
 								'showInStorage' => false 
 						) 
 				) 
@@ -561,6 +579,7 @@ $mapconfig = array (
 								'capacity' => 5000,
 								'factor' => 1,
 								'fillType' => 'birne',
+								'palettPlaces' => 15,
 								'showInStorage' => false 
 						) 
 				) 
@@ -599,6 +618,7 @@ $mapconfig = array (
 								'capacity' => 5000,
 								'factor' => 1,
 								'fillType' => 'kirsche',
+								'palettPlaces' => 15,
 								'showInStorage' => false 
 						) 
 				) 
@@ -637,6 +657,7 @@ $mapconfig = array (
 								'capacity' => 5000,
 								'factor' => 1,
 								'fillType' => 'pflaume',
+								'palettPlaces' => 15,
 								'showInStorage' => false 
 						) 
 				) 
@@ -675,18 +696,21 @@ $mapconfig = array (
 								'capacity' => 5000,
 								'factor' => 0.35,
 								'fillType' => 'chips',
+								'palettPlaces' => 15,
 								'showInStorage' => false 
 						),
 						'palettepommes' => array (
 								'capacity' => 5000,
 								'factor' => 0.35,
 								'fillType' => 'pommes',
+								'palettPlaces' => 15,
 								'showInStorage' => false 
 						),
 						'palettekartoffelsack' => array (
 								'capacity' => 5000,
 								'factor' => 0.35,
 								'fillType' => 'kartoffelsack',
+								'palettPlaces' => 15,
 								'showInStorage' => false 
 						) 
 				) 
@@ -1325,7 +1349,7 @@ $mapconfig = array (
 		),
 		'FabrikScript_zuckerrueben' => array (
 				'ProdPerHour' => 1000000000,
-				'showInProduction' => true,
+				'showInProduction' => false,
 				'rawMaterial' => array (
 						'sugarBeet' => array (
 								'capacity' => 600000,
@@ -1403,6 +1427,7 @@ $mapconfig = array (
 								'capacity' => 5000,
 								'factor' => 1,
 								'fillType' => 'washedPotato',
+								'palettPlaces' => 6,
 								'showInStorage' => false 
 						) 
 				) 
@@ -1435,6 +1460,7 @@ $mapconfig = array (
 								'capacity' => 5000,
 								'factor' => 1,
 								'fillType' => 'washedPotato',
+								'palettPlaces' => 6,
 								'showInStorage' => false 
 						) 
 				) 
@@ -1467,12 +1493,14 @@ $mapconfig = array (
 								'capacity' => 5000,
 								'factor' => 200,
 								'fillType' => 'sausage',
+								'palettPlaces' => 15,
 								'showInStorage' => false 
 						),
 						'Fleisch' => array (
 								'capacity' => 5000,
 								'factor' => 200,
 								'fillType' => 'meat',
+								'palettPlaces' => 15,
 								'showInStorage' => false 
 						) 
 				) 
@@ -1503,8 +1531,8 @@ function getLocation($position) {
 		return 'FabrikScript_BrauereiKasten';
 	if ($posx > - 923.3 && $posx < - 913.0 && $posz > 457.0 && $posz < 467.3)
 		return 'FabrikScript_BrauereiFass';
-	if ($posx > - 945.5 && $posx < - 935.3 && $posz > 417.6 && $posz < 427.7)
-		return 'FabrikScript_BrauereiFass';
+	if ($posx > - 932.1 && $posx < - 921.8 && $posz > 585.7 && $posz < 595.9)
+		return 'FabrikScript_Oel_Raffinerie_Raps';
 	if ($posx > - 772.2 && $posx < - 710.0 && $posz > 765.5 && $posz < 767.8)
 		return 'FabrikScript_potatoWasher';
 	if ($posx > - 721.4 && $posx < - 709.1 && $posz > 751.5 && $posz < 753.9)
