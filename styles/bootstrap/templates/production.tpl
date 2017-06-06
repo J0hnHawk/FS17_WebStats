@@ -1,12 +1,11 @@
 <div class="page-header">
 	<h3>
 		Produktionsanlagen<small class="pull-right"><a href="#" data-toggle="modal" data-target="#myModal"><span class="glyphicon glyphicon-cog"
-				aria-hidden="true"
-			></span> Einstellungen</a></small>
+				aria-hidden="true"></span> Einstellungen</a></small>
 	</h3>
 </div>
-{$glyphicons =array("glyphicon glyphicon-ok-sign text-success", "glyphicon glyphicon-exclamation-sign text-warning", "glyphicon glyphicon-remove-sign text-danger")}
-{$textcolors = array("","text-warning","text-danger")}
+{$glyphicons =array("glyphicon glyphicon-ok-sign text-success", "glyphicon glyphicon-exclamation-sign text-warning", "glyphicon glyphicon-remove-sign
+text-danger")} {$textcolors = array("","text-warning","text-danger")}
 <div class="row">
 	<div class="col-sm-12">
 		<table class="table table-hover">
@@ -22,42 +21,47 @@
 				{foreach from=$plants key=$plant item=$inout}{$stripPlant = $plant|strip:""|replace:"(":""|replace:")":""}
 				<tr data-toggle="collapse" href="#collapse{$stripPlant}">
 					<td><span class="{$glyphicons[$inout.state]}" aria-hidden="true"></span> {$plant}</td>
-					<td>{foreach from=$inout.input key=$fillType item=$fillLevel}<span class="{$textcolors[$fillLevel.state]}"><span class="{$glyphicons[$fillLevel.state]}" aria-hidden="true"></span>
-						{$fillType}{if !$fillLevel@last}, {/if}</span>{/foreach}
+					<td>{foreach from=$inout.input key=$fillType item=$fillLevel}<span class="{$textcolors[$fillLevel.state]}"><span
+							class="{$glyphicons[$fillLevel.state]}" aria-hidden="true"></span> {$fillType}{if !$fillLevel@last}, {/if}</span>{/foreach}
 					</td>
-					<td>{foreach from=$inout.output key=$fillType item=$fillLevel}<span class="{$textcolors[$fillLevel.state]}"><span class="{$glyphicons[$fillLevel.state]}" aria-hidden="true"></span>
-						{$fillType}{if !$fillLevel@last}, {/if}</span>{/foreach}
+					<td>{foreach from=$inout.output key=$fillType item=$fillLevel}<span class="{$textcolors[$fillLevel.state]}"><span
+							class="{$glyphicons[$fillLevel.state]}" aria-hidden="true"></span> {$fillType}{if !$fillLevel@last}, {/if}</span>{/foreach}
 					</td>
 				</tr>
 				<tr class="collapse info" id="collapse{$stripPlant}">
-					<td colspan="3">
-						<table class="table" style="margin-bottom: 0px;">
-							<thead>
-								<tr>
-									<th colspan="4">Rohstoff(e)</th>
-									<th colspan="4">Produkt(e)</th>
-								</tr>
-							</thead>
-							{$inputRow=array()}{$outputRow=array()} {$max = max($inout.input|@count,$inout.output|@count)} {foreach from=$inout.input key=$fillType
-							item=$fillLevel} {$inputRow[$fillLevel@index] = array($fillType,$fillLevel.fillLevel,$fillLevel.fillMax)} {/foreach} {foreach
-							from=$inout.output key=$fillType item=$fillLevel} {$outputRow[$fillLevel@index] = array($fillType,$fillLevel.fillLevel,$fillLevel.fillMax)}
-							{/foreach}
-							<tbody>
-								{for $i=0 to $max-1}
-								<tr>
-									{if isset($inputRow[$i][0])} {$pecent=$inputRow[$i][1]/$inputRow[$i][2]*100} <td>{$inputRow[$i][0]}</td>
-									<td>{$inputRow[$i][1]|number_format:0:",":"."}</td> <td>{$inputRow[$i][2]|number_format:0:",":"."}</td>
-									<td>{$pecent|number_format:0:",":"."}</td>{else} <td colspan="4">&nbsp;</td> {/if}{if isset($outputRow[$i][0])}
-									{$pecent=$outputRow[$i][1]/$outputRow[$i][2]*100}
-									<td>{$outputRow[$i][0]}</td>
-									<td>{$outputRow[$i][1]|number_format:0:",":"."}</td>
-									<td>{$outputRow[$i][2]|number_format:0:",":"."}</td>
-									<td>{$pecent|number_format:0:",":"."}</td>{else}
-									<td colspan="4">&nbsp;</td> {/if}
-								</tr>
-								{/for}
-							</tbody>
-						</table>
+					<td colspan="4">
+						<div class="col-sm-8 col-sm-offset-1">
+							<table class="table" style="margin-bottom: 0px;">
+								<thead>
+									<tr>
+										<th colspan="2" width="50%">Rohstoff(e)</th>
+										<th colspan="2" width="50%">Produkt(e)</th>
+									</tr>
+								</thead>
+								{$inputRow=array()}{$outputRow=array()} {$max = max($inout.input|@count,$inout.output|@count)} {foreach from=$inout.input key=$fillType
+								item=$fillLevel} {$inputRow[$fillLevel@index] = array($fillType,$fillLevel.fillLevel,$fillLevel.fillMax)} {/foreach} {foreach
+								from=$inout.output key=$fillType item=$fillLevel} {$outputRow[$fillLevel@index] = array($fillType,$fillLevel.fillLevel,$fillLevel.fillMax)}
+								{/foreach}
+								<tbody>
+									{for $i=0 to $max-1}
+									<tr>
+										{if isset($inputRow[$i][0])}
+										<td>{$inputRow[$i][0]}</td>
+										<td class="text-right">{$inputRow[$i][1]|number_format:0:",":"."} / {$inputRow[$i][2]|number_format:0:",":"."}</td> {else}
+										<td colspan="2">&nbsp;</td> {/if} {if isset($outputRow[$i][0])}
+										<td>{$outputRow[$i][0]}</td>
+										<td class="text-right">{$outputRow[$i][1]|number_format:0:",":"."} / {$outputRow[$i][2]|number_format:0:",":"."}</td>{else}
+										<td colspan="2">&nbsp;</td> {/if}
+									</tr>
+									{/for}
+								</tbody>
+							</table>
+						</div>
+						<div class="col-sm-3">
+							<p class="pull-right">
+								<a href="index.php?page=production&hide={$plant|base64_encode}"><span class="glyphicon glyphicon-eye-open"></span> ausblenden</a>
+							</p>
+						</div>
 					</td>
 				</tr>
 				{/foreach}
@@ -65,39 +69,6 @@
 		</table>
 	</div>
 </div>
-<!-- 
-<div class="row">
-	{foreach from=$plants key=$plant item=$inout}
-	<div class="col-sm-6">
-		<div class="panel panel-{$inout.class}">
-			<div class="panel-heading">
-				<h4 class="panel-title">{$plant}</h4>
-			</div>
-			<div class="panel-body">
-				<div class="row">
-					<div class="col-sm-6">
-						{foreach from=$inout.input key=$fillType item=$fillLevel}
-						<div class="row">
-							<div class="col-sm-6 text-nowrap">{$fillType}</div>
-							<div class="col-sm-6 text-right">{$fillLevel.fillLevel|number_format:0:",":"."}/{$fillLevel.fillMax|number_format:0:",":"."}</div>
-						</div>
-						{/foreach}
-					</div>
-					<div class="col-sm-6">
-						{foreach from=$inout.output key=$fillType item=$fillLevel}
-						<div class="row">
-							<div class="col-sm-6 text-nowrap">{$fillType}</div>
-							<div class="col-sm-6 text-right">{$fillLevel.fillLevel|number_format:0:",":"."}/{$fillLevel.fillMax|number_format:0:",":"."}</div>
-						</div>
-						{/foreach}
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	{/foreach}
-</div>
- -->
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
 	<div class="modal-dialog" role="document">
 		<div class="modal-content">
@@ -120,11 +91,14 @@
 					<div class="form-group">
 						<label class="col-sm-5 control-label">volle Produktlager</label>
 						<div class="col-sm-7">
-							<label class="radio-inline"> <input type="radio" name="sortFullProducts" value="1" {if $options.sortFullProducts}checked{/if}> bei Sortierung berücksichtigen
-							</label><br><label class="radio-inline"> <input type="radio" name="sortFullProducts" value="0" {if !$options.sortFullProducts}checked{/if}> bei Sortierung ignorieren
+							<label class="radio-inline"> <input type="radio" name="sortFullProducts" value="1"{if $options.sortFullProducts}checked{/if}> bei Sortierung
+								berücksichtigen
+							</label><br> <label class="radio-inline"> <input type="radio" name="sortFullProducts" value="0"{if !$options.sortFullProducts}checked{/if}> bei
+								Sortierung ignorieren
 							</label>
 						</div>
 					</div>
+			
 			</div>
 			<div class="modal-footer">
 				<button type="button" class="btn btn-default" data-dismiss="modal">Schließen</button>

@@ -1309,7 +1309,7 @@ $mapconfig = array (
 		),
 		'FabrikScript_kartoffellager' => array (
 				'ProdPerHour' => 1000000000,
-				'showInProduction' => true,
+				'showInProduction' => false,
 				'rawMaterial' => array (
 						'potato' => array (
 								'capacity' => 500000,
@@ -1329,7 +1329,7 @@ $mapconfig = array (
 		),
 		'FabrikScript_kartoffellager2' => array (
 				'ProdPerHour' => 1000000000,
-				'showInProduction' => true,
+				'showInProduction' => false,
 				'rawMaterial' => array (
 						'potato' => array (
 								'capacity' => 500000,

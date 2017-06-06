@@ -2,7 +2,12 @@
 if (! defined ( 'IN_NFMWS' )) {
 	exit ();
 }
-
+/*
+$hidePlant = GetParam('hide','G',false);
+if($hidePlant && !is_array($hidePlant)){
+	echo ('Verarbeiten');
+}
+*/
 if (! isset ( $options ['production'] )) {
 	$options ['production'] ['sortByName'] = true;
 	$options ['production'] ['sortFullProducts'] = true;
@@ -107,5 +112,6 @@ if (! $options ['production'] ['sortByName']) {
 } else {
 	uksort ( $plants, "strnatcasecmp" );
 }
+$smarty->registerPlugin("modifier",'base64_encode',  'base64_encode');
 $smarty->assign ( 'plants', $plants );
 $smarty->assign ( 'options', $options ['production'] );

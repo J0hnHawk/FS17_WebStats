@@ -92,8 +92,10 @@ if (! $options ['storage'] ['onlyPallets'] && $options ['storage'] ['showVehicle
 
 foreach ( $savegame->onCreateLoadedObject as $object ) {
 	$saveId = strval ( $object ['saveId'] );
-	$location = translate ( 'farmStorage' );
+	
+	// Hofsilo
 	if (! $options ['storage'] ['onlyPallets'] && $saveId == 'Storage_storage1') {
+		$location = translate ( 'farmStorage' );
 		foreach ( $object->node as $node ) {
 			$fillType = translate ( $node ['fillType'] );
 			$fillLevel = intval ( $node ['fillLevel'] );
@@ -105,6 +107,19 @@ foreach ( $savegame->onCreateLoadedObject as $object ) {
 		}
 	}
 	
+	// Tankstellen/Diesellager
+	if (strpos ( $saveId, 'fuelStation_' ) !== false) {
+		$location = translate ( $saveId );
+		$fillType = translate ( 'fuel' );
+		$fillLevel = intval ( $object ['fillLevel'] );
+		if ($hideZero && $fillLevel == 0) {
+			continue;
+		} else {
+			addCommodity ( $fillType, $fillLevel, $location );
+		}
+	}
+	
+	// Fabrikscripte laut Mapconfig
 	if (isset ( $mapconfig [$saveId] )) {
 		$location = translate ( $saveId );
 		if ($options ['storage'] ['onlyPallets'] && strpos ( 'FabrikScript_Lager', $saveId ) === false) {
