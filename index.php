@@ -10,11 +10,17 @@ define ( 'IN_NFMWS', true );
 date_default_timezone_set ( 'Europe/Lisbon' );
 setlocale ( LC_ALL, 'de_DE@euro', 'de_DE', 'de', 'ge' );
 
-require ('./include/xmlTools.php');
-require ("./config/config.php");
-require ("./config/map_26.php");
 require ('./smarty/Smarty.class.php');
 require ('./include/functions.php');
+$configFile = './config/config.php';
+if (file_exists($configFile)) {
+	require ($configFile);
+} else {
+	die ('Config fehlt!');	
+}
+
+require ('./include/xmlTools.php');
+require ("./config/map_26.php");
 include ("./language/de.php");
 
 $stats = getServerStatsSimpleXML ( sprintf ( $serverAddress, 'dedicated-server-stats.xml?' ) );
@@ -23,7 +29,7 @@ $savegame = getServerStatsSimpleXML ( sprintf ( $serverAddress, 'dedicated-serve
 $style = 'bootstrap';
 
 // Cookie mit Einstellungen laden
-$cookieVersion = 2; 
+$cookieVersion = 3; 
 $options = array ();
 if (isset ( $_COOKIE ['nfmarsch'] )) {
 	$options = json_decode ( $_COOKIE ['nfmarsch'], true );

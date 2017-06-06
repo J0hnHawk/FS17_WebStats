@@ -59,7 +59,7 @@ text-danger")} {$textcolors = array("","text-warning","text-danger")}
 						</div>
 						<div class="col-sm-3">
 							<p class="pull-right">
-								<a href="index.php?page=production&hide={$plant|base64_encode}"><span class="glyphicon glyphicon-eye-open"></span> ausblenden</a>
+								<a href="index.php?page=production&hide={$plant|base64_encode}"><span class="glyphicon glyphicon-eye-close"></span> ausblenden</a>
 							</p>
 						</div>
 					</td>
@@ -98,7 +98,18 @@ text-danger")} {$textcolors = array("","text-warning","text-danger")}
 							</label>
 						</div>
 					</div>
-			
+					{if $options.hidePlant|@count>0}
+					<div class="form-group">
+						<label class="col-sm-5 control-label">Produktionsanlagen einblenden</label>
+						<div class="col-sm-7">
+						{foreach from=$options.hidePlant key=$plant item=$bolean}
+						<div class="checkbox">							
+							<label> <input type="checkbox" name="showPlant[]" value="{$plant|base64_encode}"> {$plant}</label>							
+						</div>
+						{/foreach}
+						</div>
+					</div>
+					{/if}
 			</div>
 			<div class="modal-footer">
 				<button type="button" class="btn btn-default" data-dismiss="modal">Schließen</button>

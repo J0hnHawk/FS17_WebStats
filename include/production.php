@@ -2,20 +2,38 @@
 if (! defined ( 'IN_NFMWS' )) {
 	exit ();
 }
-/*
-$hidePlant = GetParam('hide','G',false);
-if($hidePlant && !is_array($hidePlant)){
-	echo ('Verarbeiten');
-}
-*/
+
 if (! isset ( $options ['production'] )) {
 	$options ['production'] ['sortByName'] = true;
 	$options ['production'] ['sortFullProducts'] = true;
+	$options ['production'] ['hidePlant'] = array();
+}
+
+$hidePlant = GetParam('hide','G',false);
+if($hidePlant && !is_array($hidePlant)){
+	$plant = base64_decode($hidePlant);
+	foreach($lang as $term => $translation) {
+		if($translation == $plant) {
+			$options ['production'] ['hidePlant'][$plant] = true;
+			$options ['version'] = $cookieVersion;
+			setcookie ( 'nfmarsch', json_encode ( $options ), time () + 31536000 );
+			break;
+		}
+	}
 }
 
 if ($_SERVER ['REQUEST_METHOD'] == 'POST') {
 	$options ['production'] ['sortByName'] = filter_var ( GetParam ( 'sortByName', 'P', 1 ), FILTER_VALIDATE_BOOLEAN );
 	$options ['production'] ['sortFullProducts'] = filter_var ( GetParam ( 'sortFullProducts', 'P', 1 ), FILTER_VALIDATE_BOOLEAN );
+	$showPlant = GetParam('showPlant','P',false);
+	if($showPlant && is_array($showPlant)) {
+		foreach($showPlant as $plant) {
+			$plant = base64_decode($plant);
+			if(isset($options ['production'] ['hidePlant'][$plant])) {
+				unset($options ['production'] ['hidePlant'][$plant]);
+			}
+		}		
+	}
 	$options ['version'] = $cookieVersion;
 	setcookie ( 'nfmarsch', json_encode ( $options ), time () + 31536000 );
 }
@@ -46,6 +64,9 @@ foreach ( $savegame->onCreateLoadedObject as $object ) {
 	$saveId = strval ( $object ['saveId'] );
 	if (isset ( $mapconfig [$saveId] ) && $mapconfig [$saveId] ['showInProduction']) {
 		$plant = translate ( $saveId );
+		if(isset($options ['production'] ['hidePlant'][$plant])) {
+			continue;
+		}
 		$sort_name [] = strtolower ( $plant );
 		$plantstate = 0;
 		$plants [$plant] = array (
