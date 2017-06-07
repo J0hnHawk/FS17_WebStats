@@ -15,23 +15,23 @@ $style = 'bootstrap';
 
 require ('./include/functions.php');
 
-$configFile = './config/config.php';
+$configFile = './config/server.conf';
 if (file_exists ( $configFile )) {
-	require ($configFile);
+	$server = file ( $configFile );
+	list ( $dSrvIp, $dSrvPort, $dSrvCode, $languagePath) = unserialize ( $server [0] );
+	$serverAddress = "http://$dSrvIp:$dSrvPort/feed/%scode=$dSrvCode";
 } else {
 	define ( 'IN_NFMWS_INSTALL', true );
 	include ('./include/install.php');
-	exit();
+	exit ();
 }
 
 require ('./include/xmlTools.php');
-require ("./config/map_26.php");
-include ("./language/de.php");
+require ('./config/map_26.php');
+include ("./language/$languagePath/modmap.php");
 
 $stats = getServerStatsSimpleXML ( sprintf ( $serverAddress, 'dedicated-server-stats.xml?' ) );
 $savegame = getServerStatsSimpleXML ( sprintf ( $serverAddress, 'dedicated-server-savegame.html?file=vehicles&' ) );
-
-
 
 // Cookie mit Einstellungen laden
 $cookieVersion = 3;

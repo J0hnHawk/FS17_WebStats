@@ -22,7 +22,7 @@
 				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
 					<span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="#">NF Marsch WebStats</a>
+				<a class="navbar-brand" href="index.php">NF Marsch WebStats</a>
 			</div>
 			<div id="navbar" class="navbar-collapse collapse">
 				<form class="navbar-form navbar-right" action="index.php?page=install" method="post">
@@ -38,6 +38,15 @@
 			<!--/.navbar-collapse -->
 		</div>
 	</nav>
+	{if $success}
+	<div class="container theme-showcase" role="main">
+		<div class="jumbotron">
+			<h1>{#l_jumbotron#}</h1>
+			<p>{#l_jumbotron_success#}</p>
+			<p><a class="btn btn-primary btn-lg" href="index.php" role="button">{#l_jumbotron_button#} &raquo;</a></p>
+		</div>
+	</div>
+	{else}
 	<div class="container theme-showcase" role="main">
 		<div class="jumbotron">
 			<h1>{#l_jumbotron#}</h1>
@@ -46,26 +55,26 @@
 		<div class="page-header">
 			<h1>{#l_page_header#}</h1>
 		</div>
-		<form class="form-horizontal">
-			{if $error}{$error}{elseif $success}{$success}{/if}
+		<form class="form-horizontal" action="index.php?page=install" method="post">
+			{if $error}{$error}{/if}
 			<div class="form-group">
 				<label for="Server-IP" class="col-sm-3 control-label">{#l_label_ip#}</label>
 				<div class="col-sm-7">
-					<input type="email" name="serverip" class="form-control" id="Server-IP" placeholder="{#l_placeholder_ip#}">
+					<input type="ip" name="serverip" class="form-control" id="Server-IP" placeholder="{#l_placeholder_ip#}" {if $postdata|@count>0}value="{$postdata[0]}"{/if}>
 					<span id="helpBlock" class="help-block">{#l_help_ip#}</span>
 				</div>
 			</div>
 			<div class="form-group">
 				<label for="Server-Port" class="col-sm-3 control-label">{#l_label_port#}</label>
 				<div class="col-sm-7">
-					<input type="text" name="serverport" class="form-control" id="Server-Port" placeholder="{#l_placeholder_port#}">
+					<input type="text" name="serverport" class="form-control" id="Server-Port" placeholder="{#l_placeholder_port#}" {if $postdata|@count>0}value="{$postdata[1]}"{/if}>
 					<span id="helpBlock" class="help-block">{#l_help_port#}</span>
 				</div>
 			</div>
 			<div class="form-group">
 				<label for="Server-Code" class="col-sm-3 control-label">{#l_label_code#}</label>
 				<div class="col-sm-7">
-					<input type="text" name="servercode" class="form-control" id="Server-Code" placeholder="{#l_placeholder_code#}">
+					<input type="text" name="servercode" class="form-control" id="Server-Code" placeholder="{#l_placeholder_code#}" {if $postdata|@count>0}value="{$postdata[2]}"{/if}>
 					<span id="helpBlock" class="help-block">{#l_help_code#}</span>
 				</div>
 			</div>
@@ -73,9 +82,8 @@
 				<label for="Language" class="col-sm-3 control-label">{#l_select_lang#}</label>
 				<div class="col-sm-7">
 					<select class="form-control" name="language"> {foreach $languages as $language}
-							<option value="{$language.path}">{$language.localName}</option> {/foreach}
-						</select>
-					<span id="helpBlock" class="help-block">{#l_help_language#}</span>
+						<option value="{$language.path}" {if $language.path==$languagePath}selected{/if}>{$language.localName}</option> {/foreach}
+					</select> <span id="helpBlock" class="help-block">{#l_help_language#}</span>
 				</div>
 			</div>
 			<div class="form-group">
@@ -85,6 +93,6 @@
 			</div>
 		</form>
 	</div>
-	</div>
+	{/if}
 </body>
 </html>

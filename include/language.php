@@ -8,7 +8,7 @@ while ( ($entry = $langDir->read ()) != false ) {
 	if ($entry != "." && $entry != ".." && is_dir ( 'language/' . $entry )) {
 		if (file_exists ( 'language/' . $entry . '/language.txt' )) {
 			$langFile = file ( 'language/' . $entry . '/language.txt' );
-			$languages [] = array (
+			$languages [$entry] = array (
 					'path' => $entry,
 					'englishName' => trim ( $langFile [0] ),
 					'localName' => trim ( $langFile [1] ) 
