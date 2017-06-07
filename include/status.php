@@ -26,7 +26,8 @@ if ($stats) {
 			'mapName' => $stats ["mapName"],
 			'mapSize' => $stats ["mapSize"],
 			'money' => $stats ["money"],
-			'dayTime' => $stats ["dayTime"] 
+			'dayTime' => gmdate("H:i:s",($stats ["dayTime"]+0)/1000)
+			//'dayTime' => $stats ["dayTime"] 
 	);
 	$smarty->assign ( 'game', $game );
 	

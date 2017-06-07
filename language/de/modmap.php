@@ -6,7 +6,7 @@ if (! defined ( 'IN_NFMWS' )) {
 if (empty ( $lang ) || ! is_array ( $lang )) {
 	$lang = array ();
 }
-// Waren
+
 $lang = array_merge ( $lang, array (
 		'cm_inputWaste' => 'Abfall',
 		'Apfelpalette' => 'Apfel',
@@ -126,7 +126,6 @@ $lang = array_merge ( $lang, array (
 		'Tip_RSzucker' => 'Zuckerrüben' 
 ) );
 
-// Produktionsstätten
 $lang = array_merge ( $lang, array (
 		'FabrikScript_Backerei' => 'Bäckerei',
 		'FabrikScript_BrauereiFass' => 'Brauerei Fass',
@@ -188,5 +187,5 @@ $lang = array_merge ( $lang, array (
 		'onMap' => 'Landschaft',
 		'Schafweide' => 'Schafweide',
 		'HayLoftPlaceable' => 'Wurzelfruchtlager (platzierbar)',
-		'FabrikScript_Schlachterei' => 'Schlachter' 
+		'FabrikScript_Schlachterei' => 'Schlachter'
 ) );

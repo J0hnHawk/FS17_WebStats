@@ -11,12 +11,17 @@ date_default_timezone_set ( 'Europe/Lisbon' );
 setlocale ( LC_ALL, 'de_DE@euro', 'de_DE', 'de', 'ge' );
 
 require ('./smarty/Smarty.class.php');
+$style = 'bootstrap';
+
 require ('./include/functions.php');
+
 $configFile = './config/config.php';
-if (file_exists($configFile)) {
+if (file_exists ( $configFile )) {
 	require ($configFile);
 } else {
-	die ('Config fehlt!');	
+	define ( 'IN_NFMWS_INSTALL', true );
+	include ('./include/install.php');
+	exit();
 }
 
 require ('./include/xmlTools.php');
@@ -26,14 +31,14 @@ include ("./language/de.php");
 $stats = getServerStatsSimpleXML ( sprintf ( $serverAddress, 'dedicated-server-stats.xml?' ) );
 $savegame = getServerStatsSimpleXML ( sprintf ( $serverAddress, 'dedicated-server-savegame.html?file=vehicles&' ) );
 
-$style = 'bootstrap';
+
 
 // Cookie mit Einstellungen laden
-$cookieVersion = 3; 
+$cookieVersion = 3;
 $options = array ();
 if (isset ( $_COOKIE ['nfmarsch'] )) {
 	$options = json_decode ( $_COOKIE ['nfmarsch'], true );
-	if (isset($options ['version']) && $options ['version'] != $cookieVersion) {
+	if (isset ( $options ['version'] ) && $options ['version'] != $cookieVersion) {
 		$options = array ();
 	}
 }
@@ -51,7 +56,7 @@ $smarty = new Smarty ();
 $smarty->debugging = false;
 $smarty->caching = false;
 $smarty->setTemplateDir ( "./styles/$style/templates" );
-$smarty->assign('siteTitle',$siteTitle);
+$smarty->assign ( 'siteTitle', $siteTitle );
 $smarty->assign ( 'page', $page );
 include ("./include/$page.php");
 $smarty->assign ( 'style', $style );
