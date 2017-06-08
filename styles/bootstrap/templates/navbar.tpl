@@ -4,12 +4,12 @@
 			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
 				<span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span>
 			</button>
-			<a class="navbar-brand" href="index.php">{$siteTitle}</a>
+			<a class="navbar-brand" href="index.php">NF Marsch {$mapVersion} WebStats</a>
 		</div>
 		<div id="navbar" class="collapse navbar-collapse">
 			<ul class="nav navbar-nav">
 				<li class="{if $page == 'status'}active{/if}">
-					<a href="index.php?page=status"> <span class="glyphicon glyphicon-home"></span> Serverübersicht
+					<a href="index.php?page=overview"> <span class="glyphicon glyphicon-home"></span> Übersicht
 					</a>
 				</li>
 				<li class="{if $page == 'storage'}active{/if}">

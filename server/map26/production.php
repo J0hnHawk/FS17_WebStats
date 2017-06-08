@@ -1,5 +1,5 @@
 <?php
-$siteTitle = 'NF Marsch 2.6 WebStats';
+$mapVersion = '2.6';
 $mapconfig = array (
 		'FabrikScript_KraftFutterHerstellung' => array (
 				'ProdPerHour' => 60000,

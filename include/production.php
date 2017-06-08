@@ -41,7 +41,7 @@ if ($_SERVER ['REQUEST_METHOD'] == 'POST') {
 $plants = $sort_name = $sort_fillLevel = $sort_name = $commodities = array ();
 
 // Paletten suchen
-foreach ( $savegame->item as $item ) {
+foreach ( $careerVehicles->item as $item ) {
 	$fillType = false;
 	$className = strval ( $item ['className'] );
 	$location = getLocation ( $item ['position'] );
@@ -60,7 +60,7 @@ foreach ( $savegame->item as $item ) {
 }
 
 // Fabriken suchen
-foreach ( $savegame->onCreateLoadedObject as $object ) {
+foreach ( $careerVehicles->onCreateLoadedObject as $object ) {
 	$saveId = strval ( $object ['saveId'] );
 	if (isset ( $mapconfig [$saveId] ) && $mapconfig [$saveId] ['showInProduction']) {
 		$plant = translate ( $saveId );

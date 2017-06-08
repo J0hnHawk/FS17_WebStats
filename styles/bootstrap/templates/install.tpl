@@ -1,4 +1,4 @@
-{config_load file='../style.cfg'} {config_load file="../../../language/$languagePath/lang.conf" section='install'}
+{config_load file='../style.conf'}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -24,71 +24,56 @@
 				</button>
 				<a class="navbar-brand" href="index.php">NF Marsch WebStats</a>
 			</div>
-			<div id="navbar" class="navbar-collapse collapse">
-				<form class="navbar-form navbar-right" action="index.php?page=install" method="post">
-					<div class="form-group">
-						<select class="form-control" name="language"> {foreach $languages as $language}
-							<option value="{$language.path}">{$language.localName}</option> {/foreach}
-						</select>
-					</div>
-					<button type="submit" name="submit" value="language" class="btn btn-success">{#l_change#}</button>
-				</form>
-				<span class="navbar-right navbar-text">{#l_select_lang#}:</span>
-			</div>
-			<!--/.navbar-collapse -->
 		</div>
 	</nav>
 	{if $success}
 	<div class="container theme-showcase" role="main">
 		<div class="jumbotron">
-			<h1>{#l_jumbotron#}</h1>
-			<p>{#l_jumbotron_success#}</p>
-			<p><a class="btn btn-primary btn-lg" href="index.php" role="button">{#l_jumbotron_button#} &raquo;</a></p>
+			<h1>Nordfriesische Marsch WebStats</h1>
+			<p>Konfiguration erfolgreich gespeichert.</p>
+			<p>
+				<a class="btn btn-primary btn-lg" href="index.php" role="button">zur Übersicht wechseln &raquo;</a>
+			</p>
 		</div>
 	</div>
 	{else}
 	<div class="container theme-showcase" role="main">
 		<div class="jumbotron">
-			<h1>{#l_jumbotron#}</h1>
-			<p>{#l_jumbotron_text#}</p>
+			<h1>Nordfriesische Marsch WebStats</h1>
+			<p>
+				Statuswebseite für die Farming Simulator 17 Mod Map "Nordfriesische Marsch". <br>Anzeige der Spieler, Mods, Fahrzeuge, Lagerbestände und
+				Produktionsanlagen.
+			</p>
 		</div>
 		<div class="page-header">
-			<h1>{#l_page_header#}</h1>
+			<h1>Installation</h1>
 		</div>
 		<form class="form-horizontal" action="index.php?page=install" method="post">
 			{if $error}{$error}{/if}
 			<div class="form-group">
-				<label for="Server-IP" class="col-sm-3 control-label">{#l_label_ip#}</label>
+				<label for="Server-IP" class="col-sm-3 control-label">Server IP-Adresse</label>
 				<div class="col-sm-7">
-					<input type="ip" name="serverip" class="form-control" id="Server-IP" placeholder="{#l_placeholder_ip#}" {if $postdata|@count>0}value="{$postdata[0]}"{/if}>
-					<span id="helpBlock" class="help-block">{#l_help_ip#}</span>
+					<input type="ip" name="serverip" class="form-control" id="Server-IP" placeholder="IP-Adresse" {if $postdata|@count>
+					0}value="{$postdata[0]}"{/if}> <span id="helpBlock" class="help-block">IP-Adresse des Farming Simulator 17 Dedicated Servers.</span>
 				</div>
 			</div>
 			<div class="form-group">
-				<label for="Server-Port" class="col-sm-3 control-label">{#l_label_port#}</label>
+				<label for="Server-Port" class="col-sm-3 control-label">Server-Port</label>
 				<div class="col-sm-7">
-					<input type="text" name="serverport" class="form-control" id="Server-Port" placeholder="{#l_placeholder_port#}" {if $postdata|@count>0}value="{$postdata[1]}"{/if}>
-					<span id="helpBlock" class="help-block">{#l_help_port#}</span>
+					<input type="text" name="serverport" class="form-control" id="Server-Port" placeholder="Port" {if $postdata|@count>
+					0}value="{$postdata[1]}"{/if}> <span id="helpBlock" class="help-block">Port der Web-API, nicht der Port für den Spiel-Client.</span>
 				</div>
 			</div>
 			<div class="form-group">
-				<label for="Server-Code" class="col-sm-3 control-label">{#l_label_code#}</label>
+				<label for="Server-Code" class="col-sm-3 control-label">Server-Code</label>
 				<div class="col-sm-7">
-					<input type="text" name="servercode" class="form-control" id="Server-Code" placeholder="{#l_placeholder_code#}" {if $postdata|@count>0}value="{$postdata[2]}"{/if}>
-					<span id="helpBlock" class="help-block">{#l_help_code#}</span>
-				</div>
-			</div>
-			<div class="form-group">
-				<label for="Language" class="col-sm-3 control-label">{#l_select_lang#}</label>
-				<div class="col-sm-7">
-					<select class="form-control" name="language"> {foreach $languages as $language}
-						<option value="{$language.path}" {if $language.path==$languagePath}selected{/if}>{$language.localName}</option> {/foreach}
-					</select> <span id="helpBlock" class="help-block">{#l_help_language#}</span>
+					<input type="text" name="servercode" class="form-control" id="Server-Code" placeholder="Code" {if $postdata|@count>
+					0}value="{$postdata[2]}"{/if}> <span id="helpBlock" class="help-block">Web-API Zugriffscode.</span>
 				</div>
 			</div>
 			<div class="form-group">
 				<div class="col-sm-offset-7 col-sm-3">
-					<button type="submit" name="submit" value="server" class="pull-right btn btn-primary btn-block">{#l_save_config#}</button>
+					<button type="submit" name="submit" value="server" class="pull-right btn btn-primary btn-block">Konfiguration speichern</button>
 				</div>
 			</div>
 		</form>

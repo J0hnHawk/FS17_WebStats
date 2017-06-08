@@ -1,6 +1,6 @@
 <div class="page-header">
 	<h3>
-		Lagerbestände<small class="pull-right">{if $outOfMap|@count>0}</span><a href="#" data-toggle="modal" data-target="#outOfMapAlert"><span class="glyphicon glyphicon-warning-sign"
+		Lagerbestände<small> (Stand: Tag {$currentDay}, {$dayTime})</small><small class="pull-right">{if $outOfMap|@count>0}</span><a href="#" data-toggle="modal" data-target="#outOfMapAlert"><span class="glyphicon glyphicon-warning-sign"
 				aria-hidden="true"></span> Achtung</a>&nbsp;&nbsp;{/if}<a href="#" data-toggle="modal" data-target="#optionsDialog"><span class="glyphicon glyphicon-cog"
 				aria-hidden="true"></span> Einstellungen</a></small>
 	</h3>

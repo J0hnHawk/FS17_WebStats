@@ -1,4 +1,4 @@
-{config_load file='../style.cfg'}
+{config_load file='../style.conf'}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,7 +9,7 @@
 <meta name="description" content="WebStats für die Mod Map Nordfriesische Marsch">
 <meta name="author" content="John Hawk">
 <link rel="icon" href="{#PfadIMG#}favicon.ico">
-<title>{$siteTitle}</title>
+<title>NF Marsch {$mapVersion} WebStats</title>
 <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
 <link href="{#PfadCSS#}customstyle.css" rel="stylesheet">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
@@ -32,10 +32,10 @@
 			<div class="modal-content">
 				<div class="modal-header">
 					<button type="button" class="close" data-dismiss="modal">&times;</button>
-					<h4 class="modal-title">Nordfriesische Marsch 2.4 WebStats</h4>
+					<h4 class="modal-title">Nordfriesische Marsch {$mapVersion} WebStats</h4>
 				</div>
 				<div class="modal-body">
-					<p>Version 1.0-1</p>
+					<p>{$webStatsVersion}</p>
 					<p>Copyright (c) 2017, John Hawk</p>
 					<p>Webseite zur Anzeige des Serverstatus sowie Überwachung der Produktionsanlagen und Lagerbestände.</p>
 					<p>

@@ -1,15 +1,8 @@
 <?php
-$error = $success = false;
-$smarty = new Smarty ();
-$smarty->debugging = false;
-$smarty->caching = false;
-$smarty->setTemplateDir ( "./styles/$style/templates" );
-$smarty->assign ( 'style', $style );
-include ('./include/language.php');
-if (! isset ( $_SESSION ['language'] )) {
-	$_SESSION ['language'] = $defaultLanguage;
+if (! defined ( 'IN_NFMWS' ) && ! defined ( 'IN_INSTALL' )) {
+	exit ();
 }
-include ("./language/{$_SESSION ['language']}/messages.php");
+$error = $success = false;
 $postdata = array ();
 if ($_SERVER ['REQUEST_METHOD'] == 'POST') {
 	$submit = GetParam ( 'submit' );
@@ -19,20 +12,15 @@ if ($_SERVER ['REQUEST_METHOD'] == 'POST') {
 		$postdata [0] = GetParam ( 'serverip', 'P', '127.0.0.1' );
 		$postdata [1] = GetParam ( 'serverport', 'P', '8080' ) + 0;
 		$postdata [2] = GetParam ( 'servercode', 'P', '' );
-		$postdata [3] = GetParam ( 'language', 'P', 'en' );
 		if (filter_var ( $postdata [0], FILTER_VALIDATE_IP ) === false) {
-			$error .= '<div class="alert alert-danger"><strong>' . $lang ['L_ERROR'] . '!</strong> ' . $lang ['L_WRONGIP'] . '</div>';
+			$error .= '<div class="alert alert-danger"><strong>FEHLER:</strong> Die eingegebene IP Adresse ist nicht gültig.</div>';
 		}
 		if ($postdata [1] < 1 || $postdata [1] > 65536) {
-			$error .= '<div class="alert alert-danger"><strong>' . $lang ['L_ERROR'] . '!</strong> ' . $lang ['L_WRONGPORT'] . '</div>';
+			$error .= '<div class="alert alert-danger"><strong>FEHLER:</strong> Der eingegebene Port ist ungültig.</div>';
 		}
 		if (strlen ( $postdata [2] ) < 1) {
-			$error .= '<div class="alert alert-danger"><strong>' . $lang ['L_ERROR'] . '!</strong> ' . $lang ['L_WRONGCODE'] . '</div>';
+			$error .= '<div class="alert alert-danger"><strong>FEHLER:</strong> Der eingegebene Code ist ungültig.</div>';
 		}
-		if (! isset ( $languages [$postdata [3]] )) {
-			$postdata [3] = $defaultLanguage;
-		}
-		$_SESSION ['language'] = GetParam ( 'language' );
 		if (! $error) {
 			error_reporting ( E_NOTICE );
 			$fp = fsockopen ( $postdata [0], $postdata [1], $errno, $errstr, 4 );
@@ -49,25 +37,21 @@ if ($_SERVER ['REQUEST_METHOD'] == 'POST') {
 				}
 				fclose ( $fp );
 				if (preg_match ( "/HTTP\/1\.\d\s(\d+)/", $resp, $matches ) && $matches [1] == 200) {
-					$fp = fopen ( './config/server.conf', 'w' );
+					$fp = fopen ( './server/server.conf', 'w' );
 					fwrite ( $fp, serialize ( $postdata ) );
 					fclose ( $fp );
 					$success = true;
 				} else {
-					$error .= '<div class="alert alert-danger"><strong>' . $lang ['L_ERROR'] . '!</strong> ' . $lang ['L_WRONGCODE'] . '</div>';
+					$error .= '<div class="alert alert-danger"><strong>FEHLER:</strong> Der eingegebene Code ist ungültig.</div>';
 				}
 			} else {
-				$error .= '<div class="alert alert-danger"><strong>' . $lang ['L_ERROR'] . '!</strong> ' . $lang ['L_NOCONNECTION'] . '</div>';
+				$error .= '<div class="alert alert-danger"><strong>FEHLER:</strong> Server ist offline oder die IP Adresse ist falsch.</div>';
 			}
 		}
 	}
 }
 
-$smarty->assign ( 'languages', $languages );
-$smarty->assign ( 'languagePath', $_SESSION ['language'] );
-
 $smarty->assign ( 'error', $error );
 $smarty->assign ( 'success', $success );
 $smarty->assign ( 'postdata', $postdata );
-
-$smarty->display ( 'install.tpl', $style, $style );
+$smarty->display ( 'install.tpl', 'bootstrap', 'bootstrap' );

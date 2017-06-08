@@ -27,7 +27,7 @@ $classNames = array (
 );
 
 // Paletten, Ballen und Wurzelfrchtlager durchsuchen
-foreach ( $savegame->item as $item ) {
+foreach ( $careerVehicles->item as $item ) {
 	$fillType = false;
 	$className = strval ( $item ['className'] );
 	$location = getLocation ( $item ['position'] );
@@ -90,7 +90,7 @@ if (! $options ['storage'] ['onlyPallets'] && $options ['storage'] ['showVehicle
 	}
 }
 
-foreach ( $savegame->onCreateLoadedObject as $object ) {
+foreach ( $careerVehicles->onCreateLoadedObject as $object ) {
 	$saveId = strval ( $object ['saveId'] );
 	
 	// Hofsilo
