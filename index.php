@@ -16,8 +16,7 @@ require ('./include/functions.php');
 $smarty = new Smarty ();
 $smarty->debugging = false;
 $smarty->caching = false;
-$smarty->setTemplateDir ( "./styles/bootstrap/templates" );
-$smarty->assign ( 'webStatsVersion', '1.0-2' );
+$smarty->assign ( 'webStatsVersion', '1.0.0' );
 
 $configFile = './server/server.conf';
 if (file_exists ( $configFile )) {
@@ -69,5 +68,4 @@ if (! in_array ( $page, $pages ))
 	$page = 'production';
 $smarty->assign ( 'page', $page );
 include ("./include/$page.php");
-$smarty->assign ( 'style', 'bootstrap' );
-$smarty->display ( 'index.tpl', 'bootstrap', 'bootstrap' );
+$smarty->display ( 'index.tpl');

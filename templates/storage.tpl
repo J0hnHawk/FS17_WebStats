@@ -16,7 +16,7 @@
 				</tr>
 			</thead>
 			<tbody>
-				{foreach from=$commodities key=$fillType item=$fillLevels} {if $fillLevels@iteration <= $col1max} {$stripFillType = $fillType|strip:""}
+				{foreach from=$commodities key=$fillType item=$fillLevels} {if $fillLevels@iteration <= $col1max} {$stripFillType = $fillType|strip:""|replace:"{ldelim}":""|replace:"{rdelim}":""}
 				<tr data-toggle="collapse" href="#collapse{$stripFillType}" {if isset($fillLevels.outOfMap)}class="danger"{/if}>
 					<td>{$fillType}</td>
 					<td class="text-right">{$fillLevels.overall|number_format:0:",":"."}</td>
@@ -58,7 +58,7 @@
 			</thead>
 			<tbody>
 				{foreach from=$commodities key=$fillType item=$fillLevels} {if $fillLevels@iteration > $col1max && $fillLevels@iteration <= $col2max }
-				{$stripFillType = $fillType|strip:""}
+				{$stripFillType = $fillType|strip:""|replace:"{ldelim}":""|replace:"{rdelim}":""}
 				<tr data-toggle="collapse" href="#collapse{$stripFillType}" {if isset($fillLevels.outOfMap)}class="danger"{/if}>
 					<td>{$fillType}</td>
 					<td class="text-right">{$fillLevels.overall|number_format:0:",":"."}</td>
@@ -100,7 +100,7 @@
 			</thead>
 			<tbody>
 				{foreach from=$commodities key=$fillType item=$fillLevels} {if $fillLevels@iteration > (($fillLevels@total/3)|ceil)*2} {$stripFillType =
-				$fillType|strip:""}
+				$fillType|strip:""|replace:"{ldelim}":""|replace:"{rdelim}":""}
 				<tr data-toggle="collapse" href="#collapse{$stripFillType}" {if isset($fillLevels.outOfMap)}class="danger"{/if}>
 					<td>{$fillType}</td>
 					<td class="text-right">{$fillLevels.overall|number_format:0:",":"."}</td>
