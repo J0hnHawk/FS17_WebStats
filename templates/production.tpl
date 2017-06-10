@@ -1,6 +1,6 @@
 <div class="page-header">
 	<h3>
-		Produktionsanlagen<small> (Stand: Tag {$currentDay}, {$dayTime})</small><small class="pull-right"><a href="#" data-toggle="modal" data-target="#myModal"><span class="glyphicon glyphicon-cog"
+		Produktionsanlagen<small> (Speicherstand: Tag {$currentDay}, {$dayTime})</small><small class="pull-right"><a href="#" data-toggle="modal" data-target="#myModal"><span class="glyphicon glyphicon-cog"
 				aria-hidden="true"></span> Einstellungen</a></small>
 	</h3>
 </div>

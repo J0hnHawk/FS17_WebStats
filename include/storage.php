@@ -72,7 +72,12 @@ foreach ( $careerVehicles->item as $item ) {
 	if ($location == '{outOfMap}') {
 		$commodities [$fillType] ['outOfMap'] = true;
 		// für Modal Dialog mit Edit-Vorschlag, Platzierung beim Palettenlager
-		$outOfMap [] = "$fillType: {$item ['position']} -> -870 100 " . (- 560 + sizeof ( $outOfMap ) * 2);
+		$outOfMap [] = array (
+				$className,
+				$fillType,
+				strval ( $item ['position'] ),
+				'-870 100 ' . (- 560 + sizeof ( $outOfMap ) * 2) 
+		);
 	}
 	// Platzierbares Wurzelfruchtlager
 	if ($className == 'HayLoftPlaceable') {
