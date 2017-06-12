@@ -34,6 +34,9 @@ if (! in_array ( $mode, $modes )) {
 	$mode = 'game';
 }
 
+// Kartendaten laden
+require ('./include/savegame.php');
+
 if ($stats) {
 	// -------------------------------------------------------------------------
 	// game

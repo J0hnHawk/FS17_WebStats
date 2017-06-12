@@ -21,7 +21,6 @@
 
 ini_set ( 'display_errors', 1 );
 ini_set ( 'display_startup_errors', 1 );
-//error_reporting ( E_ERROR | E_WARNING | E_PARSE );
 error_reporting ( E_ALL );
 
 session_start ();
@@ -32,12 +31,14 @@ setlocale ( LC_ALL, 'de_DE@euro', 'de_DE', 'de', 'ge' );
 
 require ('./smarty/Smarty.class.php');
 require ('./include/functions.php');
+require ('./include/xmlTools.php');
 
 $smarty = new Smarty ();
 $smarty->debugging = false;
 $smarty->caching = false;
-$smarty->assign ( 'webStatsVersion', '1.0.0' );
+$smarty->assign ( 'webStatsVersion', '1.0.2' );
 
+// Serverkonfiguration laden - wenn nicht vorhanden Instalation starten
 $configFile = './server/server.conf';
 if (file_exists ( $configFile )) {
 	$server = file ( $configFile );
@@ -49,38 +50,20 @@ if (file_exists ( $configFile )) {
 	exit ();
 }
 
+// Cookie mit Einstellungen laden
+include ('./include/coockie.php');
+
+// Kartendetails laden
 require ('./server/map26/production.php');
 require ('./server/map26/translation.php');
 $smarty->assign ( 'mapVersion', $mapVersion );
 
-require ('./include/xmlTools.php');
-
-$stats = getServerStatsSimpleXML ( sprintf ( $serverAddress, 'dedicated-server-stats.xml?' ) );
-$careerVehicles = getServerStatsSimpleXML ( sprintf ( $serverAddress, 'dedicated-server-savegame.html?file=vehicles&' ) );
-$careerSavegame = getServerStatsSimpleXML ( sprintf ( $serverAddress, 'dedicated-server-savegame.html?file=careerSavegame&' ) );
-//$economy = getServerStatsSimpleXML ( sprintf ( $serverAddress, 'dedicated-server-savegame.html?file=economy&' ) );
-
-// Stand der Daten ermitteln (Ingame-Zeitpunkt der Speicherung)
-$currentDay = $careerSavegame->environment->currentDay;
-$dayTime = $careerSavegame->environment->dayTime * 60;
-$dayTime = gmdate("H:i",$dayTime);
-$smarty->assign('currentDay', $currentDay);
-$smarty->assign('dayTime', $dayTime);
-
-// Cookie mit Einstellungen laden
-$cookieVersion = 3;
-$options = array ();
-if (isset ( $_COOKIE ['nfmarsch'] )) {
-	$options = json_decode ( $_COOKIE ['nfmarsch'], true );
-	if (isset ( $options ['version'] ) && $options ['version'] != $cookieVersion) {
-		$options = array ();
-	}
-}
 // Erlaubte Seiten
 $pages = array (
 		'overview',
 		'storage',
 		'production',
+		'details',
 		'options' 
 );
 $page = GetParam ( 'page', 'G' );
