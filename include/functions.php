@@ -44,7 +44,8 @@ function translate($text) {
 	if (isset ( $lang [$text] )) {
 		return $lang [$text];
 	} else {
-		return '{' . $text . '}';
+		// return '{' . $text . '}';
+		return $text;
 	}
 }
 
@@ -65,29 +66,34 @@ function strposa($haystack, $needle, $offset = 0) {
 function getFillType($uri) {
 	$split = explode ( '/', strval ( $uri ) );
 	$filename = substr ( array_pop ( $split ), 0, - 4 );
-	return translate ( $filename );
+	return $filename;
 }
 
 // Waren anlegen und/oder addieren
 function addCommodity($fillType, $fillLevel, $location, $className = 'none') {
 	global $commodities;
-	if (! isset ( $commodities [$fillType] )) {
-		$commodities [$fillType] = array (
-				'overall' => $fillLevel
+	$l_fillType = translate ( $fillType );
+	$l_location = translate ( $location );
+	if (! isset ( $commodities [$l_fillType] )) {
+		$commodities [$l_fillType] = array (
+				'overall' => $fillLevel,
+				'i3dName' => $fillType,
+				'locations' => array () 
 		);
 	} else {
-		$commodities [$fillType] ['overall'] += $fillLevel;
+		$commodities [$l_fillType] ['overall'] += $fillLevel;
 	}
-	if (! isset ( $commodities [$fillType] [$location] )) {
-		$commodities [$fillType] += array (
-				$location => array (
+	if (! isset ( $commodities [$l_fillType] ['locations'] [$l_location] )) {
+		$commodities [$l_fillType] ['locations'] += array (
+				$l_location => array (
+						'i3dName' => $location,
 						$className => 1,
-						'fillLevel' => $fillLevel
-				)
+						'fillLevel' => $fillLevel 
+				) 
 		);
 	} else {
-		$commodities [$fillType] [$location] [$className] ++;
-		$commodities [$fillType] [$location] ['fillLevel'] += $fillLevel;
+		$commodities [$l_fillType] ['locations'] [$l_location] [$className] ++;
+		$commodities [$l_fillType] ['locations'] [$l_location] ['fillLevel'] += $fillLevel;
 	}
 }
 

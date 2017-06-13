@@ -1,14 +1,12 @@
 <div class="page-header">
 	<h3>
 		Lagerbestände<small> (Speicherstand: Tag {$currentDay}, {$dayTime})</small><small class="pull-right">{if $outOfMap|@count>0}</span><a href="#"
-			data-toggle="modal" data-target="#outOfMapAlert"
-		><span class="glyphicon glyphicon-warning-sign" aria-hidden="true"></span> Achtung</a>&nbsp;&nbsp;{/if}<a href="#" data-toggle="modal"
-			data-target="#optionsDialog"
-		><span class="glyphicon glyphicon-cog" aria-hidden="true"></span> Einstellungen</a></small>
+			data-toggle="modal" data-target="#outOfMapAlert"><span class="glyphicon glyphicon-warning-sign" aria-hidden="true"></span> Achtung</a>&nbsp;&nbsp;{/if}<a
+			href="#" data-toggle="modal" data-target="#optionsDialog"><span class="glyphicon glyphicon-cog" aria-hidden="true"></span> Einstellungen</a></small>
 	</h3>
 </div>
 <div class="row">
-	{$col1max = ($commodities|@count/3)|ceil} {$col2max = $col1max + $col1max}
+	{$colmax[0] = -1} {$colmax[1] = ($commodities|@count/3)|ceil} {$colmax[2] = $colmax[1] *2} {$colmax[3] = $commodities|@count} {for $i=0 to 2}
 	<div class="col-sm-4">
 		<table class="table table-hover">
 			<thead>
@@ -18,29 +16,29 @@
 				</tr>
 			</thead>
 			<tbody>
-				{foreach from=$commodities key=$fillType item=$fillLevels} {if $fillLevels@iteration <= $col1max} {$stripFillType =
-				$fillType|strip:""|replace:"{ldelim}":""|replace:"{rdelim}":""}
-				<tr data-toggle="collapse" href="#collapse{$stripFillType}" {if isset($fillLevels.outOfMap)}class="danger"{/if}>
+				{foreach $commodities as $fillType => $commodity} {if $commodity@iteration > $colmax[$i] && $commodity@iteration <= $colmax[$i+1] }
+				{$stripFillType = $commodity.i3dName|strip:""|replace:"{ldelim}":""|replace:"{rdelim}":""}
+				<tr data-toggle="collapse" href="#collapse{$commodity.i3dName}" {if isset($commodity.outOfMap)}class="danger"{/if}>
 					<td>{$fillType}</td>
-					<td class="text-right">{$fillLevels.overall|number_format:0:",":"."}</td>
+					<td class="text-right">{$commodity.overall|number_format:0:",":"."}</td>
 				</tr>
-				{if $fillLevels.overall>0}
-				<tr class="collapse info" id="collapse{$stripFillType}">
+				{if $commodity.overall>0}
+				<tr class="collapse info" id="collapse{$commodity.i3dName}">
 					<td colspan="3">
 						<table class="table" style="margin-bottom: 0px;">
 							<thead>
 								<tr>
-									<th>Ort<a class="pull-right" href="index.php?page=details&object={$stripFillType}">Details</a></th>
+									<th>Ort<a class="pull-right" href="index.php?page=details&object={$commodity.i3dName}">Details</a></th>
 									<th class="text-right">Menge</th>
 								</tr>
 							</thead>
 							<tbody>
-								{foreach from=$fillLevels key=$location item=$fillLevel} {if $location=="overall"||$location=="outOfMap"}{continue}{/if} {$addInfo=false} {if
-								isset($fillLevel.FillablePallet)}{if $fillLevel.FillablePallet==1}{$addInfo="1 Palette"}{else}{$addInfo="{$fillLevel.FillablePallet}
-								Paletten"}{/if}{/if} {if isset($fillLevel.Bale)}{$addInfo="{$fillLevel.Bale} Ballen"}{/if}
+								{foreach $commodity.locations as $locationName => $location} {$addInfo=false} {if isset($location.FillablePallet)}{if
+								$location.FillablePallet==1}{$addInfo="1 Palette"}{else}{$addInfo="{$location.FillablePallet} Paletten"}{/if}{/if} {if
+								isset($location.Bale)}{$addInfo="{$location.Bale} Ballen"}{/if}
 								<tr>
-									<td>{$location}{if $addInfo} ({$addInfo}){/if}</td>
-									<td class="text-right">{$fillLevel.fillLevel|number_format:0:",":"."}</td>
+									<td>{$locationName}{if $addInfo} ({$addInfo}){/if}</td>
+									<td class="text-right">{$location.fillLevel|number_format:0:",":"."}</td>
 								</tr>
 								{/foreach}
 							</tbody>
@@ -51,90 +49,7 @@
 			</tbody>
 		</table>
 	</div>
-	<div class="col-sm-4">
-		<table class="table table-hover">
-			<thead>
-				<tr>
-					<th>Ware</th>
-					<th class="text-right">Lagerbestand</th>
-				</tr>
-			</thead>
-			<tbody>
-				{foreach from=$commodities key=$fillType item=$fillLevels} {if $fillLevels@iteration > $col1max && $fillLevels@iteration <= $col2max }
-				{$stripFillType = $fillType|strip:""|replace:"{ldelim}":""|replace:"{rdelim}":""}
-				<tr data-toggle="collapse" href="#collapse{$stripFillType}" {if isset($fillLevels.outOfMap)}class="danger"{/if}>
-					<td>{$fillType}</td>
-					<td class="text-right">{$fillLevels.overall|number_format:0:",":"."}</td>
-				</tr>
-				{if $fillLevels.overall>0}
-				<tr class="collapse info" id="collapse{$stripFillType}">
-					<td colspan="3">
-						<table class="table" style="margin-bottom: 0px;">
-							<thead>
-								<tr>
-									<th>Ort<a class="pull-right" href="index.php?page=details&object={$stripFillType}">Details</a></th>
-									<th class="text-right">Menge</th>
-								</tr>
-							</thead>
-							<tbody>
-								{foreach from=$fillLevels key=$location item=$fillLevel} {if $location=="overall"||$location=="outOfMap"}{continue}{/if} {$addInfo=false} {if
-								isset($fillLevel.FillablePallet)}{if $fillLevel.FillablePallet==1}{$addInfo="1 Palette"}{else}{$addInfo="{$fillLevel.FillablePallet}
-								Paletten"}{/if}{/if} {if isset($fillLevel.Bale)}{$addInfo="{$fillLevel.Bale} Ballen"}{/if}
-								<tr>
-									<td>{$location}{if $addInfo} ({$addInfo}){/if}</td>
-									<td class="text-right">{$fillLevel.fillLevel|number_format:0:",":"."}</td>
-								</tr>
-								{/foreach}
-							</tbody>
-						</table>
-					</td>
-				</tr>
-				{/if} {/if} {/foreach}
-			</tbody>
-		</table>
-	</div>
-	<div class="col-sm-4">
-		<table class="table table-hover">
-			<thead>
-				<tr>
-					<th>Ware</th>
-					<th colspan="2" class="text-right">Lagerbestand</th>
-				</tr>
-			</thead>
-			<tbody>
-				{foreach from=$commodities key=$fillType item=$fillLevels} {if $fillLevels@iteration > (($fillLevels@total/3)|ceil)*2} {$stripFillType =
-				$fillType|strip:""|replace:"{ldelim}":""|replace:"{rdelim}":""}
-				<tr data-toggle="collapse" href="#collapse{$stripFillType}" {if isset($fillLevels.outOfMap)}class="danger"{/if}>
-					<td>{$fillType}</td>
-					<td class="text-right">{$fillLevels.overall|number_format:0:",":"."}</td>
-				</tr>
-				{if $fillLevels.overall>0}
-				<tr class="collapse info" id="collapse{$stripFillType}">
-					<td colspan="3">
-						<table class="table" style="margin-bottom: 0px;">
-							<thead>
-								<tr>
-									<th>Ort<a class="pull-right" href="index.php?page=details&object={$stripFillType}">Details</a></th>
-									<th class="text-right">Menge</th>
-								</tr>
-							</thead>
-							<tbody>
-								{foreach from=$fillLevels key=$location item=$fillLevel} {if $location=="overall"||$location=="outOfMap"}{continue}{/if} {$addInfo=false} {if
-								isset($fillLevel.FillablePallet)}{if $fillLevel.FillablePallet==1}{$addInfo="1 Palette"}{else}{$addInfo="{$fillLevel.FillablePallet}
-								Paletten"}{/if}{/if} {if isset($fillLevel.Bale)}{$addInfo="{$fillLevel.Bale} Ballen"}{/if}
-								<tr>
-									<td>{$location}{if $addInfo} ({$addInfo}){/if}</td>
-									<td class="text-right">{$fillLevel.fillLevel|number_format:0:",":"."}</td>
-								</tr>
-								{/foreach}
-							</tbody>
-						</table>
-					</td>
-				</tr>
-				{/if} {/if} {/foreach}
-			</tbody>
-		</table>
-	</div>
+	{/for}
 </div>
 <div class="modal fade" id="optionsDialog" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
 	<div class="modal-dialog" role="document">

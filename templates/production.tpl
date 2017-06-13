@@ -17,18 +17,18 @@ text-danger")} {$textcolors = array("","text-warning","text-danger")}
 				</tr>
 			</thead>
 			<tbody>
-				<!-- class="{$inout.class}" -->
-				{foreach from=$plants key=$plant item=$inout}{$stripPlant = $plant|strip:""|replace:"(":""|replace:")":""}
-				<tr data-toggle="collapse" href="#collapse{$stripPlant}">
-					<td><span class="{$glyphicons[$inout.state]}" aria-hidden="true"></span> {$plant}</td>
-					<td>{foreach from=$inout.input key=$fillType item=$fillLevel}<span class="{$textcolors[$fillLevel.state]}"><span
-							class="{$glyphicons[$fillLevel.state]}" aria-hidden="true"></span> {$fillType}{if !$fillLevel@last}, {/if}</span>{/foreach}
+				<!-- class="{$plant.class}" -->
+				{foreach $plants as $plantName => $plant}
+				<tr data-toggle="collapse" href="#collapse{$plant.i3dName}">
+					<td><span class="{$glyphicons[$plant.state]}" aria-hidden="true"></span> {$plantName}</td>
+					<td>{foreach from=$plant.input key=$fillType item=$fillLevel}<span class="{$textcolors[$fillLevel.state]}"><span
+							class="{$glyphicons[$fillLevel.state]}" aria-hidden="true"></span> {$fillType} </span>{/foreach}
 					</td>
-					<td>{foreach from=$inout.output key=$fillType item=$fillLevel}<span class="{$textcolors[$fillLevel.state]}"><span
-							class="{$glyphicons[$fillLevel.state]}" aria-hidden="true"></span> {$fillType}{if !$fillLevel@last}, {/if}</span>{/foreach}
+					<td>{foreach from=$plant.output key=$fillType item=$fillLevel}<span class="{$textcolors[$fillLevel.state]}"><span
+							class="{$glyphicons[$fillLevel.state]}" aria-hidden="true"></span> {$fillType} </span>{/foreach}
 					</td>
 				</tr>
-				<tr class="collapse info" id="collapse{$stripPlant}">
+				<tr class="collapse info" id="collapse{$plant.i3dName}">
 					<td colspan="4">
 						<div class="col-sm-8 col-sm-offset-1">
 							<table class="table" style="margin-bottom: 0px;">
@@ -38,9 +38,9 @@ text-danger")} {$textcolors = array("","text-warning","text-danger")}
 										<th colspan="2" width="50%">Produkt(e)</th>
 									</tr>
 								</thead>
-								{$inputRow=array()}{$outputRow=array()} {$max = max($inout.input|@count,$inout.output|@count)} {foreach from=$inout.input key=$fillType
+								{$inputRow=array()}{$outputRow=array()} {$max = max($plant.input|@count,$plant.output|@count)} {foreach from=$plant.input key=$fillType
 								item=$fillLevel} {$inputRow[$fillLevel@index] = array($fillType,$fillLevel.fillLevel,$fillLevel.fillMax)} {/foreach} {foreach
-								from=$inout.output key=$fillType item=$fillLevel} {$outputRow[$fillLevel@index] = array($fillType,$fillLevel.fillLevel,$fillLevel.fillMax)}
+								from=$plant.output key=$fillType item=$fillLevel} {$outputRow[$fillLevel@index] = array($fillType,$fillLevel.fillLevel,$fillLevel.fillMax)}
 								{/foreach}
 								<tbody>
 									{for $i=0 to $max-1}
@@ -59,7 +59,7 @@ text-danger")} {$textcolors = array("","text-warning","text-danger")}
 						</div>
 						<div class="col-sm-3">
 							<p class="pull-right">
-								<a href="index.php?page=production&hide={$plant|base64_encode}"><span class="glyphicon glyphicon-eye-close"></span> ausblenden</a>
+								<a href="index.php?page=production&hide={$plantName|base64_encode}"><span class="glyphicon glyphicon-eye-close"></span> ausblenden</a>
 							</p>
 						</div>
 					</td>
