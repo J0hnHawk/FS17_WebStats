@@ -35,12 +35,12 @@ $careerVehicles = getServerStatsSimpleXML ( sprintf ( $serverAddress, 'dedicated
 $careerSavegame = getServerStatsSimpleXML ( sprintf ( $serverAddress, 'dedicated-server-savegame.html?file=careerSavegame&' ) );
 
 // Stand der Daten ermitteln (Ingame-Zeitpunkt der Speicherung)
-if(isset($careerSavegame->environment->currentDay)) {
-$currentDay = $careerSavegame->environment->currentDay;
-$dayTime = $careerSavegame->environment->dayTime * 60;
-$dayTime = gmdate ( "H:i", $dayTime );
-$smarty->assign ( 'currentDay', $currentDay );
-$smarty->assign ( 'dayTime', $dayTime );
+if (isset ( $careerSavegame->environment->currentDay )) {
+	$currentDay = $careerSavegame->environment->currentDay;
+	$dayTime = $careerSavegame->environment->dayTime * 60;
+	$dayTime = gmdate ( "H:i", $dayTime );
+	$smarty->assign ( 'currentDay', $currentDay );
+	$smarty->assign ( 'dayTime', $dayTime );
 }
 $hideZero = $options ['storage'] ['hideZero'];
 
@@ -72,8 +72,8 @@ foreach ( $careerVehicles->item as $item ) {
 			addCommodity ( $fillType, $fillLevel, $location, $className );
 		}
 	}
-	if ($location == '{outOfMap}') {
-		$commodities [$fillType] ['outOfMap'] = true;
+	if ($location == 'outOfMap') {
+		$commodities [translate ( $fillType )] ['outOfMap'] = true;
 		// für Modal Dialog mit Edit-Vorschlag, Platzierung beim Palettenlager
 		$outOfMap [] = array (
 				$className,
@@ -107,7 +107,7 @@ if (! $options ['storage'] ['onlyPallets'] && $options ['storage'] ['showVehicle
 			foreach ( $fillTypes as $key => $fillType ) {
 				$fillType = strval ( $fillType );
 				$fillLevel = intval ( $fillLevels [$key] );
-				if ($hideZero && $fillLevel == 0 || $fillType == '{unknown}') {
+				if ($hideZero && $fillLevel == 0 || $fillType == 'unknown') {
 					continue;
 				} else {
 					addCommodity ( $fillType, $fillLevel, $location );
@@ -211,7 +211,7 @@ if (! $options ['storage'] ['sortByName']) {
 foreach ( $careerVehicles->onCreateLoadedObject as $object ) {
 	$saveId = strval ( $object ['saveId'] );
 	if (isset ( $mapconfig [$saveId] ) && $mapconfig [$saveId] ['showInProduction']) {
-		$plant = translate($saveId);
+		$plant = translate ( $saveId );
 		if (isset ( $options ['production'] ['hidePlant'] [$plant] )) {
 			continue;
 		}
@@ -225,7 +225,7 @@ foreach ( $careerVehicles->onCreateLoadedObject as $object ) {
 		);
 		foreach ( $object->Rohstoff as $rohstoff ) {
 			$fillType = strval ( $rohstoff ['Name'] );
-			$l_fillType = translate($fillType);
+			$l_fillType = translate ( $fillType );
 			$fillLevel = intval ( $rohstoff ['Lvl'] );
 			$fillMax = $mapconfig [$saveId] ['rawMaterial'] [strval ( $rohstoff ['Name'] )] ['capacity'];
 			$state = 0;
@@ -245,7 +245,7 @@ foreach ( $careerVehicles->onCreateLoadedObject as $object ) {
 		}
 		foreach ( $object->Produkt as $product ) {
 			$fillType = strval ( $product ['Name'] );
-			$l_fillType = translate($fillType);
+			$l_fillType = translate ( $fillType );
 			if ($mapconfig [$saveId] ['product'] [$fillType] ['showInStorage']) {
 				$fillLevel = intval ( $product ['Lvl'] );
 				$fillMax = $mapconfig [$saveId] ['product'] [$fillType] ['capacity'];

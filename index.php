@@ -34,9 +34,9 @@ require ('./include/functions.php');
 require ('./include/xmlTools.php');
 
 $smarty = new Smarty ();
-$smarty->debugging = true;
+$smarty->debugging = false;
 $smarty->caching = false;
-$smarty->assign ( 'webStatsVersion', '1.0.2' );
+$smarty->assign ( 'webStatsVersion', '1.1.0 alpha' );
 
 // Serverkonfiguration laden - wenn nicht vorhanden Instalation starten
 $configFile = './server/server.conf';

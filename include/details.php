@@ -16,8 +16,12 @@ foreach ( $plants as $plantName => $plant ) {
 		foreach ( $fillTypes as $fillType ) {
 			if ($l_object == translate ( $fillType )) {
 				$demandValue = $fillTypeDetails ['fillMax'] - $fillTypeDetails ['fillLevel'];
-				$demandSum += $demandValue;
-				$demand [$plantName] = $demandValue;
+				if ($options ['storage'] ['hideZero'] && $demandValue == 0) {
+					continue;
+				} else {
+					$demandSum += $demandValue;
+					$demand [$plantName] = $demandValue;
+				}
 			}
 		}
 	}
@@ -60,19 +64,19 @@ foreach ( $positions ['FillablePallet'] as $fillType => $items ) {
 }
 /*
  * Test von zusätzlichen MapMarkern
-$i++;
-$x = (- 153.801 + $mapSizeHalf) / ($mapSize / $imageSize);
-$z = (795.944 + $mapSizeHalf) / ($mapSize / $imageSize);
-$x = intval ( $x - ($machineIconSize - 1) / 2 );
-$z = intval ( $z - ($machineIconSize - 1) / 2 );
-$mapEntries [$i] = array (
-		'name' => 'Klärwerk',
-		'xpos' => $x,
-		'zpos' => $z,
-		'icon' => 'placeholder-tool.png',
-		'iconHover' => 'placeholder-tool.png'
-);
-*/
+ * $i++;
+ * $x = (- 153.801 + $mapSizeHalf) / ($mapSize / $imageSize);
+ * $z = (795.944 + $mapSizeHalf) / ($mapSize / $imageSize);
+ * $x = intval ( $x - ($machineIconSize - 1) / 2 );
+ * $z = intval ( $z - ($machineIconSize - 1) / 2 );
+ * $mapEntries [$i] = array (
+ * 'name' => 'Klärwerk',
+ * 'xpos' => $x,
+ * 'zpos' => $z,
+ * 'icon' => 'placeholder-tool.png',
+ * 'iconHover' => 'placeholder-tool.png'
+ * );
+ */
 foreach ( $positions ['Bale'] as $fillType => $items ) {
 	if ($fillType == $object) {
 		foreach ( $items as $position ) {
