@@ -30,14 +30,12 @@ class savegame {
 	public $production = array ();
 	public $bales = array ();
 	public $pallets = array ();
-	
 	public function __construct($serverAddress) {
 		$this->serverAdress = $serverAddress;
 		$this->stats = getServerStatsSimpleXML ( sprintf ( $this->serverAdress, 'dedicated-server-stats.xml?' ) );
 		$this->careerVehicles = getServerStatsSimpleXML ( sprintf ( $this->serverAdress, 'dedicated-server-savegame.html?file=vehicles&' ) );
-		$this->careerSavegame = getServerStatsSimpleXML ( sprintf ( $this->serverAdress, 'dedicated-server-savegame.html?file=careerSavegame&' ) );		
+		$this->careerSavegame = getServerStatsSimpleXML ( sprintf ( $this->serverAdress, 'dedicated-server-savegame.html?file=careerSavegame&' ) );
 	}
-	
 	public function serverIsOnline() {
 		if (! isset ( $this->careerVehicles->item ))
 			return false;
@@ -47,28 +45,66 @@ class savegame {
 			return false;
 		return true;
 	}
-	
-	function getCommodities($sortByName = true, $onlyPallets = false, $hideZero = true, $showVehicles = true) {
-		$positions = $outOfMap = $sortFillLevel = array ();		
+	public function getSavegameTime() {
+		$currentDay = $this->careerSavegame->environment->currentDay;
+		$dayTime = $this->careerSavegame->environment->dayTime * 60;
+		$dayTime = gmdate ( "H:i", $dayTime );
+		return array (
+				'currentDay' => $currentDay,
+				'dayTime' => $dayTime 
+		);
 	}
-	
+	public function getCommodities($sortByName = true, $onlyPallets = false, $hideZero = true, $showVehicles = true) {
+		$positions = $outOfMap = $sortFillLevel = array ();
+		self::vehicles();
+	}
+	private function vehicles($hideZero = true) {
+		foreach ( $this->stats->Vehicles->Vehicle as $vehicle ) {
+			if (isset ( $vehicle ['fillTypes'] )) {
+				$vehicleName = strval ( $vehicle ['name'] );
+				$fillTypes = explode ( ' ', $vehicle ['fillTypes'] );
+				$fillLevels = explode ( ' ', $vehicle ['fillLevels'] );
+				foreach ( $fillTypes as $key => $fillType ) {
+					$fillType = strval ( $fillType );
+					$fillLevel = intval ( $fillLevels [$key] );
+					if ($hideZero && $fillLevel == 0 || $fillType == 'unknown') {
+						continue;
+					} else {
+						self::addCommodity ( $fillType, $fillLevel, $vehicleName );
+					}
+				}
+			}
+		}
+	}
+	private function addCommodity($fillType, $fillLevel, $location, $className = 'none') {
+		$l_fillType = translate ( $fillType );
+		$l_location = translate ( $location );
+		if (! isset ( $this->commodities [$l_fillType] )) {
+			$this->commodities [$l_fillType] = array (
+					'overall' => $fillLevel,
+					'i3dName' => $fillType,
+					'locations' => array () 
+			);
+		} else {
+			$this->commodities [$l_fillType] ['overall'] += $fillLevel;
+		}
+		if (! isset ( $this->commodities [$l_fillType] ['locations'] [$l_location] )) {
+			$this->commodities [$l_fillType] ['locations'] += array (
+					$l_location => array (
+							'i3dName' => $location,
+							$className => 1,
+							'fillLevel' => $fillLevel 
+					) 
+			);
+		} else {
+			$this->commodities [$l_fillType] ['locations'] [$l_location] [$className] ++;
+			$this->commodities [$l_fillType] ['locations'] [$l_location] ['fillLevel'] += $fillLevel;
+		}
+	}
 }
-// Daten vom Dedi-Server laden
-$stats = getServerStatsSimpleXML ( sprintf ( $serverAddress, 'dedicated-server-stats.xml?' ) );
-$careerVehicles = getServerStatsSimpleXML ( sprintf ( $serverAddress, 'dedicated-server-savegame.html?file=vehicles&' ) );
-$careerSavegame = getServerStatsSimpleXML ( sprintf ( $serverAddress, 'dedicated-server-savegame.html?file=careerSavegame&' ) );
 
 $commodities = $outOfMap = $sortFillLevel = $positions = array ();
 $plants = $sort_name = $sort_fillLevel = $sort_name = array ();
-
-// Stand der Daten ermitteln (Ingame-Zeitpunkt der Speicherung)
-$currentDay = $careerSavegame->environment->currentDay;
-$dayTime = $careerSavegame->environment->dayTime * 60;
-$dayTime = gmdate ( "H:i", $dayTime );
-$smarty->assign ( 'currentDay', $currentDay );
-$smarty->assign ( 'dayTime', $dayTime );
-
-$hideZero = $options ['storage'] ['hideZero'];
 
 // Paletten, Ballen und Wurzelfrchtlager durchsuchen
 foreach ( $careerVehicles->item as $item ) {
@@ -123,22 +159,6 @@ foreach ( $careerVehicles->item as $item ) {
 
 // Fahrzeuge
 if (! $options ['storage'] ['onlyPallets'] && $options ['storage'] ['showVehicles'] && isset ( $stats->Vehicles )) {
-	foreach ( $stats->Vehicles->Vehicle as $vehicle ) {
-		if (isset ( $vehicle ['fillTypes'] )) {
-			$location = strval ( $vehicle ['name'] );
-			$fillTypes = explode ( ' ', $vehicle ['fillTypes'] );
-			$fillLevels = explode ( ' ', $vehicle ['fillLevels'] );
-			foreach ( $fillTypes as $key => $fillType ) {
-				$fillType = strval ( $fillType );
-				$fillLevel = intval ( $fillLevels [$key] );
-				if ($hideZero && $fillLevel == 0 || $fillType == 'unknown') {
-					continue;
-				} else {
-					addCommodity ( $fillType, $fillLevel, $location );
-				}
-			}
-		}
-	}
 }
 
 foreach ( $careerVehicles->onCreateLoadedObject as $object ) {

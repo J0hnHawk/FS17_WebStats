@@ -43,7 +43,7 @@ $backgroundColor = "#4dafd7";
 $i = 0;
 $mapEntries = array ();
 foreach ( $positions ['FillablePallet'] as $fillType => $items ) {
-	if ($fillType == $object) {
+	if ($fillType == $l_object) {
 		foreach ( $items as $position ) {
 			$i ++;
 			$x = ($position [0] + $mapSizeHalf) / ($mapSize / $imageSize);

@@ -1,7 +1,7 @@
 <div class="page-header">
 	<h3>
-		Produktionsanlagen<small> (Speicherstand: Tag {$currentDay}, {$dayTime})</small><small class="pull-right"><a href="#" data-toggle="modal" data-target="#myModal"><span class="glyphicon glyphicon-cog"
-				aria-hidden="true"></span> Einstellungen</a></small>
+		Produktionsanlagen<small> (Speicherstand: Tag {$currentDay}, {$dayTime})</small><small class="pull-right"><a href="#" data-toggle="modal"
+			data-target="#myModal"><span class="glyphicon glyphicon-cog" aria-hidden="true"></span> Einstellungen</a></small>
 	</h3>
 </div>
 {$glyphicons =array("glyphicon glyphicon-ok-sign text-success", "glyphicon glyphicon-exclamation-sign text-warning", "glyphicon glyphicon-remove-sign
@@ -21,7 +21,8 @@ text-danger")} {$textcolors = array("","text-warning","text-danger")}
 				{foreach $plants as $plantName => $plant}
 				<tr data-toggle="collapse" href="#collapse{$plant.i3dName}">
 					<td><span class="{$glyphicons[$plant.state]}" aria-hidden="true"></span> {$plantName}</td>
-					<td>{foreach from=$plant.input key=$fillType item=$fillLevel}<span class="{$textcolors[$fillLevel.state]}"><span
+					<td>{foreach from=$plant.input key=$fillType item=$fillLevel}<span class="{$textcolors[$fillLevel.state]}" data-toggle="tooltip"
+						data-placement="top" title="Lagerbestand:<br><strong>{$commodities.$fillType.overall|number_format:0:",":"."}</strong>"><span
 							class="{$glyphicons[$fillLevel.state]}" aria-hidden="true"></span> {$fillType} </span>{/foreach}
 					</td>
 					<td>{foreach from=$plant.output key=$fillType item=$fillLevel}<span class="{$textcolors[$fillLevel.state]}"><span
@@ -39,14 +40,14 @@ text-danger")} {$textcolors = array("","text-warning","text-danger")}
 									</tr>
 								</thead>
 								{$inputRow=array()}{$outputRow=array()} {$max = max($plant.input|@count,$plant.output|@count)} {foreach from=$plant.input key=$fillType
-								item=$fillLevel} {$inputRow[$fillLevel@index] = array($fillType,$fillLevel.fillLevel,$fillLevel.fillMax)} {/foreach} {foreach
-								from=$plant.output key=$fillType item=$fillLevel} {$outputRow[$fillLevel@index] = array($fillType,$fillLevel.fillLevel,$fillLevel.fillMax)}
-								{/foreach}
+								item=$fillLevel} {$inputRow[$fillLevel@index] = array($fillType,$fillLevel.fillLevel,$fillLevel.fillMax,$fillLevel.i3dName)} {/foreach}
+								{foreach from=$plant.output key=$fillType item=$fillLevel} {$outputRow[$fillLevel@index] =
+								array($fillType,$fillLevel.fillLevel,$fillLevel.fillMax,$fillLevel.i3dName)} {/foreach}
 								<tbody>
 									{for $i=0 to $max-1}
 									<tr>
 										{if isset($inputRow[$i][0])}
-										<td>{$inputRow[$i][0]}</td>
+										<td><a href="index.php?page=details&object={$inputRow[$i][3]}">{$inputRow[$i][0]}</a></td>
 										<td class="text-right">{$inputRow[$i][1]|number_format:0:",":"."} / {$inputRow[$i][2]|number_format:0:",":"."}</td> {else}
 										<td colspan="2">&nbsp;</td> {/if} {if isset($outputRow[$i][0])}
 										<td>{$outputRow[$i][0]}</td>
@@ -102,14 +103,16 @@ text-danger")} {$textcolors = array("","text-warning","text-danger")}
 					<div class="form-group">
 						<label class="col-sm-5 control-label">Produktionsanlagen einblenden</label>
 						<div class="col-sm-7">
-						{foreach from=$options.hidePlant key=$plant item=$bolean}
-						<div class="checkbox">							
-							<label> <input type="checkbox" name="showPlant[]" value="{$plant|base64_encode}"> {$plant}</label>							
-						</div>
-						{/foreach}
+							{foreach from=$options.hidePlant key=$plant item=$bolean}
+							<div class="checkbox">
+								<label> <input type="checkbox" name="showPlant[]" value="{$plant|base64_encode}"> {$plant}
+								</label>
+							</div>
+							{/foreach}
 						</div>
 					</div>
 					{/if}
+			
 			</div>
 			<div class="modal-footer">
 				<button type="button" class="btn btn-default" data-dismiss="modal">Schließen</button>
@@ -119,3 +122,8 @@ text-danger")} {$textcolors = array("","text-warning","text-danger")}
 		</form>
 	</div>
 </div>
+<script>{literal}
+$(function () {
+  $('[data-toggle="tooltip"]').tooltip({html: true})
+})
+{/literal}</script>

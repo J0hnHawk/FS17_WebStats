@@ -46,7 +46,7 @@
 	</div>
 	<div class="col-sm-6">
 	<h4>Positionen von Paletten/Ballen</h4>
-		<div id="mapContainer" style="position: relative; width: 512px; height: 512px; overflow: auto">
+		<div id="mapContainer" class="img-responsive" style="position: relative;">
 			<img src="{$linkToImage}">
 				{foreach $mapEntries as $key => $mapEntry}
 					<img style="position: absolute; left: {$mapEntry.xpos}px; top: {$mapEntry.zpos}px;" src="./images/{$mapEntry.icon}" width="{$machineIconSize}" height="{$machineIconSize}">

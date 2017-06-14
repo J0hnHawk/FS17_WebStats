@@ -17,7 +17,6 @@
 			</thead>
 			<tbody>
 				{foreach $commodities as $fillType => $commodity} {if $commodity@iteration > $colmax[$i] && $commodity@iteration <= $colmax[$i+1] }
-				{$stripFillType = $commodity.i3dName|strip:""|replace:"{ldelim}":""|replace:"{rdelim}":""}
 				<tr data-toggle="collapse" href="#collapse{$commodity.i3dName}" {if isset($commodity.outOfMap)}class="danger"{/if}>
 					<td>{$fillType}</td>
 					<td class="text-right">{$commodity.overall|number_format:0:",":"."}</td>

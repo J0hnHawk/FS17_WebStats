@@ -18,7 +18,6 @@
  * along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
  *
  */
-
 ini_set ( 'display_errors', 1 );
 ini_set ( 'display_startup_errors', 1 );
 error_reporting ( E_ALL );
@@ -42,13 +41,14 @@ $smarty->assign ( 'webStatsVersion', '1.1.0 alpha' );
 $configFile = './server/server.conf';
 if (file_exists ( $configFile )) {
 	$server = file ( $configFile );
-	list ( $dSrvIp, $dSrvPort, $dSrvCode) = unserialize ( $server [0] );
+	list ( $dSrvIp, $dSrvPort, $dSrvCode ) = unserialize ( $server [0] );
 	$serverAddress = "http://$dSrvIp:$dSrvPort/feed/%scode=$dSrvCode";
 } else {
 	define ( 'IN_INSTALL', true );
 	include ('./include/install.php');
 	exit ();
 }
+
 
 // Cookie mit Einstellungen laden
 include ('./include/coockie.php');
@@ -71,4 +71,7 @@ if (! in_array ( $page, $pages ))
 	$page = 'production';
 $smarty->assign ( 'page', $page );
 include ("./include/$page.php");
-$smarty->display ( 'index.tpl');
+$mapdata = new savegame($serverAddress);
+
+$smarty->assign ( 'serverOnline', $mapdata->serverIsOnline() );
+$smarty->display ( 'index.tpl' );

@@ -22,12 +22,12 @@ if (! defined ( 'IN_NFMWS' )) {
 	exit ();
 }
 
-$hidePlant = GetParam('hide','G',false);
-if($hidePlant && !is_array($hidePlant)){
-	$plant = base64_decode($hidePlant);
-	foreach($lang as $term => $translation) {
-		if($translation == $plant) {
-			$options ['production'] ['hidePlant'][$plant] = true;
+$hidePlant = GetParam ( 'hide', 'G', false );
+if ($hidePlant && ! is_array ( $hidePlant )) {
+	$plant = base64_decode ( $hidePlant );
+	foreach ( $lang as $term => $translation ) {
+		if ($translation == $plant) {
+			$options ['production'] ['hidePlant'] [$plant] = true;
 			$options ['version'] = $cookieVersion;
 			setcookie ( 'nfmarsch', json_encode ( $options ), time () + 31536000 );
 			break;
@@ -38,14 +38,14 @@ if($hidePlant && !is_array($hidePlant)){
 if ($_SERVER ['REQUEST_METHOD'] == 'POST') {
 	$options ['production'] ['sortByName'] = filter_var ( GetParam ( 'sortByName', 'P', 1 ), FILTER_VALIDATE_BOOLEAN );
 	$options ['production'] ['sortFullProducts'] = filter_var ( GetParam ( 'sortFullProducts', 'P', 1 ), FILTER_VALIDATE_BOOLEAN );
-	$showPlant = GetParam('showPlant','P',false);
-	if($showPlant && is_array($showPlant)) {
-		foreach($showPlant as $plant) {
-			$plant = base64_decode($plant);
-			if(isset($options ['production'] ['hidePlant'][$plant])) {
-				unset($options ['production'] ['hidePlant'][$plant]);
+	$showPlant = GetParam ( 'showPlant', 'P', false );
+	if ($showPlant && is_array ( $showPlant )) {
+		foreach ( $showPlant as $plant ) {
+			$plant = base64_decode ( $plant );
+			if (isset ( $options ['production'] ['hidePlant'] [$plant] )) {
+				unset ( $options ['production'] ['hidePlant'] [$plant] );
 			}
-		}		
+		}
 	}
 	$options ['version'] = $cookieVersion;
 	setcookie ( 'nfmarsch', json_encode ( $options ), time () + 31536000 );
@@ -53,7 +53,9 @@ if ($_SERVER ['REQUEST_METHOD'] == 'POST') {
 
 // Kartendaten laden
 require ('./include/savegame.php');
-
-$smarty->registerPlugin("modifier",'base64_encode',  'base64_encode');
-$smarty->assign ( 'plants', $plants );
+if ($serverOnline) {
+	$smarty->assign ( 'plants', $plants );
+	$smarty->assign ( 'commodities', $commodities );
+}
 $smarty->assign ( 'options', $options ['production'] );
+$smarty->registerPlugin ( "modifier", 'base64_encode', 'base64_encode' );
