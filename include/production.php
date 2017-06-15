@@ -51,11 +51,13 @@ if ($_SERVER ['REQUEST_METHOD'] == 'POST') {
 	setcookie ( 'nfmarsch', json_encode ( $options ), time () + 31536000 );
 }
 
-// Kartendaten laden
-require ('./include/savegame.php');
-if ($serverOnline) {
-	$smarty->assign ( 'plants', $plants );
-	$smarty->assign ( 'commodities', $commodities );
+if (! $options ['production'] ['sortByName']) {
+	array_multisort ( $sort_fillLevel, SORT_DESC, $sort_name, SORT_ASC, $plants );
+} else {
+	uksort ( $plants, "strnatcasecmp" );
 }
+
+$smarty->assign ( 'plants', $plants );
+$smarty->assign ( 'commodities', $commodities );
 $smarty->assign ( 'options', $options ['production'] );
 $smarty->registerPlugin ( "modifier", 'base64_encode', 'base64_encode' );

@@ -22,153 +22,24 @@ if (! defined ( 'IN_NFMWS' )) {
 	exit ();
 }
 
-class savegame {
-	private $serverAdress;
-	private $stats;
-	private $careerVehicles;
-	private $careerSavegame;
-	public $commodities = array ();
-	public $production = array ();
-	public $vehicles = array ();
-	public $bales = array ();
-	public $pallets = array ();
-	public function __construct($serverAddress) {
-		$this->serverAdress = $serverAddress;
-		$this->stats = getServerStatsSimpleXML ( sprintf ( $this->serverAdress, 'dedicated-server-stats.xml?' ) );
-		$this->careerVehicles = getServerStatsSimpleXML ( sprintf ( $this->serverAdress, 'dedicated-server-savegame.html?file=vehicles&' ) );
-		$this->careerSavegame = getServerStatsSimpleXML ( sprintf ( $this->serverAdress, 'dedicated-server-savegame.html?file=careerSavegame&' ) );
-	}
-	public function serverIsOnline() {
-		if (! isset ( $this->careerVehicles->item ))
-			return false;
-		if (! isset ( $this->careerSavegame->environment->currentDay ))
-			return false;
-		if (! isset ( $this->stats->Vehicles ))
-			return false;
-		return true;
-	}
-	public function getSavegameTime() {
-		$currentDay = $this->careerSavegame->environment->currentDay;
-		$dayTime = $this->careerSavegame->environment->dayTime * 60;
-		$dayTime = gmdate ( "H:i", $dayTime );
-		return array (
-				'currentDay' => $currentDay,
-				'dayTime' => $dayTime 
-		);
-	}
-	public function getCommodities($sortByName = true, $onlyPallets = false, $hideZero = true, $showVehicles = true) {
-		$this->commodities = array ();
-		$positions = $outOfMap = $sortFillLevel = array ();
-		self::getVehicles ();
-	}
-	private function saveVehicles() {
-		foreach ( $this->stats->Vehicles->Vehicle as $vehicle ) {
-			if (isset ( $vehicle ['fillTypes'] )) {
-				$vehicleName = strval ( $vehicle ['name'] );
-				$fillLevels = explode ( ' ', $vehicle ['fillLevels'] );
-				$fillTypes = explode ( ' ', $vehicle ['fillTypes'] );
-				$position = $vehicle ['x'] . ' 0 ' . $vehicle ['z'];
-				$this->vehicles [] = array (
-						'name' => $vehicleName,
-						'fillTypes' => $fillTypes,
-						'fillLevels' => $fillLevels,
-						'position' => $position 
-				);
-			}
-		}
-	}
-	private function saveItems() {
-		foreach ( $careerVehicles->item as $item ) {
-			$className = strval ( $item ['className'] );
-			switch ($className) {
-				case 'Bale' :
-				case 'FillablePallet' :
-					if (isset ( $item ['i3dFilename'] )) {
-						$fillType = self::getFillType ( $item ['i3dFilename'] );
-					} elseif (isset ( $item ['filename'] )) {
-						$fillType = self::getFillType ( $item ['filename'] );
-					} else {
-						continue;
-					}
-					$fillLevel = intval ( $item ['fillLevel'] );
-					$position = $item ['position'];
-					$location = getLocation ( $position );
-					$this->pallets [$className] [$fillType] += array (
-							'fillLevel' => $fillLevel,
-							'location' => $location,
-							'position' => $position 
-					);
-					break;
-				case 'HayLoftPlaceable' :
-					$location = 'HayLoftPlaceable';
-					foreach ( $item as $node ) {
-						$fillType = strval ( $node ['fillType'] );
-						$fillLevel = intval ( $node ['fillLevel'] );
-						self::addCommodity ( $fillType, $fillLevel, $location );
-					}
-					break;
-			}
-			$fillType = false;
-			$location = getLocation ( $item ['position'] );
-			if ($className == 'FillablePallet' || $className == 'Bale') {
-				if ($location != 'outOfMap') {
-					$positions [$className] [translate ( $fillType )] [] = explode ( ' ', $item ['position'] );
-				}
-			}
-			if ($fillType) {
-				
-				if ($hideZero && $fillLevel == 0) {
-					continue;
-				} else {
-					addCommodity ( $fillType, $fillLevel, $location, $className );
-				}
-			}
-			if ($location == 'outOfMap') {
-				$commodities [translate ( $fillType )] ['outOfMap'] = true;
-				// für Modal Dialog mit Edit-Vorschlag, Platzierung beim Palettenlager
-				$outOfMap [] = array (
-						$className,
-						$fillType,
-						strval ( $item ['position'] ),
-						'-870 100 ' . (- 560 + sizeof ( $outOfMap ) * 2) 
-				);
-			}
-		}
-	}
-	private function addCommodity($fillType, $fillLevel, $location, $className = 'none') {
-		$l_fillType = translate ( $fillType );
-		$l_location = translate ( $location );
-		if (! isset ( $this->commodities [$l_fillType] )) {
-			$this->commodities [$l_fillType] = array (
-					'overall' => $fillLevel,
-					'i3dName' => $fillType,
-					'locations' => array () 
-			);
-		} else {
-			$this->commodities [$l_fillType] ['overall'] += $fillLevel;
-		}
-		if (! isset ( $this->commodities [$l_fillType] ['locations'] [$l_location] )) {
-			$this->commodities [$l_fillType] ['locations'] += array (
-					$l_location => array (
-							'i3dName' => $location,
-							$className => 1,
-							'fillLevel' => $fillLevel 
-					) 
-			);
-		} else {
-			$this->commodities [$l_fillType] ['locations'] [$l_location] [$className] ++;
-			$this->commodities [$l_fillType] ['locations'] [$l_location] ['fillLevel'] += $fillLevel;
-		}
-	}
-	private function getFillType($uri) {
-		$split = explode ( '/', strval ( $uri ) );
-		$filename = substr ( array_pop ( $split ), 0, - 4 );
-		return $filename;
-	}
-}
+// Daten vom Dedi-Server laden
+$stats = getServerStatsSimpleXML ( sprintf ( $serverAddress, 'dedicated-server-stats.xml?' ) );
+$careerVehicles = getServerStatsSimpleXML ( sprintf ( $serverAddress, 'dedicated-server-savegame.html?file=vehicles&' ) );
+$careerSavegame = getServerStatsSimpleXML ( sprintf ( $serverAddress, 'dedicated-server-savegame.html?file=careerSavegame&' ) );
+
+$serverOnline = true;
 
 $commodities = $outOfMap = $sortFillLevel = $positions = array ();
 $plants = $sort_name = $sort_fillLevel = $sort_name = array ();
+
+// Stand der Daten ermitteln (Ingame-Zeitpunkt der Speicherung)
+$currentDay = $careerSavegame->environment->currentDay;
+$dayTime = $careerSavegame->environment->dayTime * 60;
+$dayTime = gmdate ( "H:i", $dayTime );
+$smarty->assign ( 'currentDay', $currentDay );
+$smarty->assign ( 'dayTime', $dayTime );
+
+$hideZero = $options ['storage'] ['hideZero'];
 
 // Paletten, Ballen und Wurzelfrchtlager durchsuchen
 foreach ( $careerVehicles->item as $item ) {
@@ -223,6 +94,22 @@ foreach ( $careerVehicles->item as $item ) {
 
 // Fahrzeuge
 if (! $options ['storage'] ['onlyPallets'] && $options ['storage'] ['showVehicles'] && isset ( $stats->Vehicles )) {
+	foreach ( $stats->Vehicles->Vehicle as $vehicle ) {
+		if (isset ( $vehicle ['fillTypes'] )) {
+			$location = strval ( $vehicle ['name'] );
+			$fillTypes = explode ( ' ', $vehicle ['fillTypes'] );
+			$fillLevels = explode ( ' ', $vehicle ['fillLevels'] );
+			foreach ( $fillTypes as $key => $fillType ) {
+				$fillType = strval ( $fillType );
+				$fillLevel = intval ( $fillLevels [$key] );
+				if ($hideZero && $fillLevel == 0 || $fillType == 'unknown') {
+					continue;
+				} else {
+					addCommodity ( $fillType, $fillLevel, $location );
+				}
+			}
+		}
+	}
 }
 
 foreach ( $careerVehicles->onCreateLoadedObject as $object ) {

@@ -1,0 +1,32 @@
+Commodities
+
+$commodities = array(
+	'$l_fillType' => array(
+		'overall' => $overall
+		'i3dName' => $i3dName
+		'locations' => array (
+			$l_location => array(
+				'i3dName' => $location
+				'$className' => $counter
+				'fillLevel' => $fillLevel
+			)
+		)
+	)
+)
+
+Lagerbestände
+	Gruppe 1
+		Hofsilo
+		Placeables
+		Produktionsanlagen
+		Tankstellen
+		Viehställe
+		Silos
+		Ballen
+	Gruppe 2
+		Paletten
+		Palettenlager
+	Gruppe 3
+		Fahrzeuge
+
+		

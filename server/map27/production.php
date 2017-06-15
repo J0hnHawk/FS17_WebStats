@@ -170,7 +170,7 @@ $mapconfig = array (
 								'capacity' => 5000,
 								'factor' => 0.4,
 								'fillType' => 'oel',
-								'palettPlaces' => 999,
+								'palettPlaces' => 21,
 								'showInStorage' => false 
 						) 
 				) 
@@ -219,7 +219,7 @@ $mapconfig = array (
 								'capacity' => 5000,
 								'factor' => 0.5,
 								'fillType' => 'mehl',
-								'palettPlaces' => 999,
+								'palettPlaces' => 8,
 								'showInStorage' => false 
 						) 
 				) 
@@ -241,7 +241,7 @@ $mapconfig = array (
 								'capacity' => 5000,
 								'factor' => 0.5,
 								'fillType' => 'mehl',
-								'palettPlaces' => 999,
+								'palettPlaces' => 8,
 								'showInStorage' => false 
 						) 
 				) 
@@ -263,7 +263,7 @@ $mapconfig = array (
 								'capacity' => 5000,
 								'factor' => 0.5,
 								'fillType' => 'mehl',
-								'palettPlaces' => 999,
+								'palettPlaces' => 8,
 								'showInStorage' => false 
 						) 
 				) 
@@ -291,7 +291,7 @@ $mapconfig = array (
 								'capacity' => 5000,
 								'factor' => 0.5,
 								'fillType' => 'zucker',
-								'palettPlaces' => 999,
+								'palettPlaces' => 21,
 								'showInStorage' => false 
 						) 
 				) 
@@ -319,7 +319,7 @@ $mapconfig = array (
 								'capacity' => 5000,
 								'factor' => 1,
 								'fillType' => 'brot',
-								'palettPlaces' => 999,
+								'palettPlaces' => 8,
 								'showInStorage' => false 
 						) 
 				) 
@@ -347,7 +347,7 @@ $mapconfig = array (
 								'capacity' => 7000,
 								'factor' => 1,
 								'fillType' => 'emptypallet',
-								'palettPlaces' => 999,
+								'palettPlaces' => 15,
 								'showInStorage' => false 
 						) 
 				) 
@@ -387,7 +387,7 @@ $mapconfig = array (
 								'capacity' => 5000,
 								'factor' => 0.5,
 								'fillType' => 'beer',
-								'palettPlaces' => 999,
+								'palettPlaces' => 21,
 								'showInStorage' => false 
 						) 
 				) 
@@ -427,7 +427,7 @@ $mapconfig = array (
 								'capacity' => 5000,
 								'factor' => 0.5,
 								'fillType' => 'beerf',
-								'palettPlaces' => 999,
+								'palettPlaces' => 21,
 								'showInStorage' => false 
 						) 
 				) 
@@ -467,35 +467,35 @@ $mapconfig = array (
 								'capacity' => 5000,
 								'factor' => 0.25,
 								'fillType' => 'butter',
-								'palettPlaces' => 999,
+								'palettPlaces' => 16,
 								'showInStorage' => false 
 						),
 						'palettemilch' => array (
 								'capacity' => 5000,
 								'factor' => 0.25,
 								'fillType' => 'milch',
-								'palettPlaces' => 999,
+								'palettPlaces' => 16,
 								'showInStorage' => false 
 						),
 						'palettesahne' => array (
 								'capacity' => 5000,
 								'factor' => 0.25,
 								'fillType' => 'sahne',
-								'palettPlaces' => 999,
+								'palettPlaces' => 16,
 								'showInStorage' => false 
 						),
 						'palettequark' => array (
 								'capacity' => 5000,
 								'factor' => 0.25,
 								'fillType' => 'quark',
-								'palettPlaces' => 999,
+								'palettPlaces' => 16,
 								'showInStorage' => false 
 						),
 						'paletteyogurt' => array (
 								'capacity' => 5000,
 								'factor' => 0.25,
 								'fillType' => 'yogurt',
-								'palettPlaces' => 999,
+								'palettPlaces' => 16,
 								'showInStorage' => false 
 						) 
 				) 
@@ -529,14 +529,14 @@ $mapconfig = array (
 								'capacity' => 5000,
 								'factor' => 1,
 								'fillType' => 'papier',
-								'palettPlaces' => 999,
+								'palettPlaces' => 15,
 								'showInStorage' => false 
 						),
 						'palette_karton' => array (
 								'capacity' => 5000,
 								'factor' => 1,
 								'fillType' => 'karton',
-								'palettPlaces' => 999,
+								'palettPlaces' => 15,
 								'showInStorage' => false 
 						) 
 				) 
@@ -576,7 +576,7 @@ $mapconfig = array (
 								'capacity' => 5000,
 								'factor' => 1,
 								'fillType' => 'apfel',
-								'palettPlaces' => 999,
+								'palettPlaces' => 15,
 								'showInStorage' => false 
 						) 
 				) 
@@ -616,7 +616,7 @@ $mapconfig = array (
 								'capacity' => 5000,
 								'factor' => 1,
 								'fillType' => 'birne',
-								'palettPlaces' => 999,
+								'palettPlaces' => 15,
 								'showInStorage' => false 
 						) 
 				) 
@@ -656,7 +656,7 @@ $mapconfig = array (
 								'capacity' => 5000,
 								'factor' => 1,
 								'fillType' => 'kirsche',
-								'palettPlaces' => 999,
+								'palettPlaces' => 15,
 								'showInStorage' => false 
 						) 
 				) 
@@ -696,7 +696,7 @@ $mapconfig = array (
 								'capacity' => 5000,
 								'factor' => 1,
 								'fillType' => 'pflaume',
-								'palettPlaces' => 999,
+								'palettPlaces' => 15,
 								'showInStorage' => false 
 						) 
 				) 
@@ -736,21 +736,21 @@ $mapconfig = array (
 								'capacity' => 5000,
 								'factor' => 0.35,
 								'fillType' => 'chips',
-								'palettPlaces' => 999,
+								'palettPlaces' => 15,
 								'showInStorage' => false 
 						),
 						'palettepommes' => array (
 								'capacity' => 5000,
 								'factor' => 0.35,
 								'fillType' => 'pommes',
-								'palettPlaces' => 999,
+								'palettPlaces' => 15,
 								'showInStorage' => false 
 						),
 						'palettekartoffelsack' => array (
 								'capacity' => 5000,
 								'factor' => 0.35,
 								'fillType' => 'kartoffelsack',
-								'palettPlaces' => 999,
+								'palettPlaces' => 15,
 								'showInStorage' => false 
 						) 
 				) 
@@ -772,7 +772,7 @@ $mapconfig = array (
 								'capacity' => 5000,
 								'factor' => 1,
 								'fillType' => 'papier',
-								'palettPlaces' => 999,
+								'palettPlaces' => 1,
 								'showInStorage' => false 
 						) 
 				) 
@@ -794,7 +794,7 @@ $mapconfig = array (
 								'capacity' => 5000,
 								'factor' => 1,
 								'fillType' => 'karton',
-								'palettPlaces' => 999,
+								'palettPlaces' => 1,
 								'showInStorage' => false 
 						) 
 				) 
@@ -816,7 +816,7 @@ $mapconfig = array (
 								'capacity' => 5000,
 								'factor' => 1,
 								'fillType' => 'emptypallet',
-								'palettPlaces' => 999,
+								'palettPlaces' => 1,
 								'showInStorage' => false 
 						) 
 				) 
@@ -838,7 +838,7 @@ $mapconfig = array (
 								'capacity' => 5000,
 								'factor' => 1,
 								'fillType' => 'apfel',
-								'palettPlaces' => 999,
+								'palettPlaces' => 1,
 								'showInStorage' => false 
 						) 
 				) 
@@ -860,7 +860,7 @@ $mapconfig = array (
 								'capacity' => 5000,
 								'factor' => 1,
 								'fillType' => 'birne',
-								'palettPlaces' => 999,
+								'palettPlaces' => 1,
 								'showInStorage' => false 
 						) 
 				) 
@@ -882,7 +882,7 @@ $mapconfig = array (
 								'capacity' => 5000,
 								'factor' => 1,
 								'fillType' => 'kirsche',
-								'palettPlaces' => 999,
+								'palettPlaces' => 1,
 								'showInStorage' => false 
 						) 
 				) 
@@ -904,7 +904,7 @@ $mapconfig = array (
 								'capacity' => 5000,
 								'factor' => 1,
 								'fillType' => 'pflaume',
-								'palettPlaces' => 999,
+								'palettPlaces' => 1,
 								'showInStorage' => false 
 						) 
 				) 
@@ -926,7 +926,7 @@ $mapconfig = array (
 								'capacity' => 5000,
 								'factor' => 1,
 								'fillType' => 'beer',
-								'palettPlaces' => 999,
+								'palettPlaces' => 1,
 								'showInStorage' => false 
 						) 
 				) 
@@ -948,7 +948,7 @@ $mapconfig = array (
 								'capacity' => 5000,
 								'factor' => 1,
 								'fillType' => 'beerf',
-								'palettPlaces' => 999,
+								'palettPlaces' => 1,
 								'showInStorage' => false 
 						) 
 				) 
@@ -970,7 +970,7 @@ $mapconfig = array (
 								'capacity' => 5000,
 								'factor' => 1,
 								'fillType' => 'zucker',
-								'palettPlaces' => 999,
+								'palettPlaces' => 1,
 								'showInStorage' => false 
 						) 
 				) 
@@ -992,7 +992,7 @@ $mapconfig = array (
 								'capacity' => 5000,
 								'factor' => 1,
 								'fillType' => 'mehl',
-								'palettPlaces' => 999,
+								'palettPlaces' => 1,
 								'showInStorage' => false 
 						) 
 				) 
@@ -1014,7 +1014,7 @@ $mapconfig = array (
 								'capacity' => 5000,
 								'factor' => 1,
 								'fillType' => 'milch',
-								'palettPlaces' => 999,
+								'palettPlaces' => 1,
 								'showInStorage' => false 
 						) 
 				) 
@@ -1036,7 +1036,7 @@ $mapconfig = array (
 								'capacity' => 5000,
 								'factor' => 1,
 								'fillType' => 'butter',
-								'palettPlaces' => 999,
+								'palettPlaces' => 1,
 								'showInStorage' => false 
 						) 
 				) 
@@ -1058,7 +1058,7 @@ $mapconfig = array (
 								'capacity' => 5000,
 								'factor' => 1,
 								'fillType' => 'quark',
-								'palettPlaces' => 999,
+								'palettPlaces' => 1,
 								'showInStorage' => false 
 						) 
 				) 
@@ -1080,7 +1080,7 @@ $mapconfig = array (
 								'capacity' => 5000,
 								'factor' => 1,
 								'fillType' => 'sahne',
-								'palettPlaces' => 999,
+								'palettPlaces' => 1,
 								'showInStorage' => false 
 						) 
 				) 
@@ -1102,7 +1102,7 @@ $mapconfig = array (
 								'capacity' => 5000,
 								'factor' => 1,
 								'fillType' => 'yogurt',
-								'palettPlaces' => 999,
+								'palettPlaces' => 1,
 								'showInStorage' => false 
 						) 
 				) 
@@ -1124,7 +1124,7 @@ $mapconfig = array (
 								'capacity' => 5000,
 								'factor' => 1,
 								'fillType' => 'brot',
-								'palettPlaces' => 999,
+								'palettPlaces' => 1,
 								'showInStorage' => false 
 						) 
 				) 
@@ -1146,7 +1146,7 @@ $mapconfig = array (
 								'capacity' => 5000,
 								'factor' => 1,
 								'fillType' => 'kartoffelsack',
-								'palettPlaces' => 999,
+								'palettPlaces' => 1,
 								'showInStorage' => false 
 						) 
 				) 
@@ -1168,7 +1168,7 @@ $mapconfig = array (
 								'capacity' => 5000,
 								'factor' => 1,
 								'fillType' => 'chips',
-								'palettPlaces' => 999,
+								'palettPlaces' => 1,
 								'showInStorage' => false 
 						) 
 				) 
@@ -1190,7 +1190,7 @@ $mapconfig = array (
 								'capacity' => 5000,
 								'factor' => 1,
 								'fillType' => 'pommes',
-								'palettPlaces' => 999,
+								'palettPlaces' => 1,
 								'showInStorage' => false 
 						) 
 				) 
@@ -1212,7 +1212,7 @@ $mapconfig = array (
 								'capacity' => 5000,
 								'factor' => 1,
 								'fillType' => 'washedPotato',
-								'palettPlaces' => 999,
+								'palettPlaces' => 1,
 								'showInStorage' => false 
 						) 
 				) 
@@ -1234,7 +1234,7 @@ $mapconfig = array (
 								'capacity' => 5000,
 								'factor' => 1,
 								'fillType' => 'oel',
-								'palettPlaces' => 999,
+								'palettPlaces' => 1,
 								'showInStorage' => false 
 						) 
 				) 
@@ -1481,7 +1481,7 @@ $mapconfig = array (
 								'capacity' => 5000,
 								'factor' => 1,
 								'fillType' => 'washedPotato',
-								'palettPlaces' => 999,
+								'palettPlaces' => 6,
 								'showInStorage' => false 
 						) 
 				) 
@@ -1515,284 +1515,53 @@ $mapconfig = array (
 								'capacity' => 5000,
 								'factor' => 1,
 								'fillType' => 'washedPotato',
-								'palettPlaces' => 999,
+								'palettPlaces' => 6,
+								'showInStorage' => false 
+						) 
+				) 
+		) ,
+		'FabrikScript_Schlachterei' => array (
+				'ProdPerHour' => 50,
+				'showInProduction' => true,
+				'rawMaterial' => array (
+						'Tier_Anlieferung' => array (
+								'capacity' => 400,
+								'factor' => 0.4,
+								'fillTypes' => 'pig cow sheep',
+								'showInStorage' => false 
+						),
+						'emptypallet' => array (
+								'capacity' => 260000,
+								'factor' => 3,
+								'fillTypes' => 'emptypallet',
+								'showInStorage' => false 
+						),
+						'palette_karton' => array (
+								'capacity' => 170000,
+								'factor' => 3,
+								'fillTypes' => 'karton',
+								'showInStorage' => false 
+						) 
+				),
+				'product' => array (
+						'Wurst' => array (
+								'capacity' => 5000,
+								'factor' => 200,
+								'fillType' => 'sausage',
+								'palettPlaces' => 15,
+								'showInStorage' => false 
+						),
+						'Fleisch' => array (
+								'capacity' => 5000,
+								'factor' => 200,
+								'fillType' => 'meat',
+								'palettPlaces' => 15,
 								'showInStorage' => false 
 						) 
 				) 
 		) 
 );
-$show = array (
-		'FabrikScript_KraftFutterHerstellung' => array (
-				'inputInStorage' => false,
-				'outputInStorage' => false,
-				'objectInProduction' => true 
-		),
-		'FabrikScript_Fabrik' => array (
-				'inputInStorage' => false,
-				'outputInStorage' => false,
-				'objectInProduction' => true 
-		),
-		'FabrikScript_Holzhacker' => array (
-				'inputInStorage' => false,
-				'outputInStorage' => false,
-				'objectInProduction' => true 
-		),
-		'FabrikScript_compostMaster2k17' => array (
-				'inputInStorage' => false,
-				'outputInStorage' => false,
-				'objectInProduction' => true 
-		),
-		'FabrikScript_Oel_Raffinerie_Raps' => array (
-				'inputInStorage' => false,
-				'outputInStorage' => false,
-				'objectInProduction' => true 
-		),
-		'FabrikScript_Klaerwerk' => array (
-				'inputInStorage' => false,
-				'outputInStorage' => false,
-				'objectInProduction' => true 
-		),
-		'FabrikScript_WeizenMehlfabrik' => array (
-				'inputInStorage' => false,
-				'outputInStorage' => false,
-				'objectInProduction' => true 
-		),
-		'FabrikScript_GersteMehlfabrik' => array (
-				'inputInStorage' => false,
-				'outputInStorage' => false,
-				'objectInProduction' => true 
-		),
-		'FabrikScript_RoggenMehlfabrik' => array (
-				'inputInStorage' => false,
-				'outputInStorage' => false,
-				'objectInProduction' => true 
-		),
-		'FabrikScript_Zuckerfabrik' => array (
-				'inputInStorage' => false,
-				'outputInStorage' => false,
-				'objectInProduction' => true 
-		),
-		'FabrikScript_Backerei' => array (
-				'inputInStorage' => false,
-				'outputInStorage' => false,
-				'objectInProduction' => true 
-		),
-		'FabrikScript_Paletten_Fabrik' => array (
-				'inputInStorage' => false,
-				'outputInStorage' => false,
-				'objectInProduction' => true 
-		),
-		'FabrikScript_BrauereiKasten' => array (
-				'inputInStorage' => false,
-				'outputInStorage' => false,
-				'objectInProduction' => true 
-		),
-		'FabrikScript_BrauereiFass' => array (
-				'inputInStorage' => false,
-				'outputInStorage' => false,
-				'objectInProduction' => true 
-		),
-		'FabrikScript_Molkerei' => array (
-				'inputInStorage' => false,
-				'outputInStorage' => false,
-				'objectInProduction' => true 
-		),
-		'FabrikScript_Zellstoff_Fabrik' => array (
-				'inputInStorage' => false,
-				'outputInStorage' => false,
-				'objectInProduction' => true 
-		),
-		'FabrikScript_obst_apfel' => array (
-				'inputInStorage' => false,
-				'outputInStorage' => false,
-				'objectInProduction' => true 
-		),
-		'FabrikScript_obst_birne' => array (
-				'inputInStorage' => false,
-				'outputInStorage' => false,
-				'objectInProduction' => true 
-		),
-		'FabrikScript_obst_kirsche' => array (
-				'inputInStorage' => false,
-				'outputInStorage' => false,
-				'objectInProduction' => true 
-		),
-		'FabrikScript_obst_pflaume' => array (
-				'inputInStorage' => false,
-				'outputInStorage' => false,
-				'objectInProduction' => true 
-		),
-		'FabrikScript_Kartoffelfabrik' => array (
-				'inputInStorage' => false,
-				'outputInStorage' => false,
-				'objectInProduction' => true 
-		),
-		'FabrikScript_Lager_Papier' => array (
-				'inputInStorage' => false,
-				'outputInStorage' => false,
-				'objectInProduction' => true 
-		),
-		'FabrikScript_Lager_Karton' => array (
-				'inputInStorage' => false,
-				'outputInStorage' => false,
-				'objectInProduction' => true 
-		),
-		'FabrikScript_Lager_Leerpaletten' => array (
-				'inputInStorage' => false,
-				'outputInStorage' => false,
-				'objectInProduction' => true 
-		),
-		'FabrikScript_Lager_Apfel' => array (
-				'inputInStorage' => false,
-				'outputInStorage' => false,
-				'objectInProduction' => true 
-		),
-		'FabrikScript_Lager_Birne' => array (
-				'inputInStorage' => false,
-				'outputInStorage' => false,
-				'objectInProduction' => true 
-		),
-		'FabrikScript_Lager_Kirsche' => array (
-				'inputInStorage' => false,
-				'outputInStorage' => false,
-				'objectInProduction' => true 
-		),
-		'FabrikScript_Lager_Pflaume' => array (
-				'inputInStorage' => false,
-				'outputInStorage' => false,
-				'objectInProduction' => true 
-		),
-		'FabrikScript_Lager_Bierkasten' => array (
-				'inputInStorage' => false,
-				'outputInStorage' => false,
-				'objectInProduction' => true 
-		),
-		'FabrikScript_Lager_Bierfass' => array (
-				'inputInStorage' => false,
-				'outputInStorage' => false,
-				'objectInProduction' => true 
-		),
-		'FabrikScript_Lager_Zucker' => array (
-				'inputInStorage' => false,
-				'outputInStorage' => false,
-				'objectInProduction' => true 
-		),
-		'FabrikScript_Lager_Mehl' => array (
-				'inputInStorage' => false,
-				'outputInStorage' => false,
-				'objectInProduction' => true 
-		),
-		'FabrikScript_Lager_Milch' => array (
-				'inputInStorage' => false,
-				'outputInStorage' => false,
-				'objectInProduction' => true 
-		),
-		'FabrikScript_Lager_Butter' => array (
-				'inputInStorage' => false,
-				'outputInStorage' => false,
-				'objectInProduction' => true 
-		),
-		'FabrikScript_Lager_Quark' => array (
-				'inputInStorage' => false,
-				'outputInStorage' => false,
-				'objectInProduction' => true 
-		),
-		'FabrikScript_Lager_Sahne' => array (
-				'inputInStorage' => false,
-				'outputInStorage' => false,
-				'objectInProduction' => true 
-		),
-		'FabrikScript_Lager_Yogurt' => array (
-				'inputInStorage' => false,
-				'outputInStorage' => false,
-				'objectInProduction' => true 
-		),
-		'FabrikScript_Lager_Brot' => array (
-				'inputInStorage' => false,
-				'outputInStorage' => false,
-				'objectInProduction' => true 
-		),
-		'FabrikScript_Lager_kartoffelsack' => array (
-				'inputInStorage' => false,
-				'outputInStorage' => false,
-				'objectInProduction' => true 
-		),
-		'FabrikScript_Lager_Chips' => array (
-				'inputInStorage' => false,
-				'outputInStorage' => false,
-				'objectInProduction' => true 
-		),
-		'FabrikScript_Lager_pommes' => array (
-				'inputInStorage' => false,
-				'outputInStorage' => false,
-				'objectInProduction' => true 
-		),
-		'FabrikScript_Lager_washedPotato' => array (
-				'inputInStorage' => false,
-				'outputInStorage' => false,
-				'objectInProduction' => true 
-		),
-		'FabrikScript_Lager_oel' => array (
-				'inputInStorage' => false,
-				'outputInStorage' => false,
-				'objectInProduction' => true 
-		),
-		'FabrikScript_Duenger_Prod' => array (
-				'inputInStorage' => false,
-				'outputInStorage' => false,
-				'objectInProduction' => true 
-		),
-		'FabrikScript_Saat_Prod' => array (
-				'inputInStorage' => false,
-				'outputInStorage' => false,
-				'objectInProduction' => true 
-		),
-		'FabrikScript_Fertilizer' => array (
-				'inputInStorage' => false,
-				'outputInStorage' => false,
-				'objectInProduction' => true 
-		),
-		'FabrikScript_Saatgut' => array (
-				'inputInStorage' => false,
-				'outputInStorage' => false,
-				'objectInProduction' => true 
-		),
-		'FabrikScript_Schweinefutter' => array (
-				'inputInStorage' => false,
-				'outputInStorage' => false,
-				'objectInProduction' => true 
-		),
-		'FabrikScript_kartoffellager' => array (
-				'inputInStorage' => false,
-				'outputInStorage' => false,
-				'objectInProduction' => true 
-		),
-		'FabrikScript_kartoffellager2' => array (
-				'inputInStorage' => false,
-				'outputInStorage' => false,
-				'objectInProduction' => true 
-		),
-		'FabrikScript_zuckerrueben' => array (
-				'inputInStorage' => false,
-				'outputInStorage' => false,
-				'objectInProduction' => true 
-		),
-		'FabrikScript_Schweinefutterstation' => array (
-				'inputInStorage' => false,
-				'outputInStorage' => false,
-				'objectInProduction' => true 
-		),
-		'FabrikScript_potatoWasher' => array (
-				'inputInStorage' => false,
-				'outputInStorage' => false,
-				'objectInProduction' => true 
-		),
-		'FabrikScript_potatoWasher2' => array (
-				'inputInStorage' => false,
-				'outputInStorage' => false,
-				'objectInProduction' => true 
-		) 
-);
+
 function getLocation($position) {
 	list ( $posx, $posy, $posz ) = explode ( ' ', $position );
 	if ($posx < - 1071 || $posx > 1071 || $posy < 0 || $posy > 255 || $posz < - 1071 || $posz > 1071)

@@ -163,14 +163,3 @@ foreach ( $produktion as $item ) {
 	echo ('),');
 }
 echo (');');
-
-echo ('$show = array(');
-foreach ( $produktion as $item ) {
-	echo ("'FabrikScript_{$item['name']}' => array(");
-	echo ("'inputInStorage' => false,");
-	echo ("'outputInStorage' => false,");
-	echo ("'objectInProduction' => true),");
-}
-echo (');');
-
-

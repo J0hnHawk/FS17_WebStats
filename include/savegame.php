@@ -21,44 +21,15 @@
 if (! defined ( 'IN_NFMWS' )) {
 	exit ();
 }
-class savegame {
-	private $serverAdress;
-	private $stats;
-	private $careerVehicles;
-	private $careerSavegame;
-	public $commodities = array ();
-	public $production = array ();
-	public $bales = array ();
-	public $pallets = array ();
-	
-	public function __construct($serverAddress) {
-		$this->serverAdress = $serverAddress;
-		$this->stats = getServerStatsSimpleXML ( sprintf ( $this->serverAdress, 'dedicated-server-stats.xml?' ) );
-		$this->careerVehicles = getServerStatsSimpleXML ( sprintf ( $this->serverAdress, 'dedicated-server-savegame.html?file=vehicles&' ) );
-		$this->careerSavegame = getServerStatsSimpleXML ( sprintf ( $this->serverAdress, 'dedicated-server-savegame.html?file=careerSavegame&' ) );		
-	}
-	
-	public function serverIsOnline() {
-		if (! isset ( $this->careerVehicles->item ))
-			return false;
-		if (! isset ( $this->careerSavegame->environment->currentDay ))
-			return false;
-		if (! isset ( $this->stats->Vehicles ))
-			return false;
-		return true;
-	}
-	
-	function getCommodities($sortByName = true, $onlyPallets = false, $hideZero = true, $showVehicles = true) {
-		$positions = $outOfMap = $sortFillLevel = array ();		
-	}
-	
-}
+
 // Daten vom Dedi-Server laden
 $stats = getServerStatsSimpleXML ( sprintf ( $serverAddress, 'dedicated-server-stats.xml?' ) );
 $careerVehicles = getServerStatsSimpleXML ( sprintf ( $serverAddress, 'dedicated-server-savegame.html?file=vehicles&' ) );
 $careerSavegame = getServerStatsSimpleXML ( sprintf ( $serverAddress, 'dedicated-server-savegame.html?file=careerSavegame&' ) );
 
-$commodities = $outOfMap = $sortFillLevel = $positions = array ();
+$serverOnline = true;
+
+$commodities = $outOfMap = $positions = array ();
 $plants = $sort_name = $sort_fillLevel = $sort_name = array ();
 
 // Stand der Daten ermitteln (Ingame-Zeitpunkt der Speicherung)
@@ -68,14 +39,9 @@ $dayTime = gmdate ( "H:i", $dayTime );
 $smarty->assign ( 'currentDay', $currentDay );
 $smarty->assign ( 'dayTime', $dayTime );
 
-$hideZero = $options ['storage'] ['hideZero'];
-
 // Paletten, Ballen und Wurzelfrchtlager durchsuchen
 foreach ( $careerVehicles->item as $item ) {
 	$className = strval ( $item ['className'] );
-	if ($options ['storage'] ['onlyPallets'] && $className != 'FillablePallet') {
-		continue;
-	}
 	$fillType = false;
 	$location = getLocation ( $item ['position'] );
 	if ($className == 'FillablePallet' || $className == 'Bale') {
@@ -90,11 +56,7 @@ foreach ( $careerVehicles->item as $item ) {
 	}
 	if ($fillType) {
 		$fillLevel = intval ( $item ['fillLevel'] );
-		if ($hideZero && $fillLevel == 0) {
-			continue;
-		} else {
-			addCommodity ( $fillType, $fillLevel, $location, $className );
-		}
+		addCommodity ( $fillType, $fillLevel, $location, $className );
 	}
 	if ($location == 'outOfMap') {
 		$commodities [translate ( $fillType )] ['outOfMap'] = true;
@@ -112,199 +74,143 @@ foreach ( $careerVehicles->item as $item ) {
 		foreach ( $item as $node ) {
 			$fillType = strval ( $node ['fillType'] );
 			$fillLevel = intval ( $node ['fillLevel'] );
-			if ($hideZero && $fillLevel == 0) {
-				continue;
-			} else {
-				addCommodity ( $fillType, $fillLevel, $location );
-			}
+			addCommodity ( $fillType, $fillLevel, $location );
 		}
 	}
 }
 
 // Fahrzeuge
-if (! $options ['storage'] ['onlyPallets'] && $options ['storage'] ['showVehicles'] && isset ( $stats->Vehicles )) {
-	foreach ( $stats->Vehicles->Vehicle as $vehicle ) {
-		if (isset ( $vehicle ['fillTypes'] )) {
-			$location = strval ( $vehicle ['name'] );
-			$fillTypes = explode ( ' ', $vehicle ['fillTypes'] );
-			$fillLevels = explode ( ' ', $vehicle ['fillLevels'] );
-			foreach ( $fillTypes as $key => $fillType ) {
-				$fillType = strval ( $fillType );
-				$fillLevel = intval ( $fillLevels [$key] );
-				if ($hideZero && $fillLevel == 0 || $fillType == 'unknown') {
-					continue;
-				} else {
-					addCommodity ( $fillType, $fillLevel, $location );
-				}
+foreach ( $stats->Vehicles->Vehicle as $vehicle ) {
+	if (isset ( $vehicle ['fillTypes'] )) {
+		$location = strval ( $vehicle ['name'] );
+		$fillTypes = explode ( ' ', $vehicle ['fillTypes'] );
+		$fillLevels = explode ( ' ', $vehicle ['fillLevels'] );
+		foreach ( $fillTypes as $key => $fillType ) {
+			$fillType = strval ( $fillType );
+			$fillLevel = intval ( $fillLevels [$key] );
+			if ($fillType == 'unknown') {
+				continue;
+			} else {
+				addCommodity ( $fillType, $fillLevel, $location, 'isVehicle' );
 			}
 		}
 	}
 }
 
+// Lagerstätten, Produktionsanlagen und Viehställe
 foreach ( $careerVehicles->onCreateLoadedObject as $object ) {
 	$saveId = strval ( $object ['saveId'] );
 	
 	// Hofsilo
-	if (! $options ['storage'] ['onlyPallets'] && $saveId == 'Storage_storage1') {
-		$location = strval ( $saveId );
+	if ($saveId == 'Storage_storage1') {
 		foreach ( $object->node as $node ) {
 			$fillType = strval ( $node ['fillType'] );
 			$fillLevel = intval ( $node ['fillLevel'] );
-			if ($hideZero && $fillLevel == 0) {
-				continue;
-			} else {
-				addCommodity ( $fillType, $fillLevel, $location );
-			}
+			addCommodity ( $fillType, $fillLevel, $saveId );
 		}
 	}
 	
 	// Kuh- und Schweinestall
-	if (! $options ['storage'] ['onlyPallets'] && ($saveId == 'Animals_cow' || $saveId == 'Animals_pig')) {
-		$location = strval ( $saveId );
+	if ($saveId == 'Animals_cow' || $saveId == 'Animals_pig') {
 		$manureFillLevel = intval ( $object ['manureFillLevel'] );
-		if ($hideZero && $manureFillLevel == 0) {
-			continue;
-		} else {
-			addCommodity ( 'manure', $manureFillLevel, $location );
-		}
+		addCommodity ( 'manure', $manureFillLevel, $saveId );
 		$liquidManureFillLevel = intval ( $object ['liquidManureFillLevel'] );
-		if ($hideZero && $liquidManureFillLevel == 0) {
-			continue;
-		} else {
-			addCommodity ( 'liquidManure', $liquidManureFillLevel, $location );
-		}
+		addCommodity ( 'liquidManure', $liquidManureFillLevel, $saveId );
 		$fillLevelMilk = intval ( $object->fillLevelMilk ['fillLevel'] );
-		if ($hideZero && $fillLevelMilk == 0) {
-			continue;
-		} else {
-			addCommodity ( 'milk', $fillLevelMilk, $location );
-		}
+		addCommodity ( 'milk', $fillLevelMilk, $saveId );
 	}
 	
 	// Tankstellen/Diesellager
-	if (! $options ['storage'] ['onlyPallets'] && strpos ( $saveId, 'fuelStation_' ) !== false) {
-		$location = strval ( $saveId );
+	if (strpos ( $saveId, 'fuelStation_' ) !== false) {
 		$fillType = 'fuel';
 		$fillLevel = intval ( $object ['fillLevel'] );
-		if ($hideZero && $fillLevel == 0) {
-			continue;
-		} else {
-			addCommodity ( $fillType, $fillLevel, $location );
-		}
+		addCommodity ( $fillType, $fillLevel, $saveId );
 	}
 	
 	// Fabrikscripte laut Mapconfig
 	if (isset ( $mapconfig [$saveId] )) {
-		$location = strval ( $saveId );
-		if ($options ['storage'] ['onlyPallets'] && strpos ( 'FabrikScript_Lager', $saveId ) === false) {
-			continue;
-		}
+		// Lager in Commodities aufnehmen
 		foreach ( $object->Rohstoff as $in ) {
 			$fillType = strval ( $in ['Name'] );
 			$fillLevel = intval ( $in ['Lvl'] );
-			if ($hideZero && $fillLevel == 0) {
-				continue;
-			}
 			if ($mapconfig [$saveId] ['rawMaterial'] [$fillType] ['showInStorage']) {
-				addCommodity ( $fillType, $fillLevel, $location );
+				addCommodity ( $fillType, $fillLevel, $saveId );
 			}
 		}
 		foreach ( $object->Produkt as $out ) {
 			$fillType = strval ( $out ['Name'] );
 			$fillLevel = intval ( $out ['Lvl'] );
-			if ($hideZero && $fillLevel == 0) {
+			if ($mapconfig [$saveId] ['product'] [$fillType] ['showInStorage']) {
+				addCommodity ( $fillType, $fillLevel, $saveId );
+			}
+		}
+		// Fabriken für Produktionsübersicht
+		if ($mapconfig [$saveId] ['showInProduction']) {
+			$plant = translate ( $saveId );
+			if (isset ( $options ['production'] ['hidePlant'] [$plant] )) {
 				continue;
 			}
-			if ($mapconfig [$saveId] ['product'] [$fillType] ['showInStorage']) {
-				addCommodity ( $fillType, $fillLevel, $location );
-			}
-		}
-	}
-}
-
-ksort ( $commodities, SORT_LOCALE_STRING );
-
-if (! $options ['storage'] ['sortByName']) {
-	foreach ( $commodities as $commodity ) {
-		$sortFillLevel [] = $commodity ['overall'];
-	}
-	array_multisort ( $sortFillLevel, SORT_DESC, $commodities );
-}
-
-// Fabriken suchen
-foreach ( $careerVehicles->onCreateLoadedObject as $object ) {
-	$saveId = strval ( $object ['saveId'] );
-	if (isset ( $mapconfig [$saveId] ) && $mapconfig [$saveId] ['showInProduction']) {
-		$plant = translate ( $saveId );
-		if (isset ( $options ['production'] ['hidePlant'] [$plant] )) {
-			continue;
-		}
-		$sort_name [] = strtolower ( $plant );
-		$plantstate = 0;
-		$plants [$plant] = array (
-				'i3dName' => $saveId,
-				'class' => 'success',
-				'input' => array (),
-				'output' => array () 
-		);
-		foreach ( $object->Rohstoff as $rohstoff ) {
-			$fillType = strval ( $rohstoff ['Name'] );
-			$l_fillType = translate ( $fillType );
-			$fillLevel = intval ( $rohstoff ['Lvl'] );
-			$fillMax = $mapconfig [$saveId] ['rawMaterial'] [strval ( $rohstoff ['Name'] )] ['capacity'];
-			$state = 0;
-			if ($fillLevel == 0) {
-				$state = 2;
-			} elseif ($fillLevel / $fillMax < 0.1) {
-				$state = 1;
-			}
-			if ($state > $plantstate)
-				$plantstate = $state;
-			$plants [$plant] ['input'] [$l_fillType] = array (
-					'i3dName' => $fillType,
-					'fillLevel' => $fillLevel,
-					'fillMax' => $fillMax,
-					'state' => $state 
+			$sort_name [] = strtolower ( $plant );
+			$plantstate = 0;
+			$plants [$plant] = array (
+					'i3dName' => $saveId,
+					'class' => 'success',
+					'input' => array (),
+					'output' => array () 
 			);
-		}
-		foreach ( $object->Produkt as $product ) {
-			$fillType = strval ( $product ['Name'] );
-			$l_fillType = translate ( $fillType );
-			if ($mapconfig [$saveId] ['product'] [$fillType] ['showInStorage']) {
-				$fillLevel = intval ( $product ['Lvl'] );
-				$fillMax = $mapconfig [$saveId] ['product'] [$fillType] ['capacity'];
-			} else {
-				$fillLevel = isset ( $commodities [$l_fillType] ['locations'] [$plant] ['fillLevel'] ) ? $commodities [$l_fillType] ['locations'] [$plant] ['fillLevel'] : 0;
-				$capacity = $mapconfig [$saveId] ['product'] [$fillType] ['capacity'];
-				$fillMax = $mapconfig [$saveId] ['product'] [$fillType] ['palettPlaces'] * $capacity;
+			foreach ( $object->Rohstoff as $rohstoff ) {
+				$fillType = strval ( $rohstoff ['Name'] );
+				$l_fillType = translate ( $fillType );
+				$fillLevel = intval ( $rohstoff ['Lvl'] );
+				$fillMax = $mapconfig [$saveId] ['rawMaterial'] [strval ( $rohstoff ['Name'] )] ['capacity'];
+				$state = 0;
+				if ($fillLevel == 0) {
+					$state = 2;
+				} elseif ($fillLevel / $fillMax < 0.1) {
+					$state = 1;
+				}
+				if ($state > $plantstate)
+					$plantstate = $state;
+				$plants [$plant] ['input'] [$l_fillType] = array (
+						'i3dName' => $fillType,
+						'fillLevel' => $fillLevel,
+						'fillMax' => $fillMax,
+						'state' => $state 
+				);
 			}
-			$state = 0;
-			if ($fillLevel == $fillMax) {
-				$state = 2;
-			} elseif ($fillLevel / $fillMax > 0.8) {
-				$state = 1;
+			foreach ( $object->Produkt as $product ) {
+				$fillType = strval ( $product ['Name'] );
+				$l_fillType = translate ( $fillType );
+				if ($mapconfig [$saveId] ['product'] [$fillType] ['showInStorage']) {
+					$fillLevel = intval ( $product ['Lvl'] );
+					$fillMax = $mapconfig [$saveId] ['product'] [$fillType] ['capacity'];
+				} else {
+					$fillLevel = isset ( $commodities [$l_fillType] ['locations'] [$plant] ['fillLevel'] ) ? $commodities [$l_fillType] ['locations'] [$plant] ['fillLevel'] : 0;
+					$capacity = $mapconfig [$saveId] ['product'] [$fillType] ['capacity'];
+					$fillMax = $mapconfig [$saveId] ['product'] [$fillType] ['palettPlaces'] * $capacity;
+				}
+				$state = 0;
+				if ($fillLevel == $fillMax) {
+					$state = 2;
+				} elseif ($fillLevel / $fillMax > 0.8) {
+					$state = 1;
+				}
+				if ($options ['production'] ['sortFullProducts'] && $state > $plantstate)
+					$plantstate = $state;
+				$plants [$plant] ['output'] [$l_fillType] = array (
+						'i3dName' => $fillType,
+						'fillLevel' => $fillLevel,
+						'fillMax' => $fillMax,
+						'state' => $state 
+				);
 			}
-			if ($options ['production'] ['sortFullProducts'] && $state > $plantstate)
-				$plantstate = $state;
-			$plants [$plant] ['output'] [$l_fillType] = array (
-					'i3dName' => $fillType,
-					'fillLevel' => $fillLevel,
-					'fillMax' => $fillMax,
-					'state' => $state 
-			);
+			$plants [$plant] ['state'] = $plantstate;
+			if ($plantstate == 2) {
+				$plants [$plant] ['class'] = 'danger';
+			} elseif ($plantstate == 1) {
+				$plants [$plant] ['class'] = 'warning';
+			}
+			$sort_fillLevel [] = $plantstate;
 		}
-		$plants [$plant] ['state'] = $plantstate;
-		if ($plantstate == 2) {
-			$plants [$plant] ['class'] = 'danger';
-		} elseif ($plantstate == 1) {
-			$plants [$plant] ['class'] = 'warning';
-		}
-		$sort_fillLevel [] = $plantstate;
 	}
-}
-
-if (! $options ['production'] ['sortByName']) {
-	array_multisort ( $sort_fillLevel, SORT_DESC, $sort_name, SORT_ASC, $plants );
-} else {
-	uksort ( $plants, "strnatcasecmp" );
 }

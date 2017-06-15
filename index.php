@@ -57,6 +57,7 @@ include ('./include/coockie.php');
 require ('./server/map26/production.php');
 require ('./server/map26/translation.php');
 $smarty->assign ( 'mapVersion', $mapVersion );
+require ('./include/savegame.php');
 
 // Erlaubte Seiten
 $pages = array (
@@ -71,7 +72,6 @@ if (! in_array ( $page, $pages ))
 	$page = 'production';
 $smarty->assign ( 'page', $page );
 include ("./include/$page.php");
-$mapdata = new savegame($serverAddress);
 
-$smarty->assign ( 'serverOnline', $mapdata->serverIsOnline() );
+$smarty->assign ( 'serverOnline', $serverOnline );
 $smarty->display ( 'index.tpl' );
