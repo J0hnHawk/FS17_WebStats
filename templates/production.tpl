@@ -17,7 +17,6 @@ text-danger")} {$textcolors = array("","text-warning","text-danger")}
 				</tr>
 			</thead>
 			<tbody>
-				<!-- class="{$plant.class}" -->
 				{foreach $plants as $plantName => $plant}
 				<tr data-toggle="collapse" href="#collapse{$plant.i3dName}">
 					<td><span class="{$glyphicons[$plant.state]}" aria-hidden="true"></span> {$plantName}</td>
@@ -47,7 +46,7 @@ text-danger")} {$textcolors = array("","text-warning","text-danger")}
 									{for $i=0 to $max-1}
 									<tr>
 										{if isset($inputRow[$i][0])}
-										<td><a href="index.php?page=details&object={$inputRow[$i][3]}">{$inputRow[$i][0]}</a></td>
+										<td><a href="index.php?page=commodity&object={$inputRow[$i][3]}">{$inputRow[$i][0]}</a></td>
 										<td class="text-right">{$inputRow[$i][1]|number_format:0:",":"."} / {$inputRow[$i][2]|number_format:0:",":"."}</td> {else}
 										<td colspan="2">&nbsp;</td> {/if} {if isset($outputRow[$i][0])}
 										<td>{$outputRow[$i][0]}</td>

@@ -50,9 +50,30 @@ if ($_SERVER ['REQUEST_METHOD'] == 'POST') {
 	$options ['version'] = $cookieVersion;
 	setcookie ( 'nfmarsch', json_encode ( $options ), time () + 31536000 );
 }
+if(sizeof($options['production']['hidePlant'])>0) {
+	foreach($plants as $plantName => $plant) {
+		if (isset ( $options ['production'] ['hidePlant'] [$plantName] )) {
+			unset($plants[$plantName]);
+		}		
+	}
+}
 
 if (! $options ['production'] ['sortByName']) {
-	array_multisort ( $sort_fillLevel, SORT_DESC, $sort_name, SORT_ASC, $plants );
+	$sortName = array();
+	foreach($plants as $plantName => $plant) {
+		$sortName [] = strtolower ( $plantName );
+		if ($options ['production'] ['sortFullProducts']) {
+			$plantState = $plant['state'];
+			foreach($plant['output'] as $output) {
+				if($output['state'] > $plantState) {
+					$plantState = $output['state'];
+				}
+			}
+			$plants[$plantName]['state'] = $plantState;
+		}
+		$sortFillLevel [] = $plantState;
+	}
+	array_multisort ( $sortFillLevel, SORT_DESC, $sortName, SORT_ASC, $plants );
 } else {
 	uksort ( $plants, "strnatcasecmp" );
 }

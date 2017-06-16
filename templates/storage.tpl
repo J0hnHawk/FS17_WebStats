@@ -27,7 +27,7 @@
 						<table class="table" style="margin-bottom: 0px;">
 							<thead>
 								<tr>
-									<th>Ort<a class="pull-right" href="index.php?page=details&object={$commodity.i3dName}">Details</a></th>
+									<th>Ort<a class="pull-right" href="index.php?page=commodity&object={$commodity.i3dName}">Details</a></th>
 									<th class="text-right">Menge</th>
 								</tr>
 							</thead>

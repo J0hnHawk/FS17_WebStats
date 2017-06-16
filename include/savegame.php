@@ -30,7 +30,7 @@ $careerSavegame = getServerStatsSimpleXML ( sprintf ( $serverAddress, 'dedicated
 $serverOnline = true;
 
 $commodities = $outOfMap = $positions = array ();
-$plants = $sort_name = $sort_fillLevel = $sort_name = array ();
+$plants = array ();
 
 // Stand der Daten ermitteln (Ingame-Zeitpunkt der Speicherung)
 $currentDay = $careerSavegame->environment->currentDay;
@@ -99,62 +99,123 @@ foreach ( $stats->Vehicles->Vehicle as $vehicle ) {
 
 // Lagerstätten, Produktionsanlagen und Viehställe
 foreach ( $careerVehicles->onCreateLoadedObject as $object ) {
-	$saveId = strval ( $object ['saveId'] );
+	$location = strval ( $object ['saveId'] );
 	
 	// Hofsilo
-	if ($saveId == 'Storage_storage1') {
+	if ($location == 'Storage_storage1') {
 		foreach ( $object->node as $node ) {
 			$fillType = strval ( $node ['fillType'] );
 			$fillLevel = intval ( $node ['fillLevel'] );
-			addCommodity ( $fillType, $fillLevel, $saveId );
+			addCommodity ( $fillType, $fillLevel, $location );
 		}
 	}
 	
 	// Kuh- und Schweinestall
-	if ($saveId == 'Animals_cow' || $saveId == 'Animals_pig') {
+	if ($location == 'Animals_cow' || $location == 'Animals_pig') {
 		$manureFillLevel = intval ( $object ['manureFillLevel'] );
-		addCommodity ( 'manure', $manureFillLevel, $saveId );
+		addCommodity ( 'manure', $manureFillLevel, $location );
 		$liquidManureFillLevel = intval ( $object ['liquidManureFillLevel'] );
-		addCommodity ( 'liquidManure', $liquidManureFillLevel, $saveId );
-		$fillLevelMilk = intval ( $object->fillLevelMilk ['fillLevel'] );
-		addCommodity ( 'milk', $fillLevelMilk, $saveId );
+		addCommodity ( 'liquidManure', $liquidManureFillLevel, $location );
+		$fillLevel = intval ( $object ['numAnimals0'] );
+		if ($location == 'Animals_cow') {
+			addCommodity ( 'cow', $fillLevel, $location );
+			$fillLevelMilk = intval ( $object->fillLevelMilk ['fillLevel'] );
+			addCommodity ( 'milk', $fillLevelMilk, $location );
+		} else {
+			addCommodity ( 'pig', $fillLevel, $location );
+		}
+	}
+	
+	// Schafweide
+	if ($location == 'Animals_sheep') {
+		$fillLevel = intval ( $object ['numAnimals0'] );
+		addCommodity ( 'sheep', $fillLevel, $location );
+		$plant = translate ( $location );
+		$plants [$plant] = array (
+				'i3dName' => $location,
+				'input' => array (),
+				'output' => array () 
+		);
+		$plantstate = 0;
+		$fillType = $fillLevel = array ();
+		foreach ( $object->tipTriggerFillLevel as $tipTrigger ) {
+			$index = intval ( $tipTrigger ['tipTriggerIndex'] );
+			if (isset ( $fillType [$index] )) {
+				$fillType [$index] .= strval ( $tipTrigger ['fillType'] );
+				$fillLevel [$index] += intval ( $tipTrigger ['fillLevel'] );
+			} else {
+				$fillType [$index] = strval ( $tipTrigger ['fillType'] );
+				$fillLevel [$index] = intval ( $tipTrigger ['fillLevel'] );
+			}
+		}
+		foreach ( $fillType as $index => $combineFillType ) {
+			$l_fillType = translate ( $combineFillType );
+			$fillMax = 1;
+			$state = 0;
+			if ($fillLevel [$index] == 0) {
+				$state = 2;
+			} elseif ($fillLevel [$index] / $fillMax < 0.1) {
+				$state = 1;
+			}
+			if ($state > $plantstate)
+				$plantstate = $state;
+			$plants [$plant] ['input'] [$l_fillType] = array (
+					'i3dName' => $combineFillType,
+					'fillLevel' => $fillLevel [$index],
+					'fillMax' => $fillMax,
+					'state' => $state 
+			);
+		}
+		// Wolle
+		$l_fillType = translate ( 'woolPallet' );
+		$fillLevel = isset ( $commodities [$l_fillType] ['locations'] [$plant] ['fillLevel'] ) ? $commodities [$l_fillType] ['locations'] [$plant] ['fillLevel'] : 0;
+		$capacity = 2000; // $mapconfig [$location] ['product'] [$fillType] ['capacity'];
+		$fillMax = 8 * $capacity; // $mapconfig [$location] ['product'] [$fillType] ['palettPlaces'] * $capacity;
+		$state = 0;
+		if ($fillLevel == $fillMax) {
+			$state = 2;
+		} elseif ($fillLevel / $fillMax > 0.8) {
+			$state = 1;
+		}
+		$plants [$plant] ['output'] [$l_fillType] = array (
+				'i3dName' => $fillType,
+				'fillLevel' => $fillLevel,
+				'fillMax' => $fillMax,
+				'state' => $state 
+		);
+		$plants [$plant] ['state'] = $plantstate;
 	}
 	
 	// Tankstellen/Diesellager
-	if (strpos ( $saveId, 'fuelStation_' ) !== false) {
+	if (strpos ( $location, 'fuelStation_' ) !== false) {
 		$fillType = 'fuel';
 		$fillLevel = intval ( $object ['fillLevel'] );
-		addCommodity ( $fillType, $fillLevel, $saveId );
+		addCommodity ( $fillType, $fillLevel, $location );
 	}
 	
 	// Fabrikscripte laut Mapconfig
-	if (isset ( $mapconfig [$saveId] )) {
+	if (isset ( $mapconfig [$location] )) {
 		// Lager in Commodities aufnehmen
 		foreach ( $object->Rohstoff as $in ) {
 			$fillType = strval ( $in ['Name'] );
 			$fillLevel = intval ( $in ['Lvl'] );
-			if ($mapconfig [$saveId] ['rawMaterial'] [$fillType] ['showInStorage']) {
-				addCommodity ( $fillType, $fillLevel, $saveId );
+			if ($mapconfig [$location] ['rawMaterial'] [$fillType] ['showInStorage']) {
+				addCommodity ( $fillType, $fillLevel, $location );
 			}
 		}
 		foreach ( $object->Produkt as $out ) {
 			$fillType = strval ( $out ['Name'] );
 			$fillLevel = intval ( $out ['Lvl'] );
-			if ($mapconfig [$saveId] ['product'] [$fillType] ['showInStorage']) {
-				addCommodity ( $fillType, $fillLevel, $saveId );
+			if ($mapconfig [$location] ['product'] [$fillType] ['showInStorage']) {
+				addCommodity ( $fillType, $fillLevel, $location );
 			}
 		}
 		// Fabriken für Produktionsübersicht
-		if ($mapconfig [$saveId] ['showInProduction']) {
-			$plant = translate ( $saveId );
-			if (isset ( $options ['production'] ['hidePlant'] [$plant] )) {
-				continue;
-			}
-			$sort_name [] = strtolower ( $plant );
+		if ($mapconfig [$location] ['showInProduction']) {
+			$plant = translate ( $location );
 			$plantstate = 0;
 			$plants [$plant] = array (
-					'i3dName' => $saveId,
-					'class' => 'success',
+					'i3dName' => $location,
 					'input' => array (),
 					'output' => array () 
 			);
@@ -162,7 +223,7 @@ foreach ( $careerVehicles->onCreateLoadedObject as $object ) {
 				$fillType = strval ( $rohstoff ['Name'] );
 				$l_fillType = translate ( $fillType );
 				$fillLevel = intval ( $rohstoff ['Lvl'] );
-				$fillMax = $mapconfig [$saveId] ['rawMaterial'] [strval ( $rohstoff ['Name'] )] ['capacity'];
+				$fillMax = $mapconfig [$location] ['rawMaterial'] [strval ( $rohstoff ['Name'] )] ['capacity'];
 				$state = 0;
 				if ($fillLevel == 0) {
 					$state = 2;
@@ -181,13 +242,13 @@ foreach ( $careerVehicles->onCreateLoadedObject as $object ) {
 			foreach ( $object->Produkt as $product ) {
 				$fillType = strval ( $product ['Name'] );
 				$l_fillType = translate ( $fillType );
-				if ($mapconfig [$saveId] ['product'] [$fillType] ['showInStorage']) {
+				if ($mapconfig [$location] ['product'] [$fillType] ['showInStorage']) {
 					$fillLevel = intval ( $product ['Lvl'] );
-					$fillMax = $mapconfig [$saveId] ['product'] [$fillType] ['capacity'];
+					$fillMax = $mapconfig [$location] ['product'] [$fillType] ['capacity'];
 				} else {
 					$fillLevel = isset ( $commodities [$l_fillType] ['locations'] [$plant] ['fillLevel'] ) ? $commodities [$l_fillType] ['locations'] [$plant] ['fillLevel'] : 0;
-					$capacity = $mapconfig [$saveId] ['product'] [$fillType] ['capacity'];
-					$fillMax = $mapconfig [$saveId] ['product'] [$fillType] ['palettPlaces'] * $capacity;
+					$capacity = $mapconfig [$location] ['product'] [$fillType] ['capacity'];
+					$fillMax = $mapconfig [$location] ['product'] [$fillType] ['palettPlaces'] * $capacity;
 				}
 				$state = 0;
 				if ($fillLevel == $fillMax) {
@@ -195,8 +256,6 @@ foreach ( $careerVehicles->onCreateLoadedObject as $object ) {
 				} elseif ($fillLevel / $fillMax > 0.8) {
 					$state = 1;
 				}
-				if ($options ['production'] ['sortFullProducts'] && $state > $plantstate)
-					$plantstate = $state;
 				$plants [$plant] ['output'] [$l_fillType] = array (
 						'i3dName' => $fillType,
 						'fillLevel' => $fillLevel,
@@ -205,12 +264,23 @@ foreach ( $careerVehicles->onCreateLoadedObject as $object ) {
 				);
 			}
 			$plants [$plant] ['state'] = $plantstate;
-			if ($plantstate == 2) {
-				$plants [$plant] ['class'] = 'danger';
-			} elseif ($plantstate == 1) {
-				$plants [$plant] ['class'] = 'warning';
+		}
+	}
+}
+
+// "Kombi-Rohstoffe ermitteln (Abfall, Brennstoffe, usw.)
+foreach ( $mapconfig as $plantName => $plant ) {
+	foreach ( $plant ['rawMaterial'] as $combineFillType => $data ) {
+		$l_combineFillType = translate ( $combineFillType );
+		if (! isset ( $commodities [$l_combineFillType] )) {
+			$fillTypes = explode ( ' ', $data ['fillTypes'] );
+			foreach ( $fillTypes as $fillType ) {
+				$l_fillType = translate ( $fillType );
+				if (isset ( $commodities [$l_fillType] )) {
+					$fillLevel = $commodities [$l_fillType] ['overall'];
+					addCommodity ( $combineFillType, $fillLevel, NULL, NULL, true );
+				}
 			}
-			$sort_fillLevel [] = $plantstate;
 		}
 	}
 }

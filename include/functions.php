@@ -70,7 +70,7 @@ function getFillType($uri) {
 }
 
 // Waren anlegen und/oder addieren
-function addCommodity($fillType, $fillLevel, $location, $className = 'none') {
+function addCommodity($fillType, $fillLevel, $location, $className = 'none', $isCombine = false) {
 	global $commodities;
 	$l_fillType = translate ( $fillType );
 	$l_location = translate ( $location );
@@ -78,6 +78,7 @@ function addCommodity($fillType, $fillLevel, $location, $className = 'none') {
 		$commodities [$l_fillType] = array (
 				'overall' => $fillLevel,
 				'i3dName' => $fillType,
+				'isCombine' => $isCombine,
 				'locations' => array () 
 		);
 	} else {

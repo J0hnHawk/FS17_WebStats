@@ -31,27 +31,32 @@ if ($_SERVER ['REQUEST_METHOD'] == 'POST') {
 	setcookie ( 'nfmarsch', json_encode ( $options ), time () + 31536000 );
 }
 
-$sortFillLevel = array ();
 foreach ( $commodities as $name => $commodity ) {
+	if($commodity['isCombine']) {
+		unset ( $commodities [$name] );
+		continue;
+	}
 	foreach ( $commodity ['locations'] as $location => $locationData ) {
-		if (! $options ['storage'] ['showVehicles'] && isset ( $locationData ['isVehicle'] )) {
+		if ($options ['storage'] ['onlyPallets'] && ($location != 'Palettenlager' && ! isset ( $locationData ['FillablePallet'] ))) {
 			$commodities [$name] ['overall'] -= $locationData ['fillLevel'];
 			unset ( $commodities [$name] ['locations'] [$location] );
-		}
-		if ($options ['storage'] ['onlyPallets'] && ($location != 'Palettenlager' && ! isset ( $locationData ['FillablePallet'] ))) {
+		} elseif (! $options ['storage'] ['showVehicles'] && isset ( $locationData ['isVehicle'] )) {
 			$commodities [$name] ['overall'] -= $locationData ['fillLevel'];
 			unset ( $commodities [$name] ['locations'] [$location] );
 		}
 	}
 	if ($options ['storage'] ['hideZero'] && $commodities [$name] ['overall'] == 0) {
 		unset ( $commodities [$name] );
-		continue;
 	}
-	$sortFillLevel [] = $commodities [$name] ['overall'];
 }
 
 ksort ( $commodities, SORT_LOCALE_STRING );
+
 if (! $options ['storage'] ['sortByName']) {
+	$sortFillLevel = array ();
+	foreach ( $commodities as $name => $commodity ) {
+		$sortFillLevel [] = $commodity ['overall'];
+	}
 	array_multisort ( $sortFillLevel, SORT_DESC, $commodities );
 }
 

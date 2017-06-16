@@ -5,14 +5,14 @@
 </div>
 <div class="row">
 	<div class="col-sm-6"><h4>Lagerbestände</h4>
-		<table class="table" style="margin-bottom: 0px;">
-		
+		<table class="table" style="margin-bottom: 0px;">		
 			<thead>
 				<tr>
-					<th>Lagerort</th>
+					<th>{if !$combineCommodities}Lagerort{else}Waren/Güter{/if}</th>
 					<th class="text-right">Menge</th>
 				</tr>
 			</thead>
+			{if !$combineCommodities}
 			{foreach $commodities.$l_object.locations as $locationName => $location} {$addInfo=false} {if isset($location.FillablePallet)}{if
 			$location.FillablePallet==1}{$addInfo="1 Palette"}{else}{$addInfo="{$location.FillablePallet} Paletten"}{/if}{/if} {if
 			isset($location.Bale)}{$addInfo="{$location.Bale} Ballen"}{/if}
@@ -21,6 +21,13 @@
 				<td class="text-right">{$location.fillLevel|number_format:0:",":"."}</td>
 			</tr>
 			{/foreach}
+			{else}
+				{foreach $combineCommodities as $fillType}
+				<tr>
+				<td><a href="index.php?page=commodity&object={$commodities.$fillType.i3dName}">{$fillType}</a></td>
+				<td class="text-right">{$commodities.$fillType.overall|number_format:0:",":"."}</td>
+			</tr>{/foreach}
+			{/if}
 			</tbody>
 			<tfoot><tr><th>Gesamter Lagerbestand</th><th class="text-right">{$commodities.$l_object.overall|number_format:0:",":"."}</th></tr></tfoot>
 		</table>

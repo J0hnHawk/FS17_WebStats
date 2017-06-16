@@ -49,7 +49,6 @@ if (file_exists ( $configFile )) {
 	exit ();
 }
 
-
 // Cookie mit Einstellungen laden
 include ('./include/coockie.php');
 
@@ -64,7 +63,7 @@ $pages = array (
 		'overview',
 		'storage',
 		'production',
-		'details',
+		'commodity',
 		'options' 
 );
 $page = GetParam ( 'page', 'G' );

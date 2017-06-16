@@ -1605,7 +1605,7 @@ function getLocation($position) {
 	if ($posx > - 837.7 && $posx < - 836.2 && $posz > - 98.8 && $posz < - 82.7)
 		return 'FabrikScript_WeizenMehlfabrik';
 	if ($posx > 578.5 && $posx < 592.7 && $posz > - 25.3 && $posz < - 23.4)
-		return 'Schafweide';
+		return 'Animals_sheep';
 	if ($posx > 866.4 && $posx < 882.6 && $posz > 618.5 && $posz < 622.7)
 		return 'FabrikScript_Paletten_Fabrik';
 	if ($posx > 960.1 && $posx < 961.7 && $posz > 663.1 && $posz < 683.3)
