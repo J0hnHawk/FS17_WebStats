@@ -27,7 +27,12 @@ $stats = getServerStatsSimpleXML ( sprintf ( $serverAddress, 'dedicated-server-s
 $careerVehicles = getServerStatsSimpleXML ( sprintf ( $serverAddress, 'dedicated-server-savegame.html?file=vehicles&' ) );
 $careerSavegame = getServerStatsSimpleXML ( sprintf ( $serverAddress, 'dedicated-server-savegame.html?file=careerSavegame&' ) );
 
-$serverOnline = true;
+if ($stats & $careerVehicles & $careerSavegame) {
+	$serverOnline = true;
+} else {
+	$serverOnline = false;
+	return;
+}
 
 $commodities = $outOfMap = $positions = array ();
 $plants = array ();
