@@ -23,14 +23,20 @@ if (! defined ( 'IN_NFMWS' )) {
 }
 
 // Daten vom Dedi-Server laden
+/*
 $stats = getServerStatsSimpleXML ( sprintf ( $serverAddress, 'dedicated-server-stats.xml?' ) );
 $careerVehicles = getServerStatsSimpleXML ( sprintf ( $serverAddress, 'dedicated-server-savegame.html?file=vehicles&' ) );
 $careerSavegame = getServerStatsSimpleXML ( sprintf ( $serverAddress, 'dedicated-server-savegame.html?file=careerSavegame&' ) );
+*/
+$stats = 1;
+$careerVehicles = simplexml_load_file ('./savegame1/vehicles.xml');
+$careerSavegame = simplexml_load_file ('./savegame1/careerSavegame.xml');
 
-if ($stats & $careerVehicles & $careerSavegame) {
+if ($stats) {
 	$serverOnline = true;
 } else {
 	$serverOnline = false;
+	echo ("<h1>".($careerVehicles)."</h1>");
 	return;
 }
 
@@ -84,10 +90,10 @@ foreach ( $careerVehicles->item as $item ) {
 	}
 }
 
-// Fahrzeuge
-foreach ( $stats->Vehicles->Vehicle as $vehicle ) {
+// Fahrzeuge aus $careerVehicles
+foreach ( $careerVehicles->vehicle as $vehicle ) {
 	if (isset ( $vehicle ['fillTypes'] )) {
-		$location = strval ( $vehicle ['name'] );
+		$location = getFillType ( $vehicle ['filename'] );
 		$fillTypes = explode ( ' ', $vehicle ['fillTypes'] );
 		$fillLevels = explode ( ' ', $vehicle ['fillLevels'] );
 		foreach ( $fillTypes as $key => $fillType ) {
@@ -101,6 +107,24 @@ foreach ( $stats->Vehicles->Vehicle as $vehicle ) {
 		}
 	}
 }
+
+// Fahrzeuge aus $stats
+// foreach ( $stats->Vehicles->Vehicle as $vehicle ) {
+// 	if (isset ( $vehicle ['fillTypes'] )) {
+// 		$location = strval ( $vehicle ['name'] );
+// 		$fillTypes = explode ( ' ', $vehicle ['fillTypes'] );
+// 		$fillLevels = explode ( ' ', $vehicle ['fillLevels'] );
+// 		foreach ( $fillTypes as $key => $fillType ) {
+// 			$fillType = strval ( $fillType );
+// 			$fillLevel = intval ( $fillLevels [$key] );
+// 			if ($fillType == 'unknown') {
+// 				continue;
+// 			} else {
+// 				addCommodity ( $fillType, $fillLevel, $location, 'isVehicle' );
+// 			}
+// 		}
+// 	}
+// }
 
 // Lagerstätten, Produktionsanlagen und Viehställe
 foreach ( $careerVehicles->onCreateLoadedObject as $object ) {

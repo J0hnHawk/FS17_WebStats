@@ -47,35 +47,81 @@
 		<div class="page-header">
 			<h1>Installation</h1>
 		</div>
-		<form class="form-horizontal" action="index.php?page=install" method="post">
-			{if $error}{$error}{/if}
-			<div class="form-group">
-				<label for="Server-IP" class="col-sm-3 control-label">Server IP-Adresse</label>
-				<div class="col-sm-7">
-					<input type="ip" name="serverip" class="form-control" id="Server-IP" placeholder="IP-Adresse" {if $postdata|@count>
-					0}value="{$postdata[0]}"{/if}> <span id="helpBlock" class="help-block">IP-Adresse des Farming Simulator 17 Dedicated Servers.</span>
+		<div>
+			<!-- Nav tabs -->
+			<ul class="nav nav-tabs" role="tablist">
+				<li role="presentation" class="active"><a href="#server" aria-controls="server" role="tab" data-toggle="tab">Dedicaded Server</a></li>
+				<li role="presentation"><a href="#local" aria-controls="local" role="tab" data-toggle="tab">lokaler Spielstand</a></li>
+			</ul>
+			<!-- Tab panes -->
+			<div class="tab-content">
+				<div role="tabpanel" class="tab-pane active" id="server">
+					<h2>Dedicaded Server</h2>
+					<form class="form-horizontal" action="index.php?page=install" method="post">
+						{if $error}{$error}{/if}
+						<div class="form-group">
+							<label for="Server-IP" class="col-sm-3 control-label">Server IP-Adresse</label>
+							<div class="col-sm-7">
+								<input type="ip" name="serverip" class="form-control" id="Server-IP" placeholder="IP-Adresse" {if $postdata|@count>
+								0}value="{$postdata[0]}"{/if}> <span id="helpBlock" class="help-block">IP-Adresse des Farming Simulator 17 Dedicated Servers.</span>
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="Server-Port" class="col-sm-3 control-label">Server-Port</label>
+							<div class="col-sm-7">
+								<input type="text" name="serverport" class="form-control" id="Server-Port" placeholder="Port" {if $postdata|@count>
+								0}value="{$postdata[1]}"{/if}> <span id="helpBlock" class="help-block">Port der Web-API, nicht der Port für den Spiel-Client.</span>
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="Server-Code" class="col-sm-3 control-label">Server-Code</label>
+							<div class="col-sm-7">
+								<input type="text" name="servercode" class="form-control" id="Server-Code" placeholder="Code" {if $postdata|@count>
+								0}value="{$postdata[2]}"{/if}> <span id="helpBlock" class="help-block">Web-API Zugriffscode.</span>
+							</div>
+						</div>
+						<div class="form-group">
+							<div class="col-sm-offset-7 col-sm-3">
+								<button type="submit" name="submit" value="server" class="pull-right btn btn-primary btn-block">Konfiguration speichern</button>
+							</div>
+						</div>
+					</form>
+				</div>
+				<div role="tabpanel" class="tab-pane" id="local">
+					<h2>lokaler Spielstand</h2>
+					<form class="form-horizontal" action="index.php?page=install" method="post">
+						{if $error}{$error}{/if}
+						<p>Bitte wähle eine Datei beliebige Datei des Spielstands aus.</p>
+						<input type="file" name="file" style="visibility: hidden;" id="path2savegame" />
+						<div class="form-group">
+							<label for="path" class="col-sm-3 control-label">Pfad zum Savegame</label>
+							<div class="col-sm-7">
+								<div class="input-group">
+									<input type="text" name="savegame" id="path" class="form-control">
+									<div class="input-group-btn">
+										<a class="btn btn-primary" onclick="$('#path2savegame').click();">Browse</a>
+									</div>
+								</div>
+								<span id="helpBlock" class="help-block">Pfad zum Spielstand</span>
+							</div>
+						</div>
+						<div class="form-group">
+							<div class="col-sm-offset-7 col-sm-3">
+								<button type="submit" name="submit" value="server" class="pull-right btn btn-primary btn-block">Konfiguration speichern</button>
+							</div>
+						</div>
+					</form>
+					<script>
+ 					$(document).ready(function(){
+ 						// This is the simple bit of jquery to duplicate the hidden field to subfile
+ 						$('#path2savegame').change(function(){
+ 	 						$('#path').val($(this).val());
+						});
+				 	});
+ 				</script>
 				</div>
 			</div>
-			<div class="form-group">
-				<label for="Server-Port" class="col-sm-3 control-label">Server-Port</label>
-				<div class="col-sm-7">
-					<input type="text" name="serverport" class="form-control" id="Server-Port" placeholder="Port" {if $postdata|@count>
-					0}value="{$postdata[1]}"{/if}> <span id="helpBlock" class="help-block">Port der Web-API, nicht der Port für den Spiel-Client.</span>
-				</div>
-			</div>
-			<div class="form-group">
-				<label for="Server-Code" class="col-sm-3 control-label">Server-Code</label>
-				<div class="col-sm-7">
-					<input type="text" name="servercode" class="form-control" id="Server-Code" placeholder="Code" {if $postdata|@count>
-					0}value="{$postdata[2]}"{/if}> <span id="helpBlock" class="help-block">Web-API Zugriffscode.</span>
-				</div>
-			</div>
-			<div class="form-group">
-				<div class="col-sm-offset-7 col-sm-3">
-					<button type="submit" name="submit" value="server" class="pull-right btn btn-primary btn-block">Konfiguration speichern</button>
-				</div>
-			</div>
-		</form>
+		</div>
 	</div>
 	{/if}
 </body>
