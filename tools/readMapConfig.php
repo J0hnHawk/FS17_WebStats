@@ -6,7 +6,8 @@ $produktion = $AttributeNodes = array ();
 
 // Zuerst alle Fabrikscripte finden
 foreach ( $xml->UserAttributes->UserAttribute as $UserAttribute ) {
-	$ProduktPerHour = $nodeId = false;
+	$ProduktPerHour = 1;
+	$nodeId = false;
 	foreach ( $UserAttribute as $Attribute ) {
 		if ($Attribute ['name'] == 'ProduktPerHour') {
 			$ProduktPerHour = intval ( $Attribute ['value'] );

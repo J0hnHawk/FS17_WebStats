@@ -80,12 +80,15 @@ arsort ( $demand );
 $smarty->assign ( 'demand', $demand );
 $smarty->assign ( 'demandSum', $demandSum );
 
-$linkToServer = sprintf ( $serverAddress, 'dedicated-server-stats-map.jpg?' );
+//$linkToServer = sprintf ( $serverAddress, 'dedicated-server-stats-map.jpg?' );
+$linkToServer = 
 $imageQuality = 90; // 60, 75, 90
 $imageSize = 512; // 256, 512, 1024, 2048
-$mapSize = floatval ( $stats ["mapSize"] );
+//$mapSize = floatval ( $stats ["mapSize"] );
+$mapSize = 2048;
 $mapSizeHalf = $mapSize / 2.0;
-$linkToImage = sprintf ( "%s&quality=%s&size=%s", $linkToServer, $imageQuality, $imageSize );
+//$linkToImage = sprintf ( "%s&quality=%s&size=%s", $linkToServer, $imageQuality, $imageSize );
+$linkToImage = "./server/map29/pda_map_H.jpg";
 $machineIconSize = 10;
 
 $backgroundColor = "#4dafd7";

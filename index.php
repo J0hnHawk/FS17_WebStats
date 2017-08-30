@@ -51,11 +51,12 @@ if (file_exists ( $configFile )) {
 include ('./include/coockie.php');
 
 // Kartendetails laden
-require ('./server/map29/production.php');
-require ('./server/map29/translation.php');
+$version = "map29";
+require ("./server/$version/production.php");
+require ("./server/$version/translation.php");
 $smarty->assign ( 'mapVersion', $mapVersion );
 require ('./include/savegame.php');
-
+//var_dump($commodities);
 // Erlaubte Seiten
 $pages = array (
 		'overview',

@@ -24,19 +24,19 @@ if (! defined ( 'IN_NFMWS' )) {
 
 // Daten vom Dedi-Server laden
 /*
-$stats = getServerStatsSimpleXML ( sprintf ( $serverAddress, 'dedicated-server-stats.xml?' ) );
-$careerVehicles = getServerStatsSimpleXML ( sprintf ( $serverAddress, 'dedicated-server-savegame.html?file=vehicles&' ) );
-$careerSavegame = getServerStatsSimpleXML ( sprintf ( $serverAddress, 'dedicated-server-savegame.html?file=careerSavegame&' ) );
-*/
+ * $stats = getServerStatsSimpleXML ( sprintf ( $serverAddress, 'dedicated-server-stats.xml?' ) );
+ * $careerVehicles = getServerStatsSimpleXML ( sprintf ( $serverAddress, 'dedicated-server-savegame.html?file=vehicles&' ) );
+ * $careerSavegame = getServerStatsSimpleXML ( sprintf ( $serverAddress, 'dedicated-server-savegame.html?file=careerSavegame&' ) );
+ */
 $stats = 1;
-$careerVehicles = simplexml_load_file ('./savegame1/vehicles.xml');
-$careerSavegame = simplexml_load_file ('./savegame1/careerSavegame.xml');
+$careerVehicles = simplexml_load_file ( './savegame1/vehicles.xml' );
+$careerSavegame = simplexml_load_file ( './savegame1/careerSavegame.xml' );
 
 if ($stats) {
 	$serverOnline = true;
 } else {
 	$serverOnline = false;
-	echo ("<h1>".($careerVehicles)."</h1>");
+	echo ("<h1>" . ($careerVehicles) . "</h1>");
 	return;
 }
 
@@ -110,20 +110,20 @@ foreach ( $careerVehicles->vehicle as $vehicle ) {
 
 // Fahrzeuge aus $stats
 // foreach ( $stats->Vehicles->Vehicle as $vehicle ) {
-// 	if (isset ( $vehicle ['fillTypes'] )) {
-// 		$location = strval ( $vehicle ['name'] );
-// 		$fillTypes = explode ( ' ', $vehicle ['fillTypes'] );
-// 		$fillLevels = explode ( ' ', $vehicle ['fillLevels'] );
-// 		foreach ( $fillTypes as $key => $fillType ) {
-// 			$fillType = strval ( $fillType );
-// 			$fillLevel = intval ( $fillLevels [$key] );
-// 			if ($fillType == 'unknown') {
-// 				continue;
-// 			} else {
-// 				addCommodity ( $fillType, $fillLevel, $location, 'isVehicle' );
-// 			}
-// 		}
-// 	}
+// if (isset ( $vehicle ['fillTypes'] )) {
+// $location = strval ( $vehicle ['name'] );
+// $fillTypes = explode ( ' ', $vehicle ['fillTypes'] );
+// $fillLevels = explode ( ' ', $vehicle ['fillLevels'] );
+// foreach ( $fillTypes as $key => $fillType ) {
+// $fillType = strval ( $fillType );
+// $fillLevel = intval ( $fillLevels [$key] );
+// if ($fillType == 'unknown') {
+// continue;
+// } else {
+// addCommodity ( $fillType, $fillLevel, $location, 'isVehicle' );
+// }
+// }
+// }
 // }
 
 // Lagerstätten, Produktionsanlagen und Viehställe
@@ -301,8 +301,8 @@ foreach ( $careerVehicles->onCreateLoadedObject as $object ) {
 foreach ( $mapconfig as $plantName => $plant ) {
 	foreach ( $plant ['rawMaterial'] as $combineFillType => $data ) {
 		$l_combineFillType = translate ( $combineFillType );
-		if (! isset ( $commodities [$l_combineFillType] )) {
-			$fillTypes = explode ( ' ', $data ['fillTypes'] );
+		$fillTypes = explode ( ' ', $data ['fillTypes'] );
+		if (! isset ( $commodities [$l_combineFillType] )) { // && sizeof ( $fillTypes ) > 1
 			foreach ( $fillTypes as $fillType ) {
 				$l_fillType = translate ( $fillType );
 				if (isset ( $commodities [$l_fillType] )) {
