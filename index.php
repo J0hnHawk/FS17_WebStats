@@ -26,7 +26,7 @@ define ( 'IN_NFMWS', true );
 date_default_timezone_set ( 'Europe/Lisbon' );
 setlocale ( LC_ALL, 'de_DE@euro', 'de_DE', 'de', 'ge' );
 
-require ('./smarty/Smarty.class.php');
+require ('./include/smarty/Smarty.class.php');
 require ('./include/functions.php');
 require ('./include/xmlTools.php');
 
@@ -52,7 +52,7 @@ include ('./include/coockie.php');
 
 // Kartendetails laden
 $version = "map29";
-require ("./server/$version/production.php");
+require ("./server/$version/mapconfig.php");
 require ("./server/$version/translation.php");
 $smarty->assign ( 'mapVersion', $mapVersion );
 require ('./include/savegame.php');

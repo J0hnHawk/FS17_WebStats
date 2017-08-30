@@ -178,8 +178,8 @@ $lang = array_merge ( $lang, array (
 
 $lang = array_merge ( $lang, array (
 		'FabrikScript_Backerei' => 'Bäckerei',
-		'FabrikScript_BrauereiFass' => 'Brauerei',
-		'FabrikScript_BrauereiKasten' => 'Brauerei',
+		'FabrikScript_BrauereiFass' => 'Brauerei Fass',
+		'FabrikScript_BrauereiKasten' => 'Brauerei Kasten',
 		'FabrikScript_compostMaster2k17' => 'compostMaster 2k17',
 		'FabrikScript_Duenger_Prod' => 'Düngerproduktion',
 		'FabrikScript_Fabrik' => 'Sägewerk',

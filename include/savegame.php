@@ -29,8 +29,8 @@ if (! defined ( 'IN_NFMWS' )) {
  * $careerSavegame = getServerStatsSimpleXML ( sprintf ( $serverAddress, 'dedicated-server-savegame.html?file=careerSavegame&' ) );
  */
 $stats = 1;
-$careerVehicles = simplexml_load_file ( './savegame1/vehicles.xml' );
-$careerSavegame = simplexml_load_file ( './savegame1/careerSavegame.xml' );
+$careerVehicles = simplexml_load_file ( '/opt/lampp/htdocs/savegame1/vehicles.xml' );
+$careerSavegame = simplexml_load_file ( '/opt/lampp/htdocs/savegame1/careerSavegame.xml' );
 
 if ($stats) {
 	$serverOnline = true;
