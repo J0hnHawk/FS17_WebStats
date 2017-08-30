@@ -16,35 +16,35 @@
  * You should have received a copy of the GNU General Public License
  * along with Foobar. If not, see <http://www.gnu.org/licenses/>.
  */
-ini_set ( 'display_errors', 1 );
-ini_set ( 'display_startup_errors', 1 );
-error_reporting ( E_ALL );
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
 
-session_start ();
-define ( 'IN_NFMWS', true );
+session_start();
+define('IN_NFMWS', true);
 
-date_default_timezone_set ( 'Europe/Lisbon' );
-setlocale ( LC_ALL, 'de_DE@euro', 'de_DE', 'de', 'ge' );
+date_default_timezone_set('Europe/Lisbon');
+setlocale(LC_ALL, 'de_DE@euro', 'de_DE', 'de', 'ge');
 
 require ('./include/smarty/Smarty.class.php');
 require ('./include/functions.php');
 require ('./include/xmlTools.php');
 
-$smarty = new Smarty ();
+$smarty = new Smarty();
 $smarty->debugging = false;
 $smarty->caching = false;
-$smarty->assign ( 'webStatsVersion', '1.1.0 alpha' );
+$smarty->assign('webStatsVersion', '1.1.0 alpha');
 
 // Serverkonfiguration laden - wenn nicht vorhanden Instalation starten
 $configFile = './server/server.conf';
-if (file_exists ( $configFile )) {
-	$server = file ( $configFile );
-	list ( $dSrvIp, $dSrvPort, $dSrvCode ) = unserialize ( $server [0] );
-	$serverAddress = "http://$dSrvIp:$dSrvPort/feed/%scode=$dSrvCode";
+if (file_exists($configFile)) {
+    $server = file($configFile);
+    list ($dSrvIp, $dSrvPort, $dSrvCode, $savegame, $isDediServer) = unserialize($server[0]);
+    $smarty->assign('isDediServer', $isDediServer);
 } else {
-	define ( 'IN_INSTALL', true );
-	include ('./include/install.php');
-	exit ();
+    define('IN_INSTALL', true);
+    include ('./include/install.php');
+    exit();
 }
 
 // Cookie mit Einstellungen laden
@@ -54,24 +54,24 @@ include ('./include/coockie.php');
 $version = "map29";
 require ("./server/$version/mapconfig.php");
 require ("./server/$version/translation.php");
-$smarty->assign ( 'mapVersion', $mapVersion );
+$smarty->assign('mapVersion', $mapVersion);
 require ('./include/savegame.php');
-//var_dump($commodities);
+// var_dump($commodities);
 // Erlaubte Seiten
-$pages = array (
-		'overview',
-		'storage',
-		'production',
-		'commodity',
-		'options' 
+$pages = array(
+    'overview',
+    'storage',
+    'production',
+    'commodity',
+    'options'
 );
-$page = GetParam ( 'page', 'G' );
-if (! in_array ( $page, $pages ))
-	$page = 'production';
+$page = GetParam('page', 'G');
+if (! in_array($page, $pages))
+    $page = 'production';
 
-$smarty->assign ( 'page', $page );
+$smarty->assign('page', $page);
 if ($serverOnline)
-	include ("./include/$page.php");
+    include ("./include/$page.php");
 
-$smarty->assign ( 'serverOnline', $serverOnline );
-$smarty->display ( 'index.tpl' );
+$smarty->assign('serverOnline', $serverOnline);
+$smarty->display('index.tpl');

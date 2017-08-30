@@ -6,7 +6,7 @@ $produktion = $AttributeNodes = array ();
 
 // Zuerst alle Fabrikscripte finden
 foreach ( $xml->UserAttributes->UserAttribute as $UserAttribute ) {
-	$ProduktPerHour = 1;
+    $ProduktPerHour = 1; // ursprünglich 'false'. Seit Map 2.9 gibt es aber Fabriken ohne 'ProduktPerHour'-Angabe
 	$nodeId = false;
 	foreach ( $UserAttribute as $Attribute ) {
 		if ($Attribute ['name'] == 'ProduktPerHour') {

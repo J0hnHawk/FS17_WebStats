@@ -8,10 +8,12 @@
 		</div>
 		<div id="navbar" class="collapse navbar-collapse">
 			<ul class="nav navbar-nav">
+				{if $isDediServer}
 				<li class="{if $page == 'status'}active{/if}">
 					<a href="index.php?page=overview"> <span class="glyphicon glyphicon-home"></span> Übersicht
 					</a>
 				</li>
+				{/if}
 				<li class="{if $page == 'storage'}active{/if}">
 					<a href="index.php?page=storage"> <span class="glyphicon glyphicon-stats"></span> Lagerbestände
 					</a>
