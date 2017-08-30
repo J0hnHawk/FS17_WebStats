@@ -31,6 +31,8 @@ if ($_SERVER ['REQUEST_METHOD'] == 'POST') {
 		$postdata [0] = GetParam ( 'serverip', 'P', '127.0.0.1' );
 		$postdata [1] = GetParam ( 'serverport', 'P', '8080' ) + 0;
 		$postdata [2] = GetParam ( 'servercode', 'P', '' );
+		$postdata [3] = '';
+		$postdata [4] = 'server';
 		if (filter_var ( $postdata [0], FILTER_VALIDATE_IP ) === false) {
 			$error .= '<div class="alert alert-danger"><strong>FEHLER:</strong> Die eingegebene IP Adresse ist nicht gültig.</div>';
 		}
@@ -66,6 +68,21 @@ if ($_SERVER ['REQUEST_METHOD'] == 'POST') {
 			} else {
 				$error .= '<div class="alert alert-danger"><strong>FEHLER:</strong> Server ist offline oder die IP Adresse ist falsch.</div>';
 			}
+		}
+	} elseif ($submit=='local') {
+		$postdata [0] = GetParam ( 'serverip', 'P', '127.0.0.1' );
+		$postdata [1] = GetParam ( 'serverport', 'P', '8080' ) + 0;
+		$postdata [2] = GetParam ( 'servercode', 'P', '' );
+		$postdata [3] = GetParam ( 'savepath', 'P', '' );
+		$postdata [4] = 'local';
+		if(!file_exists($postdata[3].'\areerSavegame.xml')){
+			$error .= '<div class="alert alert-danger"><strong>FEHLER:</strong> Unter dem angegebenen Pfad wurde kein Spielstand gefunden.</div>';
+		}
+		if (! $error) {
+			$fp = fopen ( './server/server.conf', 'w' );
+			fwrite ( $fp, serialize ( $postdata ) );
+			fclose ( $fp );
+			$success = true;				
 		}
 	}
 }

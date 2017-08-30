@@ -91,33 +91,26 @@
 					<h2>lokaler Spielstand</h2>
 					<form class="form-horizontal" action="index.php?page=install" method="post">
 						{if $error}{$error}{/if}
-						<p>Bitte wähle eine Datei beliebige Datei des Spielstands aus.</p>
+						<p>Bitte beachte, dass in Farming Simulator der Spielstand grundsätzlich nicht automatisch gespeichert wird. Damit auf dieser Webseite korrekte
+							Lagerbestände angezeigt werden, muss der Spielstand zuvor gespeichert werden. Alternativ installiere die Mod <a href="https://www.farming-simulator.com/mod.php?lang=de&country=de&mod_id=50533&title=fs2017">Map Autosave</a>, um den Spielstand
+							automatisch alle 5 Minuten zu speichern.</p>
 						<input type="file" name="file" style="visibility: hidden;" id="path2savegame" />
 						<div class="form-group">
-							<label for="path" class="col-sm-3 control-label">Pfad zum Savegame</label>
+							<label for="savepath" class="col-sm-3 control-label">Pfad zum Spielstand</label>
 							<div class="col-sm-7">
-								<div class="input-group">
-									<input type="text" name="savegame" id="path" class="form-control">
-									<div class="input-group-btn">
-										<a class="btn btn-primary" onclick="$('#path2savegame').click();">Browse</a>
-									</div>
-								</div>
-								<span id="helpBlock" class="help-block">Pfad zum Spielstand</span>
+								<input type="text" name="savepath" class="form-control" id="savepath" placeholder="Pfad" {if $postdata|@count>
+								0}value="{$postdata[3]}"{/if}> <span id="helpBlock" class="help-block">Standartmäßig speichert Farming Simulator Spielstände unter: <code>C:\Users\"deinusername"\Documents\My Games\FarmingSimulator2017\savegamex</code></span>
 							</div>
 						</div>
 						<div class="form-group">
 							<div class="col-sm-offset-7 col-sm-3">
-								<button type="submit" name="submit" value="server" class="pull-right btn btn-primary btn-block">Konfiguration speichern</button>
+								<button type="submit" name="submit" value="local" class="pull-right btn btn-primary btn-block">Konfiguration speichern</button>
 							</div>
 						</div>
 					</form>
 					<script>
- 					$(document).ready(function(){
- 						// This is the simple bit of jquery to duplicate the hidden field to subfile
- 						$('#path2savegame').change(function(){
- 	 						$('#path').val($(this).val());
-						});
-				 	});
+					var tab={if $postdata|@count>0}value="{$postdata[3]}"{/if};
+					$('.nav-tabs a[href="#local"]').tab('show')
  				</script>
 				</div>
 			</div>
