@@ -158,8 +158,8 @@ foreach ($careerVehicles->onCreateLoadedObject as $object) {
     
     // Schafweide
     if ($location == 'Animals_sheep') {
-        $fillLevel = intval($object['numAnimals0']);
-        addCommodity('sheep', $fillLevel, $location);
+        $sheeps = intval($object['numAnimals0']);
+        addCommodity('sheep', $sheeps, $location);
         $plant = translate($location);
         $plants[$plant] = array(
             'i3dName' => $location,
@@ -180,7 +180,12 @@ foreach ($careerVehicles->onCreateLoadedObject as $object) {
         }
         foreach ($fillType as $index => $combineFillType) {
             $l_fillType = translate($combineFillType);
-            $fillMax = 1;
+            // Futterverbrauch lt. https://forum.giants-software.com/viewtopic.php?f=885&t=100995
+            if ($l_fillType == "Wassser") {
+                $fillMax = 15 * $sheeps * 6;
+            } else {
+                $fillMax = 30 * $sheeps * 6;
+            }
             $state = 0;
             if ($fillLevel[$index] == 0) {
                 $state = 2;
@@ -246,6 +251,7 @@ foreach ($careerVehicles->onCreateLoadedObject as $object) {
             $plantstate = 0;
             $plants[$plant] = array(
                 'i3dName' => $location,
+                'position' => $mapconfig[$location]['position'],
                 'input' => array(),
                 'output' => array()
             );
