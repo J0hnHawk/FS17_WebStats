@@ -10,8 +10,7 @@
 					<label class="col-sm-2 control-label">Sortierung</label>
 					<div class="col-sm-10">
 						<label class="radio-inline"> <input type="radio" name="s_sortByName" value="1"{if $options.storage.sortByName}checked{/if}> alphabetisch
-						</label> <label class="radio-inline"> <input type="radio" name="s_sortByName" value="0"{if !$options.storage.sortByName}checked{/if}> nach
-							Füllstand
+						</label> <label class="radio-inline"> <input type="radio" name="s_sortByName" value="0"{if !$options.storage.sortByName}checked{/if}> nach Füllstand
 						</label>
 					</div>
 				</div>
@@ -19,8 +18,7 @@
 					<label for="sortType" class="col-sm-2 control-label">Ladung von Fahrzeugen</label>
 					<div class="col-sm-10">
 						<label class="radio-inline"> <input type="radio" name="s_showVehicles" value="1"{if $options.storage.showVehicles}checked{/if}> anzeigen
-						</label> <label class="radio-inline"> <input type="radio" name="s_showVehicles" value="0"{if !$options.storage.showVehicles}checked{/if}> nicht
-							anzeigen
+						</label> <label class="radio-inline"> <input type="radio" name="s_showVehicles" value="0"{if !$options.storage.showVehicles}checked{/if}> nicht anzeigen
 						</label>
 					</div>
 				</div>
@@ -47,8 +45,7 @@
 					<label for="sortType" class="col-sm-2 control-label">Sortierung</label>
 					<div class="col-sm-10">
 						<label class="radio-inline"> <input type="radio" name="p_sortByName" value="1"{if $options.production.sortByName}checked{/if}> alphabetisch
-						</label> <label class="radio-inline"> <input type="radio" name="p_sortByName" value="0"{if !$options.production.sortByName}checked{/if}> nach
-							Füllstand
+						</label> <label class="radio-inline"> <input type="radio" name="p_sortByName" value="0"{if !$options.production.sortByName}checked{/if}> nach Füllstand
 						</label>
 					</div>
 				</div>

@@ -7,7 +7,9 @@ Version 1.1.0 - ??.??.????
 * Savegameanalyse in zentrale Datei ausgelagert
 * Anzeige von Mist, Gülle und Milch bei den Ställen mit in der Lagerübersicht
 * Diesel wird nicht mehr angezeigt, wenn "nur Paletten" ausgewählt wurde
-* laden von lokalen Spielständen 
+* laden von lokalen Spielständen
+* BGA Gärreste berücksichtigt
+* Positionen der Produktionsanlagen auf der Karte
 
 Version 1.0.2 - 11.06.2017
 --------------------------------------------------------------------------------

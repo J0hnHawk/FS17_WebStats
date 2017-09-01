@@ -31,7 +31,7 @@ require ('./include/functions.php');
 require ('./include/xmlTools.php');
 
 $smarty = new Smarty();
-$smarty->debugging = false;
+$smarty->debugging = true;
 $smarty->caching = false;
 $smarty->assign('webStatsVersion', '1.1.0 alpha');
 

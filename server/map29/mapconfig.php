@@ -2234,7 +2234,8 @@ $mapconfig = array(
         )
     ),
     'Animals_sheep' => array(
-        'ProdPerHour' => 0,
+    		'ProdPerHour' => 0,
+    		'position' => '23.441 -0.004 -9.551',,
         'showInProduction' => false,
         'rawMaterial' => array(
             'grass_windrowdryGrass_windrow' => array(

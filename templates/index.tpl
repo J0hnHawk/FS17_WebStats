@@ -15,21 +15,21 @@
 </head>
 <body>
 	<div class="container">
-		{include file='navbar.tpl'} {if $serverOnline}{assign var="fullPathToTemplate" value="./templates/$page.tpl"} {if file_exists($fullPathToTemplate)} {include
-		file="$page.tpl"} {else}
+		{include file='navbar.tpl'} {if $serverOnline}{assign var="fullPathToTemplate" value="./templates/$page.tpl"} {if file_exists($fullPathToTemplate)} {include file="$page.tpl"} {else}
 		<div class="container theme-showcase" role="main">
 			<div class="jumbotron">
 				<h1>Fehler beim Seitenaufruf</h1>
 				<p class="lead">Die Datei {$fullPathToTemplate} existiert nicht.</p>
 			</div>
 		</div>
-		{/if}{else}		<div class="container theme-showcase" role="main">
+		{/if}{else}
+		<div class="container theme-showcase" role="main">
 			<div class="jumbotron">
 				<h1>Verbindungsfehler</h1>
 				<p class="lead">Es konnten keine Daten vom Dedicated Server abgerufen werden. Bitte prüfe die Serveradresse oder Internetverbindung.</p>
 			</div>
 		</div>
-{/if}
+		{/if}
 	</div>
 	<!-- Modal -->
 	<div id="infoModal" class="modal fade" role="dialog">

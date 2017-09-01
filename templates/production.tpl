@@ -1,11 +1,11 @@
 <div class="page-header">
 	<h3>
-		Produktionsanlagen<small> (Speicherstand: Tag {$currentDay}, {$dayTime})</small><small class="pull-right"><a href="#" data-toggle="modal"
-			data-target="#myModal"><span class="glyphicon glyphicon-cog" aria-hidden="true"></span> Einstellungen</a></small>
+		Produktionsanlagen<small> (Speicherstand: Tag {$currentDay}, {$dayTime})</small><small class="pull-right"><a href="#" data-toggle="modal" data-target="#myModal"><span class="glyphicon glyphicon-cog"
+				aria-hidden="true"></span> Einstellungen</a></small>
 	</h3>
 </div>
-{$glyphicons =array("glyphicon glyphicon-ok-sign text-success", "glyphicon glyphicon-exclamation-sign text-warning", "glyphicon glyphicon-remove-sign
-text-danger")} {$textcolors = array("","text-warning","text-danger")}
+{$glyphicons =array("glyphicon glyphicon-ok-sign text-success", "glyphicon glyphicon-exclamation-sign text-warning", "glyphicon glyphicon-remove-sign text-danger")} {$textcolors =
+array("","text-warning","text-danger")}
 <div class="row">
 	<div class="col-sm-12">
 		<table class="table table-hover">
@@ -20,12 +20,10 @@ text-danger")} {$textcolors = array("","text-warning","text-danger")}
 				{foreach $plants as $plantName => $plant}
 				<tr data-toggle="collapse" href="#collapse{$plant.i3dName}">
 					<td><span class="{$glyphicons[$plant.state]}" aria-hidden="true"></span> {$plantName}</td>
-					<td>{foreach from=$plant.input key=$fillType item=$fillLevel} <span class="{$textcolors[$fillLevel.state]}" data-toggle="tooltip"
-						data-placement="top" title="Lagerbestand:<br><strong>{$commodities.$fillType.overall|number_format:0:",":"."}</strong>" ><span
-							class="{$glyphicons[$fillLevel.state]}" aria-hidden="true"></span> {$fillType} </span>{/foreach}
+					<td>{foreach from=$plant.input key=$fillType item=$fillLevel} <span class="{$textcolors[$fillLevel.state]}" data-toggle="tooltip" data-placement="top"
+						title="Lagerbestand:<br><strong>{$commodities.$fillType.overall|number_format:0:",":"."}</strong>" ><span class="{$glyphicons[$fillLevel.state]}" aria-hidden="true"></span> {$fillType} </span>{/foreach}
 					</td>
-					<td>{foreach from=$plant.output key=$fillType item=$fillLevel}<span class="{$textcolors[$fillLevel.state]}"><span
-							class="{$glyphicons[$fillLevel.state]}" aria-hidden="true"></span> {$fillType} </span>{/foreach}
+					<td>{foreach from=$plant.output key=$fillType item=$fillLevel}<span class="{$textcolors[$fillLevel.state]}"><span class="{$glyphicons[$fillLevel.state]}" aria-hidden="true"></span> {$fillType} </span>{/foreach}
 					</td>
 				</tr>
 				<tr class="collapse info" id="collapse{$plant.i3dName}">
@@ -38,9 +36,8 @@ text-danger")} {$textcolors = array("","text-warning","text-danger")}
 										<th colspan="2" width="50%">Produkt(e)</th>
 									</tr>
 								</thead>
-								{$inputRow=array()}{$outputRow=array()} {$max = max($plant.input|@count,$plant.output|@count)} {foreach from=$plant.input key=$fillType
-								item=$fillLevel} {$inputRow[$fillLevel@index] = array($fillType,$fillLevel.fillLevel,$fillLevel.fillMax,$fillLevel.i3dName)} {/foreach}
-								{foreach from=$plant.output key=$fillType item=$fillLevel} {$outputRow[$fillLevel@index] =
+								{$inputRow=array()}{$outputRow=array()} {$max = max($plant.input|@count,$plant.output|@count)} {foreach from=$plant.input key=$fillType item=$fillLevel} {$inputRow[$fillLevel@index] =
+								array($fillType,$fillLevel.fillLevel,$fillLevel.fillMax,$fillLevel.i3dName)} {/foreach} {foreach from=$plant.output key=$fillType item=$fillLevel} {$outputRow[$fillLevel@index] =
 								array($fillType,$fillLevel.fillLevel,$fillLevel.fillMax,$fillLevel.i3dName)} {/foreach}
 								<tbody>
 									{for $i=0 to $max-1}
@@ -91,10 +88,8 @@ text-danger")} {$textcolors = array("","text-warning","text-danger")}
 					<div class="form-group">
 						<label class="col-sm-5 control-label">volle Produktlager</label>
 						<div class="col-sm-7">
-							<label class="radio-inline"> <input type="radio" name="sortFullProducts" value="1"{if $options.sortFullProducts}checked{/if}> bei Sortierung
-								berücksichtigen
-							</label><br> <label class="radio-inline"> <input type="radio" name="sortFullProducts" value="0"{if !$options.sortFullProducts}checked{/if}> bei
-								Sortierung ignorieren
+							<label class="radio-inline"> <input type="radio" name="sortFullProducts" value="1"{if $options.sortFullProducts}checked{/if}> bei Sortierung berücksichtigen
+							</label><br> <label class="radio-inline"> <input type="radio" name="sortFullProducts" value="0"{if !$options.sortFullProducts}checked{/if}> bei Sortierung ignorieren
 							</label>
 						</div>
 					</div>

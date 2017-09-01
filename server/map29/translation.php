@@ -68,6 +68,7 @@ $lang = array_merge ( $lang, array (
 		'Gras' => 'Gras',
 		'grass' => 'Gras',
 		'grass_windrowdryGrass_windrow' => 'Gras oder Heu',
+        'digestate' => 'Gärreste',
 		'liquidManure' => 'Gülle',
 		'woodChips' => 'Hackschnitzel',
 		'Hackschnitzel' => 'Hackschnitzel',

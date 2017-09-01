@@ -13,17 +13,17 @@
 				</tr>
 			</thead>
 			<tbody>
-				{if isset($players[0].name)} 
-				{foreach $players as $player}
+				{if isset($players[0].name)} {foreach $players as $player}
 				<tr>
 					<td>{$player.name}</td>
 					<td>{$player.online}</td>
 					<td>{if $player.isAdmin}ja{else}nein{/if}</td>
 					<td>{$player.position}</td>
 				</tr>
-				{/foreach}
-				{else}
-					<tr><td colspan="4">Zur Zeit sind keine Spieler online.</td></tr>
+				{/foreach} {else}
+				<tr>
+					<td colspan="4">Zur Zeit sind keine Spieler online.</td>
+				</tr>
 				{/if}
 			</tbody>
 		</table>
@@ -40,6 +40,6 @@
 				</div>
 				{/foreach}
 			</div>
-		</div>		
+		</div>
 	</div>
 </div>

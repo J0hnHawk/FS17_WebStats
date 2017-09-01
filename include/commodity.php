@@ -20,7 +20,7 @@
  */
 // Kartendaten laden
 require ('./include/savegame.php');
-$object = GetParam('object', 'G');
+$object = GetParam ( 'object', 'G' );
 
 // Übersichtskarte
 $linkToImage = "./server/map29/pda_map_H.jpg";
@@ -29,135 +29,125 @@ $mapSize = 2048;
 $mapSizeHalf = $mapSize / 2.0;
 $machineIconSize = 10;
 $backgroundColor = "#4dafd7";
-$i = 0;
-$mapEntries = array();
+$storage = $mapEntries = array ();
 
 // Ware vorhanden?
-if (is_array($object)) {
-    $object = 'Brot';
+if (is_array ( $object )) {
+	$object = 'Brot';
 }
 
 // Warengruppe
-$l_object = translate($object);
-$smarty->assign('l_object', $l_object);
-if ($commodities[$l_object]['isCombine']) {
-    $combineCommodities = array();
-    foreach ($mapconfig as $plantName => $plant) {
-        foreach ($plant['rawMaterial'] as $combineFillType => $data) {
-            if (translate($combineFillType) == $l_object) {
-                $fillTypes = explode(' ', $data['fillTypes']);
-                foreach ($fillTypes as $fillType) {
-                    $l_fillType = translate($fillType);
-                    $combineCommodities[$l_fillType] = $l_fillType;
-                }
-            }
-        }
-    }
-    ksort($combineCommodities);
+$l_object = translate ( $object );
+$smarty->assign ( 'l_object', $l_object );
+if ($commodities [$l_object] ['isCombine']) {
+	$combineCommodities = array ();
+	foreach ( $mapconfig as $plantName => $plant ) {
+		foreach ( $plant ['rawMaterial'] as $combineFillType => $data ) {
+			if (translate ( $combineFillType ) == $l_object) {
+				$fillTypes = explode ( ' ', $data ['fillTypes'] );
+				foreach ( $fillTypes as $fillType ) {
+					$l_fillType = translate ( $fillType );
+					$combineCommodities [$l_fillType] = $l_fillType;
+				}
+			}
+		}
+	}
+	ksort ( $combineCommodities );
 } else {
-    $combineCommodities = false;
+	$combineCommodities = false;
+	// Lagerorte merken für Karte
+	$commodity = $commodities [$l_object];
+	foreach ( $commodity ['locations'] as $location ) {
+		if (isset ( $location ['isVehicle'] ) || isset ( $location ['Bale'] ) || isset ( $location ['FillablePallet'] )) {
+			continue;
+		} else {
+			$storage [] = $location ['i3dName'];
+		}
+	}
 }
-$smarty->assign('combineCommodities', $combineCommodities);
-$smarty->assign('commodities', $commodities);
 
-// Warenbedarf ermitteln
-$demand = array();
+// Positionen der Fabriken ermitteln und Warenbedarf ermitteln
+$demand = array ();
 $demandSum = 0;
-foreach ($plants as $plantName => $plant) {
-    foreach ($plant['input'] as $fillTypeName => $fillTypeDetails) {
-        if ($commodities[$l_object]['isCombine']) {
-            if ($fillTypeName == $l_object) {
-                $demandValue = $fillTypeDetails['fillMax'] - $fillTypeDetails['fillLevel'];
-                if ($options['storage']['hideZero'] && $demandValue == 0) {
-                    continue;
-                } else {
-                    $demandSum += $demandValue;
-                    $demand[$plantName] = $demandValue;
-//                     $i ++;
-//                     list ($x, $y, $z) = explode(' ', $plant['position']);
-//                     $x = ($x + $mapSizeHalf) / ($mapSize / $imageSize);
-//                     $z = ($z + $mapSizeHalf) / ($mapSize / $imageSize);
-//                     $x = intval($x - ($machineIconSize - 1) / 2);
-//                     $z = intval($z - ($machineIconSize - 1) / 2);
-//                     $mapEntries[$i] = array(
-//                         'name' => $plantName,
-//                         'xpos' => $x,
-//                         'zpos' => $z,
-//                         'icon' => 'placeholder-tool.png'
-//                     );
-                }
-            }
-        } else {
-            $fillTypes = $mapconfig[$plant['i3dName']]['rawMaterial'][$fillTypeDetails['i3dName']]['fillTypes'];
-            $fillTypes = explode(' ', $fillTypes);
-            foreach ($fillTypes as $fillType) {
-                if ($l_object == translate($fillType)) {
-                    $demandValue = $fillTypeDetails['fillMax'] - $fillTypeDetails['fillLevel'];
-                    if ($options['storage']['hideZero'] && $demandValue == 0) {
-                        continue;
-                    } else {
-                        $demandSum += $demandValue;
-                        $demand[$plantName] = $demandValue;
-//                         $i ++;
-//                         list ($x, $y, $z) = explode(' ', $plant['position']);
-//                         $x = ($x + $mapSizeHalf) / ($mapSize / $imageSize);
-//                         $z = ($z + $mapSizeHalf) / ($mapSize / $imageSize);
-//                         $x = intval($x - ($machineIconSize - 1) / 2);
-//                         $z = intval($z - ($machineIconSize - 1) / 2);
-//                         $mapEntries[$i] = array(
-//                             'name' => $plantName,
-//                             'xpos' => $x,
-//                             'zpos' => $z,
-//                             'icon' => 'placeholder-tool.png'
-//                         );
-                    }
-                }
-            }
-        }
-    }
+foreach ( $plants as $plantName => $plant ) {
+	if (in_array ( $plant ['i3dName'], $storage )) {
+		$mapEntries [] = addEntry ( $plant ['position'], $plantName, 'vehicle.png' );
+	}
+	if (isset ( $plant ['input'] )) {
+		foreach ( $plant ['input'] as $fillTypeName => $fillTypeDetails ) {
+			if ($commodities [$l_object] ['isCombine']) {
+				if ($fillTypeName == $l_object) {
+					$demandValue = $fillTypeDetails ['fillMax'] - $fillTypeDetails ['fillLevel'];
+					if ($options ['storage'] ['hideZero'] && $demandValue == 0) {
+						continue;
+					} else {
+						$demandSum += $demandValue;
+						$demand [$plantName] = $demandValue;
+						$mapEntries [] = addEntry ( $plant ['position'], $plantName, 'harvester.png' );
+					}
+				}
+			} else {
+				$fillTypes = $mapconfig [$plant ['i3dName']] ['rawMaterial'] [$fillTypeDetails ['i3dName']] ['fillTypes'];
+				$fillTypes = explode ( ' ', $fillTypes );
+				foreach ( $fillTypes as $fillType ) {
+					if ($l_object == translate ( $fillType )) {
+						$demandValue = $fillTypeDetails ['fillMax'] - $fillTypeDetails ['fillLevel'];
+						if ($options ['storage'] ['hideZero'] && $demandValue == 0) {
+							continue;
+						} else {
+							$demandSum += $demandValue;
+							$demand [$plantName] = $demandValue;
+							$mapEntries [] = addEntry ( $plant ['position'], $plantName, 'harvester.png' );
+						}
+					}
+				}
+			}
+		}
+	}
 }
-arsort($demand);
-$smarty->assign('demand', $demand);
-$smarty->assign('demandSum', $demandSum);
-foreach ($positions['FillablePallet'] as $fillType => $items) {
-    if ($fillType == $l_object) {
-        foreach ($items as $position) {
-            $i ++;
-            $x = ($position[0] + $mapSizeHalf) / ($mapSize / $imageSize);
-            $z = ($position[2] + $mapSizeHalf) / ($mapSize / $imageSize);
-            $x = intval($x - ($machineIconSize - 1) / 2);
-            $z = intval($z - ($machineIconSize - 1) / 2);
-            $icon = "tool.png";
-            $iconHover = "tool_selected.png";
-            $mapEntries[$i] = array(
-                'name' => 'Palette',
-                'xpos' => $x,
-                'zpos' => $z,
-                'icon' => $icon
-            );
-        }
-    }
+arsort ( $demand );
+
+// Positionen der Paletten und Ballen für die Karte
+foreach ( $positions ['FillablePallet'] as $fillType => $items ) {
+	if ($fillType == $l_object) {
+		foreach ( $items as $position ) {
+			$mapEntries [] = addEntry ( $position, 'Palette', 'tool.png' );
+		}
+	}
 }
-foreach ($positions['Bale'] as $fillType => $items) {
-    if ($fillType == $l_object) {
-        foreach ($items as $position) {
-            $i ++;
-            $x = ($position[0] + $mapSizeHalf) / ($mapSize / $imageSize);
-            $z = ($position[2] + $mapSizeHalf) / ($mapSize / $imageSize);
-            $x = intval($x - ($machineIconSize - 1) / 2);
-            $z = intval($z - ($machineIconSize - 1) / 2);
-            $icon = "tool.png";
-            $iconHover = "tool_selected.png";
-            $mapEntries[$i] = array(
-                'name' => 'Ballen',
-                'xpos' => $x,
-                'zpos' => $z,
-                'icon' => $icon
-            );
-        }
-    }
+foreach ( $positions ['Bale'] as $fillType => $items ) {
+	if ($fillType == $l_object) {
+		foreach ( $items as $position ) {
+			$mapEntries [] = addEntry ( $position, 'Ballen', 'tool.png' );
+		}
+	}
 }
-$smarty->assign('linkToImage', $linkToImage);
-$smarty->assign('backgroundColor', $backgroundColor);
-$smarty->assign('machineIconSize', $machineIconSize);
-$smarty->assign('mapEntries', $mapEntries);
+
+// Übergabe der Variabeln
+$smarty->assign ( 'combineCommodities', $combineCommodities );
+$smarty->assign ( 'commodities', $commodities );
+$smarty->assign ( 'demand', $demand );
+$smarty->assign ( 'demandSum', $demandSum );
+$smarty->assign ( 'linkToImage', $linkToImage );
+$smarty->assign ( 'backgroundColor', $backgroundColor );
+$smarty->assign ( 'machineIconSize', $machineIconSize );
+$smarty->assign ( 'mapEntries', $mapEntries );
+
+// Karteneinträge
+function addEntry($position, $name, $icon) {
+	global $mapSizeHalf, $mapSize, $imageSize, $machineIconSize;
+	if (! is_array ( $position )) {
+		$position = explode ( ' ', $position );
+	}
+	list ( $x, $y, $z ) = $position;
+	$x = ($x + $mapSizeHalf) / ($mapSize / $imageSize);
+	$z = ($z + $mapSizeHalf) / ($mapSize / $imageSize);
+	$x = intval ( $x - ($machineIconSize - 1) / 2 );
+	$z = intval ( $z - ($machineIconSize - 1) / 2 );
+	return array (
+			'name' => $name,
+			'xpos' => $x,
+			'zpos' => $z,
+			'icon' => $icon 
+	);
+}
