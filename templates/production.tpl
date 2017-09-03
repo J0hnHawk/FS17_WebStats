@@ -17,11 +17,12 @@ array("","text-warning","text-danger")}
 				</tr>
 			</thead>
 			<tbody>
+				{$tooltip = '<span class="%s" data-toggle="tooltip" data-placement="top" title="Lagerbestand:<br><strong>%s</strong>">'}
 				{foreach $plants as $plantName => $plant}
 				<tr data-toggle="collapse" href="#collapse{$plant.i3dName}">
 					<td><span class="{$glyphicons[$plant.state]}" aria-hidden="true"></span> {$plantName}</td>
-					<td>{foreach from=$plant.input key=$fillType item=$fillLevel} <span class="{$textcolors[$fillLevel.state]}" data-toggle="tooltip" data-placement="top"
-						title="Lagerbestand:<br><strong>{$commodities.$fillType.overall|number_format:0:",":"."}</strong>" ><span class="{$glyphicons[$fillLevel.state]}" aria-hidden="true"></span> {$fillType} </span>{/foreach}
+					<td>{foreach from=$plant.input key=$fillType item=$fillLevel} {$tooltip|printf:$textcolors[$fillLevel.state]:($commodities.$fillType.overall|number_format:0:",":".")}	
+						<span class="{$glyphicons[$fillLevel.state]}" aria-hidden="true"></span> {$fillType} </span>{/foreach}
 					</td>
 					<td>{foreach from=$plant.output key=$fillType item=$fillLevel}<span class="{$textcolors[$fillLevel.state]}"><span class="{$glyphicons[$fillLevel.state]}" aria-hidden="true"></span> {$fillType} </span>{/foreach}
 					</td>
@@ -46,7 +47,7 @@ array("","text-warning","text-danger")}
 										<td><a href="index.php?page=commodity&object={$inputRow[$i][3]}">{$inputRow[$i][0]}</a></td>
 										<td class="text-right">{$inputRow[$i][1]|number_format:0:",":"."} / {$inputRow[$i][2]|number_format:0:",":"."}</td> {else}
 										<td colspan="2">&nbsp;</td> {/if} {if isset($outputRow[$i][0])}
-										<td>{$outputRow[$i][0]}</td>
+										<td><a href="index.php?page=commodity&object={$outputRow[$i][3]}">{$outputRow[$i][0]}</a></td>
 										<td class="text-right">{$outputRow[$i][1]|number_format:0:",":"."} / {$outputRow[$i][2]|number_format:0:",":"."}</td>{else}
 										<td colspan="2">&nbsp;</td> {/if}
 									</tr>

@@ -76,13 +76,13 @@ $mapconfig = array(
             'woodChips' => array(
                 'capacity' => 150000,
                 'factor' => 0.9,
-                'fillType' => 'woodChips',
+                'fillType' => 'logs',
                 'showInStorage' => true
             ),
             'boardwood' => array(
                 'capacity' => 8000,
                 'factor' => 1,
-                'fillType' => 'woodChips',
+                'fillType' => 'boardwood',
                 'palettPlaces' => 999,
                 'showInStorage' => false
             )
@@ -333,7 +333,7 @@ $mapconfig = array(
             'boardwood' => array(
                 'capacity' => 352000,
                 'factor' => 0.5,
-                'fillTypes' => 'woodChips',
+                'fillTypes' => 'boardwood',
                 'showInStorage' => false
             )
         ),
@@ -2234,8 +2234,8 @@ $mapconfig = array(
         )
     ),
     'Animals_sheep' => array(
-    		'ProdPerHour' => 0,
-    		'position' => '23.441 -0.004 -9.551',,
+        'ProdPerHour' => 0,
+        'position' => '23.441 -0.004 -9.551',
         'showInProduction' => false,
         'rawMaterial' => array(
             'grass_windrowdryGrass_windrow' => array(

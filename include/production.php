@@ -63,7 +63,7 @@ if (! $options ['production'] ['sortByName']) {
 	foreach($plants as $plantName => $plant) {
 		$sortName [] = strtolower ( $plantName );
 		if ($options ['production'] ['sortFullProducts']) {
-			if(isset($plant['state'])) {
+			//if(isset($plant['state'])) {
 			$plantState = $plant['state'];
 			foreach($plant['output'] as $output) {
 				if($output['state'] > $plantState) {
@@ -71,7 +71,7 @@ if (! $options ['production'] ['sortByName']) {
 				}
 			}
 			$plants[$plantName]['state'] = $plantState;
-			}
+			//}
 		}
 		$sortFillLevel [] = $plantState;
 	}

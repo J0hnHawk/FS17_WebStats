@@ -73,7 +73,7 @@ foreach ( $plants as $plantName => $plant ) {
 	if (in_array ( $plant ['i3dName'], $storage )) {
 		$mapEntries [] = addEntry ( $plant ['position'], $plantName, 'vehicle.png' );
 	}
-	if (isset ( $plant ['input'] )) {
+	//if (isset ( $plant ['input'] )) {
 		foreach ( $plant ['input'] as $fillTypeName => $fillTypeDetails ) {
 			if ($commodities [$l_object] ['isCombine']) {
 				if ($fillTypeName == $l_object) {
@@ -90,7 +90,7 @@ foreach ( $plants as $plantName => $plant ) {
 				$fillTypes = $mapconfig [$plant ['i3dName']] ['rawMaterial'] [$fillTypeDetails ['i3dName']] ['fillTypes'];
 				$fillTypes = explode ( ' ', $fillTypes );
 				foreach ( $fillTypes as $fillType ) {
-					if ($l_object == translate ( $fillType )) {
+				    if ($l_object == translate ( $fillType )) {
 						$demandValue = $fillTypeDetails ['fillMax'] - $fillTypeDetails ['fillLevel'];
 						if ($options ['storage'] ['hideZero'] && $demandValue == 0) {
 							continue;
@@ -103,7 +103,7 @@ foreach ( $plants as $plantName => $plant ) {
 				}
 			}
 		}
-	}
+	//}
 }
 arsort ( $demand );
 
