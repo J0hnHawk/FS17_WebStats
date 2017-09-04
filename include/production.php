@@ -50,28 +50,30 @@ if ($_SERVER ['REQUEST_METHOD'] == 'POST') {
 	$options ['version'] = $cookieVersion;
 	setcookie ( 'nfmarsch', json_encode ( $options ), time () + 31536000 );
 }
-if(sizeof($options['production']['hidePlant'])>0) {
-	foreach($plants as $plantName => $plant) {
+if (sizeof ( $options ['production'] ['hidePlant'] ) > 0) {
+	foreach ( $plants as $plantName => $plant ) {
 		if (isset ( $options ['production'] ['hidePlant'] [$plantName] )) {
-			unset($plants[$plantName]);
-		}		
+			unset ( $plants [$plantName] );
+		}
 	}
 }
 
 if (! $options ['production'] ['sortByName']) {
-	$sortName = array();
-	foreach($plants as $plantName => $plant) {
+	$sortName = array ();
+	foreach ( $plants as $plantName => $plant ) {
+		if (! isset ( $plant ['state'] )) {
+			unset($plants[$plantName]);
+			continue;
+		}
 		$sortName [] = strtolower ( $plantName );
+		$plantState = $plant ['state'];
 		if ($options ['production'] ['sortFullProducts']) {
-			//if(isset($plant['state'])) {
-			$plantState = $plant['state'];
-			foreach($plant['output'] as $output) {
-				if($output['state'] > $plantState) {
-					$plantState = $output['state'];
+			foreach ( $plant ['output'] as $output ) {
+				if ($output ['state'] > $plantState) {
+					$plantState = $output ['state'];
 				}
 			}
-			$plants[$plantName]['state'] = $plantState;
-			//}
+			$plants [$plantName] ['state'] = $plantState;
 		}
 		$sortFillLevel [] = $plantState;
 	}

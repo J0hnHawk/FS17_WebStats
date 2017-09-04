@@ -112,10 +112,10 @@
 					</form>
 					<script>
 					{if $postdata|@count>0 && $postdata[4]}
-						$('.nav-tabs a[href="#server"]').tab('show')
+						$('.nav-tabs a[href="#server"]').tab('show');
 					{else}
-						$('.nav-tabs a[href="#local"]').tab('show')
-					{/if};
+						$('.nav-tabs a[href="#local"]').tab('show');
+					{/if}
  				</script>
 				</div>
 			</div>

@@ -31,7 +31,7 @@ require ('./include/functions.php');
 require ('./include/xmlTools.php');
 
 $smarty = new Smarty();
-$smarty->debugging = true;
+$smarty->debugging = false;
 $smarty->caching = false;
 $smarty->assign('webStatsVersion', '1.1.0 alpha');
 
@@ -55,6 +55,7 @@ $version = "map29";
 require ("./server/$version/mapconfig.php");
 require ("./server/$version/translation.php");
 $smarty->assign('mapVersion', $mapVersion);
+require ('./server/animals.php');
 require ('./include/savegame.php');
 // var_dump($commodities);
 // Erlaubte Seiten
@@ -73,5 +74,6 @@ $smarty->assign('page', $page);
 if ($serverOnline)
     include ("./include/$page.php");
 
+$smarty->assign('reloadPage', $options['general']['reload']);
 $smarty->assign('serverOnline', $serverOnline);
 $smarty->display('index.tpl');

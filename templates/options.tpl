@@ -5,6 +5,17 @@
 	<div class="col-sm-12">
 		<form class="form-horizontal" action="index.php?page=options" method="post">
 			<fieldset>
+				<legend>Allgemein</legend>
+				<div class="form-group">
+					<label class="col-sm-2 control-label">automatischer Reload</label>
+					<div class="col-sm-10">
+						<label class="radio-inline"> <input type="radio" name="g_reload" value="1"{if $options.general.reload}checked{/if}> ja
+						</label> <label class="radio-inline"> <input type="radio" name="g_reload" value="0"{if !$options.general.reload}checked{/if}> nein
+						</label>
+					</div>
+				</div>
+			</fieldset>
+			<fieldset>
 				<legend>Lagerbestände</legend>
 				<div class="form-group">
 					<label class="col-sm-2 control-label">Sortierung</label>

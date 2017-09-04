@@ -1,8 +1,8 @@
 <div class="page-header">
 	<h3>
-		Lagerbestände<small> (Speicherstand: Tag {$currentDay}, {$dayTime})</small><small class="pull-right">{if $outOfMap|@count>0}</span><a href="#" data-toggle="modal" data-target="#outOfMapAlert"><span
-				class="glyphicon glyphicon-warning-sign" aria-hidden="true"></span> Achtung</a>&nbsp;&nbsp;{/if}<a href="#" data-toggle="modal" data-target="#optionsDialog"><span class="glyphicon glyphicon-cog"
-				aria-hidden="true"></span> Einstellungen</a></small>
+		Lagerbestände<small> (Speicherstand: Tag {$currentDay}, {$dayTime})</small><small class="pull-right">{if $outOfMap|@count>0}</span><a href="#"
+			data-toggle="modal" data-target="#outOfMapAlert"><span class="glyphicon glyphicon-warning-sign" aria-hidden="true"></span> Achtung</a>&nbsp;&nbsp;{/if}<a
+			href="#" data-toggle="modal" data-target="#optionsDialog"><span class="glyphicon glyphicon-cog" aria-hidden="true"></span> Einstellungen</a></small>
 	</h3>
 </div>
 <div class="row">
@@ -21,7 +21,7 @@
 					<td>{$fillType}</td>
 					<td class="text-right">{$commodity.overall|number_format:0:",":"."}</td>
 				</tr>
-				{if $commodity.overall>0}
+				{if $commodity.overall>-1}
 				<tr class="collapse info" id="collapse{$commodity.i3dName}">
 					<td colspan="3">
 						<table class="table" style="margin-bottom: 0px;">
@@ -32,8 +32,9 @@
 								</tr>
 							</thead>
 							<tbody>
-								{foreach $commodity.locations as $locationName => $location} {$addInfo=false} {if isset($location.FillablePallet)}{if $location.FillablePallet==1}{$addInfo="1
-								Palette"}{else}{$addInfo="{$location.FillablePallet} Paletten"}{/if}{/if} {if isset($location.Bale)}{$addInfo="{$location.Bale} Ballen"}{/if}
+								{foreach $commodity.locations as $locationName => $location} {$addInfo=false} {if isset($location.FillablePallet)}{if
+								$location.FillablePallet==1}{$addInfo="1 Palette"}{else}{$addInfo="{$location.FillablePallet} Paletten"}{/if}{/if} {if
+								isset($location.Bale)}{$addInfo="{$location.Bale} Ballen"}{/if}
 								<tr>
 									<td>{$locationName}{if $addInfo} ({$addInfo}){/if}</td>
 									<td class="text-right">{$location.fillLevel|number_format:0:",":"."}</td>

@@ -23,13 +23,17 @@ if (! defined ( 'IN_NFMWS' )) {
 }
 
 // Coockie laden, wenn vorhanden
-$cookieVersion = 3;
+$cookieVersion = 4;
 $options = array ();
 if (isset ( $_COOKIE ['nfmarsch'] )) {
 	$options = json_decode ( $_COOKIE ['nfmarsch'], true );
 	if (isset ( $options ['version'] ) && $options ['version'] != $cookieVersion) {
 		$options = array ();
 	}
+}
+
+if (! isset ( $options ['general'] )) {
+	$options ['general'] ['reload'] = true;
 }
 
 if (! isset ( $options ['storage'] )) {

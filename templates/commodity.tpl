@@ -1,6 +1,17 @@
 <div class="page-header">
 	<h3>
 		{$l_object} - Detailansicht<small> (Speicherstand: Tag {$currentDay}: {$dayTime})</small>
+		<!--
+ 		<div class="dropdown pull-right">
+			<button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+				Auswahl <span class="caret"></span>
+			</button>
+			<ul class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenu1">
+				{foreach $commodities as $commodity => $commodityData}
+				<li><a href="index.php?page=commodity&object={$commodityData.i3dName}">{$commodity}</a></li> {/foreach}
+			</ul>
+		</div>
+ -->
 	</h3>
 </div>
 <div class="row">

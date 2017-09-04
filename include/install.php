@@ -22,7 +22,7 @@ if (! defined('IN_NFMWS') && ! defined('IN_INSTALL')) {
     exit();
 }
 $error = $success = false;
-$postdata = array();
+$postdata = array(NULL,NULL,NULL,NULL,true);
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $submit = GetParam('submit');
     if ($submit == 'language') {

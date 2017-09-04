@@ -8,14 +8,15 @@
 <meta name="author" content="John Hawk">
 <link rel="icon" href="./images/favicon.ico">
 <title>NF Marsch {$mapVersion} WebStats</title>
-<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+<link href="./css/bootstrap.min.css" rel="stylesheet">
 <link href="./css/customstyle.css" rel="stylesheet">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="./javascript/jquery.min.js"></script>
+<script src="./javascript/bootstrap.min.js"></script>
 </head>
 <body>
 	<div class="container">
-		{include file='navbar.tpl'} {if $serverOnline}{assign var="fullPathToTemplate" value="./templates/$page.tpl"} {if file_exists($fullPathToTemplate)} {include file="$page.tpl"} {else}
+		{include file='navbar.tpl'} {if $serverOnline}{assign var="fullPathToTemplate" value="./templates/$page.tpl"} {if file_exists($fullPathToTemplate)}
+		{include file="$page.tpl"} {else}
 		<div class="container theme-showcase" role="main">
 			<div class="jumbotron">
 				<h1>Fehler beim Seitenaufruf</h1>
@@ -55,5 +56,19 @@
 			</div>
 		</div>
 	</div>
+	{if $reloadPage}
+	<script type="text/javascript">
+	var time = new Date().getTime();
+	$(document.body).bind("mousemove keypress", function () {
+	    time = new Date().getTime();
+	});
+
+	setInterval(function() {
+	    if (new Date().getTime() - time >= 60000) {
+	        window.location.reload(true);
+	    }
+	}, 1000);
+	</script>
+	{/if}
 </body>
 </html>
