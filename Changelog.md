@@ -1,6 +1,6 @@
 # Changelog
 
-## [Version 1.1.0](https://github.com) (??.??.????)
+## [Version 1.1.0](https://github.com/J0hnHawk/FS17_NF_Marsch_WebStats/releases/tag/v1.1.0) (??.09.2017)
 
 **Änderungen und Erweiterungen:**
 - Konfiguration für Nordfriesische Marsch Version 2.9
@@ -18,12 +18,12 @@
 - Mehrere Übersetzungen berichtigt oder ergänzt
 - Diesel wird nicht mehr angezeigt, wenn "nur Paletten" ausgewählt wurde
 
-## [Version 1.0.2] (11.06.2017)
+## [Version 1.0.2](https://github.com/J0hnHawk/FS17_NF_Marsch_WebStats/releases/tag/v1.0.2) (11.06.2017)
 
 **Berichtigte Fehler:**
 - Fehlende Anzeige von ungültigen Ballen/Palettenpositionen (wieder) ergänzt 
 
-## [Version 1.0.1] (08.06.2017)
+## [Version 1.0.1](https://github.com/J0hnHawk/FS17_NF_Marsch_WebStats/releases/tag/v1.0.1) (08.06.2017)
 
 **Änderungen und Erweiterungen:**
 - Lizenzinformationen ergänzt 
@@ -32,7 +32,7 @@
 - Dünerproduktion zu Düngerproduktion berichtigt
 
 
-## [Version 1.0.0] (08.06.2017)
+## [Version 1.0.0](https://github.com/J0hnHawk/FS17_NF_Marsch_WebStats/releases/tag/v1.0.0) (08.06.2017)
 
 **Änderungen und Erweiterungen:**
 - Erweiterung und Anpassung des Giants Web Stats SDK für die Mod Map NF Marsch
