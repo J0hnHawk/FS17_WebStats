@@ -18,9 +18,11 @@
  * along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
  *
  */
+
 if (! defined('IN_NFMWS') && ! defined('IN_INSTALL')) {
     exit();
 }
+
 $error = $success = false;
 $postdata = array(NULL,NULL,NULL,NULL,true);
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {

@@ -18,6 +18,7 @@
  * along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
  *
  */
+
 if (! defined ( 'IN_NFMWS' )) {
 	exit ();
 }
