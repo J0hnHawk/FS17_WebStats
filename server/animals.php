@@ -82,7 +82,7 @@ $mapconfig = array_merge ( $mapconfig, array (
 								'capacity' => 2000,
 								'factor' => 0,
 								'fillType' => 'woolPallet',
-								'palettPlaces' => 8,
+								'palettPlaces' => 15,
 								'showInStorage' => false 
 						) 
 				) 
