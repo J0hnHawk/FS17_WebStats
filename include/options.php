@@ -22,17 +22,6 @@ if (! defined ( 'IN_NFMWS' )) {
 	exit ();
 }
 
-// if (! isset ( $options ['storage'] )) {
-// 	$options ['storage'] ['sortByName'] = true;
-// 	$options ['storage'] ['hideZero'] = true;
-// 	$options ['storage'] ['showVehicles'] = true;
-// 	$options ['storage'] ['onlyPallets'] = false;
-// }
-// if (! isset ( $options ['production'] )) {
-// 	$options ['production'] ['sortByName'] = true;
-// 	$options ['production'] ['sortFullProducts'] = true;
-// }
-
 if ($_SERVER ['REQUEST_METHOD'] == 'POST') {
 	$options ['version'] = $cookieVersion;
 	$options ['general'] ['reload'] = filter_var ( GetParam ( 'g_reload', 'P', 1 ), FILTER_VALIDATE_BOOLEAN );
