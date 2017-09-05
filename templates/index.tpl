@@ -50,7 +50,7 @@
 					</p>
 				</div>
 				<div class="modal-footer">
-					<!-- <small class="pull-left"><a href="index.php?page=lizenz">Informationen zur Lizenzierung</a> - <a href="index.php?page=changelog">Changelog</a></small> -->
+					<small class="pull-left"><a href="index.php?page=lizenz">Informationen zur Lizenzierung</a></small>
 					<button type="button" class="btn btn-default" data-dismiss="modal">Schließen</button>
 				</div>
 			</div>

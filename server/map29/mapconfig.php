@@ -28,7 +28,7 @@ $mapconfig = array_merge($mapconfig,
     array(
         'FabrikScript_KraftFutterHerstellung' => array(
             'ProdPerHour' => 60000,
-            'position' => '592.522 90.021 -239.126',
+            'position' => '578 0 -208',
             'showInProduction' => true,
             'rawMaterial' => array(
                 'Stroh' => array(
@@ -61,7 +61,7 @@ $mapconfig = array_merge($mapconfig,
         ),
         'FabrikScript_Fabrik' => array(
             'ProdPerHour' => 16000,
-            'position' => '940.896 99.956 681.96',
+            'position' => '990 0 680',
             'showInProduction' => true,
             'rawMaterial' => array(
                 'Brennstoffe' => array(
@@ -95,7 +95,7 @@ $mapconfig = array_merge($mapconfig,
         ),
         'FabrikScript_Holzhacker' => array(
             'ProdPerHour' => 50000,
-            'position' => '905.352 99.4625 648.442',
+            'position' => '940 0 650',
             'showInProduction' => true,
             'rawMaterial' => array(
                 'Holz' => array(
@@ -116,7 +116,7 @@ $mapconfig = array_merge($mapconfig,
         ),
         'FabrikScript_compostMaster2k17' => array(
             'ProdPerHour' => 50000,
-            'position' => '-3.48832 99.822 -714.664',
+            'position' => '20 0 -700',
             'showInProduction' => true,
             'rawMaterial' => array(
                 'cm_inputWaste' => array(
@@ -137,7 +137,7 @@ $mapconfig = array_merge($mapconfig,
         ),
         'FabrikScript_Oel_Raffinerie_Raps' => array(
             'ProdPerHour' => 7500,
-            'position' => '-887.736 99.996 524.547',
+            'position' => '-940 0 600',
             'showInProduction' => true,
             'rawMaterial' => array(
                 'Tip_RS' => array(
@@ -183,7 +183,7 @@ $mapconfig = array_merge($mapconfig,
         ),
         'FabrikScript_Klaerwerk' => array(
             'ProdPerHour' => 40000,
-            'position' => '-153.801 100 795.944',
+            'position' => '-160 0 750',
             'showInProduction' => true,
             'rawMaterial' => array(
                 'Tip_RS1' => array(
@@ -210,7 +210,7 @@ $mapconfig = array_merge($mapconfig,
         ),
         'FabrikScript_WeizenMehlfabrik' => array(
             'ProdPerHour' => 5000,
-            'position' => '-812.292 100.879 -9.2273',
+            'position' => '-830 0 -90',
             'showInProduction' => true,
             'rawMaterial' => array(
                 'Tip_RSwheat' => array(
@@ -232,7 +232,7 @@ $mapconfig = array_merge($mapconfig,
         ),
         'FabrikScript_GersteMehlfabrik' => array(
             'ProdPerHour' => 5000,
-            'position' => '-820.29 100.879 -9.2273',
+            'position' => '-830 0 -90',
             'showInProduction' => true,
             'rawMaterial' => array(
                 'Tip_RSbarley' => array(
@@ -254,7 +254,7 @@ $mapconfig = array_merge($mapconfig,
         ),
         'FabrikScript_RoggenMehlfabrik' => array(
             'ProdPerHour' => 5000,
-            'position' => '-828.294 100.879 -9.2273',
+            'position' => '-830 0 -90',
             'showInProduction' => true,
             'rawMaterial' => array(
                 'Tip_RSrye' => array(
@@ -276,7 +276,7 @@ $mapconfig = array_merge($mapconfig,
         ),
         'FabrikScript_Zuckerfabrik' => array(
             'ProdPerHour' => 15000,
-            'position' => '-820.656 101.945 -873.396',
+            'position' => '-790 0 -930',
             'showInProduction' => true,
             'rawMaterial' => array(
                 'Tip_RSzucker' => array(
@@ -304,7 +304,7 @@ $mapconfig = array_merge($mapconfig,
         ),
         'FabrikScript_Backerei' => array(
             'ProdPerHour' => 5000,
-            'position' => '-909.99 103.256 56.1265',
+            'position' => '-940 0 10',
             'showInProduction' => true,
             'rawMaterial' => array(
                 'Tip_mehl' => array(
@@ -332,7 +332,7 @@ $mapconfig = array_merge($mapconfig,
         ),
         'FabrikScript_Paletten_Fabrik' => array(
             'ProdPerHour' => 25000,
-            'position' => '877.617 100.01 614.069',
+            'position' => '890 0 615',
             'showInProduction' => true,
             'rawMaterial' => array(
                 'boardwood' => array(
@@ -360,7 +360,7 @@ $mapconfig = array_merge($mapconfig,
         ),
         'FabrikScript_BrauereiKasten' => array(
             'ProdPerHour' => 5000,
-            'position' => '-846.326 99.961 499.743',
+            'position' => '-930 0 440',
             'showInProduction' => true,
             'rawMaterial' => array(
                 'Tip_RSbarley' => array(
@@ -400,7 +400,7 @@ $mapconfig = array_merge($mapconfig,
         ),
         'FabrikScript_BrauereiFass' => array(
             'ProdPerHour' => 5000,
-            'position' => '-821.824 99.961 499.743',
+            'position' => '-950 0 470',
             'showInProduction' => true,
             'rawMaterial' => array(
                 'Tip_RSwheat' => array(
@@ -440,7 +440,7 @@ $mapconfig = array_merge($mapconfig,
         ),
         'FabrikScript_Molkerei' => array(
             'ProdPerHour' => 5000,
-            'position' => '-441.172 99.961 337.698',
+            'position' => '-550 0 335',
             'showInProduction' => true,
             'rawMaterial' => array(
                 'Tip_RSmilk' => array(
@@ -508,7 +508,7 @@ $mapconfig = array_merge($mapconfig,
         ),
         'FabrikScript_Zellstoff_Fabrik' => array(
             'ProdPerHour' => 12500,
-            'position' => '-900.044 99.9937 -802.387',
+            'position' => '-930 0 -820',
             'showInProduction' => true,
             'rawMaterial' => array(
                 'Hackschnitzel' => array(
@@ -549,7 +549,7 @@ $mapconfig = array_merge($mapconfig,
         ),
         'FabrikScript_obst_apfel' => array(
             'ProdPerHour' => 600,
-            'position' => '877.012 100 -751.388',
+            'position' => '945 0 -805',
             'showInProduction' => true,
             'rawMaterial' => array(
                 'Compost' => array(
@@ -589,7 +589,7 @@ $mapconfig = array_merge($mapconfig,
         ),
         'FabrikScript_obst_birne' => array(
             'ProdPerHour' => 600,
-            'position' => '877.012 100 -811.391',
+            'position' => '945 0 -865',
             'showInProduction' => true,
             'rawMaterial' => array(
                 'Compost' => array(
@@ -629,7 +629,7 @@ $mapconfig = array_merge($mapconfig,
         ),
         'FabrikScript_obst_kirsche' => array(
             'ProdPerHour' => 600,
-            'position' => '877.012 100 -871.043',
+            'position' => '945 0 -925',
             'showInProduction' => true,
             'rawMaterial' => array(
                 'Compost' => array(
@@ -669,7 +669,7 @@ $mapconfig = array_merge($mapconfig,
         ),
         'FabrikScript_obst_pflaume' => array(
             'ProdPerHour' => 600,
-            'position' => '877.012 100 -930.202',
+            'position' => '945 0 -980',
             'showInProduction' => true,
             'rawMaterial' => array(
                 'Compost' => array(
@@ -709,7 +709,7 @@ $mapconfig = array_merge($mapconfig,
         ),
         'FabrikScript_Kartoffelfabrik' => array(
             'ProdPerHour' => 7500,
-            'position' => '-600.478 100.641 886.48',
+            'position' => '-680 0 830',
             'showInProduction' => true,
             'rawMaterial' => array(
                 'washedPotato' => array(
@@ -763,7 +763,7 @@ $mapconfig = array_merge($mapconfig,
         ),
         'FabrikScript_Brennerei_Korn' => array(
             'ProdPerHour' => 400,
-            'position' => '-124.52 100 -796.704',
+            'position' => '-125 0 -800',
             'showInProduction' => true,
             'rawMaterial' => array(
                 'Getreide' => array(
@@ -809,7 +809,7 @@ $mapconfig = array_merge($mapconfig,
         ),
         'FabrikScript_Brennerei_Obstler' => array(
             'ProdPerHour' => 400,
-            'position' => '-98.1 100 -818.784',
+            'position' => '-75 0 -800',
             'showInProduction' => true,
             'rawMaterial' => array(
                 'Obstpalette' => array(
@@ -855,7 +855,7 @@ $mapconfig = array_merge($mapconfig,
         ),
         'FabrikScript_HofladenApfel' => array(
             'ProdPerHour' => 60,
-            'position' => '223.977 100 78.6882',
+            'position' => '224 0 79',
             'showInProduction' => true,
             'rawMaterial' => array(
                 'Apfel' => array(
@@ -876,7 +876,7 @@ $mapconfig = array_merge($mapconfig,
         ),
         'FabrikScript_HofladenBirne' => array(
             'ProdPerHour' => 60,
-            'position' => '223.977 100 81.3477',
+            'position' => '224 0 81',
             'showInProduction' => true,
             'rawMaterial' => array(
                 'Birne' => array(
@@ -897,7 +897,7 @@ $mapconfig = array_merge($mapconfig,
         ),
         'FabrikScript_HofladenPflaume' => array(
             'ProdPerHour' => 60,
-            'position' => '224.645 100 85.1752',
+            'position' => '225 0 85',
             'showInProduction' => true,
             'rawMaterial' => array(
                 'Pflaumen' => array(
@@ -918,7 +918,7 @@ $mapconfig = array_merge($mapconfig,
         ),
         'FabrikScript_Hofladenkirsche' => array(
             'ProdPerHour' => 60,
-            'position' => '224.645 100 82.5263',
+            'position' => '225 0 83',
             'showInProduction' => true,
             'rawMaterial' => array(
                 'Kirschen' => array(
@@ -939,7 +939,7 @@ $mapconfig = array_merge($mapconfig,
         ),
         'FabrikScript_Hofladentomaten' => array(
             'ProdPerHour' => 60,
-            'position' => '215.801 100 82.5263',
+            'position' => '216 0 83',
             'showInProduction' => true,
             'rawMaterial' => array(
                 'Tomaten' => array(
@@ -960,7 +960,7 @@ $mapconfig = array_merge($mapconfig,
         ),
         'FabrikScript_Hofladensalat' => array(
             'ProdPerHour' => 60,
-            'position' => '215.801 100 85.2447',
+            'position' => '216 0 85',
             'showInProduction' => true,
             'rawMaterial' => array(
                 'Salat' => array(
@@ -981,7 +981,7 @@ $mapconfig = array_merge($mapconfig,
         ),
         'FabrikScript_HofladenBlumenkohl' => array(
             'ProdPerHour' => 60,
-            'position' => '214.971 100 78.6882',
+            'position' => '215 0 79',
             'showInProduction' => true,
             'rawMaterial' => array(
                 'Blumenkohl' => array(
@@ -1002,7 +1002,7 @@ $mapconfig = array_merge($mapconfig,
         ),
         'FabrikScript_HofladenRotkohl' => array(
             'ProdPerHour' => 60,
-            'position' => '214.971 100 81.3267',
+            'position' => '215 0 81',
             'showInProduction' => true,
             'rawMaterial' => array(
                 'Rotkohl' => array(
@@ -1023,7 +1023,7 @@ $mapconfig = array_merge($mapconfig,
         ),
         'FabrikScript_geldboxen' => array(
             'ProdPerHour' => 100000,
-            'position' => '298.646 100 98.5848',
+            'position' => '290 0 110',
             'showInProduction' => true,
             'rawMaterial' => array(
                 'geld' => array(
@@ -1044,7 +1044,7 @@ $mapconfig = array_merge($mapconfig,
         ),
         'FabrikScript_Pellets_Fabrik' => array(
             'ProdPerHour' => 7500,
-            'position' => '877.617 100.01 625.812',
+            'position' => '890 0 680',
             'showInProduction' => true,
             'rawMaterial' => array(
                 'Stroh_Hackschnitzel' => array(
@@ -1903,7 +1903,7 @@ $mapconfig = array_merge($mapconfig,
         ),
         'FabrikScript_Schweinefutterstation' => array(
             'ProdPerHour' => 30000,
-            'position' => '-76.8797 1.15196 25.771',
+            'position' => '200 0 350',
             'showInProduction' => true,
             'rawMaterial' => array(
                 'Getreide' => array(
@@ -1936,7 +1936,7 @@ $mapconfig = array_merge($mapconfig,
         ),
         'FabrikScript_potatoWasher' => array(
             'ProdPerHour' => 6000,
-            'position' => '-699.617 99.9871 766.891',
+            'position' => '-700 0 780',
             'showInProduction' => true,
             'rawMaterial' => array(
                 'Kartoffeln' => array(
@@ -1970,7 +1970,7 @@ $mapconfig = array_merge($mapconfig,
         ),
         'FabrikScript_potatoWasher2' => array(
             'ProdPerHour' => 6000,
-            'position' => '-698.768 99.9407 752.973',
+            'position' => '-700 0 750',
             'showInProduction' => true,
             'rawMaterial' => array(
                 'Kartoffeln' => array(
@@ -2004,7 +2004,7 @@ $mapconfig = array_merge($mapconfig,
         ),
         'FabrikScript_Schlachterei' => array(
             'ProdPerHour' => 50,
-            'position' => '-634.491 99.3027 -94.9426',
+            'position' => '-635 0 -95',
             'showInProduction' => true,
             'rawMaterial' => array(
                 'Tier_Anlieferung' => array(
@@ -2045,7 +2045,7 @@ $mapconfig = array_merge($mapconfig,
         ),
         'FabrikScript_Tomatenzucht' => array(
             'ProdPerHour' => 1,
-            'position' => '-509.492 89.5874 581.372',
+            'position' => '790 0 700',
             'showInProduction' => true,
             'rawMaterial' => array(
                 'water' => array(
@@ -2079,7 +2079,7 @@ $mapconfig = array_merge($mapconfig,
         ),
         'FabrikScript_Salatzucht' => array(
             'ProdPerHour' => 1,
-            'position' => '-540.967 89.6469 606.976',
+            'position' => '850 0 700',
             'showInProduction' => true,
             'rawMaterial' => array(
                 'water' => array(
@@ -2113,7 +2113,7 @@ $mapconfig = array_merge($mapconfig,
         ),
         'FabrikScript_Rotkohlzucht' => array(
             'ProdPerHour' => 1,
-            'position' => '-510.072 89.5945 608.427',
+            'position' => '790 0 650',
             'showInProduction' => true,
             'rawMaterial' => array(
                 'water' => array(
@@ -2147,7 +2147,7 @@ $mapconfig = array_merge($mapconfig,
         ),
         'FabrikScript_Blumenkohlzucht' => array(
             'ProdPerHour' => 1,
-            'position' => '-541.626 89.5798 634.097',
+            'position' => '850 0 650',
             'showInProduction' => true,
             'rawMaterial' => array(
                 'water' => array(
@@ -2181,7 +2181,7 @@ $mapconfig = array_merge($mapconfig,
         ),
         'FabrikScript_Weberei' => array(
             'ProdPerHour' => 5000,
-            'position' => '23.441 -0.004 -9.551',
+            'position' => '820 0 600',
             'showInProduction' => true,
             'rawMaterial' => array(
                 'Wolle' => array(
