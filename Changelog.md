@@ -1,6 +1,6 @@
 # Changelog
 
-## [Version 1.1.0](https://github.com/J0hnHawk/FS17_NF_Marsch_WebStats/releases/tag/v1.1.0) (??.09.2017)
+## [Version 1.1.0](https://github.com/J0hnHawk/FS17_NF_Marsch_WebStats/releases/tag/v1.1.0) (05.09.2017)
 
 **Änderungen und Erweiterungen:**
 - Konfiguration für Nordfriesische Marsch Version 2.9
