@@ -13,7 +13,8 @@
 				</a></li> {/if}
 				<li class="{if $page == 'storage'}active{/if}"><a href="index.php?page=storage"> <span class="glyphicon glyphicon-stats"></span> Lagerbestände
 				</a></li>
-				<li class="{if $page == 'production'}active{/if}"><a href="index.php?page=production"> <span class="glyphicon glyphicon-list"></span> Produktionsanlagen
+				<li class="{if $page == 'production'}active{/if}"><a href="index.php?page=production"> <span class="glyphicon glyphicon-list"></span>
+						Produktionsanlagen
 				</a></li>
 			</ul>
 			<ul class="nav navbar-nav navbar-right">
@@ -25,24 +26,3 @@
 		</div>
 	</div>
 </nav>
-<!-- 
-Vorlage Menüeinträge 
-	<li class="{if $page == ''}active{/if}"><a href="#"> <span class="glyphicon glyphicon-list"></span> </a></li>
-
-Rechtsbündig
-	<ul class="nav navbar-nav navbar-right">
-		<li><a href="#"> <span class="glyphicon glyphicon-log-out"></span> Abmelden</a></li>
-	</ul>
-
-Dropdownmeü		
-	<li class="dropdown {if $page == 'status'}active{/if}"><a class="dropdown-toggle" data-toggle="dropdown" href="index.php?page=users&mode=list"> <span class="glyphicon glyphicon-user"></span> bServerstatus <span class="caret"></span></a>
-		<ul class="dropdown-menu">
-			<li><a href="index.php?page=game">Spiel</a></li>
-			<li><a href="index.php?page=player">Spieler</a></li>
-			<li><a href="index.php?page=mods">Mods</a></li>
-			<li><a href="index.php?page=vehicles">Fahrzeuge</a></li>
-			<li><a href="index.php?page=map">Karte</a></li>
-		</ul>
-	</li>
-
- -->

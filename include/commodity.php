@@ -65,7 +65,8 @@ if ($commodities [$l_object] ['isCombine']) {
 		if (isset ( $location ['isVehicle'] ) || isset ( $location ['Bale'] ) || isset ( $location ['FillablePallet'] )) {
 			continue;
 		} else {
-			$storage [] = $location ['i3dName'];
+			$position = $mapconfig[$location ['i3dName']]['position'];
+			$mapEntries[] = addEntry($position, translate($location['i3dName']), 'vehicle.png');
 		}
 	}
 }

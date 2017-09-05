@@ -57,7 +57,7 @@ require ("./server/$version/translation.php");
 $smarty->assign ( 'mapVersion', $mapVersion );
 require ('./server/animals.php');
 require ('./include/savegame.php');
-// var_dump($commodities);
+
 // Erlaubte Seiten
 $pages = array (
 		'overview',
