@@ -63,6 +63,9 @@ function getServerStatsSimpleXML($url) {
 	// cacheFile für auch savegame ergänzt
 	$pathParts = pathinfo ( $urlParts ['path'] );
 	parse_str ( $urlParts ["query"], $pathQuery );
+	if (!file_exists ( './cache' )) {
+		mkdir('./cache');
+	}
 	$cacheFile = './cache/' . $pathParts ['filename'] . (isset ( $pathQuery ['file'] ) ? '-' . $pathQuery ['file'] : '') . '.cached';
 	$cacheTimeout = 60;
 	if (file_exists ( $cacheFile ) && filemtime ( $cacheFile ) > (time () - ($cacheTimeout) + rand ( 0, 10 ))) {
