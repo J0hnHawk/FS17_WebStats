@@ -28,12 +28,11 @@ setlocale ( LC_ALL, 'de_DE@euro', 'de_DE', 'de', 'ge' );
 
 require ('./include/smarty/Smarty.class.php');
 require ('./include/functions.php');
-require ('./include/xmlTools.php');
 
 $smarty = new Smarty ();
 $smarty->debugging = false;
 $smarty->caching = false;
-$smarty->assign ( 'webStatsVersion', 'Version 1.1.0 (05.09.2017)' );
+$smarty->assign ( 'webStatsVersion', 'Version 1.2.0 (alpha)' );
 
 // Serverkonfiguration laden - wenn nicht vorhanden Instalation starten
 $configFile = './server/server.conf';
@@ -55,7 +54,7 @@ $version = "map29";
 require ("./server/$version/mapconfig.php");
 require ("./server/$version/translation.php");
 $smarty->assign ( 'mapVersion', $mapVersion );
-require ('./server/animals.php');
+require ('./server/common.php');
 require ('./include/savegame.php');
 
 // Erlaubte Seiten
@@ -65,7 +64,8 @@ $pages = array (
 		'production',
 		'commodity',
 		'options',
-		'lizenz' 
+		'lizenz',
+		'factories'
 );
 $page = GetParam ( 'page', 'G' );
 if (! in_array ( $page, $pages ))

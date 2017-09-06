@@ -9,12 +9,13 @@
 		<div id="navbar" class="collapse navbar-collapse">
 			<ul class="nav navbar-nav">
 				{if $isDediServer}
-				<li class="{if $page == 'status'}active{/if}"><a href="index.php?page=overview"> <span class="glyphicon glyphicon-home"></span> Übersicht
+				<li class="{if $page == 'status'}active{/if}"><a href="index.php?page=overview"> <span class="glyphicon glyphicon-home"></span> Server
 				</a></li> {/if}
-				<li class="{if $page == 'storage'}active{/if}"><a href="index.php?page=storage"> <span class="glyphicon glyphicon-stats"></span> Lagerbestände
+				<li class="{if $page == 'storage'}active{/if}"><a href="index.php?page=storage"> <span class="glyphicon glyphicon-stats"></span> Lager
 				</a></li>
-				<li class="{if $page == 'production'}active{/if}"><a href="index.php?page=production"> <span class="glyphicon glyphicon-list"></span>
-						Produktionsanlagen
+				<li class="{if $page == 'production'}active{/if}"><a href="index.php?page=production"> <span class="glyphicon glyphicon-list"></span> Produktion
+				</a></li>
+				<li class="{if $page == 'factories'}active{/if}"><a href="index.php?page=factories"> <span class="glyphicon glyphicon-home"></span> Fabriken
 				</a></li>
 			</ul>
 			<ul class="nav navbar-nav navbar-right">

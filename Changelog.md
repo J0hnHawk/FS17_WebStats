@@ -1,5 +1,13 @@
 # Changelog
 
+## [Version 1.2.0](https://github.com/J0hnHawk/FS17_NF_Marsch_WebStats/releases/tag/v1.2.0) (??.??.??)
+
+**Änderungen und Erweiterungen:**
+- Lagerübersicht nun in 4 Spalten wegen der vielzahl an neuen Waren
+- Umbenennung der Menüpunkte
+- neue Fabrikübersicht mit Anzeige täglichen Produktionskapazität
+- xmlTools in eigene Datei intrigiert
+
 ## [Version 1.1.0](https://github.com/J0hnHawk/FS17_NF_Marsch_WebStats/releases/tag/v1.1.0) (05.09.2017)
 
 **Änderungen und Erweiterungen:**

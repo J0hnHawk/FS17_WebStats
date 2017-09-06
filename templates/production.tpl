@@ -1,6 +1,6 @@
 <div class="page-header">
 	<h3>
-		Produktionsanlagen<small> (Speicherstand: Tag {$currentDay}, {$dayTime})</small><small class="pull-right"><a href="#" data-toggle="modal" data-target="#myModal"><span class="glyphicon glyphicon-cog"
+		Produktionsübersicht<small> (Speicherstand: Tag {$currentDay}, {$dayTime})</small><small class="pull-right"><a href="#" data-toggle="modal" data-target="#myModal"><span class="glyphicon glyphicon-cog"
 				aria-hidden="true"></span> Einstellungen</a></small>
 	</h3>
 </div>
@@ -18,16 +18,16 @@ array("","text-warning","text-danger")}
 			</thead>
 			<tbody>
 				{$tooltip = '<span class="%s" data-toggle="tooltip" data-placement="top" title="Lagerbestand:<br><strong>%s</strong>">'}
-				{foreach $plants as $plantName => $plant}
-				<tr data-toggle="collapse" href="#collapse{$plant.i3dName}">
-					<td><span class="{$glyphicons[$plant.state]}" aria-hidden="true"></span> {$plantName}</td>
-					<td>{foreach from=$plant.input key=$fillType item=$fillLevel} {$tooltip|printf:$textcolors[$fillLevel.state]:($commodities.$fillType.overall|number_format:0:",":".")}	
+				{foreach $plants as $plantName => $plantData}
+				<tr data-toggle="collapse" href="#collapse{$plantData.i3dName}">
+					<td><span class="{$glyphicons[$plantData.state]}" aria-hidden="true"></span> {$plantName}</td>
+					<td>{foreach from=$plantData.input key=$fillType item=$fillLevel} {$tooltip|printf:$textcolors[$fillLevel.state]:($commodities.$fillType.overall|number_format:0:",":".")}	
 						<span class="{$glyphicons[$fillLevel.state]}" aria-hidden="true"></span> {$fillType} </span>{/foreach}
 					</td>
-					<td>{foreach from=$plant.output key=$fillType item=$fillLevel}<span class="{$textcolors[$fillLevel.state]}"><span class="{$glyphicons[$fillLevel.state]}" aria-hidden="true"></span> {$fillType} </span>{/foreach}
+					<td>{foreach from=$plantData.output key=$fillType item=$fillLevel}<span class="{$textcolors[$fillLevel.state]}"><span class="{$glyphicons[$fillLevel.state]}" aria-hidden="true"></span> {$fillType} </span>{/foreach}
 					</td>
 				</tr>
-				<tr class="collapse info" id="collapse{$plant.i3dName}">
+				<tr class="collapse info" id="collapse{$plantData.i3dName}">
 					<td colspan="4">
 						<div class="col-sm-8 col-sm-offset-1">
 							<table class="table" style="margin-bottom: 0px;">
@@ -37,8 +37,8 @@ array("","text-warning","text-danger")}
 										<th colspan="2" width="50%">Produkt(e)</th>
 									</tr>
 								</thead>
-								{$inputRow=array()}{$outputRow=array()} {$max = max($plant.input|@count,$plant.output|@count)} {foreach from=$plant.input key=$fillType item=$fillLevel} {$inputRow[$fillLevel@index] =
-								array($fillType,$fillLevel.fillLevel,$fillLevel.fillMax,$fillLevel.i3dName)} {/foreach} {foreach from=$plant.output key=$fillType item=$fillLevel} {$outputRow[$fillLevel@index] =
+								{$inputRow=array()}{$outputRow=array()} {$max = max($plantData.input|@count,$plantData.output|@count)} {foreach from=$plantData.input key=$fillType item=$fillLevel} {$inputRow[$fillLevel@index] =
+								array($fillType,$fillLevel.fillLevel,$fillLevel.fillMax,$fillLevel.i3dName)} {/foreach} {foreach from=$plantData.output key=$fillType item=$fillLevel} {$outputRow[$fillLevel@index] =
 								array($fillType,$fillLevel.fillLevel,$fillLevel.fillMax,$fillLevel.i3dName)} {/foreach}
 								<tbody>
 									{for $i=0 to $max-1}

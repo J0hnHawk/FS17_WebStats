@@ -206,7 +206,7 @@ foreach ( $careerVehicles->onCreateLoadedObject as $object ) {
 			$state = 1;
 		}
 		$plants [$plant] ['output'] [$l_fillType] = array (
-				'i3dName' => $fillType,
+				'i3dName' => 'woolPallet',
 				'fillLevel' => $fillLevel,
 				'fillMax' => $fillMax,
 				'state' => $state 
