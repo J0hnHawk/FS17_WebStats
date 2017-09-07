@@ -1,5 +1,10 @@
 # Changelog
 
+## [Version 1.2.1](https://github.com/J0hnHawk/FS17_NF_Marsch_WebStats/releases/tag/v1.2.1) (07.09.2017)
+
+**Berichtigte Fehler:**
+- Produktionsrate der Gewächshäuser berichtigt
+
 ## [Version 1.2.0](https://github.com/J0hnHawk/FS17_NF_Marsch_WebStats/releases/tag/v1.2.0) (07.09.2017)
 
 **Änderungen und Erweiterungen:**
