@@ -2067,7 +2067,7 @@ $mapconfig = array_merge ( $mapconfig, array (
 				) 
 		),
 		'FabrikScript_Tomatenzucht' => array (
-				'ProdPerHour' => 1,
+				'ProdPerHour' => 1000,
 				'position' => '790 0 700',
 				'showInProduction' => true,
 				'rawMaterial' => array (
@@ -2101,7 +2101,7 @@ $mapconfig = array_merge ( $mapconfig, array (
 				) 
 		),
 		'FabrikScript_Salatzucht' => array (
-				'ProdPerHour' => 1,
+				'ProdPerHour' => 1000,
 				'position' => '850 0 700',
 				'showInProduction' => true,
 				'rawMaterial' => array (
@@ -2135,7 +2135,7 @@ $mapconfig = array_merge ( $mapconfig, array (
 				) 
 		),
 		'FabrikScript_Rotkohlzucht' => array (
-				'ProdPerHour' => 1,
+				'ProdPerHour' => 1000,
 				'position' => '790 0 650',
 				'showInProduction' => true,
 				'rawMaterial' => array (
@@ -2169,7 +2169,7 @@ $mapconfig = array_merge ( $mapconfig, array (
 				) 
 		),
 		'FabrikScript_Blumenkohlzucht' => array (
-				'ProdPerHour' => 1,
+				'ProdPerHour' => 1000,
 				'position' => '850 0 650',
 				'showInProduction' => true,
 				'rawMaterial' => array (
