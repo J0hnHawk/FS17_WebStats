@@ -22,6 +22,19 @@
 if (! defined ( 'IN_NFMWS' )) {
 	exit ();
 }
+
+// Kartendaten laden
+$object = GetParam ( 'object', 'G', 'FabrikScript_Oel_Raffinerie_Raps');
+$l_object = translate ( $object );
+
+// Ware vorhanden?
+if(!isset($plants [$l_object])) {
+	$object = 'FabrikScript_Oel_Raffinerie_Raps';
+	$l_object = translate ( $object );
+}
+
 uksort($plants, "strnatcasecmp");
+$smarty->assign('selectedPlant', $object);
+$smarty->assign('plantName', $l_object);
 $smarty->assign('plants', $plants);
 $smarty->assign('mapconfig', $mapconfig);

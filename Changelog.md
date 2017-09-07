@@ -1,12 +1,17 @@
 # Changelog
 
-## [Version 1.2.0](https://github.com/J0hnHawk/FS17_NF_Marsch_WebStats/releases/tag/v1.2.0) (??.??.??)
+## [Version 1.2.0](https://github.com/J0hnHawk/FS17_NF_Marsch_WebStats/releases/tag/v1.2.0) (07.09.2017)
 
 **Änderungen und Erweiterungen:**
-- Lagerübersicht nun in 4 Spalten wegen der vielzahl an neuen Waren
-- Umbenennung der Menüpunkte
-- neue Fabrikübersicht mit Anzeige täglichen Produktionskapazität
-- xmlTools in eigene Datei intrigiert
+- Neue Fabrikübersicht mit Anzeige täglichen Produktionskapazität
+- Umbenennung und Ergänzung von Menüpunkten
+- Lagerübersicht nun in 4 Spalten wegen der Vielzahl an neuen Waren
+- Befüllbare Tankstellen werden nun auf der Karte angezeigt
+- Geldkassetten werden nicht mehr angezeigt
+
+**Berichtigte Fehler:**
+- Diverse Positionen von Lagern und Produktionsanlagen auf der Karte berichtigt
+- Übersetzungen berichtigt oder ergänzt
 
 ## [Version 1.1.0](https://github.com/J0hnHawk/FS17_NF_Marsch_WebStats/releases/tag/v1.1.0) (05.09.2017)
 

@@ -24,7 +24,14 @@ if (! defined ( 'IN_NFMWS' )) {
 
 // Kartendaten laden
 require ('./include/savegame.php');
-$object = GetParam ( 'object', 'G' );
+$object = GetParam ( 'object', 'G', 'wheat' );
+$l_object = translate ( $object );
+
+// Ware vorhanden?
+if (! isset ( $commodities [$l_object] )) {
+	$object = 'wheat';
+	$l_object = translate ( $object );
+}
 
 // Übersichtskarte
 $linkToImage = "./server/map29/pda_map_H.jpg";
@@ -35,14 +42,7 @@ $machineIconSize = 10;
 $backgroundColor = "#4dafd7";
 $storage = $mapEntries = array ();
 
-// Ware vorhanden?
-if (is_array ( $object )) {
-	$object = 'Brot';
-}
-
 // Warengruppe
-$l_object = translate ( $object );
-$smarty->assign ( 'l_object', $l_object );
 if ($commodities [$l_object] ['isCombine']) {
 	$combineCommodities = array ();
 	foreach ( $mapconfig as $plantName => $plant ) {
@@ -65,8 +65,12 @@ if ($commodities [$l_object] ['isCombine']) {
 		if (isset ( $location ['isVehicle'] ) || isset ( $location ['Bale'] ) || isset ( $location ['FillablePallet'] )) {
 			continue;
 		} else {
-			$position = $mapconfig[$location ['i3dName']]['position'];
-			$mapEntries[] = addEntry($position, translate($location['i3dName']), 'vehicle.png');
+			if (isset ( $mapconfig [$location ['i3dName']] ['position'] )) {
+				$position = $mapconfig [$location ['i3dName']] ['position'];
+				$mapEntries [] = addEntry ( $position, translate ( $location ['i3dName'] ), 'vehicle.png' );
+			} else {
+				//echo ($location ['i3dName'].'<br>');
+			}
 		}
 	}
 }
@@ -95,7 +99,7 @@ foreach ( $plants as $plantName => $plant ) {
 				$fillTypes = $mapconfig [$plant ['i3dName']] ['rawMaterial'] [$fillTypeDetails ['i3dName']] ['fillTypes'];
 				$fillTypes = explode ( ' ', $fillTypes );
 				foreach ( $fillTypes as $fillType ) {
-				    if ($l_object == translate ( $fillType )) {
+					if ($l_object == translate ( $fillType )) {
 						$demandValue = $fillTypeDetails ['fillMax'] - $fillTypeDetails ['fillLevel'];
 						if ($options ['storage'] ['hideZero'] && $demandValue == 0) {
 							continue;
@@ -127,12 +131,15 @@ foreach ( $positions ['Bale'] as $fillType => $items ) {
 		}
 	}
 }
-
+uksort ( $commodities, "strnatcasecmp" );
 // Übergabe der Variabeln
+$smarty->assign ( 'selectedCommodity', $object );
+$smarty->assign ( 'l_object', $l_object );
 $smarty->assign ( 'combineCommodities', $combineCommodities );
 $smarty->assign ( 'commodities', $commodities );
 $smarty->assign ( 'demand', $demand );
 $smarty->assign ( 'demandSum', $demandSum );
+$smarty->assign ( 'plants', $plants );
 $smarty->assign ( 'linkToImage', $linkToImage );
 $smarty->assign ( 'backgroundColor', $backgroundColor );
 $smarty->assign ( 'machineIconSize', $machineIconSize );

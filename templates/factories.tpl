@@ -1,84 +1,93 @@
 <div class="page-header">
 	<h3>
-		Produktionsanlagen<small> (Speicherstand: Tag {$currentDay}, {$dayTime})</small><small class="pull-right"><a href="#" data-toggle="modal"
-			data-target="#myModal"><span class="glyphicon glyphicon-cog" aria-hidden="true"></span> Einstellungen</a></small>
+		{$plantName}<small> (Speicherstand: Tag {$currentDay}, {$dayTime})</small><small class="pull-right"><button type="button"
+				class="btn btn-primary" data-toggle="modal" data-target="#modalMenu">Produktionsanlage auswählen</button> </small>
 	</h3>
 </div>
 <div class="row">
-	<div class="col-sm-3">
-		<ul class="nav nav-pills nav-stacked" role="tablist">
-			{foreach $plants as $plantName => $plantData}
-			<li role="presentation"><a href="#{$plantData.i3dName}" aria-controls="{$plantData.i3dName}" role="tab" data-toggle="tab">{$plantName}</a></li>
+	<div class="col-sm-8 col-sm-offset-1">
+		{$plantData = $plants.$plantName}
+		{$ProdPerHour = $mapconfig[$plantData.i3dName].ProdPerHour}
+		<h4>Benötigte Rohstoffe</h4>
+		<table class="table">
+			<thead>
+				<tr>
+					<th width="28%">Rohstoff</th>
+					<th width="18%" class="text-right">Lager</th>
+					<th width="18%" class="text-right">Kapazität</th>
+					<th width="18%" class="text-right">Bedarf/Stunde</th>
+					<th width="18%" class="text-right">Bedarf/Tag</th>
+				</tr>
+			</thead>
+			<tbody>
+			{foreach $plantData.input as $fillTypeName => $fillTypeData}
+				{$factor = $mapconfig[$plantData.i3dName].rawMaterial[$fillTypeData.i3dName].factor}
+				{$hour = $ProdPerHour*$factor}
+				{$day = $hour * 24}
+				<tr>
+					<td><a href="index.php?page=commodity&object={$fillTypeData.i3dName}">{$fillTypeName}</a></td>
+					<td class="text-right">{$fillTypeData.fillLevel|number_format:0:",":"."}</td>
+					<td class="text-right">{$fillTypeData.fillMax|number_format:0:",":"."}</td>
+					<td class="text-right">{$hour|number_format:0:",":"."}</td>
+					<td class="text-right">{$day|number_format:0:",":"."}</td>
+				</tr>
 			{/foreach}
-		</ul>
-	</div>
-	<div class="col-sm-9">
-		<div class="tab-content">
-			{foreach $plants as $plantName => $plantData}
-			<div role="tabpanel" class="tab-pane" id="{$plantData.i3dName}">
-			<div class="page-header">
-				<h3>{$plantName}</h3></div>
-				<h4>Aktuelle Lagerbestände</h4>
-				<table class="table" style="margin-bottom: 0px;">
-					<thead>
-						<tr>
-							<th colspan="2" width="50%">Rohstoff</th>
-							<th colspan="2" width="50%">Produkt</th>
-						</tr>
-					</thead>
-					{$inputRow=array()}{$outputRow=array()} {$max = max($plantData.input|@count,$plantData.output|@count)} {foreach from=$plantData.input
-					key=$fillType item=$fillLevel} {$inputRow[$fillLevel@index] = array($fillType,$fillLevel.fillLevel,$fillLevel.fillMax,$fillLevel.i3dName)}
-					{/foreach} {foreach from=$plantData.output key=$fillType item=$fillLevel} {$outputRow[$fillLevel@index] =
-					array($fillType,$fillLevel.fillLevel,$fillLevel.fillMax,$fillLevel.i3dName)} {/foreach}
-					<tbody>
-						{for $i=0 to $max-1}
-						<tr>
-							{if isset($inputRow[$i][0])}
-							<td><a href="index.php?page=commodity&object={$inputRow[$i][3]}">{$inputRow[$i][0]}</a></td>
-							<td class="text-right">{$inputRow[$i][1]|number_format:0:",":"."} / {$inputRow[$i][2]|number_format:0:",":"."}</td> {else}
-							<td colspan="2">&nbsp;</td> {/if} {if isset($outputRow[$i][0])}
-							<td><a href="index.php?page=commodity&object={$outputRow[$i][3]}">{$outputRow[$i][0]}</a></td>
-							<td class="text-right">{$outputRow[$i][1]|number_format:0:",":"."} / {$outputRow[$i][2]|number_format:0:",":"."}</td>{else}
-							<td colspan="2">&nbsp;</td> {/if}
-						</tr>
-						{/for}
-					</tbody>
-				</table>
-				<hr>
-				<h4>Produktivität</h4>
-				<table class="table" style="margin-bottom: 0px;">
-					<thead>
-						<tr>
-							<th width="20%">Rohstoff</th>
-							<th width="15%">Bedarf/Stunde</th>
-							<th width="15%">Bedarf/Tag</th>
-							<th width="20%">Produkt</th>
-							<th width="15%">Herstellung/Stunde</th>
-							<th width="15%">Herstellung/Tag</th>
-						</tr>
-					</thead>
-					{$ProdPerHour = $mapconfig[$plantData.i3dName].ProdPerHour}
-					<tbody>
-						{for $i=0 to $max-1}
-						<tr>
-							{if isset($inputRow[$i][0])} {$factor = $mapconfig[$plantData.i3dName].rawMaterial[$inputRow[$i][3]].factor} {$hour = $ProdPerHour*$factor}
-							{$day = $hour * 24}
-							<td><a href="index.php?page=commodity&object={$inputRow[$i][3]}">{$inputRow[$i][0]}</a></td>
-							<td class="text-right">{$hour|number_format:0:",":"."}</td>
-							<td class="text-right">{$day|number_format:0:",":"."}</td> {else}
-							<td colspan="3">&nbsp;</td> {/if} {if isset($outputRow[$i][0])}{$factor =
-							$mapconfig[$plantData.i3dName].product[$outputRow[$i][3]].factor}{$hour = $ProdPerHour*$factor} {$day = $hour * 24}
-							<td><a href="index.php?page=commodity&object={$outputRow[$i][3]}">{$outputRow[$i][0]}</a></td>
-							<td class="text-right">{$hour|number_format:0:",":"."}</td>
-							<td class="text-right">{$day|number_format:0:",":"."}</td> {else}
-							<td colspan="3">&nbsp;</td> {/if}
-						</tr>
-						{/for}
-					</tbody>
-				</table>
-			</div>
+			</tbody>
+		</table>
+		<hr>
+		<h4>Produzierte Waren</h4>
+		<table class="table">
+			<thead>
+				<tr>
+					<th width="28%">Produkt</th>
+					<th width="18%" class="text-right">Lager</th>
+					<th width="18%" class="text-right">Kapazität</th>
+					<th width="18%" class="text-right">Produktion/Stunde</th>
+					<th width="18%" class="text-right">Produktion/Tag</th>
+				</tr>
+			</thead>
+			<tbody>
+			{foreach $plantData.output as $fillTypeName => $fillTypeData}
+				{$factor = $mapconfig[$plantData.i3dName].product[$fillTypeData.i3dName].factor}
+				{$hour = $ProdPerHour*$factor}
+				{$day = $hour * 24}
+				<tr>
+					<td><a href="index.php?page=commodity&object={$fillTypeData.i3dName}">{$fillTypeName}</a></td>
+					<td class="text-right">{$fillTypeData.fillLevel|number_format:0:",":"."}</td>
+					<td class="text-right">{$fillTypeData.fillMax|number_format:0:",":"."}</td>
+					<td class="text-right">{$hour|number_format:0:",":"."}</td>
+					<td class="text-right">{$day|number_format:0:",":"."}</td>
+				</tr>
 			{/foreach}
-		</div>
+			</tbody>
+		</table>
 	</div>
 </div>
-
+<div class="modal fade" id="modalMenu" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+	<div class="modal-dialog modal-lg" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+				<h4 class="modal-title" id="myModalLabel">Produktionsstätte auswählen</h4>
+			</div>
+			<div class="modal-body">
+				<div class="row">
+					{$colmax[0] = -1} {$colmax[1] = ($plants|@count/3)|ceil} {$colmax[2] = $colmax[1] *2} {$colmax[3] = $plants|@count} {for $i=0 to 2}
+					<div class="col-sm-4">
+						<ul class="nav nav-pills nav-stacked">
+							{foreach $plants as $plantName => $plantData} {if $plantData@iteration > $colmax[$i] && $plantData@iteration <= $colmax[$i+1] }							
+							<li role="menu" {if $selectedPlant == $plantData.i3dName} class="active"{/if}><a href="index.php?page=factories&object={$plantData.i3dName}">{$plantName}</a></li> {/if}{/foreach}
+						</ul>
+					</div>
+					{/for}
+				</div>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal">Schließen</button>
+			</div>
+		</div>
+		</form>
+	</div>
+</div>

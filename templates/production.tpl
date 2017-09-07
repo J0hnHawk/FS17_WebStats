@@ -57,7 +57,7 @@ array("","text-warning","text-danger")}
 						</div>
 						<div class="col-sm-3">
 							<p class="pull-right">
-								<a href="index.php?page=production&hide={$plantName|base64_encode}"><span class="glyphicon glyphicon-eye-close"></span> ausblenden</a>
+								<a href="index.php?page=production&hide={$plantName|base64_encode}"><span class="glyphicon glyphicon-eye-close"></span> ausblenden</a><br><a href="index.php?page=factories&object={$plantData.i3dName}"><span class="glyphicon glyphicon-eye-open"></span> weitere Details</a>
 							</p>
 						</div>
 					</td>

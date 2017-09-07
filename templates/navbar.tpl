@@ -17,6 +17,8 @@
 				</a></li>
 				<li class="{if $page == 'factories'}active{/if}"><a href="index.php?page=factories"> <span class="glyphicon glyphicon-home"></span> Fabriken
 				</a></li>
+				<li class="{if $page == 'commodity'}active{/if}"><a href="index.php?page=commodity"> <span class="glyphicon glyphicon-object-align-bottom"></span> Waren
+				</a></li>
 			</ul>
 			<ul class="nav navbar-nav navbar-right">
 				<li class="{if $page == 'options'}active{/if}"><a href="index.php?page=options"> <span class="glyphicon glyphicon-cog"></span> Einstellungen

@@ -1,4 +1,4 @@
-# FS17 Nordfriesische Marsch WebStats v1.1.0
+# FS17 Nordfriesische Marsch WebStats v1.2.0
 
 ### Statuswebseite für die Farming Simulator 17 Mod Map Nordfriesische Marsch
 Die Webseite generiert Übersichtsseiten von lokale Spielständen oder dedizierten Servern
@@ -10,11 +10,14 @@ Anzeige der Spieler sowie Fahrzeuge auf der Karte. (nur dedizierter Server)
 Übersicht über alle Lagerbestände im Farmsilo, dem Palettenlager diverser Lager für Saatgut, Dünger usw.
 Lagerbestände in Fahrzeugen und bei den Produktionsstätten werden mit einbezogen. Verschiedene Sortier- und Anzeigeeinstellungen möglich.  
 
-#### Warendetails
-Anzeige der Lagerorte/-mengen und dem Warenbedarf. Übersichtskarte mit eingezeichneteten Lager- und Produktionsstätten sowie der Paletten und Ballen.
-
 #### Produktionsübersicht
 Übersicht über alle Produktionsstätten. Fehlende Rohstoffe bzw. volle Lager werden farblich markiert. Alphabetische Sortierung oder nach Füllstand.
+
+#### Fabrikdetails
+Anzeige zusätzlicher Details der Produktionsanlagen. Neben Lagermengen und Kapazitäten werden auch der Verbrauch und die Produktion pro Stunde und Tag angezeigt.
+
+#### Warendetails
+Anzeige der Lagerorte/-mengen und dem Warenbedarf. Übersichtskarte mit eingezeichneteten Lager- und Produktionsstätten sowie der Paletten und Ballen.
 
 ## Instalation
 

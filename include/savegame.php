@@ -18,7 +18,6 @@
  * along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
  *
  */
-
 if (! defined ( 'IN_NFMWS' )) {
 	exit ();
 }
@@ -63,6 +62,16 @@ foreach ( $careerVehicles->item as $item ) {
 		} else {
 			$fillType = getFillType ( $item ['filename'] );
 		}
+		
+		
+		/* Geldkassetten experimentell entfernt.
+		 * Vorteil: Das Geld wird nicht doppelt gezählt wenn sich die Kassetten noch im Hofladen befinden
+		 * Nachteil: Die Kassetten werden nicht mehr auf der Karte angezeigt
+		 * Lösung: Gelkassetten dürften nur ausserhalb des Hofladens gezählt werden
+		 */ 		
+		if($fillType == 'geldkassette') continue;
+		
+		
 		if ($location != 'outOfMap') {
 			$positions [$className] [translate ( $fillType )] [] = explode ( ' ', $item ['position'] );
 		}
@@ -88,6 +97,14 @@ foreach ( $careerVehicles->item as $item ) {
 			$fillType = strval ( $node ['fillType'] );
 			$fillLevel = intval ( $node ['fillLevel'] );
 			addCommodity ( $fillType, $fillLevel, $location );
+			$mapconfig = array_merge ( $mapconfig, array (
+					'HayLoftPlaceable' => array (
+							'position' => '-550 0 750',
+							'showInProduction' => false,
+							'rawMaterial' => array (),
+							'product' => array () 
+					) 
+			) );
 		}
 	}
 }
@@ -122,10 +139,10 @@ foreach ( $careerVehicles->onCreateLoadedObject as $object ) {
 			$fillLevel = intval ( $node ['fillLevel'] );
 			addCommodity ( $fillType, $fillLevel, $location );
 		}
-		$plants [$plant] = array (
-				'i3dName' => $location,
-				'position' => '194.64 100.736 101.567' 
-		);
+		// $plants [$plant] = array (
+		// 'i3dName' => $location,
+		// 'position' => '194.64 100.736 101.567'
+		// );
 	}
 	
 	// BGA
@@ -157,7 +174,7 @@ foreach ( $careerVehicles->onCreateLoadedObject as $object ) {
 		$plant = translate ( $location );
 		$plants [$plant] = array (
 				'i3dName' => $location,
-				'position' => '570 0 -19'
+				'position' => '570 0 -19' 
 		);
 		$plantstate = 0;
 		$fillType = $fillLevel = array ();

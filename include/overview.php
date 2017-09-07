@@ -23,18 +23,6 @@ if (! defined ( 'IN_NFMWS' )) {
 	exit ();
 }
 
-$mode = GetParam ( 'mode', 'G' );
-$modes = array (
-		'game',
-		'player',
-		'mods',
-		'vehicles',
-		'map' 
-);
-if (! in_array ( $mode, $modes )) {
-	$mode = 'game';
-}
-
 // Kartendaten laden
 require ('./include/savegame.php');
 

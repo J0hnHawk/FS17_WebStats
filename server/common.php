@@ -28,6 +28,7 @@ if (empty ( $mapconfig ) || ! is_array ( $mapconfig )) {
 
 $mapconfig = array_merge ( $mapconfig, array (
 		'Storage_storage1' => array (
+				'ProdPerHour' => 0,
 				'position' => '194.64 100.736 101.567',
 				'showInProduction' => false,
 				'rawMaterial' => array (),
@@ -35,7 +36,7 @@ $mapconfig = array_merge ( $mapconfig, array (
 		),
 		'Animals_cow' => array (
 				'ProdPerHour' => 0,
-				'position' => '0 0 0',
+				'position' => '120 0 150',
 				'showInProduction' => false,
 				'rawMaterial' => array (),
 				'product' => array (
@@ -61,7 +62,7 @@ $mapconfig = array_merge ( $mapconfig, array (
 		),
 		'Animals_pig' => array (
 				'ProdPerHour' => 0,
-				'position' => '0 0 0',
+				'position' => '250 0 400',
 				'showInProduction' => false,
 				'rawMaterial' => array () 
 		),
