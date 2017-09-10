@@ -1,5 +1,11 @@
 # Changelog
 
+## [Version 1.2.2](https://github.com/J0hnHawk/FS17_NF_Marsch_WebStats/releases/tag/v1.2.2) (10.09.2017)
+
+**Berichtigte Fehler:**
+- Nachfrage nach Zucker bei den Brennereien ergänzt
+- Meldung bei nicht vorhandenen Waren (neue Spielstände) beseitigt (#6)
+
 ## [Version 1.2.1](https://github.com/J0hnHawk/FS17_NF_Marsch_WebStats/releases/tag/v1.2.1) (07.09.2017)
 
 **Berichtigte Fehler:**
