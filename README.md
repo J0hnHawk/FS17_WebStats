@@ -1,4 +1,4 @@
-# FS17 Nordfriesische Marsch WebStats v1.2.1
+# FS17 Nordfriesische Marsch WebStats v1.2.2
 
 ### Statuswebseite für die Farming Simulator 17 Mod Map Nordfriesische Marsch
 Die Webseite generiert Übersichtsseiten von lokale Spielständen oder dedizierten Servern
