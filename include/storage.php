@@ -18,7 +18,6 @@
  * along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
  *
  */
-
 if (! defined ( 'IN_NFMWS' )) {
 	exit ();
 }
@@ -31,9 +30,8 @@ if ($_SERVER ['REQUEST_METHOD'] == 'POST') {
 	$options ['version'] = $cookieVersion;
 	setcookie ( 'nfmarsch', json_encode ( $options ), time () + 31536000 );
 }
-
 foreach ( $commodities as $name => $commodity ) {
-	if($commodity['isCombine']) {
+	if ($commodity ['isCombine']) {
 		unset ( $commodities [$name] );
 		continue;
 	}
@@ -47,6 +45,9 @@ foreach ( $commodities as $name => $commodity ) {
 		}
 	}
 	if ($options ['storage'] ['hideZero'] && $commodities [$name] ['overall'] == 0) {
+		unset ( $commodities [$name] );
+	}
+	if (isset ( $commodities [$name] ) && sizeof ( $commodities [$name] ['locations'] ) == 0) {
 		unset ( $commodities [$name] );
 	}
 }

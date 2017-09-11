@@ -45,6 +45,7 @@
 					<p>{$webStatsVersion}</p>
 					<p>Copyright (c) 2017, John Hawk</p>
 					<p>Webseite zur Anzeige des Serverstatus sowie Überwachung der Produktionsanlagen und Lagerbestände.</p>
+					<p>Anregungen, Hilfe und Verbesserungsvorschläge von Billy5haw</p>
 					<p>
 						Author: John Hawk &lt;<a href="mailto:John Hawk <john.hawk@ gmx.net>">john.hawk@gmx.net</a>&gt;
 					</p>
