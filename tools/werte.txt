@@ -1,0 +1,53 @@
+######################################################################
+### Erträge pro Hektar 
+######################################################################
+Felder (gepflügt, 3x gedüngt)
+Gerste		 19.200 l/ha
+Kartoffeln	 82.600 l/ha
+Körnermais	 18.400 l/ha
+Pappeln		208.700 l/ha
+Raps		 11.600 l/ha
+Silomais	143.000 l/ha
+Soja	      9.000 l/ha
+Sonnenblumen 10.400 l/ha
+Stroh		 70.200 l/ha
+Weizen		 17.800 l/ha
+Zuckerrüben	115.600 l/ha
+
+Graswiesen
+voll ausgewachsen, 2x gedüngt	88.000 l/ha
+voll ausgewachsen, 1x gedüngt	75.000 l/ha
+voll ausgewachsen, ungedüngt	61.000 l/ha
+
+nicht ausgewachsen, 2x gedüngt	59.000 l/ha
+nicht ausgewachsen, 1x gedüngt	50.000 l/ha
+nicht ausgewachsen, ungedüngt	41.000 l/ha
+
+Quelle: https://forum.giants-software.com/viewtopic.php?f=885&t=99009
+
+######################################################################
+### Futterverbrauch pro Tier je Tag (ab 15 Tieren)
+######################################################################
+Verbrauch			Kühe	Schweine	Schafe
+Wasser				 35 l		10 l		15 l
+Stroh				 70 l		20 l
+Gras				 70 l
+Heu/Silage			175 l*
+Kraftfutter			105 l
+Körnermais						45 l
+Weizen/Gerste					22 l
+Raps/Soja/Sonnenbl.				18 l
+Rüben/Kartoffeln				 5 l
+Gras/Heu									30 l
+* passt irgendwie nicht, sind eher 275 l - Tippfehler?
+
+Produktion			Kühe	Schweine	Schafe
+Gülle				250 l		65 l
+Mist				200 l		50 l
+Milch				696 l*
+Wolle									1 Palette pro 88 Tiere 
+
+* Molkerei benötigt 90.000 l Milch = ~130 Kühe
+Quelle: https://forum.giants-software.com/viewtopic.php?f=885&t=100995
+
+######################################################################
