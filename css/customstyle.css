@@ -1,4 +1,5 @@
 html {
+	overflow-y: scroll;
 	position: relative;
 	min-height: 100%;
 }
@@ -6,6 +7,12 @@ html {
 body {
 	padding-top: 60px;
 	margin-bottom: 60px;
+}
+
+/*.modal {overflow-y: auto;}.modal-open {overflow: auto;}*/
+
+.modal-open[style] {
+	padding-right: 0px !important;
 }
 
 .footer {
@@ -23,21 +30,23 @@ body {
 }
 
 /* https://www.andrerinas.de/tutorials/bootstrap3-mit-5-spalten-so-gehts.html */
-@media (min-width: 768px){
-    .fivecolumns .col-md-2, .fivecolumns .col-sm-2, .fivecolumns .col-lg-2  {
-        width: 20%;
-        *width: 20%;
-    }
+@media ( min-width : 768px) {
+	.fivecolumns .col-md-2, .fivecolumns .col-sm-2, .fivecolumns .col-lg-2 {
+		width: 20%;
+		*width: 20%;
+	}
 }
-@media (min-width: 1200px) {
-    .fivecolumns .col-md-2, .fivecolumns .col-sm-2, .fivecolumns .col-lg-2 {
-        width: 20%;
-        *width: 20%;
-    }
+
+@media ( min-width : 1200px) {
+	.fivecolumns .col-md-2, .fivecolumns .col-sm-2, .fivecolumns .col-lg-2 {
+		width: 20%;
+		*width: 20%;
+	}
 }
-@media (min-width: 768px) and (max-width: 979px) {
-    .fivecolumns .col-md-2, .fivecolumns .col-sm-2, .fivecolumns .col-lg-2 {
-        width: 20%;
-        *width: 20%;
-    }
+
+@media ( min-width : 768px) and (max-width: 979px) {
+	.fivecolumns .col-md-2, .fivecolumns .col-sm-2, .fivecolumns .col-lg-2 {
+		width: 20%;
+		*width: 20%;
+	}
 }
