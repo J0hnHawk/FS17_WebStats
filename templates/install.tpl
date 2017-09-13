@@ -40,7 +40,8 @@
 		<div class="jumbotron">
 			<h1>Nordfriesische Marsch WebStats</h1>
 			<p>
-				Statuswebseite für die Farming Simulator 17 Mod Map "Nordfriesische Marsch". <br>Anzeige der Spieler, Mods, Fahrzeuge, Lagerbestände und Produktionsanlagen.
+				Statuswebseite für die Farming Simulator 17 Mod Map "Nordfriesische Marsch". <br>Anzeige der Spieler, Mods, Fahrzeuge, Lagerbestände und
+				Produktionsanlagen.
 			</p>
 		</div>
 		<div class="page-header">
@@ -56,27 +57,28 @@
 			<div class="tab-content">
 				<div role="tabpanel" class="tab-pane active" id="server">
 					<h2>Dedicaded Server</h2>
+					{if $fsockopen}
 					<form class="form-horizontal" action="index.php?page=install" method="post">
 						{if $error}{$error}{/if}
 						<div class="form-group">
 							<label for="Server-IP" class="col-sm-3 control-label">Server IP-Adresse</label>
 							<div class="col-sm-7">
-								<input type="ip" name="serverip" class="form-control" id="Server-IP" placeholder="IP-Adresse" {if $postdata|@count> 0}value="{$postdata[0]}"{/if}> <span id="helpBlock" class="help-block">IP-Adresse
-									des Farming Simulator 17 Dedicated Servers.</span>
+								<input type="ip" name="serverip" class="form-control" id="Server-IP" placeholder="IP-Adresse" {if $postdata|@count>
+								0}value="{$postdata[0]}"{/if}> <span id="helpBlock" class="help-block">IP-Adresse des Farming Simulator 17 Dedicated Servers.</span>
 							</div>
 						</div>
 						<div class="form-group">
 							<label for="Server-Port" class="col-sm-3 control-label">Server-Port</label>
 							<div class="col-sm-7">
-								<input type="text" name="serverport" class="form-control" id="Server-Port" placeholder="Port" {if $postdata|@count> 0}value="{$postdata[1]}"{/if}> <span id="helpBlock" class="help-block">Port
-									der Web-API, nicht der Port für den Spiel-Client.</span>
+								<input type="text" name="serverport" class="form-control" id="Server-Port" placeholder="Port" {if $postdata|@count>
+								0}value="{$postdata[1]}"{/if}> <span id="helpBlock" class="help-block">Port der Web-API, nicht der Port für den Spiel-Client.</span>
 							</div>
 						</div>
 						<div class="form-group">
 							<label for="Server-Code" class="col-sm-3 control-label">Server-Code</label>
 							<div class="col-sm-7">
-								<input type="text" name="servercode" class="form-control" id="Server-Code" placeholder="Code" {if $postdata|@count> 0}value="{$postdata[2]}"{/if}> <span id="helpBlock" class="help-block">Web-API
-									Zugriffscode.</span>
+								<input type="text" name="servercode" class="form-control" id="Server-Code" placeholder="Code" {if $postdata|@count>
+								0}value="{$postdata[2]}"{/if}> <span id="helpBlock" class="help-block">Web-API Zugriffscode.</span>
 							</div>
 						</div>
 						<div class="form-group">
@@ -85,22 +87,36 @@
 							</div>
 						</div>
 					</form>
+					{else}
+					<p class="lead">
+						Auf diesem Webserver kann NF Marsch WebStats leider nicht mit einem Dedicated Server verwendet werden, da die Funktion
+						<code>fsockopen()</code>
+						nicht unterstützt wird.
+					</p>
+					<p class="lead">
+						Bitte prüfe bei deinem Webhoster, ob die Funktion in der
+						<code>php.ini</code>
+						aktiviert werden kann.
+					</p>
+					{/if}
 				</div>
 				<div role="tabpanel" class="tab-pane" id="local">
 					<h2>lokaler Spielstand</h2>
 					<form class="form-horizontal" action="index.php?page=install" method="post">
 						{if $error}{$error}{/if}
 						<p>
-							Bitte beachte, dass in Farming Simulator der Spielstand grundsätzlich nicht automatisch gespeichert wird. Damit auf dieser Webseite korrekte Lagerbestände angezeigt werden, muss der Spielstand
-							zuvor gespeichert werden. Alternativ installiere die Mod <a href="https://www.farming-simulator.com/mod.php?lang=de&country=de&mod_id=50533&title=fs2017">Map Autosave</a>, um den Spielstand
-							automatisch alle 5 Minuten zu speichern.
+							Bitte beachte, dass in Farming Simulator der Spielstand grundsätzlich nicht automatisch gespeichert wird. Damit auf dieser Webseite korrekte
+							Lagerbestände angezeigt werden, muss der Spielstand zuvor gespeichert werden. Alternativ installiere die Mod <a
+								href="https://www.farming-simulator.com/mod.php?lang=de&country=de&mod_id=50533&title=fs2017">Map Autosave</a>, um den Spielstand automatisch
+							alle 5 Minuten zu speichern.
 						</p>
 						<input type="file" name="file" style="visibility: hidden;" id="path2savegame" />
 						<div class="form-group">
 							<label for="savepath" class="col-sm-3 control-label">Pfad zum Spielstand</label>
 							<div class="col-sm-7">
-								<input type="text" name="savepath" class="form-control" id="savepath" placeholder="Pfad" {if $postdata|@count> 0}value="{$postdata[3]}"{/if}> <span id="helpBlock" class="help-block">Standartmäßig
-									speichert Farming Simulator Spielstände unter:<br> <code>C:\Users\"deinusername"\Documents\My Games\FarmingSimulator2017\savegamex</code>
+								<input type="text" name="savepath" class="form-control" id="savepath" placeholder="Pfad" {if $postdata|@count> 0}value="{$postdata[3]}"{/if}>
+								<span id="helpBlock" class="help-block">Standartmäßig speichert Farming Simulator Spielstände unter:<br> <code>C:\Users\"deinusername"\Documents\My
+										Games\FarmingSimulator2017\savegamex</code>
 								</span>
 							</div>
 						</div>
@@ -111,7 +127,7 @@
 						</div>
 					</form>
 					<script>
-					{if $postdata|@count>0 && $postdata[4]}
+					{if $postdata|@count>0 && $postdata[4] && $fsockopen}
 						$('.nav-tabs a[href="#server"]').tab('show');
 					{else}
 						$('.nav-tabs a[href="#local"]').tab('show');

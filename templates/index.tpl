@@ -27,7 +27,7 @@
 		<div class="container theme-showcase" role="main">
 			<div class="jumbotron">
 				<h1>Verbindungsfehler</h1>
-				<p class="lead">Es konnten keine Daten vom Dedicated Server abgerufen werden. Bitte prüfe die Serveradresse oder Internetverbindung.</p>
+				<p class="lead">Es konnten keine Daten vom Dedicated Server abgerufen werden. Bitte prüfe die Serveradresse oder Internetverbindung. Die Funktion <code>fsockopen()</code> muss erlaubt auf dem Webserver sein.</p>
 			</div>
 		</div>
 		{/if}
