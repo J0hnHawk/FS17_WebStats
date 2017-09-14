@@ -2,6 +2,12 @@
 
 ## noch nicht veröffentlichte Änderungen
 
+**Änderungen und Erweiterungen:**
+- Projekt umbenannt in FS17 Webstats
+- FS17 Webstats ist nun für soweit vorbereitet, dass auch andere Karten unterstützt werden
+- Prüfung, ob fsockopen() erlaubt ist bei der Installation
+- Fehlerbehandung geändert; Logdatei statt Anzeige
+
 **Berichtigte Fehler:**
 - Die Einstellung "nur Paletten" funktioniert jetzt in der Lagerübersicht korrekt 
 

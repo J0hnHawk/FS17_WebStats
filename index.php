@@ -1,14 +1,14 @@
 <?php
 /**
- * This file is part of the "NF Marsch Webstats" package.
+ * This file is part of the "FS17 Webstats" package.
  * Copyright (C) 2017 John Hawk <john.hawk@gmx.net>
  *
- * "NF Marsch Webstats" is free software: you can redistribute it and/or
+ * "FS17 Webstats" is free software: you can redistribute it and/or
  * modify it under the terms of the GNU General Public License as published
  * by the Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
  *
- * "NF Marsch Webstats" is distributed in the hope that it will be useful,
+ * "FS17 Webstats" is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
  * GNU General Public License for more details.
@@ -16,14 +16,14 @@
  * You should have received a copy of the GNU General Public License
  * along with Foobar. If not, see <http://www.gnu.org/licenses/>.
  */
-ini_set ( 'display_errors', 1 );
-ini_set ( 'display_startup_errors', 1 );
-error_reporting ( E_ALL );
+ini_set ( 'error_reporting', E_ALL );
+ini_set ( 'display_errors', 0 );
+ini_set ( 'log_errors', 1 );
+ini_set ( 'error_log', 'error.log' );
 
 session_start ();
 define ( 'IN_NFMWS', true );
 
-date_default_timezone_set ( 'Europe/Lisbon' );
 setlocale ( LC_ALL, 'de_DE@euro', 'de_DE', 'de', 'ge' );
 
 require ('./include/smarty/Smarty.class.php');
@@ -32,13 +32,17 @@ require ('./include/functions.php');
 $smarty = new Smarty ();
 $smarty->debugging = false;
 $smarty->caching = false;
-$smarty->assign ( 'webStatsVersion', 'Version 1.2.2 (10.09.2017)' );
+$smarty->assign ( 'webStatsVersion', 'Version 1.3.0 (alpha)' );
 
 // Serverkonfiguration laden - wenn nicht vorhanden Instalation starten
 $configFile = './server/server.conf';
 if (file_exists ( $configFile )) {
 	$server = file ( $configFile );
-	list ( $dSrvIp, $dSrvPort, $dSrvCode, $savegame, $isDediServer ) = unserialize ( $server [0] );
+	$serverConfig = unserialize ( $server[0] );
+	list ( $dSrvIp, $dSrvPort, $dSrvCode, $savegame, $isDediServer, $mapPath ) = $serverConfig;
+	if ($mapPath == '') {
+		$mapPath = 'nfmarsch29';
+	}
 	$smarty->assign ( 'isDediServer', $isDediServer );
 } else {
 	define ( 'IN_INSTALL', true );
@@ -50,11 +54,19 @@ if (file_exists ( $configFile )) {
 include ('./include/coockie.php');
 
 // Kartendetails laden
-$version = "map29";
-require ("./server/$version/mapconfig.php");
-require ("./server/$version/translation.php");
-$smarty->assign ( 'mapVersion', $mapVersion );
-require ('./server/common.php');
+list ( $mapName, $mapShort, $mapVersion, $mapLink, $mapCopyright ) = file ( "./server/$mapPath/map.txt" );
+$map = array (
+		'Name' => $mapName,
+		'Path' => $mapPath,
+		'Short' => $mapShort,
+		'Version' => $mapVersion,
+		'Link' => $mapLink,
+		'Copyright' => $mapCopyright 
+);
+$smarty->assign ( 'map', $map );
+require ("./server/$mapPath/mapconfig.php");
+require ("./server/$mapPath/translation.php");
+require ("./server/$mapPath/common.php");
 require ('./include/savegame.php');
 
 // Erlaubte Seiten
@@ -65,7 +77,7 @@ $pages = array (
 		'commodity',
 		'options',
 		'lizenz',
-		'factories'
+		'factories' 
 );
 $page = GetParam ( 'page', 'G' );
 if (! in_array ( $page, $pages ))

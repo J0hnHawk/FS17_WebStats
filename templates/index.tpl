@@ -7,7 +7,7 @@
 <meta name="description" content="WebStats für die Mod Map Nordfriesische Marsch">
 <meta name="author" content="John Hawk">
 <link rel="icon" href="./images/favicon.ico">
-<title>NF Marsch {$mapVersion} WebStats</title>
+<title>{$map.Short} {$map.Version} WebStats</title>
 <link href="./css/bootstrap.min.css" rel="stylesheet">
 <link href="./css/customstyle.css" rel="stylesheet">
 <script src="./javascript/jquery.min.js"></script>
@@ -39,7 +39,7 @@
 			<div class="modal-content">
 				<div class="modal-header">
 					<button type="button" class="close" data-dismiss="modal">&times;</button>
-					<h4 class="modal-title">Nordfriesische Marsch {$mapVersion} WebStats</h4>
+					<h4 class="modal-title">Farming Simulator 17 WebStats</h4>
 				</div>
 				<div class="modal-body">
 					<p>{$webStatsVersion}</p>

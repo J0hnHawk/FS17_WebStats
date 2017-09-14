@@ -14,6 +14,14 @@
 						</label>
 					</div>
 				</div>
+				<div class="form-group">
+					<label class="col-sm-2 control-label">Mod Map</label>
+					<div class="col-sm-8">
+						<select class="form-control" id="g_map" name="g_map"> {foreach $maps as $mapDir => $mapData}
+							<option value="{$mapDir}" {if $mapDir==$map.Path}selected{/if}>{$mapData.Name} {$mapData.Version}</option> {/foreach}
+						</select>
+					</div>
+				</div>
 			</fieldset>
 			<fieldset>
 				<legend>Lagerbestände</legend>
@@ -21,7 +29,8 @@
 					<label class="col-sm-2 control-label">Sortierung</label>
 					<div class="col-sm-10">
 						<label class="radio-inline"> <input type="radio" name="s_sortByName" value="1"{if $options.storage.sortByName}checked{/if}> alphabetisch
-						</label> <label class="radio-inline"> <input type="radio" name="s_sortByName" value="0"{if !$options.storage.sortByName}checked{/if}> nach Füllstand
+						</label> <label class="radio-inline"> <input type="radio" name="s_sortByName" value="0"{if !$options.storage.sortByName}checked{/if}> nach
+							Füllstand
 						</label>
 					</div>
 				</div>
@@ -29,7 +38,8 @@
 					<label for="sortType" class="col-sm-2 control-label">Ladung von Fahrzeugen</label>
 					<div class="col-sm-10">
 						<label class="radio-inline"> <input type="radio" name="s_showVehicles" value="1"{if $options.storage.showVehicles}checked{/if}> anzeigen
-						</label> <label class="radio-inline"> <input type="radio" name="s_showVehicles" value="0"{if !$options.storage.showVehicles}checked{/if}> nicht anzeigen
+						</label> <label class="radio-inline"> <input type="radio" name="s_showVehicles" value="0"{if !$options.storage.showVehicles}checked{/if}> nicht
+							anzeigen
 						</label>
 					</div>
 				</div>
@@ -56,21 +66,27 @@
 					<label for="sortType" class="col-sm-2 control-label">Sortierung</label>
 					<div class="col-sm-10">
 						<label class="radio-inline"> <input type="radio" name="p_sortByName" value="1"{if $options.production.sortByName}checked{/if}> alphabetisch
-						</label> <label class="radio-inline"> <input type="radio" name="p_sortByName" value="0"{if !$options.production.sortByName}checked{/if}> nach Füllstand
+						</label> <label class="radio-inline"> <input type="radio" name="p_sortByName" value="0"{if !$options.production.sortByName}checked{/if}> nach
+							Füllstand
 						</label>
 					</div>
 				</div>
 				<div class="form-group">
 					<label for="sortType" class="col-sm-2 control-label">Volle Produktlager</label>
 					<div class="col-sm-10">
-						<label class="radio-inline"> <input type="radio" name="p_sortFullProducts" value="1"{if $options.production.sortFullProducts}checked{/if}> bei Sortierung berücksichtigen
-						</label> <label class="radio-inline"> <input type="radio" name="p_sortFullProducts" value="0"{if !$options.production.sortFullProducts}checked{/if}> bei Sortierung ignorieren
+						<label class="radio-inline"> <input type="radio" name="p_sortFullProducts" value="1"{if $options.production.sortFullProducts}checked{/if}> bei
+							Sortierung berücksichtigen
+						</label> <label class="radio-inline"> <input type="radio" name="p_sortFullProducts" value="0"{if !$options.production.sortFullProducts}checked{/if}>
+							bei Sortierung ignorieren
 						</label>
 					</div>
 				</div>
+			</fieldset>
+			<fieldset><legend></legend>
 				<div class="form-group">
-					<div class="col-sm-offset-2 col-sm-10">
-						<button type="submit" class="btn btn-default">Speichern</button>
+					<div class="col-sm-offset-6 col-sm-6">
+						<button type="reset" class="btn btn-default">Zurücksetzen</button>
+						<button type="submit" class="btn btn-primary">Konfiguration speichern</button>
 					</div>
 				</div>
 			</fieldset>

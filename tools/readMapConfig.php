@@ -108,6 +108,7 @@ echo ('$mapconfig = array(');
 foreach ( $produktion as $item ) {
 	$showInStorage = 'false';
 	$showInProduction = 'true';
+	if(!isset($item ['name'])) continue;
 	if (strpos ( strval ( $item ['name'] ), 'Lager_' ) !== false) {
 		$showInStorage = 'true';
 		$showInProduction = 'false';

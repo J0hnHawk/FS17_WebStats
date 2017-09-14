@@ -1,15 +1,15 @@
 <?php
 /**
  *
- * This file is part of the "NF Marsch Webstats" package.
+ * This file is part of the "FS17 Webstats" package.
  * Copyright (C) 2017  John Hawk <john.hawk@gmx.net>
  *
- * "NF Marsch Webstats" is free software: you can redistribute it and/or
+ * "FS17 Webstats" is free software: you can redistribute it and/or
  * modify it under the terms of the GNU General Public License as published
  * by the Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
  *
- * "NF Marsch Webstats" is distributed in the hope that it will be useful,
+ * "FS17 Webstats" is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU General Public License for more details.
@@ -23,8 +23,8 @@ if (! defined('IN_NFMWS')) {
 }
 
 // Kartendaten laden
-require ('./include/savegame.php');
-$object = GetParam('object', 'G', 'wheat');
+$default = current($commodities);
+$object = GetParam('object', 'G', $default[i3dName]);
 $l_object = translate($object);
 
 // Ware vorhanden?
@@ -34,7 +34,7 @@ if (! isset($commodities[$l_object])) {
 }
 
 // Übersichtskarte
-$linkToImage = "./server/map29/pda_map_H.jpg";
+$linkToImage = "./server/$mapPath/pda_map_H.jpg";
 $imageSize = 512;
 $mapSize = 2048;
 $mapSizeHalf = $mapSize / 2.0;

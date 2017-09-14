@@ -8,7 +8,7 @@
 <meta name="description" content="WebStats für die Mod Map Nordfriesische Marsch">
 <meta name="author" content="John Hawk">
 <link rel="icon" href="./images/favicon.ico">
-<title>NF Marsch WebStats</title>
+<title>FS17 WebStats</title>
 <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
 <link href="./css/customstyle.css" rel="stylesheet">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
@@ -21,14 +21,14 @@
 				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
 					<span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="index.php">NF Marsch WebStats</a>
+				<a class="navbar-brand" href="index.php">FS17 WebStats</a>
 			</div>
 		</div>
 	</nav>
 	{if $success}
 	<div class="container theme-showcase" role="main">
 		<div class="jumbotron">
-			<h1>Nordfriesische Marsch WebStats</h1>
+			<h1>Farming Simulator 17 WebStats</h1>
 			<p>Konfiguration erfolgreich gespeichert.</p>
 			<p>
 				<a class="btn btn-primary btn-lg" href="index.php" role="button">zur Übersicht wechseln &raquo;</a>
@@ -38,10 +38,10 @@
 	{else}
 	<div class="container theme-showcase" role="main">
 		<div class="jumbotron">
-			<h1>Nordfriesische Marsch WebStats</h1>
+			<h1>Farming Simulator 17 WebStats</h1>
 			<p>
-				Statuswebseite für die Farming Simulator 17 Mod Map "Nordfriesische Marsch". <br>Anzeige der Spieler, Mods, Fahrzeuge, Lagerbestände und
-				Produktionsanlagen.
+				Auf dieser Webseite für Dedicated Server und lokale Spielstände von Farming Simulator 17 können Spieler, Fahrzeuge, Lagerbestände und
+				Produktionsanlagen angezeigt werden. Fehlende Rohstoffe sowie volle Produktlager werden kenntlich gemacht.
 			</p>
 		</div>
 		<div class="page-header">
@@ -82,6 +82,14 @@
 							</div>
 						</div>
 						<div class="form-group">
+							<label class="col-sm-3 control-label">Mod Map</label>
+							<div class="col-sm-7">
+								<select class="form-control" id="modmap" name="modmap"> {foreach $maps as $mapDir => $mapData}
+									<option value="{$mapDir}" {if $mapDir==$map.Path}selected{/if}>{$mapData.Name} {$mapData.Version}</option> {/foreach}
+								</select><span id="helpBlock" class="help-block">Installierte Karte auf dem Server auswählen.</span>
+							</div>
+						</div>
+						<div class="form-group">
 							<div class="col-sm-offset-7 col-sm-3">
 								<button type="submit" name="submit" value="server" class="pull-right btn btn-primary btn-block">Konfiguration speichern</button>
 							</div>
@@ -89,7 +97,7 @@
 					</form>
 					{else}
 					<p class="lead">
-						Auf diesem Webserver kann NF Marsch WebStats leider nicht mit einem Dedicated Server verwendet werden, da die Funktion
+						Auf diesem Webserver kann FS17 Webstats leider nicht mit einem Dedicated Server verwendet werden, da die Funktion
 						<code>fsockopen()</code>
 						nicht unterstützt wird.
 					</p>
@@ -120,6 +128,15 @@
 								</span>
 							</div>
 						</div>
+						<div class="form-group">
+							<label class="col-sm-3 control-label">Mod Map</label>
+							<div class="col-sm-7">
+								<select class="form-control" id="modmap" name="modmap"> {foreach $maps as $mapDir => $mapData}
+									<option value="{$mapDir}">{$mapData.Name} {$mapData.Version}</option> {/foreach}
+								</select><span id="helpBlock" class="help-block">Karte des Spielstands auswählen.</span>
+							</div>
+						</div>
+
 						<div class="form-group">
 							<div class="col-sm-offset-7 col-sm-3">
 								<button type="submit" name="submit" value="local" class="pull-right btn btn-primary btn-block">Konfiguration speichern</button>

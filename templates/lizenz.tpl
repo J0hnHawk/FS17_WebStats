@@ -1,6 +1,6 @@
 <div class="page-header">
 	<h3>Software von Drittanbietern</h3>
-	<p>Einige der in NF Marsch WebStats enthaltenen Komponenten stehen unter freien oder Open-Source-Lizenzen. Ich danke allen Mitwirkenden an diesen
+	<p>Einige der in FS17 Webstats enthaltenen Komponenten stehen unter freien oder Open-Source-Lizenzen. Ich danke allen Mitwirkenden an diesen
 		Projekten</p>
 </div>
 <div class="row">
@@ -13,12 +13,6 @@
 			Released under the MIT license (<a href="https://opensource.org/licenses/mit-license.php">https://opensource.org/licenses/mit-license.php</a>)
 		</p>
 		<p>Copyright 2015 New Digital Group, Inc.</p>
-		<hr>
-		<!-- NF Marsch -->
-		<h4>
-			Mod Map Nordfriesische Marsch (<a href="https://www.fedaction-letsplay.de/">https://www.fedaction-letsplay.de/</a>)
-		</h4>
-		<p>Copyright dani1803 / FedActionLetsPlay</p>
 		<hr>
 		<!-- Smarty -->
 		<h4>
@@ -34,5 +28,13 @@
 			webStatsSDK 7.0.3 (<a href="https://giants-software.com/">https://giants-software.com/</a>)
 		</h4>
 		<p>Copyright (c) 2008-2013 GIANTS Software GmbH</p>
+		<hr>
+		<!-- Mod Map -->
+		<h3>Installierte Karte</h3>
+		<h4>
+			{$map.Name} (<a href="{$map.Link}">{$map.Link}</a>)
+		</h4>
+		<p>{$map.Copyright}</p>
+		<hr>
 	</div>
 </div>

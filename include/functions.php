@@ -1,15 +1,15 @@
 <?php
 /**
  *
- * This file is part of the "NF Marsch Webstats" package.
+ * This file is part of the "FS17 Webstats" package.
  * Copyright (C) 2017  John Hawk <john.hawk@gmx.net>
  *
- * "NF Marsch Webstats" is free software: you can redistribute it and/or
+ * "FS17 Webstats" is free software: you can redistribute it and/or
  * modify it under the terms of the GNU General Public License as published
  * by the Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
  *
- * "NF Marsch Webstats" is distributed in the hope that it will be useful,
+ * "FS17 Webstats" is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU General Public License for more details.
@@ -18,7 +18,6 @@
  * along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
  *
  */
-
 if (! defined ( 'IN_NFMWS' )) {
 	exit ();
 }
@@ -36,6 +35,46 @@ function GetParam($ParamName, $Method = "P", $DefaultValue = "") {
 		else
 			return $DefaultValue;
 	}
+}
+// Karten laden
+function getMaps() {
+	$maps = array ();
+	// Dateien die im Kartenordner vorhanden sein müssen
+	$mapFiles = array (
+			'common.php',
+			'map.txt',
+			'mapconfig.php',
+			'pda_map_H.jpg',
+			'translation.php' 
+	);
+	// Verzeichnis mit Karten druchsuchen
+	if (is_dir ( './server' )) {
+		if ($dh = opendir ( './server/' )) {
+			while ( ($mapDir = readdir ( $dh )) !== false ) {
+				if ($mapDir != "." && $mapDir != ".." && is_dir ( "./server/$mapDir" )) {
+					$mapIsOK = true;
+					foreach ( $mapFiles as $mapFile ) {
+						if (! file_exists ( "./server/$mapDir/$mapFile" )) {
+							$mapIsOK = false;
+						}
+					}
+					if ($mapIsOK) {
+						list ( $mapName, $mapShort, $mapVersion, $mapLink, $mapCopyright ) = file ( "./server/$mapDir/map.txt" );
+						$maps [$mapDir] = array (
+								'Name' => $mapName,
+								'Path' => $mapDir,
+								'Short' => $mapShort,
+								'Version' => $mapVersion,
+								'Link' => $mapLink,
+								'Copyright' => $mapCopyright 
+						);
+					}
+				}
+			}
+			closedir ( $dh );
+		}
+	}
+	return $maps;
 }
 
 // Übersetzung
@@ -139,8 +178,8 @@ function getServerStatsSimpleXML($url) {
 	// cacheFile für auch savegame ergänzt
 	$pathParts = pathinfo ( $urlParts ['path'] );
 	parse_str ( $urlParts ["query"], $pathQuery );
-	if (!file_exists ( './cache' )) {
-		mkdir('./cache');
+	if (! file_exists ( './cache' )) {
+		mkdir ( './cache' );
 	}
 	$cacheFile = './cache/' . $pathParts ['filename'] . (isset ( $pathQuery ['file'] ) ? '-' . $pathQuery ['file'] : '') . '.cached';
 	$cacheTimeout = 60;
