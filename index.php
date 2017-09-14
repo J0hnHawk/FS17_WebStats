@@ -35,7 +35,7 @@ $smarty->caching = false;
 $smarty->assign ( 'webStatsVersion', 'Version 1.3.0 (alpha)' );
 
 // Serverkonfiguration laden - wenn nicht vorhanden Instalation starten
-$configFile = './server/server.conf';
+$configFile = './config/server.conf';
 if (file_exists ( $configFile )) {
 	$server = file ( $configFile );
 	$serverConfig = unserialize ( $server[0] );
@@ -54,7 +54,7 @@ if (file_exists ( $configFile )) {
 include ('./include/coockie.php');
 
 // Kartendetails laden
-list ( $mapName, $mapShort, $mapVersion, $mapLink, $mapCopyright ) = file ( "./server/$mapPath/map.txt" );
+list ( $mapName, $mapShort, $mapVersion, $mapLink, $mapCopyright ) = file ( "./config/$mapPath/map.txt" );
 $map = array (
 		'Name' => $mapName,
 		'Path' => $mapPath,
@@ -64,9 +64,9 @@ $map = array (
 		'Copyright' => $mapCopyright 
 );
 $smarty->assign ( 'map', $map );
-require ("./server/$mapPath/mapconfig.php");
-require ("./server/$mapPath/translation.php");
-require ("./server/$mapPath/common.php");
+require ("./config/$mapPath/mapconfig.php");
+require ("./config/$mapPath/translation.php");
+require ("./config/$mapPath/common.php");
 require ('./include/savegame.php');
 
 // Erlaubte Seiten

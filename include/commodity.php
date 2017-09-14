@@ -34,7 +34,7 @@ if (! isset($commodities[$l_object])) {
 }
 
 // Übersichtskarte
-$linkToImage = "./server/$mapPath/pda_map_H.jpg";
+$linkToImage = "./config/$mapPath/pda_map_H.jpg";
 $imageSize = 512;
 $mapSize = 2048;
 $mapSizeHalf = $mapSize / 2.0;

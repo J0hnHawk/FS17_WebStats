@@ -34,7 +34,7 @@ $serverConfig = array (
 if ($_SERVER ['REQUEST_METHOD'] == 'POST') {
 	$submit = GetParam ( 'submit' );
 	$serverConfig [5] = GetParam ( 'modmap', 'P' );
-	if(!file_exists("./server/".$serverConfig [5]))  {
+	if(!file_exists("./config/".$serverConfig [5]))  {
 		$error .= '<div class="alert alert-danger"><strong>FEHLER:</strong> Die Karte ist ungültig.</div>';
 	}
 	if ($submit == 'language') {
@@ -71,7 +71,7 @@ if ($_SERVER ['REQUEST_METHOD'] == 'POST') {
 				}
 				fclose ( $fp );
 				if (preg_match ( "/HTTP\/1\.\d\s(\d+)/", $resp, $matches ) && $matches [1] == 200) {
-					$fp = fopen ( './server/server.conf', 'w' );
+					$fp = fopen ( './config/server.conf', 'w' );
 					fwrite ( $fp, serialize ( $serverConfig ) );
 					fclose ( $fp );
 					$success = true;
@@ -92,7 +92,7 @@ if ($_SERVER ['REQUEST_METHOD'] == 'POST') {
 			$error .= '<div class="alert alert-danger"><strong>FEHLER:</strong> Unter dem angegebenen Pfad wurde kein Spielstand gefunden.</div>';
 		}
 		if (! $error) {
-			$fp = fopen ( './server/server.conf', 'w' );
+			$fp = fopen ( './config/server.conf', 'w' );
 			fwrite ( $fp, serialize ( $serverConfig ) );
 			fclose ( $fp );
 			$success = true;

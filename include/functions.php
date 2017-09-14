@@ -48,18 +48,18 @@ function getMaps() {
 			'translation.php' 
 	);
 	// Verzeichnis mit Karten druchsuchen
-	if (is_dir ( './server' )) {
-		if ($dh = opendir ( './server/' )) {
+	if (is_dir ( './config' )) {
+		if ($dh = opendir ( './config/' )) {
 			while ( ($mapDir = readdir ( $dh )) !== false ) {
-				if ($mapDir != "." && $mapDir != ".." && is_dir ( "./server/$mapDir" )) {
+				if ($mapDir != "." && $mapDir != ".." && is_dir ( "./config/$mapDir" )) {
 					$mapIsOK = true;
 					foreach ( $mapFiles as $mapFile ) {
-						if (! file_exists ( "./server/$mapDir/$mapFile" )) {
+						if (! file_exists ( "./config/$mapDir/$mapFile" )) {
 							$mapIsOK = false;
 						}
 					}
 					if ($mapIsOK) {
-						list ( $mapName, $mapShort, $mapVersion, $mapLink, $mapCopyright ) = file ( "./server/$mapDir/map.txt" );
+						list ( $mapName, $mapShort, $mapVersion, $mapLink, $mapCopyright ) = file ( "./config/$mapDir/map.txt" );
 						$maps [$mapDir] = array (
 								'Name' => $mapName,
 								'Path' => $mapDir,
@@ -84,8 +84,8 @@ function translate($text) {
 	if (isset ( $lang [$text] )) {
 		return $lang [$text];
 	} else {
-		// return '{' . $text . '}';
-		return $text;
+		return '{' . $text . '}';
+		// return $text;
 	}
 }
 

@@ -34,9 +34,9 @@ if ($_SERVER ['REQUEST_METHOD'] == 'POST') {
 	$options ['production'] ['sortFullProducts'] = filter_var ( GetParam ( 'p_sortFullProducts', 'P', 1 ), FILTER_VALIDATE_BOOLEAN );
 	setcookie ( 'nfmarsch', json_encode ( $options ), time () + 31536000 );
 	$newMap = GetParam('g_map', 'P');
-	if(file_exists("./server/$newMap")) {
+	if(file_exists("./config/$newMap")) {
 		$serverConfig[5] = $newMap;
-		$fp = fopen('./server/server.conf', 'w');
+		$fp = fopen('./config/server.conf', 'w');
 		fwrite($fp, serialize($serverConfig));
 		fclose($fp);
 		header("Refresh:0");
