@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="WebStats für die Mod Map Nordfriesische Marsch">
+<meta name="description" content="Farming Simulator 17 WebStats">
 <meta name="author" content="John Hawk">
 <link rel="icon" href="./images/favicon.ico">
 <title>{$map.Short} {$map.Version} WebStats</title>
@@ -19,15 +19,15 @@
 		{include file="$page.tpl"} {else}
 		<div class="container theme-showcase" role="main">
 			<div class="jumbotron">
-				<h1>Fehler beim Seitenaufruf</h1>
-				<p class="lead">Die Datei {$fullPathToTemplate} existiert nicht.</p>
+				<h1>##TPL_ERROR_1##</h1>
+				<p class="lead">##TPL_ERROR_2## {$fullPathToTemplate} ##TPL_ERROR_3##</p>
 			</div>
 		</div>
 		{/if}{else}
 		<div class="container theme-showcase" role="main">
 			<div class="jumbotron">
-				<h1>Verbindungsfehler</h1>
-				<p class="lead">Es konnten keine Daten vom Dedicated Server abgerufen werden. Bitte prüfe die Serveradresse oder Internetverbindung. Die Funktion <code>fsockopen()</code> muss erlaubt auf dem Webserver sein.</p>
+				<h1>##CON_ERROR_1##</h1>
+				<p class="lead">##CON_ERROR_2##</p>
 			</div>
 		</div>
 		{/if}
@@ -44,15 +44,15 @@
 				<div class="modal-body">
 					<p>{$webStatsVersion}</p>
 					<p>Copyright (c) 2017, John Hawk</p>
-					<p>Webseite zur Anzeige des Serverstatus sowie Überwachung der Produktionsanlagen und Lagerbestände.</p>
-					<p>Anregungen, Hilfe und Verbesserungsvorschläge von Billy5haw</p>
+					<p>##INFO_1##</p>
+					<p>##INFO_2## Billy5haw</p>
 					<p>
 						Author: John Hawk &lt;<a href="mailto:John Hawk <john.hawk@ gmx.net>">john.hawk@gmx.net</a>&gt;
 					</p>
 				</div>
 				<div class="modal-footer">
-					<small class="pull-left"><a href="index.php?page=lizenz">Informationen zur Lizenzierung</a></small>
-					<button type="button" class="btn btn-default" data-dismiss="modal">Schließen</button>
+					<small class="pull-left"><a href="index.php?page=lizenz">##LICENSE##</a></small>
+					<button type="button" class="btn btn-default" data-dismiss="modal">##CLOSE##</button>
 				</div>
 			</div>
 		</div>

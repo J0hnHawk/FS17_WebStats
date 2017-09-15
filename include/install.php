@@ -22,6 +22,9 @@ if (! defined ( 'IN_NFMWS' ) && ! defined ( 'IN_INSTALL' )) {
 	exit ();
 }
 $smarty->assign ( 'maps', getMaps () );
+if (! isset ( $_SESSION ['language'] )) {
+	$_SESSION ['language'] = $defaultLanguage;
+}
 $error = $success = false;
 $serverConfig = array (
 		NULL,
@@ -29,12 +32,12 @@ $serverConfig = array (
 		NULL,
 		NULL,
 		true,
-		NULL
+		NULL 
 );
 if ($_SERVER ['REQUEST_METHOD'] == 'POST') {
 	$submit = GetParam ( 'submit' );
 	$serverConfig [5] = GetParam ( 'modmap', 'P' );
-	if(!file_exists("./config/".$serverConfig [5]))  {
+	if (! file_exists ( "./config/" . $serverConfig [5] )) {
 		$error .= '<div class="alert alert-danger"><strong>FEHLER:</strong> Die Karte ist ungültig.</div>';
 	}
 	if ($submit == 'language') {
@@ -103,4 +106,5 @@ $smarty->assign ( 'fsockopen', function_exists ( 'fsockopen' ) );
 $smarty->assign ( 'error', $error );
 $smarty->assign ( 'success', $success );
 $smarty->assign ( 'postdata', $serverConfig );
-$smarty->display ( 'install.tpl', 'bootstrap', 'bootstrap' );
+$tpl_source = $smarty->fetch ( 'install.tpl' );
+echo preg_replace_callback ( '/##(.+?)##/', 'prefilter_i18n', $tpl_source );

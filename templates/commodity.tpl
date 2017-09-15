@@ -1,22 +1,36 @@
 <div class="page-header">
 	<h3>
-		{$l_object} - Detailansicht<small> (Speicherstand: Tag {$currentDay}: {$dayTime})</small><small class="pull-right"><button type="button"
-				class="btn btn-primary" data-toggle="modal" data-target="#modalMenu">Ware auswählen</button> </small>
+		{$l_object} - ##DETAILVIEW##<small> (##SAVETIME##: ##DAY## {$currentDay}: {$dayTime})</small><small class="pull-right"><button type="button"
+				class="btn btn-primary" data-toggle="modal" data-target="#modalMenu">##CHOOSE_COMMODITY##</button> </small>
 	</h3>
 </div>
 <div class="row">
 	<div class="col-sm-6">
-		<h4>Lagerbestände</h4>
+		<h4>##STOCKS##</h4>
 		<table class="table" style="margin-bottom: 0px;">
 			<thead>
 				<tr>
-					<th>{if !$combineCommodities}Lagerort{else}Waren/Güter{/if}</th>
-					<th class="text-right">Menge</th>
+					<th>{if !$combineCommodities}##PLACE##{else}##COMMODITY##{/if}</th>
+					<th class="text-right">##AMOUNT##</th>
 				</tr>
 			</thead>
-			{if !$combineCommodities} {foreach $commodities.$l_object.locations as $locationName => $location} {$addInfo=false} {if
-			isset($location.FillablePallet)} {if $location.FillablePallet==1} {$addInfo="1 Palette"} {else} {$addInfo="{$location.FillablePallet} Paletten"}
-			{/if} {/if} {if isset($location.Bale)} {$addInfo="{$location.Bale} Ballen"} {/if}
+			{if !$combineCommodities}
+			{foreach $commodities.$l_object.locations as $locationName => $location}
+				{$addInfo=false}
+				{if	isset($location.FillablePallet)}
+					{if $location.FillablePallet==1}
+						{$addInfo="1 ##PALLET##"}
+					{else}
+						{$addInfo="{$location.FillablePallet} ##PALETTES##"}
+					{/if}
+				{/if}
+				{if isset($location.Bale)}
+					{if $location.Bale==1}
+						{$addInfo="1 ##BALE##"}
+					{else}
+						{$addInfo="{$location.Bale} ##BALES##"}
+					{/if}
+				{/if}
 			<tr>
 				<td>{if isset($plants.$locationName)}<a href="index.php?page=factories&object={$plants.$locationName.i3dName}">{/if}{$locationName}{if
 						isset($plants.$locationName)}</a>{/if}{if $addInfo} ({$addInfo}){/if}
@@ -32,19 +46,19 @@
 			</tbody>
 			<tfoot>
 				<tr>
-					<th>Gesamter Lagerbestand</th>
+					<th>##WHOLE_AMOUNT##</th>
 					<th class="text-right">{$commodities.$l_object.overall|number_format:0:":":"."}</th>
 				</tr>
 			</tfoot>
 		</table>
 		{if $demandSum > 0}
 		<hr>
-		<h4>Nachfrage</h4>
+		<h4>##DEMAND##</h4>
 		<table class="table" style="margin-bottom: 0px;">
 			<thead>
 				<tr>
-					<th>Produktionsanlage</th>
-					<th class="text-right">Menge</th>
+					<th>##PLANTS##</th>
+					<th class="text-right">##AMOUNT##</th>
 				</tr>
 			</thead>
 			{foreach $demand as $plant=>$demandValue}
@@ -56,7 +70,7 @@
 			</tbody>
 			<tfoot>
 				<tr>
-					<th>Gesamter Bedarf</th>
+					<th>##WHOLE_DEMAND##</th>
 					<th class="text-right">{$demandSum|number_format:0:":":"."}</th>
 				</tr>
 			</tfoot>
@@ -64,7 +78,7 @@
 		{/if}
 	</div>
 	<div class="col-sm-6">
-		<h4>Positionen von Paletten/Ballen</h4>
+		<h4>##ITEM_POSITIONS##</h4>
 		<div id="mapContainer" class="img-responsive" style="position: relative;">
 			<img src="{$linkToImage}" height="512" width="512"> {$image = '<img style="position: absolute; left: %dpx; top: %dpx;" src="./images/%s" width="%d"
 			height="%d" data-toggle="tooltip" data-placement="top" title="%s">'} {foreach $mapEntries as $key => $mapEntry}
@@ -80,7 +94,7 @@
 				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 					<span aria-hidden="true">&times;</span>
 				</button>
-				<h4 class="modal-title" id="myModalLabel">Ware/Rohstoff auswählen</h4>
+				<h4 class="modal-title" id="myModalLabel">##CHOOSE_COMMODITY##</h4>
 			</div>
 			<div class="modal-body">
 				<div class="row fivecolumns">
@@ -98,7 +112,7 @@
 				</div>
 			</div>
 			<div class="modal-footer">
-				<button type="button" class="btn btn-default" data-dismiss="modal">Schließen</button>
+				<button type="button" class="btn btn-default" data-dismiss="modal">##CLOSE##</button>
 			</div>
 		</div>
 		</form>

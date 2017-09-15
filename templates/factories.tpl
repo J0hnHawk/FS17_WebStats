@@ -1,22 +1,22 @@
 <div class="page-header">
 	<h3>
-		{$plantName}<small> (Speicherstand: Tag {$currentDay}, {$dayTime})</small><small class="pull-right"><button type="button"
-				class="btn btn-primary" data-toggle="modal" data-target="#modalMenu">Produktionsanlage auswählen</button> </small>
+		{$plantName}<small> (##SAVETIME##: ##DAY## {$currentDay}, {$dayTime})</small><small class="pull-right"><button type="button"
+				class="btn btn-primary" data-toggle="modal" data-target="#modalMenu">##CHOOSE_PLANT##</button> </small>
 	</h3>
 </div>
 <div class="row">
 	<div class="col-sm-8 col-sm-offset-1">
 		{$plantData = $plants.$plantName}
 		{$ProdPerHour = $mapconfig[$plantData.i3dName].ProdPerHour}
-		<h4>Benötigte Rohstoffe</h4>
+		<h4>##REQUIRED##</h4>
 		<table class="table">
 			<thead>
 				<tr>
-					<th width="28%">Rohstoff</th>
-					<th width="18%" class="text-right">Lager</th>
-					<th width="18%" class="text-right">Kapazität</th>
-					<th width="18%" class="text-right">Bedarf/Stunde</th>
-					<th width="18%" class="text-right">Bedarf/Tag</th>
+					<th width="28%">##COMMODITIES##</th>
+					<th width="18%" class="text-right">##STORAGE##</th>
+					<th width="18%" class="text-right">##CAPACITY##</th>
+					<th width="18%" class="text-right">##REQUIRE_HOUR##</th>
+					<th width="18%" class="text-right">##REQUIRE_DAY##</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -35,15 +35,15 @@
 			</tbody>
 		</table>
 		<hr>
-		<h4>Produzierte Waren</h4>
+		<h4>##PRODUCED_GOODS##</h4>
 		<table class="table">
 			<thead>
 				<tr>
-					<th width="28%">Produkt</th>
-					<th width="18%" class="text-right">Lager</th>
-					<th width="18%" class="text-right">Kapazität</th>
-					<th width="18%" class="text-right">Produktion/Stunde</th>
-					<th width="18%" class="text-right">Produktion/Tag</th>
+					<th width="28%">##COMMODITIES##</th>
+					<th width="18%" class="text-right">##STORAGE##</th>
+					<th width="18%" class="text-right">##CAPACITY##</th>
+					<th width="18%" class="text-right">##PRODUCT_HOUR##</th>
+					<th width="18%" class="text-right">##PRODUCT_DAY##</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -70,7 +70,7 @@
 				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 					<span aria-hidden="true">&times;</span>
 				</button>
-				<h4 class="modal-title" id="myModalLabel">Produktionsstätte auswählen</h4>
+				<h4 class="modal-title" id="myModalLabel">##CHOOSE_PLANT##</h4>
 			</div>
 			<div class="modal-body">
 				<div class="row">
@@ -85,7 +85,7 @@
 				</div>
 			</div>
 			<div class="modal-footer">
-				<button type="button" class="btn btn-default" data-dismiss="modal">Schließen</button>
+				<button type="button" class="btn btn-default" data-dismiss="modal">##CLOSE##</button>
 			</div>
 		</div>
 		</form>

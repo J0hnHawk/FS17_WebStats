@@ -1,0 +1,91 @@
+//global
+CLOSE=Close
+SAVE=Save
+SAVETIME=Savegame time
+DAY=Day
+COMMODITY=Commodity
+COMMODITIES=Commodities
+PLANT=Production plant
+PLANTS=Production plants
+SETTINGS=Settings
+STOCK=Stock
+STOCKS=Stocks
+
+//index.tpl
+TPL_ERROR_1=Error during page load
+TPL_ERROR_2=The File
+TPL_ERROR_3=does not exists.
+CON_ERROR_1=Connectionerror
+CON_ERROR_2=No data could be retrieved from the dedicated server. Please check the server address or internet connection. The <code>fsockopen ()</code> function must be allowed on the web server.
+INFO_1=Web page to display the server status and monitor the production facilities and stock levels.
+INFO_2=Tipps, help and suggestions for improvement from
+LICENSE=Licensing information
+
+//navbar.tpl
+TOGGLE=Toggle navigation
+STORAGE=Storage
+PRODUCTION=Production
+FACTORY=Factory
+INFO=Info
+
+//commodity.tpl
+DETAILVIEW=detailed view
+CHOOSE_COMMODITY=Select goods
+PLACE=storage location
+AMOUNT=amount
+WHOLE_AMOUNT=total warehouse stock
+DEMAND=demand
+WHOLE_DEMAND=Total demand
+ITEM_POSITIONS=Pallet / bale positions
+
+//factories.tpl
+CHOOSE_PLANT=Select production plant
+REQUIRED=Required raw materials
+CAPACITY=capacitance
+REQUIRE_HOUR=Demand/hour
+REQUIRE_DAY=Demand/day
+PRODUCED_GOODS=Produced goods
+PRODUCT_HOUR=Production/hour
+PRODUCT_DAY=Production/day
+
+//production.tpl
+PRODUCTION_OVERVIEW=production overview
+RAW_MATERIALS=raw materials
+PRODUCTS=product
+MORE_DETAILS=more details
+
+//storage.tpl
+CAUTION=Caution
+DETAILS=Details
+PALLET=Pallet
+PALETTES=Palettes
+BALE=Bale
+BALES=Bales
+INCORRECT_POSITIONS_TITLE=Faulty positions of pallets and bales
+INCORRECT_POSITIONS_TEXT=The positions of the following bales or pallets in the <code>vehicle.xml</code> are invalid.
+INCORRECT_POSITION=invalid position
+SUGGESTION_POSITION=Suggestion Position
+
+//options.tpl
+GENERAL=General
+AUTO_RELOAD=automatic reload
+SORT_ORDER=sorting
+ALPHABETICALLY=alphabetically
+FILL_LEVEL=according to filling level
+SHOW=display
+HIDE=hide
+VEHICLE_LOAD=Vehicle load
+ONLY_PALETTS=Only display pallets
+YES=yes
+NO=no
+SHOW_ZERO_STOCK=Displaying Zero Stock
+FULL_PRODUCT_STORAGE=Full product storage
+SORT_FULL_PRODUCTS=take into account when sorting
+IGNORE_FULL_PRODUCTS=ignore during sorting
+SHOW_HIDDEN_PLANTS=Show production plants
+MOD_MAP=Mod Map
+
+
+
+
+

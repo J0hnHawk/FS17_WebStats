@@ -24,7 +24,7 @@ if (! defined('IN_NFMWS')) {
 
 // Kartendaten laden
 $default = current($commodities);
-$object = GetParam('object', 'G', $default[i3dName]);
+$object = GetParam('object', 'G', $default['i3dName']);
 $l_object = translate($object);
 
 // Ware vorhanden?
@@ -121,7 +121,7 @@ if (isset($positions['FillablePallet'])) {
     foreach ($positions['FillablePallet'] as $fillType => $items) {
         if ($fillType == $l_object) {
             foreach ($items as $position) {
-                $mapEntries[] = addEntry($position, 'Palette', 'tool.png');
+                $mapEntries[] = addEntry($position, '##PALLET##', 'tool.png');
             }
         }
     }
@@ -130,7 +130,7 @@ if (isset($positions['Bale'])) {
     foreach ($positions['Bale'] as $fillType => $items) {
         if ($fillType == $l_object) {
             foreach ($items as $position) {
-                $mapEntries[] = addEntry($position, 'Ballen', 'tool.png');
+                $mapEntries[] = addEntry($position, '##BALE##', 'tool.png');
             }
         }
     }

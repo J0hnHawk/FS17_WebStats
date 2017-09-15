@@ -4,6 +4,7 @@
 
 **Änderungen und Erweiterungen:**
 - Projekt umbenannt in FS17 Webstats
+- Umstellung der Templates auf Multilanguage
 - FS17 Webstats ist nun für soweit vorbereitet, dass auch andere Karten unterstützt werden
 - Prüfung, ob fsockopen() erlaubt ist bei der Installation
 - Fehlerbehandung geändert; Logdatei statt Anzeige

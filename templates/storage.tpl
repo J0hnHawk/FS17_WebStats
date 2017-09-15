@@ -1,8 +1,8 @@
 <div class="page-header">
 	<h3>
-		Lagerbestände<small> (Speicherstand: Tag {$currentDay}, {$dayTime})</small><small class="pull-right">{if $outOfMap|@count>0}</span><a href="#"
-			data-toggle="modal" data-target="#outOfMapAlert"><span class="glyphicon glyphicon-warning-sign" aria-hidden="true"></span> Achtung</a>&nbsp;&nbsp;{/if}<a
-			href="#" data-toggle="modal" data-target="#optionsDialog"><span class="glyphicon glyphicon-cog" aria-hidden="true"></span> Einstellungen</a></small>
+		##STOCKS##<small> (##SAVETIME##: ##DAY## {$currentDay}, {$dayTime})</small><small class="pull-right">{if $outOfMap|@count>0}</span><a href="#"
+			data-toggle="modal" data-target="#outOfMapAlert"><span class="glyphicon glyphicon-warning-sign" aria-hidden="true"></span> ##CAUTION##</a>&nbsp;&nbsp;{/if}<a
+			href="#" data-toggle="modal" data-target="#optionsDialog"><span class="glyphicon glyphicon-cog" aria-hidden="true"></span> ##SETTINGS##</a></small>
 	</h3>
 </div>
 <div class="row">
@@ -11,8 +11,8 @@
 		<table class="table table-hover">
 			<thead>
 				<tr>
-					<th>Ware</th>
-					<th class="text-right">Lagerbestand</th>
+					<th>##COMMODITY##</th>
+					<th class="text-right">##STOCK##</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -27,14 +27,27 @@
 						<table class="table" style="margin-bottom: 0px;">
 							<thead>
 								<tr>
-									<th>Ort<a class="pull-right" href="index.php?page=commodity&object={$commodity.i3dName}">Details</a></th>
+									<th>Ort<a class="pull-right" href="index.php?page=commodity&object={$commodity.i3dName}">##DETAILS##</a></th>
 									<th class="text-right">Menge</th>
 								</tr>
 							</thead>
 							<tbody>
-								{foreach $commodity.locations as $locationName => $location} {$addInfo=false} {if isset($location.FillablePallet)}{if
-								$location.FillablePallet==1}{$addInfo="1 Palette"}{else}{$addInfo="{$location.FillablePallet} Paletten"}{/if}{/if} {if
-								isset($location.Bale)}{$addInfo="{$location.Bale} Ballen"}{/if}
+								{foreach $commodity.locations as $locationName => $location}
+									{$addInfo=false}
+									{if isset($location.FillablePallet)}
+										{if	$location.FillablePallet==1}
+											{$addInfo="1 ##PALLET##"}
+										{else}
+											{$addInfo="{$location.FillablePallet} ##PALETTES##"}
+										{/if}
+									{/if}
+									{if	isset($location.Bale)}
+										{if	$location.Bale==1}
+											{$addInfo="1 ##BALE##"}
+										{else}
+											{$addInfo="{$location.Bale} ##BALES##"}
+										{/if}
+									{/if}
 								<tr>
 									<td>{$locationName}{if $addInfo} ({$addInfo}){/if}</td>
 									<td class="text-right">{$location.fillLevel|number_format:0:",":"."}</td>
@@ -57,47 +70,47 @@
 				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 					<span aria-hidden="true">&times;</span>
 				</button>
-				<h4 class="modal-title" id="myModalLabel">Einstellungen</h4>
+				<h4 class="modal-title" id="myModalLabel">##SETTINGS##</h4>
 			</div>
 			<div class="modal-body">
 				<form class="form-horizontal" action="index.php?page=storage" method="post">
 					<div class="form-group">
-						<label class="col-sm-5 control-label">Sortierung</label>
+						<label class="col-sm-5 control-label">##SORT_ORDER##</label>
 						<div class="col-sm-7">
-							<label class="radio-inline"> <input type="radio" name="sortByName" value="1"{if $options.sortByName}checked{/if}> alphabetisch
-							</label> <label class="radio-inline"> <input type="radio" name="sortByName" value="0"{if !$options.sortByName}checked{/if}> nach Füllstand
+							<label class="radio-inline"> <input type="radio" name="sortByName" value="1"{if $options.sortByName}checked{/if}> ##ALPHABETICALLY##
+							</label> <label class="radio-inline"> <input type="radio" name="sortByName" value="0"{if !$options.sortByName}checked{/if}> ##FILL_LEVEL##
 							</label>
 						</div>
 					</div>
 					<div class="form-group">
-						<label for="sortType" class="col-sm-5 control-label">Ladung von Fahrzeugen</label>
+						<label for="sortType" class="col-sm-5 control-label">##VEHICLE_LOAD##</label>
 						<div class="col-sm-7">
-							<label class="radio-inline"> <input type="radio" name="showVehicles" value="1"{if $options.showVehicles}checked{/if}> anzeigen
-							</label> <label class="radio-inline"> <input type="radio" name="showVehicles" value="0"{if !$options.showVehicles}checked{/if}> nicht anzeigen
+							<label class="radio-inline"> <input type="radio" name="showVehicles" value="1"{if $options.showVehicles}checked{/if}> ##SHOW##
+							</label> <label class="radio-inline"> <input type="radio" name="showVehicles" value="0"{if !$options.showVehicles}checked{/if}> ##HIDE##
 							</label>
 						</div>
 					</div>
 					<div class="form-group">
-						<label for="sortType" class="col-sm-5 control-label">Nur Paletten anzeigen</label>
+						<label for="sortType" class="col-sm-5 control-label">##ONLY_PALETTS##</label>
 						<div class="col-sm-7">
-							<label class="radio-inline"> <input type="radio" name="onlyPallets" value="1"{if $options.onlyPallets}checked{/if}> ja
-							</label> <label class="radio-inline"> <input type="radio" name="onlyPallets" value="0"{if !$options.onlyPallets}checked{/if}> nein
+							<label class="radio-inline"> <input type="radio" name="onlyPallets" value="1"{if $options.onlyPallets}checked{/if}> ##YES##
+							</label> <label class="radio-inline"> <input type="radio" name="onlyPallets" value="0"{if !$options.onlyPallets}checked{/if}> ##NO##
 							</label>
 						</div>
 					</div>
 					<div class="form-group">
-						<label for="sortType" class="col-sm-5 control-label">Null-Bestände anzeigen</label>
+						<label for="sortType" class="col-sm-5 control-label">##SHOW_ZERO_STOCK##</label>
 						<div class="col-sm-7">
-							<label class="radio-inline"> <input type="radio" name="hideZero" value="0"{if !$options.hideZero}checked{/if}> ja
-							</label> <label class="radio-inline"> <input type="radio" name="hideZero" value="1"{if $options.hideZero}checked{/if}> nein
+							<label class="radio-inline"> <input type="radio" name="hideZero" value="0"{if !$options.hideZero}checked{/if}> ##YES##
+							</label> <label class="radio-inline"> <input type="radio" name="hideZero" value="1"{if $options.hideZero}checked{/if}> ##NO##
 							</label>
 						</div>
 					</div>
 			
 			</div>
 			<div class="modal-footer">
-				<button type="button" class="btn btn-default" data-dismiss="modal">Schließen</button>
-				<button type="submit" class="btn btn-primary">Speichern</button>
+				<button type="button" class="btn btn-default" data-dismiss="modal">##CLOSE##</button>
+				<button type="submit" class="btn btn-primary">##SAVE##</button>
 			</div>
 		</div>
 		</form>
@@ -110,20 +123,18 @@
 				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 					<span aria-hidden="true">&times;</span>
 				</button>
-				<h4 class="modal-title" id="myModalLabel">Fehlerhafte Paletten und Ballen</h4>
+				<h4 class="modal-title" id="myModalLabel">##INCORRECT_POSITIONS_TITLE##</h4>
 			</div>
 			<div class="modal-body">
 				<p>
-					Die Positionen der folgenden Ballen oder Paletten in der
-					<code>vehicle.xml</code>
-					sind ungültig.
+					##INCORRECT_POSITIONS_TEXT##
 				</p>
 				<table class="table text-nowrap">
 					<thead>
 						<tr>
-							<th>Palette/Ballen</th>
-							<th>ungültige Position</th>
-							<th>Vorschlag Position</th>
+							<th>##PALLET##/##BALE##</th>
+							<th>##INCORRECT_POSITION##</th>
+							<th>##SUGGESTION_POSITION##</th>
 						</tr>
 					</thead>
 					<tbody>
@@ -138,7 +149,7 @@
 				</table>
 			</div>
 			<div class="modal-footer">
-				<button type="button" class="btn btn-default" data-dismiss="modal">Schließen</button>
+				<button type="button" class="btn btn-default" data-dismiss="modal">##CLOSE##</button>
 			</div>
 		</div>
 	</div>

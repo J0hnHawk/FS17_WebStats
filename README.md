@@ -1,6 +1,6 @@
-# FS17 Nordfriesische Marsch WebStats v1.2.2
+# FS17 WebStats v1.3.0
 
-### Statuswebseite für die Farming Simulator 17 Mod Map Nordfriesische Marsch
+### Statuswebseite für die Farming Simulator 17
 Die Webseite generiert Übersichtsseiten von lokale Spielständen oder dedizierten Servern
 
 #### Serverstatus
@@ -21,5 +21,7 @@ Anzeige der Lagerorte/-mengen und dem Warenbedarf. Übersichtskarte mit eingezei
 
 ## Instalation
 
-Herunterladen und entpacken der Zipdatei auf einem PHP 5 fähigen Webserver. Die benötigten Daten werden beim ersten Aufruf der Seite abgefragt.
-Bei dedizierten Server die IP-Adresse des Servers, der Port und Code, bei lokalen Spielständen das Verzeichnis des Spielstands. Eine Datenbank wird nicht benötigt. Die Speicherung von Benutzereinstellungen erfolgt in Cookies.
+Herunterladen und entpacken der Zipdatei auf einem PHP 5 fähigen Webserver. Der Webserver muss die PHP-Funktion fsockopen() unterstützen. Eine Datenbank wird nicht benötigt. Die benötigten Daten werden beim ersten Aufruf der Seite abgefragt. Beim ersten Aufruf der Seite werden die benötigten Daten abgefragt: 
+- Bei dedizierten Server die IP-Adresse des Servers, der Port und Code.
+- Bei lokalen Spielständen das Verzeichnis des Spielstands.
+

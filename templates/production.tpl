@@ -1,7 +1,7 @@
 <div class="page-header">
 	<h3>
-		Produktionsübersicht<small> (Speicherstand: Tag {$currentDay}, {$dayTime})</small><small class="pull-right"><a href="#" data-toggle="modal"
-			data-target="#myModal"><span class="glyphicon glyphicon-cog" aria-hidden="true"></span> Einstellungen</a></small>
+		##PRODUCTION_OVERVIEW##<small> (##SAVETIME##: ##DAY## {$currentDay}, {$dayTime})</small><small class="pull-right"><a href="#" data-toggle="modal"
+			data-target="#myModal"><span class="glyphicon glyphicon-cog" aria-hidden="true"></span> ##SETTINGS##</a></small>
 	</h3>
 </div>
 {$glyphicons =array("glyphicon glyphicon-ok-sign text-success", "glyphicon glyphicon-exclamation-sign text-warning", "glyphicon glyphicon-remove-sign
@@ -11,13 +11,13 @@ text-danger")} {$textcolors = array("","text-warning","text-danger")}
 		<table class="table table-hover">
 			<thead>
 				<tr>
-					<th>Produktionsanlage</th>
-					<th>Rohstoff(e)</th>
-					<th>Produkt(e)</th>
+					<th>##PLANT##</th>
+					<th>##RAW_MATERIALS##</th>
+					<th>##PRODUCTS##</th>
 				</tr>
 			</thead>
 			<tbody>
-				{$tooltip = '<span class="%s" data-toggle="tooltip" data-placement="top" title="Lagerbestand:<br><strong>%s</strong>">'} {foreach $plants as
+				{$tooltip = '<span class="%s" data-toggle="tooltip" data-placement="top" title="##STOCK##:<br><strong>%s</strong>">'} {foreach $plants as
 				$plantName => $plantData}
 				<tr data-toggle="collapse" href="#collapse{$plantData.i3dName}">
 					<td><span class="{$glyphicons[$plantData.state]}" aria-hidden="true"></span> {$plantName}</td>
@@ -36,8 +36,8 @@ text-danger")} {$textcolors = array("","text-warning","text-danger")}
 							<table class="table" style="margin-bottom: 0px;">
 								<thead>
 									<tr>
-										<th colspan="2" width="50%">Rohstoff(e)</th>
-										<th colspan="2" width="50%">Produkt(e)</th>
+										<th colspan="2" width="50%">##RAW_MATERIALS##</th>
+										<th colspan="2" width="50%">##PRODUCTS##</th>
 									</tr>
 								</thead>
 								{$inputRow=array()}{$outputRow=array()} {$max = max($plantData.input|@count,$plantData.output|@count)} {foreach from=$plantData.input
@@ -61,8 +61,8 @@ text-danger")} {$textcolors = array("","text-warning","text-danger")}
 						</div>
 						<div class="col-sm-3">
 							<p class="pull-right">
-								<a href="index.php?page=production&hide={$plantName|base64_encode}"><span class="glyphicon glyphicon-eye-close"></span> ausblenden</a><br>
-								<a href="index.php?page=factories&object={$plantData.i3dName}"><span class="glyphicon glyphicon-eye-open"></span> weitere Details</a>
+								<a href="index.php?page=production&hide={$plantName|base64_encode}"><span class="glyphicon glyphicon-eye-close"></span> ##HIDE##</a><br>
+								<a href="index.php?page=factories&object={$plantData.i3dName}"><span class="glyphicon glyphicon-eye-open"></span> ##MORE_DETAILS##</a>
 							</p>
 						</div>
 					</td>
@@ -79,31 +79,29 @@ text-danger")} {$textcolors = array("","text-warning","text-danger")}
 				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 					<span aria-hidden="true">&times;</span>
 				</button>
-				<h4 class="modal-title" id="myModalLabel">Einstellungen</h4>
+				<h4 class="modal-title" id="myModalLabel">##SETTINGS##</h4>
 			</div>
 			<div class="modal-body">
 				<form class="form-horizontal" action="index.php?page=production" method="post">
 					<div class="form-group">
-						<label class="col-sm-5 control-label">Sortierung</label>
+						<label class="col-sm-5 control-label">##SORT_ORDER##</label>
 						<div class="col-sm-7">
-							<label class="radio-inline"> <input type="radio" name="sortByName" value="1"{if $options.sortByName}checked{/if}> alphabetisch
-							</label> <label class="radio-inline"> <input type="radio" name="sortByName" value="0"{if !$options.sortByName}checked{/if}> nach Füllstand
+							<label class="radio-inline"> <input type="radio" name="sortByName" value="1"{if $options.sortByName}checked{/if}> ##ALPHABETICALLY##
+							</label> <label class="radio-inline"> <input type="radio" name="sortByName" value="0"{if !$options.sortByName}checked{/if}> ##FILL_LEVEL##
 							</label>
 						</div>
 					</div>
 					<div class="form-group">
-						<label class="col-sm-5 control-label">volle Produktlager</label>
+						<label class="col-sm-5 control-label">##FULL_PRODUCT_STORAGE##</label>
 						<div class="col-sm-7">
-							<label class="radio-inline"> <input type="radio" name="sortFullProducts" value="1"{if $options.sortFullProducts}checked{/if}> bei Sortierung
-								berücksichtigen
-							</label><br> <label class="radio-inline"> <input type="radio" name="sortFullProducts" value="0"{if !$options.sortFullProducts}checked{/if}> bei
-								Sortierung ignorieren
+							<label class="radio-inline"> <input type="radio" name="sortFullProducts" value="1"{if $options.sortFullProducts}checked{/if}> ##SORT_FULL_PRODUCTS##
+							</label><br> <label class="radio-inline"> <input type="radio" name="sortFullProducts" value="0"{if !$options.sortFullProducts}checked{/if}> ##IGNORE_FULL_PRODUCTS##
 							</label>
 						</div>
 					</div>
 					{if $options.hidePlant|@count>0}
 					<div class="form-group">
-						<label class="col-sm-5 control-label">Produktionsanlagen einblenden</label>
+						<label class="col-sm-5 control-label">##SHOW_HIDDEN_PLANTS##</label>
 						<div class="col-sm-7">
 							{foreach from=$options.hidePlant key=$plant item=$bolean}
 							<div class="checkbox">
@@ -117,8 +115,8 @@ text-danger")} {$textcolors = array("","text-warning","text-danger")}
 			
 			</div>
 			<div class="modal-footer">
-				<button type="button" class="btn btn-default" data-dismiss="modal">Schließen</button>
-				<button type="submit" class="btn btn-primary">Speichern</button>
+				<button type="button" class="btn btn-default" data-dismiss="modal">##CLOSE##</button>
+				<button type="submit" class="btn btn-primary">##SAVE##</button>
 			</div>
 		</div>
 		</form>
