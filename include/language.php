@@ -26,20 +26,26 @@ if (! defined ( 'IN_NFMWS' )) {
  * This file should be a class later.
  * At the moment it is a placeholder for later support of multiple languages
  */
+if (! isset ( $_SESSION ['language'] )) {
+	$_SESSION ['language'] = $defaultLanguage;
+}
 function getLangFile($language) {
 	$langArray = array ();
 	if (file_exists ( './language/' . $language . '/global.lng' )) {
 		$entries = file ( 'language/' . $language . '/global.lng' );
 		foreach ( $entries as $row ) {
-			if (substr ( ltrim ( $row ), 0, 2 ) == '//') { // ignore comments
+			if (substr ( ltrim ( $row ), 0, 2 ) == '//' || trim ( $row ) == '') { // ignore comments
 				continue;
 			}
 			$keyValuePair = explode ( '=', $row );
-			// multiline values: the first line with an equal sign '=' will start a new key=value pair
-			if (sizeof ( $keyValuePair ) == 1) {
-				$langArray [$key] .= ' ' . chop ( $keyValuePair [0] );
-				continue;
-			}
+			/*
+			 * // multiline values: the first line with an equal sign '=' will
+			 * // start a new key=value pair
+			 * if (sizeof ( $keyValuePair ) == 1) {
+			 * $langArray [$key] .= ' ' . chop ( $keyValuePair [0] );
+			 * continue;
+			 * }
+			 */
 			$key = trim ( $keyValuePair [0] );
 			$value = $keyValuePair [1];
 			if (! empty ( $key )) {
@@ -49,23 +55,24 @@ function getLangFile($language) {
 	}
 	return $langArray;
 }
-
-$languages = array ();
-$langDir = dir ( 'language' );
-while ( ($entry = $langDir->read ()) != false ) {
-	if ($entry != "." && $entry != ".." && is_dir ( 'language/' . $entry )) {
-		if (file_exists ( 'language/' . $entry . '/language.txt' )) {
-			$langFile = file ( 'language/' . $entry . '/language.txt' );
-			$languages [$entry] = array (
-					'path' => $entry,
-					'englishName' => trim ( $langFile [0] ),
-					'localName' => trim ( $langFile [1] ) 
-			);
+function getLanguages() {
+	$languages = array ();
+	$langDir = dir ( 'language' );
+	while ( ($entry = $langDir->read ()) != false ) {
+		if ($entry != "." && $entry != ".." && is_dir ( 'language/' . $entry )) {
+			if (file_exists ( 'language/' . $entry . '/language.txt' )) {
+				$langFile = file ( 'language/' . $entry . '/language.txt' );
+				$languages [$entry] = array (
+						'path' => $entry,
+						'englishName' => trim ( $langFile [0] ),
+						'localName' => trim ( $langFile [1] ) 
+				);
+			}
 		}
 	}
+	$langDir->close ();
+	return $languages;
 }
-$langDir->close ();
-$defaultLanguage = 'de';
 function prefilter_i18n($key) {
 	$translations = getLangFile ( $_SESSION ['language'] );
 	if (isset ( $translations [$key [1]] )) {

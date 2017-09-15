@@ -22,9 +22,8 @@ if (! defined ( 'IN_NFMWS' ) && ! defined ( 'IN_INSTALL' )) {
 	exit ();
 }
 $smarty->assign ( 'maps', getMaps () );
-if (! isset ( $_SESSION ['language'] )) {
-	$_SESSION ['language'] = $defaultLanguage;
-}
+$smarty->assign ( 'languages', getLanguages () );
+
 $error = $success = false;
 $serverConfig = array (
 		NULL,
@@ -32,31 +31,40 @@ $serverConfig = array (
 		NULL,
 		NULL,
 		true,
+		NULL,
 		NULL 
 );
 if ($_SERVER ['REQUEST_METHOD'] == 'POST') {
 	$submit = GetParam ( 'submit' );
 	$serverConfig [5] = GetParam ( 'modmap', 'P' );
 	if (! file_exists ( "./config/" . $serverConfig [5] )) {
-		$error .= '<div class="alert alert-danger"><strong>FEHLER:</strong> Die Karte ist ungültig.</div>';
+		$error .= '<div class="alert alert-danger"><strong>##ERROR##</strong> ##ERROR_MAP##</div>';
 	}
 	if ($submit == 'language') {
-		$_SESSION ['language'] = GetParam ( 'language' );
+		$_SESSION ['language'] = $options ['general'] ['language'] = GetParam ( 'language' );
+		setcookie ( 'nfmarsch', json_encode ( $options ), time () + 31536000 );
 	} elseif ($submit == 'server') {
 		$serverConfig [0] = GetParam ( 'serverip', 'P', '127.0.0.1' );
 		$serverConfig [1] = GetParam ( 'serverport', 'P', '8080' ) + 0;
 		$serverConfig [2] = GetParam ( 'servercode', 'P', '' );
 		$serverConfig [3] = '';
 		$serverConfig [4] = true;
-		
+		$serverConfig [6] = GetParam ( 'adminpass1', 'P', '' );
+		$repeatedPassword = GetParam ( 'adminpass2', 'P', '' );
 		if (filter_var ( $serverConfig [0], FILTER_VALIDATE_IP ) === false) {
-			$error .= '<div class="alert alert-danger"><strong>FEHLER:</strong> Die eingegebene IP Adresse ist nicht gültig.</div>';
+			$error .= '<div class="alert alert-danger"><strong>##ERROR##</strong> ##ERROR_IP##</div>';
 		}
 		if ($serverConfig [1] < 1 || $serverConfig [1] > 65536) {
-			$error .= '<div class="alert alert-danger"><strong>FEHLER:</strong> Der eingegebene Port ist ungültig.</div>';
+			$error .= '<div class="alert alert-danger"><strong>##ERROR##</strong> ##ERROR_PORT##</div>';
 		}
 		if (strlen ( $serverConfig [2] ) < 1) {
-			$error .= '<div class="alert alert-danger"><strong>FEHLER:</strong> Der eingegebene Code ist ungültig.</div>';
+			$error .= '<div class="alert alert-danger"><strong>##ERROR##</strong> ##ERROR_CODE##</div>';
+		}
+		if ($serverConfig [6] != $repeatedPassword) {
+			$error .= '<div class="alert alert-danger"><strong>##ERROR##</strong> ##PASSWORD_MATCH##</div>';
+		}
+		if (strlen($serverConfig [6])<6) {
+			$error .= '<div class="alert alert-danger"><strong>##ERROR##</strong> ##PASSWORD_SHORT##</div>';
 		}
 		if (! $error) {
 			error_reporting ( E_NOTICE );
@@ -74,15 +82,16 @@ if ($_SERVER ['REQUEST_METHOD'] == 'POST') {
 				}
 				fclose ( $fp );
 				if (preg_match ( "/HTTP\/1\.\d\s(\d+)/", $resp, $matches ) && $matches [1] == 200) {
+					$serverConfig [6] = password_hash ( $serverConfig [6], PASSWORD_DEFAULT );
 					$fp = fopen ( './config/server.conf', 'w' );
 					fwrite ( $fp, serialize ( $serverConfig ) );
 					fclose ( $fp );
 					$success = true;
 				} else {
-					$error .= '<div class="alert alert-danger"><strong>FEHLER:</strong> Der eingegebene Code ist ungültig.</div>';
+					$error .= '<div class="alert alert-danger"><strong>##ERROR##</strong> ##ERROR_CODE##</div>';
 				}
 			} else {
-				$error .= '<div class="alert alert-danger"><strong>FEHLER:</strong> Server ist offline oder die IP Adresse ist falsch.</div>';
+				$error .= '<div class="alert alert-danger"><strong>##ERROR##</strong> ##ERROR_OFFLLINE##</div>';
 			}
 		}
 	} elseif ($submit == 'local') {
@@ -91,10 +100,19 @@ if ($_SERVER ['REQUEST_METHOD'] == 'POST') {
 		$serverConfig [2] = '';
 		$serverConfig [3] = GetParam ( 'savepath', 'P', '' ) . DIRECTORY_SEPARATOR;
 		$serverConfig [4] = false;
+		$serverConfig [6] = GetParam ( 'adminpass1', 'P', '' );
+		$repeatedPassword = GetParam ( 'adminpass2', 'P', '' );
+		if ($serverConfig [6] != $repeatedPassword) {
+			$error .= '<div class="alert alert-danger"><strong>##ERROR##</strong> ##PASSWORD_MATCH##</div>';
+		}
+		if (strlen($serverConfig [6])<6) {
+			$error .= '<div class="alert alert-danger"><strong>##ERROR##</strong> ##PASSWORD_SHORT##</div>';
+		}
 		if (! file_exists ( $serverConfig [3] . 'careerSavegame.xml' )) {
-			$error .= '<div class="alert alert-danger"><strong>FEHLER:</strong> Unter dem angegebenen Pfad wurde kein Spielstand gefunden.</div>';
+			$error .= '<div class="alert alert-danger"><strong>##ERROR##</strong> ##ERROR_SAVEGAME##</div>';
 		}
 		if (! $error) {
+			$serverConfig [6] = password_hash ( $serverConfig [6], PASSWORD_DEFAULT );
 			$fp = fopen ( './config/server.conf', 'w' );
 			fwrite ( $fp, serialize ( $serverConfig ) );
 			fclose ( $fp );

@@ -17,7 +17,7 @@
  * along with Foobar. If not, see <http://www.gnu.org/licenses/>.
  */
 ini_set ( 'error_reporting', E_ALL );
-ini_set ( 'display_errors', 1 );
+ini_set ( 'display_errors', 0 );
 ini_set ( 'log_errors', 1 );
 ini_set ( 'error_log', 'error.log' );
 
@@ -26,17 +26,19 @@ define ( 'IN_NFMWS', true );
 
 // Change next both lines if you are not Germen ;-)
 setlocale ( LC_ALL, 'de_DE@euro', 'de_DE', 'de', 'ge' );
-$language = 'de'; // there are language files for german & english in language folder. there ist also a "french-folder" but it still contains a english translation
+$defaultLanguage = 'de'; // there are language files for german & english in language folder. there ist also a "french-folder" but it still contains a english translation
 
 require ('./include/smarty/Smarty.class.php');
-require ('./include/language.php');
 require ('./include/functions.php');
+require ('./include/language.php');
+
+// Cookie mit Einstellungen laden
+include ('./include/coockie.php');
 
 $smarty = new Smarty ();
 $smarty->debugging = false;
 $smarty->caching = false;
 $smarty->assign ( 'webStatsVersion', 'Version 1.3.0 (alpha)' );
-$smarty->assign ( 'languages', $languages );
 
 // Serverkonfiguration laden - wenn nicht vorhanden Instalation starten
 $configFile = './config/server.conf';
@@ -53,9 +55,6 @@ if (file_exists ( $configFile )) {
 	include ('./include/install.php');
 	exit ();
 }
-
-// Cookie mit Einstellungen laden
-include ('./include/coockie.php');
 
 // Kartendetails laden
 list ( $mapName, $mapShort, $mapVersion, $mapLink, $mapCopyright ) = file ( "./config/$mapPath/map.txt" );
@@ -94,7 +93,8 @@ if ($serverOnline)
 $smarty->assign ( 'reloadPage', $options ['general'] ['reload'] );
 $smarty->assign ( 'serverOnline', $serverOnline );
 $tpl_source = $smarty->fetch ( 'index.tpl' );
-echo preg_replace_callback('/##(.+?)##/', 'prefilter_i18n', $tpl_source);
+
+echo preg_replace_callback ( '/##(.+?)##/', 'prefilter_i18n', $tpl_source );
 
 
 

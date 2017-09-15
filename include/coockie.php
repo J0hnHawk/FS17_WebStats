@@ -24,7 +24,7 @@ if (! defined ( 'IN_NFMWS' )) {
 }
 
 // Coockie laden, wenn vorhanden
-$cookieVersion = 4;
+$cookieVersion = 6;
 $options = array ();
 if (isset ( $_COOKIE ['nfmarsch'] )) {
 	$options = json_decode ( $_COOKIE ['nfmarsch'], true );
@@ -35,6 +35,7 @@ if (isset ( $_COOKIE ['nfmarsch'] )) {
 
 if (! isset ( $options ['general'] )) {
 	$options ['general'] ['reload'] = true;
+	$options ['general'] ['language'] = $defaultLanguage;
 }
 
 if (! isset ( $options ['storage'] )) {
@@ -42,6 +43,7 @@ if (! isset ( $options ['storage'] )) {
 	$options ['storage'] ['hideZero'] = true;
 	$options ['storage'] ['showVehicles'] = true;
 	$options ['storage'] ['onlyPallets'] = false;
+	$options ['storage'] ['3column'] = true;
 }
 
 if (! isset ( $options ['production'] )) {
@@ -49,4 +51,4 @@ if (! isset ( $options ['production'] )) {
 	$options ['production'] ['sortFullProducts'] = true;
 	$options ['production'] ['hidePlant'] = array();
 }
-
+$_SESSION ['language'] = $options ['general'] ['language'];

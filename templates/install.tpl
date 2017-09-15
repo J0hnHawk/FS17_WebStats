@@ -27,17 +27,17 @@
 				<form class="navbar-form navbar-right" action="index.php?page=install" method="post">
 					<div class="form-group">
 						<select class="form-control" name="language"> {foreach $languages as $language}
-							<option value="{$language.path}">{$language.localName}</option> {/foreach}
+							<option value="{$language.path}" {if $language.path==$smarty.session.language}selected{/if}>{$language.localName}</option> {/foreach}
 						</select>
 					</div>
 					<button type="submit" name="submit" value="language" class="btn btn-success">##CHOOSE_LANGUAGE##</button>
 				</form>
-				<span class="navbar-right navbar-text">##CHOOSE_TEXT##:</span>
+				<span class="navbar-right navbar-text">##CHOOSE_LANGUAGE_LABEL##:</span>
 			</div>
 		</div>
 	</nav>
 	{if $success}
-	<div class="container theme-showcase" role="main">
+	<div class="container" role="main">
 		<div class="jumbotron">
 			<h1>Farming Simulator 17 WebStats</h1>
 			<p>##CONFIG_SAVED##</p>
@@ -47,13 +47,13 @@
 		</div>
 	</div>
 	{else}
-	<div class="container theme-showcase" role="main">
-		<div class="jumbotron">
+	<div class="container" role="main">
+		<div class="page-header">
 			<h1>Farming Simulator 17 WebStats</h1>
 			<p>##DESCRIPTON##</p>
 		</div>
 		<div class="page-header">
-			<h1>##INSTALL_TITLE##</h1>
+			<h2>##INSTALL_TITLE##</h2>
 		</div>
 		<div>
 			<!-- Nav tabs -->
@@ -61,13 +61,13 @@
 				<li role="presentation" class="active"><a href="#server" aria-controls="server" role="tab" data-toggle="tab">##DEDICATED##</a></li>
 				<li role="presentation"><a href="#local" aria-controls="local" role="tab" data-toggle="tab">##LOCAL##</a></li>
 			</ul>
+
 			<!-- Tab panes -->
 			<div class="tab-content">
 				<div role="tabpanel" class="tab-pane active" id="server">
-					<h2>##DEDICATED##</h2>
-					{if $fsockopen}
 					<form class="form-horizontal" action="index.php?page=install" method="post">
-						{if $error}{$error}{/if}
+						<h3>##DEDICATED##</h3>
+						{if $fsockopen} {if $error}{$error}{/if}
 						<div class="form-group">
 							<label for="Server-IP" class="col-sm-3 control-label">##DS_LABEL1##</label>
 							<div class="col-sm-7">
@@ -98,19 +98,26 @@
 							</div>
 						</div>
 						<div class="form-group">
+							<label for="password" class="col-sm-3 control-label">##DS_LABEL5##</label>
+							<div class="col-sm-7 form-inline">
+								<input type="password" name="adminpass1" class="form-control" id="password" placeholder="##DS_PLACEHOLDE5##">&nbsp;<input type="password"
+									name="adminpass2" class="form-control" id="password" placeholder="##DS_PLACEHOLDE6##"> <span id="helpBlock" class="help-block">##DS_HELP_BLOCK5##</span>
+							</div>
+						</div>
+						<div class="form-group">
 							<div class="col-sm-offset-7 col-sm-3">
 								<button type="submit" name="submit" value="server" class="pull-right btn btn-primary btn-block">##SAVE_CONFIG##</button>
 							</div>
 						</div>
+						{else}
+						<p class="lead">##NO_INSTALL_1##</p>
+						<p class="lead">##NO_INSTALL_2##</p>
+						{/if}
 					</form>
-					{else}
-					<p class="lead">##NO_INSTALL_1##</p>
-					<p class="lead">##NO_INSTALL_2##</p>
-					{/if}
 				</div>
 				<div role="tabpanel" class="tab-pane" id="local">
-					<h2>##LOCAL##</h2>
 					<form class="form-horizontal" action="index.php?page=install" method="post">
+						<h3>##LOCAL##</h3>
 						{if $error}{$error}{/if}
 						<p>
 							##INTRO1## <a href="https://www.farming-simulator.com/mod.php?lang=de&country=de&mod_id=50533&title=fs2017">##LINK_TEXT##</a>##INTRO2##
@@ -131,22 +138,29 @@
 								</select><span id="helpBlock" class="help-block">##LS_HELP_BLOCK2##</span>
 							</div>
 						</div>
-
+						<div class="form-group">
+							<label for="password" class="col-sm-3 control-label">##DS_LABEL5##</label>
+							<div class="col-sm-7 form-inline">
+								<input type="password" name="adminpass1" class="form-control" id="password" placeholder="##DS_PLACEHOLDE5##">&nbsp;<input type="password"
+									name="adminpass2" class="form-control" id="password" placeholder="##DS_PLACEHOLDE6##"> <span id="helpBlock" class="help-block">##DS_HELP_BLOCK5##</span>
+							</div>
+						</div>
 						<div class="form-group">
 							<div class="col-sm-offset-7 col-sm-3">
 								<button type="submit" name="submit" value="local" class="pull-right btn btn-primary btn-block">##SAVE_CONFIG##</button>
 							</div>
 						</div>
 					</form>
-					<script>
-					{if $postdata|@count>0 && $postdata[4] && $fsockopen}
-						$('.nav-tabs a[href="#server"]').tab('show');
-					{else}
-						$('.nav-tabs a[href="#local"]').tab('show');
-					{/if}
- 				</script>
 				</div>
 			</div>
+
+			<script>
+				{if $postdata|@count>0 && $postdata[4] && $fsockopen}
+					$('.nav-tabs a[href="#server"]').tab('show');
+				{else}
+					$('.nav-tabs a[href="#local"]').tab('show');
+				{/if}
+ 			</script>
 		</div>
 	</div>
 	{/if}

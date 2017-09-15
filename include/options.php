@@ -21,25 +21,37 @@
 if (! defined ( 'IN_NFMWS' )) {
 	exit ();
 }
-$smarty->assign ( 'maps', getMaps() );
+$smarty->assign ( 'maps', getMaps () );
+$smarty->assign ( 'languages', getLanguages () );
+$error = false;
 
 if ($_SERVER ['REQUEST_METHOD'] == 'POST') {
-	$options ['version'] = $cookieVersion;
-	$options ['general'] ['reload'] = filter_var ( GetParam ( 'g_reload', 'P', 1 ), FILTER_VALIDATE_BOOLEAN );
-	$options ['storage'] ['sortByName'] = filter_var ( GetParam ( 's_sortByName', 'P', 1 ), FILTER_VALIDATE_BOOLEAN );
-	$options ['storage'] ['showVehicles'] = filter_var ( GetParam ( 's_showVehicles', 'P', 1 ), FILTER_VALIDATE_BOOLEAN );
-	$options ['storage'] ['onlyPallets'] = filter_var ( GetParam ( 's_onlyPallets', 'P', 1 ), FILTER_VALIDATE_BOOLEAN );
-	$options ['storage'] ['hideZero'] = filter_var ( GetParam ( 's_hideZero', 'P', 1 ), FILTER_VALIDATE_BOOLEAN );
-	$options ['production'] ['sortByName'] = filter_var ( GetParam ( 'p_sortByName', 'P', 1 ), FILTER_VALIDATE_BOOLEAN );
-	$options ['production'] ['sortFullProducts'] = filter_var ( GetParam ( 'p_sortFullProducts', 'P', 1 ), FILTER_VALIDATE_BOOLEAN );
-	setcookie ( 'nfmarsch', json_encode ( $options ), time () + 31536000 );
-	$newMap = GetParam('g_map', 'P');
-	if(file_exists("./config/$newMap")) {
-		$serverConfig[5] = $newMap;
-		$fp = fopen('./config/server.conf', 'w');
-		fwrite($fp, serialize($serverConfig));
-		fclose($fp);
-		header("Refresh:0");
+	// var_dump ( $_POST );
+	switch ($_POST ['submit']) {
+		case 'options' :
+			$options ['version'] = $cookieVersion;
+			$options ['general'] ['reload'] = filter_var ( GetParam ( 'g_reload', 'P', 1 ), FILTER_VALIDATE_BOOLEAN );
+			$options ['general'] ['language'] = GetParam ( 'g_language', 'P', 'de' );
+			$options ['storage'] ['sortByName'] = filter_var ( GetParam ( 's_sortByName', 'P', 1 ), FILTER_VALIDATE_BOOLEAN );
+			$options ['storage'] ['showVehicles'] = filter_var ( GetParam ( 's_showVehicles', 'P', 1 ), FILTER_VALIDATE_BOOLEAN );
+			$options ['storage'] ['onlyPallets'] = filter_var ( GetParam ( 's_onlyPallets', 'P', 1 ), FILTER_VALIDATE_BOOLEAN );
+			$options ['storage'] ['hideZero'] = filter_var ( GetParam ( 's_hideZero', 'P', 1 ), FILTER_VALIDATE_BOOLEAN );
+			$options ['storage'] ['3column'] = filter_var ( GetParam ( 's_3column', 'P', 1 ), FILTER_VALIDATE_BOOLEAN );
+			$options ['production'] ['sortByName'] = filter_var ( GetParam ( 'p_sortByName', 'P', 1 ), FILTER_VALIDATE_BOOLEAN );
+			$options ['production'] ['sortFullProducts'] = filter_var ( GetParam ( 'p_sortFullProducts', 'P', 1 ), FILTER_VALIDATE_BOOLEAN );
+			setcookie ( 'nfmarsch', json_encode ( $options ), time () + 31536000 );
+			header ( "Refresh:0" );
+			break;
+		case 'password' :
+			$adminpass1 = GetParam ( 'adminpass1', 'P' );
+			if (! password_verify ( $adminpass1, $serverConfig [6] )) {
+				$error .= '<div class="alert alert-danger"><strong>##ERROR##</strong> ##PASSWORD_ERROR##</div>';
+			} else {
+				@unlink('./config/server.conf'); 
+				header ( "Refresh:0" );
+			}			
+			break;
 	}
 }
 $smarty->assign ( 'options', $options );
+$smarty->assign ( 'error', $error );

@@ -6,8 +6,17 @@
 	</h3>
 </div>
 <div class="row">
-	{$colmax[0] = -1} {$colmax[1] = ($commodities|@count/4)|ceil} {$colmax[2] = $colmax[1] *2} {$colmax[3] = $colmax[1] *3} {$colmax[4] = $commodities|@count} {for $i=0 to 3}
-	<div class="col-sm-3">
+	{if $options.3column}
+		{$class="col-sm-4"}
+		{$end=2}
+		{$colmax[0] = -1} {$colmax[1] = ($commodities|@count/3)|ceil} {$colmax[2] = $colmax[1] *2} {$colmax[3] = $commodities|@count} 
+	{else}
+		{$class="col-sm-3"}
+		{$end=3}
+		{$colmax[0] = -1} {$colmax[1] = ($commodities|@count/4)|ceil} {$colmax[2] = $colmax[1] *2} {$colmax[3] = $colmax[1] *3} {$colmax[4] = $commodities|@count} 
+	{/if}
+	{for $i=0 to $end}
+	<div class="{$class}">
 		<table class="table table-hover">
 			<thead>
 				<tr>
@@ -106,7 +115,15 @@
 							</label>
 						</div>
 					</div>
-			
+				<div class="form-group">
+					<label for="3column" class="col-sm-5 control-label">##LAYOUT##</label>
+					<div class="col-sm-7">
+						<label class="radio-inline"> <input type="radio" name="3column" value="1"{if $options.3column}checked{/if}> ##3COLUMN##
+						</label> <label class="radio-inline"> <input type="radio" name="3column" value="0"{if !$options.3column}checked{/if}> ##4COLUMN##
+						</label>
+					</div>
+				</div>
+		
 			</div>
 			<div class="modal-footer">
 				<button type="button" class="btn btn-default" data-dismiss="modal">##CLOSE##</button>

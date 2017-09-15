@@ -8,9 +8,12 @@
 - FS17 Webstats ist nun für soweit vorbereitet, dass auch andere Karten unterstützt werden
 - Prüfung, ob fsockopen() erlaubt ist bei der Installation
 - Fehlerbehandung geändert; Logdatei statt Anzeige
+- Bei der Installation muss ein Passwort festgelegt werden. Mit diesem kann man später die Einstellungen zurücksetzen
+- Im Optionsdialog kann zwischen 3 und 4 Spalten in der Lagerübersicht gewechselt werden.
 
 **Berichtigte Fehler:**
 - Die Einstellung "nur Paletten" funktioniert jetzt in der Lagerübersicht korrekt 
+- Pelletspaletten werden nun im Lager bei der Pelltesfabrik angezeigt (#8)
 
 ## [Version 1.2.2](https://github.com/J0hnHawk/FS17_NF_Marsch_WebStats/releases/tag/v1.2.2) (10.09.2017)
 

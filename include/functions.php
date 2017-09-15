@@ -84,8 +84,8 @@ function translate($text) {
 	if (isset ( $lang [$text] )) {
 		return $lang [$text];
 	} else {
-		//return '{' . $text . '}';
-		return $text;
+		return '{' . $text . '}';
+		//return $text;
 	}
 }
 

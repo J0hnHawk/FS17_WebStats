@@ -27,6 +27,7 @@ if ($_SERVER ['REQUEST_METHOD'] == 'POST') {
 	$options ['storage'] ['hideZero'] = filter_var ( GetParam ( 'hideZero', 'P', 1 ), FILTER_VALIDATE_BOOLEAN );
 	$options ['storage'] ['showVehicles'] = filter_var ( GetParam ( 'showVehicles', 'P', 1 ), FILTER_VALIDATE_BOOLEAN );
 	$options ['storage'] ['onlyPallets'] = filter_var ( GetParam ( 'onlyPallets', 'P', 1 ), FILTER_VALIDATE_BOOLEAN );
+	$options ['storage'] ['3column'] = filter_var ( GetParam ( '3column', 'P', 1 ), FILTER_VALIDATE_BOOLEAN );
 	$options ['version'] = $cookieVersion;
 	setcookie ( 'nfmarsch', json_encode ( $options ), time () + 31536000 );
 }

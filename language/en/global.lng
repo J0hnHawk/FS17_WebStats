@@ -3,6 +3,8 @@
 //global
 CLOSE=Close
 SAVE=Save
+SUBMIT=Absenden
+RESET=Zurücksetzen
 SAVETIME=Savegame time
 DAY=Day
 COMMODITY=Commodity
@@ -12,6 +14,51 @@ PLANTS=Production plants
 SETTINGS=Settings
 STOCK=Stock
 STOCKS=Stocks
+
+//install.tpl
+CHOOSE_LANGUAGE_LABEL=Sprache wählen
+CHOOSE_LANGUAGE=Ändern
+CONFIG_SAVED=Konfiguration erfolgreich gespeichert.
+CONTINUE=zur Übersicht wechseln
+DESCRIPTON=Auf dieser Webseite für Dedicated Server und lokale Spielstände von Farming Simulator 17 können Spieler, Fahrzeuge, Lagerbestände und Produktionsanlagen angezeigt werden. Fehlende Rohstoffe sowie volle Produktlager werden kenntlich gemacht.
+INSTALL_TITLE=Installation
+DEDICATED=Dedicaded Server
+LOCAL=lokaler Spielstand
+DS_LABEL1=Server IP-Adresse
+DS_PLACEHOLDE1=IP-Adresse
+DS_HELP_BLOCK1=IP-Adresse des Farming Simulator 17 Dedicated Servers.
+DS_LABEL2=Server-Port
+DS_PLACEHOLDE2=Port
+DS_HELP_BLOCK2=Port der Web-API, nicht der Port für den Spiel-Client.
+DS_LABEL3=Server-Code
+DS_PLACEHOLDE3=Code
+DS_HELP_BLOCK3=Web-API Zugriffscode.
+DS_LABEL4=Mod Map
+DS_HELP_BLOCK4=Installierte Karte auf dem Server auswählen.
+DS_LABEL5=WebStats Password
+DS_PLACEHOLDE5=Password
+DS_PLACEHOLDE6=Password wiederholen
+DS_HELP_BLOCK5=The password can be used to change the server settings and change the map.
+NO_INSTALL_1=Auf diesem Webserver kann FS17 Webstats leider nicht mit einem Dedicated Server verwendet werden, da die Funktion <code>fsockopen()</code> nicht unterstützt wird.
+NO_INSTALL_2=Bitte prüfe bei deinem Webhoster, ob die Funktion in der <code>php.ini</code> aktiviert werden kann.
+INTRO1=Bitte beachte, dass in Farming Simulator der Spielstand grundsätzlich nicht automatisch gespeichert wird. Damit auf dieser Webseite korrekte Lagerbestände angezeigt werden, muss der Spielstand zuvor gespeichert werden. Alternativ installiere die Mod
+INTRO2=, um den Spielstand automatisch alle 5 Minuten zu speichern.
+LINK_TEXT=Map Autosave
+LS_LABEL1=Pfad zum Spielstand
+LS_PLACEHOLDE1=Pfad
+LS_HELP_BLOCK1=Standartmäßig speichert Farming Simulator Spielstände unter:<br> <code>C:\Users\"deinusername"\Documents\My	Games\FarmingSimulator2017\savegamex</code>
+LS_LABEL2=Mod Map
+LS_HELP_BLOCK2=Karte des Spielstands auswählen.
+SAVE_CONFIG=Konfiguration speichern
+ERROR_CODE=Der eingegebene Code ist ungültig.
+ERROR_PORT=Der eingegebene Port ist ungültig.
+ERROR_IP=Die eingegebene IP Adresse ist nicht gültig.
+ERROR_MAP=Die Karte ist ungültig.
+ERROR_OFFLINE=Server ist offline oder die IP Adresse ist falsch.
+ERROR_SAVEGAME=Unter dem angegebenen Pfad wurde kein Spielstand gefunden.
+PASSWORD_MATCH=Die Passwörter stimmen nicht überein.
+PASSWORD_SHORT=Das Passwort muss mindestens 6 Zeichen lang sein.
+ERROR=Error!
 
 //index.tpl
 TPL_ERROR_1=Error during page load
@@ -25,6 +72,7 @@ LICENSE=Licensing information
 
 //navbar.tpl
 TOGGLE=Toggle navigation
+SERVER=Server
 STORAGE=Storage
 PRODUCTION=Production
 FACTORY=Factory
@@ -86,8 +134,10 @@ SORT_FULL_PRODUCTS=take into account when sorting
 IGNORE_FULL_PRODUCTS=ignore during sorting
 SHOW_HIDDEN_PLANTS=Show production plants
 MOD_MAP=Mod Map
-
-
-
-
-
+LAYOUT=Layout
+3COLUMN=3 Spalten
+4COLUMN=4 Spalten
+SERVER_SETTINGS=Servereinstellungen löschen
+ADMIN_AREA=Serververwaltung
+ADMIN_DESCRIPTION=Achtung nach Eingabe des Passworts die Einstellungen zum Dedicated Server oder des Savegames gelöscht. FS17 WebStats kann danach neu initialisiert werden.
+ENTER_PASSWORD=Bitte Passwort eingeben
