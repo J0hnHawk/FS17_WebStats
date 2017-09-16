@@ -85,6 +85,7 @@ WHOLE_AMOUNT=Gesamter Lagerbestand
 DEMAND=Nachfrage
 WHOLE_DEMAND=Gesamter Bedarf
 ITEM_POSITIONS=Positionen von Paletten/Ballen
+NOT_FOUND=Object nicht gefunden :-/
 
 //factories.tpl
 CHOOSE_PLANT=Produktionsanlage auswählen

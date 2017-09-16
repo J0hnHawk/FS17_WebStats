@@ -24,6 +24,76 @@ if (empty($mapconfig) || ! is_array($mapconfig)) {
     $mapconfig = array();
 }
 
+$mapconfig = array_merge ( $mapconfig, array (
+		'Storage_storage1' => array (
+				'ProdPerHour' => 0,
+				'position' => '194.64 100.736 101.567',
+				'showInProduction' => false,
+				'rawMaterial' => array (),
+				'product' => array ()
+		),
+		'Animals_cow' => array (
+				'ProdPerHour' => 0,
+				'position' => '120 0 150',
+				'showInProduction' => false,
+				'rawMaterial' => array (),
+				'product' => array (
+						'milk' => array (
+								'capacity' => 0,
+								'factor' => 0,
+								'fillType' => 'milk',
+								'showInStorage' => true
+						),
+						'manureFillLevel' => array (
+								'capacity' => 2000,
+								'factor' => 0,
+								'fillType' => 'manure',
+								'showInStorage' => true
+						),
+						'liquidManureFillLevel' => array (
+								'capacity' => 2000,
+								'factor' => 0,
+								'fillType' => 'liquidManure',
+								'showInStorage' => true
+						)
+				)
+		),
+		'Animals_pig' => array (
+				'ProdPerHour' => 0,
+				'position' => '250 0 400',
+				'showInProduction' => false,
+				'rawMaterial' => array ()
+		),
+		'Animals_sheep' => array (
+				'ProdPerHour' => 0,
+				'position' => '570 0 -19',
+				'showInProduction' => false,
+				'rawMaterial' => array (
+						'grass_windrowdryGrass_windrow' => array (
+								'capacity' => 0,
+								'factor' => 0,
+								'fillTypes' => 'grass_windrow dryGrass_windrow',
+								'showInStorage' => false
+						),
+						'water' => array (
+								'capacity' => 0,
+								'factor' => 0,
+								'fillTypes' => 'water',
+								'showInStorage' => false
+						)
+				),
+				'product' => array (
+						'woolPallet' => array (
+								'capacity' => 2000,
+								'factor' => 0,
+								'fillType' => 'woolPallet',
+								'palettPlaces' => 15,
+								'showInStorage' => false
+						)
+				)
+		)
+) );
+
 $mapconfig = array(
     'FabrikScript_Fabrik' => array(
         'ProdPerHour' => 3000,

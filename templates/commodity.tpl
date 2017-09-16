@@ -1,11 +1,12 @@
 <div class="page-header">
 	<h3>
-		{$l_object} - ##DETAILVIEW##<small> (##SAVETIME##: ##DAY## {$currentDay}: {$dayTime})</small><small class="pull-right"><button type="button"
+		{if $objectFound}{$l_object} - {/if}##DETAILVIEW##<small> (##SAVETIME##: ##DAY## {$currentDay}: {$dayTime})</small><small class="pull-right"><button type="button"
 				class="btn btn-primary" data-toggle="modal" data-target="#modalMenu">##CHOOSE_COMMODITY##</button> </small>
 	</h3>
 </div>
 <div class="row">
 	<div class="col-sm-6">
+		{if $objectFound}
 		<h4>##STOCKS##</h4>
 		<table class="table" style="margin-bottom: 0px;">
 			<thead>
@@ -14,23 +15,10 @@
 					<th class="text-right">##AMOUNT##</th>
 				</tr>
 			</thead>
-			{if !$combineCommodities}
-			{foreach $commodities.$l_object.locations as $locationName => $location}
-				{$addInfo=false}
-				{if	isset($location.FillablePallet)}
-					{if $location.FillablePallet==1}
-						{$addInfo="1 ##PALLET##"}
-					{else}
-						{$addInfo="{$location.FillablePallet} ##PALETTES##"}
-					{/if}
-				{/if}
-				{if isset($location.Bale)}
-					{if $location.Bale==1}
-						{$addInfo="1 ##BALE##"}
-					{else}
-						{$addInfo="{$location.Bale} ##BALES##"}
-					{/if}
-				{/if}
+			{if !$combineCommodities} {foreach $commodities.$l_object.locations as $locationName => $location} {$addInfo=false} {if
+			isset($location.FillablePallet)} {if $location.FillablePallet==1} {$addInfo="1 ##PALLET##"} {else} {$addInfo="{$location.FillablePallet}
+			##PALETTES##"} {/if} {/if} {if isset($location.Bale)} {if $location.Bale==1} {$addInfo="1 ##BALE##"} {else} {$addInfo="{$location.Bale} ##BALES##"}
+			{/if} {/if}
 			<tr>
 				<td>{if isset($plants.$locationName)}<a href="index.php?page=factories&object={$plants.$locationName.i3dName}">{/if}{$locationName}{if
 						isset($plants.$locationName)}</a>{/if}{if $addInfo} ({$addInfo}){/if}
@@ -75,6 +63,10 @@
 				</tr>
 			</tfoot>
 		</table>
+		{/if} {else}
+		<div class="alert alert-danger" role="alert">
+			<strong>##ERROR##</strong> ##NOT_FOUND##
+		</div>
 		{/if}
 	</div>
 	<div class="col-sm-6">
@@ -98,8 +90,8 @@
 			</div>
 			<div class="modal-body">
 				<div class="row fivecolumns">
-					{$colmax[0] = -1} {$colmax[1] = ($commodities|@count/5)|ceil} {$colmax[2] = $colmax[1] *2} {$colmax[3] = $colmax[1] *3} {$colmax[4] = $colmax[1] *4} {$colmax[5] =
-					$commodities|@count} {for $i=0 to 4}
+					{$colmax[0] = -1} {$colmax[1] = ($commodities|@count/5)|ceil} {$colmax[2] = $colmax[1] *2} {$colmax[3] = $colmax[1] *3} {$colmax[4] = $colmax[1]
+					*4} {$colmax[5] = $commodities|@count} {for $i=0 to 4}
 					<div class="col-sm-2">
 						<ul class="nav nav-pills nav-stacked">
 							{foreach $commodities as $commodity => $commodityData} {if $commodityData@iteration > $colmax[$i] && $commodityData@iteration <= $colmax[$i+1]

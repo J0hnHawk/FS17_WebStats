@@ -24,6 +24,161 @@ if (empty($mapconfig) || ! is_array($mapconfig)) {
     $mapconfig = array();
 }
 
+// Farmsilo und Ställe
+$mapconfig = array_merge ( $mapconfig, array (
+		'Storage_storage1' => array (
+				'ProdPerHour' => 0,
+				'position' => '194.64 100.736 101.567',
+				'showInProduction' => false,
+				'rawMaterial' => array (),
+				'product' => array ()
+		),
+		'Animals_cow' => array (
+				'ProdPerHour' => 0,
+				'position' => '120 0 150',
+				'showInProduction' => false,
+				'rawMaterial' => array (
+						'water' => array (
+								'capacity' => 0,
+								'factor' => 0,
+								'fillTypes' => 'water',
+								'showInStorage' => false
+						),
+						'straw' => array (
+								'capacity' => 0,
+								'factor' => 0,
+								'fillTypes' => 'straw',
+								'showInStorage' => false
+						),
+						'grass_windrow' => array (
+								'capacity' => 0,
+								'factor' => 0,
+								'fillTypes' => 'grass_windrow',
+								'showInStorage' => false
+						),
+						'silage_dryGrass_windrow' => array (
+								'capacity' => 0,
+								'factor' => 0,
+								'fillTypes' => 'silage dryGrass_windrow',
+								'showInStorage' => false
+						),
+						'powerFood' => array (
+								'capacity' => 0,
+								'factor' => 0,
+								'fillTypes' => 'powerFood',
+								'showInStorage' => false
+						)
+				),
+				'product' => array (
+						'liquidManureFillLevel' => array (
+								'capacity' => '&infin;',
+								'factor' => 0,
+								'fillType' => 'liquidManure',
+								'showInStorage' => true
+						),
+						'manureFillLevel' => array (
+								'capacity' => '&infin;',
+								'factor' => 0,
+								'fillType' => 'manure',
+								'showInStorage' => true
+						),
+						'milk' => array (
+								'capacity' => '&infin;',
+								'factor' => 0,
+								'fillType' => 'milk',
+								'showInStorage' => true
+						)
+						
+				)
+		),
+		'Animals_pig' => array (
+				'ProdPerHour' => 0,
+				'position' => '250 0 400',
+				'showInProduction' => false,
+				'rawMaterial' => array (
+						'water' => array (
+								'capacity' => 0,
+								'factor' => 0,
+								'fillTypes' => 'water',
+								'showInStorage' => false
+						),
+						'straw' => array (
+								'capacity' => 0,
+								'factor' => 0,
+								'fillTypes' => 'straw',
+								'showInStorage' => false
+						),
+						'maize_pigFood' => array (
+								'capacity' => 0,
+								'factor' => 0,
+								'fillTypes' => 'maize pigFood',
+								'showInStorage' => false
+						),
+						'wheat_barley_pigFood' => array (
+								'capacity' => 0,
+								'factor' => 0,
+								'fillTypes' => 'wheat barley pigFood',
+								'showInStorage' => false
+						),
+						'rape_sunflower_soybean_pigFood' => array (
+								'capacity' => 0,
+								'factor' => 0,
+								'fillTypes' => 'rape sunflower soybean pigFood',
+								'showInStorage' => false
+						),
+						'potato_sugarBeet_pigFood' => array (
+								'capacity' => 0,
+								'factor' => 0,
+								'fillTypes' => 'potato sugarBeet pigFood',
+								'showInStorage' => false
+						)
+				),
+				'product' => array (
+						'liquidManure' => array (
+								'capacity' => '&infin;',
+								'factor' => 0,
+								'fillType' => 'liquidManure',
+								'showInStorage' => true
+						),
+						'manure' => array (
+								'capacity' => '&infin;',
+								'factor' => 0,
+								'fillType' => 'manure',
+								'showInStorage' => true
+						)
+				)
+		),
+		'Animals_sheep' => array (
+				'ProdPerHour' => 1,
+				'position' => '570 0 -19',
+				'showInProduction' => false,
+				'rawMaterial' => array (
+						'water' => array (
+								'capacity' => 0,
+								'factor' => 0,
+								'fillTypes' => 'water',
+								'showInStorage' => false
+						),
+						'grass_windrow_dry_Grass_windrow' => array (
+								'capacity' => 0,
+								'factor' => 0,
+								'fillTypes' => 'grass_windrow dryGrass_windrow',
+								'showInStorage' => false
+						)
+				),
+				'product' => array (
+						'woolPallet' => array (
+								'capacity' => 2000,
+								'factor' => 0,
+								'fillType' => 'woolPallet',
+								'palettPlaces' => 6,
+								'showInStorage' => false
+						)
+				)
+		)
+) );
+
+// Fabrikscripte
 $mapconfig = array_merge($mapconfig,
     array(
         'FabrikScript_KraftFutterHerstellung' => array(

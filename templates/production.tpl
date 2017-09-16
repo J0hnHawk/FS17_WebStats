@@ -11,9 +11,9 @@ text-danger")} {$textcolors = array("","text-warning","text-danger")}
 		<table class="table table-hover">
 			<thead>
 				<tr>
-					<th>##PLANT##</th>
-					<th>##RAW_MATERIALS##</th>
-					<th>##PRODUCTS##</th>
+					<th width="20%">##PLANT##</th>
+					<th width="40%">##RAW_MATERIALS##</th>
+					<th width="40%">##PRODUCTS##</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -52,7 +52,7 @@ text-danger")} {$textcolors = array("","text-warning","text-danger")}
 										<td class="text-right">{$inputRow[$i][1]|number_format:0:",":"."} / {$inputRow[$i][2]|number_format:0:",":"."}</td> {else}
 										<td colspan="2">&nbsp;</td> {/if} {if isset($outputRow[$i][0])}
 										<td><a href="index.php?page=commodity&object={$outputRow[$i][3]}">{$outputRow[$i][0]}</a></td>
-										<td class="text-right">{$outputRow[$i][1]|number_format:0:",":"."} / {$outputRow[$i][2]|number_format:0:",":"."}</td>{else}
+										<td class="text-right">{$outputRow[$i][1]|number_format:0:",":"."} / {if is_numeric($outputRow[$i][2])}{$outputRow[$i][2]|number_format:0:",":"."}{else}{$outputRow[$i][2]}{/if}</td>{else}
 										<td colspan="2">&nbsp;</td> {/if}
 									</tr>
 									{/for}

@@ -84,8 +84,8 @@ function translate($text) {
 	if (isset ( $lang [$text] )) {
 		return $lang [$text];
 	} else {
-		return '{' . $text . '}';
-		//return $text;
+		//return '{' . $text . '}';
+		return $text;
 	}
 }
 
@@ -100,6 +100,26 @@ function strposa($haystack, $needle, $offset = 0) {
 			return true; // stop on first true result
 	}
 	return false;
+}
+
+//Fahrzeugnamen
+function getVehicleNames() {
+	$vehicles = array ();
+	if (file_exists ( './config/vehicles.conf' )) {
+		$entries = file ( './config/vehicles.conf' );
+		foreach ( $entries as $row ) {
+			if (substr ( ltrim ( $row ), 0, 2 ) == '//' || trim ( $row ) == '') { // ignore comments and emtpty rows
+				continue;
+			}
+			$keyValuePair = explode ( '=', $row );
+			$key = trim ( $keyValuePair [0] );
+			$value = $keyValuePair [1];
+			if (! empty ( $key )) {
+				$vehicles [$key] = chop ( $value );
+			}
+		}
+	}
+	return $vehicles;
 }
 
 // Palettenart aus Dateiname extrahieren

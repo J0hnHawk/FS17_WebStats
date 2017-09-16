@@ -29,8 +29,11 @@ $l_object = translate($object);
 
 // Ware vorhanden?
 if (! isset($commodities[$l_object])) {
+	$objectFound = false;
     $object = 'wheat';
     $l_object = translate($object);
+} else {
+	$objectFound = true;
 }
 
 // Übersichtskarte
@@ -148,6 +151,7 @@ $smarty->assign('linkToImage', $linkToImage);
 $smarty->assign('backgroundColor', $backgroundColor);
 $smarty->assign('machineIconSize', $machineIconSize);
 $smarty->assign('mapEntries', $mapEntries);
+$smarty->assign('objectFound', $objectFound);
 
 // Karteneinträge
 function addEntry($position, $name, $icon)

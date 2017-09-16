@@ -68,8 +68,12 @@ $map = array (
 );
 $smarty->assign ( 'map', $map );
 require ("./config/$mapPath/mapconfig.php");
-require ("./config/$mapPath/translation.php");
-require ("./config/$mapPath/common.php");
+if (! file_exists ( "./config/$mapPath/translation/{$_SESSION ['language']}.php" )) {
+	require ("./config/$mapPath/translation/$defaultLanguage.php");
+} else {
+	require ("./config/$mapPath/translation/{$_SESSION ['language']}.php");
+}
+$lang = array_merge ( $lang, getVehicleNames () );
 require ('./include/savegame.php');
 
 // Erlaubte Seiten

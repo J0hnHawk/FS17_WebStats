@@ -31,21 +31,13 @@ if (! isset ( $_SESSION ['language'] )) {
 }
 function getLangFile($language) {
 	$langArray = array ();
-	if (file_exists ( './language/' . $language . '/global.lng' )) {
-		$entries = file ( 'language/' . $language . '/global.lng' );
+	if (file_exists ( './templates/language/' . $language . '/global.lng' )) {
+		$entries = file ( './templates/language/' . $language . '/global.lng' );
 		foreach ( $entries as $row ) {
-			if (substr ( ltrim ( $row ), 0, 2 ) == '//' || trim ( $row ) == '') { // ignore comments
+			if (substr ( ltrim ( $row ), 0, 2 ) == '//' || trim ( $row ) == '') { // ignore comments and emtpty rows
 				continue;
 			}
 			$keyValuePair = explode ( '=', $row );
-			/*
-			 * // multiline values: the first line with an equal sign '=' will
-			 * // start a new key=value pair
-			 * if (sizeof ( $keyValuePair ) == 1) {
-			 * $langArray [$key] .= ' ' . chop ( $keyValuePair [0] );
-			 * continue;
-			 * }
-			 */
 			$key = trim ( $keyValuePair [0] );
 			$value = $keyValuePair [1];
 			if (! empty ( $key )) {
@@ -57,11 +49,11 @@ function getLangFile($language) {
 }
 function getLanguages() {
 	$languages = array ();
-	$langDir = dir ( 'language' );
+	$langDir = dir ( 'templates/language' );
 	while ( ($entry = $langDir->read ()) != false ) {
-		if ($entry != "." && $entry != ".." && is_dir ( 'language/' . $entry )) {
-			if (file_exists ( 'language/' . $entry . '/language.txt' )) {
-				$langFile = file ( 'language/' . $entry . '/language.txt' );
+		if ($entry != "." && $entry != ".." && is_dir ( './templates/language/' . $entry )) {
+			if (file_exists ( './templates/language/' . $entry . '/language.txt' )) {
+				$langFile = file ( './templates/language/' . $entry . '/language.txt' );
 				$languages [$entry] = array (
 						'path' => $entry,
 						'englishName' => trim ( $langFile [0] ),

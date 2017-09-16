@@ -45,7 +45,7 @@ Produktion			Kühe	Schweine	Schafe
 Gülle				250 l		65 l
 Mist				200 l		50 l
 Milch				696 l*
-Wolle									1 Palette pro 88 Tiere 
+Wolle									1 Palette pro 88 Tiere/Tag
 
 * Molkerei benötigt 90.000 l Milch = ~130 Kühe
 Quelle: https://forum.giants-software.com/viewtopic.php?f=885&t=100995
