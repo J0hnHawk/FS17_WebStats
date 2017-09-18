@@ -41,11 +41,11 @@ function getMaps() {
 	$maps = array ();
 	// Dateien die im Kartenordner vorhanden sein müssen
 	$mapFiles = array (
-			'common.php',
 			'map.txt',
 			'mapconfig.php',
 			'pda_map_H.jpg',
-			'translation.php' 
+			'translation',
+			'translation/de.php'
 	);
 	// Verzeichnis mit Karten druchsuchen
 	if (is_dir ( './config' )) {

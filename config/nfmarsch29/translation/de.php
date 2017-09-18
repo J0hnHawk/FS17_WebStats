@@ -68,7 +68,7 @@ $lang = array_merge ( $lang, array (
 		'baleGrass240' => 'Gras',
 		'Gras' => 'Gras',
 		'grass' => 'Gras',
-		'grass_windrowdryGrass_windrow' => 'Gras oder Heu',
+		'grass_windrow_dryGrass_windrow' => 'Gras oder Heu',
 		'digestate' => 'Gärreste',
 		'liquidManure' => 'Gülle',
 		'woodChips' => 'Hackschnitzel',
@@ -199,6 +199,7 @@ $lang = array_merge ( $lang, array (
 
 $lang = array_merge ( $lang, array (
 		'FabrikScript_Backerei' => 'Bäckerei',
+		'outOfMap' => 'Außerhalb der Karte',
 		'Bga' => 'BGA Süd',
 		'FabrikScript_Oel_Raffinerie_Raps' => 'Biodiesel- und Rapsraffinerie',
 		'FabrikScript_BrauereiFass' => 'Brauerei Fass',

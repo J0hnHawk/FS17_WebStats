@@ -159,7 +159,7 @@ $mapconfig = array_merge ( $mapconfig, array (
 								'fillTypes' => 'water',
 								'showInStorage' => false
 						),
-						'grass_windrow_dry_Grass_windrow' => array (
+						'grass_windrow_dryGrass_windrow' => array (
 								'capacity' => 0,
 								'factor' => 0,
 								'fillTypes' => 'grass_windrow dryGrass_windrow',
