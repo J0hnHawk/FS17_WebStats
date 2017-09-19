@@ -78,7 +78,7 @@ require ('./include/savegame.php');
 
 // Erlaubte Seiten
 $pages = array (
-		'overview',
+		'overview','animals',
 		'storage',
 		'production',
 		'commodity',

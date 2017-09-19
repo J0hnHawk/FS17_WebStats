@@ -138,7 +138,7 @@ function getState($fillLevel, $fillMax) {
 }
 function addFillType($i3dName, $fillLevel, $fillMax, $state) {
 	return array (
-			'i3dName' => 'woolPallet',
+			'i3dName' => $i3dName,
 			'fillLevel' => $fillLevel,
 			'fillMax' => $fillMax,
 			'state' => $state 
@@ -208,12 +208,18 @@ foreach ( $careerVehicles->onCreateLoadedObject as $object ) {
 	// Animals
 	if ($location == 'Animals_cow' || $location == 'Animals_pig' || $location == 'Animals_sheep') {
 		$numAnimals = intval ( $object ['numAnimals0'] );
+		$newAnimalPercentage = floatval($object['newAnimalPercentage']);
+		$cleanlinessFactor = floatval($object['cleanlinessFactor']);
 		addCommodity ( $animals [$location] ['name'], $numAnimals, $location );
 		$mapconfig [$location] ['ProdPerHour'] = $numAnimals / 24;
 		$plant = translate ( $location );
 		$plants [$plant] = array (
 				'i3dName' => $location,
 				'position' => $mapconfig [$location] ['position'],
+				'nameAnimals' => $animals [$location] ['name'],
+				'numAnimals' => $numAnimals,
+				'newAnimalPercentage' => intval($newAnimalPercentage*100),
+				'cleanlinessFactor' => intval($cleanlinessFactor*100),
 				'state' => 0 
 		);
 		// Trigger zusammenrechnen

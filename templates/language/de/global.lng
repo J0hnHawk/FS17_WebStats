@@ -140,3 +140,17 @@ SERVER_SETTINGS=Servereinstellungen löschen
 ADMIN_AREA=Serververwaltung
 ADMIN_DESCRIPTION=Achtung nach Eingabe des Passworts die Einstellungen zum Dedicated Server oder des Savegames gelöscht. FS17 WebStats kann danach neu initialisiert werden.
 ENTER_PASSWORD=Bitte Passwort eingeben
+
+//animals.tpl
+ANIMALS=Tiere
+SHEEP_COUNT=Schafbestand
+PIG_COUNT=Schweinebestand
+COW_COUNT=Kuhbestand
+PRODUCTIVITY=Produktivität
+REPRO_RATE=Reproduktionsrate
+NEXT_ANIMAL=Nächstes Tier in
+CLEANNESS=Sauberkeit
+
+
+
+
