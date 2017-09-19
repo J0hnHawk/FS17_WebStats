@@ -15,6 +15,8 @@
 				</a></li>
 				<li class="{if $page == 'production'}active{/if}"><a href="index.php?page=production"> <span class="glyphicon glyphicon-list"></span> ##PRODUCTION##
 				</a></li>
+				<li class="{if $page == 'animals'}active{/if}"><a href="index.php?page=animals"> <span class="glyphicon glyphicon-piggy-bank"></span> ##ANIMALS##
+				</a></li>
 				<li class="{if $page == 'factories'}active{/if}"><a href="index.php?page=factories"> <span class="glyphicon glyphicon-home"></span> ##FACTORY##
 				</a></li>
 				<li class="{if $page == 'commodity'}active{/if}"><a href="index.php?page=commodity"> <span class="glyphicon glyphicon-object-align-bottom"></span> ##COMMODITIES##

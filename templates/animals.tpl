@@ -24,11 +24,11 @@
 			</tr>
 			<tr>
 				<th class="col-sm-8">##REPRO_RATE##</th>
-				<td class="col-sm-4 text-right">{$plants.$animalPlant.newAnimalPercentage}</td>
+				<td class="col-sm-4 text-right">{$plants.$animalPlant.reproRate}</td>
 			</tr>
 			<tr>
 				<th class="col-sm-8">##NEXT_ANIMAL##</th>
-				<td class="col-sm-4 text-right">0</td>
+				<td class="col-sm-4 text-right">{$plants.$animalPlant.nextAnimal}</td>
 			</tr>
 		</table>
 	</div>
@@ -41,7 +41,7 @@
 			{foreach $plants.$animalPlant.output as $fillType => $fillTypeData}
 			<tr>
 				<th class="col-sm-8">{$fillType}</th>
-				<td class="col-sm-4 text-right">{if $fillTypeData.i3dName == 'woolPallet'}{math equation="100 / fillMax * fillLevel" fillMax=$fillTypeData.fillMax
+				<td class="col-sm-4 text-right">{if $fillTypeData.i3dName == 'woolPallet'}{math equation="round(100 / fillMax * fillLevel)" fillMax=$fillTypeData.fillMax
 					fillLevel=$fillTypeData.fillLevel assign="percent"} {$progress_bar = "success"} {if $percent > 99}{$progress_bar = "danger"} {elseif $percent >
 					90}{$progress_bar = "warning"} {/if}
 					<div class="progress" style="margin-bottom:0px;">
@@ -68,7 +68,7 @@
 					</div>
 				</td>
 			</tr>
-			{foreach $plants.$animalPlant.input as $fillType => $fillTypeData}{math equation="100 / fillMax * fillLevel" fillMax=$fillTypeData.fillMax
+			{foreach $plants.$animalPlant.input as $fillType => $fillTypeData}{math equation="round(100 / fillMax * fillLevel)" fillMax=$fillTypeData.fillMax
 			fillLevel=$fillTypeData.fillLevel assign="percent"} {$progress_bar = "success"} {if $percent <= 25}{$progress_bar = "danger"} {elseif $percent <=
 			50}{$progress_bar = "warning"} {/if}
 			<tr>

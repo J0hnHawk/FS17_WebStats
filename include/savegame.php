@@ -148,6 +148,7 @@ function addFillType($i3dName, $fillLevel, $fillMax, $state) {
 $animals = array (
 		'Animals_cow' => array (
 				'name' => 'cow',
+				'reproRate' => 1199,
 				'input' => array (
 						'water' => 35,
 						'straw' => 70,
@@ -163,6 +164,7 @@ $animals = array (
 		),
 		'Animals_pig' => array (
 				'name' => 'pig',
+				'reproRate' => 143,
 				'input' => array (
 						'water' => 10,
 						'straw' => 20,
@@ -178,6 +180,7 @@ $animals = array (
 		),
 		'Animals_sheep' => array (
 				'name' => 'sheep',
+				'reproRate' => 959,
 				'input' => array (
 						'water' => 15,
 						'grass_windrow_dryGrass_windrow' => 30 
@@ -208,8 +211,9 @@ foreach ( $careerVehicles->onCreateLoadedObject as $object ) {
 	// Animals
 	if ($location == 'Animals_cow' || $location == 'Animals_pig' || $location == 'Animals_sheep') {
 		$numAnimals = intval ( $object ['numAnimals0'] );
-		$newAnimalPercentage = floatval($object['newAnimalPercentage']);
-		$cleanlinessFactor = floatval($object['cleanlinessFactor']);
+		$newAnimalPercentage = floatval ( $object ['newAnimalPercentage'] );
+		$reproRate = $animals [$location] ['reproRate'] / $numAnimals * 3600;
+		$cleanlinessFactor = floatval ( $object ['cleanlinessFactor'] );
 		addCommodity ( $animals [$location] ['name'], $numAnimals, $location );
 		$mapconfig [$location] ['ProdPerHour'] = $numAnimals / 24;
 		$plant = translate ( $location );
@@ -218,8 +222,10 @@ foreach ( $careerVehicles->onCreateLoadedObject as $object ) {
 				'position' => $mapconfig [$location] ['position'],
 				'nameAnimals' => $animals [$location] ['name'],
 				'numAnimals' => $numAnimals,
-				'newAnimalPercentage' => intval($newAnimalPercentage*100),
-				'cleanlinessFactor' => intval($cleanlinessFactor*100),
+				'reproRate' => gmdate ( "H:i", $reproRate ),
+				'nextAnimal' => gmdate ( "H:i", $reproRate * (1 - $newAnimalPercentage) ),
+				'newAnimalPercentage' => intval ( $newAnimalPercentage * 100 ),
+				'cleanlinessFactor' => intval ( $cleanlinessFactor * 100 ),
 				'state' => 0 
 		);
 		// Trigger zusammenrechnen
