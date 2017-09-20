@@ -32,12 +32,8 @@ function getAnimalProductivity($location, $tipTriggers) {
 	}
 	global $animals;
 	switch ($location) {
-		case 'Animals_sheep' :
-			if (strpos ( $tipTriggers, 'grass_windrow_dryGrass_windrow' ) !== false) {
-				return 100;
-			}
+		case 'Animals_sheep' :			
 			return 10;
-			break;
 		case 'Animals_pig' :
 		case 'Animals_cow' :
 			$productivity = 0;
@@ -47,7 +43,6 @@ function getAnimalProductivity($location, $tipTriggers) {
 				}
 			}
 			return $productivity;
-			break;
 	}
 }
 $animals = array (
@@ -56,8 +51,8 @@ $animals = array (
 				'input' => array (
 						'water' => 35,
 						'straw' => 70,
-						'grass_windrow' => 70,
-						'silage_dryGrass_windrow' => 275,
+						'grass_windrow' => 100,
+						'silage_dryGrass_windrow' => 175,
 						'powerFood' => 105
 				),
 				'output' => array (
