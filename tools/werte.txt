@@ -51,3 +51,37 @@ Wolle									1 Palette pro 88 Tiere/Tag
 Quelle: https://forum.giants-software.com/viewtopic.php?f=885&t=100995
 
 ######################################################################
+
+/**
+ *   
+ * FARBEN
+ * - Futtertröge werden organge ab 50%
+ *   und werden rot ab 15%
+ *
+ * PRODUKTIVITÄT
+ * - Wenn Sauberkeit unter 10% dann -10%
+ *
+ * - SCHAFE
+ *   Ohne Wasser 0 %
+ *   Ohne Futter aber mit Wasser 10 %
+ *
+ * - SCHWEINE
+ *   Ohne Wasser 0 %
+ *   Futter 100 % minus fehlende:
+ *   Stroh                          9,8 %
+ *   Körnermais                    44,8 %
+ *   Raps, Sojabohne, Sonnenblume  17,8 %
+ *   Weizen & Gerste               22,8 %
+ *   Kartoffeln & Zuckerrüben       4,8 %
+ *
+ * - KÜHE
+ *   Ohne Wasser 0 %
+ *   Futter 100 % minus fehlende:
+ *   Stroh                   10%
+ *   Gras                    18 %
+ *   Silage/Heu				 45 %
+ *   -- oder --
+ *   Silage/Heu/Kraftfutter  72 %
+ *
+ */
+

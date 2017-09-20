@@ -18,9 +18,11 @@
  * along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
  *
  */
+
 if (! defined ( 'IN_NFMWS' ) && ! defined ( 'IN_INSTALL' )) {
 	exit ();
 }
+
 $smarty->assign ( 'maps', getMaps () );
 $smarty->assign ( 'languages', getLanguages () );
 

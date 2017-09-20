@@ -125,9 +125,6 @@ foreach ( $careerVehicles->vehicle as $vehicle ) {
 		}
 	}
 }
-function getMaxForage($forage, $numAnimals) {
-	return $forage * ($numAnimals > 0 && $numAnimals < 15 ? 15 : $numAnimals) * 6;
-}
 function getState($fillLevel, $fillMax) {
 	if ($fillLevel == 0) {
 		return 2;
@@ -144,50 +141,6 @@ function addFillType($i3dName, $fillLevel, $fillMax, $state) {
 			'state' => $state 
 	);
 }
-
-$animals = array (
-		'Animals_cow' => array (
-				'name' => 'cow',
-				'reproRate' => 1199,
-				'input' => array (
-						'water' => 35,
-						'straw' => 70,
-						'grass_windrow' => 70,
-						'silage_dryGrass_windrow' => 275,
-						'powerFood' => 105 
-				),
-				'output' => array (
-						'milk' => 696,
-						'manure' => 200,
-						'liquidManure' => 250 
-				) 
-		),
-		'Animals_pig' => array (
-				'name' => 'pig',
-				'reproRate' => 143,
-				'input' => array (
-						'water' => 10,
-						'straw' => 20,
-						'maize_pigFood' => 45,
-						'wheat_barley_pigFood' => 22,
-						'rape_sunflower_soybean_pigFood' => 18,
-						'potato_sugarBeet_pigFood' => 5 
-				),
-				'output' => array (
-						'manure' => 50,
-						'liquidManure' => 65 
-				) 
-		),
-		'Animals_sheep' => array (
-				'name' => 'sheep',
-				'reproRate' => 959,
-				'input' => array (
-						'water' => 15,
-						'grass_windrow_dryGrass_windrow' => 30 
-				),
-				'output' => array () 
-		) 
-);
 
 // Lagerstätten, Produktionsanlagen und Viehställe
 foreach ( $careerVehicles->onCreateLoadedObject as $object ) {
@@ -211,20 +164,15 @@ foreach ( $careerVehicles->onCreateLoadedObject as $object ) {
 	// Animals
 	if ($location == 'Animals_cow' || $location == 'Animals_pig' || $location == 'Animals_sheep') {
 		$numAnimals = intval ( $object ['numAnimals0'] );
-		$newAnimalPercentage = floatval ( $object ['newAnimalPercentage'] );
-		$reproRate = $animals [$location] ['reproRate'] / $numAnimals * 3600;
+		addCommodity ( substr ( $location, 8, 99 ), $numAnimals, $location );
 		$cleanlinessFactor = floatval ( $object ['cleanlinessFactor'] );
-		addCommodity ( $animals [$location] ['name'], $numAnimals, $location );
 		$mapconfig [$location] ['ProdPerHour'] = $numAnimals / 24;
 		$plant = translate ( $location );
 		$plants [$plant] = array (
 				'i3dName' => $location,
 				'position' => $mapconfig [$location] ['position'],
-				'nameAnimals' => $animals [$location] ['name'],
+				'nameAnimals' => substr ( $location, 8, 99 ),
 				'numAnimals' => $numAnimals,
-				'reproRate' => gmdate ( "H:i", $reproRate ),
-				'nextAnimal' => gmdate ( "H:i", $reproRate * (1 - $newAnimalPercentage) ),
-				'newAnimalPercentage' => intval ( $newAnimalPercentage * 100 ),
 				'cleanlinessFactor' => intval ( $cleanlinessFactor * 100 ),
 				'state' => 0 
 		);
@@ -239,8 +187,12 @@ foreach ( $careerVehicles->onCreateLoadedObject as $object ) {
 				}
 			}
 		}
-		// Kapazitäten errechnen
+		// Kapazitäten & Produktivität errechnen
+		$tipTriggers = '';
 		foreach ( $fillTypes as $combineFillType => $fillLevel ) {
+			if ($fillLevel != 0) {
+				$tipTriggers .= $combineFillType;
+			}
 			$l_fillType = translate ( $combineFillType );
 			$factor = $animals [$location] ['input'] [$combineFillType];
 			$fillMax = getMaxForage ( $factor, $numAnimals );
@@ -251,6 +203,11 @@ foreach ( $careerVehicles->onCreateLoadedObject as $object ) {
 			}
 			$plants [$plant] ['input'] [$l_fillType] = addFillType ( $combineFillType, $fillLevel, $fillMax, $state );
 		}
+		$productivity = getAnimalProductivity ( $location, $tipTriggers ) * (($cleanlinessFactor < 0.1) ? 0.9 : 1);
+		$plants [$plant] ['productivity'] = $productivity;
+		$reproRate = $animals [$location] ['reproRate'] / $numAnimals * 3600 * 100 / $productivity;
+		$plants [$plant] ['reproRate'] = gmdate ( "H:i", $reproRate );
+		$plants [$plant] ['nextAnimal'] = gmdate ( "H:i", $reproRate * (1 - floatval ( $object ['newAnimalPercentage'] )) );
 		// Produktion
 		$output = array ();
 		switch ($location) {

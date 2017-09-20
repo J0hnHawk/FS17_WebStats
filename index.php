@@ -67,6 +67,7 @@ $map = array (
 		'Copyright' => $mapCopyright 
 );
 $smarty->assign ( 'map', $map );
+include ('./config/animals.php');
 require ("./config/$mapPath/mapconfig.php");
 if (! file_exists ( "./config/$mapPath/translation/{$_SESSION ['language']}.php" )) {
 	require ("./config/$mapPath/translation/$defaultLanguage.php");
@@ -78,7 +79,8 @@ require ('./include/savegame.php');
 
 // Erlaubte Seiten
 $pages = array (
-		'overview','animals',
+		'overview',
+		'husbandry',
 		'storage',
 		'production',
 		'commodity',

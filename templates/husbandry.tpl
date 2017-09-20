@@ -19,7 +19,7 @@
 				<th class="col-sm-8">##PRODUCTIVITY##</th>
 				<td class="col-sm-4"><div class="progress" style="margin-bottom:0px;">
 						<div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"
-							style="min-width: 2em; width: 0%">0%</div>
+							style="min-width: 2em; width: {$plants.$animalPlant.productivity}%">{$plants.$animalPlant.productivity}%</div>
 					</div></td>
 			</tr>
 			<tr>
