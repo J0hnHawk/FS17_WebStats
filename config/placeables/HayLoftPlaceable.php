@@ -18,18 +18,19 @@
  * along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
  *
  */
-
-if (! defined ( 'IN_NFMWS' ) && ! defined ( 'IN_INSTALL' )) {
-	exit ();
+if (empty ( $mapconfig ) || ! is_array ( $mapconfig )) {
+	$mapconfig = array ();
 }
 
-$animalPlants = array (
-		"Animals_sheep",
-		"Animals_pig",
-		"Animals_cow" 
-);
-foreach ( $animalPlants as $key => $animalPlant ) {
-	$animalPlants [$key] = translate ( $animalPlant );
-}
-$smarty->assign ( 'animalPlants', $animalPlants );
-$smarty->assign ( 'plants', $plants );
+$mapconfig = array_merge ( $mapconfig, array (
+		'HayLoftPlaceable' => array (
+				'position' => '-550 0 750',
+				'showInProduction' => false,
+				'isBuildinStorage' => true,
+				'rawMaterial' => array (),
+				'product' => array () 
+		) 
+) );
+$lang = array_merge ( $lang, array (
+		'HayLoftPlaceable' => 'Wurzelfruchtlager (platzierbar)' 
+) );

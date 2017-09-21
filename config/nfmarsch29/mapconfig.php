@@ -28,8 +28,17 @@ if (empty($mapconfig) || ! is_array($mapconfig)) {
 $mapconfig = array_merge ( $mapconfig, array (
 		'Storage_storage1' => array (
 				'ProdPerHour' => 0,
-				'position' => '194.64 100.736 101.567',
+				'position' => '210 0 120',
 				'showInProduction' => false,
+				'isBuildinStorage' => true,
+				'rawMaterial' => array (),
+				'product' => array ()
+		),
+		'Bga' => array (
+				'ProdPerHour' => 0,
+				'position' => '-250 0 650',
+				'showInProduction' => false,
+				'isBuildinStorage' => true,
 				'rawMaterial' => array (),
 				'product' => array ()
 		),

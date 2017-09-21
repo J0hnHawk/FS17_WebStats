@@ -7,7 +7,6 @@
 <div class="row">
 	<div class="col-sm-8 col-sm-offset-1">
 		{$plantData = $plants.$plantName}
-		{$ProdPerHour = $mapconfig[$plantData.i3dName].ProdPerHour}
 		<h4>##REQUIRED##</h4>
 		<table class="table">
 			<thead>
@@ -20,16 +19,13 @@
 				</tr>
 			</thead>
 			<tbody>
-			{foreach $plantData.input as $fillTypeName => $fillTypeData}
-				{$factor = $mapconfig[$plantData.i3dName].rawMaterial[$fillTypeData.i3dName].factor}
-				{$hour = $ProdPerHour*$factor}
-				{$day = $hour * 24}
+			{foreach $plantData.input as $fillTypeName => $fillTypeData}				
 				<tr>
 					<td><a href="index.php?page=commodity&object={$fillTypeData.i3dName}">{$fillTypeName}</a></td>
 					<td class="text-right">{$fillTypeData.fillLevel|number_format:0:",":"."}</td>
 					<td class="text-right">{$fillTypeData.fillMax|number_format:0:",":"."}</td>
-					<td class="text-right">{$hour|number_format:0:",":"."}</td>
-					<td class="text-right">{$day|number_format:0:",":"."}</td>
+					<td class="text-right">{$fillTypeData.prodPerHour|number_format:0:",":"."}</td>
+					<td class="text-right">{$fillTypeData.prodPerDay|number_format:0:",":"."}</td>
 				</tr>
 			{/foreach}
 			</tbody>
@@ -48,15 +44,12 @@
 			</thead>
 			<tbody>
 			{foreach $plantData.output as $fillTypeName => $fillTypeData}
-				{$factor = $mapconfig[$plantData.i3dName].product[$fillTypeData.i3dName].factor}
-				{$hour = $ProdPerHour*$factor}
-				{$day = $hour * 24}
 				<tr>
 					<td><a href="index.php?page=commodity&object={$fillTypeData.i3dName}">{$fillTypeName}</a></td>
 					<td class="text-right">{$fillTypeData.fillLevel|number_format:0:",":"."}</td>
 					<td class="text-right">{if is_numeric($fillTypeData.fillMax)}{$fillTypeData.fillMax|number_format:0:",":"."}{else}{$fillTypeData.fillMax}{/if}</td>
-					<td class="text-right">{$hour|number_format:0:",":"."}</td>
-					<td class="text-right">{$day|number_format:0:",":"."}</td>
+					<td class="text-right">{$fillTypeData.prodPerHour|number_format:0:",":"."}</td>
+					<td class="text-right">{$fillTypeData.prodPerDay|number_format:0:",":"."}</td>
 				</tr>
 			{/foreach}
 			</tbody>

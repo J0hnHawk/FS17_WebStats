@@ -36,6 +36,28 @@ function GetParam($ParamName, $Method = "P", $DefaultValue = "") {
 			return $DefaultValue;
 	}
 }
+
+// Produktionsstatus (savegame.php)
+function getState($fillLevel, $fillMax) {
+	if ($fillLevel == 0) {
+		return 2;
+	} elseif ($fillLevel / $fillMax < 0.1) {
+		return 1;
+	}
+	return 0;
+}
+
+// Array hinzufügen (savegame.php)
+function addFillType($i3dName, $fillLevel, $fillMax, $prodPerHour, $factor, $state) {
+	return array (
+			'i3dName' => $i3dName,
+			'fillLevel' => $fillLevel,
+			'fillMax' => $fillMax,
+			'prodPerHour' => $prodPerHour * $factor,
+			'prodPerDay' => $prodPerHour * $factor * 24,
+			'state' => $state
+	);
+}
 // Karten laden
 function getMaps() {
 	$maps = array ();

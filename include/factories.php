@@ -38,5 +38,4 @@ uksort($plants, "strnatcasecmp");
 $smarty->assign('selectedPlant', $object);
 $smarty->assign('plantName', $l_object);
 $smarty->assign('plants', $plants);
-$smarty->assign('mapconfig', $mapconfig);
 

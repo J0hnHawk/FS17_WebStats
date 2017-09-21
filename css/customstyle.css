@@ -9,8 +9,12 @@ body {
 	margin-bottom: 60px;
 }
 
-/*.modal {overflow-y: auto;}.modal-open {overflow: auto;}*/
+.progress {
+	border: 1px solid rgba(156, 156, 156, 1);
+	margin-bottom: 0px;
+}
 
+/*.modal {overflow-y: auto;}.modal-open {overflow: auto;}*/
 .modal-open[style] {
 	padding-right: 0px !important;
 }

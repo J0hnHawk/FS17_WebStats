@@ -18,11 +18,9 @@
  * along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
  *
  */
-
 if (! defined ( 'IN_NFMWS' ) && ! defined ( 'IN_INSTALL' )) {
 	exit ();
 }
-
 function getMaxForage($forage, $numAnimals) {
 	return $forage * ($numAnimals > 0 && $numAnimals < 15 ? 15 : $numAnimals) * 6;
 }
@@ -31,70 +29,72 @@ function getAnimalProductivity($location, $tipTriggers) {
 		return 0;
 	}
 	global $animals;
-	switch ($location) {
-		case 'Animals_sheep' :			
-			return 10;
-		case 'Animals_pig' :
-		case 'Animals_cow' :
-			$productivity = 0;
-			foreach ( $animals [$location]['productivity'] as $trigger => $value ) {
-				if (strpos ( $tipTriggers, $trigger ) !== false) {
-					$productivity += $value;
-				}
-			}
-			return $productivity;
+	$productivity = 0;
+	if ($location == 'Animals_sheep') {
+		$productivity = 10;
 	}
+	foreach ( $animals [$location] ['productivity'] as $trigger => $value ) {
+		if (strpos ( $tipTriggers, $trigger ) !== false) {
+			$productivity += $value;
+		}
+	}
+	return $productivity;
 }
 $animals = array (
 		'Animals_cow' => array (
-				'reproRate' => 1199,
+				'reproRate' => 1200,
 				'input' => array (
 						'water' => 35,
 						'straw' => 70,
 						'grass_windrow' => 100,
 						'silage_dryGrass_windrow' => 175,
-						'powerFood' => 105
+						'powerFood' => 105 
 				),
 				'output' => array (
-						'milk' => 696,
+						'milk' => 714,
 						'manure' => 200,
-						'liquidManure' => 250
+						'liquidManure' => 250 
 				),
 				'productivity' => array (
 						'straw' => 10,
 						'grass_windrow' => 18,
 						'silage_dryGrass_windrow' => 45,
-						'powerFood' => 27
-				)
+						'powerFood' => 27 
+				) 
 		),
 		'Animals_pig' => array (
-				'reproRate' => 143,
+				'reproRate' => 144,
 				'input' => array (
 						'water' => 10,
 						'straw' => 20,
-						'maize_pigFood' => 45,
-						'wheat_barley_pigFood' => 22,
+						'maize_pigFood' => 61,
+						'wheat_barley_pigFood' => 23,
 						'rape_sunflower_soybean_pigFood' => 18,
-						'potato_sugarBeet_pigFood' => 5
+						'potato_sugarBeet_pigFood' => 5 
 				),
 				'output' => array (
 						'manure' => 50,
-						'liquidManure' => 65
+						'liquidManure' => 65 
 				),
 				'productivity' => array (
 						'straw' => 9.8,
 						'maize_pigFood' => 44.8,
 						'wheat_barley_pigFood' => 22.8,
 						'rape_sunflower_soybean_pigFood' => 17.8,
-						'potato_sugarBeet_pigFood' => 4.8
-				)
+						'potato_sugarBeet_pigFood' => 4.8 
+				) 
 		),
 		'Animals_sheep' => array (
-				'reproRate' => 959,
+				'reproRate' => 960,
 				'input' => array (
 						'water' => 15,
-						'grass_windrow_dryGrass_windrow' => 30
+						'grass_windrow_dryGrass_windrow' => 36 
 				),
-				'output' => array ()
-		)
+				'output' => array (
+						'woolPallet' => 24 
+				),
+				'productivity' => array (
+						'grass_windrow_dryGrass_windrow' => 90 
+				) 
+		) 
 );

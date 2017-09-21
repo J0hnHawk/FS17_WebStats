@@ -18,7 +18,7 @@
  * along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
  *
  */
-$mapVersion = 'Tanneberg 2.0';
+$mapVersion = 'Goldcres Valley';
 
 if (empty ( $mapconfig ) || ! is_array ( $mapconfig )) {
 	$mapconfig = array ();
@@ -29,8 +29,33 @@ $mapconfig = array_merge ( $mapconfig, array (
 				'ProdPerHour' => 0,
 				'position' => '179.5 0 110',
 				'showInProduction' => false,
+				'isBuildinStorage' => true,
 				'rawMaterial' => array (),
 				'product' => array () 
+		),
+		'Storage_storage2' => array (
+				'ProdPerHour' => 0,
+				'position' => '194.64 100.736 101.567',
+				'showInProduction' => false,
+				'isBuildinStorage' => true,
+				'rawMaterial' => array (),
+				'product' => array ()
+		),
+		'Storage_storage3' => array (
+				'ProdPerHour' => 0,
+				'position' => '194.64 100.736 101.567',
+				'showInProduction' => false,
+				'isBuildinStorage' => true,
+				'rawMaterial' => array (),
+				'product' => array ()
+		),
+		'Storage_storage4' => array (
+				'ProdPerHour' => 0,
+				'position' => '194.64 100.736 101.567',
+				'showInProduction' => false,
+				'isBuildinStorage' => true,
+				'rawMaterial' => array (),
+				'product' => array ()
 		),
 		'Animals_cow' => array (
 				'ProdPerHour' => 0,

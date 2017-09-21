@@ -13,6 +13,9 @@ Lagerbestände in Fahrzeugen und bei den Produktionsstätten werden mit einbezog
 #### Produktionsübersicht
 Übersicht über alle Produktionsstätten. Fehlende Rohstoffe bzw. volle Lager werden farblich markiert. Alphabetische Sortierung oder nach Füllstand.
 
+#### Viehzucht
+Übersicht über Schafweide, Schweine- und Kuhstall (wie Ingameübersicht).
+
 #### Fabrikdetails
 Anzeige zusätzlicher Details der Produktionsanlagen. Neben Lagermengen und Kapazitäten werden auch der Verbrauch und die Produktion pro Stunde und Tag angezeigt.
 

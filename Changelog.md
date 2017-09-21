@@ -4,16 +4,23 @@
 
 **Änderungen und Erweiterungen:**
 - Projekt umbenannt in FS17 Webstats
-- Umstellung der Templates auf Multilanguage
+- Umstellung der Templates auf Mehrsprachigkeit
+- Tierübersicht ergänzt
+- Kuh- und Schweinestall werden nun in der Produktionsübersicht mit angezeigt
 - FS17 Webstats ist nun für soweit vorbereitet, dass auch andere Karten unterstützt werden
 - Prüfung, ob fsockopen() erlaubt ist bei der Installation
 - Fehlerbehandung geändert; Logdatei statt Anzeige
 - Bei der Installation muss ein Passwort festgelegt werden. Mit diesem kann man später die Einstellungen zurücksetzen
 - Im Optionsdialog kann zwischen 3 und 4 Spalten in der Lagerübersicht gewechselt werden.
+- Mehrsprachigkeit nun auch für Produktionsstätten, Lager und Waren
+- Fahrzeuge können über extra Datei benannt werden
+- Kartenkonfiguration zusammengefasst
+- Unterstützung für unendliche Lagerkapazität (z.B. bei Kuh- und Schweinestall)
 
 **Berichtigte Fehler:**
 - Die Einstellung "nur Paletten" funktioniert jetzt in der Lagerübersicht korrekt 
 - Pelletspaletten werden nun im Lager bei der Pelltesfabrik angezeigt (#8)
+- Kombirohstoffe wurden nicht immer hinzugefügt
 
 ## [Version 1.2.2](https://github.com/J0hnHawk/FS17_NF_Marsch_WebStats/releases/tag/v1.2.2) (10.09.2017)
 
