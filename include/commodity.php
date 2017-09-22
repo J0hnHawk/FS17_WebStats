@@ -93,13 +93,17 @@ if ($commodities [$l_object] ['isCombine']) {
 	$combineCommodities = false;
 	// Lagerorte merken für Karte
 	$commodity = $commodities [$l_object];
-	foreach ( $commodity ['locations'] as $location ) {
-		if (isset ( $location ['isVehicle'] ) || isset ( $location ['Bale'] ) || isset ( $location ['FillablePallet'] )) {
+	foreach ( $commodity ['locations'] as $location => $locationData ) {
+		if ($options ['storage'] ['hideZero'] && $locationData ['fillLevel'] == 0) {
+			unset ( $commodities [$l_object] ['locations'] [$location] );
+			continue;
+		}
+		if ($locationData ['fillLevel'] == 0 || isset ( $locationData ['isVehicle'] ) || isset ( $locationData ['Bale'] ) || isset ( $locationData ['FillablePallet'] )) {
 			continue;
 		} else {
-			if (isset ( $mapconfig [$location ['i3dName']] ['position'] )) {
-				$position = $mapconfig [$location ['i3dName']] ['position'];
-				$mapEntries [] = addEntry ( $position, translate ( $location ['i3dName'] ), 'vehicle.png' );
+			if (isset ( $mapconfig [$locationData ['i3dName']] ['position'] )) {
+				$position = $mapconfig [$locationData ['i3dName']] ['position'];
+				$mapEntries [] = addEntry ( $position, translate ( $locationData ['i3dName'] ), 'vehicle.png' );
 			} else {
 				// echo ($location ['i3dName'].'<br>');
 			}

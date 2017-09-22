@@ -23,7 +23,7 @@
 				<tr>
 					<td><a href="index.php?page=commodity&object={$fillTypeData.i3dName}">{$fillTypeName}</a></td>
 					<td class="text-right">{$fillTypeData.fillLevel|number_format:0:",":"."}</td>
-					<td class="text-right">{$fillTypeData.fillMax|number_format:0:",":"."}</td>
+					<td class="text-right">{if is_numeric($fillTypeData.fillMax)}{$fillTypeData.fillMax|number_format:0:",":"."}{else}{$fillTypeData.fillMax}{/if}</td>
 					<td class="text-right">{$fillTypeData.prodPerHour|number_format:0:",":"."}</td>
 					<td class="text-right">{$fillTypeData.prodPerDay|number_format:0:",":"."}</td>
 				</tr>

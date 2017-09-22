@@ -44,6 +44,9 @@ foreach ( $commodities as $name => $commodity ) {
 			$commodities [$name] ['overall'] -= $locationData ['fillLevel'];
 			unset ( $commodities [$name] ['locations'] [$location] );
 		}
+		if ($options ['storage'] ['hideZero'] && $locationData ['fillLevel'] == 0) {
+			unset ( $commodities [$name] ['locations'] [$location] );
+		}
 	}
 	if ($options ['storage'] ['hideZero'] && $commodities [$name] ['overall'] == 0) {
 		unset ( $commodities [$name] );

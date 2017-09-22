@@ -49,7 +49,7 @@ text-danger")} {$textcolors = array("","text-warning","text-danger")}
 									<tr>
 										{if isset($inputRow[$i][0])}
 										<td><a href="index.php?page=commodity&object={$inputRow[$i][3]}">{$inputRow[$i][0]}</a></td>
-										<td class="text-right">{$inputRow[$i][1]|number_format:0:",":"."} / {$inputRow[$i][2]|number_format:0:",":"."}</td> {else}
+										<td class="text-right">{$inputRow[$i][1]|number_format:0:",":"."} / {if is_numeric($inputRow[$i][2])}{$inputRow[$i][2]|number_format:0:",":"."}{else}{$inputRow[$i][2]}{/if}</td> {else}
 										<td colspan="2">&nbsp;</td> {/if} {if isset($outputRow[$i][0])}
 										<td><a href="index.php?page=commodity&object={$outputRow[$i][3]}">{$outputRow[$i][0]}</a></td>
 										<td class="text-right">{$outputRow[$i][1]|number_format:0:",":"."} / {if is_numeric($outputRow[$i][2])}{$outputRow[$i][2]|number_format:0:",":"."}{else}{$outputRow[$i][2]}{/if}</td>{else}

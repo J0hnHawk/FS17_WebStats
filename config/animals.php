@@ -46,7 +46,7 @@ $animals = array (
 				'input' => array (
 						'water' => 35,
 						'straw' => 70,
-						'grass_windrow' => 100,
+						'grass_windrow' => 70, // Troggröße 70 L / Verbrauch 100 L
 						'silage_dryGrass_windrow' => 175,
 						'powerFood' => 105 
 				),
@@ -67,10 +67,10 @@ $animals = array (
 				'input' => array (
 						'water' => 10,
 						'straw' => 20,
-						'maize_pigFood' => 61,
-						'wheat_barley_pigFood' => 23,
+						'maize_pigFood' => 45, // Troggröße 45 L / Verbrauch 61 L
+						'wheat_barley_pigFood' => 22, // Troggröße 22 L / Verbrauch 23 L
 						'rape_sunflower_soybean_pigFood' => 18,
-						'potato_sugarBeet_pigFood' => 5 
+						'potato_sugarBeet_pigFood' => 4.5  // Troggröße 4.5 L / Verbrauch 5 L
 				),
 				'output' => array (
 						'manure' => 50,
@@ -88,7 +88,7 @@ $animals = array (
 				'reproRate' => 960,
 				'input' => array (
 						'water' => 15,
-						'grass_windrow_dryGrass_windrow' => 36 
+						'grass_windrow_dryGrass_windrow' => 30  // Troggröße 30 L / Verbrauch 36 L
 				),
 				'output' => array (
 						'woolPallet' => 24 

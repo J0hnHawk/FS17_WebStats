@@ -75,8 +75,19 @@ $lang = array_merge ( $lang, array (
 
 $lang = array_merge ( $lang, array (
 		'onMap' => 'Landschaft',
-		'Storage_storage1' => 'Hofsilo',
+		'outofMap' => 'Außerhalb der Karte',
+		'Bga' => 'McLean Biogas Plant',
 		'Animals_pig' => 'Schweinestall',
 		'Animals_cow' => 'Kuhstall',
-		'Animals_sheep' => 'Schafweide' 
+		'Animals_sheep' => 'Schafweide',
+		'Storage_storage1' => 'Hofsilo',
+		'Storage_storage2' => 'Goldcrest Pacific Grain',
+		'Storage_storage3' => 'Central Transport Hub',
+		'Storage_storage4' => 'Maplefield Pool',
+		'BunkerSilo_silo001' => 'BGA Fahrsilo 1',
+		'BunkerSilo_silo002' => 'BGA Fahrsilo 2',
+		'BunkerSilo_silo003' => 'BGA Fahrsilo 3',
+		'BunkerSilo_silo004' => 'BGA Fahrsilo 4',
+		'BunkerSilo_silo005' => 'BGA Fahrsilo 5',
+		'BunkerSilo_cowSilo' => 'Kuhstall Fahrsilo' 
 ) );

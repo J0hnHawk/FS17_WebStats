@@ -134,89 +134,212 @@ foreach ( $careerVehicles->vehicle as $vehicle ) {
 	}
 }
 
-// Lagerstätten, Produktionsanlagen und Viehställe
+// Analysierung von CreateLoadedObjects, Lager, Vieh, BGA, Fabrikskripte
 foreach ( $careerVehicles->onCreateLoadedObject as $object ) {
 	$location = strval ( $object ['saveId'] );
-	
-	// BGA
-	if ($location == 'Bga') {
-		$fillLevel = strval ( $object ['digestateSiloFillLevel'] );
-		addCommodity ( 'digestate', $fillLevel, $location );
+	if (! isset ( $mapconfig [$location] ['locationType'] )) {
+		continue;
 	}
-	
-	// Animals
-	if ($location == 'Animals_cow' || $location == 'Animals_pig' || $location == 'Animals_sheep') {
-		$numAnimals = intval ( $object ['numAnimals0'] );
-		addCommodity ( substr ( $location, 8, 99 ), $numAnimals, $location );
-		$cleanlinessFactor = floatval ( $object ['cleanlinessFactor'] );
-		$ProdPerHour = $numAnimals / 24;
-		$plant = translate ( $location );
-		$plants [$plant] = array (
-				'i3dName' => $location,
-				'position' => $mapconfig [$location] ['position'],
-				'state' => 0,
-				'nameAnimals' => substr ( $location, 8, 99 ),
-				'numAnimals' => $numAnimals,
-				'cleanlinessFactor' => intval ( $cleanlinessFactor * 100 ) 
-		);
-		// Trigger zusammenrechnen
-		$fillTypes = array ();
-		foreach ( $object->tipTriggerFillLevel as $tipTrigger ) {
-			foreach ( $mapconfig [$location] ['rawMaterial'] as $combineFillType => $fillTypeData ) {
-				if (! isset ( $fillTypes [$combineFillType] ))
-					$fillTypes [$combineFillType] = 0;
-				if (strpos ( $fillTypeData ['fillTypes'], strval ( $tipTrigger ['fillType'] ) ) !== false) {
-					$fillTypes [$combineFillType] += intval ( $tipTrigger ['fillLevel'] );
+	switch ($mapconfig [$location] ['locationType']) {
+		case 'animal' :
+			// Grunddaten
+			$numAnimals = intval ( $object ['numAnimals0'] );
+			addCommodity ( substr ( $location, 8, 99 ), $numAnimals, $location );
+			$cleanlinessFactor = floatval ( $object ['cleanlinessFactor'] );
+			$ProdPerHour = $numAnimals / 24;
+			$plant = translate ( $location );
+			$plants [$plant] = array (
+					'i3dName' => $location,
+					'position' => $mapconfig [$location] ['position'],
+					'state' => 0,
+					'nameAnimals' => substr ( $location, 8, 99 ),
+					'numAnimals' => $numAnimals,
+					'cleanlinessFactor' => intval ( $cleanlinessFactor * 100 ) 
+			);
+			// Trigger zusammenrechnen
+			$fillTypes = array ();
+			foreach ( $object->tipTriggerFillLevel as $tipTrigger ) {
+				foreach ( $mapconfig [$location] ['rawMaterial'] as $combineFillType => $fillTypeData ) {
+					if (! isset ( $fillTypes [$combineFillType] ))
+						$fillTypes [$combineFillType] = 0;
+					if (strpos ( $fillTypeData ['fillTypes'], strval ( $tipTrigger ['fillType'] ) ) !== false) {
+						$fillTypes [$combineFillType] += intval ( $tipTrigger ['fillLevel'] );
+					}
 				}
 			}
-		}
-		// Kapazitäten & Produktivität errechnen
-		$tipTriggers = '';
-		foreach ( $fillTypes as $combineFillType => $fillLevel ) {
-			if ($fillLevel != 0) {
-				$tipTriggers .= $combineFillType;
+			// Kapazitäten & Produktivität errechnen
+			$tipTriggers = '';
+			foreach ( $fillTypes as $combineFillType => $fillLevel ) {
+				if ($fillLevel != 0) {
+					$tipTriggers .= $combineFillType;
+				}
+				$l_fillType = translate ( $combineFillType );
+				$trough_factor = $animals [$location] ['input'] [$combineFillType];
+				$usage_factor = $mapconfig [$location] ['rawMaterial'] [$combineFillType]['factor'];
+				$fillMax = getMaxForage ( $trough_factor, $numAnimals );
+				$state = getState ( $fillLevel, $fillMax );
+				if ($state > $plants [$plant] ['state']) {
+					$plants [$plant] ['state'] = $state;
+				}
+				$plants [$plant] ['input'] [$l_fillType] = addFillType ( $combineFillType, $fillLevel, $fillMax, $ProdPerHour, $usage_factor, $state );
 			}
-			$l_fillType = translate ( $combineFillType );
-			$factor = $animals [$location] ['input'] [$combineFillType];
-			$fillMax = getMaxForage ( $factor, $numAnimals );
-			$state = getState ( $fillLevel, $fillMax );
-			if ($state > $plants [$plant] ['state']) {
-				$plants [$plant] ['state'] = $state;
-			}
-			$plants [$plant] ['input'] [$l_fillType] = addFillType ( $combineFillType, $fillLevel, $fillMax, $ProdPerHour, $factor, $state );
-		}
-		$productivity = getAnimalProductivity ( $location, $tipTriggers ) * (($cleanlinessFactor < 0.1) ? 0.9 : 1);
-		$plants [$plant] ['productivity'] = $productivity;
-		$reproRate = $animals [$location] ['reproRate'] / $numAnimals * 3600 * 100 / $productivity;
-		$plants [$plant] ['reproRate'] = gmdate ( "H:i", $reproRate );
-		$plants [$plant] ['nextAnimal'] = gmdate ( "H:i", $reproRate * (1 - floatval ( $object ['newAnimalPercentage'] )) );
-		// Produktion
-		$output = array ();
-		switch ($location) {
-			case 'Animals_sheep' :
-				// Wolle
-				$fillType = 'woolPallet';
-				$l_fillType = translate ( $fillType );
-				$factor = $animals [$location] ['output'] [$fillType];
-				$fillLevel = isset ( $commodities [$l_fillType] ['locations'] [$plant] ['fillLevel'] ) ? $commodities [$l_fillType] ['locations'] [$plant] ['fillLevel'] : 0;
-				$fillMax = $mapconfig [$location] ['product'] [$fillType] ['palettPlaces'] * $mapconfig [$location] ['product'] [$fillType] ['capacity'];
-				$state = getState ( $fillMax - $fillLevel, $fillMax );
-				$plants [$plant] ['output'] [$l_fillType] = addFillType ( $fillType, $fillLevel, $fillMax, $ProdPerHour, $factor, $state );
-				break;
-			case 'Animals_cow' :
-				// Milch
-				$output ['milk'] = intval ( $object->fillLevelMilk ['fillLevel'] );
-			case 'Animals_pig' :
-				// Gülle & Mist
-				$output ['manure'] = intval ( $object ['manureFillLevel'] );
-				$output ['liquidManure'] = intval ( $object ['liquidManureFillLevel'] );
-				foreach ( $output as $fillType => $fillLevel ) {
-					addCommodity ( $fillType, $fillLevel, $location );
+			$productivity = getAnimalProductivity ( $location, $tipTriggers ) * (($cleanlinessFactor < 0.1) ? 0.9 : 1);
+			$plants [$plant] ['productivity'] = $productivity;
+			$reproRate = $animals [$location] ['reproRate'] / $numAnimals * 3600 * 100 / $productivity;
+			$plants [$plant] ['reproRate'] = gmdate ( "H:i", $reproRate );
+			$plants [$plant] ['nextAnimal'] = gmdate ( "H:i", $reproRate * (1 - floatval ( $object ['newAnimalPercentage'] )) );
+			// Produktion
+			$output = array ();
+			switch ($location) {
+				case 'Animals_sheep' :
+					// Wolle
+					$fillType = 'woolPallet';
+					$l_fillType = translate ( $fillType );
 					$factor = $animals [$location] ['output'] [$fillType];
-					$plants [$plant] ['output'] [translate ( $fillType )] = addFillType ( $fillType, $fillLevel, '&infin;', $ProdPerHour, $factor, 0 );
+					$fillLevel = isset ( $commodities [$l_fillType] ['locations'] [$plant] ['fillLevel'] ) ? $commodities [$l_fillType] ['locations'] [$plant] ['fillLevel'] : 0;
+					$fillMax = $mapconfig [$location] ['product'] [$fillType] ['palettPlaces'] * $mapconfig [$location] ['product'] [$fillType] ['capacity'];
+					$state = getState ( $fillMax - $fillLevel, $fillMax );
+					$plants [$plant] ['output'] [$l_fillType] = addFillType ( $fillType, $fillLevel, $fillMax, $ProdPerHour, $factor, $state );
+					break;
+				case 'Animals_cow' :
+					// Milch
+					$output ['milk'] = intval ( $object->fillLevelMilk ['fillLevel'] );
+				case 'Animals_pig' :
+					// Gülle & Mist
+					$output ['manure'] = intval ( $object ['manureFillLevel'] );
+					$output ['liquidManure'] = intval ( $object ['liquidManureFillLevel'] );
+					foreach ( $output as $fillType => $fillLevel ) {
+						addCommodity ( $fillType, $fillLevel, $location );
+						$factor = $animals [$location] ['output'] [$fillType];
+						$plants [$plant] ['output'] [translate ( $fillType )] = addFillType ( $fillType, $fillLevel, '&infin;', $ProdPerHour, $factor, 0 );
+					}
+					break;
+			}
+			break;
+		case 'storage' :
+			foreach ( $object->node as $node ) {
+				$fillType = strval ( $node ['fillType'] );
+				$fillLevel = intval ( $node ['fillLevel'] );
+				addCommodity ( $fillType, $fillLevel, $location );
+			}
+			break;
+		case 'bga' :
+			$fillType = 'digestate';
+			if ($mapconfig [$location] ['product'] [$fillType] ['showInStorage']) {
+				$fillLevel = intval ( $object ['digestateSiloFillLevel'] );
+				addCommodity ( $fillType, $fillLevel, $location );
+			}
+			if ($mapconfig [$location] ['showInProduction']) {
+				$plant = translate ( $location );
+				$prodPerHour = $mapconfig [$location] ['ProdPerHour'];
+				$plants [$plant] = array (
+						'i3dName' => $location,
+						'position' => $mapconfig [$location] ['position'],
+						'state' => 0,
+						'input' => array (),
+						'output' => array () 
+				);
+				foreach ( $mapconfig [$location] ['rawMaterial'] as $fillType => $fillTypeData ) {
+					$fillLevel = intval ( $object [$fillTypeData ['fillTypes']] );
+					$l_fillType = translate ( $fillType );
+					$fillMax = $mapconfig [$location] ['rawMaterial'] [$fillType] ['capacity'];
+					$state = 0;
+					if (is_numeric ( $fillMax )) {
+						$state = getState ( $fillLevel, $fillMax );
+						if ($state > $plants [$plant] ['state']) {
+							$plants [$plant] ['state'] = $state;
+						}
+					} elseif ($fillLevel == 0) {
+						$state = 2;
+					}
+					$plants [$plant] ['input'] [$l_fillType] = addFillType ( $fillType, $fillLevel, $fillMax, $prodPerHour, $mapconfig [$location] ['rawMaterial'] [$fillType] ['factor'], $state );
 				}
-				break;
-		}
+				foreach ( $mapconfig [$location] ['product'] as $fillType => $fillTypeData ) {
+					$fillLevel = intval ( $object [$fillTypeData ['fillTypes']] );
+					$l_fillType = translate ( $fillType );
+					$fillMax = $mapconfig [$location] ['product'] [$fillType] ['capacity'];
+					$state = 0;
+					if (is_numeric ( $fillMax )) {
+						$state = getState ( $fillMax - $fillLevel, $fillMax );
+					}
+					$plants [$plant] ['output'] [$l_fillType] = addFillType ( $fillType, $fillLevel, $fillMax, $prodPerHour, $mapconfig [$location] ['product'] [$fillType] ['factor'], $state );
+				}
+			}
+			break;
+		case 'bunker' :
+			/**
+			 * state="0" - 0 = chaff abgeladen, 1 = chaff abgedeckt, 2 = silage fertig, 3 = silage abgedeckt
+			 * fillLevel="0"
+			 * compactedFillLevel="0"
+			 * fermentingTime="0" - start bei 0, ende bei 43200
+			 * openedAtFront="false" openedAtBack="false"/>
+			 */
+			$state = intval ( $object ['state'] );
+			$fillLevel = intval ( $object ['fillLevel'] );
+			if ($state < 2) {
+				$fillType = 'chaff';
+			} else {
+				$fillType = 'silage';
+			}
+			addCommodity ( $fillType, $fillLevel, $location );
+			break;
+		case 'factory_script' :
+			// Factoryscript Lager in Commodities aufnehmen
+			foreach ( $object->Rohstoff as $in ) {
+				$fillType = strval ( $in ['Name'] );
+				$fillLevel = intval ( $in ['Lvl'] );
+				if ($mapconfig [$location] ['rawMaterial'] [$fillType] ['showInStorage']) {
+					addCommodity ( $fillType, $fillLevel, $location );
+				}
+			}
+			foreach ( $object->Produkt as $out ) {
+				$fillType = strval ( $out ['Name'] );
+				$fillLevel = intval ( $out ['Lvl'] );
+				if ($mapconfig [$location] ['product'] [$fillType] ['showInStorage']) {
+					addCommodity ( $fillType, $fillLevel, $location );
+				}
+			}
+			// Fabriken für Produktionsübersicht
+			if ($mapconfig [$location] ['showInProduction']) {
+				$plant = translate ( $location );
+				$plantstate = 0;
+				$prodPerHour = $mapconfig [$location] ['ProdPerHour'];
+				$plants [$plant] = array (
+						'i3dName' => $location,
+						'position' => $mapconfig [$location] ['position'],
+						'state' => 0,
+						'input' => array (),
+						'output' => array () 
+				);
+				foreach ( $object->Rohstoff as $rohstoff ) {
+					$fillType = strval ( $rohstoff ['Name'] );
+					$l_fillType = translate ( $fillType );
+					$fillLevel = intval ( $rohstoff ['Lvl'] );
+					$factor = $mapconfig [$location] ['rawMaterial'] [$fillType] ['factor'];
+					$fillMax = $mapconfig [$location] ['rawMaterial'] [$fillType] ['capacity'];
+					$state = getState ( $fillLevel, $fillMax );
+					if ($state > $plants [$plant] ['state']) {
+						$plants [$plant] ['state'] = $state;
+					}
+					$plants [$plant] ['input'] [$l_fillType] = addFillType ( $fillType, $fillLevel, $fillMax, $prodPerHour, $factor, $state );
+				}
+				foreach ( $object->Produkt as $product ) {
+					$fillType = strval ( $product ['Name'] );
+					$l_fillType = translate ( $fillType );
+					$factor = $mapconfig [$location] ['product'] [$fillType] ['factor'];
+					if ($mapconfig [$location] ['product'] [$fillType] ['showInStorage']) {
+						$fillLevel = intval ( $product ['Lvl'] );
+						$fillMax = $mapconfig [$location] ['product'] [$fillType] ['capacity'];
+					} else {
+						$fillLevel = isset ( $commodities [$l_fillType] ['locations'] [$plant] ['fillLevel'] ) ? $commodities [$l_fillType] ['locations'] [$plant] ['fillLevel'] : 0;
+						$capacity = $mapconfig [$location] ['product'] [$fillType] ['capacity'];
+						$fillMax = $mapconfig [$location] ['product'] [$fillType] ['palettPlaces'] * $capacity;
+					}
+					$state = getState ( $fillMax - $fillLevel, $fillMax );
+					$plants [$plant] ['output'] [$l_fillType] = addFillType ( $fillType, $fillLevel, $fillMax, $prodPerHour, $factor, $state );
+				}
+			}
+			break;
 	}
 	
 	// Tankstellen/Diesellager
@@ -224,73 +347,6 @@ foreach ( $careerVehicles->onCreateLoadedObject as $object ) {
 		$fillType = 'fuel';
 		$fillLevel = intval ( $object ['fillLevel'] );
 		addCommodity ( $fillType, $fillLevel, $location );
-	}
-	
-	// Fabrikscripte laut Mapconfig
-	if (isset ( $mapconfig [$location] )) {
-		// Buildin Lager in Commodities aufnehmen
-		if (isset ( $mapconfig [$location] ['isBuildinStorage'] ) && $mapconfig [$location] ['isBuildinStorage'] == true) {
-			foreach ( $object->node as $node ) {
-				$fillType = strval ( $node ['fillType'] );
-				$fillLevel = intval ( $node ['fillLevel'] );
-				addCommodity ( $fillType, $fillLevel, $location );
-			}
-		}
-		// Factoryscript Lager in Commodities aufnehmen
-		foreach ( $object->Rohstoff as $in ) {
-			$fillType = strval ( $in ['Name'] );
-			$fillLevel = intval ( $in ['Lvl'] );
-			if ($mapconfig [$location] ['rawMaterial'] [$fillType] ['showInStorage']) {
-				addCommodity ( $fillType, $fillLevel, $location );
-			}
-		}
-		foreach ( $object->Produkt as $out ) {
-			$fillType = strval ( $out ['Name'] );
-			$fillLevel = intval ( $out ['Lvl'] );
-			if ($mapconfig [$location] ['product'] [$fillType] ['showInStorage']) {
-				addCommodity ( $fillType, $fillLevel, $location );
-			}
-		}
-		// Fabriken für Produktionsübersicht
-		if ($mapconfig [$location] ['showInProduction']) {
-			$plant = translate ( $location );
-			$plantstate = 0;
-			$prodPerHour = $mapconfig [$location] ['ProdPerHour'];
-			$plants [$plant] = array (
-					'i3dName' => $location,
-					'position' => $mapconfig [$location] ['position'],
-					'state' => 0,
-					'input' => array (),
-					'output' => array () 
-			);
-			foreach ( $object->Rohstoff as $rohstoff ) {
-				$fillType = strval ( $rohstoff ['Name'] );
-				$l_fillType = translate ( $fillType );
-				$fillLevel = intval ( $rohstoff ['Lvl'] );
-				$factor = $mapconfig [$location] ['rawMaterial'] [$fillType] ['factor'];
-				$fillMax = $mapconfig [$location] ['rawMaterial'] [$fillType] ['capacity'];
-				$state = getState ( $fillLevel, $fillMax );
-				if ($state > $plants [$plant] ['state']) {
-					$plants [$plant] ['state'] = $state;
-				}
-				$plants [$plant] ['input'] [$l_fillType] = addFillType ( $fillType, $fillLevel, $fillMax, $prodPerHour, $factor, $state );
-			}
-			foreach ( $object->Produkt as $product ) {
-				$fillType = strval ( $product ['Name'] );
-				$l_fillType = translate ( $fillType );
-				$factor = $mapconfig [$location] ['product'] [$fillType] ['factor'];
-				if ($mapconfig [$location] ['product'] [$fillType] ['showInStorage']) {
-					$fillLevel = intval ( $product ['Lvl'] );
-					$fillMax = $mapconfig [$location] ['product'] [$fillType] ['capacity'];
-				} else {
-					$fillLevel = isset ( $commodities [$l_fillType] ['locations'] [$plant] ['fillLevel'] ) ? $commodities [$l_fillType] ['locations'] [$plant] ['fillLevel'] : 0;
-					$capacity = $mapconfig [$location] ['product'] [$fillType] ['capacity'];
-					$fillMax = $mapconfig [$location] ['product'] [$fillType] ['palettPlaces'] * $capacity;
-				}
-				$state = getState ( $fillLevel, $fillMax );
-				$plants [$plant] ['output'] [$l_fillType] = addFillType ( $fillType, $fillLevel, $fillMax, $prodPerHour, $factor, $state );
-			}
-		}
 	}
 }
 // "Kombi-Rohstoffe ermitteln (Abfall, Brennstoffe, usw.)

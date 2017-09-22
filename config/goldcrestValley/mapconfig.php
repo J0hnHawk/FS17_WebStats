@@ -26,38 +26,105 @@ if (empty ( $mapconfig ) || ! is_array ( $mapconfig )) {
 
 $mapconfig = array_merge ( $mapconfig, array (
 		'Storage_storage1' => array (
-				'ProdPerHour' => 0,
-				'position' => '179.5 0 110',
+				'locationType' => 'storage',
+				'position' => '189 0 109',
 				'showInProduction' => false,
-				'isBuildinStorage' => true,
 				'rawMaterial' => array (),
 				'product' => array () 
 		),
 		'Storage_storage2' => array (
-				'ProdPerHour' => 0,
-				'position' => '194.64 100.736 101.567',
+				'locationType' => 'storage',
+				'position' => '329 0 -576',
 				'showInProduction' => false,
-				'isBuildinStorage' => true,
 				'rawMaterial' => array (),
-				'product' => array ()
+				'product' => array () 
 		),
 		'Storage_storage3' => array (
-				'ProdPerHour' => 0,
-				'position' => '194.64 100.736 101.567',
+				'locationType' => 'storage',
+				'position' => '-224 0 -151',
 				'showInProduction' => false,
-				'isBuildinStorage' => true,
 				'rawMaterial' => array (),
-				'product' => array ()
+				'product' => array () 
 		),
 		'Storage_storage4' => array (
-				'ProdPerHour' => 0,
-				'position' => '194.64 100.736 101.567',
+				'locationType' => 'storage',
+				'position' => '-587 0 129',
 				'showInProduction' => false,
-				'isBuildinStorage' => true,
 				'rawMaterial' => array (),
-				'product' => array ()
+				'product' => array () 
+		),
+		'Bga' => array (
+				'locationType' => 'bga',
+				'ProdPerHour' => 1000,
+				'position' => '-74 0 -504',
+				'showInProduction' => true,
+				'rawMaterial' => array (
+						'silage' => array (
+								'capacity' => 50000,
+								'factor' => 360,
+								'fillTypes' => 'bunkerFillLevel',
+								'showInStorage' => false 
+						),
+						'liquidManure' => array (
+								'capacity' => '&infin;',
+								'factor' => 180,
+								'fillTypes' => 'liquidManureFillLevel',
+								'showInStorage' => false 
+						) 
+				),
+				'product' => array (
+						'digestate' => array (
+								'capacity' => 800000,
+								'factor' => 87,
+								'fillTypes' => 'digestateSiloFillLevel',
+								'showInStorage' => true 
+						) 
+				) 
+		),
+		'BunkerSilo_silo001' => array (
+				'locationType' => 'bunker',
+				'position' => '-45 0 -548',
+				'showInProduction' => false,
+				'rawMaterial' => array (),
+				'product' => array () 
+		),
+		'BunkerSilo_silo002' => array (
+				'locationType' => 'bunker',
+				'position' => '-35 0 -548',
+				'showInProduction' => false,
+				'rawMaterial' => array (),
+				'product' => array () 
+		),
+		'BunkerSilo_silo003' => array (
+				'locationType' => 'bunker',
+				'position' => '-25 0 -548',
+				'showInProduction' => false,
+				'rawMaterial' => array (),
+				'product' => array () 
+		),
+		'BunkerSilo_silo004' => array (
+				'locationType' => 'bunker',
+				'position' => '-55 0 -548',
+				'showInProduction' => false,
+				'rawMaterial' => array (),
+				'product' => array () 
+		),
+		'BunkerSilo_silo005' => array (
+				'locationType' => 'bunker',
+				'position' => '-65 0 -548',
+				'showInProduction' => false,
+				'rawMaterial' => array (),
+				'product' => array () 
+		),
+		'BunkerSilo_cowSilo' => array (
+				'locationType' => 'bunker',
+				'position' => '-506 0 668',
+				'showInProduction' => false,
+				'rawMaterial' => array (),
+				'product' => array () 
 		),
 		'Animals_cow' => array (
+				'locationType' => 'animal',
 				'ProdPerHour' => 0,
 				'position' => '-556 0 640',
 				'showInProduction' => false,
@@ -97,25 +164,26 @@ $mapconfig = array_merge ( $mapconfig, array (
 						'liquidManureFillLevel' => array (
 								'capacity' => '&infin;',
 								'factor' => 0,
-								'fillType' => 'liquidManure',
+								'fillTypes' => 'liquidManure',
 								'showInStorage' => true 
 						),
 						'manureFillLevel' => array (
 								'capacity' => '&infin;',
 								'factor' => 0,
-								'fillType' => 'manure',
+								'fillTypes' => 'manure',
 								'showInStorage' => true 
 						),
 						'milk' => array (
 								'capacity' => '&infin;',
 								'factor' => 0,
-								'fillType' => 'milk',
+								'fillTypes' => 'milk',
 								'showInStorage' => true 
 						) 
 				
 				) 
 		),
 		'Animals_pig' => array (
+				'locationType' => 'animal',
 				'ProdPerHour' => 0,
 				'position' => '165.5 0 -463',
 				'showInProduction' => false,
@@ -173,6 +241,7 @@ $mapconfig = array_merge ( $mapconfig, array (
 				) 
 		),
 		'Animals_sheep' => array (
+				'locationType' => 'animal',
 				'ProdPerHour' => 1,
 				'position' => '-374 0 -175',
 				'showInProduction' => false,
