@@ -55,7 +55,7 @@ function addFillType($i3dName, $fillLevel, $fillMax, $prodPerHour, $factor, $sta
 			'fillMax' => $fillMax,
 			'prodPerHour' => $prodPerHour * $factor,
 			'prodPerDay' => $prodPerHour * $factor * 24,
-			'state' => $state
+			'state' => $state 
 	);
 }
 // Karten laden
@@ -67,7 +67,7 @@ function getMaps() {
 			'mapconfig.php',
 			'pda_map_H.jpg',
 			'translation',
-			'translation/de.php'
+			'translation/de.php' 
 	);
 	// Verzeichnis mit Karten druchsuchen
 	if (is_dir ( './config' )) {
@@ -106,7 +106,7 @@ function translate($text) {
 	if (isset ( $lang [$text] )) {
 		return $lang [$text];
 	} else {
-		//return '{' . $text . '}';
+		// return '{' . $text . '}';
 		return $text;
 	}
 }
@@ -124,7 +124,7 @@ function strposa($haystack, $needle, $offset = 0) {
 	return false;
 }
 
-//Fahrzeugnamen
+// Fahrzeugnamen
 function getVehicleNames() {
 	$vehicles = array ();
 	if (file_exists ( './config/vehicles.conf' )) {
@@ -179,6 +179,56 @@ function addCommodity($fillType, $fillLevel, $location, $className = 'none', $is
 		$commodities [$l_fillType] ['locations'] [$l_location] ['fillLevel'] += $fillLevel;
 	}
 }
+// Positionen von Paletten ermitteln
+function getLocation($position) {
+	list ( $posx, $posy, $posz ) = explode ( ' ', $position );
+	global $map;
+	$mapSize = $map ['Size'] / 2;
+	if ($posx < 0 - $mapSize || $posx > $mapSize || $posy < 0 || $posy > 255 || $posz < 0 - $mapSize || $posz > $mapSize) {
+		return 'outOfMap';
+	}
+	if (! isset ( $koordinaten )) {
+		static $koordinaten = array ();
+		global $mapconfig;
+		foreach ( $mapconfig as $plant => $plantData ) {
+			if (isset ( $plantData ['output'] )) {
+				foreach ( $plantData ['output'] as $fillType => $fillTypeData ) {
+					if (isset ( $fillTypeData ['palettArea'] )) {
+						$koordinaten [$plant] = $fillTypeData ['palettArea'];
+					}
+				}
+			}
+		}
+	}
+	foreach ( $koordinaten as $plant => $position ) {
+		list ( $x1, $z1, $x2, $z2 ) = explode ( ' ', $position );
+		if ($posx > $x1 && $posx < $x2 && $posz > $z1 && $posz < $z2) {
+			return $plant;
+		}
+	}
+	return 'onMap';
+}
+// Futtertroggröße und Produktivität der Tiere ermitteln
+function getMaxForage($forage, $numAnimals) {
+	return $forage * ($numAnimals > 0 && $numAnimals < 15 ? 15 : $numAnimals) * 6;
+}
+function getAnimalProductivity($location, $tipTriggers) {
+	if (strpos ( $tipTriggers, 'water' ) === false) {
+		return 0;
+	}
+	global $mapconfig;
+	$productivity = 0;
+	if ($location == 'Animals_sheep') {
+		$productivity = 10;
+	}
+	foreach ( $mapconfig [$location] ['productivity'] as $trigger => $value ) {
+		if (strpos ( $tipTriggers, $trigger ) !== false) {
+			$productivity += $value;
+		}
+	}
+	return $productivity;
+}
+
 // Funktionen aus der xmlTools.php des WebstatsSDK von Giants
 function loadFileHTTPSocket($domain, $port, $path, $timeout) {
 	/**

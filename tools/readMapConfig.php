@@ -134,10 +134,11 @@ foreach ( $produktion as $item ) {
 		$showInProduction = 'false';
 	}
 	echo ("'FabrikScript_{$item['name']}' => array (");
+	echo ("'locationType' => {$item['FabrikScript']},");
 	echo ("'ProdPerHour' => {$item['ProdPerHour']},");
 	echo ("'position' => '{$item['position']}',");
 	echo ("'showInProduction' => $showInProduction,");
-	echo ("'rawMaterial' => array(");
+	echo ("'input' => array(");
 	for($i = 1; $i < 6; $i ++) {
 		if (isset ( $item ["Rohstoff$i"] )) {
 			$name = strval ( $item ["Rohstoff$i"] ['name'] );
@@ -154,7 +155,7 @@ foreach ( $produktion as $item ) {
 		}
 	}
 	echo ('),');
-	echo ("'product' => array(");
+	echo ("'output' => array(");
 	if (isset ( $item ["Produkt1"] )) {
 		$output = 'Produkt';
 	} else {

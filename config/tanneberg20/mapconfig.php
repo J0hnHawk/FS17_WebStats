@@ -20,379 +20,471 @@
  */
 $mapVersion = 'Tanneberg 2.0';
 
-if (empty($mapconfig) || ! is_array($mapconfig)) {
-    $mapconfig = array();
+if (empty ( $mapconfig ) || ! is_array ( $mapconfig )) {
+	$mapconfig = array ();
 }
 
 $mapconfig = array_merge ( $mapconfig, array (
 		'Storage_storage1' => array (
-				'ProdPerHour' => 0,
-				'position' => '194.64 100.736 101.567',
-				'showInProduction' => false,
-				'rawMaterial' => array (),
-				'product' => array ()
+				'locationType' => 'storage',
+				'position' => '194.64 100.736 101.567' 
 		),
 		'Animals_cow' => array (
-				'ProdPerHour' => 0,
+				'locationType' => 'animal',
 				'position' => '120 0 150',
-				'showInProduction' => false,
-				'rawMaterial' => array (),
-				'product' => array (
-						'milk' => array (
-								'capacity' => 0,
-								'factor' => 0,
-								'fillType' => 'milk',
-								'showInStorage' => true
+				'reproRate' => 1200,
+				'input' => array (
+						'water' => array (
+								'trough_factor' => 35,
+								'consumption_factor' => 35,
+								'fillTypes' => 'water',
+								'showInStorage' => false 
 						),
-						'manureFillLevel' => array (
-								'capacity' => 2000,
-								'factor' => 0,
-								'fillType' => 'manure',
-								'showInStorage' => true
+						'straw' => array (
+								'trough_factor' => 70,
+								'consumption_factor' => 70,
+								'fillTypes' => 'straw',
+								'showInStorage' => false 
 						),
-						'liquidManureFillLevel' => array (
-								'capacity' => 2000,
-								'factor' => 0,
+						'grass_windrow' => array (
+								'trough_factor' => 70,
+								'consumption_factor' => 100,
+								'fillTypes' => 'grass_windrow',
+								'showInStorage' => false 
+						),
+						'silage_dryGrass_windrow' => array (
+								'trough_factor' => 175,
+								'consumption_factor' => 175,
+								'fillTypes' => 'silage dryGrass_windrow',
+								'showInStorage' => false 
+						),
+						'powerFood' => array (
+								'trough_factor' => 105,
+								'consumption_factor' => 105,
+								'fillTypes' => 'powerFood',
+								'showInStorage' => false 
+						) 
+				),
+				'output' => array (
+						'liquidManure' => array (
+								'production_factor' => 250,
 								'fillType' => 'liquidManure',
-								'showInStorage' => true
-						)
-				)
+								'showInStorage' => true 
+						),
+						'manure' => array (
+								'production_factor' => 200,
+								'fillType' => 'manure',
+								'showInStorage' => true 
+						),
+						'milk' => array (
+								'production_factor' => 714,
+								'fillType' => 'milk',
+								'showInStorage' => true 
+						) 
+				
+				),
+				'productivity' => array (
+						'straw' => 10,
+						'grass_windrow' => 18,
+						'silage_dryGrass_windrow' => 45,
+						'powerFood' => 27 
+				) 
 		),
 		'Animals_pig' => array (
-				'ProdPerHour' => 0,
+				'locationType' => 'animal',
 				'position' => '250 0 400',
-				'showInProduction' => false,
-				'rawMaterial' => array ()
+				'reproRate' => 144,
+				'input' => array (
+						'water' => array (
+								'trough_factor' => 10,
+								'consumption_factor' => 10,
+								'fillTypes' => 'water',
+								'showInStorage' => false 
+						),
+						'straw' => array (
+								'trough_factor' => 20,
+								'consumption_factor' => 20,
+								'fillTypes' => 'straw',
+								'showInStorage' => false 
+						),
+						'maize_pigFood' => array (
+								'trough_factor' => 45,
+								'consumption_factor' => 61,
+								'fillTypes' => 'maize pigFood',
+								'showInStorage' => false 
+						),
+						'wheat_barley_pigFood' => array (
+								'trough_factor' => 25,
+								'consumption_factor' => 23,
+								'fillTypes' => 'wheat barley pigFood',
+								'showInStorage' => false 
+						),
+						'rape_sunflower_soybean_pigFood' => array (
+								'trough_factor' => 18,
+								'consumption_factor' => 18,
+								'fillTypes' => 'rape sunflower soybean pigFood',
+								'showInStorage' => false 
+						),
+						'potato_sugarBeet_pigFood' => array (
+								'trough_factor' => 4.5,
+								'consumption_factor' => 5,
+								'fillTypes' => 'potato sugarBeet pigFood',
+								'showInStorage' => false 
+						) 
+				),
+				'output' => array (
+						'liquidManure' => array (
+								'production_factor' => 65,
+								'fillType' => 'liquidManure',
+								'showInStorage' => true 
+						),
+						'manure' => array (
+								'production_factor' => 50,
+								'fillType' => 'manure',
+								'showInStorage' => true 
+						) 
+				),
+				'productivity' => array (
+						'straw' => 9.8,
+						'maize_pigFood' => 44.8,
+						'wheat_barley_pigFood' => 22.8,
+						'rape_sunflower_soybean_pigFood' => 17.8,
+						'potato_sugarBeet_pigFood' => 4.8 
+				) 
 		),
 		'Animals_sheep' => array (
-				'ProdPerHour' => 0,
-				'position' => '570 0 -19',
-				'showInProduction' => false,
-				'rawMaterial' => array (
-						'grass_windrow_dryGrass_windrow' => array (
-								'capacity' => 0,
-								'factor' => 0,
-								'fillTypes' => 'grass_windrow dryGrass_windrow',
-								'showInStorage' => false
-						),
+				'locationType' => 'animal',
+				'position' => '-374 0 -175',
+				'reproRate' => 960,
+				'input' => array (
 						'water' => array (
-								'capacity' => 0,
-								'factor' => 0,
+								'trough_factor' => 15,
+								'consumption_factor' => 15,
 								'fillTypes' => 'water',
-								'showInStorage' => false
-						)
+								'showInStorage' => false 
+						),
+						'grass_windrow_dryGrass_windrow' => array (
+								'trough_factor' => 30,
+								'consumption_factor' => 36,
+								'fillTypes' => 'grass_windrow dryGrass_windrow',
+								'showInStorage' => false 
+						) 
 				),
-				'product' => array (
+				'output' => array (
 						'woolPallet' => array (
+								'production_factor' => 24,
 								'capacity' => 2000,
-								'factor' => 0,
 								'fillType' => 'woolPallet',
+								'palettArea' => '-379.6 -190.1 -377.4 -185.9',
 								'palettPlaces' => 15,
-								'showInStorage' => false
-						)
-				)
-		)
+								'showInStorage' => false 
+						) 
+				),
+				'productivity' => array (
+						'grass_windrow_dryGrass_windrow' => 90 
+				) 
+		) 
 ) );
 
-$mapconfig = array(
-    'FabrikScript_Fabrik' => array(
-        'ProdPerHour' => 3000,
-        'position' => '-580.678 79.98 -752.146',
-        'showInProduction' => true,
-        'rawMaterial' => array(
-            'fuel' => array(
-                'capacity' => 50000,
-                'factor' => 0.1,
-                'fillTypes' => 'fuel',
-                'showInStorage' => false
-            ),
-            'Holz' => array(
-                'capacity' => 50000,
-                'factor' => 1,
-                'fillTypes' => 'woodChips',
-                'showInStorage' => false
-            )
-        ),
-        'product' => array(
-            'woodChips' => array(
-                'capacity' => 50000,
-                'factor' => 0.9,
-                'fillType' => 'woodChips',
-                'showInStorage' => true
-            ),
-            'boardwood' => array(
-                'capacity' => 4000,
-                'factor' => 1,
-                'fillType' => 'woodChips',
-                'palettPlaces' => 999,
-                'showInStorage' => false
-            )
-        )
-    ),
-    'FabrikScript_compostMaster2k17' => array(
-        'ProdPerHour' => 50000,
-        'position' => '-585.228 99.85 49.5958',
-        'showInProduction' => true,
-        'rawMaterial' => array(
-            'cm_inputWaste' => array(
-                'capacity' => 50000,
-                'factor' => 1,
-                'fillTypes' => 'compost potato sugarBeet chaff silage grass grass_windrow dryGrass_windrow woodChips manure straw',
-                'showInStorage' => false
-            ),
-            'fuel' => array(
-                'capacity' => 50000,
-                'factor' => 0.1,
-                'fillTypes' => 'fuel',
-                'showInStorage' => false
-            )
-        ),
-        'product' => array(
-            'cm_outputCompost' => array(
-                'capacity' => 100000,
-                'factor' => 1,
-                'fillType' => 'compost',
-                'showInStorage' => true
-            )
-        )
-    ),
-    'FabrikScript_Raffinerie' => array(
-        'ProdPerHour' => 10000,
-        'position' => '525.584 110.45 -723.93',
-        'showInProduction' => true,
-        'rawMaterial' => array(
-            'Tip_RS' => array(
-                'capacity' => 250000,
-                'factor' => 1,
-                'fillTypes' => 'rape sunflower',
-                'showInStorage' => false
-            )
-        ),
-        'product' => array(
-            'RS_forage' => array(
-                'capacity' => 100000,
-                'factor' => 0.22,
-                'fillType' => 'forage',
-                'showInStorage' => true
-            ),
-            'RM_Output' => array(
-                'capacity' => 200000,
-                'factor' => 0.66,
-                'fillType' => 'fuel',
-                'showInStorage' => true
-            ),
-            'DS_digestate' => array(
-                'capacity' => 100000,
-                'factor' => 0.22,
-                'fillType' => 'digestate',
-                'showInStorage' => true
-            )
-        )
-    ),
-    'FabrikScript_Fertilizer' => array(
-        'ProdPerHour' => 3000,
-        'position' => '411.111 111 -761.788',
-        'showInProduction' => true,
-        'rawMaterial' => array(
-            'manure' => array(
-                'capacity' => 20000,
-                'factor' => 1,
-                'fillTypes' => 'manure',
-                'showInStorage' => false
-            ),
-            'liquidManure' => array(
-                'capacity' => 20000,
-                'factor' => 1,
-                'fillTypes' => 'liquidManure',
-                'showInStorage' => false
-            )
-        ),
-        'product' => array(
-            'fertilizer' => array(
-                'capacity' => 60000,
-                'factor' => 1,
-                'fillType' => 'fertilizer',
-                'showInStorage' => true
-            )
-        )
-    ),
-    'FabrikScript_liquidFertilizer' => array(
-        'ProdPerHour' => 3000,
-        'position' => '484.23 111 -761.801',
-        'showInProduction' => true,
-        'rawMaterial' => array(
-            'fertilizer' => array(
-                'capacity' => 20000,
-                'factor' => 1,
-                'fillTypes' => 'fertilizer',
-                'showInStorage' => false
-            ),
-            'water' => array(
-                'capacity' => 20000,
-                'factor' => 1,
-                'fillTypes' => 'water',
-                'showInStorage' => false
-            )
-        ),
-        'product' => array(
-            'liquidFertilizer' => array(
-                'capacity' => 50000,
-                'factor' => 1.5,
-                'fillType' => 'liquidFertilizer',
-                'showInStorage' => true
-            )
-        )
-    ),
-    'FabrikScript_Seeds' => array(
-        'ProdPerHour' => 3000,
-        'position' => '394.758 111 -729.035',
-        'showInProduction' => true,
-        'rawMaterial' => array(
-            'grain' => array(
-                'capacity' => 20000,
-                'factor' => 1,
-                'fillTypes' => 'wheat maize barley rape sunflower',
-                'showInStorage' => false
-            ),
-            'fertilizer' => array(
-                'capacity' => 20000,
-                'factor' => 1,
-                'fillTypes' => 'fertilizer',
-                'showInStorage' => false
-            )
-        ),
-        'product' => array(
-            'seeds' => array(
-                'capacity' => 60000,
-                'factor' => 1,
-                'fillType' => 'seeds',
-                'showInStorage' => true
-            )
-        )
-    ),
-    'FabrikScript_Weinberg' => array(
-        'ProdPerHour' => 1,
-        'position' => '274.959 103.769 110.121',
-        'showInProduction' => true,
-        'rawMaterial' => array(
-            'Mist' => array(
-                'capacity' => 35000,
-                'factor' => 1.7,
-                'fillTypes' => 'manure',
-                'showInStorage' => false
-            ),
-            'Duenger' => array(
-                'capacity' => 35000,
-                'factor' => 1.8,
-                'fillTypes' => 'fertilizer',
-                'showInStorage' => false
-            ),
-            'slow_soja_water' => array(
-                'capacity' => 90000,
-                'factor' => 3,
-                'fillTypes' => 'water',
-                'showInStorage' => false
-            )
-        ),
-        'product' => array(
-            'grape' => array(
-                'capacity' => 80000,
-                'factor' => 1.5,
-                'fillType' => 'grape',
-                'showInStorage' => true
-            )
-        )
-    ),
-    'FabrikScript_Winzerei' => array(
-        'ProdPerHour' => 1,
-        'position' => '309.777 115 -796.872',
-        'showInProduction' => true,
-        'rawMaterial' => array(
-            'Trauben' => array(
-                'capacity' => 50000,
-                'factor' => 3,
-                'fillTypes' => 'grape',
-                'showInStorage' => false
-            ),
-            'slow_soja_water' => array(
-                'capacity' => 90000,
-                'factor' => 3,
-                'fillTypes' => 'water',
-                'showInStorage' => false
-            )
-        ),
-        'product' => array(
-            'Traubensaft' => array(
-                'capacity' => 1500,
-                'factor' => 1.632,
-                'fillType' => 'Wine',
-                'palettPlaces' => 999,
-                'showInStorage' => false
-            ),
-            'Weinfaesser' => array(
-                'capacity' => 1500,
-                'factor' => 1.632,
-                'fillType' => 'Wine',
-                'palettPlaces' => 999,
-                'showInStorage' => false
-            )
-        )
-    ),
-    'FabrikScript_SojamilchProduktion' => array(
-        'ProdPerHour' => 3000,
-        'position' => '154.992 109 227.117',
-        'showInProduction' => true,
-        'rawMaterial' => array(
-            'slow_soja_soja' => array(
-                'capacity' => 50000,
-                'factor' => 1,
-                'fillTypes' => 'soybean',
-                'showInStorage' => false
-            ),
-            'slow_soja_water' => array(
-                'capacity' => 90000,
-                'factor' => 3,
-                'fillTypes' => 'water',
-                'showInStorage' => false
-            ),
-            'slow_soja_fuel' => array(
-                'capacity' => 25000,
-                'factor' => 0.3,
-                'fillTypes' => 'fuel',
-                'showInStorage' => false
-            )
-        ),
-        'product' => array(
-            'slow_soja_liquid' => array(
-                'capacity' => 100000,
-                'factor' => 1.5,
-                'fillType' => 'liquidManure',
-                'showInStorage' => true
-            ),
-            'slow_soja_milk' => array(
-                'capacity' => 50000,
-                'factor' => 1,
-                'fillType' => 'milk',
-                'showInStorage' => true
-            ),
-            'slow_soja_pig' => array(
-                'capacity' => 50000,
-                'factor' => 0.3,
-                'fillType' => 'pigFood',
-                'showInStorage' => true
-            )
-        )
-    )
-);
-
-function getLocation($position)
-{
-    list ($posx, $posy, $posz) = explode(' ', $position);
-    if ($posx < - 1071 || $posx > 1071 || $posy < 0 || $posy > 255 || $posz < - 1071 || $posz > 1071)
-        return 'outOfMap';
-    /*
-     * if ($posx > - 970.0 && $posx < - 967.0 && $posz > - 829.0 && $posz < - 814.0)
-     * return 'FabrikScript_Zellstoff_Fabrik';
-     */
-    return 'onMap';
-}
+$mapconfig = array_merge ( $mapconfig, array (
+		'FabrikScript_Fabrik' => array (
+				'locationType' => 'FabrikScript',
+				'ProdPerHour' => 3000,
+				'position' => '-580.678 79.98 -752.146',
+				'showInProduction' => true,
+				'input' => array (
+						'fuel' => array (
+								'capacity' => 50000,
+								'factor' => 0.1,
+								'fillTypes' => 'fuel',
+								'showInStorage' => false 
+						),
+						'Holz' => array (
+								'capacity' => 50000,
+								'factor' => 1,
+								'fillTypes' => 'woodChips',
+								'showInStorage' => false 
+						) 
+				),
+				'output' => array (
+						'woodChips' => array (
+								'capacity' => 50000,
+								'factor' => 0.9,
+								'fillType' => 'woodChips',
+								'showInStorage' => true 
+						),
+						'boardwood' => array (
+								'capacity' => 4000,
+								'factor' => 1,
+								'fillType' => 'boardwood',
+								'palettArea' => '0 0 1 1',
+								'palettPlaces' => 999,
+								'showInStorage' => false 
+						) 
+				) 
+		),
+		'FabrikScript_compostMaster2k17' => array (
+				'locationType' => 'FabrikScript',
+				'ProdPerHour' => 50000,
+				'position' => '-585.228 99.85 49.5958',
+				'showInProduction' => true,
+				'input' => array (
+						'cm_inputWaste' => array (
+								'capacity' => 50000,
+								'factor' => 1,
+								'fillTypes' => 'compost potato sugarBeet chaff silage grass grass_windrow dryGrass_windrow woodChips manure straw',
+								'showInStorage' => false 
+						),
+						'fuel' => array (
+								'capacity' => 50000,
+								'factor' => 0.1,
+								'fillTypes' => 'fuel',
+								'showInStorage' => false 
+						) 
+				),
+				'output' => array (
+						'cm_outputCompost' => array (
+								'capacity' => 100000,
+								'factor' => 1,
+								'fillType' => 'compost',
+								'showInStorage' => true 
+						) 
+				) 
+		),
+		'FabrikScript_Raffinerie' => array (
+				'locationType' => 'FabrikScript',
+				'ProdPerHour' => 10000,
+				'position' => '525.584 110.45 -723.93',
+				'showInProduction' => true,
+				'input' => array (
+						'Tip_RS' => array (
+								'capacity' => 250000,
+								'factor' => 1,
+								'fillTypes' => 'rape sunflower',
+								'showInStorage' => false 
+						) 
+				),
+				'output' => array (
+						'RS_forage' => array (
+								'capacity' => 100000,
+								'factor' => 0.22,
+								'fillType' => 'forage',
+								'showInStorage' => true 
+						),
+						'RM_Output' => array (
+								'capacity' => 200000,
+								'factor' => 0.66,
+								'fillType' => 'fuel',
+								'showInStorage' => true 
+						),
+						'DS_digestate' => array (
+								'capacity' => 100000,
+								'factor' => 0.22,
+								'fillType' => 'digestate',
+								'showInStorage' => true 
+						) 
+				) 
+		),
+		'FabrikScript_Fertilizer' => array (
+				'locationType' => 'FabrikScript',
+				'ProdPerHour' => 3000,
+				'position' => '411.111 111 -761.788',
+				'showInProduction' => true,
+				'input' => array (
+						'manure' => array (
+								'capacity' => 20000,
+								'factor' => 1,
+								'fillTypes' => 'manure',
+								'showInStorage' => false 
+						),
+						'liquidManure' => array (
+								'capacity' => 20000,
+								'factor' => 1,
+								'fillTypes' => 'liquidManure',
+								'showInStorage' => false 
+						) 
+				),
+				'output' => array (
+						'fertilizer' => array (
+								'capacity' => 60000,
+								'factor' => 1,
+								'fillType' => 'fertilizer',
+								'showInStorage' => true 
+						) 
+				) 
+		),
+		'FabrikScript_liquidFertilizer' => array (
+				'locationType' => 'FabrikScript',
+				'ProdPerHour' => 3000,
+				'position' => '484.23 111 -761.801',
+				'showInProduction' => true,
+				'input' => array (
+						'fertilizer' => array (
+								'capacity' => 20000,
+								'factor' => 1,
+								'fillTypes' => 'fertilizer',
+								'showInStorage' => false 
+						),
+						'water' => array (
+								'capacity' => 20000,
+								'factor' => 1,
+								'fillTypes' => 'water',
+								'showInStorage' => false 
+						) 
+				),
+				'output' => array (
+						'liquidFertilizer' => array (
+								'capacity' => 50000,
+								'factor' => 1.5,
+								'fillType' => 'liquidFertilizer',
+								'showInStorage' => true 
+						) 
+				) 
+		),
+		'FabrikScript_Seeds' => array (
+				'locationType' => 'FabrikScript',
+				'ProdPerHour' => 3000,
+				'position' => '394.758 111 -729.035',
+				'showInProduction' => true,
+				'input' => array (
+						'grain' => array (
+								'capacity' => 20000,
+								'factor' => 1,
+								'fillTypes' => 'wheat maize barley rape sunflower',
+								'showInStorage' => false 
+						),
+						'fertilizer' => array (
+								'capacity' => 20000,
+								'factor' => 1,
+								'fillTypes' => 'fertilizer',
+								'showInStorage' => false 
+						) 
+				),
+				'output' => array (
+						'seeds' => array (
+								'capacity' => 60000,
+								'factor' => 1,
+								'fillType' => 'seeds',
+								'showInStorage' => true 
+						) 
+				) 
+		),
+		'FabrikScript_Weinberg' => array (
+				'locationType' => 'FabrikScript',
+				'ProdPerHour' => 1,
+				'position' => '274.959 103.769 110.121',
+				'showInProduction' => true,
+				'input' => array (
+						'Mist' => array (
+								'capacity' => 35000,
+								'factor' => 1.7,
+								'fillTypes' => 'manure',
+								'showInStorage' => false 
+						),
+						'Duenger' => array (
+								'capacity' => 35000,
+								'factor' => 1.8,
+								'fillTypes' => 'fertilizer',
+								'showInStorage' => false 
+						),
+						'slow_soja_water' => array (
+								'capacity' => 90000,
+								'factor' => 3,
+								'fillTypes' => 'water',
+								'showInStorage' => false 
+						) 
+				),
+				'output' => array (
+						'grape' => array (
+								'capacity' => 80000,
+								'factor' => 1.5,
+								'fillType' => 'grape',
+								'showInStorage' => true 
+						) 
+				) 
+		),
+		'FabrikScript_Winzerei' => array (
+				'locationType' => 'FabrikScript',
+				'ProdPerHour' => 1,
+				'position' => '309.777 115 -796.872',
+				'showInProduction' => true,
+				'input' => array (
+						'Trauben' => array (
+								'capacity' => 50000,
+								'factor' => 3,
+								'fillTypes' => 'grape',
+								'showInStorage' => false 
+						),
+						'slow_soja_water' => array (
+								'capacity' => 90000,
+								'factor' => 3,
+								'fillTypes' => 'water',
+								'showInStorage' => false 
+						) 
+				),
+				'output' => array (
+						'Traubensaft' => array (
+								'capacity' => 1500,
+								'factor' => 1.632,
+								'fillType' => 'Wine',
+								'palettArea' => '0 0 1 1',
+								'palettPlaces' => 999,
+								'showInStorage' => false 
+						),
+						'Weinfaesser' => array (
+								'capacity' => 1500,
+								'factor' => 1.632,
+								'fillType' => 'Wine',
+								'palettArea' => '0 0 1 1',
+								'palettPlaces' => 999,
+								'showInStorage' => false 
+						) 
+				) 
+		),
+		'FabrikScript_SojamilchProduktion' => array (
+				'locationType' => 'FabrikScript',
+				'ProdPerHour' => 3000,
+				'position' => '154.992 109 227.117',
+				'showInProduction' => true,
+				'input' => array (
+						'slow_soja_soja' => array (
+								'capacity' => 50000,
+								'factor' => 1,
+								'fillTypes' => 'soybean',
+								'showInStorage' => false 
+						),
+						'slow_soja_water' => array (
+								'capacity' => 90000,
+								'factor' => 3,
+								'fillTypes' => 'water',
+								'showInStorage' => false 
+						),
+						'slow_soja_fuel' => array (
+								'capacity' => 25000,
+								'factor' => 0.3,
+								'fillTypes' => 'fuel',
+								'showInStorage' => false 
+						) 
+				),
+				'output' => array (
+						'slow_soja_liquid' => array (
+								'capacity' => 100000,
+								'factor' => 1.5,
+								'fillType' => 'liquidManure',
+								'showInStorage' => true 
+						),
+						'slow_soja_milk' => array (
+								'capacity' => 50000,
+								'factor' => 1,
+								'fillType' => 'milk',
+								'showInStorage' => true 
+						),
+						'slow_soja_pig' => array (
+								'capacity' => 50000,
+								'factor' => 0.3,
+								'fillType' => 'pigFood',
+								'showInStorage' => true 
+						) 
+				) 
+		) 
+) );

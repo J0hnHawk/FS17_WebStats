@@ -22,6 +22,13 @@ if (empty ( $mapconfig ) || ! is_array ( $mapconfig )) {
 	$mapconfig = array ();
 }
 
+/**
+ * PLANNED BUT NOT YET REALIZED !!!
+ * 
+ * Code below is still in savegame.php and in this file totaly useless.
+ * 
+ */
+
 $mapconfig = array_merge ( $mapconfig, array (
 		'HayLoftPlaceable' => array (
 				'position' => '-550 0 750',

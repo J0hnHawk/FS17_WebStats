@@ -17,7 +17,7 @@
  * along with Foobar. If not, see <http://www.gnu.org/licenses/>.
  */
 ini_set ( 'error_reporting', E_ALL );
-ini_set ( 'display_errors', 0 );
+ini_set ( 'display_errors', 1 );
 ini_set ( 'log_errors', 1 );
 ini_set ( 'error_log', 'error.log' );
 
@@ -57,17 +57,18 @@ if (file_exists ( $configFile )) {
 }
 
 // Kartendetails laden
-list ( $mapName, $mapShort, $mapVersion, $mapLink, $mapCopyright ) = file ( "./config/$mapPath/map.txt" );
+list ( $mapName, $mapShort, $mapVersion, $mapLink, $mapCopyright, $mapSize) = file ( "./config/$mapPath/map.txt" );
+
 $map = array (
 		'Name' => $mapName,
 		'Path' => $mapPath,
 		'Short' => $mapShort,
 		'Version' => $mapVersion,
 		'Link' => $mapLink,
-		'Copyright' => $mapCopyright 
+		'Copyright' => $mapCopyright,
+		'Size' => $mapSize,
 );
 $smarty->assign ( 'map', $map );
-include ('./config/animals.php');
 require ("./config/$mapPath/mapconfig.php");
 if (! file_exists ( "./config/$mapPath/translation/{$_SESSION ['language']}.php" )) {
 	require ("./config/$mapPath/translation/$defaultLanguage.php");

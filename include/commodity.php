@@ -39,7 +39,7 @@ if (! isset ( $commodities [$l_object] )) {
 // Übersichtskarte
 $linkToImage = "./config/$mapPath/pda_map_H.jpg";
 $imageSize = 512;
-$mapSize = 2048;
+$mapSize = $map['Size'];
 $mapSizeHalf = $mapSize / 2.0;
 $machineIconSize = 10;
 $backgroundColor = "#4dafd7";
@@ -73,12 +73,11 @@ if (isset ( $positions ['vehicle'] )) {
 		}
 	}
 }
-
 // Warengruppe
 if ($commodities [$l_object] ['isCombine']) {
 	$combineCommodities = array ();
 	foreach ( $mapconfig as $plantName => $plant ) {
-		foreach ( $plant ['rawMaterial'] as $combineFillType => $data ) {
+		foreach ( $plant ['input'] as $combineFillType => $data ) {
 			if (translate ( $combineFillType ) == $l_object) {
 				$fillTypes = explode ( ' ', $data ['fillTypes'] );
 				foreach ( $fillTypes as $fillType ) {
@@ -135,7 +134,7 @@ foreach ( $plants as $plantName => $plant ) {
 					}
 				}
 			} else {
-				$fillTypes = $mapconfig [$plant ['i3dName']] ['rawMaterial'] [$fillTypeDetails ['i3dName']] ['fillTypes'];
+				$fillTypes = $mapconfig [$plant ['i3dName']] ['input'] [$fillTypeDetails ['i3dName']] ['fillTypes'];
 				$fillTypes = explode ( ' ', $fillTypes );
 				foreach ( $fillTypes as $fillType ) {
 					if ($l_object == translate ( $fillType )) {
