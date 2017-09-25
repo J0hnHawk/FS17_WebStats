@@ -8,6 +8,7 @@
 - Tierübersicht ergänzt
 - Kuh- und Schweinestall werden nun in der Produktionsübersicht mit angezeigt
 - FS17 Webstats ist nun für soweit vorbereitet, dass auch andere Karten unterstützt werden
+- Unterstützung für Goldcrest Valley, Sosnovka und Mod Map Tanneberg 2.0 
 - Prüfung, ob fsockopen() erlaubt ist bei der Installation
 - Fehlerbehandung geändert; Logdatei statt Anzeige
 - Bei der Installation muss ein Passwort festgelegt werden. Mit diesem kann man später die Einstellungen zurücksetzen
