@@ -34,7 +34,6 @@ if ($hidePlant && ! is_array($hidePlant)) {
         }
     }
 }
-
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $options['production']['sortByName'] = filter_var(GetParam('sortByName', 'P', 1), FILTER_VALIDATE_BOOLEAN);
     $options['production']['sortFullProducts'] = filter_var(GetParam('sortFullProducts', 'P', 1), FILTER_VALIDATE_BOOLEAN);

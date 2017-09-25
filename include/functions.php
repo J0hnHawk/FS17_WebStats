@@ -182,28 +182,21 @@ function addCommodity($fillType, $fillLevel, $location, $className = 'none', $is
 // Positionen von Paletten ermitteln
 function getLocation($position) {
 	list ( $posx, $posy, $posz ) = explode ( ' ', $position );
-	global $map;
+	global $map, $mapconfig;
 	$mapSize = $map ['Size'] / 2;
-	if ($posx < 0 - $mapSize || $posx > $mapSize || $posy < 0 || $posy > 255 || $posz < 0 - $mapSize || $posz > $mapSize) {
+	if ($posx < (0 - $mapSize) || $posx > $mapSize || $posy < 0 || $posy > 255 || $posz < (0 - $mapSize) || $posz > $mapSize) {
 		return 'outOfMap';
 	}
-	if (! isset ( $koordinaten )) {
-		static $koordinaten = array ();
-		global $mapconfig;
-		foreach ( $mapconfig as $plant => $plantData ) {
-			if (isset ( $plantData ['output'] )) {
-				foreach ( $plantData ['output'] as $fillType => $fillTypeData ) {
-					if (isset ( $fillTypeData ['palettArea'] )) {
-						$koordinaten [$plant] = $fillTypeData ['palettArea'];
+	foreach ( $mapconfig as $plant => $plantData ) {
+		if (isset ( $plantData ['output'] )) {
+			foreach ( $plantData ['output'] as $fillType => $fillTypeData ) {
+				if (isset ( $fillTypeData ['palettArea'] )) {
+					list ( $x1, $z1, $x2, $z2 ) = explode ( ' ', $fillTypeData ['palettArea'] );
+					if ($posx > $x1 && $posx < $x2 && $posz > $z1 && $posz < $z2) {
+						return $plant;
 					}
 				}
 			}
-		}
-	}
-	foreach ( $koordinaten as $plant => $position ) {
-		list ( $x1, $z1, $x2, $z2 ) = explode ( ' ', $position );
-		if ($posx > $x1 && $posx < $x2 && $posz > $z1 && $posz < $z2) {
-			return $plant;
 		}
 	}
 	return 'onMap';

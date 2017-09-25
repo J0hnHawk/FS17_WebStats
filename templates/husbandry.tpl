@@ -20,7 +20,7 @@
 				<td class="col-sm-1 text-right">{$plants.$animalPlant.productivity}%</td>
 				<td class="col-sm-3"><div class="progress">
 						<div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"
-							style="min-width: 2em; width: {$plants.$animalPlant.productivity}%"></div>
+							style="width: {$plants.$animalPlant.productivity}%"></div>
 					</div></td>
 			</tr>
 			<tr>
@@ -44,8 +44,8 @@
 				<th class="col-sm-8">{$fillType}</th>
 				{if $fillTypeData.i3dName == 'woolPallet'}
 				<td class="col-sm-1 text-right">{$fillTypeData.fillLevel|number_format:0:":":"."}</td>
-				<td class="col-sm-3">{math equation="round(100 / fillMax * fillLevel)" fillMax=$fillTypeData.fillMax
-					fillLevel=$fillTypeData.fillLevel assign="percent"} {$progress_bar = "success"} {if $percent > 90}{$progress_bar = "danger"} {elseif $percent >
+				<td class="col-sm-3">{if $fillTypeData.fillMax}{math equation="round(100 / fillMax * fillLevel)" fillMax=$fillTypeData.fillMax
+					fillLevel=$fillTypeData.fillLevel assign="percent"}{else}{$percent=0}{/if} {$progress_bar = "success"} {if $percent > 90}{$progress_bar = "danger"} {elseif $percent >
 					80}{$progress_bar = "warning"} {/if}
 					<div class="progress">
 						<div class="progress-bar progress-bar-{$progress_bar}" role="progressbar" aria-valuenow="{$percent}" aria-valuemin="0" aria-valuemax="100"
@@ -73,8 +73,8 @@
 					</div>
 				</td>
 			</tr>
-			{foreach $plants.$animalPlant.input as $fillType => $fillTypeData}{math equation="round(100 / fillMax * fillLevel)" fillMax=$fillTypeData.fillMax
-			fillLevel=$fillTypeData.fillLevel assign="percent"} {$progress_bar = "success"} {if $percent <= 25}{$progress_bar = "danger"} {elseif $percent <=
+			{foreach $plants.$animalPlant.input as $fillType => $fillTypeData}{if $fillTypeData.fillMax}{math equation="round(100 / fillMax * fillLevel)" fillMax=$fillTypeData.fillMax
+			fillLevel=$fillTypeData.fillLevel assign="percent"}{else}{$percent=0}{/if} {$progress_bar = "success"} {if $percent <= 25}{$progress_bar = "danger"} {elseif $percent <=
 			50}{$progress_bar = "warning"} {/if}
 			<tr>
 				<th class="col-sm-8">{$fillType|truncate:30}</th>

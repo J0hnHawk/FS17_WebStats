@@ -27,11 +27,27 @@ if (empty ( $mapconfig ) || ! is_array ( $mapconfig )) {
 $mapconfig = array_merge ( $mapconfig, array (
 		'Storage_storage1' => array (
 				'locationType' => 'storage',
-				'position' => '194.64 100.736 101.567' 
+				'position' => '-36 0 -400' 
+		),
+		'BunkerSilo_silo001' => array (
+				'locationType' => 'bunker',
+				'position' => '-82.1 0 -76.0' 
+		),
+		'BunkerSilo_silo002' => array (
+				'locationType' => 'bunker',
+				'position' => '-66.8 0 -68' 
+		),
+		'BunkerSilo_silo003' => array (
+				'locationType' => 'bunker',
+				'position' => '-67.1 0 -450' 
+		),
+		'BunkerSilo_silo004' => array (
+				'locationType' => 'bunker',
+				'position' => '274.1 0 -524.2' 
 		),
 		'Animals_cow' => array (
 				'locationType' => 'animal',
-				'position' => '120 0 150',
+				'position' => '-21 0 -436',
 				'reproRate' => 1200,
 				'input' => array (
 						'water' => array (
@@ -92,7 +108,7 @@ $mapconfig = array_merge ( $mapconfig, array (
 		),
 		'Animals_pig' => array (
 				'locationType' => 'animal',
-				'position' => '250 0 400',
+				'position' => '238 0 -560',
 				'reproRate' => 144,
 				'input' => array (
 						'water' => array (
@@ -154,7 +170,7 @@ $mapconfig = array_merge ( $mapconfig, array (
 		),
 		'Animals_sheep' => array (
 				'locationType' => 'animal',
-				'position' => '-374 0 -175',
+				'position' => '157 0 -248',
 				'reproRate' => 960,
 				'input' => array (
 						'water' => array (
@@ -175,8 +191,8 @@ $mapconfig = array_merge ( $mapconfig, array (
 								'production_factor' => 24,
 								'capacity' => 2000,
 								'fillType' => 'woolPallet',
-								'palettArea' => '-379.6 -190.1 -377.4 -185.9',
-								'palettPlaces' => 15,
+								'palettArea' => '134.9 -274.0 143.4 -266.0',
+								'palettPlaces' => 6,
 								'showInStorage' => false 
 						) 
 				),
@@ -217,8 +233,8 @@ $mapconfig = array_merge ( $mapconfig, array (
 								'capacity' => 4000,
 								'factor' => 1,
 								'fillType' => 'boardwood',
-								'palettArea' => '0 0 1 1',
-								'palettPlaces' => 999,
+								'palettArea' => '-192 231 -187 240',
+								'palettPlaces' => 5,
 								'showInStorage' => false 
 						) 
 				) 
@@ -371,7 +387,7 @@ $mapconfig = array_merge ( $mapconfig, array (
 		),
 		'FabrikScript_Weinberg' => array (
 				'locationType' => 'FabrikScript',
-				'ProdPerHour' => 1,
+				'ProdPerHour' => 1000,
 				'position' => '274.959 103.769 110.121',
 				'showInProduction' => true,
 				'input' => array (
@@ -405,7 +421,7 @@ $mapconfig = array_merge ( $mapconfig, array (
 		),
 		'FabrikScript_Winzerei' => array (
 				'locationType' => 'FabrikScript',
-				'ProdPerHour' => 1,
+				'ProdPerHour' => 1000,
 				'position' => '309.777 115 -796.872',
 				'showInProduction' => true,
 				'input' => array (
@@ -427,16 +443,16 @@ $mapconfig = array_merge ( $mapconfig, array (
 								'capacity' => 1500,
 								'factor' => 1.632,
 								'fillType' => 'Wine',
-								'palettArea' => '0 0 1 1',
-								'palettPlaces' => 999,
+								'palettArea' => '313.2 -779.6 323.6 -777.3',
+								'palettPlaces' => 5,
 								'showInStorage' => false 
 						),
 						'Weinfaesser' => array (
 								'capacity' => 1500,
 								'factor' => 1.632,
 								'fillType' => 'Wine',
-								'palettArea' => '0 0 1 1',
-								'palettPlaces' => 999,
+								'palettArea' => '307.3 -775.8 317.6 -773.5',
+								'palettPlaces' => 5,
 								'showInStorage' => false 
 						) 
 				) 

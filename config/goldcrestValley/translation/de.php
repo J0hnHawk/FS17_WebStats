@@ -74,8 +74,8 @@ $lang = array_merge ( $lang, array (
 ) );
 
 $lang = array_merge ( $lang, array (
+		'outOfMap' => 'Außerhalb der Karte',
 		'onMap' => 'Landschaft',
-		'outofMap' => 'Außerhalb der Karte',
 		'Bga' => 'McLean Biogas Plant',
 		'Animals_pig' => 'Schweinestall',
 		'Animals_cow' => 'Kuhstall',

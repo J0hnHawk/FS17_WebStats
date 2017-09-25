@@ -243,7 +243,11 @@ foreach ( $careerVehicles->onCreateLoadedObject as $object ) {
 			}
 			$productivity = getAnimalProductivity ( $location, $tipTriggers ) * (($cleanlinessFactor < 0.1) ? 0.9 : 1);
 			$plants [$plant] ['productivity'] = $productivity;
-			$reproRate = $mapconfig [$location] ['reproRate'] / $numAnimals * 3600 * 100 / $productivity;
+			if($numAnimals > 1) {
+				$reproRate = $mapconfig [$location] ['reproRate'] / $numAnimals * 3600 * 100 / $productivity;
+			} else {
+				$reproRate = 0;
+			}
 			$plants [$plant] ['reproRate'] = gmdate ( "H:i", $reproRate );
 			$plants [$plant] ['nextAnimal'] = gmdate ( "H:i", $reproRate * (1 - floatval ( $object ['newAnimalPercentage'] )) );
 			// Produktion
