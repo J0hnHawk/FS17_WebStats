@@ -1,0 +1,31 @@
+# Serverkonfiguration schützen
+# "Order, Deny"-Syntax von PHPBB3 übernommen
+# Funktioniert unter Apache 2.4 und früher
+<IfModule mod_version.c>
+	<IfVersion < 2.4>
+		<Files "server.conf">
+			Order Allow,Deny
+			Deny from All
+		</Files>
+	</IfVersion>
+	<IfVersion >= 2.4>
+		<Files "server.conf">
+			Require all denied
+		</Files>
+	</IfVersion>
+</IfModule>
+<IfModule !mod_version.c>
+	<IfModule !mod_authz_core.c>
+		<Files "server.conf">
+			Order Allow,Deny
+			Deny from All
+		</Files>
+	</IfModule>
+	<IfModule mod_authz_core.c>
+		<Files "server.conf">
+			Require all denied
+		</Files>
+	</IfModule>
+</IfModule>
+# Verzeichnisauflistung verhindern
+Options -Indexes
