@@ -77,7 +77,7 @@
 			fillLevel=$fillTypeData.fillLevel assign="percent"}{else}{$percent=0}{/if} {$progress_bar = "success"} {if $percent <= 25}{$progress_bar = "danger"} {elseif $percent <=
 			50}{$progress_bar = "warning"} {/if}
 			<tr>
-				<th class="col-sm-8">{$fillType|truncate:30}</th>
+				<th class="col-sm-8">{$fillType|truncate:27:"...":true}</th>
 				<td class="col-sm-1 text-right">{$fillTypeData.fillLevel|number_format:0:":":"."}</td>
 				<td class="col-sm-3">
 					<div class="progress">
