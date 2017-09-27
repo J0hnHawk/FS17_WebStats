@@ -240,7 +240,7 @@ $mapconfig = array_merge ( $mapconfig, array (
 								'capacity' => 2000,
 								'fillType' => 'woolPallet',
 								'palettArea' => '-379.6 -190.1 -377.4 -185.9',
-								'palettPlaces' => 15,
+								'palettPlaces' => 6,
 								'showInStorage' => false 
 						) 
 				),
