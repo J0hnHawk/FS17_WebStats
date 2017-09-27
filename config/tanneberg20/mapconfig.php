@@ -27,7 +27,11 @@ if (empty ( $mapconfig ) || ! is_array ( $mapconfig )) {
 $mapconfig = array_merge ( $mapconfig, array (
 		'Storage_storage1' => array (
 				'locationType' => 'storage',
-				'position' => '-36 0 -400' 
+				'position' => '-36 0 -400'
+		),
+		'Storage_storage3' => array (
+				'locationType' => 'storage',
+				'position' => '-34 0 235'
 		),
 		'BunkerSilo_silo001' => array (
 				'locationType' => 'bunker',
