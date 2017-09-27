@@ -24,7 +24,7 @@ if (! defined ( 'IN_NFMWS' )) {
 }
 
 // Coockie laden, wenn vorhanden
-$cookieVersion = 6;
+$cookieVersion = 7;
 $options = array ();
 if (isset ( $_COOKIE ['nfmarsch'] )) {
 	$options = json_decode ( $_COOKIE ['nfmarsch'], true );
@@ -51,4 +51,10 @@ if (! isset ( $options ['production'] )) {
 	$options ['production'] ['sortFullProducts'] = true;
 	$options ['production'] ['hidePlant'] = array();
 }
+
+if (! isset ( $options ['defaultView'] )) {
+	$options ['defaultView'] ['factories'] = false;
+	$options ['defaultView'] ['commodities'] = false;
+}
+
 $_SESSION ['language'] = $options ['general'] ['language'];
