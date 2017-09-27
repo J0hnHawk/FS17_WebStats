@@ -18,7 +18,7 @@
  * along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
  *
  */
-$mapVersion = 'Goldcres Valley';
+$mapVersion = 'Sosnovka';
 
 if (empty ( $mapconfig ) || ! is_array ( $mapconfig )) {
 	$mapconfig = array ();
