@@ -132,14 +132,14 @@ foreach ( $careerVehicles->onCreateLoadedObject as $object ) {
 	}
 	switch ($mapconfig [$location] ['locationType']) {
 		case 'storage' :
-			// Farmsilo  und andere Lager Goldcrest Valley
+			// Farmsilo und andere Lager Goldcrest Valley
 			foreach ( $object->node as $node ) {
 				$fillType = strval ( $node ['fillType'] );
 				$fillLevel = intval ( $node ['fillLevel'] );
 				addCommodity ( $fillType, $fillLevel, $location );
 			}
 			break;
-		case 'fuelStation':
+		case 'fuelStation' :
 			// Tankstellen
 			$fillType = 'fuel';
 			$fillLevel = intval ( $object ['fillLevel'] );
@@ -170,7 +170,7 @@ foreach ( $careerVehicles->onCreateLoadedObject as $object ) {
 						'position' => $mapconfig [$location] ['position'],
 						'state' => 0,
 						'input' => array (),
-						'output' => array ()
+						'output' => array () 
 				);
 				foreach ( $mapconfig [$location] ['input'] as $fillType => $fillTypeData ) {
 					$fillLevel = intval ( $object [$fillTypeData ['fillTypes']] );
@@ -235,15 +235,22 @@ foreach ( $careerVehicles->onCreateLoadedObject as $object ) {
 				$trough_factor = $mapconfig [$location] ['input'] [$combineFillType] ['trough_factor'];
 				$usage_factor = $mapconfig [$location] ['input'] [$combineFillType] ['consumption_factor'];
 				$fillMax = getMaxForage ( $trough_factor, $numAnimals );
+				if ($fillMax < $fillLevel) {
+					$fillMax = $fillLevel;
+				}
 				$state = getState ( $fillLevel, $fillMax );
 				if ($state > $plants [$plant] ['state']) {
 					$plants [$plant] ['state'] = $state;
 				}
 				$plants [$plant] ['input'] [$l_fillType] = addFillType ( $combineFillType, $fillLevel, $fillMax, $ProdPerHour, $usage_factor, $state );
 			}
-			$productivity = getAnimalProductivity ( $location, $tipTriggers ) * (($cleanlinessFactor < 0.1) ? 0.9 : 1);
+			if ($numAnimals == 0) {
+				$productivity = 0;
+			} else {
+				$productivity = getAnimalProductivity ( $location, $tipTriggers ) * (($cleanlinessFactor < 0.1) ? 0.9 : 1);
+			}
 			$plants [$plant] ['productivity'] = $productivity;
-			if($numAnimals > 1) {
+			if ($numAnimals > 1) {
 				$reproRate = $mapconfig [$location] ['reproRate'] / $numAnimals * 3600 * 100 / $productivity;
 			} else {
 				$reproRate = 0;
