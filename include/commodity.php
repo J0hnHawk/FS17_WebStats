@@ -22,18 +22,24 @@ if (! defined ( 'IN_NFMWS' )) {
 	exit ();
 }
 
-// Kartendaten laden
-$default = current ( $commodities );
+// ausgewählte Ware ermitteln
+if ($options ['defaultView'] ['commodities']) {
+	$default = $commodities [$options ['defaultView'] ['commodities']];
+} else {
+	$default = current ( $commodities );
+}
 $object = GetParam ( 'object', 'G', $default ['i3dName'] );
 $l_object = translate ( $object );
-
-// Ware vorhanden?
 if (! isset ( $commodities [$l_object] )) {
 	$objectFound = false;
-	$object = 'wheat';
-	$l_object = translate ( $object );
+	$l_object = translate ( $default ['i3dName'] );
 } else {
 	$objectFound = true;
+}
+if ($options ['defaultView'] ['commodities'] != $l_object) {
+	$options ['defaultView'] ['commodities'] = $l_object;
+	$options ['version'] = $cookieVersion;
+	setcookie ( 'nfmarsch', json_encode ( $options ), time () + 31536000 );
 }
 
 // Übersichtskarte

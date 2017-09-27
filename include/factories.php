@@ -18,24 +18,29 @@
  * along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
  *
  */
-
 if (! defined ( 'IN_NFMWS' )) {
 	exit ();
 }
 
-// Kartendaten laden
-$default = current($plants);
-$object = GetParam ( 'object', 'G', $default['i3dName']);
+// ausgewählte Fabrik ermitteln
+if ($options ['defaultView'] ['factories']) {
+	$default = $plants [$options ['defaultView'] ['factories']];
+} else {
+	$default = current ( $plants );
+}
+$object = GetParam ( 'object', 'G', $default ['i3dName'] );
 $l_object = translate ( $object );
-
-// Ware vorhanden?
-if(!isset($plants [$l_object])) {
-	$object = 'FabrikScript_Oel_Raffinerie_Raps';
-	$l_object = translate ( $object );
+if (! isset ( $plants [$l_object] )) {
+	$l_object = translate ( $default ['i3dName'] );
+}
+if ($options ['defaultView'] ['factories'] != $l_object) {
+	$options ['defaultView'] ['factories'] = $l_object;
+	$options ['version'] = $cookieVersion;
+	setcookie ( 'nfmarsch', json_encode ( $options ), time () + 31536000 );
 }
 
-uksort($plants, "strnatcasecmp");
-$smarty->assign('selectedPlant', $object);
-$smarty->assign('plantName', $l_object);
-$smarty->assign('plants', $plants);
+uksort ( $plants, "strnatcasecmp" );
+$smarty->assign ( 'selectedPlant', $object );
+$smarty->assign ( 'plantName', $l_object );
+$smarty->assign ( 'plants', $plants );
 
