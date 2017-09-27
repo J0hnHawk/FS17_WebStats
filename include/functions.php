@@ -39,6 +39,9 @@ function GetParam($ParamName, $Method = "P", $DefaultValue = "") {
 
 // Produktionsstatus (savegame.php)
 function getState($fillLevel, $fillMax) {
+	if ($fillMax == 0) {
+		return 0;
+	}
 	if ($fillLevel == 0) {
 		return 2;
 	} elseif ($fillLevel / $fillMax < 0.1) {
