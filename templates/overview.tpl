@@ -28,7 +28,7 @@
 			</tbody>
 		</table>
 		<div id="mapContainer" style="position: relative; width: 1024px; height: 1024px; overflow: auto">
-			<img src="{$linkToImage}">
+			<img src="l{$linkToImage}" onerror="this.onerror=null;this.src='./config/{$map.Path}/pda_map_H.jpg';" height="1024" width="1024"/>
 			<div id="mapElementsContainer">
 				{foreach $mapEntries as $key => $mapEntry}
 				<div id="vehicle{$key}Container" style="position: absolute; left: {$mapEntry.xpos}px; top: {$mapEntry.zpos}px;" onmouseout="document.getElementById('vehicle{$key}').style.display='none'; document.getElementById('vehicle{$key}Image').src='./images/{$mapEntry.icon}'; document.getElementById('vehicle{$key}Container').style.zIndex=1;"
