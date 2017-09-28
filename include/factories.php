@@ -23,11 +23,12 @@ if (! defined ( 'IN_NFMWS' )) {
 }
 
 // ausgewählte Fabrik ermitteln
+$default = current ( $plants );
 if ($options ['defaultView'] ['factories']) {
-	$default = $plants [$options ['defaultView'] ['factories']];
-} else {
-	$default = current ( $plants );
-}
+	if (isset ( $plants [$options ['defaultView'] ['factories']] )) {
+		$default = $plants [$options ['defaultView'] ['factories']];
+	}
+} 
 $object = GetParam ( 'object', 'G', $default ['i3dName'] );
 $l_object = translate ( $object );
 if (! isset ( $plants [$l_object] )) {

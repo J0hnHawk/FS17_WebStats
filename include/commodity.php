@@ -23,10 +23,11 @@ if (! defined ( 'IN_NFMWS' )) {
 }
 
 // ausgewählte Ware ermitteln
+$default = current ( $commodities );
 if ($options ['defaultView'] ['commodities']) {
-	$default = $commodities [$options ['defaultView'] ['commodities']];
-} else {
-	$default = current ( $commodities );
+	if (isset ( $commodities [$options ['defaultView'] ['commodities']] )) {
+		$default = $commodities [$options ['defaultView'] ['commodities']];
+	}
 }
 $object = GetParam ( 'object', 'G', $default ['i3dName'] );
 $l_object = translate ( $object );
