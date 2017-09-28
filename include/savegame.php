@@ -289,14 +289,14 @@ foreach ( $careerVehicles->onCreateLoadedObject as $object ) {
 			// Factoryscript Lager in Commodities aufnehmen
 			foreach ( $object->Rohstoff as $in ) {
 				$fillType = strval ( $in ['Name'] );
-				$fillLevel = intval ( $in ['Lvl'] );
+				$fillLevel = getPositiveInt ( $in ['Lvl'] );
 				if ($mapconfig [$location] ['input'] [$fillType] ['showInStorage']) {
 					addCommodity ( $fillType, $fillLevel, $location );
 				}
 			}
 			foreach ( $object->Produkt as $out ) {
 				$fillType = strval ( $out ['Name'] );
-				$fillLevel = intval ( $out ['Lvl'] );
+				$fillLevel = getPositiveInt ( $out ['Lvl'] );
 				if ($mapconfig [$location] ['output'] [$fillType] ['showInStorage']) {
 					addCommodity ( $fillType, $fillLevel, $location );
 				}
@@ -316,7 +316,7 @@ foreach ( $careerVehicles->onCreateLoadedObject as $object ) {
 				foreach ( $object->Rohstoff as $rohstoff ) {
 					$fillType = strval ( $rohstoff ['Name'] );
 					$l_fillType = translate ( $fillType );
-					$fillLevel = intval ( $rohstoff ['Lvl'] );
+					$fillLevel = getPositiveInt ( $rohstoff ['Lvl'] );
 					$factor = $mapconfig [$location] ['input'] [$fillType] ['factor'];
 					$fillMax = $mapconfig [$location] ['input'] [$fillType] ['capacity'];
 					$state = getState ( $fillLevel, $fillMax );
@@ -330,7 +330,7 @@ foreach ( $careerVehicles->onCreateLoadedObject as $object ) {
 					$l_fillType = translate ( $fillType );
 					$factor = $mapconfig [$location] ['output'] [$fillType] ['factor'];
 					if ($mapconfig [$location] ['output'] [$fillType] ['showInStorage']) {
-						$fillLevel = intval ( $product ['Lvl'] );
+						$fillLevel = getPositiveInt ( $product ['Lvl'] );
 						$fillMax = $mapconfig [$location] ['output'] [$fillType] ['capacity'];
 					} else {
 						$fillLevel = isset ( $commodities [$l_fillType] ['locations'] [$plant] ['fillLevel'] ) ? $commodities [$l_fillType] ['locations'] [$plant] ['fillLevel'] : 0;

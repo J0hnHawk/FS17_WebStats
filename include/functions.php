@@ -37,6 +37,15 @@ function GetParam($ParamName, $Method = "P", $DefaultValue = "") {
 	}
 }
 
+// Fabrikskripte liefern manchmal negative Zahlen
+function getPositiveInt($value) {
+	$int = intval ( $value ['Lvl'] );
+	if($int<0) {
+		return 0;
+	}
+	return $int;
+}
+
 // Produktionsstatus (savegame.php)
 function getState($fillLevel, $fillMax) {
 	if ($fillMax == 0) {
