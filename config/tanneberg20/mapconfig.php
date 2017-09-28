@@ -207,6 +207,28 @@ $mapconfig = array_merge ( $mapconfig, array (
 ) );
 
 $mapconfig = array_merge ( $mapconfig, array (
+		'FabrikScript_Diesellager' => array (
+				'locationType' => 'FabrikScript',
+				'ProdPerHour' => 987654321,
+				'position' => '-186.855 -29.9992 -702.259',
+				'showInProduction' => false,
+				'input' => array (
+						'HFUIN' => array (
+								'capacity' => 999999,
+								'factor' => 1,
+								'fillTypes' => 'fuel',
+								'showInStorage' => true
+						)
+				),
+				'output' => array (
+						'FUOUT' => array (
+								'capacity' => 999999,
+								'factor' => 1,
+								'fillType' => 'fuel',
+								'showInStorage' => true
+						)
+				)
+		),
 		'FabrikScript_Fabrik' => array (
 				'locationType' => 'FabrikScript',
 				'ProdPerHour' => 3000,
