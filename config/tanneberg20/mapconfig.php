@@ -33,6 +33,34 @@ $mapconfig = array_merge ( $mapconfig, array (
 				'locationType' => 'storage',
 				'position' => '-34 0 235'
 		),
+		'Bga' => array (
+				'locationType' => 'bga',
+				'ProdPerHour' => 1000,
+				'position' => '-54 0 -112',
+				'showInProduction' => true,
+				'input' => array (
+						'silage' => array (
+								'capacity' => 50000,
+								'factor' => 360,
+								'fillTypes' => 'bunkerFillLevel',
+								'showInStorage' => false
+						),
+						'liquidManure' => array (
+								'capacity' => '&infin;',
+								'factor' => 180,
+								'fillTypes' => 'liquidManureFillLevel',
+								'showInStorage' => false
+						)
+				),
+				'output' => array (
+						'digestate' => array (
+								'capacity' => 800000,
+								'factor' => 87,
+								'fillTypes' => 'digestateSiloFillLevel',
+								'showInStorage' => true
+						)
+				)
+		),
 		'BunkerSilo_silo001' => array (
 				'locationType' => 'bunker',
 				'position' => '-82.1 0 -76.0' 
