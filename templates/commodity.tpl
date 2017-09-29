@@ -52,7 +52,7 @@
 			{foreach $demand as $plant=>$demandValue}
 			<tr>
 				<td><a href="index.php?page=factories&object={$plants.$plant.i3dName}">{$plant}</a></td>
-				<td class="text-right">{$demandValue|number_format:0:":":"."}</td>
+				<td class="text-right">{if is_numeric($demandValue)}{$demandValue|number_format:0:":":"."}{else}{$demandValue}{/if}</td>
 			</tr>
 			{/foreach}
 			</tbody>

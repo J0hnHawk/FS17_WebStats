@@ -151,11 +151,15 @@ foreach ( $plants as $plantName => $plant ) {
 						$prodPerDay = $fillTypeDetails ['prodPerDay'];
 						$demandValue = $fillMax - $fillTypeDetails ['fillLevel'];
 						if ($demandValue < $prodPerDay && $fillMax > $prodPerDay) {
-							// if ($options['storage']['hideZero'] && $demandValue == 0) {
+							//if ($options['storage']['hideZero'] && $demandValue == 0) {
 							continue;
 						} else {
 							$demandSum += $demandValue;
-							$demand [$plantName] = $demandValue;
+							if(is_numeric($fillMax)) {
+								$demand [$plantName] = $demandValue;
+							} else {
+								$demand [$plantName] = $fillMax;
+							}
 							$mapEntries [] = addEntry ( $plant ['position'], $plantName, 'harvester.png' );
 						}
 					}
