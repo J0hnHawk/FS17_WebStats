@@ -5,31 +5,31 @@
 </div>
 <div class="row">
 	{foreach $animalPlants as $animalPlant}
-	<div class="col-sm-4">
+	<div class="col-xs-4">
 		<h4>
 			<strong>{$animalPlant}</strong>
 		</h4>
 		<table class="table table-striped">
 
 			<tr>
-				<th class="col-sm-8">##{$plants.$animalPlant.nameAnimals|upper}_COUNT##</th>
-				<td colspan="2" class="col-sm-4 text-right">{$plants.$animalPlant.numAnimals}</td>
+				<th class="col-xs-8">##{$plants.$animalPlant.nameAnimals|upper}_COUNT##</th>
+				<td colspan="2" class="col-xs-4 text-right">{$plants.$animalPlant.numAnimals}</td>
 			</tr>
 			<tr>
-				<th class="col-sm-8">##PRODUCTIVITY##</th>
-				<td class="col-sm-1 text-right">{$plants.$animalPlant.productivity}%</td>
-				<td class="col-sm-3"><div class="progress">
+				<th class="col-xs-8">##PRODUCTIVITY##</th>
+				<td class="col-xs-1 text-right">{$plants.$animalPlant.productivity}%</td>
+				<td class="col-xs-3"><div class="progress">
 						<div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"
 							style="width: {$plants.$animalPlant.productivity}%"></div>
 					</div></td>
 			</tr>
 			<tr>
-				<th class="col-sm-8">##REPRO_RATE##</th>
-				<td colspan="2" class="col-sm-4 text-right">{$plants.$animalPlant.reproRate}</td>
+				<th class="col-xs-8">##REPRO_RATE##</th>
+				<td colspan="2" class="col-xs-4 text-right">{$plants.$animalPlant.reproRate}</td>
 			</tr>
 			<tr>
-				<th class="col-sm-8">##NEXT_ANIMAL##</th>
-				<td colspan="2" class="col-sm-4 text-right">{$plants.$animalPlant.nextAnimal}</td>
+				<th class="col-xs-8">##NEXT_ANIMAL##</th>
+				<td colspan="2" class="col-xs-4 text-right">{$plants.$animalPlant.nextAnimal}</td>
 			</tr>
 		</table>
 	</div>
@@ -37,21 +37,21 @@
 </div>
 <div class="row">
 	{foreach $animalPlants as $animalPlant}
-	<div class="col-sm-4">
+	<div class="col-xs-4">
 		<table class="table table-striped">
 			{foreach $plants.$animalPlant.output as $fillType => $fillTypeData}
 			<tr>
-				<th class="col-sm-8">{$fillType}</th>
+				<th class="col-xs-8">{$fillType}</th>
 				{if $fillTypeData.i3dName == 'woolPallet'}
-				<td class="col-sm-1 text-right">{$fillTypeData.fillLevel|number_format:0:":":"."}</td>
-				<td class="col-sm-3">{if $fillTypeData.fillMax}{math equation="round(100 / fillMax * fillLevel)" fillMax=$fillTypeData.fillMax
+				<td class="col-xs-1 text-right">{$fillTypeData.fillLevel|number_format:0:":":"."}</td>
+				<td class="col-xs-3">{if $fillTypeData.fillMax}{math equation="round(100 / fillMax * fillLevel)" fillMax=$fillTypeData.fillMax
 					fillLevel=$fillTypeData.fillLevel assign="percent"}{else}{$percent=0}{/if} {$progress_bar = "success"} {if $percent > 90}{$progress_bar = "danger"} {elseif $percent >
 					80}{$progress_bar = "warning"} {/if}
 					<div class="progress">
 						<div class="progress-bar progress-bar-{$progress_bar}" role="progressbar" aria-valuenow="{$percent}" aria-valuemin="0" aria-valuemax="100"
 							style="width: {$percent}%"></div>
 					</div> {else} 
-					<td class="col-sm-1 text-right">{$fillTypeData.fillLevel|number_format:0:":":"."}</td>{/if}
+					<td class="col-xs-1 text-right">{$fillTypeData.fillLevel|number_format:0:":":"."}</td>{/if}
 				</td>
 			</tr>
 			{/foreach}
@@ -61,12 +61,12 @@
 </div>
 <div class="row">
 	{foreach $animalPlants as $animalPlant}
-	<div class="col-sm-4">
+	<div class="col-xs-4">
 		<table class="table table-striped">
 			<tr>
-				<th class="col-sm-8">##CLEANNESS##</th>
-				<td class="col-sm-1 text-right">{$plants.$animalPlant.cleanlinessFactor}%</td>
-				<td class="col-sm-3">
+				<th class="col-xs-8">##CLEANNESS##</th>
+				<td class="col-xs-1 text-right">{$plants.$animalPlant.cleanlinessFactor}%</td>
+				<td class="col-xs-3">
 					<div class="progress">
 						<div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="{$plants.$animalPlant.cleanlinessFactor}" aria-valuemin="0"
 							aria-valuemax="100" style="width: {$plants.$animalPlant.cleanlinessFactor}%"></div>
@@ -77,9 +77,9 @@
 			fillLevel=$fillTypeData.fillLevel assign="percent"}{else}{$percent=0}{/if} {$progress_bar = "success"} {if $percent <= 25}{$progress_bar = "danger"} {elseif $percent <=
 			50}{$progress_bar = "warning"} {/if}
 			<tr>
-				<th class="col-sm-8">{$fillType|truncate:27:"...":true}</th>
-				<td class="col-sm-1 text-right">{$fillTypeData.fillLevel|number_format:0:":":"."}</td>
-				<td class="col-sm-3">
+				<th class="col-xs-8">{$fillType|truncate:27:"...":true}</th>
+				<td class="col-xs-1 text-right">{$fillTypeData.fillLevel|number_format:0:":":"."}</td>
+				<td class="col-xs-3">
 					<div class="progress">
 						<div class="progress-bar progress-bar-{$progress_bar}" role="progressbar" aria-valuenow="{$percent}" aria-valuemin="0" aria-valuemax="100" style="width: {$percent}%">							
 						</div>
