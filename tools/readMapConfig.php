@@ -18,15 +18,15 @@
  * along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
  *
  */
-
-$xmlStr = file_get_contents ( './map01.i3d' );
+setlocale ( LC_ALL, "en_US.UTF-8" );
+$xmlStr = file_get_contents ( './map01_29.i3d' );
 $xml = simplexml_load_string ( $xmlStr );
 $i = 0;
 $produktion = $AttributeNodes = array ();
 
 // Zuerst alle Fabrikscripte finden
 foreach ( $xml->UserAttributes->UserAttribute as $UserAttribute ) {
-    $ProduktPerHour = 1; // ursprünglich 'false'. Seit Map 2.9 gibt es aber Fabriken ohne 'ProduktPerHour'-Angabe
+	$ProduktPerHour = 1000; // ursprünglich 'false'. Seit Map 2.9 gibt es aber Fabriken ohne 'ProduktPerHour'-Angabe
 	$nodeId = false;
 	foreach ( $UserAttribute as $Attribute ) {
 		if ($Attribute ['name'] == 'ProduktPerHour') {
@@ -59,6 +59,10 @@ foreach ( $xml->Scene as $item1 ) {
 				foreach ( $item4 as $item5 ) {
 					if (in_array ( $item5 ['nodeId'], array_keys ( $produktion ) ))
 						analyze ( $item5 );
+					foreach ( $item5 as $item6 ) {
+						if (in_array ( $item6 ['nodeId'], array_keys ( $produktion ) ))
+							analyze ( $item6 );
+					}
 				}
 			}
 		}
@@ -128,13 +132,14 @@ echo ('$mapconfig = array(');
 foreach ( $produktion as $item ) {
 	$showInStorage = 'false';
 	$showInProduction = 'true';
-	if(!isset($item ['name'])) continue;
+	if (! isset ( $item ['name'] ))
+		continue;
 	if (strpos ( strval ( $item ['name'] ), 'Lager_' ) !== false) {
 		$showInStorage = 'true';
 		$showInProduction = 'false';
 	}
 	echo ("'FabrikScript_{$item['name']}' => array (");
-	echo ("'locationType' => {$item['FabrikScript']},");
+	echo ("'locationType' => 'FabrikScript',");
 	echo ("'ProdPerHour' => {$item['ProdPerHour']},");
 	echo ("'position' => '{$item['position']}',");
 	echo ("'showInProduction' => $showInProduction,");
@@ -175,6 +180,7 @@ foreach ( $produktion as $item ) {
 			$showInStorage = 'true';
 			// if (strpos ( $name, 'pallet' ) !== false || strpos ( $name, 'palett' ) !== false)
 			if ($item ["$output$i"] ['capacity'] <= '10000') {
+				echo ("'palettArea' => '0 0 1 1',");
 				echo ("'palettPlaces' => 999,");
 				$showInStorage = 'false';
 			}
