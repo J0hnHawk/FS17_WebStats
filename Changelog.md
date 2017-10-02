@@ -1,14 +1,15 @@
 # Changelog
 
-## noch nicht veröffentlichte Änderungen
+## [Version 1.3.0](https://github.com/J0hnHawk/FS17_WebStats/releases/tag/v1.3.0) (02.10.2017)
 
 **Änderungen und Erweiterungen:**
 - Projekt umbenannt in FS17 Webstats
 - Umstellung der Templates auf Mehrsprachigkeit
 - Tierübersicht ergänzt
 - Kuh- und Schweinestall werden nun in der Produktionsübersicht mit angezeigt
+- BGA und Fahrsilounterstützung
 - FS17 Webstats ist nun für soweit vorbereitet, dass auch andere Karten unterstützt werden
-- Unterstützung für Goldcrest Valley, Sosnovka und Mod Map Tanneberg 2.0 
+- Unterstützung für Nordfriesische Marsch 3.0, Goldcrest Valley, Sosnovka und Mod Map Tanneberg 2.0 
 - Prüfung, ob fsockopen() erlaubt ist bei der Installation
 - Fehlerbehandung geändert; Logdatei statt Anzeige
 - Bei der Installation muss ein Passwort festgelegt werden. Mit diesem kann man später die Einstellungen zurücksetzen
@@ -22,6 +23,7 @@
 - Die Einstellung "nur Paletten" funktioniert jetzt in der Lagerübersicht korrekt 
 - Pelletspaletten werden nun im Lager bei der Pelltesfabrik angezeigt (#8)
 - Kombirohstoffe wurden nicht immer hinzugefügt
+- Negative Lagerstände des Fabrikskrips werden ausgefiltert
 
 ## [Version 1.2.2](https://github.com/J0hnHawk/FS17_NF_Marsch_WebStats/releases/tag/v1.2.2) (10.09.2017)
 
