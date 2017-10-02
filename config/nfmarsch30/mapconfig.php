@@ -711,7 +711,7 @@ $mapconfig = array_merge ( $mapconfig, array (
 								'capacity' => 5000,
 								'factor' => 1,
 								'fillType' => 'papier',
-								'palettArea' => '-970.0 -852.0 -967.0 -837.0',
+								'palettArea' => '-973.0 -852.0 -967.0 -837.0',
 								'palettPlaces' => 22,
 								'showInStorage' => false 
 						),
@@ -719,7 +719,7 @@ $mapconfig = array_merge ( $mapconfig, array (
 								'capacity' => 5000,
 								'factor' => 1,
 								'fillType' => 'karton',
-								'palettArea' => '-970.0 -829.0 -967.0 -814.0',
+								'palettArea' => '-973.0 -829.0 -967.0 -814.0',
 								'palettPlaces' => 22,
 								'showInStorage' => false 
 						) 
