@@ -37,7 +37,7 @@
 							<thead>
 								<tr>
 									<th>##PLACE##<a class="pull-right" href="index.php?page=commodity&object={$commodity.i3dName}">##DETAILS##</a></th>
-									<th class="text-right">Menge</th>
+									<th class="text-right">##QUANTITY##</th>
 								</tr>
 							</thead>
 							<tbody>
