@@ -38,7 +38,7 @@ include ('./include/coockie.php');
 $smarty = new Smarty ();
 $smarty->debugging = false;
 $smarty->caching = false;
-$smarty->assign ( 'webStatsVersion', 'Version 1.3.0 (alpha)' );
+$smarty->assign ( 'webStatsVersion', 'Version 1.3.0 (02.10.2017)' );
 
 // Serverkonfiguration laden - wenn nicht vorhanden Instalation starten
 $configFile = './config/server.conf';
