@@ -514,7 +514,7 @@ $mapconfig = array_merge ( $mapconfig, array (
 								'showInStorage' => true 
 						),
 						'emptypallet' => array (
-								'capacity' => 7000,
+								'capacity' => 5000,
 								'factor' => 1,
 								'fillType' => 'emptypallet',
 								'palettArea' => '866.4 618.5 882.6 624.7',
