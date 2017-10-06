@@ -17,7 +17,7 @@ text-danger")} {$textcolors = array("","text-warning","text-danger")}
 				</tr>
 			</thead>
 			<tbody>
-				{$tooltip = '<span class="%s" data-toggle="tooltip" data-placement="top" title="##STOCK##:<br><strong>%s</strong>">'} {foreach $plants as
+				{$tooltip = '<span class="%s text-nowrap" data-toggle="tooltip" data-placement="top" title="##STOCK##:<br><strong>%s</strong>">'} {foreach $plants as
 				$plantName => $plantData}
 				<tr data-toggle="collapse" href="#collapse{$plantData.i3dName}">
 					<td><span class="{$glyphicons[$plantData.state]}" aria-hidden="true"></span> {$plantName}</td>
