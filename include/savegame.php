@@ -92,9 +92,7 @@ foreach ( $careerVehicles->item as $item ) {
 			$mapconfig = array_merge ( $mapconfig, array (
 					'HayLoftPlaceable' => array (
 							'position' => '-550 0 750',
-							'showInProduction' => false,
-							'input' => array (),
-							'output' => array () 
+							'showInProduction' => false
 					) 
 			) );
 		}

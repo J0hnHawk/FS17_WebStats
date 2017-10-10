@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<placeable>
+	<MOD Name="FS17_HayLoftplaceable" Version="" Author="" Link=""></MOD>
+	<item className="HayLoftPlaceable" locationType="storage"/>
+	<l10n>
+		<text name="HayLoftPlaceable">
+			<en>Root fruit storage (placeable)</en>
+			<de>Wurzelfruchtlager (platzierbar)</de>
+		</text>
+	</l10n>
+</placeable>
