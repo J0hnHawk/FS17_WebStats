@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<placeable>
+	<MOD name="aaa_WEINPACKohneTipping_placeable" version="4.0.0" author="susi29" link="https://www.modhoster.de/mods/weinberg--2" />
+	<item filename="winzerei" locationType="FabrikScript" ProdPerHour="1000" showInProduction="true">
+		<input name="Wasser" capacity="50000" factor="1.8" fillTypes="water" showInStorage="false" />
+		<input name="Trauben" capacity="50000" factor="3" fillTypes="grape" showInStorage="false" />
+		<output name="WeinfassKlein" capacity="50" factor="0.054" fillType="Winesmall" palettArea="0 0 1 1" palettPlaces="999" showInStorage="false" />
+		<output name="Traubensaft" capacity="1500" factor="1.632" fillType="grapejuice" palettArea="0 0 1 1" palettPlaces="999" showInStorage="false" />
+		<output name="Wein" capacity="1500" factor="1.632" fillType="Wine" palettArea="0 0 1 1" palettPlaces="999" showInStorage="false" />
+	</item>
+	<item filename="weinverkauf" locationType="FabrikScript" ProdPerHour="1000" showInProduction="true">
+		<input name="Wein" capacity="15000" factor="0.3" fillTypes="Wine" showInStorage="false" />
+		<input name="WeinfassKlein" capacity="5000" factor="0.02" fillTypes="Winesmall" showInStorage="false" />
+		<input name="Traubensaft" capacity="15000" factor="0.3" fillTypes="grapejuice" showInStorage="false" />
+		<output name="Weinruecknahme" capacity="2147483647" factor="0.01" fillType="Wine" palettArea="0 0 1 1" palettPlaces="999" showInStorage="false" />
+		<output name="Wein" capacity="2000" factor="1" fillType="Wine" palettArea="0 0 1 1" palettPlaces="999" showInStorage="false" />
+	</item>
+	<item filename="wein" locationType="FabrikScript" ProdPerHour="1000" showInProduction="true">
+		<input name="Mist" capacity="25000" factor="1.7" fillTypes="manure" showInStorage="false" />
+		<input name="Duenger" capacity="25000" factor="1.8" fillTypes="fertilizer" showInStorage="false" />
+		<input name="Wasser" capacity="80000" factor="2" fillTypes="water" showInStorage="false" />
+		<output name="grape" capacity="20000" factor="1.5" fillType="grape" showInStorage="true" />
+	</item>
+	<l10n>
+		<text name="grape">
+			<en>grape</en>
+			<de>Weintrauben</de>
+		</text>
+		<text name="Wasser">
+			<en>water</en>
+			<de>Wasser</de>
+		</text>
+		<text name="Trauben">
+			<en>grape</en>
+			<de>Weintrauben</de>
+		</text>
+		<text name="Wine">
+			<en>Wine</en>
+			<de>Wein</de>
+		</text>
+		<text name="Traubensaft">
+			<en>grapejuice</en>
+			<de>Traubensaft</de>
+		</text>
+		<text name="grapejuice">
+			<en>grapejuice</en>
+			<de>Traubensaft</de>
+		</text>
+		<text name="Winesmall">
+			<en>Winesmall</en>
+			<de>WeinfassKlein</de>
+		</text>
+		<text name="WeinfassKlein">
+			<en>Winesmall</en>
+			<de>WeinfassKlein</de>
+		</text>
+		<text name="winzerei">
+			<en>winery</en>
+			<de>Winzerei</de>
+		</text>
+		<text name="weinverkauf">
+			<en>Winestore</en>
+			<de>Weinstube</de>
+		</text>
+		<text name="wein">
+			<en>winemountain</en>
+			<de>Weinberg</de>
+		</text>
+	</l10n>
+</placeable>

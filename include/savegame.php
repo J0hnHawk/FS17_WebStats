@@ -57,9 +57,9 @@ foreach ( $careerVehicles->item as $item ) {
 	$location = getLocation ( $item ['position'] );
 	if ($className == 'FillablePallet' || $className == 'Bale') {
 		if (isset ( $item ['i3dFilename'] )) {
-			$fillType = getFillType ( $item ['i3dFilename'] );
+			$fillType = cleanFileName ( $item ['i3dFilename'] );
 		} else {
-			$fillType = getFillType ( $item ['filename'] );
+			$fillType = cleanFileName ( $item ['filename'] );
 		}
 		if ($fillType) {
 			$fillLevel = intval ( $item ['fillLevel'] );
@@ -82,25 +82,25 @@ foreach ( $careerVehicles->item as $item ) {
 		}
 	}
 	// Platzierbare Objekte
-	if (! isset ( $placeableObjects [$className] ['locationType'] )) {
+	$filename = cleanFileName ( $item ['filename'] );
+	if (! isset ( $placeableObjects [$filename] ['locationType'] )) {
 		continue;
 	} else {
-		if (isset ( $placeables [$className] )) {
-			$placeables [$className] ++;
+		if (isset ( $placeables [$filename] )) {
+			$placeables [$filename] ++;
 		} else {
-			$placeables [$className] = 1;
+			$placeables [$filename] = 1;
 		}
-		$number = " #" . $placeables [$className];
-		$placeableObjects [$className] ['position'] = strval ( $item ['position'] );
-		$mapconfig [$className . $number] = $placeableObjects [$className];
-		$lang [$className . $number] = $placeablesLang [$className] . $number;
-		readMapObject ( $item, $className . $number, $plants, $mapconfig );
+		$placeableObjects [$filename] ['position'] = strval ( $item ['position'] );
+		$mapconfig [$filename . $placeables [$filename]] = $placeableObjects [$filename];
+		$lang [$filename . $placeables [$filename]] = $placeablesLang [$filename] . " #" . $placeables [$filename];
+		readMapObject ( $item, $filename . $placeables [$filename], $plants, $mapconfig );
 	}
 }
 // Fahrzeuge aus $careerVehicles
 foreach ( $careerVehicles->vehicle as $vehicle ) {
 	if (isset ( $vehicle ['fillTypes'] )) {
-		$location = getFillType ( $vehicle ['filename'] );
+		$location = cleanFileName ( $vehicle ['filename'] );
 		$position = $vehicle->component1 ['position'];
 		$fillTypes = explode ( ' ', $vehicle ['fillTypes'] );
 		$fillLevels = explode ( ' ', $vehicle ['fillLevels'] );
@@ -123,6 +123,7 @@ foreach ( $careerVehicles->vehicle as $vehicle ) {
 // Analysierung von CreateLoadedObjects
 foreach ( $careerVehicles->onCreateLoadedObject as $object ) {
 	$location = strval ( $object ['saveId'] );
+	include ('price.php');
 	if (! isset ( $mapconfig [$location] ['locationType'] )) {
 		continue;
 	} else {

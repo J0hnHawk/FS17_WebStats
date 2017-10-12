@@ -133,8 +133,10 @@ function translate($text) {
 	$text = strval ( $text );
 	if (isset ( $lang [$text] )) {
 		return $lang [$text];
+	} elseif (isset ( $placeablesLang [$text] )) {
+		return $placeablesLang [$text];
 	} else {
-		// return '{' . $text . '}';
+		return '{' . $text . '}';
 		return $text;
 	}
 }
@@ -173,7 +175,7 @@ function getVehicleNames() {
 }
 
 // Palettenart aus Dateiname extrahieren
-function getFillType($uri) {
+function cleanFileName($uri) {
 	$split = explode ( '/', strval ( $uri ) );
 	$filename = substr ( array_pop ( $split ), 0, - 4 );
 	return $filename;

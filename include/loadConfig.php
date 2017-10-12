@@ -41,12 +41,12 @@ $placeableObjects = array();
 foreach (glob('./config/placeables/*.xml') as $filename) {
     $placeable = simplexml_load_file($filename);
     foreach ($placeable->item as $item) {
-        $className = strval($item['className']);
+        $className = strval($item['filename']);
         $placeableObjects = array_merge($placeableObjects, array(
             $className => array()
         ));
         foreach ($item->attributes() as $attribute => $value) {
-            if ($attribute != 'className') {
+            if ($attribute != 'filename') {
                 $placeableObjects[$className][$attribute] = get_bool($value);
             }
         }
@@ -54,10 +54,10 @@ foreach (glob('./config/placeables/*.xml') as $filename) {
             if (empty($placeableObjects[$className][$childName]) || ! is_array($placeableObjects[$className][$childName])) {
                 $placeableObjects[$className][$childName] = array();
             }
-            $fillType = strval($childData['Name']);
+            $fillType = strval($childData['name']);
             $placeableObjects[$className][$childName][$fillType] = array();
             foreach ($childData->attributes() as $attribute => $value) {
-                if ($attribute != 'Name') {
+                if ($attribute != 'name') {
                     $placeableObjects[$className][$childName][$fillType][$attribute] = get_bool($value);
                 }
             }
@@ -67,7 +67,7 @@ foreach (glob('./config/placeables/*.xml') as $filename) {
     foreach ($placeable->l10n->text as $text) {
         $key = strval($text['name']);
         $value = strval($text->$_SESSION ['language']);
-        $placeablesLang = array_merge($lang, array(
+        $placeablesLang = array_merge($placeablesLang, array(
             $key => $value
         ));
     }
