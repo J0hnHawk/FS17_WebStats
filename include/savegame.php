@@ -41,8 +41,7 @@ if ($stats) {
 	return;
 }
 
-$commodities = $outOfMap = $positions = array ();
-$plants = array ();
+$commodities = $outOfMap = $positions = $plants = $placeables = array ();
 
 // Stand der Daten ermitteln (Ingame-Zeitpunkt der Speicherung)
 $currentDay = $careerSavegame->environment->currentDay;
@@ -82,23 +81,22 @@ foreach ( $careerVehicles->item as $item ) {
 			}
 		}
 	}
-	// Platzierbares Wurzelfruchtlager
-	if ($className == 'HayLoftPlaceable') {
-		$location = 'HayLoftPlaceable';
-		foreach ( $item as $node ) {
-			$fillType = strval ( $node ['fillType'] );
-			$fillLevel = intval ( $node ['fillLevel'] );
-			addCommodity ( $fillType, $fillLevel, $location );
-			$mapconfig = array_merge ( $mapconfig, array (
-					'HayLoftPlaceable' => array (
-							'position' => '-550 0 750',
-							'showInProduction' => false
-					) 
-			) );
+	// Platzierbare Objekte
+	if (! isset ( $placeableObjects [$className] ['locationType'] )) {
+		continue;
+	} else {
+		if (isset ( $placeables [$className] )) {
+			$placeables [$className] ++;
+		} else {
+			$placeables [$className] = 1;
 		}
+		$number = " #" . $placeables [$className];
+		$placeableObjects [$className] ['position'] = strval ( $item ['position'] );
+		$mapconfig [$className . $number] = $placeableObjects [$className];
+		$lang [$className . $number] = $placeablesLang [$className] . $number;
+		readMapObject ( $item, $className . $number, $plants, $mapconfig );
 	}
 }
-
 // Fahrzeuge aus $careerVehicles
 foreach ( $careerVehicles->vehicle as $vehicle ) {
 	if (isset ( $vehicle ['fillTypes'] )) {
@@ -122,12 +120,16 @@ foreach ( $careerVehicles->vehicle as $vehicle ) {
 	}
 }
 
-// Analysierung von CreateLoadedObjects, Lager, Vieh, BGA, Fabrikskripte
+// Analysierung von CreateLoadedObjects
 foreach ( $careerVehicles->onCreateLoadedObject as $object ) {
 	$location = strval ( $object ['saveId'] );
 	if (! isset ( $mapconfig [$location] ['locationType'] )) {
 		continue;
+	} else {
+		readMapObject ( $object, $location, $plants, $mapconfig );
 	}
+}
+function readMapObject($object, $location, &$plants, &$mapconfig) {
 	switch ($mapconfig [$location] ['locationType']) {
 		case 'storage' :
 			// Farmsilo und andere Lager Goldcrest Valley

@@ -70,6 +70,22 @@ function addFillType($i3dName, $fillLevel, $fillMax, $prodPerHour, $factor, $sta
 			'state' => $state 
 	);
 }
+// convert values while reading xml files
+function get_bool($value) {
+	$value = strval ( $value );
+	switch (strtolower ( $value )) {
+		case 'true' :
+			return true;
+		case 'false' :
+			return false;
+		default :
+			if (is_numeric ( $value )) {
+				return $value + 0;
+			}
+	}
+	return $value;
+}
+
 // Karten laden
 function getMaps() {
 	$maps = array ();
@@ -191,6 +207,7 @@ function addCommodity($fillType, $fillLevel, $location, $className = 'none', $is
 		$commodities [$l_fillType] ['locations'] [$l_location] ['fillLevel'] += $fillLevel;
 	}
 }
+
 // Positionen von Paletten ermitteln
 function getLocation($position) {
 	list ( $posx, $posy, $posz ) = explode ( ' ', $position );
@@ -213,6 +230,7 @@ function getLocation($position) {
 	}
 	return 'onMap';
 }
+
 // Futtertroggröße und Produktivität der Tiere ermitteln
 function getMaxForage($forage, $numAnimals) {
 	return $forage * ($numAnimals > 0 && $numAnimals < 15 ? 15 : $numAnimals) * 6;

@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <placeable>
-	<MOD Name="FS17_HayLoftplaceable" Version="" Author="" Link=""></MOD>
-	<item className="HayLoftPlaceable" locationType="storage"/>
+	<MOD name="FS17_dogfaceRootStorage" version="1.0.0.1" author="Dogface" link="http://www.farming-simulator.com/mod.php?mod_id=72085"></MOD>
+	<item className="HayLoftPlaceable" locationType="storage" />
 	<l10n>
 		<text name="HayLoftPlaceable">
-			<en>Root fruit storage (placeable)</en>
-			<de>Wurzelfruchtlager (platzierbar)</de>
+			<en>Root Crop Storage</en>
+			<de>Wurzelfruchtlager</de>
+			<fr>Stockage des cultures racines</fr>
 		</text>
 	</l10n>
 </placeable>
