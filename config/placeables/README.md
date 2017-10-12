@@ -4,9 +4,6 @@ You can create own configuration files for placeable mods. Just store them in th
 
 Here are 3 examples for placeable mods:
 
-1. a simple storage
-
-
 	<?xml version="1.0" encoding="utf-8"?>
 	<placeable>
 		<MOD name="FS17_dogfaceRootStorage" version="1.0.0.1" author="Dogface" link="http://www.farming-simulator.com/mod.php?mod_id=72085"></MOD>
@@ -18,10 +15,6 @@ Here are 3 examples for placeable mods:
 			</text>
 		</l10n>
 	</placeable>
-
-	
-2. a non pallet producing factory 
-
 
 	<?xml version="1.0" encoding="utf-8"?>
 	<placeable>
@@ -42,10 +35,6 @@ Here are 3 examples for placeable mods:
 			</text>
 		</l10n>
 	</placeable>
-
-
-3. a pallet producing factory 
-
 
 	<?xml version="1.0" encoding="utf-8"?>
 	<placeable>
