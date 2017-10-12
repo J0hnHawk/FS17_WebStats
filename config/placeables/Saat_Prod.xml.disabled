@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<placeable>
+	<MOD name="FS17_FabrikScript_Saat_Prod" Version="" Author="" Link=""></MOD>
+	<item className="FabrikScript_Saat_Prod" locationType="FabrikScript" ProdPerHour="10000" showInProduction="true">
+		<input name="grain" capacity="100000" factor="1" fillTypes="wheat maize barley rape" showInStorage="false" />
+		<input name="fertilizer" capacity="100000" factor="0.3" fillTypes="fertilizer" showInStorage="false" />
+		<output name="seeds" capacity="100000" factor="1" fillType="seeds" showInStorage="true" />
+	</item>
+	<l10n>
+		<text name="FabrikScript_Saat_Prod">
+			<en>Seed production</en>
+			<de>Saatgutproduktion</de>
+		</text>
+		<text name="grain">
+			<en>Grain</en>
+			<de>Getreide</de>
+		</text>
+	</l10n>
+</placeable>
