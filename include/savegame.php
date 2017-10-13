@@ -50,7 +50,41 @@ $dayTime = gmdate ( "H:i", $dayTime );
 $smarty->assign ( 'currentDay', $currentDay );
 $smarty->assign ( 'dayTime', $dayTime );
 
-// Paletten, Ballen und Wurzelfrchtlager durchsuchen
+// Platzierbare Objekte suchen, mapconfig ergänzen
+foreach ( $careerVehicles->item as $item ) {
+	$filename = cleanFileName ( $item ['filename'] );
+	if (! isset ( $placeableObjects [$filename] ['locationType'] )) {
+		continue;
+	}
+	if (isset ( $placeables [$filename] )) {
+		$placeables [$filename] ++;
+	} else {
+		$placeables [$filename] = 1;
+	}
+	$placeableKey = $filename . str_replace ( array (
+			" ",
+			".",
+			"-" 
+	), "", $item ['position'] );
+	$mapconfig [$placeableKey] = $placeableObjects [$filename];
+	$mapconfig [$placeableKey] ['position'] = strval ( $item ['position'] );
+	if (isset ( $mapconfig [$placeableKey] ['output'] )) {
+		list ( $px, $py, $pz ) = explode ( ' ', $mapconfig [$placeableKey] ['position'] );
+		foreach ( $mapconfig [$placeableKey] ['output'] as $trigger => $triggerData ) {
+			if (isset ( $mapconfig [$placeableKey] ['output'] [$trigger] ['palettArea'] )) {
+				list ( $x1, $z1, $x2, $z2 ) = explode ( ' ', $mapconfig [$placeableKey] ['output'] [$trigger] ['palettArea'] );
+				$x1 = $x1 + $px;
+				$x2 = $x2 + $px;
+				$z1 = $z1 + $pz;
+				$z2 = $z2 + $pz;
+				$mapconfig [$placeableKey] ['output'] [$trigger] ['palettArea'] = "$x1 $z1 $x2 $z2";
+			}
+		}
+	}
+	$lang [$placeableKey] = $placeablesLang [$filename] . " #" . $placeables [$filename];
+}
+
+// Paletten, Ballen
 foreach ( $careerVehicles->item as $item ) {
 	$className = strval ( $item ['className'] );
 	$fillType = false;
@@ -81,22 +115,19 @@ foreach ( $careerVehicles->item as $item ) {
 			}
 		}
 	}
-	// Platzierbare Objekte
 	$filename = cleanFileName ( $item ['filename'] );
 	if (! isset ( $placeableObjects [$filename] ['locationType'] )) {
 		continue;
-	} else {
-		if (isset ( $placeables [$filename] )) {
-			$placeables [$filename] ++;
-		} else {
-			$placeables [$filename] = 1;
-		}
-		$placeableObjects [$filename] ['position'] = strval ( $item ['position'] );
-		$mapconfig [$filename . $placeables [$filename]] = $placeableObjects [$filename];
-		$lang [$filename . $placeables [$filename]] = $placeablesLang [$filename] . " #" . $placeables [$filename];
-		readMapObject ( $item, $filename . $placeables [$filename], $plants, $mapconfig );
 	}
+	$position = strval ( $item ['position'] );
+	$placeableKey = $filename . str_replace ( array (
+			" ",
+			".",
+			"-" 
+	), "", $position );
+	readMapObject ( $item, $placeableKey, $plants, $mapconfig );
 }
+
 // Fahrzeuge aus $careerVehicles
 foreach ( $careerVehicles->vehicle as $vehicle ) {
 	if (isset ( $vehicle ['fillTypes'] )) {
@@ -131,6 +162,7 @@ foreach ( $careerVehicles->onCreateLoadedObject as $object ) {
 	}
 }
 function readMapObject($object, $location, &$plants, &$mapconfig) {
+	global $commodities;
 	switch ($mapconfig [$location] ['locationType']) {
 		case 'storage' :
 			// Farmsilo und andere Lager Goldcrest Valley
@@ -364,3 +396,5 @@ foreach ( $mapconfig as $plantName => $plant ) {
 		}
 	}
 }
+//var_dump ( $mapconfig );
+

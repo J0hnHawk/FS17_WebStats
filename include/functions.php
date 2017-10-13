@@ -129,7 +129,7 @@ function getMaps() {
 
 // Übersetzung
 function translate($text) {
-	global $lang;
+	global $lang, $placeablesLang;
 	$text = strval ( $text );
 	if (isset ( $lang [$text] )) {
 		return $lang [$text];

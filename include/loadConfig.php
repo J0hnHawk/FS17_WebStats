@@ -37,7 +37,7 @@ if (! file_exists ( "./config/$mapPath/translation/{$_SESSION ['language']}.php"
 $lang = array_merge ( $lang, getVehicleNames () );
 
 // load installed placeables 
-$placeableObjects = array();
+$placeableObjects = $placeablesLang = array();
 foreach (glob('./config/placeables/*.xml') as $filename) {
     $placeable = simplexml_load_file($filename);
     foreach ($placeable->item as $item) {
@@ -63,7 +63,6 @@ foreach (glob('./config/placeables/*.xml') as $filename) {
             }
         }
     }
-    $placeablesLang = array();
     foreach ($placeable->l10n->text as $text) {
         $key = strval($text['name']);
         $value = strval($text->$_SESSION ['language']);
