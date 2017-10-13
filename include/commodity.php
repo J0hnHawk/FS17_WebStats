@@ -138,7 +138,11 @@ foreach ( $plants as $plantName => $plant ) {
 						continue;
 					} else {
 						$demandSum += $demandValue;
-						$demand [$plantName] = $demandValue;
+						if(isset($demand [$plantName])) {
+							$demand [$plantName] += $demandValue;
+						} else {
+							$demand [$plantName] = $demandValue;
+						}
 						$mapEntries [] = addEntry ( $plant ['position'], $plantName, 'harvester.png' );
 					}
 				}
@@ -156,7 +160,11 @@ foreach ( $plants as $plantName => $plant ) {
 						} else {
 							$demandSum += $demandValue;
 							if(is_numeric($fillMax)) {
-								$demand [$plantName] = $demandValue;
+								if(isset($demand [$plantName])) {
+									$demand [$plantName] += $demandValue;
+								} else {
+									$demand [$plantName] = $demandValue;
+								}
 							} else {
 								$demand [$plantName] = $fillMax;
 							}
