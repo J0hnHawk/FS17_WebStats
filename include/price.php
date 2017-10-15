@@ -33,10 +33,11 @@ if ($location == 'TipTrigger_SUPERMARKT1') {
 				$milk_stats->curve1 ['nominalPeriodVariation'],
 				$milk_stats->curve1 ['amplitude'],
 				$milk_stats->curve1 ['period'],
-				$milk_stats->curve1 ['time']
+				$milk_stats->curve1 ['time'] 
 		);
 		$newline = false;
 		foreach ( $logarray as $key => $value ) {
+			$logarray [$key] = str_replace ( '.', ',', $value );
 			if ($logarray [$key] != $lastline [$key]) {
 				$newline = true;
 			}

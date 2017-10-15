@@ -53,6 +53,7 @@ $pages = array (
 		'commodity',
 		'options',
 		'lizenz',
+		'prices',
 		'factories' 
 );
 $page = GetParam ( 'page', 'G' );
