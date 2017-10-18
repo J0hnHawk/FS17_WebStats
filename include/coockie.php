@@ -15,7 +15,7 @@
  * GNU General Public License for more details.
  *
  * You should have received a copy of the GNU General Public License
- * along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  *
  */
 
@@ -24,7 +24,7 @@ if (! defined ( 'IN_NFMWS' )) {
 }
 
 // Coockie laden, wenn vorhanden
-$cookieVersion = 7;
+$cookieVersion = 8;
 $options = array ();
 if (isset ( $_COOKIE ['nfmarsch'] )) {
 	$options = json_decode ( $_COOKIE ['nfmarsch'], true );
@@ -49,6 +49,7 @@ if (! isset ( $options ['storage'] )) {
 if (! isset ( $options ['production'] )) {
 	$options ['production'] ['sortByName'] = true;
 	$options ['production'] ['sortFullProducts'] = true;
+	$options ['production'] ['showTooltip'] = false;
 	$options ['production'] ['hidePlant'] = array();
 }
 

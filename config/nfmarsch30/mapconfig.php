@@ -15,7 +15,7 @@
  * GNU General Public License for more details.
  *
  * You should have received a copy of the GNU General Public License
- * along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  *
  */
 $mapVersion = 'NF Marsch 2.9';
@@ -26,6 +26,10 @@ if (empty ( $mapconfig ) || ! is_array ( $mapconfig )) {
 
 // Farmsilo und Ställe
 $mapconfig = array_merge ( $mapconfig, array (
+		'TipTrigger_BAHNHOF' => array (
+				'locationType' => 'TipTrigger',
+				'position' => '0 0 0'
+		),
 		'Storage_storage1' => array (
 				'locationType' => 'storage',
 				'position' => '210 0 120' 
@@ -2596,7 +2600,7 @@ $mapconfig = array_merge ( $mapconfig, array (
 								'capacity' => 800000,
 								'factor' => 1,
 								'fillTypes' => 'compost',
-								'showInStorage' => true
+								'showInStorage' => true 
 						) 
 				),
 				'output' => array (

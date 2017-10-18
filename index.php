@@ -14,7 +14,7 @@
  * GNU General Public License for more details.
  *
  * You should have received a copy of the GNU General Public License
- * along with Foobar. If not, see <http://www.gnu.org/licenses/>.
+ * along with this program. If not, see <http://www.gnu.org/licenses/>.
  */
 ini_set ( 'error_reporting', E_ALL );
 ini_set ( 'display_errors', 1 );
@@ -34,11 +34,13 @@ require ('./include/language.php');
 
 // Cookie mit Einstellungen laden
 include ('./include/coockie.php');
+$style = 'smallSlate';
 
 $smarty = new Smarty ();
 $smarty->debugging = false;
 $smarty->caching = false;
-$smarty->assign ( 'webStatsVersion', 'Version 1.3.0 (02.10.2017)' );
+$smarty->setTemplateDir ( "./styles/$style/templates" );
+$smarty->assign ( 'webStatsVersion', 'Version 1.4.0 (alpha)' );
 
 include ('./include/loadConfig.php');
 
@@ -57,16 +59,18 @@ $pages = array (
 		'factories' 
 );
 $page = GetParam ( 'page', 'G' );
-if (! in_array ( $page, $pages ))
+if (! in_array ( $page, $pages )) {
 	$page = 'production';
-
+}
 $smarty->assign ( 'page', $page );
-if ($serverOnline)
+if ($serverOnline) {
 	include ("./include/$page.php");
-
+}
 $smarty->assign ( 'reloadPage', $options ['general'] ['reload'] );
 $smarty->assign ( 'serverOnline', $serverOnline );
-$tpl_source = $smarty->fetch ( 'index.tpl' );
+$smarty->assign ( 'style', $style );
+//$smarty->display ( 'index.htpl', $style, $style );
+$tpl_source = $smarty->fetch ( 'index.tpl', $style, $style );
 
 echo preg_replace_callback ( '/##(.+?)##/', 'prefilter_i18n', $tpl_source );
 

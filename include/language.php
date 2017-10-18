@@ -15,7 +15,7 @@
  * GNU General Public License for more details.
  *
  * You should have received a copy of the GNU General Public License
- * along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  *
  */
 if (! defined ( 'IN_NFMWS' )) {
@@ -31,8 +31,8 @@ if (! isset ( $_SESSION ['language'] )) {
 }
 function getLangFile($language) {
 	$langArray = array ();
-	if (file_exists ( './templates/language/' . $language . '/global.lng' )) {
-		$entries = file ( './templates/language/' . $language . '/global.lng' );
+	if (file_exists ( './language/' . $language . '/global.lng' )) {
+		$entries = file ( './language/' . $language . '/global.lng' );
 		foreach ( $entries as $row ) {
 			if (substr ( ltrim ( $row ), 0, 2 ) == '//' || trim ( $row ) == '') { // ignore comments and emtpty rows
 				continue;
@@ -49,11 +49,11 @@ function getLangFile($language) {
 }
 function getLanguages() {
 	$languages = array ();
-	$langDir = dir ( 'templates/language' );
+	$langDir = dir ( 'language' );
 	while ( ($entry = $langDir->read ()) != false ) {
-		if ($entry != "." && $entry != ".." && is_dir ( './templates/language/' . $entry )) {
-			if (file_exists ( './templates/language/' . $entry . '/language.txt' )) {
-				$langFile = file ( './templates/language/' . $entry . '/language.txt' );
+		if ($entry != "." && $entry != ".." && is_dir ( './language/' . $entry )) {
+			if (file_exists ( './language/' . $entry . '/language.txt' )) {
+				$langFile = file ( './language/' . $entry . '/language.txt' );
 				$languages [$entry] = array (
 						'path' => $entry,
 						'englishName' => trim ( $langFile [0] ),

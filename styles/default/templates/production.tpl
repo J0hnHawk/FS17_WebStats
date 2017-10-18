@@ -17,8 +17,12 @@ text-danger")} {$textcolors = array("","text-warning","text-danger")}
 				</tr>
 			</thead>
 			<tbody>
-				{$tooltip = '<span class="%s text-nowrap" data-toggle="tooltip" data-placement="top" title="##STOCK##:<br><strong>%s</strong>">'} {foreach $plants as
-				$plantName => $plantData}
+				{if $options.showTooltip}
+					{$tooltip = '<span class="%s text-nowrap" data-toggle="tooltip" data-placement="top" title="##STOCK##:<br><strong>%s</strong>">'}
+				{else}
+					{$tooltip = '<span class="%s text-nowrap"> <!--%s-->'}
+				{/if}	
+				{foreach $plants as	$plantName => $plantData}
 				<tr data-toggle="collapse" href="#collapse{$plantData.i3dName}">
 					<td><span class="{$glyphicons[$plantData.state]}" aria-hidden="true"></span> {$plantName}</td>
 					<td>{foreach from=$plantData.input key=$fillType item=$fillLevel} {if isset($commodities.$fillType)}{$overall =
@@ -30,7 +34,7 @@ text-danger")} {$textcolors = array("","text-warning","text-danger")}
 						class="{$glyphicons[$fillLevel.state]}" aria-hidden="true"></span> {$fillType} </span>{/foreach}
 					</td>
 				</tr>
-				<tr class="collapse info" id="collapse{$plantData.i3dName}">
+				<tr class="collapse" id="collapse{$plantData.i3dName}">
 					<td colspan="4">
 						<div class="col-sm-8 col-sm-offset-1">
 							<table class="table" style="margin-bottom: 0px;">
@@ -97,6 +101,14 @@ text-danger")} {$textcolors = array("","text-warning","text-danger")}
 							<label class="radio-inline"> <input type="radio" name="sortFullProducts" value="1"{if $options.sortFullProducts}checked{/if}> ##SORT_FULL_PRODUCTS##
 							</label><br> <label class="radio-inline"> <input type="radio" name="sortFullProducts" value="0"{if !$options.sortFullProducts}checked{/if}> ##IGNORE_FULL_PRODUCTS##
 							</label>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-sm-5 control-label">##TOOLTIP##</label>
+						<div class="col-sm-7">
+							<label class="radio-inline"> <input type="radio" name="showTooltip" value="1"{if $options.showTooltip}checked{/if}> ##YES##
+							</label><br> <label class="radio-inline"> <input type="radio" name="showTooltip" value="0"{if !$options.showTooltip}checked{/if}> ##NO##
+							</label><span id="helpBlock" class="help-block">##TOOLTIP_HELP##</span>
 						</div>
 					</div>
 					{if $options.hidePlant|@count>0}

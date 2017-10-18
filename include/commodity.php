@@ -15,7 +15,7 @@
  * GNU General Public License for more details.
  *
  * You should have received a copy of the GNU General Public License
- * along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  *
  */
 if (! defined ( 'IN_NFMWS' )) {
@@ -101,6 +101,14 @@ if ($commodities [$l_object] ['isCombine']) {
 	$combineCommodities = false;
 	// Lagerorte merken für Karte
 	$commodity = $commodities [$l_object];
+	if (isset ( $prices [$l_object] )) {
+		foreach ( $prices [$l_object] ['locations'] as $tipTrigger => $tipTriggerData ) {
+			if(isset($mapconfig [$tipTriggerData ['i3dName']] ['position'])) {
+				$position = $mapconfig [$tipTriggerData ['i3dName']] ['position'];
+				$mapEntries [] = addEntry ( $position, $tipTrigger, 'tiptrigger.png' );
+			}
+		}
+	}
 	foreach ( $commodity ['locations'] as $location => $locationData ) {
 		if ($options ['storage'] ['hideZero'] && $locationData ['fillLevel'] == 0) {
 			unset ( $commodities [$l_object] ['locations'] [$location] );
@@ -138,7 +146,7 @@ foreach ( $plants as $plantName => $plant ) {
 						continue;
 					} else {
 						$demandSum += $demandValue;
-						if(isset($demand [$plantName])) {
+						if (isset ( $demand [$plantName] )) {
 							$demand [$plantName] += $demandValue;
 						} else {
 							$demand [$plantName] = $demandValue;
@@ -155,12 +163,12 @@ foreach ( $plants as $plantName => $plant ) {
 						$prodPerDay = $fillTypeDetails ['prodPerDay'];
 						$demandValue = $fillMax - $fillTypeDetails ['fillLevel'];
 						if ($demandValue < $prodPerDay && $fillMax > $prodPerDay) {
-							//if ($options['storage']['hideZero'] && $demandValue == 0) {
+							// if ($options['storage']['hideZero'] && $demandValue == 0) {
 							continue;
 						} else {
 							$demandSum += $demandValue;
-							if(is_numeric($fillMax)) {
-								if(isset($demand [$plantName])) {
+							if (is_numeric ( $fillMax )) {
+								if (isset ( $demand [$plantName] )) {
 									$demand [$plantName] += $demandValue;
 								} else {
 									$demand [$plantName] = $demandValue;
@@ -185,6 +193,7 @@ $smarty->assign ( 'combineCommodities', $combineCommodities );
 $smarty->assign ( 'commodities', $commodities );
 $smarty->assign ( 'demand', $demand );
 $smarty->assign ( 'demandSum', $demandSum );
+$smarty->assign ( 'prices', $prices );
 $smarty->assign ( 'plants', $plants );
 $smarty->assign ( 'linkToImage', $linkToImage );
 $smarty->assign ( 'backgroundColor', $backgroundColor );

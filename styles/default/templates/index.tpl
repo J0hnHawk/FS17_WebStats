@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+{config_load file='../style.cfg'}<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
@@ -6,16 +6,17 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="Farming Simulator 17 WebStats">
 <meta name="author" content="John Hawk">
-<link rel="icon" href="./images/favicon.ico">
+<link rel="icon" href="{#IMAGES#}/favicon.ico">
 <title>{$map.Short} {$map.Version} WebStats</title>
-<link href="./css/bootstrap.min.css" rel="stylesheet">
-<link href="./css/customstyle.css" rel="stylesheet">
-<script src="./javascript/jquery.min.js"></script>
-<script src="./javascript/bootstrap.min.js"></script>
+<link href="{#CSS#}/bootstrap.min.css" rel="stylesheet">
+<link href="{#CSS#}/theme.min.css" rel="stylesheet">
+<link href="{#CSS#}/customstyle.css" rel="stylesheet">
+<script src="{#SCRIPTS#}/jquery.min.js"></script>
+<script src="{#SCRIPTS#}/bootstrap.min.js"></script>
 </head>
 <body>
 	<div class="container">
-		{include file='navbar.tpl'} {if $serverOnline}{assign var="fullPathToTemplate" value="./templates/$page.tpl"} {if file_exists($fullPathToTemplate)}
+		{include file='navbar.tpl'} {if $serverOnline}{assign var="fullPathToTemplate" value="./styles/$style/templates/$page.tpl"} {if file_exists($fullPathToTemplate)}
 		{include file="$page.tpl"} {else}
 		<div class="container theme-showcase" role="main">
 			<div class="jumbotron">
@@ -45,7 +46,7 @@
 					<p>{$webStatsVersion}</p>
 					<p>Copyright (c) 2017, John Hawk</p>
 					<p>##INFO_1##</p>
-					<p>##INFO_2## Billy5haw</p>
+					<p>##INFO_2## Billy5haw, Marfulak</p>
 					<p>
 						Author: John Hawk &lt;<a href="mailto:John Hawk <john.hawk@ gmx.net>">john.hawk@gmx.net</a>&gt;
 					</p>

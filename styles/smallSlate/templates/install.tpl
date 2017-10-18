@@ -1,3 +1,4 @@
+{config_load file='../style.cfg'}<!DOCTYPE html>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,10 +10,11 @@
 <meta name="author" content="John Hawk">
 <link rel="icon" href="./images/favicon.ico">
 <title>FS17 WebStats</title>
-<link href="./css/bootstrap.min.css" rel="stylesheet">
-<link href="./css/customstyle.css" rel="stylesheet">
-<script src="./javascript/jquery.min.js"></script>
-<script src="./javascript/bootstrap.min.js"></script>
+<link href="{#CSS#}/bootstrap.min.css" rel="stylesheet">
+<link href="{#CSS#}/theme.min.css" rel="stylesheet">
+<link href="{#CSS#}/customstyle.css" rel="stylesheet">
+<script src="{#SCRIPTS#}/jquery.min.js"></script>
+<script src="{#SCRIPTS#}/bootstrap.min.js"></script>
 </head>
 <body>
 	<nav class="navbar navbar-inverse navbar-fixed-top">

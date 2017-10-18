@@ -31,7 +31,7 @@
 					<td class="text-right">{$commodity.overall|number_format:0:",":"."}</td>
 				</tr>
 				{if $commodity.overall>-1}
-				<tr class="collapse info" id="collapse{$commodity.i3dName}">
+				<tr class="collapse" id="collapse{$commodity.i3dName}">
 					<td colspan="3">
 						<table class="table" style="margin-bottom: 0px;">
 							<thead>

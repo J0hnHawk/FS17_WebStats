@@ -1,4 +1,23 @@
 <?php
+/**
+ *
+ * This file is part of the "FS17 Webstats" package.
+ * Copyright (C) 2017  John Hawk <john.hawk@gmx.net>
+ *
+ * "FS17 Webstats" is free software: you can redistribute it and/or
+ * modify it under the terms of the GNU General Public License as published
+ * by the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * "FS17 Webstats" is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ *
+ */
 $prices = array ();
 $locations = array (
 		'Bga',
@@ -83,8 +102,8 @@ $statsVars = array (
 		'paid',
 		'isInPlateau',
 		'nextPlateauNumber',
-		/*'meanValue',
-		'plateauDuration',*/
+		'meanValue',
+		'plateauDuration',
 		'plateauTime' 
 );
 $curveVars = array (
@@ -130,8 +149,8 @@ foreach ( $careerVehicles->onCreateLoadedObject as $trigger ) {
 			$curveBaseCurve = $triggerStats->curveBaseCurve;
 			$curve1 = $triggerStats->curve1;
 			$sin1 = floatval ( $curveBaseCurve ['amplitude'] ) * sin ( (2 * pi () / floatval ( $curveBaseCurve ['period'] )) * floatval ( $curveBaseCurve ['time'] ) );
-			$sin2 = floatval ( $curve1 ['amplitude'] ) * sin ( (2 * pi () / floatval ( $curve1 ['period'] )) * floatval ( $curve1 ['time'] ) );
-			$price = intval ( ($sin1 + $sin2 + (floatval ( $curveBaseCurve ['nominalAmplitude'] ) + floatval ( $curve1 ['nominalAmplitude'] )) * 3.3333333) * 1000 );
+			$sin2 = floatval ( $curve1 ['amplitude'] ) * sin ( (2 * pi () / floatval ( $curve1 ['period'] )) * floatval ( $curve1 ['time'] ) ) + floatval ( $curve1 ['nominalAmplitude'] ) * 10;
+			$price = intval ( ($sin1 + $sin2) * 1000 );
 			$prices [$location] [strval ( $triggerStats ['fillType'] )] = $price;
 			$fullOutput .= "<th>$price</th>";
 			foreach ( $statsVars as $var ) {
@@ -149,13 +168,14 @@ foreach ( $careerVehicles->onCreateLoadedObject as $trigger ) {
 	}
 }
 $output = '<table border="1"><tr><th>location</th>';
-foreach ( $fillTypes as $fillType ) {
-	$output .= "<th  style=\"min-width: 42px;  max-width: 42px;  overflow: hidden;\">$fillType</th>";
+foreach ( $locations as $location ) {
+	$location = ltrim ( $location, 'TipTrigger_' );
+	$output .= "<th  style=\"min-width: 80px;  max-width: 80px;  overflow: hidden;\">$location</th>";
 }
 $output .= '</tr>';
-foreach ( $locations as $location ) {
-	$output .= "<tr><th>$location</td>";
-	foreach ( $fillTypes as $fillType ) {
+foreach ( $fillTypes as $fillType ) {
+	$output .= "<tr><th>$fillType</td>";
+	foreach ( $locations as $location ) {
 		if (isset ( $prices [$location] [$fillType] )) {
 			$output .= "<td style=\"text-align: right;\">{$prices[$location][$fillType]}</td>";
 		} else {
@@ -165,6 +185,6 @@ foreach ( $locations as $location ) {
 	$output .= "</tr>";
 }
 $output .= '</table>';
-//echo ($output);
-echo ($fullOutput);
+echo ($output);
+// echo ($fullOutput);
 exit ();

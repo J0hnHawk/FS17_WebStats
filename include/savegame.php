@@ -15,7 +15,7 @@
  * GNU General Public License for more details.
  *
  * You should have received a copy of the GNU General Public License
- * along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  *
  */
 if (! defined ( 'IN_NFMWS' )) {
@@ -41,7 +41,7 @@ if ($stats) {
 	return;
 }
 
-$commodities = $outOfMap = $positions = $plants = $placeables = array ();
+$commodities = $outOfMap = $positions = $plants = $placeables = $prices = array ();
 
 // Stand der Daten ermitteln (Ingame-Zeitpunkt der Speicherung)
 $currentDay = $careerSavegame->environment->currentDay;
@@ -154,7 +154,34 @@ foreach ( $careerVehicles->vehicle as $vehicle ) {
 // Analysierung von CreateLoadedObjects
 foreach ( $careerVehicles->onCreateLoadedObject as $object ) {
 	$location = strval ( $object ['saveId'] );
-	include ('price.php');
+	// Verkaufspreise ermitteln
+	if (strstr ( $location, 'TipTrigger' ) !== false || $location == "Bga") {
+		$foreach = $object->stats;
+		$l_location = translate($location);
+		if ($location == 'Bga') {
+			$foreach = $object->tipTrigger->stats;
+		}
+		foreach ( $foreach as $triggerStats ) {
+			$fillType = strval ( $triggerStats ['fillType'] );
+			$l_fillType = translate ( $fillType );
+			if (! isset ( $prices [$l_fillType] )) {
+				$prices [$l_fillType] = array (
+						'i3dName' => $fillType,
+						'locations' => array () 
+				);
+			}
+			$curve0 = $triggerStats->curveBaseCurve;
+			$curve1 = $triggerStats->curve1;
+			$sin1 = floatval ( $curve0 ['amplitude'] ) * sin ( (2 * pi () / floatval ( $curve0 ['period'] )) * floatval ( $curve0 ['time'] ) );
+			$sin2 = floatval ( $curve1 ['amplitude'] ) * sin ( (2 * pi () / floatval ( $curve1 ['period'] )) * floatval ( $curve1 ['time'] ) ) + floatval ( $curve1 ['nominalAmplitude'] ) * 10;
+			$price = intval ( ($sin1 + $sin2) * 1000 );
+			$prices [$l_fillType] ['locations'] [$l_location] = array (
+					'price' => $price,
+					'i3dName' => $location 
+			);
+		}
+	}
+	// Lager, Fabriken usw. analysieren
 	if (! isset ( $mapconfig [$location] ['locationType'] )) {
 		continue;
 	} else {

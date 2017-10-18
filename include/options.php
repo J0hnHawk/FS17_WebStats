@@ -15,7 +15,7 @@
  * GNU General Public License for more details.
  *
  * You should have received a copy of the GNU General Public License
- * along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  *
  */
 if (! defined ( 'IN_NFMWS' )) {
@@ -39,6 +39,7 @@ if ($_SERVER ['REQUEST_METHOD'] == 'POST') {
 			$options ['storage'] ['3column'] = filter_var ( GetParam ( 's_3column', 'P', 1 ), FILTER_VALIDATE_BOOLEAN );
 			$options ['production'] ['sortByName'] = filter_var ( GetParam ( 'p_sortByName', 'P', 1 ), FILTER_VALIDATE_BOOLEAN );
 			$options ['production'] ['sortFullProducts'] = filter_var ( GetParam ( 'p_sortFullProducts', 'P', 1 ), FILTER_VALIDATE_BOOLEAN );
+			$options ['production'] ['showTooltip'] = filter_var ( GetParam ( 'p_showTooltip', 'P', 1 ), FILTER_VALIDATE_BOOLEAN );
 			setcookie ( 'nfmarsch', json_encode ( $options ), time () + 31536000 );
 			header ( "Refresh:0" );
 			break;

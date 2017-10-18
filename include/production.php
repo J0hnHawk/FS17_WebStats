@@ -15,7 +15,7 @@
  * GNU General Public License for more details.
  *
  * You should have received a copy of the GNU General Public License
- * along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  *
  */
 if (! defined('IN_NFMWS')) {
@@ -37,6 +37,7 @@ if ($hidePlant && ! is_array($hidePlant)) {
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $options['production']['sortByName'] = filter_var(GetParam('sortByName', 'P', 1), FILTER_VALIDATE_BOOLEAN);
     $options['production']['sortFullProducts'] = filter_var(GetParam('sortFullProducts', 'P', 1), FILTER_VALIDATE_BOOLEAN);
+    $options['production']['showTooltip'] = filter_var(GetParam('showTooltip', 'P', 1), FILTER_VALIDATE_BOOLEAN);
     $showPlant = GetParam('showPlant', 'P', false);
     if ($showPlant && is_array($showPlant)) {
         foreach ($showPlant as $plant) {
