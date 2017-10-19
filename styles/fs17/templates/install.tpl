@@ -8,7 +8,7 @@
 <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 <meta name="description" content="Farming Simulator 17 WebStats">
 <meta name="author" content="John Hawk">
-<link rel="icon" href="{#IMAGES#}/favicon.ico">
+<link rel="icon" href="./images/favicon.ico">
 <title>FS17 WebStats</title>
 <link href="{#CSS#}/bootstrap.min.css" rel="stylesheet">
 <link href="{#CSS#}/theme.min.css" rel="stylesheet">

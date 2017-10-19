@@ -23,6 +23,7 @@ if (! defined ( 'IN_NFMWS' )) {
 }
 $smarty->assign ( 'maps', getMaps () );
 $smarty->assign ( 'languages', getLanguages () );
+$smarty->assign ( 'styles', $styles );
 $error = false;
 
 if ($_SERVER ['REQUEST_METHOD'] == 'POST') {
@@ -32,6 +33,7 @@ if ($_SERVER ['REQUEST_METHOD'] == 'POST') {
 			$options ['version'] = $cookieVersion;
 			$options ['general'] ['reload'] = filter_var ( GetParam ( 'g_reload', 'P', 1 ), FILTER_VALIDATE_BOOLEAN );
 			$options ['general'] ['language'] = GetParam ( 'g_language', 'P', 'de' );
+			$options ['general'] ['style'] = GetParam ( 'g_style', 'P', 'smallSlate' );
 			$options ['storage'] ['sortByName'] = filter_var ( GetParam ( 's_sortByName', 'P', 1 ), FILTER_VALIDATE_BOOLEAN );
 			$options ['storage'] ['showVehicles'] = filter_var ( GetParam ( 's_showVehicles', 'P', 1 ), FILTER_VALIDATE_BOOLEAN );
 			$options ['storage'] ['onlyPallets'] = filter_var ( GetParam ( 's_onlyPallets', 'P', 1 ), FILTER_VALIDATE_BOOLEAN );

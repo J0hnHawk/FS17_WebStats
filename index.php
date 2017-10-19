@@ -27,6 +27,7 @@ define ( 'IN_NFMWS', true );
 // Change next both lines if you are not Germen ;-)
 setlocale ( LC_ALL, 'de_DE@euro', 'de_DE', 'de', 'ge' );
 $defaultLanguage = 'de'; // if you change the default language make sure the language file exists
+$defaultStyle = 'fs17';
 
 require ('./include/smarty/Smarty.class.php');
 require ('./include/functions.php');
@@ -34,7 +35,8 @@ require ('./include/language.php');
 
 // Cookie mit Einstellungen laden
 include ('./include/coockie.php');
-$style = 'smallSlate';
+$style = $options['general']['style'];
+
 
 $smarty = new Smarty ();
 $smarty->debugging = false;

@@ -10,7 +10,7 @@
 <title>{$map.Short} {$map.Version} WebStats</title>
 <link href="{#CSS#}/bootstrap.min.css" rel="stylesheet">
 <link href="{#CSS#}/theme.min.css?{$smarty.now}" rel="stylesheet">
-<link href="{#CSS#}/customstyle.css" rel="stylesheet">
+<link href="{#CSS#}/customstyle.css?{$smarty.now}" rel="stylesheet">
 <script src="{#SCRIPTS#}/jquery.min.js"></script>
 <script src="{#SCRIPTS#}/bootstrap.min.js"></script>
 </head>

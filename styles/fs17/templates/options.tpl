@@ -108,7 +108,7 @@
 					</div>
 					<div class="col-sm-6">
 						<button type="reset" class="btn btn-default">##RESET##</button>
-						<button type="submit" class="btn btn-primary" name="submit" value="options">##SAVE##</button>
+						<button type="submit" class="btn btn-success" name="submit" value="options">##SAVE##</button>
 					</div>
 				</div>
 			</fieldset>

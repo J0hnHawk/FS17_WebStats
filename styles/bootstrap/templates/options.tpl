@@ -17,9 +17,17 @@
 				</div>
 				<div class="form-group">
 					<label class="col-sm-2 control-label">##CHOOSE_LANGUAGE_LABEL##</label>
-					<div class="col-sm-8">
+					<div class="col-sm-4">
 						<select class="form-control" name="g_language"> {foreach $languages as $language}
 							<option value="{$language.path}" {if $language.path==$smarty.session.language}selected{/if}>{$language.localName}</option> {/foreach}
+						</select>
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-sm-2 control-label">##CHOOSE_STYLE##</label>
+					<div class="col-sm-4">
+						<select class="form-control" name="g_style"> {foreach $styles as $styleData}
+							<option value="{$styleData.path}" {if $styleData.path==$style}selected{/if}>{$styleData.name}</option> {/foreach}
 						</select>
 					</div>
 				</div>

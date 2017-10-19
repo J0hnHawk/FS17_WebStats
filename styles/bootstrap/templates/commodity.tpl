@@ -73,7 +73,7 @@
 				{/foreach}
 			</tbody>
 		</table>
-		<p class="text-center text-warning" style="padding-top: 5px">##PRICE_INFO##</p>
+		<p class="text-center" style="padding-top: 5px">##PRICE_INFO##</p>
 		{/if}{if $demandSum > 0}
 		<hr>
 		<h4>##DEMAND##</h4>

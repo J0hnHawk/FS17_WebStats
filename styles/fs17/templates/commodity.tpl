@@ -8,8 +8,14 @@
 	</h3>
 </div>
 <div class="row">
+	{if !$objectFound}
 	<div class="col-sm-6">
-		{if $objectFound}
+		<div class="alert alert-danger" role="alert">
+			<strong>##ERROR##</strong> ##NOT_FOUND##
+		</div>
+	</div>
+	{else}
+	<div class="col-sm-6">
 		<h4>##STOCKS##</h4>
 		<table class="table" style="margin-bottom: 0px;">
 			<thead>
@@ -48,7 +54,27 @@
 				</tr>
 			</tfoot>
 		</table>
-		{if $demandSum > 0}
+		{if !$combineCommodities && isset($prices.$l_object)}
+		<hr>
+		<h4>##SELLTRIGGERS##</h4>
+		<table class="table" style="margin-bottom: 0px;">
+			<thead>
+				<tr>
+					<th>##SELLTRIGGER##</th>
+					<th class="text-right">##CURRENT_PRICE##</th>
+				</tr>
+			</thead>
+			<tbody>
+				{foreach $prices.$l_object.locations as $tipTrigger=>$tipTriggerData}
+				<tr>
+					<td>{$tipTrigger}</td>
+					<td class="text-right">{$tipTriggerData.price|number_format:0:":":"."}</td>
+				</tr>
+				{/foreach}
+			</tbody>
+		</table>
+		<p class="text-center text-warning" style="padding-top: 5px">##PRICE_INFO##</p>
+		{/if}{if $demandSum > 0}
 		<hr>
 		<h4>##DEMAND##</h4>
 		<table class="table" style="margin-bottom: 0px;">
@@ -75,10 +101,6 @@
 				</tr>
 			</tfoot>
 		</table>
-		{/if} {else}
-		<div class="alert alert-danger" role="alert">
-			<strong>##ERROR##</strong> ##NOT_FOUND##
-		</div>
 		{/if}
 	</div>
 	<div class="col-sm-6">
@@ -86,31 +108,15 @@
 		<div id="mapContainer" class="img-responsive"
 			style="position: relative;">
 			<img src="{$linkToImage}" height="512" width="512"> {$image = '<img
-			style="position: absolute; left: %dpx; top: %dpx;" src="./images/%s"
-			width="%d" height="%d" data-toggle="tooltip" data-placement="top"
-			title="%s">'} {foreach $mapEntries as $key => $mapEntry}
-			{$image|printf:$mapEntry.xpos:$mapEntry.zpos:$mapEntry.icon:$machineIconSize:$machineIconSize:$mapEntry.name}
+			style="position: absolute; left: %dpx; top: %dpx;"
+			src="./styles/%s/images/%s" width="%d" height="%d"
+			data-toggle="tooltip" data-placement="top" title="%s">'} {foreach
+			$mapEntries as $key => $mapEntry}
+			{$image|printf:$mapEntry.xpos:$mapEntry.zpos:$style:$mapEntry.icon:$machineIconSize:$machineIconSize:$mapEntry.name}
 			{/foreach}
 		</div>
-		{if !$combineCommodities}
-		<h4>##SELLTRIGGERS##</h4>
-		<table class="table" style="margin-bottom: 0px;">
-			<thead>
-				<tr>
-					<th>##SELLTRIGGER##</th>
-					<th class="text-right">##CURRENT_PRICE##</th>
-				</tr>
-			</thead>
-			<tbody>
-				<tr>
-					<td>Trigger</td>
-					<td class="text-right">0</td>
-				</tr>
-			</tbody>
-		</table>
-		<p>##PRICE_INFO##</p>
-		{/if}
 	</div>
+	{/if}
 </div>
 
 <div class="modal fade" id="modalMenu" tabindex="-1" role="dialog"

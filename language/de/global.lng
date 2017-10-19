@@ -122,6 +122,7 @@ SUGGESTION_POSITION=Vorschlag Position
 
 //options.tpl
 GENERAL=Allgemein
+CHOOSE_STYLE=Stylesheet wählen
 AUTO_RELOAD=automatischer Reload
 SORT_ORDER=Sortierung
 ALPHABETICALLY=alphabetisch
