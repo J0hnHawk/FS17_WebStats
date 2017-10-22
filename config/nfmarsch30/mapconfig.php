@@ -28,8 +28,78 @@ if (empty ( $mapconfig ) || ! is_array ( $mapconfig )) {
 $mapconfig = array_merge ( $mapconfig, array (
 		'TipTrigger_BAHNHOF' => array (
 				'locationType' => 'TipTrigger',
-				'position' => '0 0 0'
+				'position' => '-459 0 -110'
 		),
+		'TipTrigger_HAFEN' => array (
+				'locationType' => 'TipTrigger',
+				'position' => '76 0 -989'
+		),
+		'TipTrigger_DEPOT' => array (
+				'locationType' => 'TipTrigger',
+				'position' => '847 0 460'
+		),
+		'TipTrigger_RAIFFEISEN' => array (
+				'locationType' => 'TipTrigger',
+				'position' => '467 0 -232'
+		),
+		'TipTrigger_GETREIDEHANDEL' => array (
+				'locationType' => 'TipTrigger',
+				'position' => '270 0 -732
+'
+		),
+		'TipTrigger_SUPERMARKT' =>array (
+				'locationType' => 'TipTrigger',
+				'position' => '-511 0 -567'
+		),
+		'TipTrigger_SUPERMARKT1' => array (
+				'locationType' => 'TipTrigger',
+				'position' => '-248 0 -658'
+		),
+		'TipTrigger_STADION' => array (
+				'locationType' => 'TipTrigger',
+				'position' => '-156 0 -741'
+		),
+		'TipTrigger_WOLLEVERKAUF' => array (
+				'locationType' => 'TipTrigger',
+				'position' => '824 0 315'
+		),
+		'TipTrigger_WOLLEVERKAUF1' =>array (
+				'locationType' => 'TipTrigger',
+				'position' => '108 0 -960'
+		),
+		'TipTrigger_SAWMILL' => array (
+				'locationType' => 'TipTrigger',
+				'position' => '-867 0 723'
+		),
+		'TipTrigger_WASSERKAUF' => array (
+				'locationType' => 'TipTrigger',
+				'position' => '-420 0 -342'
+		),
+		'TipTrigger_HEIZWERK' => array (
+				'locationType' => 'TipTrigger',
+				'position' => '-746 0 758'
+		),
+		'TipTrigger_WINDROW_SALE' => array (
+				'locationType' => 'TipTrigger',
+				'position' => '251 0 112'
+		),
+		'TipTrigger_BIOGAS' => array (
+				'locationType' => 'TipTrigger',
+				'position' => '-145 0 -952'
+		),
+		'TipTrigger_TANKE' =>array (
+				'locationType' => 'TipTrigger',
+				'position' => '-191 0 -299'
+		),
+		'TipTrigger_TANKE2' => array (
+				'locationType' => 'TipTrigger',
+				'position' => '782 0 -850'
+		),
+		'TipTrigger_BANK' => array (
+				'locationType' => 'TipTrigger',
+				'position' => '-405 0 -470'
+		),
+		
 		'Storage_storage1' => array (
 				'locationType' => 'storage',
 				'position' => '210 0 120' 

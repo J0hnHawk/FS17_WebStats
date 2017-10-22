@@ -17,7 +17,7 @@
 	{else}
 	<div class="col-sm-6">
 		<h4>##STOCKS##</h4>
-		<table class="table" style="margin-bottom: 0px;">
+		<table class="table table-striped" style="margin-bottom: 0px;">
 			<thead>
 				<tr>
 					<th>{if !$combineCommodities}##PLACE##{else}##COMMODITY##{/if}</th>
@@ -57,7 +57,7 @@
 		{if !$combineCommodities && isset($prices.$l_object)}
 		<hr>
 		<h4>##SELLTRIGGERS##</h4>
-		<table class="table" style="margin-bottom: 0px;">
+		<table class="table table-striped" style="margin-bottom: 0px;">
 			<thead>
 				<tr>
 					<th>##SELLTRIGGER##</th>
@@ -77,7 +77,7 @@
 		{/if}{if $demandSum > 0}
 		<hr>
 		<h4>##DEMAND##</h4>
-		<table class="table" style="margin-bottom: 0px;">
+		<table class="table table-striped" style="margin-bottom: 0px;">
 			<thead>
 				<tr>
 					<th>##PLANTS##</th>

@@ -8,7 +8,7 @@
 	<div class="col-sm-8 col-sm-offset-1">
 		{$plantData = $plants.$plantName}
 		<h4>##REQUIRED##</h4>
-		<table class="table">
+		<table class="table table-striped">
 			<thead>
 				<tr>
 					<th width="28%">##COMMODITIES##</th>
@@ -32,7 +32,7 @@
 		</table>
 		<hr>
 		<h4>##PRODUCED_GOODS##</h4>
-		<table class="table">
+		<table class="table table-striped">
 			<thead>
 				<tr>
 					<th width="28%">##COMMODITIES##</th>

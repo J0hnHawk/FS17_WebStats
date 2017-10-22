@@ -96,7 +96,6 @@ body {
 	color: #7FC032;
 }
 /*.glyphicon{color:#7FC032;}*/
-
-.table > tfoot > tr > th {
-     border-top: 2px solid #7FC032;
+.table>tfoot>tr>th {
+	border-top: 2px solid #7FC032;
 }

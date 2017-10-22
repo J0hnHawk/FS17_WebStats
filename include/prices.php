@@ -18,6 +18,15 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  *
  */
+ksort ( $prices );
+foreach ( $prices as $fillType => $fillTyleData ) {
+	ksort ( $prices [$fillType] ['locations'] );
+}
+$smarty->assign('prices', $prices);
+ksort($tipTrigger);
+$smarty->assign('tipTrigger', $tipTrigger);
+
+/*
 $prices = array ();
 $locations = array (
 		'Bga',
@@ -188,3 +197,4 @@ $output .= '</table>';
 echo ($output);
 // echo ($fullOutput);
 exit ();
+*/

@@ -24,9 +24,13 @@ ini_set ( 'error_log', 'error.log' );
 session_start ();
 define ( 'IN_NFMWS', true );
 
-// Change next both lines if you are not Germen ;-)
+// Change next lines if you are not Germen ;-)
+if (function_exists ( 'date_default_timezone_set' )) {
+	date_default_timezone_set ( 'Europe/Berlin' );
+}
 setlocale ( LC_ALL, 'de_DE@euro', 'de_DE', 'de', 'ge' );
 $defaultLanguage = 'de'; // if you change the default language make sure the language file exists
+
 $defaultStyle = 'fs17';
 
 require ('./include/smarty/Smarty.class.php');
@@ -35,8 +39,7 @@ require ('./include/language.php');
 
 // Cookie mit Einstellungen laden
 include ('./include/coockie.php');
-$style = $options['general']['style'];
-
+$style = $options ['general'] ['style'];
 
 $smarty = new Smarty ();
 $smarty->debugging = false;
@@ -71,7 +74,7 @@ if ($serverOnline) {
 $smarty->assign ( 'reloadPage', $options ['general'] ['reload'] );
 $smarty->assign ( 'serverOnline', $serverOnline );
 $smarty->assign ( 'style', $style );
-//$smarty->display ( 'index.htpl', $style, $style );
+// $smarty->display ( 'index.htpl', $style, $style );
 $tpl_source = $smarty->fetch ( 'index.tpl', $style, $style );
 
 echo preg_replace_callback ( '/##(.+?)##/', 'prefilter_i18n', $tpl_source );
