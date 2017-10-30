@@ -46,7 +46,7 @@ if ($options ['defaultView'] ['commodities'] != $l_object) {
 // Übersichtskarte
 $linkToImage = "./config/$mapPath/pda_map_H.jpg";
 $imageSize = 512;
-$mapSize = $map ['Size'];
+$mapSize = intval($map ['Size']);
 $mapSizeHalf = $mapSize / 2.0;
 $machineIconSize = 10;
 $backgroundColor = "#4dafd7";

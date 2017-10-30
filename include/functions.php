@@ -214,7 +214,7 @@ function addCommodity($fillType, $fillLevel, $location, $className = 'none', $is
 function getLocation($position) {
 	list ( $posx, $posy, $posz ) = explode ( ' ', $position );
 	global $map, $mapconfig;
-	$mapSize = $map ['Size'] / 2;
+	$mapSize = intval($map ['Size']) / 2;
 	if ($posx < (0 - $mapSize) || $posx > $mapSize || $posy < 0 || $posy > 255 || $posz < (0 - $mapSize) || $posz > $mapSize) {
 		return 'outOfMap';
 	}
