@@ -12,6 +12,7 @@ PLANTS=Produktionsanlagen
 SETTINGS=Einstellungen
 STOCK=Lagerbestand
 STOCKS=Lagerbestände
+PRICES=Verkaufspreise
 
 //install.tpl
 CHOOSE_LANGUAGE_LABEL=Sprache wählen

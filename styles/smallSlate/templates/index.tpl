@@ -44,7 +44,7 @@
 				</div>
 				<div class="modal-body">
 					<p>{$webStatsVersion}</p>
-					<p>Copyright (c) 2017, John Hawk</p>
+					<p>Copyright (C) 2017-2018, John Hawk</p>
 					<p>##INFO_1##</p>
 					<p>##INFO_2## Billy5haw, Marfulak</p>
 					<p>

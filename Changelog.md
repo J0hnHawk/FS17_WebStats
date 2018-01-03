@@ -1,5 +1,22 @@
 # Changelog
 
+## [Version 1.4.0-alpha]
+
+**Änderungen und Erweiterungen:**
+- Unterstützung von platzierbaren Objekten/Mods
+- Ermittlung und Anzeige der Verkaufspreise sowie der Verkaufsstellen (#15)
+- Unterstützung von Stylesheets, 2 neue Stylesheets ergänzt
+- verbesserte Darstellung auf kleinen Bildschirmen oder Tablets
+- kein Zeilenumbruch um Tooltip auf der Produktionsseite 
+
+**Berichtigte Fehler:**
+- Futterbedarf bei den Schweinen
+- Lizenzinformationen
+- Anpassung für PHP 7.1 
+- Palettengröße von leeren Paletten (NF Marsch 3.0)
+- Fehlende Übersetzungen ergänzt (NF Marsch 3.0)
+- Hafenposition berichtigt, danke an alex83we (NF Marsch 3.0)
+
 ## [Version 1.3.0](https://github.com/J0hnHawk/FS17_WebStats/releases/tag/v1.3.0) (02.10.2017)
 
 **Änderungen und Erweiterungen:**

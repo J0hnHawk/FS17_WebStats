@@ -21,6 +21,8 @@
 				</a></li>
 				<li class="{if $page == 'commodity'}active{/if}"><a href="index.php?page=commodity"> <span class="glyphicon glyphicon-object-align-bottom"></span> ##COMMODITIES##
 				</a></li>
+				<li class="{if $page == 'prices'}active{/if}"><a href="index.php?page=prices"> <span class="glyphicon glyphicon glyphicon-euro"></span> ##PRICES##
+				</a></li>
 			</ul>
 			<ul class="nav navbar-nav navbar-right">
 				<li class="{if $page == 'options'}active{/if}"><a href="index.php?page=options"> <span class="glyphicon glyphicon-cog"></span> ##SETTINGS##
