@@ -948,9 +948,9 @@ select[multiple].input-group-sm>.form-control,select[multiple].input-group-sm>.i
 .navbar-fixed-bottom,.navbar-fixed-top,.navbar-static-top{border-radius:0}
 .navbar>.container .navbar-brand,.navbar>.container-fluid .navbar-brand{margin-left:-15px}
 }
-.navbar-toggle{position:relative;float:right;margin-right:15px;padding:9px 10px;margin-top:8px;margin-bottom:8px;background-color:transparent;border:1px solid transparent;border-radius:4px}
+.navbar-toggle{position:relative;float:right;margin-right:15px;padding:9px 10px;margin-top:8px;margin-bottom:8px;background-color:transparent;border:1px solid #fff;border-radius:4px}
 .navbar-toggle:focus{outline:0}
-.navbar-toggle .icon-bar{display:block;width:22px;height:2px;border-radius:1px}
+.navbar-toggle .icon-bar{display:block;width:22px;height:2px;border-radius:1px;background-color:#fff}
 .navbar-toggle .icon-bar+.icon-bar{margin-top:4px}
 .navbar-nav{margin:8.25px -15px}
 .navbar-nav>li>a{padding-top:10px;padding-bottom:10px;line-height:17px}
