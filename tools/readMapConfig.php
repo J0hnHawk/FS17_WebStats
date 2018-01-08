@@ -19,7 +19,7 @@
  *
  */
 setlocale ( LC_ALL, "en_US.UTF-8" );
-$xmlStr = file_get_contents ( './map01_29.i3d' );
+$xmlStr = file_get_contents ( './map01_nfm4f13.i3d' );
 $xml = simplexml_load_string ( $xmlStr );
 $i = 0;
 $produktion = $AttributeNodes = array ();
