@@ -4,3 +4,5 @@ Tanneberg
 https://www.modhoster.de/mods/tanneberg-fs17
 Copyright ruffrider
 2048
+John Hawk
+1.0

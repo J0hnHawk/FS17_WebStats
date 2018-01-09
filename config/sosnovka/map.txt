@@ -4,3 +4,5 @@ Sosnovka
 https://giants-software.com/
 Copyright 2017 GIANTS Software GmbH
 2048
+John Hawk
+1.0

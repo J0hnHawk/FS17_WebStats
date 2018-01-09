@@ -48,8 +48,9 @@
 					<p>##INFO_1##</p>
 					<p>##INFO_2## Billy5haw, Marfulak</p>
 					<p>
-						Author: John Hawk &lt;<a href="mailto:John Hawk <john.hawk@ gmx.net>">john.hawk@gmx.net</a>&gt;
+						##INFO_3##: John Hawk &lt;<a href="mailto:John Hawk <john.hawk@ gmx.net>">john.hawk@gmx.net</a>&gt;
 					</p>
+					<p>##INFO_4##: {$map.configVersion} ({$map.configBy})</p>
 				</div>
 				<div class="modal-footer">
 					<small class="pull-left"><a href="index.php?page=lizenz">##LICENSE##</a></small>

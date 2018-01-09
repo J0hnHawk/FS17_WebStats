@@ -67,6 +67,8 @@ CON_ERROR_1=Verbindungsfehler
 CON_ERROR_2=Es konnten keine Daten vom Dedicated Server abgerufen werden.<br>Bitte überprüfe, ob die Serveradresse korrekt ist und die Internetverbindung besteht oder ein Savegame existiert. Die Funktion <code>fsockopen()</code> muss auf dem Webserver erlaubt sein.
 INFO_1=Webseite zur Anzeige des Serverstatus sowie Überwachung der Produktionsanlagen und Lagerbestände.
 INFO_2=Anregungen, Hilfe und Verbesserungsvorschläge von
+INFO_3=Programmierung
+INFO_4=Kartenkonfiguration
 LICENSE=Informationen zur Lizenzierung
 
 //navbar.tpl
