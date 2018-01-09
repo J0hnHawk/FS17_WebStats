@@ -158,7 +158,7 @@ foreach ($careerVehicles->vehicle as $vehicle) {
 foreach ($careerVehicles->onCreateLoadedObject as $object) {
     $location = strval($object['saveId']);
     // Verkaufspreise ermitteln
-    if ((strstr($location, 'TipTrigger') !== false || $location == "Bga") && $location != 'TipTrigger_FARM_SILO') {
+    if ((strstr($location, 'TipTrigger') !== false || $location == "Bga") && strstr($location, 'TipTrigger_FARM_SILO') === false) {
         $foreach = $object->stats;
         $l_location = translate($location);
         $tipTrigger[$l_location] = $location;
@@ -198,7 +198,7 @@ function readMapObject($object, $location, &$plants, &$mapconfig)
     global $commodities;
     switch ($mapconfig[$location]['locationType']) {
         case 'storage':
-            // Farmsilo und andere Lager Goldcrest Valley
+            // Farmsilo und andere Lager
             foreach ($object->node as $node) {
                 $fillType = strval($node['fillType']);
                 $fillLevel = intval($node['fillLevel']);
