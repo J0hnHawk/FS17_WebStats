@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mapconfig>
+	<item name="Animals_cow" locationType="animal" position="36 0 200" reproRate="1200">
+		<input name="water" trough_factor="35" consumption_factor="35" fillTypes="water" showInStorage="false" />
+		<input name="straw" trough_factor="70" consumption_factor="70" fillTypes="straw" showInStorage="false" />
+		<input name="grass_windrow" trough_factor="70" consumption_factor="100" fillTypes="grass_windrow" showInStorage="false" />
+		<input name="silage_dryGrass_windrow" trough_factor="175" consumption_factor="175" fillTypes="silage dryGrass_windrow" showInStorage="false" />
+		<input name="powerFood" trough_factor="105" consumption_factor="105" fillTypes="powerFood" showInStorage="false" />
+		<output name="liquidManure" production_factor="250" fillType="liquidManure" showInStorage="true" />
+		<output name="manure" production_factor="200" fillType="manure" showInStorage="true" />
+		<output name="milk" production_factor="714" fillType="milk" showInStorage="true" />
+		<productivity name="straw" factor="10" />
+		<productivity name="grass_windrow" factor="18" />
+		<productivity name="silage_dryGrass_windrow" factor="45" />
+		<productivity name="powerFood" factor="27" />
+	</item>
+	<item name="Animals_pig" locationType="animal" position="250 0 400" reproRate="144">
+		<input name="water" trough_factor="10" consumption_factor="10" fillTypes="water" showInStorage="false" />
+		<input name="straw" trough_factor="20" consumption_factor="20" fillTypes="straw" showInStorage="false" />
+		<input name="maize_pigFood" trough_factor="45" consumption_factor="61" fillTypes="maize pigFood" showInStorage="false" />
+		<input name="wheat_barley_pigFood" trough_factor="25" consumption_factor="23" fillTypes="wheat barley pigFood" showInStorage="false" />
+		<input name="rape_sunflower_soybean_pigFood" trough_factor="18" consumption_factor="18" fillTypes="rape sunflower soybean pigFood" showInStorage="false" />
+		<input name="potato_sugarBeet_pigFood" trough_factor="4.5" consumption_factor="5" fillTypes="potato sugarBeet pigFood" showInStorage="false" />
+		<output name="liquidManure" production_factor="65" fillType="liquidManure" showInStorage="true" />
+		<output name="manure" production_factor="50" fillType="manure" showInStorage="true" />
+		<productivity name="straw" factor="9.8" />
+		<productivity name="maize_pigFood" factor="44.8" />
+		<productivity name="wheat_barley_pigFood" factor="22.8" />
+		<productivity name="rape_sunflower_soybean_pigFood" factor="17.8" />
+		<productivity name="potato_sugarBeet_pigFood" factor="4.8" />
+	</item>
+	<item name="Animals_sheep" locationType="animal" position="570 0 -19" reproRate="960">
+		<input name="water" trough_factor="15" consumption_factor="15" fillTypes="water" showInStorage="false" />
+		<input name="grass_windrow_dryGrass_windrow" trough_factor="30" consumption_factor="36" fillTypes="grass_windrow dryGrass_windrow" showInStorage="false" />
+		<output name="woolPallet" production_factor="24" capacity="2000" fillType="woolPallet" palettArea="578.3 -25.7 594.8 -21.3" palettPlaces="15" showInStorage="false" />
+		<productivity name="grass_windrow_dryGrass_windrow" factor="90" />
+	</item>
+	<l10n>
+		<text name="Animals_cow">
+			<en>Animals_cow</en>
+			<de>Kuhstall</de>
+			<fr>Etable</fr>
+		</text>
+		<text name="Animals_pig">
+			<en>Animals_pig</en>
+			<de>Schweinestall</de>
+			<fr>Porcherie</fr>
+		</text>
+		<text name="Animals_sheep">
+			<en>Animals_sheep</en>
+			<de>Schafweide</de>
+			<fr>Bergerie</fr>
+		</text>
+		<text name="water">
+			<en>water</en>
+			<de>Wasser</de>
+			<fr>Eau</fr>
+		</text>
+		<text name="straw">
+			<en>straw</en>
+			<de>Stroh</de>
+			<fr>Paille</fr>
+		</text>
+		<text name="grass_windrow">
+			<en>grass_windrow</en>
+			<de>Gras</de>
+			<fr>Herbe</fr>
+		</text>
+		<text name="silage_dryGrass_windrow">
+			<en>silage_dryGrass_windrow</en>
+			<de>Silage oder Heu</de>
+			<fr>Ensilage ou foin</fr>
+		</text>
+		<text name="silage">
+			<en>silage</en>
+			<de>Silage</de>
+			<fr>Ensilage</fr>
+		</text>
+		<text name="dryGrass_windrow">
+			<en>dryGrass_windrow</en>
+			<de>Heu</de>
+			<fr>Foin</fr>
+		</text>
+		<text name="powerFood">
+			<en>powerFood</en>
+			<de>Mischfutter</de>
+			<fr>Aliments composés</fr>
+		</text>
+		<text name="maize_pigFood">
+			<en>maize_pigFood</en>
+			<de>Körnermais</de>
+			<fr>Maïs</fr>
+		</text>
+		<text name="maize">
+			<en>maize</en>
+			<de>Körnermais</de>
+			<fr>Maïs</fr>
+		</text>
+		<text name="pigFood">
+			<en>pigFood</en>
+			<de>Schweinefutter</de>
+			<fr>Aliment pour les cochons</fr>
+		</text>
+		<text name="wheat_barley_pigFood">
+			<en>wheat_barley_pigFood</en>
+			<de>Weizen oder Gerste</de>
+			<fr>Blé ou orge</fr>
+		</text>
+		<text name="wheat">
+			<en>wheat</en>
+			<de>Weizen</de>
+			<fr>Blé</fr>
+		</text>
+		<text name="barley">
+			<en>barley</en>
+			<de>Gerste</de>
+			<fr>Orge</fr>
+		</text>
+		<text name="rape_sunflower_soybean_pigFood">
+			<en>rape_sunflower_soybean_pigFood</en>
+			<de>Raps, Sonnenblumen oder Sojabohnen</de>
+			<fr>Colza, tournesol ou soja</fr>
+		</text>
+		<text name="rape">
+			<en>rape</en>
+			<de>Raps</de>
+			<fr>Colza</fr>
+		</text>
+		<text name="sunflower">
+			<en>sunflower</en>
+			<de>Sonnenblumen</de>
+			<fr>Tournesol</fr>
+		</text>
+		<text name="soybean">
+			<en>soybean</en>
+			<de>Sojabohnen</de>
+			<fr>Soja</fr>
+		</text>
+		<text name="potato_sugarBeet_pigFood">
+			<en>potato_sugarBeet_pigFood</en>
+			<de>Kartoffeln oder Zuckerrüben</de>
+			<fr>Pommes de terre ou betteraves à sucre</fr>
+		</text>
+		<text name="potato">
+			<en>potato</en>
+			<de>Kartoffeln</de>
+			<fr>Pommes de terre</fr>
+		</text>
+		<text name="sugarBeet">
+			<en>sugarBeet</en>
+			<de>Zuckerrüben</de>
+			<fr>Betterave à sucre</fr>
+		</text>
+		<text name="liquidManure">
+			<en>liquidManure</en>
+			<de>Gülle</de>
+			<fr>Lisier</fr>
+		</text>
+		<text name="grass_windrow_dryGrass_windrow">
+			<en>grass_windrow_dryGrass_windrow</en>
+			<de>Gras oder Heu</de>
+			<fr>Herbe ou foin</fr>
+		</text>
+		<text name="liquidManure">
+			<en>liquidManure</en>
+			<de>Gülle</de>
+			<fr>Lisier</fr>
+		</text>
+		<text name="manure">
+			<en>manure</en>
+			<de>Mist</de>
+			<fr>Fumier</fr>
+		</text>
+		<text name="milk">
+			<en>milk</en>
+			<de>Milch</de>
+			<fr>Lait</fr>
+		</text>
+		<text name="woolPallet">
+			<en>woolPallet</en>
+			<de>Wolle</de>
+			<fr>Laine</fr>
+		</text>
+	</l10n>
+</mapconfig>

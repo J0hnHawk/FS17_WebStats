@@ -42,5 +42,10 @@
 			<de>Bretter</de>
 			<fr>Palette de planche</fr>
 		</text>
+		<text name="boardPallet">
+			<en>boardPallet</en>
+			<de>Bretter</de>
+			<fr>Palette de planche</fr>
+		</text>
 	</l10n>
 </mapconfig>

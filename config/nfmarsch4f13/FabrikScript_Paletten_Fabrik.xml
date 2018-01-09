@@ -26,5 +26,10 @@
 			<de>Leere Paletten</de>
 			<fr>Palette vide</fr>
 		</text>
+		<text name="palletPallet">
+			<en>palletPallet</en>
+			<de>Leere Paletten</de>
+			<fr>Palette vide</fr>
+		</text>
 	</l10n>
 </mapconfig>
