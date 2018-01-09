@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mapconfig>
+	<item name="TipTrigger_WASSERKAUF" locationType="TipTrigger" position="-420 0 -342" />
+	<l10n>
+		<text name="TipTrigger_WASSERKAUF">
+			<en>TipTrigger_WASSERKAUF</en>
+			<de>Wasserverkauf</de>
+			<fr>Wasserverkauf</fr>
+		</text>
+	</l10n>
+</mapconfig>

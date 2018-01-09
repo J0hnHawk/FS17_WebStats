@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mapconfig>
+	<item name="FabrikScript_Paletten_Fabrik" locationType="FabrikScript" ProdPerHour="25000" position="890 0 615" showInProduction="1">
+		<input name="boardwood" capacity="352000" factor="0.5" fillTypes="boardwood" showInStorage="false" />
+		<output name="woodChips" capacity="150000" factor="0.25" fillType="woodChips" showInStorage="true" />
+		<output name="emptypallet" capacity="5000" factor="1" fillType="emptypallet" palettArea="866.4 618.5 882.6 624.7" palettPlaces="22" showInStorage="false" />
+	</item>
+	<l10n>
+		<text name="FabrikScript_Paletten_Fabrik">
+			<en>FabrikScript_Paletten_Fabrik</en>
+			<de>Palettenwerk</de>
+			<fr>Usine à palettes</fr>
+		</text>
+		<text name="boardwood">
+			<en>boardwood</en>
+			<de>Bretter</de>
+			<fr>Palette de planche</fr>
+		</text>
+		<text name="woodChips">
+			<en>woodChips</en>
+			<de>Hackschnitzel</de>
+			<fr>Copeaux de bois</fr>
+		</text>
+		<text name="emptypallet">
+			<en>emptypallet</en>
+			<de>Leere Paletten</de>
+			<fr>Palette vide</fr>
+		</text>
+	</l10n>
+</mapconfig>

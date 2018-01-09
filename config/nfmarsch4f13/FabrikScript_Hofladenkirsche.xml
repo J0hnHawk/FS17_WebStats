@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mapconfig>
+	<item name="FabrikScript_Hofladenkirsche" locationType="FabrikScript" ProdPerHour="60" position="225 0 83" showInProduction="true">
+		<input name="Kirschen" capacity="15000" factor="1" fillTypes="kirsche" showInStorage="false" />
+		<output name="Geldkassette" capacity="25000" factor="3" fillType="geld" palettArea="227.7 80.5 227.9 80.7" palettPlaces="1" showInStorage="false" />
+	</item>
+	<l10n>
+		<text name="FabrikScript_Hofladenkirsche">
+			<en>FabrikScript_Hofladenkirsche</en>
+			<de>Hofladen (Kirsche)</de>
+			<fr>Boutique de la ferme (cerise)</fr>
+		</text>
+		<text name="Kirschen">
+			<en>Kirschen</en>
+			<de>Kirsche</de>
+			<fr>Cerise</fr>
+		</text>
+		<text name="kirsche">
+			<en>kirsche</en>
+			<de>Kirsche</de>
+			<fr>Cerise</fr>
+		</text>
+		<text name="Geldkassette">
+			<en>Geldkassette</en>
+			<de>Geld</de>
+			<fr>Argent</fr>
+		</text>
+		<text name="geld">
+			<en>geld</en>
+			<de>Geld</de>
+			<fr>Argent</fr>
+		</text>
+	</l10n>
+</mapconfig>

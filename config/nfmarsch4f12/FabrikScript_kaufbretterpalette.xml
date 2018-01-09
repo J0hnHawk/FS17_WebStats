@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mapconfig>
+	<item name="FabrikScript_kaufbretterpalette" locationType="FabrikScript" ProdPerHour="14400001" position="-527.941 0 -569.763" showInProduction="true">
+		<input name="geld" capacity="250000" factor="1" fillTypes="geld" showInStorage="false" />
+		<output name="boardwood" capacity="8000" factor="1.1" fillType="woodChips" palettPlaces="31" showInStorage="false" />
+	</item>
+	<l10n>
+		<text name="FabrikScript_kaufbretterpalette">
+			<en>FabrikScript_kaufbretterpalette</en>
+			<de>Kaufbretter Paletten</de>
+			<fr>Kaufbretter Paletten</fr>
+		</text>
+		<text name="geld">
+			<en>geld</en>
+			<de>Geld</de>
+			<fr>Geld</fr>
+		</text>
+		<text name="boardwood">
+			<en>boardwood</en>
+			<de>Bretter</de>
+			<fr>Bretter</fr>
+		</text>
+		<text name="woodChips">
+			<en>woodChips</en>
+			<de>Hackschnitzel</de>
+			<fr>Hackschnitzel</fr>
+		</text>
+	</l10n>
+</mapconfig>

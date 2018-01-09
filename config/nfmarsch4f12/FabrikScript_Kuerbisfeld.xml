@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mapconfig>
+	<item name="FabrikScript_Kuerbisfeld" locationType="FabrikScript" ProdPerHour="1000" position="-1186.536 0 -886.479" showInProduction="true">
+		<input name="Stroh" capacity="200000" factor="0.25" fillTypes="straw" showInStorage="false" />
+		<input name="compost" capacity="200000" factor="0.5" fillTypes="compost" showInStorage="false" />
+		<input name="emptypallet" capacity="100000" factor="0.15" fillTypes="emptypallet" showInStorage="false" />
+		<output name="kuerbis" capacity="5000" factor="1" fillType="kuerbis" palettArea="-1181.038 -905.916 -962.353 -1197.085 -911.844" palettPlaces="22" showInStorage="false" />
+	</item>
+	<l10n>
+		<text name="FabrikScript_Kuerbisfeld">
+			<en>FabrikScript_Kuerbisfeld</en>
+			<de>Kürbisfeld</de>
+			<fr>Kürbisfeld</fr>
+		</text>
+		<text name="Stroh">
+			<en>Stroh</en>
+			<de>Stroh</de>
+			<fr>Stroh</fr>
+		</text>
+		<text name="straw">
+			<en>straw</en>
+			<de>Stroh</de>
+			<fr>Stroh</fr>
+		</text>
+		<text name="compost">
+			<en>compost</en>
+			<de>Kompost</de>
+			<fr>Kompost</fr>
+		</text>
+		<text name="emptypallet">
+			<en>emptypallet</en>
+			<de>Leere Paletten</de>
+			<fr>Leere Paletten</fr>
+		</text>
+		<text name="kuerbis">
+			<en>kuerbis</en>
+			<de>Kürbis</de>
+			<fr>Kürbis</fr>
+		</text>
+	</l10n>
+</mapconfig>

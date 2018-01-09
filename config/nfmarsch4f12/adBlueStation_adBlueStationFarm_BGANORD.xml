@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mapconfig>
+	<item name="adBlueStation_adBlueStationFarm_BGANORD" locationType="AdBlue" position="-181.312 0 -894.624" />
+	<l10n>
+		<text name="adBlueStation_adBlueStationFarm_BGANORD">
+			<en>adBlueStation_adBlueStationFarm_BGANORD</en>
+			<de>AdBlue Hoftankstelle BGA Nord</de>
+			<fr>AdBlue Hoftankstelle BGA Nord</fr>
+		</text>
+	</l10n>
+</mapconfig>

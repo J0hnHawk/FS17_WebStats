@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mapconfig>
+	<item name="FabrikScript_Lager_Yogurt" locationType="FabrikScript" ProdPerHour="14400001" position="-888.223 99.955 -592.881" showInProduction="false">
+		<input name="paletteyogurt" capacity="625000" factor="1" fillTypes="yogurt" showInStorage="true" />
+		<output name="paletteyogurt" capacity="5000" factor="1" fillType="yogurt" showInStorage="false" />
+	</item>
+	<l10n>
+		<text name="FabrikScript_Lager_Yogurt">
+			<en>FabrikScript_Lager_Yogurt</en>
+			<de>Palettenlager</de>
+			<fr>Entrepôt à palettes</fr>
+		</text>
+		<text name="paletteyogurt">
+			<en>paletteyogurt</en>
+			<de>Joghurt</de>
+			<fr>Yaourt</fr>
+		</text>
+		<text name="yogurt">
+			<en>yogurt</en>
+			<de>Joghurt</de>
+			<fr>Yaourt</fr>
+		</text>
+	</l10n>
+</mapconfig>

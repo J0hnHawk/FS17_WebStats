@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mapconfig>
+	<item name="FabrikScript_zuckerrueben" locationType="FabrikScript" ProdPerHour="1000000000" position="170 0 270" showInProduction="">
+		<input name="sugarBeet" capacity="600000" factor="1" fillTypes="sugarBeet" showInStorage="true" />
+		<output name="sugarBeet" capacity="500000" factor="1" fillType="sugarBeet" showInStorage="true" />
+	</item>
+	<l10n>
+		<text name="FabrikScript_zuckerrueben">
+			<en>FabrikScript_zuckerrueben</en>
+			<de>Zuckerrübenlager (Hof)</de>
+			<fr>Stockage betterave (Cour)</fr>
+		</text>
+		<text name="sugarBeet">
+			<en>sugarBeet</en>
+			<de>Zuckerrüben</de>
+			<fr>Betterave à sucre</fr>
+		</text>
+	</l10n>
+</mapconfig>

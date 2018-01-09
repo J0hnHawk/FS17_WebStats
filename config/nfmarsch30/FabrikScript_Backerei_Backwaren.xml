@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mapconfig>
+	<item name="FabrikScript_Backerei_Backwaren" locationType="FabrikScript" ProdPerHour="5000" position="-940 0 10" showInProduction="1">
+		<input name="emptypallet" capacity="120000" factor="0.12" fillTypes="emptypallet" showInStorage="false" />
+		<input name="palette_karton" capacity="120000" factor="0.12" fillTypes="karton" showInStorage="false" />
+		<input name="Tip_mehl" capacity="120000" factor="0.3" fillTypes="mehl" showInStorage="false" />
+		<input name="zuckerpalette" capacity="120000" factor="0.3" fillTypes="zucker" showInStorage="false" />
+		<input name="Milchpalette" capacity="120000" factor="0.2" fillTypes="milch" showInStorage="false" />
+		<input name="Butterpalette" capacity="120000" factor="0.15" fillTypes="butter" showInStorage="false" />
+		<output name="Backwaren" capacity="5000" factor="1" fillType="backwaren" palettArea="-936.6 -36.2 931.0 -13.9" palettPlaces="21" showInStorage="false" />
+	</item>
+	<l10n>
+		<text name="FabrikScript_Backerei_Backwaren">
+			<en>FabrikScript_Backerei_Backwaren</en>
+			<de>Bäckerei (Backwaren)</de>
+			<fr>Boulangerie ([de]Backwaren)</fr>
+		</text>
+		<text name="emptypallet">
+			<en>emptypallet</en>
+			<de>Leere Paletten</de>
+			<fr>Palette vide</fr>
+		</text>
+		<text name="palette_karton">
+			<en>palette_karton</en>
+			<de>Karton</de>
+			<fr>Carton</fr>
+		</text>
+		<text name="karton">
+			<en>karton</en>
+			<de>Karton</de>
+			<fr>Carton</fr>
+		</text>
+		<text name="Tip_mehl">
+			<en>Tip_mehl</en>
+			<de>Mehl</de>
+			<fr>Farine</fr>
+		</text>
+		<text name="mehl">
+			<en>mehl</en>
+			<de>Mehl</de>
+			<fr>Farine</fr>
+		</text>
+		<text name="zuckerpalette">
+			<en>zuckerpalette</en>
+			<de>Zucker</de>
+			<fr>Sucre</fr>
+		</text>
+		<text name="zucker">
+			<en>zucker</en>
+			<de>Zucker</de>
+			<fr>Sucre</fr>
+		</text>
+		<text name="Milchpalette">
+			<en>Milchpalette</en>
+			<de>Vollmilch</de>
+			<fr>Lait entier</fr>
+		</text>
+		<text name="milch">
+			<en>milch</en>
+			<de>Vollmilch</de>
+			<fr>Lait entier</fr>
+		</text>
+		<text name="Butterpalette">
+			<en>Butterpalette</en>
+			<de>Butter</de>
+			<fr>Beure</fr>
+		</text>
+		<text name="butter">
+			<en>butter</en>
+			<de>Butter</de>
+			<fr>Beure</fr>
+		</text>
+		<text name="Backwaren">
+			<en>Backwaren</en>
+			<de>Backwaren</de>
+			<fr>[de]Backwaren</fr>
+		</text>
+		<text name="backwaren">
+			<en>backwaren</en>
+			<de>Backwaren</de>
+			<fr>Backwaren</fr>
+		</text>
+	</l10n>
+</mapconfig>

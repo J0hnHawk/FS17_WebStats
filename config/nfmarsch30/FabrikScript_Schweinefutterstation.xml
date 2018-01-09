@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mapconfig>
+	<item name="FabrikScript_Schweinefutterstation" locationType="FabrikScript" ProdPerHour="30000" position="200 0 350" showInProduction="1">
+		<input name="Getreide" capacity="100000" factor="0.4" fillTypes="wheat barley maize oat rye" showInStorage="false" />
+		<input name="Raps Sonnenblume Soja" capacity="100000" factor="0.3" fillTypes="rape sunflower soybean" showInStorage="false" />
+		<input name="Erdfruechten" capacity="100000" factor="0.1" fillTypes="potato sugarBeet" showInStorage="false" />
+		<output name="Schweinefutter" capacity="250000" factor="0.935" fillType="pigFood" showInStorage="true" />
+	</item>
+	<l10n>
+		<text name="FabrikScript_Schweinefutterstation">
+			<en>FabrikScript_Schweinefutterstation</en>
+			<de>Schweinefutterstation</de>
+			<fr>Production alimentation de porc</fr>
+		</text>
+		<text name="Getreide">
+			<en>Getreide</en>
+			<de>Getreide</de>
+			<fr>Céréales</fr>
+		</text>
+		<text name="wheat">
+			<en>wheat</en>
+			<de>Weizen</de>
+			<fr>Blé</fr>
+		</text>
+		<text name="barley">
+			<en>barley</en>
+			<de>Gerste</de>
+			<fr>Orge</fr>
+		</text>
+		<text name="maize">
+			<en>maize</en>
+			<de>Körnermais</de>
+			<fr>Maïs</fr>
+		</text>
+		<text name="oat">
+			<en>oat</en>
+			<de>Hafer</de>
+			<fr>Avoine</fr>
+		</text>
+		<text name="rye">
+			<en>rye</en>
+			<de>Roggen</de>
+			<fr>Seigle</fr>
+		</text>
+		<text name="Raps Sonnenblume Soja">
+			<en>Raps Sonnenblume Soja</en>
+			<de>Protein</de>
+			<fr>Protéine</fr>
+		</text>
+		<text name="rape">
+			<en>rape</en>
+			<de>Raps</de>
+			<fr>Colza</fr>
+		</text>
+		<text name="sunflower">
+			<en>sunflower</en>
+			<de>Sonnenblumen</de>
+			<fr>Tournesol</fr>
+		</text>
+		<text name="soybean">
+			<en>soybean</en>
+			<de>Sojabohnen</de>
+			<fr>Soja</fr>
+		</text>
+		<text name="Erdfruechten">
+			<en>Erdfruechten</en>
+			<de>Erdfrüchte</de>
+			<fr>Tubercules</fr>
+		</text>
+		<text name="potato">
+			<en>potato</en>
+			<de>Kartoffeln</de>
+			<fr>Pommes de terre</fr>
+		</text>
+		<text name="sugarBeet">
+			<en>sugarBeet</en>
+			<de>Zuckerrüben</de>
+			<fr>Betterave à sucre</fr>
+		</text>
+		<text name="Schweinefutter">
+			<en>Schweinefutter</en>
+			<de>Schweinefutter</de>
+			<fr>Aliment pour les cochons</fr>
+		</text>
+		<text name="pigFood">
+			<en>pigFood</en>
+			<de>Schweinefutter</de>
+			<fr>Aliment pour les cochons</fr>
+		</text>
+	</l10n>
+</mapconfig>

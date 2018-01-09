@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mapconfig>
+	<item name="FabrikScript_Lager_Chips" locationType="FabrikScript" ProdPerHour="14400001" position="-932 0 -676" showInProduction="false">
+		<input name="palettechips" capacity="625000" factor="1" fillTypes="chips" showInStorage="true" />
+		<output name="palettechips" capacity="5000" factor="1" fillType="chips" palettPlaces="999" showInStorage="false" />
+	</item>
+	<l10n>
+		<text name="FabrikScript_Lager_Chips">
+			<en>FabrikScript_Lager_Chips</en>
+			<de>Palettenlager</de>
+			<fr>Palettenlager</fr>
+		</text>
+		<text name="palettechips">
+			<en>palettechips</en>
+			<de>Chips</de>
+			<fr>Chips</fr>
+		</text>
+		<text name="chips">
+			<en>chips</en>
+			<de>Chips</de>
+			<fr>Chips</fr>
+		</text>
+	</l10n>
+</mapconfig>

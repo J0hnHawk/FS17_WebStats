@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mapconfig>
+	<item name="FabrikScript_KraftFutterHerstellung" locationType="FabrikScript" ProdPerHour="60000" position="578 0 -208" showInProduction="true">
+		<input name="Stroh" capacity="600000" factor="0.3" fillTypes="straw" showInStorage="false" />
+		<input name="Silage" capacity="600000" factor="0.4" fillTypes="silage" showInStorage="false" />
+		<input name="Gras" capacity="600000" factor="0.3" fillTypes="grass_windrow dryGrass_windrow" showInStorage="false" />
+		<output name="Mischfutter" capacity="1000000" factor="1" fillType="forage" showInStorage="true" />
+	</item>
+	<l10n>
+		<text name="FabrikScript_KraftFutterHerstellung">
+			<en>FabrikScript_KraftFutterHerstellung</en>
+			<de>Futterfabrik</de>
+			<fr>Usine à alimentation</fr>
+		</text>
+		<text name="Stroh">
+			<en>Stroh</en>
+			<de>Stroh</de>
+			<fr>Paille</fr>
+		</text>
+		<text name="straw">
+			<en>straw</en>
+			<de>Stroh</de>
+			<fr>Paille</fr>
+		</text>
+		<text name="Silage">
+			<en>Silage</en>
+			<de>Silage</de>
+			<fr>Ensilage</fr>
+		</text>
+		<text name="silage">
+			<en>silage</en>
+			<de>Silage</de>
+			<fr>Ensilage</fr>
+		</text>
+		<text name="Gras">
+			<en>Gras</en>
+			<de>Gras</de>
+			<fr>Herbe</fr>
+		</text>
+		<text name="grass_windrow">
+			<en>grass_windrow</en>
+			<de>Gras</de>
+			<fr>Herbe</fr>
+		</text>
+		<text name="dryGrass_windrow">
+			<en>dryGrass_windrow</en>
+			<de>Heu</de>
+			<fr>Foin</fr>
+		</text>
+		<text name="Mischfutter">
+			<en>Mischfutter</en>
+			<de>Mischfutter</de>
+			<fr>Aliments composés</fr>
+		</text>
+		<text name="forage">
+			<en>forage</en>
+			<de>Mischfutter</de>
+			<fr>Aliments composés</fr>
+		</text>
+	</l10n>
+</mapconfig>

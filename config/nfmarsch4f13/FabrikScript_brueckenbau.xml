@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mapconfig>
+	<item name="FabrikScript_brueckenbau" locationType="FabrikScript" ProdPerHour="5000" position="-2632.86 -7.11299 -963.198" showInProduction="true">
+		<input name="Sand" capacity="200000" factor="1" fillTypes="sand" showInStorage="false" />
+		<input name="Kies" capacity="200000" factor="1" fillTypes="gravel" showInStorage="false" />
+		<input name="Zement" capacity="100000" factor="0.5" fillTypes="cement" showInStorage="false" />
+		<input name="Stahl" capacity="100000" factor="0.5" fillTypes="stahl" showInStorage="false" />
+		<output name="Brueckenbau" capacity="200000" factor="1" fillType="sand" showInStorage="true" />
+	</item>
+	<l10n>
+		<text name="FabrikScript_brueckenbau">
+			<en>FabrikScript_brueckenbau</en>
+			<de>{FabrikScript_brueckenbau}</de>
+			<fr>{FabrikScript_brueckenbau}</fr>
+		</text>
+		<text name="Sand">
+			<en>Sand</en>
+			<de>{Sand}</de>
+			<fr>{Sand}</fr>
+		</text>
+		<text name="sand">
+			<en>sand</en>
+			<de>Sable</de>
+			<fr>Sable</fr>
+		</text>
+		<text name="Kies">
+			<en>Kies</en>
+			<de>{Kies}</de>
+			<fr>{Kies}</fr>
+		</text>
+		<text name="gravel">
+			<en>gravel</en>
+			<de>{gravel}</de>
+			<fr>{gravel}</fr>
+		</text>
+		<text name="Zement">
+			<en>Zement</en>
+			<de>{Zement}</de>
+			<fr>{Zement}</fr>
+		</text>
+		<text name="cement">
+			<en>cement</en>
+			<de>{cement}</de>
+			<fr>{cement}</fr>
+		</text>
+		<text name="Stahl">
+			<en>Stahl</en>
+			<de>{Stahl}</de>
+			<fr>{Stahl}</fr>
+		</text>
+		<text name="stahl">
+			<en>stahl</en>
+			<de>{stahl}</de>
+			<fr>{stahl}</fr>
+		</text>
+		<text name="Brueckenbau">
+			<en>Brueckenbau</en>
+			<de>{Brueckenbau}</de>
+			<fr>{Brueckenbau}</fr>
+		</text>
+	</l10n>
+</mapconfig>

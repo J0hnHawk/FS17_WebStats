@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mapconfig>
+	<item name="FabrikScript_Lager_Krabben" locationType="FabrikScript" ProdPerHour="14400001" position="-882.695 99.955 -686.78" showInProduction="">
+		<input name="Krabbenpalette" capacity="625000" factor="1" fillTypes="krabben" showInStorage="true" />
+		<output name="Krabbenpalette" capacity="5000" factor="1" fillType="krabben" palettPlaces="999" showInStorage="false" />
+	</item>
+	<l10n>
+		<text name="FabrikScript_Lager_Krabben">
+			<en>FabrikScript_Lager_Krabben</en>
+			<de>Palettenlager</de>
+			<fr>Entrepôt à palettes</fr>
+		</text>
+		<text name="Krabbenpalette">
+			<en>Krabbenpalette</en>
+			<de>Krabben</de>
+			<fr>[de]Krabben</fr>
+		</text>
+		<text name="krabben">
+			<en>krabben</en>
+			<de>Krabben</de>
+			<fr>Krabben</fr>
+		</text>
+	</l10n>
+</mapconfig>

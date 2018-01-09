@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mapconfig>
+	<item name="FabrikScript_Fischerei" locationType="FabrikScript" ProdPerHour="1000" position="-963 0 -963" showInProduction="true">
+		<input name="emptypallet" capacity="120000" factor="0.1" fillTypes="emptypallet" showInStorage="false" />
+		<input name="cm_inputFuel" capacity="200000" factor="0.75" fillTypes="fuel" showInStorage="false" />
+		<output name="Krabben" capacity="5000" factor="1" fillType="krabben" palettArea="-984.65 -991.154 -962.353 987.149" palettPlaces="21" showInStorage="false" />
+		<output name="Fisch" capacity="5000" factor="1" fillType="fisch" palettArea="-984.65 -978.865 -962.353 -974.934" palettPlaces="21" showInStorage="false" />
+	</item>
+	<l10n>
+		<text name="FabrikScript_Fischerei">
+			<en>FabrikScript_Fischerei</en>
+			<de>Fischerei</de>
+			<fr>Fischerei</fr>
+		</text>
+		<text name="emptypallet">
+			<en>emptypallet</en>
+			<de>Leere Paletten</de>
+			<fr>Leere Paletten</fr>
+		</text>
+		<text name="cm_inputFuel">
+			<en>cm_inputFuel</en>
+			<de>Diesel</de>
+			<fr>Diesel</fr>
+		</text>
+		<text name="fuel">
+			<en>fuel</en>
+			<de>Diesel</de>
+			<fr>Diesel</fr>
+		</text>
+		<text name="Krabben">
+			<en>Krabben</en>
+			<de>Krabben</de>
+			<fr>Krabben</fr>
+		</text>
+		<text name="krabben">
+			<en>krabben</en>
+			<de>Krabben</de>
+			<fr>Krabben</fr>
+		</text>
+		<text name="Fisch">
+			<en>Fisch</en>
+			<de>Fisch</de>
+			<fr>Fisch</fr>
+		</text>
+		<text name="fisch">
+			<en>fisch</en>
+			<de>Fisch</de>
+			<fr>Fisch</fr>
+		</text>
+	</l10n>
+</mapconfig>

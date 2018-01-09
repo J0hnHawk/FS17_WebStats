@@ -18,24 +18,26 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  *
  */
-
-include ('../config/nfmarsch30/mapconfig.php');
+define('IN_NFMWS', true);
+$map = 'nfmarsch4f12';
+include ("../config/$map/mapconfig.php");
+include ('../include/functions.php');
 
 /**
  * PLANNED BUT NOT YET REALIZED !!!
  *
  * Code below is still under development.
- *
  */
-
-$xml_mapconfig = new SimpleXMLElement('<?xml version="1.0"?><mapconfig></mapconfig>');
 
 // Loop through all locations
 foreach ($mapconfig as $location => $locationData) {
+    $textToTranslate = array();
+    $xml_mapconfig = new SimpleXMLElement('<?xml version="1.0" encoding="UTF-8"?><mapconfig></mapconfig>');
     // Create an entry for each locations
     $mapItem = $xml_mapconfig->addChild('item');
-    // Add the location name as attribute 
+    // Add the location name as attribute
     $mapItem->addAttribute('name', $location);
+    $textToTranslate[$location] = $location;
     // Loop through all elements of a location
     foreach ($locationData as $key1 => $value1) {
         // Check if element is an array
@@ -44,13 +46,28 @@ foreach ($mapconfig as $location => $locationData) {
             foreach ($value1 as $key2 => $value2) {
                 // SubItem could be 'input', 'output' or 'productivity'
                 $mapSubItem = $mapItem->addChild($key1);
-                // Add the fillType as attribute 
+                // Add the fillType as attribute
                 $mapSubItem->addAttribute('name', $key2);
+                $textToTranslate[$key2] = $key2;
                 // Check if SubItem is productivity
                 if ($key1 != 'productivity') {
                     // No, then loop through all fillType attributes
                     foreach ($value2 as $key3 => $value3) {
+                        if(is_bool($value3)===true) {
+                            if($value3) {
+                                $value3 = 'true';
+                            } else {
+                                $value3 = 'false';
+                            }
+                        }
                         $mapSubItem->addAttribute("$key3", htmlspecialchars("$value3"));
+                        // Check if attribute is fillType(s)
+                        if (strstr($key3, 'fillType') !== false) {
+                            // if so, add each fillType to translation table
+                            foreach (explode(' ', $value3) as $fillType) {
+                                $textToTranslate[$fillType] = $fillType;
+                            }
+                        }
                     }
                 } else {
                     // Yes, then only add the factor
@@ -58,10 +75,29 @@ foreach ($mapconfig as $location => $locationData) {
                 }
             }
         } else {
-            // Add more location attributes 
+            // Add more location attributes
+            if(is_bool($value1)===true) {
+                if($value1) {
+                    $value1 = 'true';
+                } else {
+                    $value1 = 'false';
+                }
+            }
             $mapItem->addAttribute("$key1", htmlspecialchars("$value1"));
         }
     }
+    // Add translation table
+    $l10n = $xml_mapconfig->addChild('l10n');
+    foreach ($textToTranslate as $text) {
+        $l10nText = $l10n->addChild('text');
+        $l10nText->addAttribute('name', htmlspecialchars("$text"));
+        $l10nText->en = $text;
+        include ("../config/$map/translation/de.php");
+        $l10nText->de = htmlspecialchars(translate($text));
+        include ("../config/$map/translation/fr.php");
+        $l10nText->fr = translate($text);
+    }
+    $result = $xml_mapconfig->asXML("./xml/$location.xml");
 }
 
-$result = $xml_mapconfig->asXML('mapconfig.xml');
+

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mapconfig>
+	<item name="FabrikScript_Lager_kartoffelsack" locationType="FabrikScript" ProdPerHour="14400001" position="-944.192 99.955 -692.864" showInProduction="">
+		<input name="palettekartoffelsack" capacity="355000" factor="1" fillTypes="kartoffelsack" showInStorage="true" />
+		<output name="palettekartoffelsack" capacity="5000" factor="1" fillType="kartoffelsack" palettPlaces="999" showInStorage="false" />
+	</item>
+	<l10n>
+		<text name="FabrikScript_Lager_kartoffelsack">
+			<en>FabrikScript_Lager_kartoffelsack</en>
+			<de>Palettenlager</de>
+			<fr>Entrepôt à palettes</fr>
+		</text>
+		<text name="palettekartoffelsack">
+			<en>palettekartoffelsack</en>
+			<de>Kartoffelsack</de>
+			<fr>Sac de pommes de terre</fr>
+		</text>
+		<text name="kartoffelsack">
+			<en>kartoffelsack</en>
+			<de>Kartoffelsack</de>
+			<fr>Kartoffelsack</fr>
+		</text>
+	</l10n>
+</mapconfig>

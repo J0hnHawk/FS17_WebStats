@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mapconfig>
+	<item name="fuelStation_Tankstelle_BGA_Nord" locationType="fuelStation" position="-180 0 -890" />
+	<l10n>
+		<text name="fuelStation_Tankstelle_BGA_Nord">
+			<en>fuelStation_Tankstelle_BGA_Nord</en>
+			<de>Tankstelle BGA Nord</de>
+			<fr>Station-service BGA Nord</fr>
+		</text>
+	</l10n>
+</mapconfig>

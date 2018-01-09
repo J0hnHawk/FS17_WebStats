@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mapconfig>
+	<item name="FabrikScript_Lager_Pellets" locationType="FabrikScript" ProdPerHour="14400001" position="-888.5 99.955 -459.2" showInProduction="">
+		<input name="Pelletspalette" capacity="355000" factor="1" fillTypes="pellets" showInStorage="true" />
+		<output name="Pelletspalette" capacity="5000" factor="1" fillType="pellets" palettPlaces="999" showInStorage="false" />
+	</item>
+	<l10n>
+		<text name="FabrikScript_Lager_Pellets">
+			<en>FabrikScript_Lager_Pellets</en>
+			<de>Palettenlager</de>
+			<fr>Entrepôt à pellets</fr>
+		</text>
+		<text name="Pelletspalette">
+			<en>Pelletspalette</en>
+			<de>Pellets</de>
+			<fr>Pellets</fr>
+		</text>
+		<text name="pellets">
+			<en>pellets</en>
+			<de>Pellets</de>
+			<fr>Pellets</fr>
+		</text>
+	</l10n>
+</mapconfig>

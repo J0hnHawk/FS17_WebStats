@@ -69,13 +69,51 @@ $map = array(
     'configVersion' => $configVersion
 );
 $smarty->assign('map', $map);
+/*
 require ("./config/$mapPath/mapconfig.php");
 if (! file_exists("./config/$mapPath/translation/{$_SESSION ['language']}.php")) {
     require ("./config/$mapPath/translation/$defaultLanguage.php");
 } else {
     require ("./config/$mapPath/translation/{$_SESSION ['language']}.php");
 }
+*/
 $userLang = $_SESSION['language'];
+
+// Kartenkonfiguration aus XML Dateien laden
+$lang = $mapconfig = array();
+foreach (glob("./config/$mapPath/*.xml") as $filename) {
+    $object = simplexml_load_file($filename);
+    foreach ($object->item as $item) {
+        $className = strval($item['name']);
+        $mapconfig = array_merge($mapconfig, array(
+            $className => array()
+        ));
+        foreach ($item->attributes() as $attribute => $value) {
+            if ($attribute != 'filename') {
+                $mapconfig[$className][$attribute] = get_bool($value);
+            }
+        }
+        foreach ($item->children() as $childName => $childData) {
+            if (empty($mapconfig[$className][$childName]) || ! is_array($mapconfig[$className][$childName])) {
+                $mapconfig[$className][$childName] = array();
+            }
+            $fillType = strval($childData['name']);
+            $mapconfig[$className][$childName][$fillType] = array();
+            foreach ($childData->attributes() as $attribute => $value) {
+                if ($attribute != 'name') {
+                    $mapconfig[$className][$childName][$fillType][$attribute] = get_bool($value);
+                }
+            }
+        }
+    }
+    foreach ($object->l10n->text as $text) {
+        $key = strval($text['name']);
+        $value = strval($text->$userLang);
+        $lang = array_merge($lang, array(
+            $key => $value
+        ));
+    }
+}
 $lang = array_merge($lang, getVehicleNames());
 
 // load installed placeables

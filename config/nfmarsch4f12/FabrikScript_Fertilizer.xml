@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mapconfig>
+	<item name="FabrikScript_Fertilizer" locationType="FabrikScript" ProdPerHour="2147483647" position="205.038 0 288.965" showInProduction="false">
+		<input name="FS_fertilizer" capacity="500000" factor="1" fillTypes="fertilizer" showInStorage="true" />
+		<output name="FS_fertilizer" capacity="500000" factor="1" fillType="fertilizer" showInStorage="true" />
+	</item>
+	<l10n>
+		<text name="FabrikScript_Fertilizer">
+			<en>FabrikScript_Fertilizer</en>
+			<de>Düngerlager</de>
+			<fr>Düngerlager</fr>
+		</text>
+		<text name="FS_fertilizer">
+			<en>FS_fertilizer</en>
+			<de>Dünger</de>
+			<fr>Dünger</fr>
+		</text>
+		<text name="fertilizer">
+			<en>fertilizer</en>
+			<de>Dünger</de>
+			<fr>Dünger</fr>
+		</text>
+	</l10n>
+</mapconfig>

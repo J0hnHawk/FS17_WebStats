@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mapconfig>
+	<item name="FabrikScript_Lager_Korn" locationType="FabrikScript" ProdPerHour="14400001" position="-932 0 -535" showInProduction="false">
+		<input name="Korn" capacity="625000" factor="1" fillTypes="korn" showInStorage="true" />
+		<output name="Korn" capacity="5000" factor="0.9" fillType="korn" palettPlaces="999" showInStorage="false" />
+	</item>
+	<l10n>
+		<text name="FabrikScript_Lager_Korn">
+			<en>FabrikScript_Lager_Korn</en>
+			<de>Palettenlager</de>
+			<fr>Palettenlager</fr>
+		</text>
+		<text name="Korn">
+			<en>Korn</en>
+			<de>Korn</de>
+			<fr>Korn</fr>
+		</text>
+		<text name="korn">
+			<en>korn</en>
+			<de>Korn</de>
+			<fr>Korn</fr>
+		</text>
+	</l10n>
+</mapconfig>

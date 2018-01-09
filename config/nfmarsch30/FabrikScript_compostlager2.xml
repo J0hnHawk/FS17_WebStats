@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mapconfig>
+	<item name="FabrikScript_compostlager2" locationType="FabrikScript" ProdPerHour="2147483647" position="810 0 649" showInProduction="">
+		<input name="Compost" capacity="800000" factor="1" fillTypes="compost" showInStorage="true" />
+		<output name="Compost" capacity="800000" factor="1" fillTypes="compost" showInStorage="true" />
+	</item>
+	<l10n>
+		<text name="FabrikScript_compostlager2">
+			<en>FabrikScript_compostlager2</en>
+			<de>Kompostlager (Gewächshäuser)</de>
+			<fr>[de]Kompostlager (Verger)</fr>
+		</text>
+		<text name="Compost">
+			<en>Compost</en>
+			<de>Kompost</de>
+			<fr>Compost</fr>
+		</text>
+		<text name="compost">
+			<en>compost</en>
+			<de>Kompost</de>
+			<fr>Compost</fr>
+		</text>
+	</l10n>
+</mapconfig>

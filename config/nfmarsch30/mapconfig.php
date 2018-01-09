@@ -3003,21 +3003,5 @@ $mapconfig = array_merge($mapconfig, array(
     'fuelStation_Tankstelle_BGA_Sued' => array(
         'locationType' => 'fuelStation',
         'position' => '-400 0 630'
-    ),
-    'fuelStation_Hoftankstelle' => array(
-        'locationType' => 'fuelStation',
-        'position' => '180 0 200'
-    ),
-    'fuelStation_Tankstelle_Raffinerie' => array(
-        'locationType' => 'fuelStation',
-        'position' => '-920 0 630'
-    ),
-    'fuelStation_Tankstelle_BGA_Nord' => array(
-        'locationType' => 'fuelStation',
-        'position' => '-180 0 -890'
-    ),
-    'fuelStation_Tankstelle_BGA_Sued' => array(
-        'locationType' => 'fuelStation',
-        'position' => '-400 0 630'
     )
 ));

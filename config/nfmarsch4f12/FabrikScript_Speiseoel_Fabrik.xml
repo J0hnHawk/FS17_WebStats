@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mapconfig>
+	<item name="FabrikScript_Speiseoel_Fabrik" locationType="FabrikScript" ProdPerHour="7500" position="-921.561 0 561.889" showInProduction="true">
+		<input name="Tip_RS" capacity="500000" factor="1" fillTypes="rape sunflower" showInStorage="false" />
+		<input name="emptypallet" capacity="120000" factor="0.15" fillTypes="emptypallet" showInStorage="false" />
+		<input name="palette_karton" capacity="100000" factor="0.15" fillTypes="karton" showInStorage="false" />
+		<output name="RS_compost" capacity="500000" factor="0.3" fillType="compost" showInStorage="true" />
+		<output name="palettespeiseoel" capacity="5000" factor="0.3" fillType="oel" palettArea="-921.972 585.858 -931.981 595.864" palettPlaces="21" showInStorage="false" />
+	</item>
+	<l10n>
+		<text name="FabrikScript_Speiseoel_Fabrik">
+			<en>FabrikScript_Speiseoel_Fabrik</en>
+			<de>Speiseöl Fabrik</de>
+			<fr>Speiseöl Fabrik</fr>
+		</text>
+		<text name="Tip_RS">
+			<en>Tip_RS</en>
+			<de>Raps oder Sonnenblumen</de>
+			<fr>Raps oder Sonnenblumen</fr>
+		</text>
+		<text name="rape">
+			<en>rape</en>
+			<de>Raps</de>
+			<fr>Raps</fr>
+		</text>
+		<text name="sunflower">
+			<en>sunflower</en>
+			<de>Sonnenblumen</de>
+			<fr>Sonnenblumen</fr>
+		</text>
+		<text name="emptypallet">
+			<en>emptypallet</en>
+			<de>Leere Paletten</de>
+			<fr>Leere Paletten</fr>
+		</text>
+		<text name="palette_karton">
+			<en>palette_karton</en>
+			<de>Karton</de>
+			<fr>Karton</fr>
+		</text>
+		<text name="karton">
+			<en>karton</en>
+			<de>Karton</de>
+			<fr>Karton</fr>
+		</text>
+		<text name="RS_compost">
+			<en>RS_compost</en>
+			<de>Kompost</de>
+			<fr>Kompost</fr>
+		</text>
+		<text name="compost">
+			<en>compost</en>
+			<de>Kompost</de>
+			<fr>Kompost</fr>
+		</text>
+		<text name="palettespeiseoel">
+			<en>palettespeiseoel</en>
+			<de>Speiseöl</de>
+			<fr>Speiseöl</fr>
+		</text>
+		<text name="oel">
+			<en>oel</en>
+			<de>Speiseöl</de>
+			<fr>Speiseöl</fr>
+		</text>
+	</l10n>
+</mapconfig>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mapconfig>
+	<item name="TipTrigger_GETREIDEAG" locationType="TipTrigger" position="-349 0 1379" />
+	<l10n>
+		<text name="TipTrigger_GETREIDEAG">
+			<en>TipTrigger_GETREIDEAG</en>
+			<de>Getreide AG</de>
+			<fr>Getreide AG</fr>
+		</text>
+	</l10n>
+</mapconfig>

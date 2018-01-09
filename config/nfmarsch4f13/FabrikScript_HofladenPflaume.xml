@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mapconfig>
+	<item name="FabrikScript_HofladenPflaume" locationType="FabrikScript" ProdPerHour="60" position="225 0 85" showInProduction="true">
+		<input name="Pflaumen" capacity="15000" factor="1" fillTypes="pflaume" showInStorage="false" />
+		<output name="Geldkassette" capacity="25000" factor="3" fillType="geld" palettArea="227.7 83.2 227.9 83.4" palettPlaces="1" showInStorage="false" />
+	</item>
+	<l10n>
+		<text name="FabrikScript_HofladenPflaume">
+			<en>FabrikScript_HofladenPflaume</en>
+			<de>Hofladen (Pflaume)</de>
+			<fr>Boutique de la ferme (prune)</fr>
+		</text>
+		<text name="Pflaumen">
+			<en>Pflaumen</en>
+			<de>Pflaume</de>
+			<fr>Prune</fr>
+		</text>
+		<text name="pflaume">
+			<en>pflaume</en>
+			<de>Pflaume</de>
+			<fr>Prune</fr>
+		</text>
+		<text name="Geldkassette">
+			<en>Geldkassette</en>
+			<de>Geld</de>
+			<fr>Argent</fr>
+		</text>
+		<text name="geld">
+			<en>geld</en>
+			<de>Geld</de>
+			<fr>Argent</fr>
+		</text>
+	</l10n>
+</mapconfig>

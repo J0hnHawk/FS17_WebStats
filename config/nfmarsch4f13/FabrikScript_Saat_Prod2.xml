@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mapconfig>
+	<item name="FabrikScript_Saat_Prod2" locationType="FabrikScript" ProdPerHour="10000" position="-1334.85 0.0500043 335.575" showInProduction="true">
+		<input name="grain" capacity="100000" factor="1" fillTypes="wheat maize barley rape" showInStorage="false" />
+		<input name="fertilizer" capacity="100000" factor="0.3" fillTypes="fertilizer" showInStorage="false" />
+		<output name="seeds" capacity="100000" factor="1" fillType="seeds" showInStorage="true" />
+	</item>
+	<l10n>
+		<text name="FabrikScript_Saat_Prod2">
+			<en>FabrikScript_Saat_Prod2</en>
+			<de>{FabrikScript_Saat_Prod2}</de>
+			<fr>{FabrikScript_Saat_Prod2}</fr>
+		</text>
+		<text name="grain">
+			<en>grain</en>
+			<de>Getreide</de>
+			<fr>Céréales</fr>
+		</text>
+		<text name="wheat">
+			<en>wheat</en>
+			<de>Weizen</de>
+			<fr>Blé</fr>
+		</text>
+		<text name="maize">
+			<en>maize</en>
+			<de>Körnermais</de>
+			<fr>Maïs</fr>
+		</text>
+		<text name="barley">
+			<en>barley</en>
+			<de>Gerste</de>
+			<fr>Orge</fr>
+		</text>
+		<text name="rape">
+			<en>rape</en>
+			<de>Raps</de>
+			<fr>Colza</fr>
+		</text>
+		<text name="fertilizer">
+			<en>fertilizer</en>
+			<de>Dünger</de>
+			<fr>Engrais</fr>
+		</text>
+		<text name="seeds">
+			<en>seeds</en>
+			<de>Saatgut</de>
+			<fr>Semence</fr>
+		</text>
+	</l10n>
+</mapconfig>

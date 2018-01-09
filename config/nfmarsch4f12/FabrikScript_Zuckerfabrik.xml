@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mapconfig>
+	<item name="FabrikScript_Zuckerfabrik" locationType="FabrikScript" ProdPerHour="15000" position="-794.264 0 -927.494" showInProduction="true">
+		<input name="Tip_RSzucker" capacity="2000000" factor="1" fillTypes="sugarBeet" showInStorage="false" />
+		<input name="Tip_RSwater" capacity="500000" factor="0.8" fillTypes="water" showInStorage="false" />
+		<output name="zuckerpalette" capacity="5000" factor="0.5" fillType="zucker" palettArea="-774.577 -929.294 -752.415 -925.181" palettPlaces="21" showInStorage="false" />
+	</item>
+	<l10n>
+		<text name="FabrikScript_Zuckerfabrik">
+			<en>FabrikScript_Zuckerfabrik</en>
+			<de>Zuckerfabrik</de>
+			<fr>Zuckerfabrik</fr>
+		</text>
+		<text name="Tip_RSzucker">
+			<en>Tip_RSzucker</en>
+			<de>Zuckerrüben</de>
+			<fr>Zuckerrüben</fr>
+		</text>
+		<text name="sugarBeet">
+			<en>sugarBeet</en>
+			<de>Zuckerrüben</de>
+			<fr>Zuckerrüben</fr>
+		</text>
+		<text name="Tip_RSwater">
+			<en>Tip_RSwater</en>
+			<de>Wasser</de>
+			<fr>Wasser</fr>
+		</text>
+		<text name="water">
+			<en>water</en>
+			<de>Wasser</de>
+			<fr>Wasser</fr>
+		</text>
+		<text name="zuckerpalette">
+			<en>zuckerpalette</en>
+			<de>Zucker</de>
+			<fr>Zucker</fr>
+		</text>
+		<text name="zucker">
+			<en>zucker</en>
+			<de>Zucker</de>
+			<fr>Zucker</fr>
+		</text>
+	</l10n>
+</mapconfig>

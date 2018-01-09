@@ -22,676 +22,678 @@
  */
 $mapVersion = 'NF Marsch 4 Fach 1.3';
 
-if (empty ( $mapconfig ) || ! is_array ( $mapconfig )) {
-	$mapconfig = array ();
+if (empty($mapconfig) || ! is_array($mapconfig)) {
+    $mapconfig = array();
 }
 
 // Farmsilo und Ställe
-$mapconfig = array_merge ( $mapconfig, array (
-        'TipTrigger_BAHNHOF' => array (
+$mapconfig = array_merge($mapconfig,
+    array(
+        'TipTrigger_BAHNHOF' => array(
             'locationType' => 'TipTrigger',
             'position' => '-459 0 -100'
         ),
-		'TipTrigger_HAFEN' => array (
-				'locationType' => 'TipTrigger',
-				'position' => '-922.415 0 -987.603'
-		),
-		'TipTrigger_DEPOT' => array (
-				'locationType' => 'TipTrigger',
-				'position' => '847 0 460'
-		),
-		'TipTrigger_RAIFFEISEN' => array (
-				'locationType' => 'TipTrigger',
-				'position' => '467 0 -232'
-		),
-		'TipTrigger_GETREIDEHANDEL' => array (
-				'locationType' => 'TipTrigger',
-				'position' => '270 0 -732'
-		),
-		'TipTrigger_SUPERMARKT' =>array (
-				'locationType' => 'TipTrigger',
-				'position' => '-511 0 -567'
-		),
-		'TipTrigger_SUPERMARKT1' => array (
-				'locationType' => 'TipTrigger',
-				'position' => '-248 0 -658'
-		),
-		'TipTrigger_SUPERMARKT2' => array (
-			'locationType' => 'TipTrigger',
-			'position' => '1387 0 1280'
-		),
-		'TipTrigger_GETREIDEAG' => array (
-			'locationType' => 'TipTrigger',
-			'position' => '-349 0 1379'
-		),
-		'TipTrigger_STADION' => array (
-				'locationType' => 'TipTrigger',
-				'position' => '-156 0 -741'
-		),
-		'TipTrigger_WOLLEVERKAUF' => array (
-				'locationType' => 'TipTrigger',
-				'position' => '824 0 315'
-		),
-		'TipTrigger_WOLLEVERKAUF1' =>array (
-				'locationType' => 'TipTrigger',
-				'position' => '-892.735 0 -956.924'
-		),
-		'TipTrigger_SAWMILL' => array (
-				'locationType' => 'TipTrigger',
-				'position' => '-867 0 723'
-		),
-		'TipTrigger_WASSERKAUF' => array (
-				'locationType' => 'TipTrigger',
-				'position' => '-420 0 -342'
-		),
-		'TipTrigger_HEIZWERK' => array (
-				'locationType' => 'TipTrigger',
-				'position' => '-746 0 758'
-		),
-		'TipTrigger_WINDROW_SALE' => array (
-				'locationType' => 'TipTrigger',
-				'position' => '251 0 112'
-		),
-		'TipTrigger_BIOGAS' => array (
-				'locationType' => 'TipTrigger',
-				'position' => '-145 0 -952'
-		),
-		'TipTrigger_TANKE' =>array (
-				'locationType' => 'TipTrigger',
-				'position' => '-191 0 -299'
-		),
-		'TipTrigger_TANKE2' => array (
-				'locationType' => 'TipTrigger',
-				'position' => '782 0 -850'
-		),
-		'TipTrigger_TANKE3' => array (
-				'locationType' => 'TipTrigger',
-				'position' => '1368 0 1126'
-		),
-		'TipTrigger_BANK' => array (
-				'locationType' => 'TipTrigger',
-				'position' => '-405 0 -470'
+        'TipTrigger_HAFEN' => array(
+            'locationType' => 'TipTrigger',
+            'position' => '-922.415 0 -987.603'
         ),
-        'TipTrigger_STROHKRAFTWERK' => array (
-                'locationType' => 'TipTrigger',
-                'position' => '1426 0 -366'
+        'TipTrigger_DEPOT' => array(
+            'locationType' => 'TipTrigger',
+            'position' => '847 0 460'
         ),
-        'TipTrigger_PFERDEHOF' => array (
-                'locationType' => 'TipTrigger',
-                'position' => '947 0 -1621'
+        'TipTrigger_RAIFFEISEN' => array(
+            'locationType' => 'TipTrigger',
+            'position' => '467 0 -232'
         ),
-        'Storage_storage1' => array (
+        'TipTrigger_GETREIDEHANDEL' => array(
+            'locationType' => 'TipTrigger',
+            'position' => '270 0 -732'
+        ),
+        'TipTrigger_SUPERMARKT' => array(
+            'locationType' => 'TipTrigger',
+            'position' => '-511 0 -567'
+        ),
+        'TipTrigger_SUPERMARKT1' => array(
+            'locationType' => 'TipTrigger',
+            'position' => '-248 0 -658'
+        ),
+        'TipTrigger_SUPERMARKT2' => array(
+            'locationType' => 'TipTrigger',
+            'position' => '1387 0 1280'
+        ),
+        'TipTrigger_GETREIDEAG' => array(
+            'locationType' => 'TipTrigger',
+            'position' => '-349 0 1379'
+        ),
+        'TipTrigger_STADION' => array(
+            'locationType' => 'TipTrigger',
+            'position' => '-156 0 -741'
+        ),
+        'TipTrigger_WOLLEVERKAUF' => array(
+            'locationType' => 'TipTrigger',
+            'position' => '824 0 315'
+        ),
+        'TipTrigger_WOLLEVERKAUF1' => array(
+            'locationType' => 'TipTrigger',
+            'position' => '-892.735 0 -956.924'
+        ),
+        'TipTrigger_SAWMILL' => array(
+            'locationType' => 'TipTrigger',
+            'position' => '-867 0 723'
+        ),
+        'TipTrigger_WASSERKAUF' => array(
+            'locationType' => 'TipTrigger',
+            'position' => '-420 0 -342'
+        ),
+        'TipTrigger_HEIZWERK' => array(
+            'locationType' => 'TipTrigger',
+            'position' => '-746 0 758'
+        ),
+        'TipTrigger_WINDROW_SALE' => array(
+            'locationType' => 'TipTrigger',
+            'position' => '251 0 112'
+        ),
+        'TipTrigger_BIOGAS' => array(
+            'locationType' => 'TipTrigger',
+            'position' => '-145 0 -952'
+        ),
+        'TipTrigger_TANKE' => array(
+            'locationType' => 'TipTrigger',
+            'position' => '-191 0 -299'
+        ),
+        'TipTrigger_TANKE2' => array(
+            'locationType' => 'TipTrigger',
+            'position' => '782 0 -850'
+        ),
+        'TipTrigger_TANKE3' => array(
+            'locationType' => 'TipTrigger',
+            'position' => '1368 0 1126'
+        ),
+        'TipTrigger_BANK' => array(
+            'locationType' => 'TipTrigger',
+            'position' => '-405 0 -470'
+        ),
+        'TipTrigger_STROHKRAFTWERK' => array(
+            'locationType' => 'TipTrigger',
+            'position' => '1426 0 -366'
+        ),
+        'TipTrigger_PFERDEHOF' => array(
+            'locationType' => 'TipTrigger',
+            'position' => '947 0 -1621'
+        ),
+        'Storage_storage1' => array(
             'locationType' => 'storage',
-            'position' => '210 0 120' 
+            'position' => '210 0 120'
         ),
-		'Storage_storage3' => array (
+        'Storage_storage3' => array(
             'locationType' => 'storage',
-            'position' => '625 0 1672' 
+            'position' => '625 0 1672'
         ),
-        'Storage_storage5' => array (
+        'Storage_storage5' => array(
             'locationType' => 'storage',
             'position' => '1390 0 -667'
-        ),        
-		'Animals_cow' => array (
+        ),
+        'Animals_cow' => array(
             'locationType' => 'animal',
             'position' => '36 0 200',
             'reproRate' => 1200,
-            'input' => array (
-                    'water' => array (
-                            'trough_factor' => 35,
-                            'consumption_factor' => 35,
-                            'fillTypes' => 'water',
-                            'showInStorage' => false 
-                    ),
-                    'straw' => array (
-                            'trough_factor' => 70,
-                            'consumption_factor' => 70,
-                            'fillTypes' => 'straw',
-                            'showInStorage' => false 
-                    ),
-                    'grass_windrow' => array (
-                            'trough_factor' => 70,
-                            'consumption_factor' => 100,
-                            'fillTypes' => 'grass_windrow',
-                            'showInStorage' => false 
-                    ),
-                    'silage_dryGrass_windrow' => array (
-                            'trough_factor' => 175,
-                            'consumption_factor' => 175,
-                            'fillTypes' => 'silage dryGrass_windrow',
-                            'showInStorage' => false 
-                    ),
-                    'powerFood' => array (
-                            'trough_factor' => 105,
-                            'consumption_factor' => 105,
-                            'fillTypes' => 'powerFood',
-                            'showInStorage' => false 
-                    ) 
+            'input' => array(
+                'water' => array(
+                    'trough_factor' => 35,
+                    'consumption_factor' => 35,
+                    'fillTypes' => 'water',
+                    'showInStorage' => false
+                ),
+                'straw' => array(
+                    'trough_factor' => 70,
+                    'consumption_factor' => 70,
+                    'fillTypes' => 'straw',
+                    'showInStorage' => false
+                ),
+                'grass_windrow' => array(
+                    'trough_factor' => 70,
+                    'consumption_factor' => 100,
+                    'fillTypes' => 'grass_windrow',
+                    'showInStorage' => false
+                ),
+                'silage_dryGrass_windrow' => array(
+                    'trough_factor' => 175,
+                    'consumption_factor' => 175,
+                    'fillTypes' => 'silage dryGrass_windrow',
+                    'showInStorage' => false
+                ),
+                'powerFood' => array(
+                    'trough_factor' => 105,
+                    'consumption_factor' => 105,
+                    'fillTypes' => 'powerFood',
+                    'showInStorage' => false
+                )
             ),
-            'output' => array (
-                    'liquidManure' => array (
-                            'production_factor' => 250,
-                            'fillType' => 'liquidManure',
-                            'showInStorage' => true 
-                    ),
-                    'manure' => array (
-                            'production_factor' => 200,
-                            'fillType' => 'manure',
-                            'showInStorage' => true 
-                    ),
-                    'milk' => array (
-                            'production_factor' => 714,
-                            'fillType' => 'milk',
-                            'showInStorage' => true 
-                    ) 
+            'output' => array(
+                'liquidManure' => array(
+                    'production_factor' => 250,
+                    'fillType' => 'liquidManure',
+                    'showInStorage' => true
+                ),
+                'manure' => array(
+                    'production_factor' => 200,
+                    'fillType' => 'manure',
+                    'showInStorage' => true
+                ),
+                'milk' => array(
+                    'production_factor' => 714,
+                    'fillType' => 'milk',
+                    'showInStorage' => true
+                )
             
             ),
-            'productivity' => array (
-                    'straw' => 10,
-                    'grass_windrow' => 18,
-                    'silage_dryGrass_windrow' => 45,
-                    'powerFood' => 27 
-            ) 
+            'productivity' => array(
+                'straw' => 10,
+                'grass_windrow' => 18,
+                'silage_dryGrass_windrow' => 45,
+                'powerFood' => 27
+            )
         ),
-		'Animals_pig' => array (
-				'locationType' => 'animal',
-				'position' => '250 0 400',
-				'reproRate' => 144,
-				'input' => array (
-						'water' => array (
-								'trough_factor' => 10,
-								'consumption_factor' => 10,
-								'fillTypes' => 'water',
-								'showInStorage' => false 
-						),
-						'straw' => array (
-								'trough_factor' => 20,
-								'consumption_factor' => 20,
-								'fillTypes' => 'straw',
-								'showInStorage' => false 
-						),
-						'maize_pigFood' => array (
-								'trough_factor' => 45,
-								'consumption_factor' => 61,
-								'fillTypes' => 'maize pigFood',
-								'showInStorage' => false 
-						),
-						'wheat_barley_pigFood' => array (
-								'trough_factor' => 25,
-								'consumption_factor' => 23,
-								'fillTypes' => 'wheat barley pigFood',
-								'showInStorage' => false 
-						),
-						'rape_sunflower_soybean_pigFood' => array (
-								'trough_factor' => 18,
-								'consumption_factor' => 18,
-								'fillTypes' => 'rape sunflower soybean pigFood',
-								'showInStorage' => false 
-						),
-						'potato_sugarBeet_pigFood' => array (
-								'trough_factor' => 4.5,
-								'consumption_factor' => 5,
-								'fillTypes' => 'potato sugarBeet pigFood',
-								'showInStorage' => false 
-						) 
-				),
-				'output' => array (
-						'liquidManure' => array (
-								'production_factor' => 65,
-								'fillType' => 'liquidManure',
-								'showInStorage' => true 
-						),
-						'manure' => array (
-								'production_factor' => 50,
-								'fillType' => 'manure',
-								'showInStorage' => true 
-						) 
-				),
-				'productivity' => array (
-						'straw' => 9.8,
-						'maize_pigFood' => 44.8,
-						'wheat_barley_pigFood' => 22.8,
-						'rape_sunflower_soybean_pigFood' => 17.8,
-						'potato_sugarBeet_pigFood' => 4.8 
-				) 
-		),
-		'Animals_sheep' => array (
-				'locationType' => 'animal',
-				'position' => '570 0 -19',
-				'reproRate' => 960,
-				'input' => array (
-						'water' => array (
-								'trough_factor' => 15,
-								'consumption_factor' => 15,
-								'fillTypes' => 'water',
-								'showInStorage' => false 
-						),
-						'grass_windrow_dryGrass_windrow' => array (
-								'trough_factor' => 30,
-								'consumption_factor' => 36,
-								'fillTypes' => 'grass_windrow dryGrass_windrow',
-								'showInStorage' => false 
-						) 
-				),
-				'output' => array (
-						'woolPallet' => array (
-								'production_factor' => 24,
-								'capacity' => 2000,
-								'fillType' => 'woolPallet',
-								'palettArea' => '578.3 -25.7 594.8 -21.3',
-								'palettPlaces' => 15,
-								'showInStorage' => false 
-						) 
-				),
-				'productivity' => array (
-						'grass_windrow_dryGrass_windrow' => 90 
-				) 
-		),
-		'Bga' => array (
-				'locationType' => 'bga',
-				'ProdPerHour' => 1000,
-				'position' => '-250 0 650',
-				'showInProduction' => true,
-				'input' => array (
-						'silage' => array (
-								'capacity' => 50000,
-								'factor' => 360,
-								'fillTypes' => 'bunkerFillLevel',
-								'showInStorage' => false 
-						),
-						'liquidManure' => array (
-								'capacity' => '&infin;',
-								'factor' => 180,
-								'fillTypes' => 'liquidManureFillLevel',
-								'showInStorage' => false 
-						) 
-				),
-				'output' => array (
-						'digestate' => array (
-								'capacity' => 800000,
-								'factor' => 87,
-								'fillTypes' => 'digestateSiloFillLevel',
-								'showInStorage' => true 
-						) 
-				) 
-		),
-		'BunkerSilo_silo001' => array (
-				'locationType' => 'bunker',
-				'position' => '-346 0 682' 
-		),
-		'BunkerSilo_silo002' => array (
-				'locationType' => 'bunker',
-				'position' => '-346 0 672' 
-		),
-		'BunkerSilo_silo003' => array (
-				'locationType' => 'bunker',
-				'position' => '-346 0 662' 
-		),
-		'BunkerSilo_silo004' => array (
-				'locationType' => 'bunker',
-				'position' => '-346 0 692' 
-		),
-		'BunkerSilo_silo005' => array (
-				'locationType' => 'bunker',
-				'position' => '-346 0 702' 
-		),
-		'BunkerSilo_cowSilo' => array (
-				'locationType' => 'bunker',
-				'position' => '-506 0 668' 
-		),
-		'BunkerSilo_Silo1' => array (
-				'locationType' => 'bunker',
-				'position' => '-66 0 -992' 
-		),
-		'BunkerSilo_Silo2' => array (
-				'locationType' => 'bunker',
-				'position' => '-66 0 -963' 
-        ), 
-		'BGASued' => array (
-				'locationType' => 'bga',
-				'ProdPerHour' => 1000,
-				'position' => '722 0 1657',
-				'showInProduction' => true,
-				'input' => array (
-						'silage' => array (
-								'capacity' => 50000,
-								'factor' => 360,
-								'fillTypes' => 'bunkerFillLevel',
-								'showInStorage' => false 
-						),
-						'liquidManure' => array (
-								'capacity' => 1500000,
-								'factor' => 180,
-								'fillTypes' => 'liquidManureFillLevel',
-								'showInStorage' => false 
-						) 
-				),
-				'output' => array (
-						'digestate' => array (
-								'capacity' => 800000,
-								'factor' => 87,
-								'fillTypes' => 'digestateSiloFillLevel',
-								'showInStorage' => true 
-						) 
-				) 
+        'Animals_pig' => array(
+            'locationType' => 'animal',
+            'position' => '250 0 400',
+            'reproRate' => 144,
+            'input' => array(
+                'water' => array(
+                    'trough_factor' => 10,
+                    'consumption_factor' => 10,
+                    'fillTypes' => 'water',
+                    'showInStorage' => false
+                ),
+                'straw' => array(
+                    'trough_factor' => 20,
+                    'consumption_factor' => 20,
+                    'fillTypes' => 'straw',
+                    'showInStorage' => false
+                ),
+                'maize_pigFood' => array(
+                    'trough_factor' => 45,
+                    'consumption_factor' => 61,
+                    'fillTypes' => 'maize pigFood',
+                    'showInStorage' => false
+                ),
+                'wheat_barley_pigFood' => array(
+                    'trough_factor' => 25,
+                    'consumption_factor' => 23,
+                    'fillTypes' => 'wheat barley pigFood',
+                    'showInStorage' => false
+                ),
+                'rape_sunflower_soybean_pigFood' => array(
+                    'trough_factor' => 18,
+                    'consumption_factor' => 18,
+                    'fillTypes' => 'rape sunflower soybean pigFood',
+                    'showInStorage' => false
+                ),
+                'potato_sugarBeet_pigFood' => array(
+                    'trough_factor' => 4.5,
+                    'consumption_factor' => 5,
+                    'fillTypes' => 'potato sugarBeet pigFood',
+                    'showInStorage' => false
+                )
+            ),
+            'output' => array(
+                'liquidManure' => array(
+                    'production_factor' => 65,
+                    'fillType' => 'liquidManure',
+                    'showInStorage' => true
+                ),
+                'manure' => array(
+                    'production_factor' => 50,
+                    'fillType' => 'manure',
+                    'showInStorage' => true
+                )
+            ),
+            'productivity' => array(
+                'straw' => 9.8,
+                'maize_pigFood' => 44.8,
+                'wheat_barley_pigFood' => 22.8,
+                'rape_sunflower_soybean_pigFood' => 17.8,
+                'potato_sugarBeet_pigFood' => 4.8
+            )
+        ),
+        'Animals_sheep' => array(
+            'locationType' => 'animal',
+            'position' => '570 0 -19',
+            'reproRate' => 960,
+            'input' => array(
+                'water' => array(
+                    'trough_factor' => 15,
+                    'consumption_factor' => 15,
+                    'fillTypes' => 'water',
+                    'showInStorage' => false
+                ),
+                'grass_windrow_dryGrass_windrow' => array(
+                    'trough_factor' => 30,
+                    'consumption_factor' => 36,
+                    'fillTypes' => 'grass_windrow dryGrass_windrow',
+                    'showInStorage' => false
+                )
+            ),
+            'output' => array(
+                'woolPallet' => array(
+                    'production_factor' => 24,
+                    'capacity' => 2000,
+                    'fillType' => 'woolPallet',
+                    'palettArea' => '578.3 -25.7 594.8 -21.3',
+                    'palettPlaces' => 15,
+                    'showInStorage' => false
+                )
+            ),
+            'productivity' => array(
+                'grass_windrow_dryGrass_windrow' => 90
+            )
+        ),
+        'Bga' => array(
+            'locationType' => 'bga',
+            'ProdPerHour' => 1000,
+            'position' => '-250 0 650',
+            'showInProduction' => true,
+            'input' => array(
+                'silage' => array(
+                    'capacity' => 50000,
+                    'factor' => 360,
+                    'fillTypes' => 'bunkerFillLevel',
+                    'showInStorage' => false
+                ),
+                'liquidManure' => array(
+                    'capacity' => '&infin;',
+                    'factor' => 180,
+                    'fillTypes' => 'liquidManureFillLevel',
+                    'showInStorage' => false
+                )
+            ),
+            'output' => array(
+                'digestate' => array(
+                    'capacity' => 800000,
+                    'factor' => 87,
+                    'fillTypes' => 'digestateSiloFillLevel',
+                    'showInStorage' => true
+                )
+            )
+        ),
+        'BunkerSilo_silo001' => array(
+            'locationType' => 'bunker',
+            'position' => '-346 0 682'
+        ),
+        'BunkerSilo_silo002' => array(
+            'locationType' => 'bunker',
+            'position' => '-346 0 672'
+        ),
+        'BunkerSilo_silo003' => array(
+            'locationType' => 'bunker',
+            'position' => '-346 0 662'
+        ),
+        'BunkerSilo_silo004' => array(
+            'locationType' => 'bunker',
+            'position' => '-346 0 692'
+        ),
+        'BunkerSilo_silo005' => array(
+            'locationType' => 'bunker',
+            'position' => '-346 0 702'
+        ),
+        'BunkerSilo_cowSilo' => array(
+            'locationType' => 'bunker',
+            'position' => '-506 0 668'
+        ),
+        'BunkerSilo_Silo1' => array(
+            'locationType' => 'bunker',
+            'position' => '-66 0 -992'
+        ),
+        'BunkerSilo_Silo2' => array(
+            'locationType' => 'bunker',
+            'position' => '-66 0 -963'
+        ),
+        'BGASued' => array(
+            'locationType' => 'bga',
+            'ProdPerHour' => 1000,
+            'position' => '722 0 1657',
+            'showInProduction' => true,
+            'input' => array(
+                'silage' => array(
+                    'capacity' => 50000,
+                    'factor' => 360,
+                    'fillTypes' => 'bunkerFillLevel',
+                    'showInStorage' => false
+                ),
+                'liquidManure' => array(
+                    'capacity' => 1500000,
+                    'factor' => 180,
+                    'fillTypes' => 'liquidManureFillLevel',
+                    'showInStorage' => false
+                )
+            ),
+            'output' => array(
+                'digestate' => array(
+                    'capacity' => 800000,
+                    'factor' => 87,
+                    'fillTypes' => 'digestateSiloFillLevel',
+                    'showInStorage' => true
+                )
+            )
         ),
         // BGA Süd Fahrsilos
-		'BGASuedklein1' => array (
-				'locationType' => 'bunker',
-				'position' => '673.947 0 1640.135' 
+        'BGASuedklein1' => array(
+            'locationType' => 'bunker',
+            'position' => '673.947 0 1640.135'
         ),
-		'BGASuedklein2' => array (
-				'locationType' => 'bunker',
-				'position' => '673.947 0 1630.579' 
-        ), 
-		'BGASuedklein3' => array (
-				'locationType' => 'bunker',
-				'position' => '673.947 0 1620.346' 
+        'BGASuedklein2' => array(
+            'locationType' => 'bunker',
+            'position' => '673.947 0 1630.579'
         ),
-		'BGASued1' => array (
-				'locationType' => 'bunker',
-				'position' => '673.947 0 1687.588' 
+        'BGASuedklein3' => array(
+            'locationType' => 'bunker',
+            'position' => '673.947 0 1620.346'
         ),
-		'BGASued2' => array (
-				'locationType' => 'bunker',
-				'position' => '673.947 0 1661.456' 
-        ),         
-) );
+        'BGASued1' => array(
+            'locationType' => 'bunker',
+            'position' => '673.947 0 1687.588'
+        ),
+        'BGASued2' => array(
+            'locationType' => 'bunker',
+            'position' => '673.947 0 1661.456'
+        )
+    ));
 
 // Fabrikscripte
-$mapconfig = array_merge ( $mapconfig, array ( 
-        'FabrikScript_KraftFutterHerstellung' => array (
-                'locationType' => 'FabrikScript',
-                'ProdPerHour' => 60000,
-                'position' => '578 0 -208',
-                'showInProduction' => true,
-                'input' => array (
-                        'Stroh' => array (
-                                'capacity' => 300000,
-                                'factor' => 0.3,
-                                'fillTypes' => 'straw',
-                                'showInStorage' => false 
-                        ),
-                        'Silage' => array (
-                                'capacity' => 300000,
-                                'factor' => 0.4,
-                                'fillTypes' => 'silage',
-                                'showInStorage' => false 
-                        ),
-                        'Gras' => array (
-                                'capacity' => 300000,
-                                'factor' => 0.3,
-                                'fillTypes' => 'grass_windrow dryGrass_windrow',
-                                'showInStorage' => false 
-                        ) 
+$mapconfig = array_merge($mapconfig,
+    array(
+        'FabrikScript_KraftFutterHerstellung' => array(
+            'locationType' => 'FabrikScript',
+            'ProdPerHour' => 60000,
+            'position' => '578 0 -208',
+            'showInProduction' => true,
+            'input' => array(
+                'Stroh' => array(
+                    'capacity' => 300000,
+                    'factor' => 0.3,
+                    'fillTypes' => 'straw',
+                    'showInStorage' => false
                 ),
-                'output' => array (
-                        'Mischfutter' => array (
-                                'capacity' => 300000,
-                                'factor' => 1,
-                                'fillType' => 'forage',
-                                'showInStorage' => true 
-                        ) 
-                ) 
+                'Silage' => array(
+                    'capacity' => 300000,
+                    'factor' => 0.4,
+                    'fillTypes' => 'silage',
+                    'showInStorage' => false
+                ),
+                'Gras' => array(
+                    'capacity' => 300000,
+                    'factor' => 0.3,
+                    'fillTypes' => 'grass_windrow dryGrass_windrow',
+                    'showInStorage' => false
+                )
+            ),
+            'output' => array(
+                'Mischfutter' => array(
+                    'capacity' => 300000,
+                    'factor' => 1,
+                    'fillType' => 'forage',
+                    'showInStorage' => true
+                )
+            )
         ),
-		'FabrikScript_Fabrik' => array (
-				'locationType' => 'FabrikScript',
-				'ProdPerHour' => 16000,
-				'position' => '990 0 680',
-				'showInProduction' => true,
-				'input' => array (
-						'Brennstoffe' => array (
-								'capacity' => 75000,
-								'factor' => 0.4,
-								'fillTypes' => 'straw woodChips wool',
-								'showInStorage' => false 
-						),
-						'Holz' => array (
-								'capacity' => 400000,
-								'factor' => 1,
-								'fillTypes' => 'woodChips',
-								'showInStorage' => false 
-						) 
-				),
-				'output' => array (
-						'woodChips' => array (
-								'capacity' => 150000,
-								'factor' => 0.9,
-								'fillType' => 'woodChips',
-								'showInStorage' => true 
-						),
-						'boardwood' => array (
-								'capacity' => 8000,
-								'factor' => 1,
-								'fillType' => 'boardwood',
-								'palettArea' => '960.1 663.1 961.7 683.3',
-								'palettPlaces' => 10,
-								'showInStorage' => false 
-						) 
-				) 
-		),
-		'FabrikScript_Holzhacker' => array (
-				'locationType' => 'FabrikScript',
-				'ProdPerHour' => 50000,
-				'position' => '940 0 650',
-				'showInProduction' => true,
-				'input' => array (
-						'Holz' => array (
-								'capacity' => 400000,
-								'factor' => 1,
-								'fillTypes' => 'woodChips',
-								'showInStorage' => false 
-						) 
-				),
-				'output' => array (
-						'woodChips' => array (
-								'capacity' => 150000,
-								'factor' => 0.9,
-								'fillType' => 'woodChips',
-								'showInStorage' => true 
-						) 
-				) 
+        'FabrikScript_Fabrik' => array(
+            'locationType' => 'FabrikScript',
+            'ProdPerHour' => 16000,
+            'position' => '990 0 680',
+            'showInProduction' => true,
+            'input' => array(
+                'Brennstoffe' => array(
+                    'capacity' => 75000,
+                    'factor' => 0.4,
+                    'fillTypes' => 'straw woodChips wool',
+                    'showInStorage' => false
+                ),
+                'Holz' => array(
+                    'capacity' => 400000,
+                    'factor' => 1,
+                    'fillTypes' => 'woodChips',
+                    'showInStorage' => false
+                )
+            ),
+            'output' => array(
+                'woodChips' => array(
+                    'capacity' => 150000,
+                    'factor' => 0.9,
+                    'fillType' => 'woodChips',
+                    'showInStorage' => true
+                ),
+                'boardwood' => array(
+                    'capacity' => 8000,
+                    'factor' => 1,
+                    'fillType' => 'boardwood',
+                    'palettArea' => '960.1 663.1 961.7 683.3',
+                    'palettPlaces' => 10,
+                    'showInStorage' => false
+                )
+            )
+        ),
+        'FabrikScript_Holzhacker' => array(
+            'locationType' => 'FabrikScript',
+            'ProdPerHour' => 50000,
+            'position' => '940 0 650',
+            'showInProduction' => true,
+            'input' => array(
+                'Holz' => array(
+                    'capacity' => 400000,
+                    'factor' => 1,
+                    'fillTypes' => 'woodChips',
+                    'showInStorage' => false
+                )
+            ),
+            'output' => array(
+                'woodChips' => array(
+                    'capacity' => 150000,
+                    'factor' => 0.9,
+                    'fillType' => 'woodChips',
+                    'showInStorage' => true
+                )
+            )
         ),
         // Palettenlager
-		'FabrikScript_Lager_Apfel' => array (
-			'locationType' => 'FabrikScript',
-			'ProdPerHour' => 14400001,
-			'position' => '-932 0 -475',
-			'showInProduction' => false,
-			'input' => array (
-					'Apfelpalette' => array (
-							'capacity' => 500000,
-							'factor' => 1,
-							'fillTypes' => 'apfel',
-							'showInStorage' => true 
-					) 
-			),
-			'output' => array (
-					'Apfelpalette' => array (
-							'capacity' => 5000,
-							'factor' => 1,
-							'fillType' => 'apfel',
-							'palettPlaces' => 999,
-							'showInStorage' => false 
-					) 
-				) 
-		),
-		'FabrikScript_Lager_Birne' => array (
-			'locationType' => 'FabrikScript',
-			'ProdPerHour' => 14400001,
-			'position' => '-932 0 -475',
-			'showInProduction' => false,
-			'input' => array (
-					'Birnenpalette' => array (
-							'capacity' => 500000,
-							'factor' => 1,
-							'fillTypes' => 'birne',
-							'showInStorage' => true 
-					) 
-			),
-			'output' => array (
-					'Birnenpalette' => array (
-							'capacity' => 5000,
-							'factor' => 1,
-							'fillType' => 'birne',
-							'palettPlaces' => 999,
-							'showInStorage' => false 
-					) 
-				) 
-		),
-		'FabrikScript_Lager_Pflaume' => array (
-			'locationType' => 'FabrikScript',
-			'ProdPerHour' => 14400001,
-			'position' => '-932 0 -475',
-			'showInProduction' => false,
-			'input' => array (
-					'Pflaumenpalette' => array (
-							'capacity' => 500000,
-							'factor' => 1,
-							'fillTypes' => 'pflaume',
-							'showInStorage' => true 
-					) 
-			),
-			'output' => array (
-					'Pflaumenpalette' => array (
-							'capacity' => 5000,
-							'factor' => 1,
-							'fillType' => 'pflaume',
-							'palettPlaces' => 999,
-							'showInStorage' => false 
-					) 
-				) 
-		),
-		'FabrikScript_Lager_Kirsche' => array (
-			'locationType' => 'FabrikScript',
-			'ProdPerHour' => 14400001,
-			'position' => '-932 0 -475',
-			'showInProduction' => false,
-			'input' => array (
-					'Kirschpalette' => array (
-							'capacity' => 500000,
-							'factor' => 1,
-							'fillTypes' => 'kirsche',
-							'showInStorage' => true 
-					) 
-			),
-			'output' => array (
-					'Kirschpalette' => array (
-							'capacity' => 5000,
-							'factor' => 1,
-							'fillType' => 'kirsche',
-							'palettPlaces' => 999,
-							'showInStorage' => false 
-					) 
-				) 
-		),
-		'FabrikScript_Lager_Bierkasten' => array (
-			'locationType' => 'FabrikScript',
-			'ProdPerHour' => 14400001,
-			'position' => '-932 0 -535',
-			'showInProduction' => false,
-			'input' => array (
-					'bierpalettekasten' => array (
-							'capacity' => 465000,
-							'factor' => 1,
-							'fillTypes' => 'beer',
-							'showInStorage' => true 
-					) 
-			),
-			'output' => array (
-					'bierpalettekasten' => array (
-							'capacity' => 5000,
-							'factor' => 1,
-							'fillType' => 'beer',
-							'palettPlaces' => 999,
-							'showInStorage' => false 
-					) 
-				) 
-		),
-		'FabrikScript_Lager_Bierfass' => array (
-			'locationType' => 'FabrikScript',
-			'ProdPerHour' => 14400001,
-			'position' => '-932 0 -535',
-			'showInProduction' => false,
-			'input' => array (
-					'bierpalettefass' => array (
-							'capacity' => 465000,
-							'factor' => 1,
-							'fillTypes' => 'beerf',
-							'showInStorage' => true 
-					) 
-			),
-			'output' => array (
-					'bierpalettefass' => array (
-							'capacity' => 5000,
-							'factor' => 1,
-							'fillType' => 'beerf',
-							'palettPlaces' => 999,
-							'showInStorage' => false 
-					) 
-				) 
-		),
-		'FabrikScript_Lager_obstler' => array (
-			'locationType' => 'FabrikScript',
-			'ProdPerHour' => 14400001,
-			'position' => '-932 0 -535',
-			'showInProduction' => false,
-			'input' => array (
-					'Obstler' => array (
-							'capacity' => 625000,
-							'factor' => 1,
-							'fillTypes' => 'obstler',
-							'showInStorage' => true 
-					) 
-			),
-			'output' => array (
-					'Obstler' => array (
-							'capacity' => 5000,
-							'factor' => 1,
-							'fillType' => 'obstler',
-							'palettPlaces' => 999,
-							'showInStorage' => false 
-					) 
-				) 
-		),
-		'FabrikScript_Lager_Korn' => array (
-			'locationType' => 'FabrikScript',
-			'ProdPerHour' => 14400001,
-			'position' => '-932 0 -535',
-			'showInProduction' => false,
-			'input' => array (
-					'Korn' => array (
-							'capacity' => 625000,
-							'factor' => 1,
-							'fillTypes' => 'korn',
-							'showInStorage' => true 
-					) 
-			),
-			'output' => array (
-					'Korn' => array (
-							'capacity' => 5000,
-							'factor' => 0.9,
-							'fillType' => 'korn',
-							'palettPlaces' => 999,
-							'showInStorage' => false 
-					) 
-				) 
-		),
-        'FabrikScript_Lager_Papier' => array (
+        'FabrikScript_Lager_Apfel' => array(
+            'locationType' => 'FabrikScript',
+            'ProdPerHour' => 14400001,
+            'position' => '-932 0 -475',
+            'showInProduction' => false,
+            'input' => array(
+                'Apfelpalette' => array(
+                    'capacity' => 500000,
+                    'factor' => 1,
+                    'fillTypes' => 'apfel',
+                    'showInStorage' => true
+                )
+            ),
+            'output' => array(
+                'Apfelpalette' => array(
+                    'capacity' => 5000,
+                    'factor' => 1,
+                    'fillType' => 'apfel',
+                    'palettPlaces' => 999,
+                    'showInStorage' => false
+                )
+            )
+        ),
+        'FabrikScript_Lager_Birne' => array(
+            'locationType' => 'FabrikScript',
+            'ProdPerHour' => 14400001,
+            'position' => '-932 0 -475',
+            'showInProduction' => false,
+            'input' => array(
+                'Birnenpalette' => array(
+                    'capacity' => 500000,
+                    'factor' => 1,
+                    'fillTypes' => 'birne',
+                    'showInStorage' => true
+                )
+            ),
+            'output' => array(
+                'Birnenpalette' => array(
+                    'capacity' => 5000,
+                    'factor' => 1,
+                    'fillType' => 'birne',
+                    'palettPlaces' => 999,
+                    'showInStorage' => false
+                )
+            )
+        ),
+        'FabrikScript_Lager_Pflaume' => array(
+            'locationType' => 'FabrikScript',
+            'ProdPerHour' => 14400001,
+            'position' => '-932 0 -475',
+            'showInProduction' => false,
+            'input' => array(
+                'Pflaumenpalette' => array(
+                    'capacity' => 500000,
+                    'factor' => 1,
+                    'fillTypes' => 'pflaume',
+                    'showInStorage' => true
+                )
+            ),
+            'output' => array(
+                'Pflaumenpalette' => array(
+                    'capacity' => 5000,
+                    'factor' => 1,
+                    'fillType' => 'pflaume',
+                    'palettPlaces' => 999,
+                    'showInStorage' => false
+                )
+            )
+        ),
+        'FabrikScript_Lager_Kirsche' => array(
+            'locationType' => 'FabrikScript',
+            'ProdPerHour' => 14400001,
+            'position' => '-932 0 -475',
+            'showInProduction' => false,
+            'input' => array(
+                'Kirschpalette' => array(
+                    'capacity' => 500000,
+                    'factor' => 1,
+                    'fillTypes' => 'kirsche',
+                    'showInStorage' => true
+                )
+            ),
+            'output' => array(
+                'Kirschpalette' => array(
+                    'capacity' => 5000,
+                    'factor' => 1,
+                    'fillType' => 'kirsche',
+                    'palettPlaces' => 999,
+                    'showInStorage' => false
+                )
+            )
+        ),
+        'FabrikScript_Lager_Bierkasten' => array(
+            'locationType' => 'FabrikScript',
+            'ProdPerHour' => 14400001,
+            'position' => '-932 0 -535',
+            'showInProduction' => false,
+            'input' => array(
+                'bierpalettekasten' => array(
+                    'capacity' => 465000,
+                    'factor' => 1,
+                    'fillTypes' => 'beer',
+                    'showInStorage' => true
+                )
+            ),
+            'output' => array(
+                'bierpalettekasten' => array(
+                    'capacity' => 5000,
+                    'factor' => 1,
+                    'fillType' => 'beer',
+                    'palettPlaces' => 999,
+                    'showInStorage' => false
+                )
+            )
+        ),
+        'FabrikScript_Lager_Bierfass' => array(
+            'locationType' => 'FabrikScript',
+            'ProdPerHour' => 14400001,
+            'position' => '-932 0 -535',
+            'showInProduction' => false,
+            'input' => array(
+                'bierpalettefass' => array(
+                    'capacity' => 465000,
+                    'factor' => 1,
+                    'fillTypes' => 'beerf',
+                    'showInStorage' => true
+                )
+            ),
+            'output' => array(
+                'bierpalettefass' => array(
+                    'capacity' => 5000,
+                    'factor' => 1,
+                    'fillType' => 'beerf',
+                    'palettPlaces' => 999,
+                    'showInStorage' => false
+                )
+            )
+        ),
+        'FabrikScript_Lager_obstler' => array(
+            'locationType' => 'FabrikScript',
+            'ProdPerHour' => 14400001,
+            'position' => '-932 0 -535',
+            'showInProduction' => false,
+            'input' => array(
+                'Obstler' => array(
+                    'capacity' => 625000,
+                    'factor' => 1,
+                    'fillTypes' => 'obstler',
+                    'showInStorage' => true
+                )
+            ),
+            'output' => array(
+                'Obstler' => array(
+                    'capacity' => 5000,
+                    'factor' => 1,
+                    'fillType' => 'obstler',
+                    'palettPlaces' => 999,
+                    'showInStorage' => false
+                )
+            )
+        ),
+        'FabrikScript_Lager_Korn' => array(
+            'locationType' => 'FabrikScript',
+            'ProdPerHour' => 14400001,
+            'position' => '-932 0 -535',
+            'showInProduction' => false,
+            'input' => array(
+                'Korn' => array(
+                    'capacity' => 625000,
+                    'factor' => 1,
+                    'fillTypes' => 'korn',
+                    'showInStorage' => true
+                )
+            ),
+            'output' => array(
+                'Korn' => array(
+                    'capacity' => 5000,
+                    'factor' => 0.9,
+                    'fillType' => 'korn',
+                    'palettPlaces' => 999,
+                    'showInStorage' => false
+                )
+            )
+        ),
+        'FabrikScript_Lager_Papier' => array(
             'locationType' => 'FabrikScript',
             'ProdPerHour' => 50000000,
             'position' => '-887.075 0 -475.602',
             'showInProduction' => false,
-            'input' => array (
-                'palettepapier' => array (
+            'input' => array(
+                'palettepapier' => array(
                     'capacity' => 340000,
                     'factor' => 1,
                     'fillTypes' => 'papier',
                     'showInStorage' => true
                 )
             ),
-            'output' => array (
-                'palettepapier' => array (
+            'output' => array(
+                'palettepapier' => array(
                     'capacity' => 5000,
                     'factor' => 1,
                     'fillType' => 'papier',
@@ -700,21 +702,21 @@ $mapconfig = array_merge ( $mapconfig, array (
                 )
             )
         ),
-        'FabrikScript_Lager_Karton' => array (
+        'FabrikScript_Lager_Karton' => array(
             'locationType' => 'FabrikScript',
             'ProdPerHour' => 50000000,
             'position' => '-887.075 0 -475.602',
             'showInProduction' => false,
-            'input' => array (
-                'palette_karton' => array (
+            'input' => array(
+                'palette_karton' => array(
                     'capacity' => 330000,
                     'factor' => 1,
                     'fillTypes' => 'karton',
                     'showInStorage' => true
                 )
             ),
-            'output' => array (
-                'palette_karton' => array (
+            'output' => array(
+                'palette_karton' => array(
                     'capacity' => 5000,
                     'factor' => 1,
                     'fillType' => 'karton',
@@ -723,21 +725,21 @@ $mapconfig = array_merge ( $mapconfig, array (
                 )
             )
         ),
-        'FabrikScript_Lager_Leerpaletten' => array (
+        'FabrikScript_Lager_Leerpaletten' => array(
             'locationType' => 'FabrikScript',
             'ProdPerHour' => 14400001,
             'position' => '-887.075 0 -475.602',
             'showInProduction' => false,
-            'input' => array (
-                'emptypallet' => array (
+            'input' => array(
+                'emptypallet' => array(
                     'capacity' => 335000,
                     'factor' => 1,
                     'fillTypes' => 'emptypallet',
                     'showInStorage' => true
                 )
             ),
-            'output' => array (
-                'emptypallet' => array (
+            'output' => array(
+                'emptypallet' => array(
                     'capacity' => 5000,
                     'factor' => 1,
                     'fillType' => 'emptypallet',
@@ -746,21 +748,21 @@ $mapconfig = array_merge ( $mapconfig, array (
                 )
             )
         ),
-        'FabrikScript_Lager_Pellets' => array (
+        'FabrikScript_Lager_Pellets' => array(
             'locationType' => 'FabrikScript',
             'ProdPerHour' => 14400001,
             'position' => '-887.075 0 -475.602',
             'showInProduction' => false,
-            'input' => array (
-                'Pelletspalette' => array (
+            'input' => array(
+                'Pelletspalette' => array(
                     'capacity' => 355000,
                     'factor' => 1,
                     'fillTypes' => 'pellets',
                     'showInStorage' => true
                 )
             ),
-            'output' => array (
-                'Pelletspalette' => array (
+            'output' => array(
+                'Pelletspalette' => array(
                     'capacity' => 5000,
                     'factor' => 1,
                     'fillType' => 'pellets',
@@ -769,21 +771,21 @@ $mapconfig = array_merge ( $mapconfig, array (
                 )
             )
         ),
-        'FabrikScript_Lager_Zucker' => array (
+        'FabrikScript_Lager_Zucker' => array(
             'locationType' => 'FabrikScript',
             'ProdPerHour' => 14400001,
             'position' => '-932 0 -596',
             'showInProduction' => false,
-            'input' => array (
-                'zuckerpalette' => array (
+            'input' => array(
+                'zuckerpalette' => array(
                     'capacity' => 355000,
                     'factor' => 1,
                     'fillTypes' => 'zucker',
                     'showInStorage' => true
                 )
             ),
-            'output' => array (
-                'zuckerpalette' => array (
+            'output' => array(
+                'zuckerpalette' => array(
                     'capacity' => 5000,
                     'factor' => 1,
                     'fillType' => 'zucker',
@@ -792,21 +794,21 @@ $mapconfig = array_merge ( $mapconfig, array (
                 )
             )
         ),
-        'FabrikScript_Lager_Mehl' => array (
+        'FabrikScript_Lager_Mehl' => array(
             'locationType' => 'FabrikScript',
             'ProdPerHour' => 14400001,
             'position' => '-932 0 -596',
             'showInProduction' => false,
-            'input' => array (
-                'mehlpalette' => array (
+            'input' => array(
+                'mehlpalette' => array(
                     'capacity' => 355000,
                     'factor' => 1,
                     'fillTypes' => 'mehl',
                     'showInStorage' => true
                 )
             ),
-            'output' => array (
-                'mehlpalette' => array (
+            'output' => array(
+                'mehlpalette' => array(
                     'capacity' => 5000,
                     'factor' => 1,
                     'fillType' => 'mehl',
@@ -815,21 +817,21 @@ $mapconfig = array_merge ( $mapconfig, array (
                 )
             )
         ),
-        'FabrikScript_Lager_Sahne' => array (
+        'FabrikScript_Lager_Sahne' => array(
             'locationType' => 'FabrikScript',
             'ProdPerHour' => 14400001,
             'position' => '-932 0 -596',
             'showInProduction' => false,
-            'input' => array (
-                'palettesahne' => array (
+            'input' => array(
+                'palettesahne' => array(
                     'capacity' => 625000,
                     'factor' => 1,
                     'fillTypes' => 'sahne',
                     'showInStorage' => true
                 )
             ),
-            'output' => array (
-                'palettesahne' => array (
+            'output' => array(
+                'palettesahne' => array(
                     'capacity' => 5000,
                     'factor' => 1,
                     'fillType' => 'sahne',
@@ -838,21 +840,21 @@ $mapconfig = array_merge ( $mapconfig, array (
                 )
             )
         ),
-        'FabrikScript_Lager_Brot' => array (
+        'FabrikScript_Lager_Brot' => array(
             'locationType' => 'FabrikScript',
             'ProdPerHour' => 14400001,
             'position' => '-932 0 -596',
             'showInProduction' => false,
-            'input' => array (
-                'brotpalette' => array (
+            'input' => array(
+                'brotpalette' => array(
                     'capacity' => 480000,
                     'factor' => 1,
                     'fillTypes' => 'brot',
                     'showInStorage' => true
                 )
             ),
-            'output' => array (
-                'brotpalette' => array (
+            'output' => array(
+                'brotpalette' => array(
                     'capacity' => 5000,
                     'factor' => 1,
                     'fillType' => 'brot',
@@ -861,21 +863,21 @@ $mapconfig = array_merge ( $mapconfig, array (
                 )
             )
         ),
-        'FabrikScript_Lager_Milch' => array (
+        'FabrikScript_Lager_Milch' => array(
             'locationType' => 'FabrikScript',
             'ProdPerHour' => 14400001,
             'position' => '-887 0 -596',
             'showInProduction' => false,
-            'input' => array (
-                'palettemilch' => array (
+            'input' => array(
+                'palettemilch' => array(
                     'capacity' => 625000,
                     'factor' => 1,
                     'fillTypes' => 'milch',
                     'showInStorage' => true
                 )
             ),
-            'output' => array (
-                'palettemilch' => array (
+            'output' => array(
+                'palettemilch' => array(
                     'capacity' => 5000,
                     'factor' => 1,
                     'fillType' => 'milch',
@@ -884,21 +886,21 @@ $mapconfig = array_merge ( $mapconfig, array (
                 )
             )
         ),
-        'FabrikScript_Lager_Butter' => array (
+        'FabrikScript_Lager_Butter' => array(
             'locationType' => 'FabrikScript',
             'ProdPerHour' => 14400001,
             'position' => '-887 0 -596',
             'showInProduction' => false,
-            'input' => array (
-                'palettebutter' => array (
+            'input' => array(
+                'palettebutter' => array(
                     'capacity' => 625000,
                     'factor' => 1,
                     'fillTypes' => 'butter',
                     'showInStorage' => true
                 )
             ),
-            'output' => array (
-                'palettebutter' => array (
+            'output' => array(
+                'palettebutter' => array(
                     'capacity' => 5000,
                     'factor' => 1,
                     'fillType' => 'butter',
@@ -907,21 +909,21 @@ $mapconfig = array_merge ( $mapconfig, array (
                 )
             )
         ),
-        'FabrikScript_Lager_Quark' => array (
+        'FabrikScript_Lager_Quark' => array(
             'locationType' => 'FabrikScript',
             'ProdPerHour' => 14400001,
             'position' => '-887 0 -596',
             'showInProduction' => false,
-            'input' => array (
-                'palettequark' => array (
+            'input' => array(
+                'palettequark' => array(
                     'capacity' => 625000,
                     'factor' => 1,
                     'fillTypes' => 'quark',
                     'showInStorage' => true
                 )
             ),
-            'output' => array (
-                'palettequark' => array (
+            'output' => array(
+                'palettequark' => array(
                     'capacity' => 5000,
                     'factor' => 1,
                     'fillType' => 'quark',
@@ -930,21 +932,21 @@ $mapconfig = array_merge ( $mapconfig, array (
                 )
             )
         ),
-        'FabrikScript_Lager_Yogurt' => array (
+        'FabrikScript_Lager_Yogurt' => array(
             'locationType' => 'FabrikScript',
             'ProdPerHour' => 14400001,
             'position' => '-887 0 -596',
             'showInProduction' => false,
-            'input' => array (
-                'paletteyogurt' => array (
+            'input' => array(
+                'paletteyogurt' => array(
                     'capacity' => 625000,
                     'factor' => 1,
                     'fillTypes' => 'yogurt',
                     'showInStorage' => true
                 )
             ),
-            'output' => array (
-                'paletteyogurt' => array (
+            'output' => array(
+                'paletteyogurt' => array(
                     'capacity' => 5000,
                     'factor' => 1,
                     'fillType' => 'yogurt',
@@ -953,21 +955,21 @@ $mapconfig = array_merge ( $mapconfig, array (
                 )
             )
         ),
-        'FabrikScript_Lager_kartoffelsack' => array (
+        'FabrikScript_Lager_kartoffelsack' => array(
             'locationType' => 'FabrikScript',
             'ProdPerHour' => 14400001,
             'position' => '-932 0 -676',
             'showInProduction' => false,
-            'input' => array (
-                'palettekartoffelsack' => array (
+            'input' => array(
+                'palettekartoffelsack' => array(
                     'capacity' => 355000,
                     'factor' => 1,
                     'fillTypes' => 'kartoffelsack',
                     'showInStorage' => true
                 )
             ),
-            'output' => array (
-                'palettekartoffelsack' => array (
+            'output' => array(
+                'palettekartoffelsack' => array(
                     'capacity' => 5000,
                     'factor' => 1,
                     'fillType' => 'kartoffelsack',
@@ -976,21 +978,21 @@ $mapconfig = array_merge ( $mapconfig, array (
                 )
             )
         ),
-        'FabrikScript_Lager_Chips' => array (
+        'FabrikScript_Lager_Chips' => array(
             'locationType' => 'FabrikScript',
             'ProdPerHour' => 14400001,
             'position' => '-932 0 -676',
             'showInProduction' => false,
-            'input' => array (
-                'palettechips' => array (
+            'input' => array(
+                'palettechips' => array(
                     'capacity' => 625000,
                     'factor' => 1,
                     'fillTypes' => 'chips',
                     'showInStorage' => true
                 )
             ),
-            'output' => array (
-                'palettechips' => array (
+            'output' => array(
+                'palettechips' => array(
                     'capacity' => 5000,
                     'factor' => 1,
                     'fillType' => 'chips',
@@ -999,21 +1001,21 @@ $mapconfig = array_merge ( $mapconfig, array (
                 )
             )
         ),
-        'FabrikScript_Lager_pommes' => array (
+        'FabrikScript_Lager_pommes' => array(
             'locationType' => 'FabrikScript',
             'ProdPerHour' => 14400001,
             'position' => '-932 0 -676',
             'showInProduction' => false,
-            'input' => array (
-                'palettepommes' => array (
+            'input' => array(
+                'palettepommes' => array(
                     'capacity' => 625000,
                     'factor' => 1,
                     'fillTypes' => 'pommes',
                     'showInStorage' => true
                 )
             ),
-            'output' => array (
-                'palettepommes' => array (
+            'output' => array(
+                'palettepommes' => array(
                     'capacity' => 5000,
                     'factor' => 1,
                     'fillType' => 'pommes',
@@ -1022,21 +1024,21 @@ $mapconfig = array_merge ( $mapconfig, array (
                 )
             )
         ),
-        'FabrikScript_Lager_washedPotato' => array (
+        'FabrikScript_Lager_washedPotato' => array(
             'locationType' => 'FabrikScript',
             'ProdPerHour' => 14400001,
             'position' => '-932 0 -676',
             'showInProduction' => false,
-            'input' => array (
-                'washedPotato' => array (
+            'input' => array(
+                'washedPotato' => array(
                     'capacity' => 660000,
                     'factor' => 1,
                     'fillTypes' => 'washedPotato',
                     'showInStorage' => true
                 )
             ),
-            'output' => array (
-                'washedPotato' => array (
+            'output' => array(
+                'washedPotato' => array(
                     'capacity' => 5000,
                     'factor' => 1,
                     'fillType' => 'washedPotato',
@@ -1045,21 +1047,21 @@ $mapconfig = array_merge ( $mapconfig, array (
                 )
             )
         ),
-        'FabrikScript_Lager_Fisch' => array (
+        'FabrikScript_Lager_Fisch' => array(
             'locationType' => 'FabrikScript',
             'ProdPerHour' => 14400001,
             'position' => '-887 0 -676',
             'showInProduction' => false,
-            'input' => array (
-                'Fischpalette' => array (
+            'input' => array(
+                'Fischpalette' => array(
                     'capacity' => 625000,
                     'factor' => 1,
                     'fillTypes' => 'fisch',
                     'showInStorage' => true
                 )
             ),
-            'output' => array (
-                'Fischpalette' => array (
+            'output' => array(
+                'Fischpalette' => array(
                     'capacity' => 5000,
                     'factor' => 1,
                     'fillType' => 'fisch',
@@ -1068,21 +1070,21 @@ $mapconfig = array_merge ( $mapconfig, array (
                 )
             )
         ),
-        'FabrikScript_Lager_Krabben' => array (
+        'FabrikScript_Lager_Krabben' => array(
             'locationType' => 'FabrikScript',
             'ProdPerHour' => 14400001,
             'position' => '-887 0 -676',
             'showInProduction' => false,
-            'input' => array (
-                'Krabbenpalette' => array (
+            'input' => array(
+                'Krabbenpalette' => array(
                     'capacity' => 625000,
                     'factor' => 1,
                     'fillTypes' => 'krabben',
                     'showInStorage' => true
                 )
             ),
-            'output' => array (
-                'Krabbenpalette' => array (
+            'output' => array(
+                'Krabbenpalette' => array(
                     'capacity' => 5000,
                     'factor' => 1,
                     'fillType' => 'krabben',
@@ -1090,22 +1092,22 @@ $mapconfig = array_merge ( $mapconfig, array (
                     'showInStorage' => false
                 )
             )
-		),
-        'FabrikScript_Lager_Wurst' => array (
+        ),
+        'FabrikScript_Lager_Wurst' => array(
             'locationType' => 'FabrikScript',
             'ProdPerHour' => 14400001,
             'position' => '-887 0 -676',
             'showInProduction' => false,
-            'input' => array (
-                'Wurst' => array (
+            'input' => array(
+                'Wurst' => array(
                     'capacity' => 625000,
                     'factor' => 1,
                     'fillTypes' => 'sausage',
                     'showInStorage' => true
                 )
             ),
-            'output' => array (
-                'Wurst' => array (
+            'output' => array(
+                'Wurst' => array(
                     'capacity' => 5000,
                     'factor' => 1,
                     'fillType' => 'sausage',
@@ -1114,21 +1116,21 @@ $mapconfig = array_merge ( $mapconfig, array (
                 )
             )
         ),
-        'FabrikScript_Lager_Fleisch' => array (
+        'FabrikScript_Lager_Fleisch' => array(
             'locationType' => 'FabrikScript',
             'ProdPerHour' => 14400001,
             'position' => '-887 0 -676',
             'showInProduction' => false,
-            'input' => array (
-                'Fleisch' => array (
+            'input' => array(
+                'Fleisch' => array(
                     'capacity' => 625000,
                     'factor' => 1,
                     'fillTypes' => 'meat',
                     'showInStorage' => true
                 )
             ),
-            'output' => array (
-                'Fleisch' => array (
+            'output' => array(
+                'Fleisch' => array(
                     'capacity' => 5000,
                     'factor' => 1,
                     'fillType' => 'meat',
@@ -1137,21 +1139,21 @@ $mapconfig = array_merge ( $mapconfig, array (
                 )
             )
         ),
-        'FabrikScript_Lager_Blumenkohl' => array (
+        'FabrikScript_Lager_Blumenkohl' => array(
             'locationType' => 'FabrikScript',
             'ProdPerHour' => 14400001,
             'position' => '-932 0 -729',
             'showInProduction' => false,
-            'input' => array (
-                'Blumenkohl' => array (
+            'input' => array(
+                'Blumenkohl' => array(
                     'capacity' => 500000,
                     'factor' => 1,
                     'fillTypes' => 'blumenkohl',
                     'showInStorage' => true
                 )
             ),
-            'output' => array (
-                'Blumenkohl' => array (
+            'output' => array(
+                'Blumenkohl' => array(
                     'capacity' => 5000,
                     'factor' => 1,
                     'fillType' => 'blumenkohl',
@@ -1160,21 +1162,21 @@ $mapconfig = array_merge ( $mapconfig, array (
                 )
             )
         ),
-        'FabrikScript_Lager_Tomaten' => array (
+        'FabrikScript_Lager_Tomaten' => array(
             'locationType' => 'FabrikScript',
             'ProdPerHour' => 14400001,
             'position' => '-932 0 -729',
             'showInProduction' => false,
-            'input' => array (
-                'Tomatenpalette' => array (
+            'input' => array(
+                'Tomatenpalette' => array(
                     'capacity' => 500000,
                     'factor' => 1,
                     'fillTypes' => 'tomaten',
                     'showInStorage' => true
                 )
             ),
-            'output' => array (
-                'Tomatenpalette' => array (
+            'output' => array(
+                'Tomatenpalette' => array(
                     'capacity' => 5000,
                     'factor' => 1,
                     'fillType' => 'tomaten',
@@ -1183,21 +1185,21 @@ $mapconfig = array_merge ( $mapconfig, array (
                 )
             )
         ),
-        'FabrikScript_Lager_Salat' => array (
+        'FabrikScript_Lager_Salat' => array(
             'locationType' => 'FabrikScript',
             'ProdPerHour' => 14400001,
             'position' => '-932 0 -729',
             'showInProduction' => false,
-            'input' => array (
-                'Salatpalette' => array (
+            'input' => array(
+                'Salatpalette' => array(
                     'capacity' => 500000,
                     'factor' => 1,
                     'fillTypes' => 'salat',
                     'showInStorage' => true
                 )
             ),
-            'output' => array (
-                'Salatpalette' => array (
+            'output' => array(
+                'Salatpalette' => array(
                     'capacity' => 5000,
                     'factor' => 1,
                     'fillType' => 'salat',
@@ -1206,21 +1208,21 @@ $mapconfig = array_merge ( $mapconfig, array (
                 )
             )
         ),
-        'FabrikScript_Lager_Rotkohl' => array (
+        'FabrikScript_Lager_Rotkohl' => array(
             'locationType' => 'FabrikScript',
             'ProdPerHour' => 14400001,
             'position' => '-932 0 -729',
             'showInProduction' => false,
-            'input' => array (
-                'Rotkohlpalette' => array (
+            'input' => array(
+                'Rotkohlpalette' => array(
                     'capacity' => 500000,
                     'factor' => 1,
                     'fillTypes' => 'rotkohl',
                     'showInStorage' => true
                 )
             ),
-            'output' => array (
-                'Rotkohlpalette' => array (
+            'output' => array(
+                'Rotkohlpalette' => array(
                     'capacity' => 5000,
                     'factor' => 1,
                     'fillType' => 'rotkohl',
@@ -1229,21 +1231,21 @@ $mapconfig = array_merge ( $mapconfig, array (
                 )
             )
         ),
-        'FabrikScript_Lager_Backwaren' => array (
+        'FabrikScript_Lager_Backwaren' => array(
             'locationType' => 'FabrikScript',
             'ProdPerHour' => 14400001,
             'position' => '-887 0 -729',
             'showInProduction' => false,
-            'input' => array (
-                'Backwaren' => array (
+            'input' => array(
+                'Backwaren' => array(
                     'capacity' => 625000,
                     'factor' => 1,
                     'fillTypes' => 'backwaren',
                     'showInStorage' => true
                 )
             ),
-            'output' => array (
-                'Backwaren' => array (
+            'output' => array(
+                'Backwaren' => array(
                     'capacity' => 5000,
                     'factor' => 1,
                     'fillType' => 'backwaren',
@@ -1252,21 +1254,21 @@ $mapconfig = array_merge ( $mapconfig, array (
                 )
             )
         ),
-        'FabrikScript_Lager_Kuchen' => array (
+        'FabrikScript_Lager_Kuchen' => array(
             'locationType' => 'FabrikScript',
             'ProdPerHour' => 14400001,
             'position' => '-887 0 -729',
             'showInProduction' => false,
-            'input' => array (
-                'Kuchen' => array (
+            'input' => array(
+                'Kuchen' => array(
                     'capacity' => 625000,
                     'factor' => 1,
                     'fillTypes' => 'kuchen',
                     'showInStorage' => true
                 )
             ),
-            'output' => array (
-                'Kuchen' => array (
+            'output' => array(
+                'Kuchen' => array(
                     'capacity' => 5000,
                     'factor' => 1,
                     'fillType' => 'kuchen',
@@ -1275,21 +1277,21 @@ $mapconfig = array_merge ( $mapconfig, array (
                 )
             )
         ),
-        'FabrikScript_Lager_oel' => array (
+        'FabrikScript_Lager_oel' => array(
             'locationType' => 'FabrikScript',
             'ProdPerHour' => 14400001,
             'position' => '-887 0 -729',
             'showInProduction' => false,
-            'input' => array (
-                'palettespeiseoel' => array (
+            'input' => array(
+                'palettespeiseoel' => array(
                     'capacity' => 625000,
                     'factor' => 1,
                     'fillTypes' => 'oel',
                     'showInStorage' => true
                 )
             ),
-            'output' => array (
-                'palettespeiseoel' => array (
+            'output' => array(
+                'palettespeiseoel' => array(
                     'capacity' => 5000,
                     'factor' => 1,
                     'fillType' => 'oel',
@@ -1299,33 +1301,33 @@ $mapconfig = array_merge ( $mapconfig, array (
             )
         ),
         // Zellstoff, Brückenbaustelle, Fischerei, Zuckerfabrik, Kürbisfeld
-        'FabrikScript_Zellstoff_Fabrik' => array (
+        'FabrikScript_Zellstoff_Fabrik' => array(
             'locationType' => 'FabrikScript',
             'ProdPerHour' => 12500,
             'position' => '-920.242 0 -829.986',
             'showInProduction' => true,
-            'input' => array (
-                'Hackschnitzel' => array (
+            'input' => array(
+                'Hackschnitzel' => array(
                     'capacity' => 500000,
                     'factor' => 0.5,
                     'fillTypes' => 'woodChips',
                     'showInStorage' => false
                 ),
-                'Tip_RSwater' => array (
+                'Tip_RSwater' => array(
                     'capacity' => 200000,
                     'factor' => 0.3,
                     'fillTypes' => 'water',
                     'showInStorage' => false
                 ),
-                'emptypallet' => array (
+                'emptypallet' => array(
                     'capacity' => 150000,
                     'factor' => 0.25,
                     'fillTypes' => 'emptypallet',
                     'showInStorage' => false
                 )
             ),
-            'output' => array (
-                'palettepapier' => array (
+            'output' => array(
+                'palettepapier' => array(
                     'capacity' => 5000,
                     'factor' => 1,
                     'fillType' => 'papier',
@@ -1333,7 +1335,7 @@ $mapconfig = array_merge ( $mapconfig, array (
                     'palettPlaces' => 22,
                     'showInStorage' => false
                 ),
-                'palette_karton' => array (
+                'palette_karton' => array(
                     'capacity' => 5000,
                     'factor' => 1,
                     'fillType' => 'karton',
@@ -1343,27 +1345,27 @@ $mapconfig = array_merge ( $mapconfig, array (
                 )
             )
         ),
-        'FabrikScript_Zuckerfabrik' => array (
+        'FabrikScript_Zuckerfabrik' => array(
             'locationType' => 'FabrikScript',
             'ProdPerHour' => 15000,
             'position' => '-794.264 0 -927.494',
             'showInProduction' => true,
-            'input' => array (
-                'Tip_RSzucker' => array (
+            'input' => array(
+                'Tip_RSzucker' => array(
                     'capacity' => 2000000,
                     'factor' => 1,
                     'fillTypes' => 'sugarBeet',
                     'showInStorage' => false
                 ),
-                'Tip_RSwater' => array (
+                'Tip_RSwater' => array(
                     'capacity' => 500000,
                     'factor' => 0.8,
                     'fillTypes' => 'water',
                     'showInStorage' => false
                 )
             ),
-            'output' => array (
-                'zuckerpalette' => array (
+            'output' => array(
+                'zuckerpalette' => array(
                     'capacity' => 5000,
                     'factor' => 0.5,
                     'fillType' => 'zucker',
@@ -1373,27 +1375,27 @@ $mapconfig = array_merge ( $mapconfig, array (
                 )
             )
         ),
-        'FabrikScript_Fischerei' => array (
+        'FabrikScript_Fischerei' => array(
             'locationType' => 'FabrikScript',
             'ProdPerHour' => 1000,
             'position' => '-963 0 -963',
             'showInProduction' => true,
-            'input' => array (
-                'emptypallet' => array (
+            'input' => array(
+                'emptypallet' => array(
                     'capacity' => 120000,
                     'factor' => 0.1,
                     'fillTypes' => 'emptypallet',
                     'showInStorage' => false
                 ),
-                'cm_inputFuel' => array (
+                'cm_inputFuel' => array(
                     'capacity' => 200000,
                     'factor' => 0.75,
                     'fillTypes' => 'fuel',
                     'showInStorage' => false
                 )
             ),
-            'output' => array (
-                'Krabben' => array (
+            'output' => array(
+                'Krabben' => array(
                     'capacity' => 5000,
                     'factor' => 1,
                     'fillType' => 'krabben',
@@ -1401,7 +1403,7 @@ $mapconfig = array_merge ( $mapconfig, array (
                     'palettPlaces' => 21,
                     'showInStorage' => false
                 ),
-                'Fisch' => array (
+                'Fisch' => array(
                     'capacity' => 5000,
                     'factor' => 1,
                     'fillType' => 'fisch',
@@ -1411,73 +1413,73 @@ $mapconfig = array_merge ( $mapconfig, array (
                 )
             )
         ),
-        'FabrikScript_brueckenbau' => array (
+        'FabrikScript_brueckenbau' => array(
             'locationType' => 'FabrikScript',
             'ProdPerHour' => 5000,
             'position' => '-1006.191 0 -777.625',
             'showInProduction' => true,
-            'input' => array (
-                'Kies' => array (
+            'input' => array(
+                'Kies' => array(
                     'capacity' => 200000,
                     'factor' => 1,
                     'fillTypes' => 'gravel',
                     'showInStorage' => false
                 ),
-                'Stahl' => array (
+                'Stahl' => array(
                     'capacity' => 100000,
                     'factor' => 0.5,
                     'fillTypes' => 'stahl',
                     'showInStorage' => false
                 ),
-                'Sand' => array (
+                'Sand' => array(
                     'capacity' => 200000,
                     'factor' => 1,
                     'fillTypes' => 'sand',
                     'showInStorage' => false
                 ),
-                'Zement' => array (
+                'Zement' => array(
                     'capacity' => 100000,
                     'factor' => 0.5,
                     'fillTypes' => 'cement',
                     'showInStorage' => false
                 )
             ),
-            'output' => array (
-                'Brueckenbau' => array (
+            'output' => array(
+                'Brueckenbau' => array(
                     'capacity' => 200000,
                     'factor' => 1,
                     'fillType' => 'sand',
                     'showInStorage' => true
                 )
             )
-        ), 
-        'FabrikScript_Kuerbisfeld' => array (
+        ),
+        'FabrikScript_Kuerbisfeld' => array(
             'locationType' => 'FabrikScript',
             'ProdPerHour' => 1000,
             'position' => '-1186.536 0 -886.479',
             'showInProduction' => true,
-            'input' => array (
-                'Stroh' => array (
+            'input' => array(
+                'Stroh' => array(
                     'capacity' => 200000,
                     'factor' => 0.25,
                     'fillTypes' => 'straw',
                     'showInStorage' => false
                 ),
-                'compost' => array (
+                'compost' => array(
                     'capacity' => 200000,
                     'factor' => 0.5,
                     'fillTypes' => 'compost',
                     'showInStorage' => false
                 ),
-                'emptypallet' => array (
+                'emptypallet' => array(
                     'capacity' => 100000,
                     'factor' => 0.15,
                     'fillTypes' => 'emptypallet',
                     'showInStorage' => false
                 )
             ),
-            'output' => array (
-                'kuerbis' => array (
+            'output' => array(
+                'kuerbis' => array(
                     'capacity' => 5000,
                     'factor' => 1,
                     'fillType' => 'kuerbis',
@@ -1488,57 +1490,57 @@ $mapconfig = array_merge ( $mapconfig, array (
             )
         ),
         // Kuchen, Mehlfabrik, Metzgerei
-        'FabrikScript_Backerei_Kuchen' => array (
+        'FabrikScript_Backerei_Kuchen' => array(
             'locationType' => 'FabrikScript',
             'ProdPerHour' => 5000,
             'position' => '-924.299 0 -1.427',
             'showInProduction' => true,
-            'input' => array (
-                'emptypallet' => array (
+            'input' => array(
+                'emptypallet' => array(
                     'capacity' => 120000,
                     'factor' => 0.12,
                     'fillTypes' => 'emptypallet',
                     'showInStorage' => false
                 ),
-                'palette_karton' => array (
+                'palette_karton' => array(
                     'capacity' => 120000,
                     'factor' => 0.12,
                     'fillTypes' => 'karton',
                     'showInStorage' => false
                 ),
-                'Tip_mehl' => array (
+                'Tip_mehl' => array(
                     'capacity' => 120000,
                     'factor' => 0.3,
                     'fillTypes' => 'mehl',
                     'showInStorage' => false
                 ),
-                'Obstpalette' => array (
+                'Obstpalette' => array(
                     'capacity' => 120000,
                     'factor' => 0.3,
                     'fillTypes' => 'apfel kirsche pflaume birne',
                     'showInStorage' => false
                 ),
-                'Zuckerpalette' => array (
+                'Zuckerpalette' => array(
                     'capacity' => 120000,
                     'factor' => 0.3,
                     'fillTypes' => 'zucker',
                     'showInStorage' => false
                 ),
-                'Quarkpalette' => array (
+                'Quarkpalette' => array(
                     'capacity' => 120000,
                     'factor' => 0.2,
                     'fillTypes' => 'quark',
                     'showInStorage' => false
                 ),
-                'Sahnepalette' => array (
+                'Sahnepalette' => array(
                     'capacity' => 120000,
                     'factor' => 0.15,
                     'fillTypes' => 'sahne',
                     'showInStorage' => false
                 )
             ),
-            'output' => array (
-                'Kuchen' => array (
+            'output' => array(
+                'Kuchen' => array(
                     'capacity' => 5000,
                     'factor' => 1,
                     'fillType' => 'kuchen',
@@ -1548,33 +1550,33 @@ $mapconfig = array_merge ( $mapconfig, array (
                 )
             )
         ),
-        'FabrikScript_Backerei_Brot' => array (
+        'FabrikScript_Backerei_Brot' => array(
             'locationType' => 'FabrikScript',
             'ProdPerHour' => 5000,
             'position' => '-924.299 0 -1.427',
             'showInProduction' => true,
-            'input' => array (
-                'emptypallet' => array (
+            'input' => array(
+                'emptypallet' => array(
                     'capacity' => 120000,
                     'factor' => 0.15,
                     'fillTypes' => 'emptypallet',
                     'showInStorage' => false
                 ),
-                'Tip_mehl' => array (
+                'Tip_mehl' => array(
                     'capacity' => 120000,
                     'factor' => 0.8,
                     'fillTypes' => 'mehl',
                     'showInStorage' => false
                 ),
-                'Tip_RSwater' => array (
+                'Tip_RSwater' => array(
                     'capacity' => 200000,
                     'factor' => 0.9,
                     'fillTypes' => 'water',
                     'showInStorage' => false
                 )
             ),
-            'output' => array (
-                'brotpalette' => array (
+            'output' => array(
+                'brotpalette' => array(
                     'capacity' => 5000,
                     'factor' => 1,
                     'fillType' => 'brot',
@@ -1584,51 +1586,51 @@ $mapconfig = array_merge ( $mapconfig, array (
                 )
             )
         ),
-        'FabrikScript_Backerei_Backwaren' => array (
+        'FabrikScript_Backerei_Backwaren' => array(
             'locationType' => 'FabrikScript',
             'ProdPerHour' => 5000,
             'position' => '-924.299 0 -1.427',
             'showInProduction' => true,
-            'input' => array (
-                'emptypallet' => array (
+            'input' => array(
+                'emptypallet' => array(
                     'capacity' => 120000,
                     'factor' => 0.12,
                     'fillTypes' => 'emptypallet',
                     'showInStorage' => false
                 ),
-                'palette_karton' => array (
+                'palette_karton' => array(
                     'capacity' => 120000,
                     'factor' => 0.12,
                     'fillTypes' => 'karton',
                     'showInStorage' => false
                 ),
-                'Tip_mehl' => array (
+                'Tip_mehl' => array(
                     'capacity' => 120000,
                     'factor' => 0.3,
                     'fillTypes' => 'mehl',
                     'showInStorage' => false
                 ),
-                'zuckerpalette' => array (
+                'zuckerpalette' => array(
                     'capacity' => 120000,
                     'factor' => 0.3,
                     'fillTypes' => 'zucker',
                     'showInStorage' => false
                 ),
-                'Milchpalette' => array (
+                'Milchpalette' => array(
                     'capacity' => 120000,
                     'factor' => 0.2,
                     'fillTypes' => 'milch',
                     'showInStorage' => false
                 ),
-                'Butterpalette' => array (
+                'Butterpalette' => array(
                     'capacity' => 120000,
                     'factor' => 0.15,
                     'fillTypes' => 'butter',
                     'showInStorage' => false
                 )
             ),
-            'output' => array (
-                'Backwaren' => array (
+            'output' => array(
+                'Backwaren' => array(
                     'capacity' => 5000,
                     'factor' => 1,
                     'fillType' => 'backwaren',
@@ -1638,21 +1640,21 @@ $mapconfig = array_merge ( $mapconfig, array (
                 )
             )
         ),
-        'FabrikScript_WeizenMehlfabrik' => array (
+        'FabrikScript_WeizenMehlfabrik' => array(
             'locationType' => 'FabrikScript',
             'ProdPerHour' => 5000,
             'position' => '-844.762 0 -80.583',
             'showInProduction' => true,
-            'input' => array (
-                'Tip_RSwheat' => array (
+            'input' => array(
+                'Tip_RSwheat' => array(
                     'capacity' => 500000,
                     'factor' => 1,
                     'fillTypes' => 'wheat',
                     'showInStorage' => false
                 )
             ),
-            'output' => array (
-                'mehlpalette' => array (
+            'output' => array(
+                'mehlpalette' => array(
                     'capacity' => 5000,
                     'factor' => 0.5,
                     'fillType' => 'mehl',
@@ -1662,21 +1664,21 @@ $mapconfig = array_merge ( $mapconfig, array (
                 )
             )
         ),
-        'FabrikScript_GersteMehlfabrik' => array (
+        'FabrikScript_GersteMehlfabrik' => array(
             'locationType' => 'FabrikScript',
             'ProdPerHour' => 5000,
             'position' => '-844.762 0 -80.583',
             'showInProduction' => true,
-            'input' => array (
-                'Tip_RSbarley' => array (
+            'input' => array(
+                'Tip_RSbarley' => array(
                     'capacity' => 500000,
                     'factor' => 1,
                     'fillTypes' => 'barley',
                     'showInStorage' => false
                 )
             ),
-            'output' => array (
-                'mehlpalette' => array (
+            'output' => array(
+                'mehlpalette' => array(
                     'capacity' => 5000,
                     'factor' => 0.5,
                     'fillType' => 'mehl',
@@ -1686,21 +1688,21 @@ $mapconfig = array_merge ( $mapconfig, array (
                 )
             )
         ),
-        'FabrikScript_RoggenMehlfabrik' => array (
+        'FabrikScript_RoggenMehlfabrik' => array(
             'locationType' => 'FabrikScript',
             'ProdPerHour' => 5000,
             'position' => '-844.762 0 -80.583',
             'showInProduction' => true,
-            'input' => array (
-                'Tip_RSrye' => array (
+            'input' => array(
+                'Tip_RSrye' => array(
                     'capacity' => 500000,
                     'factor' => 1,
                     'fillTypes' => 'rye',
                     'showInStorage' => false
                 )
             ),
-            'output' => array (
-                'mehlpalette' => array (
+            'output' => array(
+                'mehlpalette' => array(
                     'capacity' => 5000,
                     'factor' => 0.5,
                     'fillType' => 'mehl',
@@ -1710,33 +1712,33 @@ $mapconfig = array_merge ( $mapconfig, array (
                 )
             )
         ),
-        'FabrikScript_Schlachterei' => array (
+        'FabrikScript_Schlachterei' => array(
             'locationType' => 'FabrikScript',
             'ProdPerHour' => 50,
             'position' => '-597.573 0 -91.558',
             'showInProduction' => true,
-            'input' => array (
-                'Tier_Anlieferung' => array (
+            'input' => array(
+                'Tier_Anlieferung' => array(
                     'capacity' => 400,
                     'factor' => 0.4,
                     'fillTypes' => 'pig cow sheep',
                     'showInStorage' => false
                 ),
-                'emptypallet' => array (
+                'emptypallet' => array(
                     'capacity' => 260000,
                     'factor' => 3,
                     'fillTypes' => 'emptypallet',
                     'showInStorage' => false
                 ),
-                'palette_karton' => array (
+                'palette_karton' => array(
                     'capacity' => 170000,
                     'factor' => 3,
                     'fillTypes' => 'karton',
                     'showInStorage' => false
                 )
             ),
-            'output' => array (
-                'Wurst' => array (
+            'output' => array(
+                'Wurst' => array(
                     'capacity' => 5000,
                     'factor' => 200,
                     'fillType' => 'sausage',
@@ -1744,7 +1746,7 @@ $mapconfig = array_merge ( $mapconfig, array (
                     'palettPlaces' => 15,
                     'showInStorage' => false
                 ),
-                'Fleisch' => array (
+                'Fleisch' => array(
                     'capacity' => 5000,
                     'factor' => 200,
                     'fillType' => 'meat',
@@ -1755,39 +1757,39 @@ $mapconfig = array_merge ( $mapconfig, array (
             )
         ),
         // Brauerei, Raffinerie, Dieselproduktion
-        'FabrikScript_BrauereiKasten' => array (
+        'FabrikScript_BrauereiKasten' => array(
             'locationType' => 'FabrikScript',
             'ProdPerHour' => 5000,
             'position' => '-950.976 0 465.115',
             'showInProduction' => true,
-            'input' => array (
-                'Tip_RSbarley' => array (
+            'input' => array(
+                'Tip_RSbarley' => array(
                     'capacity' => 500000,
                     'factor' => 0.8,
                     'fillTypes' => 'barley',
                     'showInStorage' => false
                 ),
-                'hops' => array (
+                'hops' => array(
                     'capacity' => 500000,
                     'factor' => 0.8,
                     'fillTypes' => 'hops',
                     'showInStorage' => false
                 ),
-                'emptypallet' => array (
+                'emptypallet' => array(
                     'capacity' => 100000,
                     'factor' => 0.25,
                     'fillTypes' => 'emptypallet',
                     'showInStorage' => false
                 ),
-                'Tip_RSwater' => array (
+                'Tip_RSwater' => array(
                     'capacity' => 200000,
                     'factor' => 0.4,
                     'fillTypes' => 'water',
                     'showInStorage' => false
                 )
             ),
-            'output' => array (
-                'bierpalettekasten' => array (
+            'output' => array(
+                'bierpalettekasten' => array(
                     'capacity' => 5000,
                     'factor' => 0.5,
                     'fillType' => 'beer',
@@ -1797,39 +1799,39 @@ $mapconfig = array_merge ( $mapconfig, array (
                 )
             )
         ),
-        'FabrikScript_BrauereiFass' => array (
+        'FabrikScript_BrauereiFass' => array(
             'locationType' => 'FabrikScript',
             'ProdPerHour' => 5000,
             'position' => '-950.976 0 465.115',
             'showInProduction' => true,
-            'input' => array (
-                'Tip_RSwheat' => array (
+            'input' => array(
+                'Tip_RSwheat' => array(
                     'capacity' => 500000,
                     'factor' => 0.8,
                     'fillTypes' => 'wheat',
                     'showInStorage' => false
                 ),
-                'hops' => array (
+                'hops' => array(
                     'capacity' => 500000,
                     'factor' => 0.8,
                     'fillTypes' => 'hops',
                     'showInStorage' => false
                 ),
-                'emptypallet' => array (
+                'emptypallet' => array(
                     'capacity' => 100000,
                     'factor' => 0.25,
                     'fillTypes' => 'emptypallet',
                     'showInStorage' => false
                 ),
-                'Tip_RSwater' => array (
+                'Tip_RSwater' => array(
                     'capacity' => 200000,
                     'factor' => 0.4,
                     'fillTypes' => 'water',
                     'showInStorage' => false
                 )
             ),
-            'output' => array (
-                'bierpalettefass' => array (
+            'output' => array(
+                'bierpalettefass' => array(
                     'capacity' => 5000,
                     'factor' => 0.5,
                     'fillType' => 'beerf',
@@ -1839,39 +1841,39 @@ $mapconfig = array_merge ( $mapconfig, array (
                 )
             )
         ),
-        'FabrikScript_Speiseoel_Fabrik' => array (
+        'FabrikScript_Speiseoel_Fabrik' => array(
             'locationType' => 'FabrikScript',
             'ProdPerHour' => 7500,
             'position' => '-921.561 0 561.889',
             'showInProduction' => true,
-            'input' => array (
-                'Tip_RS' => array (
+            'input' => array(
+                'Tip_RS' => array(
                     'capacity' => 500000,
                     'factor' => 1,
                     'fillTypes' => 'rape sunflower',
                     'showInStorage' => false
                 ),
-                'emptypallet' => array (
+                'emptypallet' => array(
                     'capacity' => 120000,
                     'factor' => 0.15,
                     'fillTypes' => 'emptypallet',
                     'showInStorage' => false
                 ),
-                'palette_karton' => array (
+                'palette_karton' => array(
                     'capacity' => 100000,
                     'factor' => 0.15,
                     'fillTypes' => 'karton',
                     'showInStorage' => false
                 )
             ),
-            'output' => array (
-                'RS_compost' => array (
+            'output' => array(
+                'RS_compost' => array(
                     'capacity' => 500000,
                     'factor' => 0.3,
                     'fillType' => 'compost',
                     'showInStorage' => true
                 ),
-                'palettespeiseoel' => array (
+                'palettespeiseoel' => array(
                     'capacity' => 5000,
                     'factor' => 0.3,
                     'fillType' => 'oel',
@@ -1881,27 +1883,27 @@ $mapconfig = array_merge ( $mapconfig, array (
                 )
             )
         ),
-        'FabrikScript_Diesel_Raffinerie' => array (
+        'FabrikScript_Diesel_Raffinerie' => array(
             'locationType' => 'FabrikScript',
             'ProdPerHour' => 7500,
             'position' => '-921.561 0 561.889',
             'showInProduction' => true,
-            'input' => array (
-                'Tip_RS' => array (
+            'input' => array(
+                'Tip_RS' => array(
                     'capacity' => 500000,
                     'factor' => 1,
                     'fillTypes' => 'rape sunflower',
                     'showInStorage' => false
                 )
             ),
-            'output' => array (
-                'RS_compost' => array (
+            'output' => array(
+                'RS_compost' => array(
                     'capacity' => 500000,
                     'factor' => 0.3,
                     'fillType' => 'compost',
                     'showInStorage' => true
                 ),
-                'RM_Output' => array (
+                'RM_Output' => array(
                     'capacity' => 300000,
                     'factor' => 0.6,
                     'fillType' => 'fuel',
@@ -1910,39 +1912,39 @@ $mapconfig = array_merge ( $mapconfig, array (
             )
         ),
         // Molkerei, Baumarkt
-        'FabrikScript_Molkerei' => array (
+        'FabrikScript_Molkerei' => array(
             'locationType' => 'FabrikScript',
             'ProdPerHour' => 5000,
             'position' => '-543.739 0 323.553',
             'showInProduction' => true,
-            'input' => array (
-                'Tip_RSmilk' => array (
+            'input' => array(
+                'Tip_RSmilk' => array(
                     'capacity' => 300000,
                     'factor' => 0.75,
                     'fillTypes' => 'milk',
                     'showInStorage' => false
                 ),
-                'Tip_RSwater' => array (
+                'Tip_RSwater' => array(
                     'capacity' => 200000,
                     'factor' => 0.3,
                     'fillTypes' => 'water',
                     'showInStorage' => false
                 ),
-                'emptypallet' => array (
+                'emptypallet' => array(
                     'capacity' => 100000,
                     'factor' => 0.25,
                     'fillTypes' => 'emptypallet',
                     'showInStorage' => false
                 ),
-                'palettepapier' => array (
+                'palettepapier' => array(
                     'capacity' => 100000,
                     'factor' => 0.5,
                     'fillTypes' => 'papier',
                     'showInStorage' => false
                 )
             ),
-            'output' => array (
-                'palettebutter' => array (
+            'output' => array(
+                'palettebutter' => array(
                     'capacity' => 5000,
                     'factor' => 0.25,
                     'fillType' => 'butter',
@@ -1950,7 +1952,7 @@ $mapconfig = array_merge ( $mapconfig, array (
                     'palettPlaces' => 16,
                     'showInStorage' => false
                 ),
-                'palettemilch' => array (
+                'palettemilch' => array(
                     'capacity' => 5000,
                     'factor' => 0.25,
                     'fillType' => 'milch',
@@ -1958,7 +1960,7 @@ $mapconfig = array_merge ( $mapconfig, array (
                     'palettPlaces' => 16,
                     'showInStorage' => false
                 ),
-                'palettesahne' => array (
+                'palettesahne' => array(
                     'capacity' => 5000,
                     'factor' => 0.25,
                     'fillType' => 'sahne',
@@ -1966,7 +1968,7 @@ $mapconfig = array_merge ( $mapconfig, array (
                     'palettPlaces' => 16,
                     'showInStorage' => false
                 ),
-                'palettequark' => array (
+                'palettequark' => array(
                     'capacity' => 5000,
                     'factor' => 0.25,
                     'fillType' => 'quark',
@@ -1974,7 +1976,7 @@ $mapconfig = array_merge ( $mapconfig, array (
                     'palettPlaces' => 16,
                     'showInStorage' => false
                 ),
-                'paletteyogurt' => array (
+                'paletteyogurt' => array(
                     'capacity' => 5000,
                     'factor' => 0.25,
                     'fillType' => 'yogurt',
@@ -1984,21 +1986,21 @@ $mapconfig = array_merge ( $mapconfig, array (
                 )
             )
         ),
-        'FabrikScript_kaufbretterpalette' => array (
+        'FabrikScript_kaufbretterpalette' => array(
             'locationType' => 'FabrikScript',
             'ProdPerHour' => 14400001,
             'position' => '-527.941 0 -569.763',
             'showInProduction' => true,
-            'input' => array (
-                'geld' => array (
+            'input' => array(
+                'geld' => array(
                     'capacity' => 250000,
                     'factor' => 1,
                     'fillTypes' => 'geld',
                     'showInStorage' => false
                 )
-            ),    
-            'output' => array (
-                'boardwood' => array (
+            ),
+            'output' => array(
+                'boardwood' => array(
                     'capacity' => 8000,
                     'factor' => 1.1,
                     'fillType' => 'woodChips',
@@ -2007,21 +2009,21 @@ $mapconfig = array_merge ( $mapconfig, array (
                 )
             )
         ),
-        'FabrikScript_kaufkartonpalette' => array (
+        'FabrikScript_kaufkartonpalette' => array(
             'locationType' => 'FabrikScript',
             'ProdPerHour' => 14400001,
             'position' => '-527.941 0 -569.763',
             'showInProduction' => true,
-            'input' => array (
-                'geld' => array (
+            'input' => array(
+                'geld' => array(
                     'capacity' => 250000,
                     'factor' => 1,
                     'fillTypes' => 'geld',
                     'showInStorage' => false
                 )
-            ),    
-            'output' => array (
-                'palette_karton' => array (
+            ),
+            'output' => array(
+                'palette_karton' => array(
                     'capacity' => 5000,
                     'factor' => 1,
                     'fillType' => 'karton',
@@ -2030,21 +2032,21 @@ $mapconfig = array_merge ( $mapconfig, array (
                 )
             )
         ),
-        'FabrikScript_kaufleerpalette' => array (
+        'FabrikScript_kaufleerpalette' => array(
             'locationType' => 'FabrikScript',
             'ProdPerHour' => 14400001,
             'position' => '-527.941 0 -569.763',
             'showInProduction' => true,
-            'input' => array (
-                'geld' => array (
+            'input' => array(
+                'geld' => array(
                     'capacity' => 250000,
                     'factor' => 1,
                     'fillTypes' => 'geld',
                     'showInStorage' => false
                 )
-            ),    
-            'output' => array (
-                'emptypallet' => array (
+            ),
+            'output' => array(
+                'emptypallet' => array(
                     'capacity' => 5000,
                     'factor' => 1,
                     'fillType' => 'emptypallet',
@@ -2053,21 +2055,21 @@ $mapconfig = array_merge ( $mapconfig, array (
                 )
             )
         ),
-        'FabrikScript_kaufstahlpalette' => array (
+        'FabrikScript_kaufstahlpalette' => array(
             'locationType' => 'FabrikScript',
             'ProdPerHour' => 14400001,
             'position' => '-527.941 0 -569.763',
             'showInProduction' => true,
-            'input' => array (
-                'geld' => array (
+            'input' => array(
+                'geld' => array(
                     'capacity' => 250000,
                     'factor' => 1,
                     'fillTypes' => 'geld',
                     'showInStorage' => false
                 )
-            ),    
-            'output' => array (
-                'Stahlpalette' => array (
+            ),
+            'output' => array(
+                'Stahlpalette' => array(
                     'capacity' => 5000,
                     'factor' => 0.4,
                     'fillType' => 'stahl',
@@ -2076,40 +2078,40 @@ $mapconfig = array_merge ( $mapconfig, array (
                 )
             )
         ),
-        // Kartoffelfabrik und Kartoffelwaschanlage 
-        'FabrikScript_Kartoffelfabrik' => array (
+        // Kartoffelfabrik und Kartoffelwaschanlage
+        'FabrikScript_Kartoffelfabrik' => array(
             'locationType' => 'FabrikScript',
             'ProdPerHour' => 7500,
             'position' => '-693.474 0 805.203',
             'showInProduction' => true,
-            'input' => array (
-                'washedPotato' => array (
+            'input' => array(
+                'washedPotato' => array(
                     'capacity' => 600000,
                     'factor' => 0.6,
                     'fillTypes' => 'washedPotato',
                     'showInStorage' => false
                 ),
-                'emptypallet' => array (
+                'emptypallet' => array(
                     'capacity' => 280000,
                     'factor' => 0.25,
                     'fillTypes' => 'emptypallet',
                     'showInStorage' => false
                 ),
-                'palette_karton' => array (
+                'palette_karton' => array(
                     'capacity' => 175000,
                     'factor' => 0.15,
                     'fillTypes' => 'karton',
                     'showInStorage' => false
                 ),
-                'palettespeiseoel' => array (
+                'palettespeiseoel' => array(
                     'capacity' => 225000,
                     'factor' => 0.15,
                     'fillTypes' => 'oel',
                     'showInStorage' => false
                 )
             ),
-            'output' => array (
-                'palettechips' => array (
+            'output' => array(
+                'palettechips' => array(
                     'capacity' => 5000,
                     'factor' => 0.35,
                     'fillType' => 'chips',
@@ -2117,7 +2119,7 @@ $mapconfig = array_merge ( $mapconfig, array (
                     'palettPlaces' => 15,
                     'showInStorage' => false
                 ),
-                'palettepommes' => array (
+                'palettepommes' => array(
                     'capacity' => 5000,
                     'factor' => 0.35,
                     'fillType' => 'pommes',
@@ -2125,7 +2127,7 @@ $mapconfig = array_merge ( $mapconfig, array (
                     'palettPlaces' => 15,
                     'showInStorage' => false
                 ),
-                'palettekartoffelsack' => array (
+                'palettekartoffelsack' => array(
                     'capacity' => 5000,
                     'factor' => 0.35,
                     'fillType' => 'kartoffelsack',
@@ -2135,21 +2137,21 @@ $mapconfig = array_merge ( $mapconfig, array (
                 )
             )
         ),
-        'FabrikScript_kartoffellager2' => array (
+        'FabrikScript_kartoffellager2' => array(
             'locationType' => 'FabrikScript',
             'ProdPerHour' => 1000000000,
             'position' => '-670.29 0 769.079',
             'showInProduction' => false,
-            'input' => array (
-                'potato' => array (
+            'input' => array(
+                'potato' => array(
                     'capacity' => 500000,
                     'factor' => 1,
                     'fillTypes' => 'potato',
                     'showInStorage' => true
                 )
             ),
-            'output' => array (
-                'potato' => array (
+            'output' => array(
+                'potato' => array(
                     'capacity' => 500000,
                     'factor' => 1,
                     'fillType' => 'potato',
@@ -2229,51 +2231,51 @@ $mapconfig = array_merge ( $mapconfig, array (
                 )
             )
         ),
-        // Kläranlage    
-        'FabrikScript_Klaerwerk' => array (
+        // Kläranlage
+        'FabrikScript_Klaerwerk' => array(
             'locationType' => 'FabrikScript',
             'ProdPerHour' => 40000,
             'position' => '-160 0 750',
             'showInProduction' => true,
-            'input' => array (
-                'Tip_RS1' => array (
+            'input' => array(
+                'Tip_RS1' => array(
                     'capacity' => 600000,
                     'factor' => 1,
                     'fillTypes' => 'liquidManure digestate',
                     'showInStorage' => false
                 )
             ),
-            'output' => array (
-                'RS_compost1' => array (
+            'output' => array(
+                'RS_compost1' => array(
                     'capacity' => 500000,
                     'factor' => 0.26,
                     'fillType' => 'compost',
                     'showInStorage' => true
                 ),
-                'RM_Output2' => array (
+                'RM_Output2' => array(
                     'capacity' => 800000,
                     'factor' => 0.65,
                     'fillType' => 'water',
                     'showInStorage' => true
                 )
             )
-        ), 
+        ),
         // Haupthof Produktionen
-        'FabrikScript_kartoffellager' => array (
+        'FabrikScript_kartoffellager' => array(
             'locationType' => 'FabrikScript',
             'ProdPerHour' => 1000000000,
             'position' => '162.139 0 257.929',
             'showInProduction' => false,
-            'input' => array (
-                'potato' => array (
+            'input' => array(
+                'potato' => array(
                     'capacity' => 500000,
                     'factor' => 1,
                     'fillTypes' => 'potato',
                     'showInStorage' => true
                 )
             ),
-            'output' => array (
-                'potato' => array (
+            'output' => array(
+                'potato' => array(
                     'capacity' => 500000,
                     'factor' => 1,
                     'fillType' => 'potato',
@@ -2281,21 +2283,21 @@ $mapconfig = array_merge ( $mapconfig, array (
                 )
             )
         ),
-        'FabrikScript_zuckerrueben' => array (
+        'FabrikScript_zuckerrueben' => array(
             'locationType' => 'FabrikScript',
             'ProdPerHour' => 1000000000,
             'position' => '179.084 0 263.557',
             'showInProduction' => false,
-            'input' => array (
-                'sugarBeet' => array (
+            'input' => array(
+                'sugarBeet' => array(
                     'capacity' => 600000,
                     'factor' => 1,
                     'fillTypes' => 'sugarBeet',
                     'showInStorage' => true
                 )
             ),
-            'output' => array (
-                'sugarBeet' => array (
+            'output' => array(
+                'sugarBeet' => array(
                     'capacity' => 500000,
                     'factor' => 1,
                     'fillType' => 'sugarBeet',
@@ -2303,27 +2305,27 @@ $mapconfig = array_merge ( $mapconfig, array (
                 )
             )
         ),
-        'FabrikScript_Duenger_Prod' => array (
+        'FabrikScript_Duenger_Prod' => array(
             'locationType' => 'FabrikScript',
             'ProdPerHour' => 10000,
             'position' => '169.246 0 296.481',
             'showInProduction' => true,
-            'input' => array (
-                'manure' => array (
+            'input' => array(
+                'manure' => array(
                     'capacity' => 100000,
                     'factor' => 1,
                     'fillTypes' => 'manure',
                     'showInStorage' => false
                 ),
-                'liquidManure' => array (
+                'liquidManure' => array(
                     'capacity' => 100000,
                     'factor' => 1,
                     'fillTypes' => 'liquidManure',
                     'showInStorage' => false
                 )
             ),
-            'output' => array (
-                'fertilizer' => array (
+            'output' => array(
+                'fertilizer' => array(
                     'capacity' => 100000,
                     'factor' => 1,
                     'fillType' => 'fertilizer',
@@ -2331,27 +2333,27 @@ $mapconfig = array_merge ( $mapconfig, array (
                 )
             )
         ),
-        'FabrikScript_Saat_Prod' => array (
+        'FabrikScript_Saat_Prod' => array(
             'locationType' => 'FabrikScript',
             'ProdPerHour' => 10000,
             'position' => '229.554 0 296.481',
             'showInProduction' => true,
-            'input' => array (
-                'grain' => array (
+            'input' => array(
+                'grain' => array(
                     'capacity' => 100000,
                     'factor' => 1,
                     'fillTypes' => 'wheat maize barley rape',
                     'showInStorage' => false
                 ),
-                'fertilizer' => array (
+                'fertilizer' => array(
                     'capacity' => 100000,
                     'factor' => 0.3,
                     'fillTypes' => 'fertilizer',
                     'showInStorage' => false
                 )
             ),
-            'output' => array (
-                'seeds' => array (
+            'output' => array(
+                'seeds' => array(
                     'capacity' => 100000,
                     'factor' => 1,
                     'fillType' => 'seeds',
@@ -2359,21 +2361,21 @@ $mapconfig = array_merge ( $mapconfig, array (
                 )
             )
         ),
-        'FabrikScript_Fertilizer' => array (
+        'FabrikScript_Fertilizer' => array(
             'locationType' => 'FabrikScript',
             'ProdPerHour' => 2147483647,
             'position' => '205.038 0 288.965',
             'showInProduction' => false,
-            'input' => array (
-                'FS_fertilizer' => array (
+            'input' => array(
+                'FS_fertilizer' => array(
                     'capacity' => 500000,
                     'factor' => 1,
                     'fillTypes' => 'fertilizer',
                     'showInStorage' => true
                 )
             ),
-            'output' => array (
-                'FS_fertilizer' => array (
+            'output' => array(
+                'FS_fertilizer' => array(
                     'capacity' => 500000,
                     'factor' => 1,
                     'fillType' => 'fertilizer',
@@ -2381,21 +2383,21 @@ $mapconfig = array_merge ( $mapconfig, array (
                 )
             )
         ),
-        'FabrikScript_Saatgut' => array (
+        'FabrikScript_Saatgut' => array(
             'locationType' => 'FabrikScript',
             'ProdPerHour' => 2147483647,
             'position' => '235.911 0 289.532',
             'showInProduction' => false,
-            'input' => array (
-                'FS_Seeds' => array (
+            'input' => array(
+                'FS_Seeds' => array(
                     'capacity' => 500000,
                     'factor' => 1,
                     'fillTypes' => 'seeds',
                     'showInStorage' => true
                 )
             ),
-            'output' => array (
-                'FS_Seeds' => array (
+            'output' => array(
+                'FS_Seeds' => array(
                     'capacity' => 500000,
                     'factor' => 1,
                     'fillType' => 'seeds',
@@ -2403,33 +2405,33 @@ $mapconfig = array_merge ( $mapconfig, array (
                 )
             )
         ),
-        'FabrikScript_Schweinefutterstation' => array (
+        'FabrikScript_Schweinefutterstation' => array(
             'locationType' => 'FabrikScript',
             'ProdPerHour' => 30000,
             'position' => '179.159 0 335.085',
             'showInProduction' => true,
-            'input' => array (
-                'Getreide' => array (
+            'input' => array(
+                'Getreide' => array(
                     'capacity' => 100000,
                     'factor' => 0.4,
                     'fillTypes' => 'wheat barley maize oat rye',
                     'showInStorage' => false
                 ),
-                'Raps Sonnenblume Soja' => array (
+                'Raps Sonnenblume Soja' => array(
                     'capacity' => 100000,
                     'factor' => 0.3,
                     'fillTypes' => 'rape sunflower soybean',
                     'showInStorage' => false
                 ),
-                'Erdfruechten' => array (
+                'Erdfruechten' => array(
                     'capacity' => 100000,
                     'factor' => 0.1,
                     'fillTypes' => 'potato sugarBeet',
                     'showInStorage' => false
                 )
             ),
-            'output' => array (
-                'Schweinefutter' => array (
+            'output' => array(
+                'Schweinefutter' => array(
                     'capacity' => 250000,
                     'factor' => 0.935,
                     'fillType' => 'pigFood',
@@ -2437,21 +2439,21 @@ $mapconfig = array_merge ( $mapconfig, array (
                 )
             )
         ),
-        'FabrikScript_Schweinefutter' => array (
+        'FabrikScript_Schweinefutter' => array(
             'locationType' => 'FabrikScript',
             'ProdPerHour' => 2147483647,
             'position' => '179.163 0 365.591',
             'showInProduction' => false,
-            'input' => array (
-                'Schweinefutter' => array (
+            'input' => array(
+                'Schweinefutter' => array(
                     'capacity' => 500000,
                     'factor' => 1,
                     'fillTypes' => 'pigFood',
                     'showInStorage' => true
                 )
             ),
-            'output' => array (
-                'Schweinefutter' => array (
+            'output' => array(
+                'Schweinefutter' => array(
                     'capacity' => 500000,
                     'factor' => 1,
                     'fillType' => 'pigFood',
@@ -2459,21 +2461,21 @@ $mapconfig = array_merge ( $mapconfig, array (
                 )
             )
         ),
-        'FabrikScript_HofladenApfel' => array (
+        'FabrikScript_HofladenApfel' => array(
             'locationType' => 'FabrikScript',
             'ProdPerHour' => 60,
             'position' => '223.861 0 81.651',
             'showInProduction' => true,
-            'input' => array (
-                'Apfel' => array (
+            'input' => array(
+                'Apfel' => array(
                     'capacity' => 15000,
                     'factor' => 1,
                     'fillTypes' => 'apfel',
                     'showInStorage' => false
                 )
             ),
-            'output' => array (
-                'Geldkassette' => array (
+            'output' => array(
+                'Geldkassette' => array(
                     'capacity' => 25000,
                     'factor' => 3,
                     'fillType' => 'geld',
@@ -2483,21 +2485,21 @@ $mapconfig = array_merge ( $mapconfig, array (
                 )
             )
         ),
-        'FabrikScript_HofladenBirne' => array (
+        'FabrikScript_HofladenBirne' => array(
             'locationType' => 'FabrikScript',
             'ProdPerHour' => 60,
             'position' => '223.861 0 81.651',
             'showInProduction' => true,
-            'input' => array (
-                'Birne' => array (
+            'input' => array(
+                'Birne' => array(
                     'capacity' => 15000,
                     'factor' => 1,
                     'fillTypes' => 'birne',
                     'showInStorage' => false
                 )
             ),
-            'output' => array (
-                'Geldkassette' => array (
+            'output' => array(
+                'Geldkassette' => array(
                     'capacity' => 25000,
                     'factor' => 3,
                     'fillType' => 'geld',
@@ -2507,21 +2509,21 @@ $mapconfig = array_merge ( $mapconfig, array (
                 )
             )
         ),
-        'FabrikScript_HofladenPflaume' => array (
+        'FabrikScript_HofladenPflaume' => array(
             'locationType' => 'FabrikScript',
             'ProdPerHour' => 60,
             'position' => '223.861 0 81.651',
             'showInProduction' => true,
-            'input' => array (
-                'Pflaumen' => array (
+            'input' => array(
+                'Pflaumen' => array(
                     'capacity' => 15000,
                     'factor' => 1,
                     'fillTypes' => 'pflaume',
                     'showInStorage' => false
                 )
             ),
-            'output' => array (
-                'Geldkassette' => array (
+            'output' => array(
+                'Geldkassette' => array(
                     'capacity' => 25000,
                     'factor' => 3,
                     'fillType' => 'geld',
@@ -2531,21 +2533,21 @@ $mapconfig = array_merge ( $mapconfig, array (
                 )
             )
         ),
-        'FabrikScript_Hofladenkirsche' => array (
+        'FabrikScript_Hofladenkirsche' => array(
             'locationType' => 'FabrikScript',
             'ProdPerHour' => 60,
             'position' => '223.861 0 81.651',
             'showInProduction' => true,
-            'input' => array (
-                'Kirschen' => array (
+            'input' => array(
+                'Kirschen' => array(
                     'capacity' => 15000,
                     'factor' => 1,
                     'fillTypes' => 'kirsche',
                     'showInStorage' => false
                 )
             ),
-            'output' => array (
-                'Geldkassette' => array (
+            'output' => array(
+                'Geldkassette' => array(
                     'capacity' => 25000,
                     'factor' => 3,
                     'fillType' => 'geld',
@@ -2555,21 +2557,21 @@ $mapconfig = array_merge ( $mapconfig, array (
                 )
             )
         ),
-        'FabrikScript_Hofladentomaten' => array (
+        'FabrikScript_Hofladentomaten' => array(
             'locationType' => 'FabrikScript',
             'ProdPerHour' => 60,
             'position' => '215.54 0 81.651',
             'showInProduction' => true,
-            'input' => array (
-                'Tomaten' => array (
+            'input' => array(
+                'Tomaten' => array(
                     'capacity' => 15000,
                     'factor' => 1,
                     'fillTypes' => 'tomaten',
                     'showInStorage' => false
                 )
             ),
-            'output' => array (
-                'Geldkassette' => array (
+            'output' => array(
+                'Geldkassette' => array(
                     'capacity' => 25000,
                     'factor' => 3,
                     'fillType' => 'geld',
@@ -2579,21 +2581,21 @@ $mapconfig = array_merge ( $mapconfig, array (
                 )
             )
         ),
-        'FabrikScript_Hofladensalat' => array (
+        'FabrikScript_Hofladensalat' => array(
             'locationType' => 'FabrikScript',
             'ProdPerHour' => 60,
             'position' => '215.54 0 81.651',
             'showInProduction' => true,
-            'input' => array (
-                'Salat' => array (
+            'input' => array(
+                'Salat' => array(
                     'capacity' => 15000,
                     'factor' => 1,
                     'fillTypes' => 'salat',
                     'showInStorage' => false
                 )
             ),
-            'output' => array (
-                'Geldkassette' => array (
+            'output' => array(
+                'Geldkassette' => array(
                     'capacity' => 25000,
                     'factor' => 3,
                     'fillType' => 'geld',
@@ -2603,21 +2605,21 @@ $mapconfig = array_merge ( $mapconfig, array (
                 )
             )
         ),
-        'FabrikScript_HofladenBlumenkohl' => array (
+        'FabrikScript_HofladenBlumenkohl' => array(
             'locationType' => 'FabrikScript',
             'ProdPerHour' => 60,
             'position' => '215.54 0 81.651',
             'showInProduction' => true,
-            'input' => array (
-                'Blumenkohl' => array (
+            'input' => array(
+                'Blumenkohl' => array(
                     'capacity' => 15000,
                     'factor' => 1,
                     'fillTypes' => 'blumenkohl',
                     'showInStorage' => false
                 )
             ),
-            'output' => array (
-                'Geldkassette' => array (
+            'output' => array(
+                'Geldkassette' => array(
                     'capacity' => 25000,
                     'factor' => 3,
                     'fillType' => 'geld',
@@ -2627,21 +2629,21 @@ $mapconfig = array_merge ( $mapconfig, array (
                 )
             )
         ),
-        'FabrikScript_HofladenRotkohl' => array (
+        'FabrikScript_HofladenRotkohl' => array(
             'locationType' => 'FabrikScript',
             'ProdPerHour' => 60,
             'position' => '215.54 0 81.651',
             'showInProduction' => true,
-            'input' => array (
-                'Rotkohl' => array (
+            'input' => array(
+                'Rotkohl' => array(
                     'capacity' => 15000,
                     'factor' => 1,
                     'fillTypes' => 'rotkohl',
                     'showInStorage' => false
                 )
             ),
-            'output' => array (
-                'Geldkassette' => array (
+            'output' => array(
+                'Geldkassette' => array(
                     'capacity' => 25000,
                     'factor' => 3,
                     'fillType' => 'geld',
@@ -2651,21 +2653,21 @@ $mapconfig = array_merge ( $mapconfig, array (
                 )
             )
         ),
-        'FabrikScript_geldboxen' => array (
+        'FabrikScript_geldboxen' => array(
             'locationType' => 'FabrikScript',
             'ProdPerHour' => 100000,
             'position' => '290 0 110',
             'showInProduction' => true,
-            'input' => array (
-                'geld' => array (
+            'input' => array(
+                'geld' => array(
                     'capacity' => 250000,
                     'factor' => 1,
                     'fillTypes' => 'geld',
                     'showInStorage' => false
                 )
             ),
-            'output' => array (
-                'geld' => array (
+            'output' => array(
+                'geld' => array(
                     'capacity' => 250000,
                     'factor' => 1,
                     'fillType' => 'geld',
@@ -2676,45 +2678,45 @@ $mapconfig = array_merge ( $mapconfig, array (
             )
         ),
         // Brennerei
-        'FabrikScript_Brennerei_Korn' => array (
+        'FabrikScript_Brennerei_Korn' => array(
             'locationType' => 'FabrikScript',
             'ProdPerHour' => 400,
             'position' => '-135 0 -807',
             'showInProduction' => true,
-            'input' => array (
-                'Getreide' => array (
+            'input' => array(
+                'Getreide' => array(
                     'capacity' => 250000,
                     'factor' => 0.4,
                     'fillTypes' => 'wheat rye oat barley',
                     'showInStorage' => false
                 ),
-                'Tip_RSwater' => array (
+                'Tip_RSwater' => array(
                     'capacity' => 200000,
                     'factor' => 0.5,
                     'fillTypes' => 'water',
                     'showInStorage' => false
                 ),
-                'emptypallet' => array (
+                'emptypallet' => array(
                     'capacity' => 120000,
                     'factor' => 0.2,
                     'fillTypes' => 'emptypallet',
                     'showInStorage' => false
                 ),
-                'palette_karton' => array (
+                'palette_karton' => array(
                     'capacity' => 70000,
                     'factor' => 0.2,
                     'fillTypes' => 'karton',
                     'showInStorage' => false
                 ),
-                'zuckerpalette' => array (
+                'zuckerpalette' => array(
                     'capacity' => 70000,
                     'factor' => 0.2,
                     'fillTypes' => 'zucker',
                     'showInStorage' => false
                 )
             ),
-            'output' => array (
-                'palettekorn' => array (
+            'output' => array(
+                'palettekorn' => array(
                     'capacity' => 5000,
                     'factor' => 1,
                     'fillType' => 'korn',
@@ -2724,45 +2726,45 @@ $mapconfig = array_merge ( $mapconfig, array (
                 )
             )
         ),
-        'FabrikScript_Brennerei_Obstler' => array (
+        'FabrikScript_Brennerei_Obstler' => array(
             'locationType' => 'FabrikScript',
             'ProdPerHour' => 400,
             'position' => '-85 0 -807',
             'showInProduction' => true,
-            'input' => array (
-                'Obstpalette' => array (
+            'input' => array(
+                'Obstpalette' => array(
                     'capacity' => 90000,
                     'factor' => 0.4,
                     'fillTypes' => 'apfel kirsche pflaume birne',
                     'showInStorage' => false
                 ),
-                'Tip_RSwater' => array (
+                'Tip_RSwater' => array(
                     'capacity' => 200000,
                     'factor' => 0.5,
                     'fillTypes' => 'water',
                     'showInStorage' => false
                 ),
-                'emptypallet' => array (
+                'emptypallet' => array(
                     'capacity' => 120000,
                     'factor' => 0.2,
                     'fillTypes' => 'emptypallet',
                     'showInStorage' => false
                 ),
-                'palette_karton' => array (
+                'palette_karton' => array(
                     'capacity' => 70000,
                     'factor' => 0.2,
                     'fillTypes' => 'karton',
                     'showInStorage' => false
                 ),
-                'zuckerpalette' => array (
+                'zuckerpalette' => array(
                     'capacity' => 70000,
                     'factor' => 0.2,
                     'fillTypes' => 'zucker',
                     'showInStorage' => false
                 )
             ),
-            'output' => array (
-                'paletteobstler' => array (
+            'output' => array(
+                'paletteobstler' => array(
                     'capacity' => 5000,
                     'factor' => 1,
                     'fillType' => 'obstler',
@@ -2773,21 +2775,21 @@ $mapconfig = array_merge ( $mapconfig, array (
             )
         ),
         // Komposter
-        'FabrikScript_compostMaster2k17' => array (
+        'FabrikScript_compostMaster2k17' => array(
             'locationType' => 'FabrikScript',
             'ProdPerHour' => 50000,
             'position' => '2.436 0 -725.253',
             'showInProduction' => true,
-            'input' => array (
-                'cm_inputWaste' => array (
+            'input' => array(
+                'cm_inputWaste' => array(
                     'capacity' => 300000,
                     'factor' => 2,
                     'fillTypes' => 'compost potato sugarBeet chaff silage grass grass_windrow dryGrass_windrow woodChips manure straw rye oat wheat barley rape',
                     'showInStorage' => false
                 )
             ),
-            'output' => array (
-                'cm_outputCompost' => array (
+            'output' => array(
+                'cm_outputCompost' => array(
                     'capacity' => 300000,
                     'factor' => 1,
                     'fillType' => 'compost',
@@ -2796,39 +2798,39 @@ $mapconfig = array_merge ( $mapconfig, array (
             )
         ),
         // Obstplantage
-        'FabrikScript_obst_apfel' => array (
+        'FabrikScript_obst_apfel' => array(
             'locationType' => 'FabrikScript',
             'ProdPerHour' => 800,
             'position' => '925.391 0 -791.175',
             'showInProduction' => true,
-            'input' => array (
-                'Compost' => array (
+            'input' => array(
+                'Compost' => array(
                     'capacity' => 100000,
                     'factor' => 0.3,
                     'fillTypes' => 'compost',
                     'showInStorage' => false
                 ),
-                'Tip_RSwater' => array (
+                'Tip_RSwater' => array(
                     'capacity' => 100000,
                     'factor' => 0.2,
                     'fillTypes' => 'water',
                     'showInStorage' => false
                 ),
-                'emptypallet' => array (
+                'emptypallet' => array(
                     'capacity' => 100000,
                     'factor' => 0.2,
                     'fillTypes' => 'emptypallet',
                     'showInStorage' => false
                 ),
-                'palette_karton' => array (
+                'palette_karton' => array(
                     'capacity' => 100000,
                     'factor' => 0.2,
                     'fillTypes' => 'karton',
                     'showInStorage' => false
                 )
             ),
-            'output' => array (
-                'Apfelpalette' => array (
+            'output' => array(
+                'Apfelpalette' => array(
                     'capacity' => 5000,
                     'factor' => 1,
                     'fillType' => 'apfel',
@@ -2838,39 +2840,39 @@ $mapconfig = array_merge ( $mapconfig, array (
                 )
             )
         ),
-        'FabrikScript_obst_birne' => array (
+        'FabrikScript_obst_birne' => array(
             'locationType' => 'FabrikScript',
             'ProdPerHour' => 800,
             'position' => '925.332 0 -851.349',
             'showInProduction' => true,
-            'input' => array (
-                'Compost' => array (
+            'input' => array(
+                'Compost' => array(
                     'capacity' => 100000,
                     'factor' => 0.3,
                     'fillTypes' => 'compost',
                     'showInStorage' => false
                 ),
-                'Tip_RSwater' => array (
+                'Tip_RSwater' => array(
                     'capacity' => 100000,
                     'factor' => 0.2,
                     'fillTypes' => 'water',
                     'showInStorage' => false
                 ),
-                'emptypallet' => array (
+                'emptypallet' => array(
                     'capacity' => 100000,
                     'factor' => 0.2,
                     'fillTypes' => 'emptypallet',
                     'showInStorage' => false
                 ),
-                'palette_karton' => array (
+                'palette_karton' => array(
                     'capacity' => 100000,
                     'factor' => 0.2,
                     'fillTypes' => 'karton',
                     'showInStorage' => false
                 )
             ),
-            'output' => array (
-                'Birnenpalette' => array (
+            'output' => array(
+                'Birnenpalette' => array(
                     'capacity' => 5000,
                     'factor' => 1,
                     'fillType' => 'birne',
@@ -2880,39 +2882,39 @@ $mapconfig = array_merge ( $mapconfig, array (
                 )
             )
         ),
-        'FabrikScript_obst_kirsche' => array (
+        'FabrikScript_obst_kirsche' => array(
             'locationType' => 'FabrikScript',
             'ProdPerHour' => 800,
             'position' => '925.755 0 -911.122',
             'showInProduction' => true,
-            'input' => array (
-                'Compost' => array (
+            'input' => array(
+                'Compost' => array(
                     'capacity' => 100000,
                     'factor' => 0.3,
                     'fillTypes' => 'compost',
                     'showInStorage' => false
                 ),
-                'Tip_RSwater' => array (
+                'Tip_RSwater' => array(
                     'capacity' => 100000,
                     'factor' => 0.2,
                     'fillTypes' => 'water',
                     'showInStorage' => false
                 ),
-                'emptypallet' => array (
+                'emptypallet' => array(
                     'capacity' => 100000,
                     'factor' => 0.2,
                     'fillTypes' => 'emptypallet',
                     'showInStorage' => false
                 ),
-                'palette_karton' => array (
+                'palette_karton' => array(
                     'capacity' => 100000,
                     'factor' => 0.2,
                     'fillTypes' => 'karton',
                     'showInStorage' => false
                 )
             ),
-            'output' => array (
-                'Kirschpalette' => array (
+            'output' => array(
+                'Kirschpalette' => array(
                     'capacity' => 5000,
                     'factor' => 1,
                     'fillType' => 'kirsche',
@@ -2922,39 +2924,39 @@ $mapconfig = array_merge ( $mapconfig, array (
                 )
             )
         ),
-        'FabrikScript_obst_pflaume' => array (
+        'FabrikScript_obst_pflaume' => array(
             'locationType' => 'FabrikScript',
             'ProdPerHour' => 800,
             'position' => '925.697 0 -970.193',
             'showInProduction' => true,
-            'input' => array (
-                'Compost' => array (
+            'input' => array(
+                'Compost' => array(
                     'capacity' => 100000,
                     'factor' => 0.3,
                     'fillTypes' => 'compost',
                     'showInStorage' => false
                 ),
-                'Tip_RSwater' => array (
+                'Tip_RSwater' => array(
                     'capacity' => 100000,
                     'factor' => 0.2,
                     'fillTypes' => 'water',
                     'showInStorage' => false
                 ),
-                'emptypallet' => array (
+                'emptypallet' => array(
                     'capacity' => 100000,
                     'factor' => 0.2,
                     'fillTypes' => 'emptypallet',
                     'showInStorage' => false
                 ),
-                'palette_karton' => array (
+                'palette_karton' => array(
                     'capacity' => 100000,
                     'factor' => 0.2,
                     'fillTypes' => 'karton',
                     'showInStorage' => false
                 )
             ),
-            'output' => array (
-                'Pflaumenpalette' => array (
+            'output' => array(
+                'Pflaumenpalette' => array(
                     'capacity' => 5000,
                     'factor' => 1,
                     'fillType' => 'pflaume',
@@ -2965,21 +2967,21 @@ $mapconfig = array_merge ( $mapconfig, array (
             )
         ),
         // Baustelle
-        'FabrikScript_Kiesverkauf' => array (
+        'FabrikScript_Kiesverkauf' => array(
             'locationType' => 'FabrikScript',
             'ProdPerHour' => 5000,
             'position' => '1721.425 0 -966.909',
             'showInProduction' => true,
-            'input' => array (
-                'Kies' => array (
+            'input' => array(
+                'Kies' => array(
                     'capacity' => 300000,
                     'factor' => 1,
                     'fillTypes' => 'gravel',
                     'showInStorage' => false
                 )
             ),
-            'output' => array (
-                'Geldkassette' => array (
+            'output' => array(
+                'Geldkassette' => array(
                     'capacity' => 250000,
                     'factor' => 0.4,
                     'fillType' => 'geld',
@@ -2989,21 +2991,21 @@ $mapconfig = array_merge ( $mapconfig, array (
                 )
             )
         ),
-        'FabrikScript_Sandverkauf' => array (
+        'FabrikScript_Sandverkauf' => array(
             'locationType' => 'FabrikScript',
             'ProdPerHour' => 5000,
             'position' => '1703.198 0 -873.27',
             'showInProduction' => true,
-            'input' => array (
-                'Sand' => array (
+            'input' => array(
+                'Sand' => array(
                     'capacity' => 300000,
                     'factor' => 1,
                     'fillTypes' => 'sand',
                     'showInStorage' => false
                 )
             ),
-            'output' => array (
-                'Geldkassette' => array (
+            'output' => array(
+                'Geldkassette' => array(
                     'capacity' => 250000,
                     'factor' => 1,
                     'fillType' => 'geld',
@@ -3013,21 +3015,21 @@ $mapconfig = array_merge ( $mapconfig, array (
                 )
             )
         ),
-        'FabrikScript_Zementverkauf' => array (
+        'FabrikScript_Zementverkauf' => array(
             'locationType' => 'FabrikScript',
             'ProdPerHour' => 5000,
             'position' => '1692.588 0 -940.479',
             'showInProduction' => true,
-            'input' => array (
-                'Zement' => array (
+            'input' => array(
+                'Zement' => array(
                     'capacity' => 100000,
                     'factor' => 1,
                     'fillTypes' => 'cement',
                     'showInStorage' => false
                 )
             ),
-            'output' => array (
-                'Geldkassette' => array (
+            'output' => array(
+                'Geldkassette' => array(
                     'capacity' => 250000,
                     'factor' => 3,
                     'fillType' => 'geld',
@@ -3038,51 +3040,51 @@ $mapconfig = array_merge ( $mapconfig, array (
             )
         ),
         // Eierhof
-        'FabrikScript_Eierhof' => array (
+        'FabrikScript_Eierhof' => array(
             'locationType' => 'FabrikScript',
             'ProdPerHour' => 1000,
             'position' => '1429.528 0 -672.529',
             'showInProduction' => true,
-            'input' => array (
-                'emptypallet' => array (
+            'input' => array(
+                'emptypallet' => array(
                     'capacity' => 150000,
                     'factor' => 0.1,
                     'fillTypes' => 'emptypallet',
                     'showInStorage' => false
                 ),
-                'Getreide' => array (
+                'Getreide' => array(
                     'capacity' => 300000,
                     'factor' => 0.6,
                     'fillTypes' => 'wheat barley oat rye sunflower maize',
                     'showInStorage' => false
                 ),
-                'Stroh' => array (
+                'Stroh' => array(
                     'capacity' => 300000,
                     'factor' => 0.2,
                     'fillTypes' => 'straw',
                     'showInStorage' => false
                 ),
-                'Tip_RSwater' => array (
+                'Tip_RSwater' => array(
                     'capacity' => 150000,
                     'factor' => 0.1,
                     'fillTypes' => 'water',
                     'showInStorage' => false
                 ),
-                'palettepapier' => array (
+                'palettepapier' => array(
                     'capacity' => 240000,
                     'factor' => 0.15,
                     'fillTypes' => 'papier',
                     'showInStorage' => false
                 )
             ),
-            'output' => array (
-                'Mist' => array (
+            'output' => array(
+                'Mist' => array(
                     'capacity' => 100000,
                     'factor' => 1,
                     'fillType' => 'manure',
                     'showInStorage' => true
                 ),
-                'Eierpalette' => array (
+                'Eierpalette' => array(
                     'capacity' => 5000,
                     'factor' => 1,
                     'fillType' => 'eier',
@@ -3091,52 +3093,52 @@ $mapconfig = array_merge ( $mapconfig, array (
                     'showInStorage' => false
                 )
             )
-        ), 
-        'FabrikScript_Eierhof2' => array (
+        ),
+        'FabrikScript_Eierhof2' => array(
             'locationType' => 'FabrikScript',
             'ProdPerHour' => 1000,
             'position' => '1429.528 0 -672.529',
             'showInProduction' => true,
-            'input' => array (
-                'emptypallet' => array (
+            'input' => array(
+                'emptypallet' => array(
                     'capacity' => 150000,
                     'factor' => 0.1,
                     'fillTypes' => 'emptypallet',
                     'showInStorage' => false
                 ),
-                'Getreide' => array (
+                'Getreide' => array(
                     'capacity' => 300000,
                     'factor' => 0.6,
                     'fillTypes' => 'wheat barley oat rye sunflower maize',
                     'showInStorage' => false
                 ),
-                'Stroh' => array (
+                'Stroh' => array(
                     'capacity' => 300000,
                     'factor' => 0.2,
                     'fillTypes' => 'straw',
                     'showInStorage' => false
                 ),
-                'Tip_RSwater' => array (
+                'Tip_RSwater' => array(
                     'capacity' => 150000,
                     'factor' => 0.1,
                     'fillTypes' => 'water',
                     'showInStorage' => false
                 ),
-                'palettepapier' => array (
+                'palettepapier' => array(
                     'capacity' => 240000,
                     'factor' => 0.15,
                     'fillTypes' => 'papier',
                     'showInStorage' => false
                 )
             ),
-            'output' => array (
-                'Mist' => array (
+            'output' => array(
+                'Mist' => array(
                     'capacity' => 100000,
                     'factor' => 1,
                     'fillType' => 'manure',
                     'showInStorage' => true
                 ),
-                'Eierpalette' => array (
+                'Eierpalette' => array(
                     'capacity' => 5000,
                     'factor' => 1,
                     'fillType' => 'eier',
@@ -3145,7 +3147,7 @@ $mapconfig = array_merge ( $mapconfig, array (
                     'showInStorage' => false
                 )
             )
-        ), 
+        ),
         // Cementfabrik
         'FabrikScript_Cementfabrik' => array(
             'locationType' => 'FabrikScript',
@@ -3194,74 +3196,74 @@ $mapconfig = array_merge ( $mapconfig, array (
                     'showInStorage' => false
                 )
             )
-        ),       
-) );
-// AdBlue Tankstellen und AdBlue Hoftankstellen 
-$mapconfig = array_merge ($mapconfig, array ( 
-        'adBlueStation_adBlueStationFarm_INSEL' => array (
-            'locationType' => 'AdBlue',
-            'position' => '-1418.386 0 -866.475'
-        ),
-        'adBlueStation_adBlueStationFarm_BGANORD' => array (
-            'locationType' => 'AdBlue',
-            'position' => '-181.312 0 -894.624'
-        ),
-        'adBlueStation_adBlueStationFarm_RINDERHOF' => array (
-            'locationType' => 'AdBlue',
-            'position' => '523.632 0 1607.84'
-        ),
-        'adBlueStation_adBlueStationFarm_HOFTANKSTELLE' => array (
-            'locationType' => 'AdBlue',
-            'position' => '135.05 0 194.973'
-        ),
-        'adBlueStation_adBlueStationFarm_EIERHOF' => array (
-            'locationType' => 'AdBlue',
-            'position' => '1458.802 0 -793.084'
-        ),
-        'adBlueStation_adBlueStationFarm_SandKies' => array (
-            'locationType' => 'AdBlue',
-            'position' => '1611.274 0 280.069'
-        ),
-        'adBlueStation_adBlueStationFarm_RAFFINERIE' => array (
-            'locationType' => 'AdBlue',
-            'position' => '-933.346 0 609.323'
-        ),
-        'adBlueStation_adBlueStationFarm_BGAMITTE' => array (
-            'locationType' => 'AdBlue',
-            'position' => '-404.266 0 624.61'
-        ),
-) );
+        )
+    ));
+// AdBlue Tankstellen und AdBlue Hoftankstellen
+$mapconfig = array_merge($mapconfig, array(
+    'adBlueStation_adBlueStationFarm_INSEL' => array(
+        'locationType' => 'AdBlue',
+        'position' => '-1418.386 0 -866.475'
+    ),
+    'adBlueStation_adBlueStationFarm_BGANORD' => array(
+        'locationType' => 'AdBlue',
+        'position' => '-181.312 0 -894.624'
+    ),
+    'adBlueStation_adBlueStationFarm_RINDERHOF' => array(
+        'locationType' => 'AdBlue',
+        'position' => '523.632 0 1607.84'
+    ),
+    'adBlueStation_adBlueStationFarm_HOFTANKSTELLE' => array(
+        'locationType' => 'AdBlue',
+        'position' => '135.05 0 194.973'
+    ),
+    'adBlueStation_adBlueStationFarm_EIERHOF' => array(
+        'locationType' => 'AdBlue',
+        'position' => '1458.802 0 -793.084'
+    ),
+    'adBlueStation_adBlueStationFarm_SandKies' => array(
+        'locationType' => 'AdBlue',
+        'position' => '1611.274 0 280.069'
+    ),
+    'adBlueStation_adBlueStationFarm_RAFFINERIE' => array(
+        'locationType' => 'AdBlue',
+        'position' => '-933.346 0 609.323'
+    ),
+    'adBlueStation_adBlueStationFarm_BGAMITTE' => array(
+        'locationType' => 'AdBlue',
+        'position' => '-404.266 0 624.61'
+    )
+));
 // Hoftankstellen
-$mapconfig = array_merge ($mapconfig, array (
-    'fuelStation_Hoftankstelle' => array (
+$mapconfig = array_merge($mapconfig, array(
+    'fuelStation_Hoftankstelle' => array(
         'locationType' => 'fuelStation',
         'position' => '180 0 200'
     ),
-    'fuelStation_Tankstelle_Raffinerie' => array (
+    'fuelStation_Tankstelle_Raffinerie' => array(
         'locationType' => 'fuelStation',
         'position' => '-920 0 630'
     ),
-    'fuelStation_Tankstelle_BGA_Nord' => array (
+    'fuelStation_Tankstelle_BGA_Nord' => array(
         'locationType' => 'fuelStation',
         'position' => '-180 0 -890'
     ),
-    'fuelStation_Tankstelle_BGA_Sued' => array (
+    'fuelStation_Tankstelle_BGA_Sued' => array(
         'locationType' => 'fuelStation',
         'position' => '-400 0 630'
     ),
-    'fuelStation_Hoftankstelle' => array (
+    'fuelStation_Hoftankstelle' => array(
         'locationType' => 'fuelStation',
         'position' => '180 0 200'
     ),
-    'fuelStation_Tankstelle_Raffinerie' => array (
+    'fuelStation_Tankstelle_Raffinerie' => array(
         'locationType' => 'fuelStation',
         'position' => '-920 0 630'
     ),
-    'fuelStation_Tankstelle_BGA_Nord' => array (
+    'fuelStation_Tankstelle_BGA_Nord' => array(
         'locationType' => 'fuelStation',
         'position' => '-180 0 -890'
     ),
-    'fuelStation_Tankstelle_BGA_Sued' => array (
+    'fuelStation_Tankstelle_BGA_Sued' => array(
         'locationType' => 'fuelStation',
         'position' => '-400 0 630'
     )

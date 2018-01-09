@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mapconfig>
+	<item name="FabrikScript_geldboxen" locationType="FabrikScript" ProdPerHour="100000" position="290 0 110" showInProduction="true">
+		<input name="geld" capacity="250000" factor="1" fillTypes="geld" showInStorage="false" />
+		<output name="geld" capacity="250000" factor="1" fillType="geld" palettArea="0 0 1 1" palettPlaces="1" showInStorage="false" />
+	</item>
+	<l10n>
+		<text name="FabrikScript_geldboxen">
+			<en>FabrikScript_geldboxen</en>
+			<de>Münzzähler</de>
+			<fr>Münzzähler</fr>
+		</text>
+		<text name="geld">
+			<en>geld</en>
+			<de>Geld</de>
+			<fr>Geld</fr>
+		</text>
+	</l10n>
+</mapconfig>

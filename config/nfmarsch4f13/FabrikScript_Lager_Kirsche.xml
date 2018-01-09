@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mapconfig>
+	<item name="FabrikScript_Lager_Kirsche" locationType="FabrikScript" ProdPerHour="14400001" position="-933.68 99.955 -459.32" showInProduction="false">
+		<input name="Kirschpalette" capacity="500000" factor="1" fillTypes="kirsche" showInStorage="true" />
+		<output name="Kirschpalette" capacity="5000" factor="1" fillType="kirsche" showInStorage="false" />
+	</item>
+	<l10n>
+		<text name="FabrikScript_Lager_Kirsche">
+			<en>FabrikScript_Lager_Kirsche</en>
+			<de>Palettenlager</de>
+			<fr>Entrepôt à palettes</fr>
+		</text>
+		<text name="Kirschpalette">
+			<en>Kirschpalette</en>
+			<de>Kirsche</de>
+			<fr>Cerise</fr>
+		</text>
+		<text name="kirsche">
+			<en>kirsche</en>
+			<de>Kirsche</de>
+			<fr>Cerise</fr>
+		</text>
+	</l10n>
+</mapconfig>

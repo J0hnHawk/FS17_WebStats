@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mapconfig>
+	<item name="Animals_sheep" locationType="animal" position="570 0 -19" reproRate="960">
+		<input name="water" trough_factor="15" consumption_factor="15" fillTypes="water" showInStorage="false" />
+		<input name="grass_windrow_dryGrass_windrow" trough_factor="30" consumption_factor="36" fillTypes="grass_windrow dryGrass_windrow" showInStorage="false" />
+		<output name="woolPallet" production_factor="24" capacity="2000" fillType="woolPallet" palettArea="578.3 -25.7 594.8 -21.3" palettPlaces="15" showInStorage="false" />
+		<productivity name="grass_windrow_dryGrass_windrow" factor="90" />
+	</item>
+	<l10n>
+		<text name="Animals_sheep">
+			<en>Animals_sheep</en>
+			<de>Schafweide</de>
+			<fr>Schafweide</fr>
+		</text>
+		<text name="water">
+			<en>water</en>
+			<de>Wasser</de>
+			<fr>Wasser</fr>
+		</text>
+		<text name="grass_windrow_dryGrass_windrow">
+			<en>grass_windrow_dryGrass_windrow</en>
+			<de>Gras oder Heu</de>
+			<fr>Gras oder Heu</fr>
+		</text>
+		<text name="grass_windrow">
+			<en>grass_windrow</en>
+			<de>Gras</de>
+			<fr>Gras</fr>
+		</text>
+		<text name="dryGrass_windrow">
+			<en>dryGrass_windrow</en>
+			<de>Heu</de>
+			<fr>Heu</fr>
+		</text>
+		<text name="woolPallet">
+			<en>woolPallet</en>
+			<de>Wolle</de>
+			<fr>Wolle</fr>
+		</text>
+	</l10n>
+</mapconfig>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mapconfig>
+	<item name="FabrikScript_Lager_Milch" locationType="FabrikScript" ProdPerHour="14400001" position="-885.573 99.955 -611.621" showInProduction="">
+		<input name="palettemilch" capacity="625000" factor="1" fillTypes="milch" showInStorage="true" />
+		<output name="palettemilch" capacity="5000" factor="1" fillType="milch" palettPlaces="999" showInStorage="false" />
+	</item>
+	<l10n>
+		<text name="FabrikScript_Lager_Milch">
+			<en>FabrikScript_Lager_Milch</en>
+			<de>Palettenlager</de>
+			<fr>Entrepôt à palettes</fr>
+		</text>
+		<text name="palettemilch">
+			<en>palettemilch</en>
+			<de>Vollmilch</de>
+			<fr>Lait entier</fr>
+		</text>
+		<text name="milch">
+			<en>milch</en>
+			<de>Vollmilch</de>
+			<fr>Lait entier</fr>
+		</text>
+	</l10n>
+</mapconfig>

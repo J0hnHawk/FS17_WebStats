@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mapconfig>
+	<item name="FabrikScript_Backerei_Kuchen" locationType="FabrikScript" ProdPerHour="5000" position="-940 0 10" showInProduction="1">
+		<input name="emptypallet" capacity="120000" factor="0.12" fillTypes="emptypallet" showInStorage="false" />
+		<input name="palette_karton" capacity="120000" factor="0.12" fillTypes="karton" showInStorage="false" />
+		<input name="Tip_mehl" capacity="120000" factor="0.3" fillTypes="mehl" showInStorage="false" />
+		<input name="Obstpalette" capacity="120000" factor="0.3" fillTypes="apfel kirsche pflaume birne" showInStorage="false" />
+		<input name="Zuckerpalette" capacity="120000" factor="0.3" fillTypes="zucker" showInStorage="false" />
+		<input name="Quarkpalette" capacity="120000" factor="0.2" fillTypes="quark" showInStorage="false" />
+		<input name="Sahnepalette" capacity="120000" factor="0.15" fillTypes="sahne" showInStorage="false" />
+		<output name="Kuchen" capacity="5000" factor="1" fillType="kuchen" palettArea="-927.8 -36.8 -922.5 -14.4" palettPlaces="21" showInStorage="false" />
+	</item>
+	<l10n>
+		<text name="FabrikScript_Backerei_Kuchen">
+			<en>FabrikScript_Backerei_Kuchen</en>
+			<de>Bäckerei (Kuchen)</de>
+			<fr>Boulangerie ([de]Kuchen)</fr>
+		</text>
+		<text name="emptypallet">
+			<en>emptypallet</en>
+			<de>Leere Paletten</de>
+			<fr>Palette vide</fr>
+		</text>
+		<text name="palette_karton">
+			<en>palette_karton</en>
+			<de>Karton</de>
+			<fr>Carton</fr>
+		</text>
+		<text name="karton">
+			<en>karton</en>
+			<de>Karton</de>
+			<fr>Carton</fr>
+		</text>
+		<text name="Tip_mehl">
+			<en>Tip_mehl</en>
+			<de>Mehl</de>
+			<fr>Farine</fr>
+		</text>
+		<text name="mehl">
+			<en>mehl</en>
+			<de>Mehl</de>
+			<fr>Farine</fr>
+		</text>
+		<text name="Obstpalette">
+			<en>Obstpalette</en>
+			<de>Obst</de>
+			<fr>Fruit</fr>
+		</text>
+		<text name="apfel">
+			<en>apfel</en>
+			<de>Apfel</de>
+			<fr>Pomme</fr>
+		</text>
+		<text name="kirsche">
+			<en>kirsche</en>
+			<de>Kirsche</de>
+			<fr>Cerise</fr>
+		</text>
+		<text name="pflaume">
+			<en>pflaume</en>
+			<de>Pflaume</de>
+			<fr>Prune</fr>
+		</text>
+		<text name="birne">
+			<en>birne</en>
+			<de>Birne</de>
+			<fr>Poire</fr>
+		</text>
+		<text name="Zuckerpalette">
+			<en>Zuckerpalette</en>
+			<de>Zucker</de>
+			<fr>Sucre</fr>
+		</text>
+		<text name="zucker">
+			<en>zucker</en>
+			<de>Zucker</de>
+			<fr>Sucre</fr>
+		</text>
+		<text name="Quarkpalette">
+			<en>Quarkpalette</en>
+			<de>Quark</de>
+			<fr>Fromage blanc</fr>
+		</text>
+		<text name="quark">
+			<en>quark</en>
+			<de>Quark</de>
+			<fr>Fromage blanc</fr>
+		</text>
+		<text name="Sahnepalette">
+			<en>Sahnepalette</en>
+			<de>Sahne</de>
+			<fr>Crème</fr>
+		</text>
+		<text name="sahne">
+			<en>sahne</en>
+			<de>Sahne</de>
+			<fr>Crème</fr>
+		</text>
+		<text name="Kuchen">
+			<en>Kuchen</en>
+			<de>Kuchen</de>
+			<fr>[de]Kuchen</fr>
+		</text>
+		<text name="kuchen">
+			<en>kuchen</en>
+			<de>Kuchen</de>
+			<fr>Kuchen</fr>
+		</text>
+	</l10n>
+</mapconfig>

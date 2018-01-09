@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mapconfig>
+	<item name="FabrikScript_Salatzucht" locationType="FabrikScript" ProdPerHour="1000" position="850 0 700" showInProduction="true">
+		<input name="water" capacity="30000" factor="0.7" fillTypes="water" showInStorage="false" />
+		<input name="compost" capacity="80000" factor="0.5" fillTypes="compost" showInStorage="false" />
+		<input name="emptypallet" capacity="45000" factor="0.142857" fillTypes="emptypallet" showInStorage="false" />
+		<output name="salat" capacity="5000" factor="1" fillType="salat" palettArea="849.6 675.8 851.9 690.2" palettPlaces="7" showInStorage="false" />
+	</item>
+	<l10n>
+		<text name="FabrikScript_Salatzucht">
+			<en>FabrikScript_Salatzucht</en>
+			<de>Gewächshaus (Salat)</de>
+			<fr>Serre (Salade)</fr>
+		</text>
+		<text name="water">
+			<en>water</en>
+			<de>Wasser</de>
+			<fr>Eau</fr>
+		</text>
+		<text name="compost">
+			<en>compost</en>
+			<de>Kompost</de>
+			<fr>Compost</fr>
+		</text>
+		<text name="emptypallet">
+			<en>emptypallet</en>
+			<de>Leere Paletten</de>
+			<fr>Palette vide</fr>
+		</text>
+		<text name="salat">
+			<en>salat</en>
+			<de>Salat</de>
+			<fr>Salade</fr>
+		</text>
+	</l10n>
+</mapconfig>

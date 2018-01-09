@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mapconfig>
+	<item name="FabrikScript_RoggenMehlfabrik" locationType="FabrikScript" ProdPerHour="5000" position="-844.762 0 -80.583" showInProduction="true">
+		<input name="Tip_RSrye" capacity="500000" factor="1" fillTypes="rye" showInStorage="false" />
+		<output name="mehlpalette" capacity="5000" factor="0.5" fillType="mehl" palettArea="-852.268 -98.763 -853.681 -82.701" palettPlaces="8" showInStorage="false" />
+	</item>
+	<l10n>
+		<text name="FabrikScript_RoggenMehlfabrik">
+			<en>FabrikScript_RoggenMehlfabrik</en>
+			<de>Mehlfabrik (Roggen)</de>
+			<fr>Mehlfabrik (Roggen)</fr>
+		</text>
+		<text name="Tip_RSrye">
+			<en>Tip_RSrye</en>
+			<de>Roggen</de>
+			<fr>Roggen</fr>
+		</text>
+		<text name="rye">
+			<en>rye</en>
+			<de>Roggen</de>
+			<fr>Roggen</fr>
+		</text>
+		<text name="mehlpalette">
+			<en>mehlpalette</en>
+			<de>Mehl</de>
+			<fr>Mehl</fr>
+		</text>
+		<text name="mehl">
+			<en>mehl</en>
+			<de>Mehl</de>
+			<fr>Mehl</fr>
+		</text>
+	</l10n>
+</mapconfig>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mapconfig>
+	<item name="TipTrigger_BIOGAS" locationType="TipTrigger" position="-145 0 -952" />
+	<l10n>
+		<text name="TipTrigger_BIOGAS">
+			<en>TipTrigger_BIOGAS</en>
+			<de>BGA Nord</de>
+			<fr>BGA Nord</fr>
+		</text>
+	</l10n>
+</mapconfig>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mapconfig>
+	<item name="FabrikScript_Kiesverkauf" locationType="FabrikScript" ProdPerHour="5000" position="1704.69 100 -956.3" showInProduction="true">
+		<input name="Kies" capacity="300000" factor="1" fillTypes="gravel" showInStorage="false" />
+		<output name="Geldkassette" capacity="250000" factor="0.4" fillType="geld" showInStorage="true" />
+	</item>
+	<l10n>
+		<text name="FabrikScript_Kiesverkauf">
+			<en>FabrikScript_Kiesverkauf</en>
+			<de>{FabrikScript_Kiesverkauf}</de>
+			<fr>{FabrikScript_Kiesverkauf}</fr>
+		</text>
+		<text name="Kies">
+			<en>Kies</en>
+			<de>{Kies}</de>
+			<fr>{Kies}</fr>
+		</text>
+		<text name="gravel">
+			<en>gravel</en>
+			<de>{gravel}</de>
+			<fr>{gravel}</fr>
+		</text>
+		<text name="Geldkassette">
+			<en>Geldkassette</en>
+			<de>Geld</de>
+			<fr>Argent</fr>
+		</text>
+		<text name="geld">
+			<en>geld</en>
+			<de>Geld</de>
+			<fr>Argent</fr>
+		</text>
+	</l10n>
+</mapconfig>

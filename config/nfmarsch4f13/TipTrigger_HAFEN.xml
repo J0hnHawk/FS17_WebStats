@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mapconfig>
+	<item name="TipTrigger_HAFEN" locationType="TipTrigger" position="-948 0 -989" />
+	<l10n>
+		<text name="TipTrigger_HAFEN">
+			<en>TipTrigger_HAFEN</en>
+			<de>Hafen</de>
+			<fr>Hafen</fr>
+		</text>
+	</l10n>
+</mapconfig>

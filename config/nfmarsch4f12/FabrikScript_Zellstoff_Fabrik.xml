@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mapconfig>
+	<item name="FabrikScript_Zellstoff_Fabrik" locationType="FabrikScript" ProdPerHour="12500" position="-920.242 0 -829.986" showInProduction="true">
+		<input name="Hackschnitzel" capacity="500000" factor="0.5" fillTypes="woodChips" showInStorage="false" />
+		<input name="Tip_RSwater" capacity="200000" factor="0.3" fillTypes="water" showInStorage="false" />
+		<input name="emptypallet" capacity="150000" factor="0.25" fillTypes="emptypallet" showInStorage="false" />
+		<output name="palettepapier" capacity="5000" factor="1" fillType="papier" palettArea="-966.681 -852.848 -962.675 -836.786" palettPlaces="22" showInStorage="false" />
+		<output name="palette_karton" capacity="5000" factor="1" fillType="karton" palettArea="-966.602 -829.921 -972.684 -813.915" palettPlaces="22" showInStorage="false" />
+	</item>
+	<l10n>
+		<text name="FabrikScript_Zellstoff_Fabrik">
+			<en>FabrikScript_Zellstoff_Fabrik</en>
+			<de>Zellstofffabrik</de>
+			<fr>Zellstofffabrik</fr>
+		</text>
+		<text name="Hackschnitzel">
+			<en>Hackschnitzel</en>
+			<de>Hackschnitzel</de>
+			<fr>Hackschnitzel</fr>
+		</text>
+		<text name="woodChips">
+			<en>woodChips</en>
+			<de>Hackschnitzel</de>
+			<fr>Hackschnitzel</fr>
+		</text>
+		<text name="Tip_RSwater">
+			<en>Tip_RSwater</en>
+			<de>Wasser</de>
+			<fr>Wasser</fr>
+		</text>
+		<text name="water">
+			<en>water</en>
+			<de>Wasser</de>
+			<fr>Wasser</fr>
+		</text>
+		<text name="emptypallet">
+			<en>emptypallet</en>
+			<de>Leere Paletten</de>
+			<fr>Leere Paletten</fr>
+		</text>
+		<text name="palettepapier">
+			<en>palettepapier</en>
+			<de>Papier</de>
+			<fr>Papier</fr>
+		</text>
+		<text name="papier">
+			<en>papier</en>
+			<de>Papier</de>
+			<fr>Papier</fr>
+		</text>
+		<text name="palette_karton">
+			<en>palette_karton</en>
+			<de>Karton</de>
+			<fr>Karton</fr>
+		</text>
+		<text name="karton">
+			<en>karton</en>
+			<de>Karton</de>
+			<fr>Karton</fr>
+		</text>
+	</l10n>
+</mapconfig>

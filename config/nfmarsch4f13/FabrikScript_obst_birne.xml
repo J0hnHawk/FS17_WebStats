@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mapconfig>
+	<item name="FabrikScript_obst_birne" locationType="FabrikScript" ProdPerHour="600" position="945 0 -865" showInProduction="true">
+		<input name="Compost" capacity="100000" factor="0.3" fillTypes="compost" showInStorage="false" />
+		<input name="Tip_RSwater" capacity="100000" factor="0.2" fillTypes="water" showInStorage="false" />
+		<input name="emptypallet" capacity="100000" factor="0.2" fillTypes="emptypallet" showInStorage="false" />
+		<input name="palette_karton" capacity="100000" factor="0.2" fillTypes="karton" showInStorage="false" />
+		<output name="Birnenpalette" capacity="5000" factor="1" fillType="birne" palettArea="877.5 -893.1 893.8 -888.9" palettPlaces="15" showInStorage="false" />
+	</item>
+	<l10n>
+		<text name="FabrikScript_obst_birne">
+			<en>FabrikScript_obst_birne</en>
+			<de>Obstfarm (Birne)</de>
+			<fr>Verger (Poire)</fr>
+		</text>
+		<text name="Compost">
+			<en>Compost</en>
+			<de>Kompost</de>
+			<fr>Compost</fr>
+		</text>
+		<text name="compost">
+			<en>compost</en>
+			<de>Kompost</de>
+			<fr>Compost</fr>
+		</text>
+		<text name="Tip_RSwater">
+			<en>Tip_RSwater</en>
+			<de>Wasser</de>
+			<fr>Eau</fr>
+		</text>
+		<text name="water">
+			<en>water</en>
+			<de>Wasser</de>
+			<fr>Eau</fr>
+		</text>
+		<text name="emptypallet">
+			<en>emptypallet</en>
+			<de>Leere Paletten</de>
+			<fr>Palette vide</fr>
+		</text>
+		<text name="palette_karton">
+			<en>palette_karton</en>
+			<de>Karton</de>
+			<fr>Carton</fr>
+		</text>
+		<text name="karton">
+			<en>karton</en>
+			<de>Karton</de>
+			<fr>Carton</fr>
+		</text>
+		<text name="Birnenpalette">
+			<en>Birnenpalette</en>
+			<de>Birne</de>
+			<fr>Poire</fr>
+		</text>
+		<text name="birne">
+			<en>birne</en>
+			<de>Birne</de>
+			<fr>Poire</fr>
+		</text>
+	</l10n>
+</mapconfig>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mapconfig>
+	<item name="TipTrigger_SUPERMARKT1" locationType="TipTrigger" position="-248 0 -658" />
+	<l10n>
+		<text name="TipTrigger_SUPERMARKT1">
+			<en>TipTrigger_SUPERMARKT1</en>
+			<de>Lidl</de>
+			<fr>Lidl</fr>
+		</text>
+	</l10n>
+</mapconfig>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mapconfig>
+	<item name="FabrikScript_Holzhacker" locationType="FabrikScript" ProdPerHour="50000" position="940 0 650" showInProduction="1">
+		<input name="Holz" capacity="400000" factor="1" fillTypes="woodChips" showInStorage="false" />
+		<output name="woodChips" capacity="150000" factor="0.9" fillType="woodChips" showInStorage="true" />
+	</item>
+	<l10n>
+		<text name="FabrikScript_Holzhacker">
+			<en>FabrikScript_Holzhacker</en>
+			<de>Holzhacker</de>
+			<fr>Scierie</fr>
+		</text>
+		<text name="Holz">
+			<en>Holz</en>
+			<de>Holzstämme</de>
+			<fr>Grumes</fr>
+		</text>
+		<text name="woodChips">
+			<en>woodChips</en>
+			<de>Hackschnitzel</de>
+			<fr>Copeaux de bois</fr>
+		</text>
+	</l10n>
+</mapconfig>

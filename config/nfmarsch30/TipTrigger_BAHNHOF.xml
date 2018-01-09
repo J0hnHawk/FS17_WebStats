@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mapconfig>
+	<item name="TipTrigger_BAHNHOF" locationType="TipTrigger" position="-459 0 -110" />
+	<l10n>
+		<text name="TipTrigger_BAHNHOF">
+			<en>TipTrigger_BAHNHOF</en>
+			<de>Bahnhof</de>
+			<fr>Bahnhof</fr>
+		</text>
+	</l10n>
+</mapconfig>

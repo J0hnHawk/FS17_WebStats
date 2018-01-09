@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mapconfig>
+	<item name="FabrikScript_GersteMehlfabrik" locationType="FabrikScript" ProdPerHour="5000" position="-830 0 -90" showInProduction="1">
+		<input name="Tip_RSbarley" capacity="500000" factor="1" fillTypes="barley" showInStorage="false" />
+		<output name="mehlpalette" capacity="5000" factor="0.5" fillType="mehl" palettArea="-845.7 -98.8 -844.2 -82.7" palettPlaces="8" showInStorage="false" />
+	</item>
+	<l10n>
+		<text name="FabrikScript_GersteMehlfabrik">
+			<en>FabrikScript_GersteMehlfabrik</en>
+			<de>Mehlfabrik (Gerste)</de>
+			<fr>Moulin (Orge)</fr>
+		</text>
+		<text name="Tip_RSbarley">
+			<en>Tip_RSbarley</en>
+			<de>Gerste</de>
+			<fr>Orge</fr>
+		</text>
+		<text name="barley">
+			<en>barley</en>
+			<de>Gerste</de>
+			<fr>Orge</fr>
+		</text>
+		<text name="mehlpalette">
+			<en>mehlpalette</en>
+			<de>Mehl</de>
+			<fr>Farine</fr>
+		</text>
+		<text name="mehl">
+			<en>mehl</en>
+			<de>Mehl</de>
+			<fr>Farine</fr>
+		</text>
+	</l10n>
+</mapconfig>

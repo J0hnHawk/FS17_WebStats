@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mapconfig>
+	<item name="FabrikScript_Eierhof" locationType="FabrikScript" ProdPerHour="1000" position="0 1.18749 0" showInProduction="true">
+		<input name="Getreide" capacity="300000" factor="0.6" fillTypes="wheat barley oat rye sunflower maize" showInStorage="false" />
+		<input name="Stroh" capacity="300000" factor="0.2" fillTypes="straw" showInStorage="false" />
+		<input name="emptypallet" capacity="150000" factor="0.1" fillTypes="emptypallet" showInStorage="false" />
+		<input name="Tip_RSwater" capacity="150000" factor="0.1" fillTypes="water" showInStorage="false" />
+		<input name="palettepapier" capacity="240000" factor="0.15" fillTypes="papier" showInStorage="false" />
+		<output name="Eierpalette" capacity="5000" factor="1" fillType="eier" palettArea="0 0 1 1" palettPlaces="999" showInStorage="false" />
+		<output name="Mist" capacity="100000" factor="1" fillType="manure" showInStorage="true" />
+	</item>
+	<l10n>
+		<text name="FabrikScript_Eierhof">
+			<en>FabrikScript_Eierhof</en>
+			<de>{FabrikScript_Eierhof}</de>
+			<fr>{FabrikScript_Eierhof}</fr>
+		</text>
+		<text name="Getreide">
+			<en>Getreide</en>
+			<de>Getreide</de>
+			<fr>Céréales</fr>
+		</text>
+		<text name="wheat">
+			<en>wheat</en>
+			<de>Weizen</de>
+			<fr>Blé</fr>
+		</text>
+		<text name="barley">
+			<en>barley</en>
+			<de>Gerste</de>
+			<fr>Orge</fr>
+		</text>
+		<text name="oat">
+			<en>oat</en>
+			<de>Hafer</de>
+			<fr>Avoine</fr>
+		</text>
+		<text name="rye">
+			<en>rye</en>
+			<de>Roggen</de>
+			<fr>Seigle</fr>
+		</text>
+		<text name="sunflower">
+			<en>sunflower</en>
+			<de>Sonnenblumen</de>
+			<fr>Tournesol</fr>
+		</text>
+		<text name="maize">
+			<en>maize</en>
+			<de>Körnermais</de>
+			<fr>Maïs</fr>
+		</text>
+		<text name="Stroh">
+			<en>Stroh</en>
+			<de>Stroh</de>
+			<fr>Paille</fr>
+		</text>
+		<text name="straw">
+			<en>straw</en>
+			<de>Stroh</de>
+			<fr>Paille</fr>
+		</text>
+		<text name="emptypallet">
+			<en>emptypallet</en>
+			<de>Leere Paletten</de>
+			<fr>Palette vide</fr>
+		</text>
+		<text name="Tip_RSwater">
+			<en>Tip_RSwater</en>
+			<de>Wasser</de>
+			<fr>Eau</fr>
+		</text>
+		<text name="water">
+			<en>water</en>
+			<de>Wasser</de>
+			<fr>Eau</fr>
+		</text>
+		<text name="palettepapier">
+			<en>palettepapier</en>
+			<de>Papier</de>
+			<fr>Papier</fr>
+		</text>
+		<text name="papier">
+			<en>papier</en>
+			<de>Papier</de>
+			<fr>Papier</fr>
+		</text>
+		<text name="Eierpalette">
+			<en>Eierpalette</en>
+			<de>{Eierpalette}</de>
+			<fr>{Eierpalette}</fr>
+		</text>
+		<text name="eier">
+			<en>eier</en>
+			<de>{eier}</de>
+			<fr>{eier}</fr>
+		</text>
+		<text name="Mist">
+			<en>Mist</en>
+			<de>{Mist}</de>
+			<fr>{Mist}</fr>
+		</text>
+		<text name="manure">
+			<en>manure</en>
+			<de>Mist</de>
+			<fr>Fumier</fr>
+		</text>
+	</l10n>
+</mapconfig>

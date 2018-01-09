@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mapconfig>
+	<item name="FabrikScript_Saatgut" locationType="FabrikScript" ProdPerHour="2147483647" position="240 0 295" showInProduction="false">
+		<input name="FS_Seeds" capacity="500000" factor="1" fillTypes="seeds" showInStorage="true" />
+		<output name="FS_Seeds" capacity="500000" factor="1" fillType="seeds" showInStorage="true" />
+	</item>
+	<l10n>
+		<text name="FabrikScript_Saatgut">
+			<en>FabrikScript_Saatgut</en>
+			<de>Saatgutlager</de>
+			<fr>Entrepôt à semences</fr>
+		</text>
+		<text name="FS_Seeds">
+			<en>FS_Seeds</en>
+			<de>Saatgut</de>
+			<fr>Semence</fr>
+		</text>
+		<text name="seeds">
+			<en>seeds</en>
+			<de>Saatgut</de>
+			<fr>Semence</fr>
+		</text>
+	</l10n>
+</mapconfig>

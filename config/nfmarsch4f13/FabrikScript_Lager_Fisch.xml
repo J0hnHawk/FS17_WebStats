@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mapconfig>
+	<item name="FabrikScript_Lager_Fisch" locationType="FabrikScript" ProdPerHour="14400001" position="-882.695 99.955 -674.11" showInProduction="false">
+		<input name="Fischpalette" capacity="625000" factor="1" fillTypes="fisch" showInStorage="true" />
+		<output name="Fischpalette" capacity="5000" factor="1" fillType="fisch" showInStorage="false" />
+	</item>
+	<l10n>
+		<text name="FabrikScript_Lager_Fisch">
+			<en>FabrikScript_Lager_Fisch</en>
+			<de>Palettenlager</de>
+			<fr>Entrepôt à palettes</fr>
+		</text>
+		<text name="Fischpalette">
+			<en>Fischpalette</en>
+			<de>Fisch</de>
+			<fr>[de]Fisch</fr>
+		</text>
+		<text name="fisch">
+			<en>fisch</en>
+			<de>Fisch</de>
+			<fr>Fisch</fr>
+		</text>
+	</l10n>
+</mapconfig>

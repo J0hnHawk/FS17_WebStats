@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mapconfig>
+	<item name="FabrikScript_Fabrik" locationType="FabrikScript" ProdPerHour="16000" position="990 0 680" showInProduction="1">
+		<input name="Brennstoffe" capacity="75000" factor="0.4" fillTypes="straw woodChips wool" showInStorage="false" />
+		<input name="Holz" capacity="400000" factor="1" fillTypes="woodChips" showInStorage="false" />
+		<output name="woodChips" capacity="150000" factor="0.9" fillType="woodChips" showInStorage="true" />
+		<output name="boardwood" capacity="8000" factor="1" fillType="boardwood" palettArea="960.1 663.1 961.7 683.3" palettPlaces="10" showInStorage="false" />
+	</item>
+	<l10n>
+		<text name="FabrikScript_Fabrik">
+			<en>FabrikScript_Fabrik</en>
+			<de>Sägewerk</de>
+			<fr>Scierie</fr>
+		</text>
+		<text name="Brennstoffe">
+			<en>Brennstoffe</en>
+			<de>Brennstoffe</de>
+			<fr>Carburants</fr>
+		</text>
+		<text name="straw">
+			<en>straw</en>
+			<de>Stroh</de>
+			<fr>Paille</fr>
+		</text>
+		<text name="woodChips">
+			<en>woodChips</en>
+			<de>Hackschnitzel</de>
+			<fr>Copeaux de bois</fr>
+		</text>
+		<text name="wool">
+			<en>wool</en>
+			<de>Wolle</de>
+			<fr>Laine</fr>
+		</text>
+		<text name="Holz">
+			<en>Holz</en>
+			<de>Holzstämme</de>
+			<fr>Grumes</fr>
+		</text>
+		<text name="boardwood">
+			<en>boardwood</en>
+			<de>Bretter</de>
+			<fr>Palette de planche</fr>
+		</text>
+	</l10n>
+</mapconfig>

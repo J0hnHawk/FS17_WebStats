@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mapconfig>
+	<item name="TipTrigger_STROHKRAFTWERK" locationType="TipTrigger" position="1426 0 -366" />
+	<l10n>
+		<text name="TipTrigger_STROHKRAFTWERK">
+			<en>TipTrigger_STROHKRAFTWERK</en>
+			<de>Strohkraftwerk</de>
+			<fr>Strohkraftwerk</fr>
+		</text>
+	</l10n>
+</mapconfig>

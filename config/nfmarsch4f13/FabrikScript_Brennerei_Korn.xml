@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mapconfig>
+	<item name="FabrikScript_Brennerei_Korn" locationType="FabrikScript" ProdPerHour="400" position="-125 0 -800" showInProduction="true">
+		<input name="Getreide" capacity="250000" factor="0.4" fillTypes="wheat rye oat barley" showInStorage="false" />
+		<input name="Tip_RSwater" capacity="200000" factor="0.5" fillTypes="water" showInStorage="false" />
+		<input name="emptypallet" capacity="120000" factor="0.2" fillTypes="emptypallet" showInStorage="false" />
+		<input name="palette_karton" capacity="70000" factor="0.2" fillTypes="karton" showInStorage="false" />
+		<input name="zuckerpalette" capacity="70000" factor="0.2" fillTypes="zucker" showInStorage="false" />
+		<output name="palettekorn" capacity="5000" factor="1" fillType="korn" palettArea="-144.2 -814.3 -139.9 -798.1" palettPlaces="15" showInStorage="false" />
+	</item>
+	<l10n>
+		<text name="FabrikScript_Brennerei_Korn">
+			<en>FabrikScript_Brennerei_Korn</en>
+			<de>Brennerei (Korn)</de>
+			<fr>Distillerie (grain)</fr>
+		</text>
+		<text name="Getreide">
+			<en>Getreide</en>
+			<de>Getreide</de>
+			<fr>Céréales</fr>
+		</text>
+		<text name="wheat">
+			<en>wheat</en>
+			<de>Weizen</de>
+			<fr>Blé</fr>
+		</text>
+		<text name="rye">
+			<en>rye</en>
+			<de>Roggen</de>
+			<fr>Seigle</fr>
+		</text>
+		<text name="oat">
+			<en>oat</en>
+			<de>Hafer</de>
+			<fr>Avoine</fr>
+		</text>
+		<text name="barley">
+			<en>barley</en>
+			<de>Gerste</de>
+			<fr>Orge</fr>
+		</text>
+		<text name="Tip_RSwater">
+			<en>Tip_RSwater</en>
+			<de>Wasser</de>
+			<fr>Eau</fr>
+		</text>
+		<text name="water">
+			<en>water</en>
+			<de>Wasser</de>
+			<fr>Eau</fr>
+		</text>
+		<text name="emptypallet">
+			<en>emptypallet</en>
+			<de>Leere Paletten</de>
+			<fr>Palette vide</fr>
+		</text>
+		<text name="palette_karton">
+			<en>palette_karton</en>
+			<de>Karton</de>
+			<fr>Carton</fr>
+		</text>
+		<text name="karton">
+			<en>karton</en>
+			<de>Karton</de>
+			<fr>Carton</fr>
+		</text>
+		<text name="zuckerpalette">
+			<en>zuckerpalette</en>
+			<de>Zucker</de>
+			<fr>Sucre</fr>
+		</text>
+		<text name="zucker">
+			<en>zucker</en>
+			<de>Zucker</de>
+			<fr>Sucre</fr>
+		</text>
+		<text name="palettekorn">
+			<en>palettekorn</en>
+			<de>Korn</de>
+			<fr>Grains</fr>
+		</text>
+		<text name="korn">
+			<en>korn</en>
+			<de>Korn</de>
+			<fr>Korn</fr>
+		</text>
+	</l10n>
+</mapconfig>

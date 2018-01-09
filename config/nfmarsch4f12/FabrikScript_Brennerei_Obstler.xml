@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mapconfig>
+	<item name="FabrikScript_Brennerei_Obstler" locationType="FabrikScript" ProdPerHour="400" position="-85 0 -807" showInProduction="true">
+		<input name="Obstpalette" capacity="90000" factor="0.4" fillTypes="apfel kirsche pflaume birne" showInStorage="false" />
+		<input name="Tip_RSwater" capacity="200000" factor="0.5" fillTypes="water" showInStorage="false" />
+		<input name="emptypallet" capacity="120000" factor="0.2" fillTypes="emptypallet" showInStorage="false" />
+		<input name="palette_karton" capacity="70000" factor="0.2" fillTypes="karton" showInStorage="false" />
+		<input name="zuckerpalette" capacity="70000" factor="0.2" fillTypes="zucker" showInStorage="false" />
+		<output name="paletteobstler" capacity="5000" factor="1" fillType="obstler" palettArea="-83.4 -815.2 -79.1 -798.8" palettPlaces="15" showInStorage="false" />
+	</item>
+	<l10n>
+		<text name="FabrikScript_Brennerei_Obstler">
+			<en>FabrikScript_Brennerei_Obstler</en>
+			<de>Brennerei (Obstler)</de>
+			<fr>Brennerei (Obstler)</fr>
+		</text>
+		<text name="Obstpalette">
+			<en>Obstpalette</en>
+			<de>Obst</de>
+			<fr>Obst</fr>
+		</text>
+		<text name="apfel">
+			<en>apfel</en>
+			<de>Apfel</de>
+			<fr>Apfel</fr>
+		</text>
+		<text name="kirsche">
+			<en>kirsche</en>
+			<de>Kirsche</de>
+			<fr>Kirsche</fr>
+		</text>
+		<text name="pflaume">
+			<en>pflaume</en>
+			<de>Pflaume</de>
+			<fr>Pflaume</fr>
+		</text>
+		<text name="birne">
+			<en>birne</en>
+			<de>Birne</de>
+			<fr>Birne</fr>
+		</text>
+		<text name="Tip_RSwater">
+			<en>Tip_RSwater</en>
+			<de>Wasser</de>
+			<fr>Wasser</fr>
+		</text>
+		<text name="water">
+			<en>water</en>
+			<de>Wasser</de>
+			<fr>Wasser</fr>
+		</text>
+		<text name="emptypallet">
+			<en>emptypallet</en>
+			<de>Leere Paletten</de>
+			<fr>Leere Paletten</fr>
+		</text>
+		<text name="palette_karton">
+			<en>palette_karton</en>
+			<de>Karton</de>
+			<fr>Karton</fr>
+		</text>
+		<text name="karton">
+			<en>karton</en>
+			<de>Karton</de>
+			<fr>Karton</fr>
+		</text>
+		<text name="zuckerpalette">
+			<en>zuckerpalette</en>
+			<de>Zucker</de>
+			<fr>Zucker</fr>
+		</text>
+		<text name="zucker">
+			<en>zucker</en>
+			<de>Zucker</de>
+			<fr>Zucker</fr>
+		</text>
+		<text name="paletteobstler">
+			<en>paletteobstler</en>
+			<de>Obstler</de>
+			<fr>Obstler</fr>
+		</text>
+		<text name="obstler">
+			<en>obstler</en>
+			<de>Obstler</de>
+			<fr>Obstler</fr>
+		</text>
+	</l10n>
+</mapconfig>

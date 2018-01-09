@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mapconfig>
+	<item name="FabrikScript_Lager_Zucker" locationType="FabrikScript" ProdPerHour="14400001" position="-930.714 99.955 -599.055" showInProduction="">
+		<input name="zuckerpalette" capacity="355000" factor="1" fillTypes="zucker" showInStorage="true" />
+		<output name="zuckerpalette" capacity="5000" factor="1" fillType="zucker" palettPlaces="999" showInStorage="false" />
+	</item>
+	<l10n>
+		<text name="FabrikScript_Lager_Zucker">
+			<en>FabrikScript_Lager_Zucker</en>
+			<de>Palettenlager</de>
+			<fr>Entrepôt à palettes</fr>
+		</text>
+		<text name="zuckerpalette">
+			<en>zuckerpalette</en>
+			<de>Zucker</de>
+			<fr>Sucre</fr>
+		</text>
+		<text name="zucker">
+			<en>zucker</en>
+			<de>Zucker</de>
+			<fr>Sucre</fr>
+		</text>
+	</l10n>
+</mapconfig>

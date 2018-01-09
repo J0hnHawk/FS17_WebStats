@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mapconfig>
+	<item name="adBlueStation_adBlueStationFarm_SandKies" locationType="AdBlue" position="1611.274 0 280.069" />
+	<l10n>
+		<text name="adBlueStation_adBlueStationFarm_SandKies">
+			<en>adBlueStation_adBlueStationFarm_SandKies</en>
+			<de>AdBlue Hoftankstelle SandKies</de>
+			<fr>AdBlue Hoftankstelle SandKies</fr>
+		</text>
+	</l10n>
+</mapconfig>

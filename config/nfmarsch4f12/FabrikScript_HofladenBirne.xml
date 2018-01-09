@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mapconfig>
+	<item name="FabrikScript_HofladenBirne" locationType="FabrikScript" ProdPerHour="60" position="223.861 0 81.651" showInProduction="true">
+		<input name="Birne" capacity="15000" factor="1" fillTypes="birne" showInStorage="false" />
+		<output name="Geldkassette" capacity="25000" factor="3" fillType="geld" palettArea="220.7 83.2 220.9 83.4" palettPlaces="1" showInStorage="false" />
+	</item>
+	<l10n>
+		<text name="FabrikScript_HofladenBirne">
+			<en>FabrikScript_HofladenBirne</en>
+			<de>Hofladen (Birne)</de>
+			<fr>Hofladen (Birne)</fr>
+		</text>
+		<text name="Birne">
+			<en>Birne</en>
+			<de>Birne</de>
+			<fr>Birne</fr>
+		</text>
+		<text name="birne">
+			<en>birne</en>
+			<de>Birne</de>
+			<fr>Birne</fr>
+		</text>
+		<text name="Geldkassette">
+			<en>Geldkassette</en>
+			<de>Geld</de>
+			<fr>Geld</fr>
+		</text>
+		<text name="geld">
+			<en>geld</en>
+			<de>Geld</de>
+			<fr>Geld</fr>
+		</text>
+	</l10n>
+</mapconfig>

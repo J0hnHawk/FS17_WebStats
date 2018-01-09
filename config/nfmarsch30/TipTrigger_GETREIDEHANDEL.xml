@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mapconfig>
+	<item name="TipTrigger_GETREIDEHANDEL" locationType="TipTrigger" position="270 0 -732" />
+	<l10n>
+		<text name="TipTrigger_GETREIDEHANDEL">
+			<en>TipTrigger_GETREIDEHANDEL</en>
+			<de>Getreidehandel</de>
+			<fr>Getreidehandel</fr>
+		</text>
+	</l10n>
+</mapconfig>

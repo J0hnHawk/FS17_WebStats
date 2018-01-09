@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mapconfig>
+	<item name="FabrikScript_kaufstahlpalette" locationType="FabrikScript" ProdPerHour="14400001" position="-514.317 99.9572 -587.786" showInProduction="true">
+		<input name="geld" capacity="250000" factor="1" fillTypes="geld" showInStorage="false" />
+		<output name="Stahlpalette" capacity="5000" factor="0.4" fillType="stahl" palettArea="0 0 1 1" palettPlaces="999" showInStorage="false" />
+	</item>
+	<l10n>
+		<text name="FabrikScript_kaufstahlpalette">
+			<en>FabrikScript_kaufstahlpalette</en>
+			<de>{FabrikScript_kaufstahlpalette}</de>
+			<fr>{FabrikScript_kaufstahlpalette}</fr>
+		</text>
+		<text name="geld">
+			<en>geld</en>
+			<de>Geld</de>
+			<fr>Argent</fr>
+		</text>
+		<text name="Stahlpalette">
+			<en>Stahlpalette</en>
+			<de>{Stahlpalette}</de>
+			<fr>{Stahlpalette}</fr>
+		</text>
+		<text name="stahl">
+			<en>stahl</en>
+			<de>{stahl}</de>
+			<fr>{stahl}</fr>
+		</text>
+	</l10n>
+</mapconfig>

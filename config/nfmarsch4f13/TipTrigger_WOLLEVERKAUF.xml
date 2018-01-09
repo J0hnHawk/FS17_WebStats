@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mapconfig>
+	<item name="TipTrigger_WOLLEVERKAUF" locationType="TipTrigger" position="824 0 315" />
+	<l10n>
+		<text name="TipTrigger_WOLLEVERKAUF">
+			<en>TipTrigger_WOLLEVERKAUF</en>
+			<de>Palettenverkauf</de>
+			<fr>Palettenverkauf</fr>
+		</text>
+	</l10n>
+</mapconfig>

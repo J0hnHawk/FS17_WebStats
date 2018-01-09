@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mapconfig>
+	<item name="FabrikScript_Lager_Salat" locationType="FabrikScript" ProdPerHour="14400001" position="-945.46 99.955 -715.471" showInProduction="false">
+		<input name="Salatpalette" capacity="500000" factor="1" fillTypes="salat" showInStorage="true" />
+		<output name="Salatpalette" capacity="5000" factor="1" fillType="salat" showInStorage="false" />
+	</item>
+	<l10n>
+		<text name="FabrikScript_Lager_Salat">
+			<en>FabrikScript_Lager_Salat</en>
+			<de>Palettenlager</de>
+			<fr>Entrepôt à palettes</fr>
+		</text>
+		<text name="Salatpalette">
+			<en>Salatpalette</en>
+			<de>Salat</de>
+			<fr>Salade</fr>
+		</text>
+		<text name="salat">
+			<en>salat</en>
+			<de>Salat</de>
+			<fr>Salade</fr>
+		</text>
+	</l10n>
+</mapconfig>

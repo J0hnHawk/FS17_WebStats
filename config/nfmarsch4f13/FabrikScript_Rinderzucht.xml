@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mapconfig>
+	<item name="FabrikScript_Rinderzucht" locationType="FabrikScript" ProdPerHour="2" position="675.578 100 1554.08" showInProduction="true">
+		<input name="Mischfutter" capacity="500000" factor="1000" fillTypes="forage" showInStorage="false" />
+		<input name="Silage" capacity="500000" factor="1000" fillTypes="silage" showInStorage="false" />
+		<input name="Stroh" capacity="500000" factor="500" fillTypes="straw" showInStorage="false" />
+		<input name="Tip_RSwater" capacity="500000" factor="100" fillTypes="water" showInStorage="false" />
+		<output name="Rinder" capacity="500" factor="1" fillType="cow" palettArea="0 0 1 1" palettPlaces="999" showInStorage="false" />
+		<output name="Guelle" capacity="800000" factor="75" fillType="liquidManure" showInStorage="true" />
+		<output name="Mist" capacity="500000" factor="75" fillType="manure" showInStorage="true" />
+	</item>
+	<l10n>
+		<text name="FabrikScript_Rinderzucht">
+			<en>FabrikScript_Rinderzucht</en>
+			<de>{FabrikScript_Rinderzucht}</de>
+			<fr>{FabrikScript_Rinderzucht}</fr>
+		</text>
+		<text name="Mischfutter">
+			<en>Mischfutter</en>
+			<de>Mischfutter</de>
+			<fr>Aliments composés</fr>
+		</text>
+		<text name="forage">
+			<en>forage</en>
+			<de>Mischfutter</de>
+			<fr>Aliments composés</fr>
+		</text>
+		<text name="Silage">
+			<en>Silage</en>
+			<de>Silage</de>
+			<fr>Ensilage</fr>
+		</text>
+		<text name="silage">
+			<en>silage</en>
+			<de>Silage</de>
+			<fr>Ensilage</fr>
+		</text>
+		<text name="Stroh">
+			<en>Stroh</en>
+			<de>Stroh</de>
+			<fr>Paille</fr>
+		</text>
+		<text name="straw">
+			<en>straw</en>
+			<de>Stroh</de>
+			<fr>Paille</fr>
+		</text>
+		<text name="Tip_RSwater">
+			<en>Tip_RSwater</en>
+			<de>Wasser</de>
+			<fr>Eau</fr>
+		</text>
+		<text name="water">
+			<en>water</en>
+			<de>Wasser</de>
+			<fr>Eau</fr>
+		</text>
+		<text name="Rinder">
+			<en>Rinder</en>
+			<de>{Rinder}</de>
+			<fr>{Rinder}</fr>
+		</text>
+		<text name="cow">
+			<en>cow</en>
+			<de>Kühe</de>
+			<fr>Vache</fr>
+		</text>
+		<text name="Guelle">
+			<en>Guelle</en>
+			<de>{Guelle}</de>
+			<fr>{Guelle}</fr>
+		</text>
+		<text name="liquidManure">
+			<en>liquidManure</en>
+			<de>Gülle</de>
+			<fr>Lisier</fr>
+		</text>
+		<text name="Mist">
+			<en>Mist</en>
+			<de>{Mist}</de>
+			<fr>{Mist}</fr>
+		</text>
+		<text name="manure">
+			<en>manure</en>
+			<de>Mist</de>
+			<fr>Fumier</fr>
+		</text>
+	</l10n>
+</mapconfig>

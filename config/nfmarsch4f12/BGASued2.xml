@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mapconfig>
+	<item name="BGASued2" locationType="bunker" position="673.947 0 1661.456" />
+	<l10n>
+		<text name="BGASued2">
+			<en>BGASued2</en>
+			<de>BGA Süd Fahrsilo 4</de>
+			<fr>BGA Süd Fahrsilo 4</fr>
+		</text>
+	</l10n>
+</mapconfig>

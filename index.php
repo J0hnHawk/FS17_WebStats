@@ -42,7 +42,7 @@ include ('./include/coockie.php');
 $style = $options ['general'] ['style'];
 
 $smarty = new Smarty ();
-$smarty->debugging = false;
+$smarty->debugging = true;
 $smarty->caching = false;
 $smarty->setTemplateDir ( "./styles/$style/templates" );
 $smarty->assign ( 'webStatsVersion', 'Version 1.4.0 (alpha)' );

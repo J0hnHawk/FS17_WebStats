@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mapconfig>
+	<item name="TipTrigger_RAIFFEISEN" locationType="TipTrigger" position="467 0 -232" />
+	<l10n>
+		<text name="TipTrigger_RAIFFEISEN">
+			<en>TipTrigger_RAIFFEISEN</en>
+			<de>Raiffeisen</de>
+			<fr>Raiffeisen</fr>
+		</text>
+	</l10n>
+</mapconfig>

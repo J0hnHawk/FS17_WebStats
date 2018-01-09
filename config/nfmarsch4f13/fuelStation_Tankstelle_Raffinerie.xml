@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mapconfig>
+	<item name="fuelStation_Tankstelle_Raffinerie" locationType="fuelStation" position="-920 0 630" />
+	<l10n>
+		<text name="fuelStation_Tankstelle_Raffinerie">
+			<en>fuelStation_Tankstelle_Raffinerie</en>
+			<de>Tankstelle Raffinerie</de>
+			<fr>Station-service Raffinerie</fr>
+		</text>
+	</l10n>
+</mapconfig>

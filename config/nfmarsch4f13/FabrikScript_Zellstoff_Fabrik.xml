@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mapconfig>
+	<item name="FabrikScript_Zellstoff_Fabrik" locationType="FabrikScript" ProdPerHour="12500" position="-930 0 -820" showInProduction="true">
+		<input name="Hackschnitzel" capacity="500000" factor="0.5" fillTypes="woodChips" showInStorage="false" />
+		<input name="Tip_RSwater" capacity="200000" factor="0.3" fillTypes="water" showInStorage="false" />
+		<input name="emptypallet" capacity="150000" factor="0.25" fillTypes="emptypallet" showInStorage="false" />
+		<output name="palettepapier" capacity="5000" factor="1" fillType="papier" palettArea="-973.0 -852.0 -967.0 -837.0" palettPlaces="22" showInStorage="false" />
+		<output name="palette_karton" capacity="5000" factor="1" fillType="karton" palettArea="-973.0 -829.0 -967.0 -814.0" palettPlaces="22" showInStorage="false" />
+	</item>
+	<l10n>
+		<text name="FabrikScript_Zellstoff_Fabrik">
+			<en>FabrikScript_Zellstoff_Fabrik</en>
+			<de>Zellstofffabrik</de>
+			<fr>Usine à papier et carton</fr>
+		</text>
+		<text name="Hackschnitzel">
+			<en>Hackschnitzel</en>
+			<de>Hackschnitzel</de>
+			<fr>Copeaux de bois</fr>
+		</text>
+		<text name="woodChips">
+			<en>woodChips</en>
+			<de>Hackschnitzel</de>
+			<fr>Copeaux de bois</fr>
+		</text>
+		<text name="Tip_RSwater">
+			<en>Tip_RSwater</en>
+			<de>Wasser</de>
+			<fr>Eau</fr>
+		</text>
+		<text name="water">
+			<en>water</en>
+			<de>Wasser</de>
+			<fr>Eau</fr>
+		</text>
+		<text name="emptypallet">
+			<en>emptypallet</en>
+			<de>Leere Paletten</de>
+			<fr>Palette vide</fr>
+		</text>
+		<text name="palettepapier">
+			<en>palettepapier</en>
+			<de>Papier</de>
+			<fr>Papier</fr>
+		</text>
+		<text name="papier">
+			<en>papier</en>
+			<de>Papier</de>
+			<fr>Papier</fr>
+		</text>
+		<text name="palette_karton">
+			<en>palette_karton</en>
+			<de>Karton</de>
+			<fr>Carton</fr>
+		</text>
+		<text name="karton">
+			<en>karton</en>
+			<de>Karton</de>
+			<fr>Carton</fr>
+		</text>
+	</l10n>
+</mapconfig>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mapconfig>
+	<item name="adBlueStation_adBlueStationFarm_RAFFINERIE" locationType="AdBlue" position="-933.346 0 609.323" />
+	<l10n>
+		<text name="adBlueStation_adBlueStationFarm_RAFFINERIE">
+			<en>adBlueStation_adBlueStationFarm_RAFFINERIE</en>
+			<de>AdBlue Hoftankstelle Raffinerie</de>
+			<fr>AdBlue Hoftankstelle Raffinerie</fr>
+		</text>
+	</l10n>
+</mapconfig>

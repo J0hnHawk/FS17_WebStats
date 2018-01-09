@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mapconfig>
+	<item name="FabrikScript_kartoffellager2" locationType="FabrikScript" ProdPerHour="1000000000" position="-670 0 780" showInProduction="false">
+		<input name="potato" capacity="500000" factor="1" fillTypes="potato" showInStorage="true" />
+		<output name="potato" capacity="500000" factor="1" fillType="potato" showInStorage="true" />
+	</item>
+	<l10n>
+		<text name="FabrikScript_kartoffellager2">
+			<en>FabrikScript_kartoffellager2</en>
+			<de>Lagerhalle (Waschanlage)</de>
+			<fr>Entrepôt (???)</fr>
+		</text>
+		<text name="potato">
+			<en>potato</en>
+			<de>Kartoffeln</de>
+			<fr>Pommes de terre</fr>
+		</text>
+	</l10n>
+</mapconfig>

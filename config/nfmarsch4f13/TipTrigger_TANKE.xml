@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mapconfig>
+	<item name="TipTrigger_TANKE" locationType="TipTrigger" position="-191 0 -299" />
+	<l10n>
+		<text name="TipTrigger_TANKE">
+			<en>TipTrigger_TANKE</en>
+			<de>Araltankstelle 1</de>
+			<fr>Araltankstelle 1</fr>
+		</text>
+	</l10n>
+</mapconfig>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mapconfig>
+	<item name="FabrikScript_Sandverkauf" locationType="FabrikScript" ProdPerHour="5000" position="1691.93 100 -886.787" showInProduction="true">
+		<input name="Sand" capacity="300000" factor="1" fillTypes="sand" showInStorage="false" />
+		<output name="Geldkassette" capacity="250000" factor="0.4" fillType="geld" showInStorage="true" />
+	</item>
+	<l10n>
+		<text name="FabrikScript_Sandverkauf">
+			<en>FabrikScript_Sandverkauf</en>
+			<de>{FabrikScript_Sandverkauf}</de>
+			<fr>{FabrikScript_Sandverkauf}</fr>
+		</text>
+		<text name="Sand">
+			<en>Sand</en>
+			<de>{Sand}</de>
+			<fr>{Sand}</fr>
+		</text>
+		<text name="sand">
+			<en>sand</en>
+			<de>Sable</de>
+			<fr>Sable</fr>
+		</text>
+		<text name="Geldkassette">
+			<en>Geldkassette</en>
+			<de>Geld</de>
+			<fr>Argent</fr>
+		</text>
+		<text name="geld">
+			<en>geld</en>
+			<de>Geld</de>
+			<fr>Argent</fr>
+		</text>
+	</l10n>
+</mapconfig>

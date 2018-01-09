@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mapconfig>
+	<item name="FabrikScript_Lager_Birne" locationType="FabrikScript" ProdPerHour="14400001" position="-930.7 99.955 -490.701" showInProduction="">
+		<input name="Birnenpalette" capacity="500000" factor="1" fillTypes="birne" showInStorage="true" />
+		<output name="Birnenpalette" capacity="5000" factor="1" fillType="birne" palettPlaces="999" showInStorage="false" />
+	</item>
+	<l10n>
+		<text name="FabrikScript_Lager_Birne">
+			<en>FabrikScript_Lager_Birne</en>
+			<de>Palettenlager</de>
+			<fr>Entrepôt à palettes</fr>
+		</text>
+		<text name="Birnenpalette">
+			<en>Birnenpalette</en>
+			<de>Birne</de>
+			<fr>Poire</fr>
+		</text>
+		<text name="birne">
+			<en>birne</en>
+			<de>Birne</de>
+			<fr>Poire</fr>
+		</text>
+	</l10n>
+</mapconfig>

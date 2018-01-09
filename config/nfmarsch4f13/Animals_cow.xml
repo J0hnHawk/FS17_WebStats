@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mapconfig>
+	<item name="Animals_cow" locationType="animal" position="36 0 200" reproRate="1200">
+		<input name="water" trough_factor="35" consumption_factor="35" fillTypes="water" showInStorage="false" />
+		<input name="straw" trough_factor="70" consumption_factor="70" fillTypes="straw" showInStorage="false" />
+		<input name="grass_windrow" trough_factor="70" consumption_factor="100" fillTypes="grass_windrow" showInStorage="false" />
+		<input name="silage_dryGrass_windrow" trough_factor="175" consumption_factor="175" fillTypes="silage dryGrass_windrow" showInStorage="false" />
+		<input name="powerFood" trough_factor="105" consumption_factor="105" fillTypes="powerFood" showInStorage="false" />
+		<output name="liquidManure" production_factor="250" fillType="liquidManure" showInStorage="true" />
+		<output name="manure" production_factor="200" fillType="manure" showInStorage="true" />
+		<output name="milk" production_factor="714" fillType="milk" showInStorage="true" />
+		<productivity name="straw" factor="10" />
+		<productivity name="grass_windrow" factor="18" />
+		<productivity name="silage_dryGrass_windrow" factor="45" />
+		<productivity name="powerFood" factor="27" />
+	</item>
+	<l10n>
+		<text name="Animals_cow">
+			<en>Animals_cow</en>
+			<de>Kuhstall</de>
+			<fr>Etable</fr>
+		</text>
+		<text name="water">
+			<en>water</en>
+			<de>Wasser</de>
+			<fr>Eau</fr>
+		</text>
+		<text name="straw">
+			<en>straw</en>
+			<de>Stroh</de>
+			<fr>Paille</fr>
+		</text>
+		<text name="grass_windrow">
+			<en>grass_windrow</en>
+			<de>Gras</de>
+			<fr>Herbe</fr>
+		</text>
+		<text name="silage_dryGrass_windrow">
+			<en>silage_dryGrass_windrow</en>
+			<de>Silage oder Heu</de>
+			<fr>Ensilage ou foin</fr>
+		</text>
+		<text name="silage">
+			<en>silage</en>
+			<de>Silage</de>
+			<fr>Ensilage</fr>
+		</text>
+		<text name="dryGrass_windrow">
+			<en>dryGrass_windrow</en>
+			<de>Heu</de>
+			<fr>Foin</fr>
+		</text>
+		<text name="powerFood">
+			<en>powerFood</en>
+			<de>Mischfutter</de>
+			<fr>Aliments composés</fr>
+		</text>
+		<text name="liquidManure">
+			<en>liquidManure</en>
+			<de>Gülle</de>
+			<fr>Lisier</fr>
+		</text>
+		<text name="manure">
+			<en>manure</en>
+			<de>Mist</de>
+			<fr>Fumier</fr>
+		</text>
+		<text name="milk">
+			<en>milk</en>
+			<de>Milch</de>
+			<fr>Lait</fr>
+		</text>
+	</l10n>
+</mapconfig>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mapconfig>
+	<item name="FabrikScript_Lager_Fleisch" locationType="FabrikScript" ProdPerHour="14400001" position="-887 0 -676" showInProduction="false">
+		<input name="Fleisch" capacity="625000" factor="1" fillTypes="meat" showInStorage="true" />
+		<output name="Fleisch" capacity="5000" factor="1" fillType="meat" palettPlaces="999" showInStorage="false" />
+	</item>
+	<l10n>
+		<text name="FabrikScript_Lager_Fleisch">
+			<en>FabrikScript_Lager_Fleisch</en>
+			<de>Palettenlager</de>
+			<fr>Palettenlager</fr>
+		</text>
+		<text name="Fleisch">
+			<en>Fleisch</en>
+			<de>Fleisch</de>
+			<fr>Fleisch</fr>
+		</text>
+		<text name="meat">
+			<en>meat</en>
+			<de>Fleisch</de>
+			<fr>Fleisch</fr>
+		</text>
+	</l10n>
+</mapconfig>
