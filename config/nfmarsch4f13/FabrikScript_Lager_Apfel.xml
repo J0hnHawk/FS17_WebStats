@@ -6,17 +6,17 @@
 	</item>
 	<l10n>
 		<text name="FabrikScript_Lager_Apfel">
-			<en>FabrikScript_Lager_Apfel</en>
+			<en>Pallet storage</en>
 			<de>Palettenlager</de>
 			<fr>Entrepôt à palettes</fr>
 		</text>
 		<text name="Apfelpalette">
-			<en>Apfelpalette</en>
+			<en>Apple</en>
 			<de>Apfel</de>
 			<fr>Pomme</fr>
 		</text>
 		<text name="apfel">
-			<en>apfel</en>
+			<en>Apple</en>
 			<de>Apfel</de>
 			<fr>Pomme</fr>
 		</text>

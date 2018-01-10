@@ -12,99 +12,99 @@
 	</item>
 	<l10n>
 		<text name="FabrikScript_Backerei_Kuchen">
-			<en>FabrikScript_Backerei_Kuchen</en>
+			<en>Bakery (Cake)</en>
 			<de>Bäckerei (Kuchen)</de>
-			<fr>Boulangerie ([de]Kuchen)</fr>
+			<fr>Boulangerie (gâteau)</fr>
 		</text>
 		<text name="emptypallet">
-			<en>emptypallet</en>
+			<en>Empty pallet</en>
 			<de>Leere Paletten</de>
 			<fr>Palette vide</fr>
 		</text>
 		<text name="palette_karton">
-			<en>palette_karton</en>
+			<en>Cardboard</en>
 			<de>Karton</de>
 			<fr>Carton</fr>
 		</text>
 		<text name="karton">
-			<en>karton</en>
+			<en>Cardboard</en>
 			<de>Karton</de>
 			<fr>Carton</fr>
 		</text>
 		<text name="Tip_mehl">
-			<en>Tip_mehl</en>
+			<en>Flour</en>
 			<de>Mehl</de>
 			<fr>Farine</fr>
 		</text>
 		<text name="mehl">
-			<en>mehl</en>
+			<en>Flour</en>
 			<de>Mehl</de>
 			<fr>Farine</fr>
 		</text>
 		<text name="Obstpalette">
-			<en>Obstpalette</en>
+			<en>Fruit</en>
 			<de>Obst</de>
 			<fr>Fruit</fr>
 		</text>
 		<text name="apfel">
-			<en>apfel</en>
+			<en>Apple</en>
 			<de>Apfel</de>
 			<fr>Pomme</fr>
 		</text>
 		<text name="kirsche">
-			<en>kirsche</en>
+			<en>Cherry</en>
 			<de>Kirsche</de>
 			<fr>Cerise</fr>
 		</text>
 		<text name="pflaume">
-			<en>pflaume</en>
+			<en>Plum</en>
 			<de>Pflaume</de>
 			<fr>Prune</fr>
 		</text>
 		<text name="birne">
-			<en>birne</en>
+			<en>Pear</en>
 			<de>Birne</de>
 			<fr>Poire</fr>
 		</text>
 		<text name="Zuckerpalette">
-			<en>Zuckerpalette</en>
+			<en>Sugar</en>
 			<de>Zucker</de>
 			<fr>Sucre</fr>
 		</text>
 		<text name="zucker">
-			<en>zucker</en>
+			<en>Sugar</en>
 			<de>Zucker</de>
 			<fr>Sucre</fr>
 		</text>
 		<text name="Quarkpalette">
-			<en>Quarkpalette</en>
+			<en>Curd</en>
 			<de>Quark</de>
 			<fr>Fromage blanc</fr>
 		</text>
 		<text name="quark">
-			<en>quark</en>
+			<en>Curd</en>
 			<de>Quark</de>
 			<fr>Fromage blanc</fr>
 		</text>
 		<text name="Sahnepalette">
-			<en>Sahnepalette</en>
+			<en>Cream</en>
 			<de>Sahne</de>
 			<fr>Crème</fr>
 		</text>
 		<text name="sahne">
-			<en>sahne</en>
+			<en>Cream</en>
 			<de>Sahne</de>
 			<fr>Crème</fr>
 		</text>
 		<text name="Kuchen">
-			<en>Kuchen</en>
+			<en>Cake</en>
 			<de>Kuchen</de>
-			<fr>[de]Kuchen</fr>
+			<fr>Gâteau</fr>
 		</text>
 		<text name="kuchen">
-			<en>kuchen</en>
+			<en>Cake</en>
 			<de>Kuchen</de>
-			<fr>Kuchen</fr>
+			<fr>Gâteau</fr>
 		</text>
 	</l10n>
 </mapconfig>

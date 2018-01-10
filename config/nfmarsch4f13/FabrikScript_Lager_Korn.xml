@@ -6,7 +6,7 @@
 	</item>
 	<l10n>
 		<text name="FabrikScript_Lager_Korn">
-			<en>FabrikScript_Lager_Korn</en>
+			<en>Pallet storage</en>
 			<de>Palettenlager</de>
 			<fr>Entrepôt à palettes</fr>
 		</text>
@@ -16,7 +16,7 @@
 			<fr>Grains</fr>
 		</text>
 		<text name="korn">
-			<en>korn</en>
+			<en>Korn</en>
 			<de>Korn</de>
 			<fr>Korn</fr>
 		</text>

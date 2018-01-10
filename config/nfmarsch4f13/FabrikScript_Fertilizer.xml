@@ -6,17 +6,17 @@
 	</item>
 	<l10n>
 		<text name="FabrikScript_Fertilizer">
-			<en>FabrikScript_Fertilizer</en>
+			<en>Fertilizer store</en>
 			<de>Düngerlager</de>
 			<fr>Entrepôt à engrais</fr>
 		</text>
 		<text name="FS_fertilizer">
-			<en>FS_fertilizer</en>
+			<en>Fertilizer</en>
 			<de>Dünger</de>
 			<fr>Engrais</fr>
 		</text>
 		<text name="fertilizer">
-			<en>fertilizer</en>
+			<en>Fertilizer</en>
 			<de>Dünger</de>
 			<fr>Engrais</fr>
 		</text>

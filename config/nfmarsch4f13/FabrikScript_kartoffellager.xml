@@ -6,12 +6,12 @@
 	</item>
 	<l10n>
 		<text name="FabrikScript_kartoffellager">
-			<en>FabrikScript_kartoffellager</en>
+			<en>Storage (farm)</en>
 			<de>Lagerhalle (Hof)</de>
 			<fr>Entrepôt (Cour)</fr>
 		</text>
 		<text name="potato">
-			<en>potato</en>
+			<en>Potato</en>
 			<de>Kartoffeln</de>
 			<fr>Pommes de terre</fr>
 		</text>

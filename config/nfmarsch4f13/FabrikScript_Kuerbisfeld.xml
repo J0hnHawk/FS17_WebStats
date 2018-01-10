@@ -4,38 +4,38 @@
 		<input name="compost" capacity="200000" factor="0.5" fillTypes="compost" showInStorage="false" />
 		<input name="Stroh" capacity="200000" factor="0.25" fillTypes="straw" showInStorage="false" />
 		<input name="emptypallet" capacity="100000" factor="0.15" fillTypes="emptypallet" showInStorage="false" />
-		<output name="kuerbis" capacity="5000" factor="1" fillType="kuerbis" palettArea="0 0 1 1" palettPlaces="999" showInStorage="false" />
+		<output name="kuerbis" capacity="5000" factor="1" fillType="kuerbis" palettArea="-1181.038 -905.916 -962.353 -1197.085 -911.844" palettPlaces="22" showInStorage="false" />
 	</item>
 	<l10n>
 		<text name="FabrikScript_Kuerbisfeld">
-			<en>FabrikScript_Kuerbisfeld</en>
-			<de>{FabrikScript_Kuerbisfeld}</de>
-			<fr>{FabrikScript_Kuerbisfeld}</fr>
+			<en>Pumpkin field</en>
+			<de>Kürbisfeld</de>
+			<fr>Champ de citrouille</fr>
 		</text>
 		<text name="compost">
-			<en>compost</en>
+			<en>Compost</en>
 			<de>Kompost</de>
 			<fr>Compost</fr>
 		</text>
 		<text name="Stroh">
-			<en>Stroh</en>
+			<en>Straw</en>
 			<de>Stroh</de>
 			<fr>Paille</fr>
 		</text>
 		<text name="straw">
-			<en>straw</en>
+			<en>Straw</en>
 			<de>Stroh</de>
 			<fr>Paille</fr>
 		</text>
 		<text name="emptypallet">
-			<en>emptypallet</en>
+			<en>Empty pallet</en>
 			<de>Leere Paletten</de>
 			<fr>Palette vide</fr>
 		</text>
 		<text name="kuerbis">
-			<en>kuerbis</en>
-			<de>{kuerbis}</de>
-			<fr>{kuerbis}</fr>
+			<en>Pumpkin</en>
+			<de>Kürbis</de>
+			<fr>Citrouille</fr>
 		</text>
 	</l10n>
 </mapconfig>

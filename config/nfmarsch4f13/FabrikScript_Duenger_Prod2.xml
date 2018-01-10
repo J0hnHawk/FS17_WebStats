@@ -6,23 +6,23 @@
 		<output name="fertilizer" capacity="100000" factor="1" fillType="fertilizer" showInStorage="true" />
 	</item>
 	<l10n>
-		<text name="FabrikScript_Duenger_Prod2">
-			<en>FabrikScript_Duenger_Prod2</en>
-			<de>{FabrikScript_Duenger_Prod2}</de>
-			<fr>{FabrikScript_Duenger_Prod2}</fr>
+		<text name="FabrikScript_Duenger_Prod">
+			<en>Fertilizer production 2</en>
+			<de>Düngerproduktion 2</de>
+			<fr>Usine à engrais 2</fr>
 		</text>
 		<text name="manure">
-			<en>manure</en>
+			<en>Manure</en>
 			<de>Mist</de>
 			<fr>Fumier</fr>
 		</text>
 		<text name="liquidManure">
-			<en>liquidManure</en>
+			<en>Liquid manure</en>
 			<de>Gülle</de>
 			<fr>Lisier</fr>
 		</text>
 		<text name="fertilizer">
-			<en>fertilizer</en>
+			<en>Fertilizer</en>
 			<de>Dünger</de>
 			<fr>Engrais</fr>
 		</text>

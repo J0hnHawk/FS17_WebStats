@@ -6,29 +6,29 @@
 	</item>
 	<l10n>
 		<text name="FabrikScript_kies">
-			<en>FabrikScript_kies</en>
-			<de>{FabrikScript_kies}</de>
-			<fr>{FabrikScript_kies}</fr>
+			<en>Gravel pit</en>
+			<de>Kieswerk</de>
+			<fr>Carrière de gravier</fr>
 		</text>
 		<text name="cm_inputFuel">
-			<en>cm_inputFuel</en>
+			<en>Diesel</en>
 			<de>Diesel</de>
 			<fr>Diesel</fr>
 		</text>
 		<text name="fuel">
-			<en>fuel</en>
+			<en>Diesel</en>
 			<de>Diesel</de>
 			<fr>Diesel</fr>
 		</text>
 		<text name="Kies">
-			<en>Kies</en>
-			<de>{Kies}</de>
-			<fr>{Kies}</fr>
+			<en>Gravel</en>
+			<de>Kies</de>
+			<fr>Kies</fr>
 		</text>
 		<text name="gravel">
-			<en>gravel</en>
-			<de>{gravel}</de>
-			<fr>{gravel}</fr>
+			<en>Gravel</en>
+			<de>Kies</de>
+			<fr>Gravier</fr>
 		</text>
 	</l10n>
 </mapconfig>

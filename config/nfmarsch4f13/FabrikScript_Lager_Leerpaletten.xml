@@ -6,12 +6,12 @@
 	</item>
 	<l10n>
 		<text name="FabrikScript_Lager_Leerpaletten">
-			<en>FabrikScript_Lager_Leerpaletten</en>
+			<en>Pallet storage</en>
 			<de>Palettenlager</de>
 			<fr>Entrepôt à palettes</fr>
 		</text>
 		<text name="emptypallet">
-			<en>emptypallet</en>
+			<en>Empty pallet</en>
 			<de>Leere Paletten</de>
 			<fr>Palette vide</fr>
 		</text>

@@ -6,27 +6,27 @@
 	</item>
 	<l10n>
 		<text name="FabrikScript_HofladenPflaume">
-			<en>FabrikScript_HofladenPflaume</en>
+			<en>Farm shop (plum)</en>
 			<de>Hofladen (Pflaume)</de>
 			<fr>Boutique de la ferme (prune)</fr>
 		</text>
 		<text name="Pflaumen">
-			<en>Pflaumen</en>
+			<en>Plum</en>
 			<de>Pflaume</de>
 			<fr>Prune</fr>
 		</text>
 		<text name="pflaume">
-			<en>pflaume</en>
+			<en>Plum</en>
 			<de>Pflaume</de>
 			<fr>Prune</fr>
 		</text>
 		<text name="Geldkassette">
-			<en>Geldkassette</en>
+			<en>Money</en>
 			<de>Geld</de>
 			<fr>Argent</fr>
 		</text>
 		<text name="geld">
-			<en>geld</en>
+			<en>Money</en>
 			<de>Geld</de>
 			<fr>Argent</fr>
 		</text>

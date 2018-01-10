@@ -6,7 +6,7 @@
 	</item>
 	<l10n>
 		<text name="FabrikScript_Lager_Bierkasten">
-			<en>FabrikScript_Lager_Bierkasten</en>
+			<en>Pallet storage</en>
 			<de>Palettenlager</de>
 			<fr>Entrepôt à palettes</fr>
 		</text>
@@ -16,9 +16,9 @@
 			<fr>Caisse de bière</fr>
 		</text>
 		<text name="beer">
-			<en>beer</en>
+			<en>Case of beer</en>
 			<de>Bierkasten</de>
-			<fr>Bière</fr>
+			<fr>Caisse de bière</fr>
 		</text>
 	</l10n>
 </mapconfig>

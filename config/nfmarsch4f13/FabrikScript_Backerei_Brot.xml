@@ -8,44 +8,44 @@
 	</item>
 	<l10n>
 		<text name="FabrikScript_Backerei_Brot">
-			<en>FabrikScript_Backerei_Brot</en>
+			<en>Bakery (bread)</en>
 			<de>Bäckerei (Brot)</de>
-			<fr>Boulangerie ([de]Brot)</fr>
+			<fr>Boulangerie (pain)</fr>
 		</text>
 		<text name="emptypallet">
-			<en>emptypallet</en>
+			<en>Empty pallet</en>
 			<de>Leere Paletten</de>
 			<fr>Palette vide</fr>
 		</text>
 		<text name="Tip_mehl">
-			<en>Tip_mehl</en>
+			<en>Flour</en>
 			<de>Mehl</de>
 			<fr>Farine</fr>
 		</text>
 		<text name="mehl">
-			<en>mehl</en>
+			<en>Flour</en>
 			<de>Mehl</de>
 			<fr>Farine</fr>
 		</text>
 		<text name="Tip_RSwater">
-			<en>Tip_RSwater</en>
+			<en>Water</en>
 			<de>Wasser</de>
 			<fr>Eau</fr>
 		</text>
 		<text name="water">
-			<en>water</en>
+			<en>Water</en>
 			<de>Wasser</de>
 			<fr>Eau</fr>
 		</text>
 		<text name="brotpalette">
-			<en>brotpalette</en>
+			<en>Bread</en>
 			<de>Brot</de>
 			<fr>Pain</fr>
 		</text>
 		<text name="brot">
-			<en>brot</en>
+			<en>Bread</en>
 			<de>Brot</de>
-			<fr>Brot</fr>
+			<fr>Pain</fr>
 		</text>
 	</l10n>
 </mapconfig>

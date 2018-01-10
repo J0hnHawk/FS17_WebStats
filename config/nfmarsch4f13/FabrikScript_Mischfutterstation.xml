@@ -8,17 +8,17 @@
 	</item>
 	<l10n>
 		<text name="FabrikScript_Mischfutterstation">
-			<en>FabrikScript_Mischfutterstation</en>
-			<de>{FabrikScript_Mischfutterstation}</de>
-			<fr>{FabrikScript_Mischfutterstation}</fr>
+			<en>Feed factory (cattle farm)</en>
+			<de>Mischfutterstation (Rinderhof)</de>
+			<fr>Usine à alimentation (Élevage de bétail)</fr>
 		</text>
 		<text name="Stroh">
-			<en>Stroh</en>
+			<en>Straw</en>
 			<de>Stroh</de>
 			<fr>Paille</fr>
 		</text>
 		<text name="straw">
-			<en>straw</en>
+			<en>Straw</en>
 			<de>Stroh</de>
 			<fr>Paille</fr>
 		</text>
@@ -28,32 +28,32 @@
 			<fr>Ensilage</fr>
 		</text>
 		<text name="silage">
-			<en>silage</en>
+			<en>Silage</en>
 			<de>Silage</de>
 			<fr>Ensilage</fr>
 		</text>
 		<text name="Gras">
-			<en>Gras</en>
+			<en>Grass</en>
 			<de>Gras</de>
 			<fr>Herbe</fr>
 		</text>
 		<text name="grass_windrow">
-			<en>grass_windrow</en>
+			<en>Grass</en>
 			<de>Gras</de>
 			<fr>Herbe</fr>
 		</text>
 		<text name="dryGrass_windrow">
-			<en>dryGrass_windrow</en>
+			<en>Dry grass</en>
 			<de>Heu</de>
 			<fr>Foin</fr>
 		</text>
 		<text name="Mischfutter">
-			<en>Mischfutter</en>
+			<en>Forage</en>
 			<de>Mischfutter</de>
 			<fr>Aliments composés</fr>
 		</text>
 		<text name="forage">
-			<en>forage</en>
+			<en>Forage</en>
 			<de>Mischfutter</de>
 			<fr>Aliments composés</fr>
 		</text>

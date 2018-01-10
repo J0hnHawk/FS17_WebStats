@@ -6,27 +6,27 @@
 	</item>
 	<l10n>
 		<text name="FabrikScript_Kiesverkauf">
-			<en>FabrikScript_Kiesverkauf</en>
-			<de>{FabrikScript_Kiesverkauf}</de>
-			<fr>{FabrikScript_Kiesverkauf}</fr>
+			<en>Gravel sale</en>
+			<de>Kiesverkauf</de>
+			<fr>Vente de gravier</fr>
 		</text>
 		<text name="Kies">
-			<en>Kies</en>
-			<de>{Kies}</de>
-			<fr>{Kies}</fr>
+			<en>Gravel</en>
+			<de>Kies</de>
+			<fr>Gravier</fr>
 		</text>
 		<text name="gravel">
-			<en>gravel</en>
-			<de>{gravel}</de>
-			<fr>{gravel}</fr>
+			<en>Gravel</en>
+			<de>Kies</de>
+			<fr>Gravier</fr>
 		</text>
 		<text name="Geldkassette">
-			<en>Geldkassette</en>
+			<en>Money</en>
 			<de>Geld</de>
 			<fr>Argent</fr>
 		</text>
 		<text name="geld">
-			<en>geld</en>
+			<en>Money</en>
 			<de>Geld</de>
 			<fr>Argent</fr>
 		</text>

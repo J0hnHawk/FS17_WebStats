@@ -10,79 +10,79 @@
 	</item>
 	<l10n>
 		<text name="FabrikScript_Brennerei_Korn">
-			<en>FabrikScript_Brennerei_Korn</en>
+			<en>Distillery (Korn)</en>
 			<de>Brennerei (Korn)</de>
 			<fr>Distillerie (grain)</fr>
 		</text>
 		<text name="Getreide">
-			<en>Getreide</en>
+			<en>Grain</en>
 			<de>Getreide</de>
 			<fr>Céréales</fr>
 		</text>
 		<text name="wheat">
-			<en>wheat</en>
+			<en>Wheat</en>
 			<de>Weizen</de>
 			<fr>Blé</fr>
 		</text>
 		<text name="rye">
-			<en>rye</en>
+			<en>Rye</en>
 			<de>Roggen</de>
 			<fr>Seigle</fr>
 		</text>
 		<text name="oat">
-			<en>oat</en>
+			<en>Oat</en>
 			<de>Hafer</de>
 			<fr>Avoine</fr>
 		</text>
 		<text name="barley">
-			<en>barley</en>
+			<en>Barley</en>
 			<de>Gerste</de>
 			<fr>Orge</fr>
 		</text>
 		<text name="Tip_RSwater">
-			<en>Tip_RSwater</en>
+			<en>Water</en>
 			<de>Wasser</de>
 			<fr>Eau</fr>
 		</text>
 		<text name="water">
-			<en>water</en>
+			<en>Water</en>
 			<de>Wasser</de>
 			<fr>Eau</fr>
 		</text>
 		<text name="emptypallet">
-			<en>emptypallet</en>
+			<en>Empty pallet</en>
 			<de>Leere Paletten</de>
 			<fr>Palette vide</fr>
 		</text>
 		<text name="palette_karton">
-			<en>palette_karton</en>
+			<en>Cardboard</en>
 			<de>Karton</de>
 			<fr>Carton</fr>
 		</text>
 		<text name="karton">
-			<en>karton</en>
+			<en>Cardboard</en>
 			<de>Karton</de>
 			<fr>Carton</fr>
 		</text>
 		<text name="zuckerpalette">
-			<en>zuckerpalette</en>
+			<en>Sugar</en>
 			<de>Zucker</de>
 			<fr>Sucre</fr>
 		</text>
 		<text name="zucker">
-			<en>zucker</en>
+			<en>Sugar</en>
 			<de>Zucker</de>
 			<fr>Sucre</fr>
 		</text>
 		<text name="palettekorn">
-			<en>palettekorn</en>
+			<en>Korn</en>
 			<de>Korn</de>
 			<fr>Grains</fr>
 		</text>
 		<text name="korn">
-			<en>korn</en>
+			<en>Korn</en>
 			<de>Korn</de>
-			<fr>Korn</fr>
+			<fr>Grains</fr>
 		</text>
 	</l10n>
 </mapconfig>

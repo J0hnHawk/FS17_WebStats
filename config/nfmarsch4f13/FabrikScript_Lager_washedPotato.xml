@@ -6,12 +6,12 @@
 	</item>
 	<l10n>
 		<text name="FabrikScript_Lager_washedPotato">
-			<en>FabrikScript_Lager_washedPotato</en>
+			<en>Pallet storage</en>
 			<de>Palettenlager</de>
 			<fr>Entrepôt à palettes</fr>
 		</text>
 		<text name="washedPotato">
-			<en>washedPotato</en>
+			<en>Washed potato</en>
 			<de>gewasch. Kartoffeln</de>
 			<fr>Pommes de terre lavées</fr>
 		</text>

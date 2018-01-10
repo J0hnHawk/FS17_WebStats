@@ -6,19 +6,19 @@
 	</item>
 	<l10n>
 		<text name="FabrikScript_Lager_kartoffelsack">
-			<en>FabrikScript_Lager_kartoffelsack</en>
+			<en>Pallet storage</en>
 			<de>Palettenlager</de>
 			<fr>Entrepôt à palettes</fr>
 		</text>
 		<text name="palettekartoffelsack">
-			<en>palettekartoffelsack</en>
+			<en>Potato bag</en>
 			<de>Kartoffelsack</de>
 			<fr>Sac de pommes de terre</fr>
 		</text>
 		<text name="kartoffelsack">
-			<en>kartoffelsack</en>
+			<en>Potato bag</en>
 			<de>Kartoffelsack</de>
-			<fr>Kartoffelsack</fr>
+			<fr>Sac de pommes de terre</fr>
 		</text>
 	</l10n>
 </mapconfig>

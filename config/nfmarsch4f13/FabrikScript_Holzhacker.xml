@@ -6,17 +6,17 @@
 	</item>
 	<l10n>
 		<text name="FabrikScript_Holzhacker">
-			<en>FabrikScript_Holzhacker</en>
+			<en>Woodchopper</en>
 			<de>Holzhacker</de>
 			<fr>Scierie</fr>
 		</text>
 		<text name="Holz">
-			<en>Holz</en>
+			<en>Logs</en>
 			<de>Holzstämme</de>
 			<fr>Grumes</fr>
 		</text>
 		<text name="woodChips">
-			<en>woodChips</en>
+			<en>Wood chips</en>
 			<de>Hackschnitzel</de>
 			<fr>Copeaux de bois</fr>
 		</text>

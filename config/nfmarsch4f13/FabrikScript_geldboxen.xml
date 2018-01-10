@@ -6,12 +6,12 @@
 	</item>
 	<l10n>
 		<text name="FabrikScript_geldboxen">
-			<en>FabrikScript_geldboxen</en>
+			<en>Coin counter</en>
 			<de>Münzzähler</de>
 			<fr>Boite à argent</fr>
 		</text>
 		<text name="geld">
-			<en>geld</en>
+			<en>Money</en>
 			<de>Geld</de>
 			<fr>Argent</fr>
 		</text>

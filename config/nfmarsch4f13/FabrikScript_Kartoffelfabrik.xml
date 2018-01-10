@@ -11,69 +11,69 @@
 	</item>
 	<l10n>
 		<text name="FabrikScript_Kartoffelfabrik">
-			<en>FabrikScript_Kartoffelfabrik</en>
+			<en>Potato factory</en>
 			<de>Kartoffelfabrik</de>
 			<fr>Usine de pommes de terre</fr>
 		</text>
 		<text name="washedPotato">
-			<en>washedPotato</en>
+			<en>Washed potatoes</en>
 			<de>gewasch. Kartoffeln</de>
 			<fr>Pommes de terre lavées</fr>
 		</text>
 		<text name="emptypallet">
-			<en>emptypallet</en>
+			<en>Empty pallet</en>
 			<de>Leere Paletten</de>
 			<fr>Palette vide</fr>
 		</text>
 		<text name="palette_karton">
-			<en>palette_karton</en>
+			<en>Cardboard</en>
 			<de>Karton</de>
 			<fr>Carton</fr>
 		</text>
 		<text name="karton">
-			<en>karton</en>
+			<en>Cardboard</en>
 			<de>Karton</de>
 			<fr>Carton</fr>
 		</text>
 		<text name="palettespeiseoel">
-			<en>palettespeiseoel</en>
+			<en>Cooking oil</en>
 			<de>Speiseöl</de>
 			<fr>Huile</fr>
 		</text>
 		<text name="oel">
-			<en>oel</en>
+			<en>Cooking oil</en>
 			<de>Speiseöl</de>
 			<fr>Huile</fr>
 		</text>
 		<text name="palettechips">
-			<en>palettechips</en>
+			<en>Chips</en>
 			<de>Chips</de>
 			<fr>Chips</fr>
 		</text>
 		<text name="chips">
-			<en>chips</en>
+			<en>Chips</en>
 			<de>Chips</de>
 			<fr>Chips</fr>
 		</text>
 		<text name="palettepommes">
-			<en>palettepommes</en>
+			<en>Pommes</en>
 			<de>Pommes</de>
 			<fr>Palette de pommes</fr>
 		</text>
 		<text name="pommes">
-			<en>pommes</en>
+			<en>Pommes</en>
 			<de>Pommes</de>
-			<fr>Pommes</fr>
+			<fr>Palette de pommes</fr>
 		</text>
 		<text name="palettekartoffelsack">
-			<en>palettekartoffelsack</en>
+			<en>Potato bag</en>
 			<de>Kartoffelsack</de>
 			<fr>Sac de pommes de terre</fr>
 		</text>
 		<text name="kartoffelsack">
-			<en>kartoffelsack</en>
+			<en>Potato bag</en>
 			<de>Kartoffelsack</de>
-			<fr>Kartoffelsack</fr>
+			<fr>Sac de pommes de terre</fr>
 		</text>
 	</l10n>
 </mapconfig>

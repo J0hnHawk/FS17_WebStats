@@ -9,7 +9,7 @@
 	</item>
 	<l10n>
 		<text name="FabrikScript_obst_birne">
-			<en>FabrikScript_obst_birne</en>
+			<en>Fruit farm (peach)</en>
 			<de>Obstfarm (Birne)</de>
 			<fr>Verger (Poire)</fr>
 		</text>
@@ -19,42 +19,42 @@
 			<fr>Compost</fr>
 		</text>
 		<text name="compost">
-			<en>compost</en>
+			<en>Compost</en>
 			<de>Kompost</de>
 			<fr>Compost</fr>
 		</text>
 		<text name="Tip_RSwater">
-			<en>Tip_RSwater</en>
+			<en>Water</en>
 			<de>Wasser</de>
 			<fr>Eau</fr>
 		</text>
 		<text name="water">
-			<en>water</en>
+			<en>Water</en>
 			<de>Wasser</de>
 			<fr>Eau</fr>
 		</text>
 		<text name="emptypallet">
-			<en>emptypallet</en>
+			<en>Empty pallet</en>
 			<de>Leere Paletten</de>
 			<fr>Palette vide</fr>
 		</text>
 		<text name="palette_karton">
-			<en>palette_karton</en>
+			<en>Cardboard</en>
 			<de>Karton</de>
 			<fr>Carton</fr>
 		</text>
 		<text name="karton">
-			<en>karton</en>
+			<en>Cardboard</en>
 			<de>Karton</de>
 			<fr>Carton</fr>
 		</text>
 		<text name="Birnenpalette">
-			<en>Birnenpalette</en>
+			<en>Peach</en>
 			<de>Birne</de>
 			<fr>Poire</fr>
 		</text>
 		<text name="birne">
-			<en>birne</en>
+			<en>Peach</en>
 			<de>Birne</de>
 			<fr>Poire</fr>
 		</text>

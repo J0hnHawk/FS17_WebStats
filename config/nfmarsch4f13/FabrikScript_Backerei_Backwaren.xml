@@ -11,74 +11,74 @@
 	</item>
 	<l10n>
 		<text name="FabrikScript_Backerei_Backwaren">
-			<en>FabrikScript_Backerei_Backwaren</en>
+			<en>Bakery (pastries)</en>
 			<de>Bäckerei (Backwaren)</de>
-			<fr>Boulangerie ([de]Backwaren)</fr>
+			<fr>Boulangerie (pâtisserie)</fr>
 		</text>
 		<text name="emptypallet">
-			<en>emptypallet</en>
+			<en>Empty pallet</en>
 			<de>Leere Paletten</de>
 			<fr>Palette vide</fr>
 		</text>
 		<text name="palette_karton">
-			<en>palette_karton</en>
+			<en>Cardboard</en>
 			<de>Karton</de>
 			<fr>Carton</fr>
 		</text>
 		<text name="karton">
-			<en>karton</en>
+			<en>Cardboard</en>
 			<de>Karton</de>
 			<fr>Carton</fr>
 		</text>
 		<text name="Tip_mehl">
-			<en>Tip_mehl</en>
+			<en>Flour</en>
 			<de>Mehl</de>
 			<fr>Farine</fr>
 		</text>
 		<text name="mehl">
-			<en>mehl</en>
+			<en>Flour</en>
 			<de>Mehl</de>
 			<fr>Farine</fr>
 		</text>
 		<text name="zuckerpalette">
-			<en>zuckerpalette</en>
+			<en>Sugar</en>
 			<de>Zucker</de>
 			<fr>Sucre</fr>
 		</text>
 		<text name="zucker">
-			<en>zucker</en>
+			<en>Sugar</en>
 			<de>Zucker</de>
 			<fr>Sucre</fr>
 		</text>
 		<text name="Milchpalette">
-			<en>Milchpalette</en>
+			<en>Whole milk</en>
 			<de>Vollmilch</de>
 			<fr>Lait entier</fr>
 		</text>
 		<text name="milch">
-			<en>milch</en>
+			<en>Whole milk</en>
 			<de>Vollmilch</de>
 			<fr>Lait entier</fr>
 		</text>
 		<text name="Butterpalette">
-			<en>Butterpalette</en>
+			<en>Butter</en>
 			<de>Butter</de>
 			<fr>Beure</fr>
 		</text>
 		<text name="butter">
-			<en>butter</en>
+			<en>Butter</en>
 			<de>Butter</de>
 			<fr>Beure</fr>
 		</text>
 		<text name="Backwaren">
-			<en>Backwaren</en>
+			<en>Pastries</en>
 			<de>Backwaren</de>
-			<fr>[de]Backwaren</fr>
+			<fr>Pâtisserie</fr>
 		</text>
 		<text name="backwaren">
-			<en>backwaren</en>
+			<en>Pastries</en>
 			<de>Backwaren</de>
-			<fr>Backwaren</fr>
+			<fr>Pâtisserie</fr>
 		</text>
 	</l10n>
 </mapconfig>

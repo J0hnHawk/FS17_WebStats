@@ -6,22 +6,22 @@
 	</item>
 	<l10n>
 		<text name="FabrikScript_kaufbretterpalette">
-			<en>FabrikScript_kaufbretterpalette</en>
-			<de>{FabrikScript_kaufbretterpalette}</de>
-			<fr>{FabrikScript_kaufbretterpalette}</fr>
+			<en>DIY store</en>
+			<de>Baumarkt</de>
+			<fr>Magasin de bricolage</fr>
 		</text>
 		<text name="geld">
-			<en>geld</en>
+			<en>Money</en>
 			<de>Geld</de>
 			<fr>Argent</fr>
 		</text>
 		<text name="boardwood">
-			<en>boardwood</en>
+			<en>Planks</en>
 			<de>Bretter</de>
 			<fr>Palette de planche</fr>
 		</text>
 		<text name="woodChips">
-			<en>woodChips</en>
+			<en>Wood chips</en>
 			<de>Hackschnitzel</de>
 			<fr>Copeaux de bois</fr>
 		</text>

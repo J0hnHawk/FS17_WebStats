@@ -6,19 +6,19 @@
 	</item>
 	<l10n>
 		<text name="FabrikScript_Lager_Fisch">
-			<en>FabrikScript_Lager_Fisch</en>
+			<en>Pallet storage</en>
 			<de>Palettenlager</de>
 			<fr>Entrepôt à palettes</fr>
 		</text>
 		<text name="Fischpalette">
-			<en>Fischpalette</en>
+			<en>Fish</en>
 			<de>Fisch</de>
-			<fr>[de]Fisch</fr>
+			<fr>Pêcher</fr>
 		</text>
 		<text name="fisch">
-			<en>fisch</en>
+			<en>Fish</en>
 			<de>Fisch</de>
-			<fr>Fisch</fr>
+			<fr>Pêcher</fr>
 		</text>
 	</l10n>
 </mapconfig>

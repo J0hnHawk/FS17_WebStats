@@ -6,17 +6,17 @@
 	</item>
 	<l10n>
 		<text name="FabrikScript_Lager_Wurst">
-			<en>FabrikScript_Lager_Wurst</en>
+			<en>Pallet storage</en>
 			<de>Palettenlager</de>
 			<fr>Entrepôt à palettes</fr>
 		</text>
 		<text name="Wurst">
-			<en>Wurst</en>
+			<en>Sausage</en>
 			<de>Wurst</de>
 			<fr>Saucisse</fr>
 		</text>
 		<text name="sausage">
-			<en>sausage</en>
+			<en>Sausage</en>
 			<de>Wurst</de>
 			<fr>Wurst</fr>
 		</text>

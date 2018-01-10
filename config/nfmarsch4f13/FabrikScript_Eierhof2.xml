@@ -10,98 +10,98 @@
 		<output name="Mist" capacity="100000" factor="1" fillType="manure" showInStorage="true" />
 	</item>
 	<l10n>
-		<text name="FabrikScript_Eierhof2">
-			<en>FabrikScript_Eierhof2</en>
-			<de>{FabrikScript_Eierhof2}</de>
-			<fr>{FabrikScript_Eierhof2}</fr>
+		<text name="FabrikScript_Eierhof">
+			<en>Egg farm 2</en>
+			<de>Eier Produktion 2</de>
+			<fr>Élevage d'œufs 2</fr>
 		</text>
 		<text name="Getreide">
-			<en>Getreide</en>
+			<en>Grain</en>
 			<de>Getreide</de>
 			<fr>Céréales</fr>
 		</text>
 		<text name="wheat">
-			<en>wheat</en>
+			<en>Wheat</en>
 			<de>Weizen</de>
 			<fr>Blé</fr>
 		</text>
 		<text name="barley">
-			<en>barley</en>
+			<en>Barley</en>
 			<de>Gerste</de>
 			<fr>Orge</fr>
 		</text>
 		<text name="oat">
-			<en>oat</en>
+			<en>Oat</en>
 			<de>Hafer</de>
 			<fr>Avoine</fr>
 		</text>
 		<text name="rye">
-			<en>rye</en>
+			<en>Rye</en>
 			<de>Roggen</de>
 			<fr>Seigle</fr>
 		</text>
 		<text name="sunflower">
-			<en>sunflower</en>
+			<en>Sunflower</en>
 			<de>Sonnenblumen</de>
 			<fr>Tournesol</fr>
 		</text>
 		<text name="maize">
-			<en>maize</en>
+			<en>Maize</en>
 			<de>Körnermais</de>
 			<fr>Maïs</fr>
 		</text>
 		<text name="Stroh">
-			<en>Stroh</en>
+			<en>Straw</en>
 			<de>Stroh</de>
 			<fr>Paille</fr>
 		</text>
 		<text name="straw">
-			<en>straw</en>
+			<en>Straw</en>
 			<de>Stroh</de>
 			<fr>Paille</fr>
 		</text>
 		<text name="emptypallet">
-			<en>emptypallet</en>
+			<en>Empty pallet</en>
 			<de>Leere Paletten</de>
 			<fr>Palette vide</fr>
 		</text>
 		<text name="Tip_RSwater">
-			<en>Tip_RSwater</en>
+			<en>Water</en>
 			<de>Wasser</de>
 			<fr>Eau</fr>
 		</text>
 		<text name="water">
-			<en>water</en>
+			<en>Water</en>
 			<de>Wasser</de>
 			<fr>Eau</fr>
 		</text>
 		<text name="palettepapier">
-			<en>palettepapier</en>
+			<en>Paper</en>
 			<de>Papier</de>
 			<fr>Papier</fr>
 		</text>
 		<text name="papier">
-			<en>papier</en>
+			<en>Paper</en>
 			<de>Papier</de>
 			<fr>Papier</fr>
 		</text>
 		<text name="Eierpalette">
-			<en>Eierpalette</en>
-			<de>{Eierpalette}</de>
-			<fr>{Eierpalette}</fr>
+			<en>Egg</en>
+			<de>Eier</de>
+			<fr>Conneries</fr>
 		</text>
 		<text name="eier">
-			<en>eier</en>
-			<de>{eier}</de>
-			<fr>{eier}</fr>
+			<en>Egg</en>
+			<de>Eier</de>
+			<fr>Conneries</fr>
 		</text>
 		<text name="Mist">
-			<en>Mist</en>
-			<de>{Mist}</de>
-			<fr>{Mist}</fr>
+			<en>Manure</en>
+			<de>Mist</de>
+			<fr>Fumier</fr>
 		</text>
 		<text name="manure">
-			<en>manure</en>
+			<en>Manure</en>
 			<de>Mist</de>
 			<fr>Fumier</fr>
 		</text>

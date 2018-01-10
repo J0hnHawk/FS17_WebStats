@@ -6,24 +6,24 @@
 	</item>
 	<l10n>
 		<text name="FabrikScript_kaufstahlpalette">
-			<en>FabrikScript_kaufstahlpalette</en>
-			<de>{FabrikScript_kaufstahlpalette}</de>
-			<fr>{FabrikScript_kaufstahlpalette}</fr>
+			<en>DIY store</en>
+			<de>Baumark</de>
+			<fr>Magasin de bricolage</fr>
 		</text>
 		<text name="geld">
-			<en>geld</en>
+			<en>Money</en>
 			<de>Geld</de>
 			<fr>Argent</fr>
 		</text>
 		<text name="Stahlpalette">
-			<en>Stahlpalette</en>
-			<de>{Stahlpalette}</de>
-			<fr>{Stahlpalette}</fr>
+			<en>Steel</en>
+			<de>Stahl</de>
+			<fr>Acier</fr>
 		</text>
 		<text name="stahl">
-			<en>stahl</en>
-			<de>{stahl}</de>
-			<fr>{stahl}</fr>
+			<en>Steel</en>
+			<de>Stahl</de>
+			<fr>Acier</fr>
 		</text>
 	</l10n>
 </mapconfig>

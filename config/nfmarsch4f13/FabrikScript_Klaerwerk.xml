@@ -7,42 +7,42 @@
 	</item>
 	<l10n>
 		<text name="FabrikScript_Klaerwerk">
-			<en>FabrikScript_Klaerwerk</en>
+			<en>Wastewater treatment plant</en>
 			<de>Klärwerk</de>
 			<fr>Stations épuration</fr>
 		</text>
 		<text name="Tip_RS1">
-			<en>Tip_RS1</en>
+			<en>Liquid manure or digestate</en>
 			<de>Gärreste oder Gülle</de>
 			<fr>Résidus de fermentation ou fumier</fr>
 		</text>
 		<text name="liquidManure">
-			<en>liquidManure</en>
+			<en>Liquid manure</en>
 			<de>Gülle</de>
 			<fr>Lisier</fr>
 		</text>
 		<text name="digestate">
-			<en>digestate</en>
+			<en>Digestate</en>
 			<de>Gärreste</de>
 			<fr>Digestat</fr>
 		</text>
 		<text name="RS_compost1">
-			<en>RS_compost1</en>
+			<en>Compost</en>
 			<de>Kompost</de>
 			<fr>Compost</fr>
 		</text>
 		<text name="compost">
-			<en>compost</en>
+			<en>Compost</en>
 			<de>Kompost</de>
 			<fr>Compost</fr>
 		</text>
 		<text name="RM_Output2">
-			<en>RM_Output2</en>
+			<en>Water</en>
 			<de>Wasser</de>
 			<fr>Eau</fr>
 		</text>
 		<text name="water">
-			<en>water</en>
+			<en>Water</en>
 			<de>Wasser</de>
 			<fr>Eau</fr>
 		</text>

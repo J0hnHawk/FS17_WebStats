@@ -6,19 +6,19 @@
 	</item>
 	<l10n>
 		<text name="FabrikScript_Lager_Bierfass">
-			<en>FabrikScript_Lager_Bierfass</en>
+			<en>Pallet storage</en>
 			<de>Palettenlager</de>
 			<fr>Entrepôt à palettes</fr>
 		</text>
 		<text name="bierpalettefass">
-			<en>bierpalettefass</en>
+			<en>Beer keg</en>
 			<de>Bierfass</de>
 			<fr>Tonnelet de bière</fr>
 		</text>
 		<text name="beerf">
-			<en>beerf</en>
+			<en>Beer keg</en>
 			<de>Bierfass</de>
-			<fr>Bierfass</fr>
+			<fr>Tonnelet de bière</fr>
 		</text>
 	</l10n>
 </mapconfig>

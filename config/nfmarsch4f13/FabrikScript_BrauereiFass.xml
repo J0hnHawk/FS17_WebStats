@@ -9,49 +9,49 @@
 	</item>
 	<l10n>
 		<text name="FabrikScript_BrauereiFass">
-			<en>FabrikScript_BrauereiFass</en>
+			<en>Brewery keg</en>
 			<de>Brauerei Fass</de>
 			<fr>Brasserie tonnelet</fr>
 		</text>
 		<text name="Tip_RSwheat">
-			<en>Tip_RSwheat</en>
+			<en>Wheat</en>
 			<de>Weizen</de>
 			<fr>Blé</fr>
 		</text>
 		<text name="wheat">
-			<en>wheat</en>
+			<en>Wheat</en>
 			<de>Weizen</de>
 			<fr>Blé</fr>
 		</text>
 		<text name="hops">
-			<en>hops</en>
+			<en>Hops</en>
 			<de>Hopfen</de>
 			<fr>Houblon</fr>
 		</text>
 		<text name="emptypallet">
-			<en>emptypallet</en>
+			<en>Empty pallet</en>
 			<de>Leere Paletten</de>
 			<fr>Palette vide</fr>
 		</text>
 		<text name="Tip_RSwater">
-			<en>Tip_RSwater</en>
+			<en>Water</en>
 			<de>Wasser</de>
 			<fr>Eau</fr>
 		</text>
 		<text name="water">
-			<en>water</en>
+			<en>Water</en>
 			<de>Wasser</de>
 			<fr>Eau</fr>
 		</text>
 		<text name="bierpalettefass">
-			<en>bierpalettefass</en>
+			<en>Beer keg</en>
 			<de>Bierfass</de>
 			<fr>Tonnelet de bière</fr>
 		</text>
 		<text name="beerf">
-			<en>beerf</en>
+			<en>Beer keg</en>
 			<de>Bierfass</de>
-			<fr>Bierfass</fr>
+			<fr>Tonnelet de bière</fr>
 		</text>
 	</l10n>
 </mapconfig>

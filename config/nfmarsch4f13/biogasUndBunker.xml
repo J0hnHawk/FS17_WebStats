@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mapconfig>
+	<item name="Bga" locationType="bga" ProdPerHour="1000" position="-250 0 650" showInProduction="true">
+		<input name="silage" capacity="50000" factor="360" fillTypes="bunkerFillLevel" showInStorage="false" />
+		<input name="liquidManure" capacity="&#8734;" factor="180" fillTypes="liquidManureFillLevel" showInStorage="false" />
+		<output name="digestate" capacity="800000" factor="87" fillTypes="digestateSiloFillLevel" showInStorage="true" />
+	</item>
+	<item name="BunkerSilo_cowSilo" locationType="bunker" position="-506 0 668" />
+	<item name="BunkerSilo_silo001" locationType="bunker" position="-346 0 682" />
+	<item name="BunkerSilo_silo002" locationType="bunker" position="-346 0 672" />
+	<item name="BunkerSilo_silo003" locationType="bunker" position="-346 0 662" />
+	<item name="BunkerSilo_silo004" locationType="bunker" position="-346 0 692" />
+	<item name="BunkerSilo_silo005" locationType="bunker" position="-346 0 702" />
+	<item name="BunkerSilo_Silo1" locationType="bunker" position="-66 0 -992" />
+	<item name="BunkerSilo_Silo2" locationType="bunker" position="-66 0 -963" />
+	<l10n>
+		<text name="Bga">
+			<en>BGA centre</en>
+			<de>BGA Mitte</de>
+			<fr>BGA Centre</fr>
+		</text>
+		<text name="silage">
+			<en>Silage</en>
+			<de>Silage</de>
+			<fr>Ensilage</fr>
+		</text>
+		<text name="liquidManure">
+			<en>Liquid manure</en>
+			<de>Gülle</de>
+			<fr>Lisier</fr>
+		</text>
+		<text name="digestate">
+			<en>Digestate</en>
+			<de>Gärreste</de>
+			<fr>Digestat</fr>
+		</text>
+		<!-- No translation nessesary for "bunkerFillLevel", "liquidManureFillLevel" and "digestateSiloFillLevel" -->
+		<text name="BunkerSilo_cowSilo">
+			<en>Cow silo</en>
+			<de>Kuhstall Fahrsilo</de>
+			<fr>Etable silo</fr>
+		</text>
+		<text name="BunkerSilo_silo001">
+			<en>BGA centre Silo 1 </en>
+			<de>BGA Mitte Fahrsilo 1</de>
+			<fr>BGA Centre silo 1</fr>
+		</text>
+		<text name="BunkerSilo_silo002">
+			<en>BGA centre Silo 2</en>
+			<de>BGA Mitte Fahrsilo 2</de>
+			<fr>BGA Centre silo 2</fr>
+		</text>
+		<text name="BunkerSilo_silo003">
+			<en>BGA centre Silo 3</en>
+			<de>BGA Mitte Fahrsilo 3</de>
+			<fr>BGA Centre silo 3</fr>
+		</text>
+		<text name="BunkerSilo_silo004">
+			<en>BGA centre Silo 4</en>
+			<de>BGA Mitte Fahrsilo 4</de>
+			<fr>BGA Centre silo 4</fr>
+		</text>
+		<text name="BunkerSilo_silo005">
+			<en>BGA centre Silo 5</en>
+			<de>BGA Mitte Fahrsilo 5</de>
+			<fr>BGA Centre silo 5</fr>
+		</text>
+		<text name="BunkerSilo_Silo1">
+			<en>BGA north silo 1</en>
+			<de>BGA Nord Fahrsilo 1</de>
+			<fr>BGA Nord silo 1</fr>
+		</text>
+		<text name="BunkerSilo_Silo2">
+			<en>BunkerSilo_Silo2</en>
+			<de>BGA Nord Fahrsilo 2</de>
+			<fr>BGA Nord silo 2</fr>
+		</text>
+	</l10n>
+</mapconfig>

@@ -7,42 +7,42 @@
 	</item>
 	<l10n>
 		<text name="FabrikScript_Diesel_Raffinerie">
-			<en>FabrikScript_Diesel_Raffinerie</en>
+			<en>Diesel refinery</en>
 			<de>Diesel Raffinerie</de>
-			<fr>[de]Diesel Raffinerie</fr>
+			<fr>Raffinerie de diesel</fr>
 		</text>
 		<text name="Tip_RS">
-			<en>Tip_RS</en>
+			<en>Rape or sunflower</en>
 			<de>Raps oder Sonnenblumen</de>
 			<fr>Colza ou tournesol</fr>
 		</text>
 		<text name="rape">
-			<en>rape</en>
+			<en>Rape</en>
 			<de>Raps</de>
 			<fr>Colza</fr>
 		</text>
 		<text name="sunflower">
-			<en>sunflower</en>
+			<en>Sunflower</en>
 			<de>Sonnenblumen</de>
 			<fr>Tournesol</fr>
 		</text>
 		<text name="RS_compost">
-			<en>RS_compost</en>
+			<en>Compost</en>
 			<de>Kompost</de>
 			<fr>Compost</fr>
 		</text>
 		<text name="compost">
-			<en>compost</en>
+			<en>Compost</en>
 			<de>Kompost</de>
 			<fr>Compost</fr>
 		</text>
 		<text name="RM_Output">
-			<en>RM_Output</en>
+			<en>Diesel</en>
 			<de>Diesel</de>
 			<fr>Diesel</fr>
 		</text>
 		<text name="fuel">
-			<en>fuel</en>
+			<en>Diesel</en>
 			<de>Diesel</de>
 			<fr>Diesel</fr>
 		</text>

@@ -7,22 +7,22 @@
 	</item>
 	<l10n>
 		<text name="FabrikScript_Duenger_Prod">
-			<en>FabrikScript_Duenger_Prod</en>
+			<en>Fertilizer production</en>
 			<de>Düngerproduktion</de>
 			<fr>Usine à engrais</fr>
 		</text>
 		<text name="manure">
-			<en>manure</en>
+			<en>Manure</en>
 			<de>Mist</de>
 			<fr>Fumier</fr>
 		</text>
 		<text name="liquidManure">
-			<en>liquidManure</en>
+			<en>Liquid manure</en>
 			<de>Gülle</de>
 			<fr>Lisier</fr>
 		</text>
 		<text name="fertilizer">
-			<en>fertilizer</en>
+			<en>Fertilizer</en>
 			<de>Dünger</de>
 			<fr>Engrais</fr>
 		</text>

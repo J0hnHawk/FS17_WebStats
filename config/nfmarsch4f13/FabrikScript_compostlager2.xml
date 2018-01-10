@@ -6,9 +6,9 @@
 	</item>
 	<l10n>
 		<text name="FabrikScript_compostlager2">
-			<en>FabrikScript_compostlager2</en>
+			<en>Compost storage (greenhouses)</en>
 			<de>Kompostlager (Gewächshäuser)</de>
-			<fr>[de]Kompostlager (Verger)</fr>
+			<fr>Centre de compostage (Verger)</fr>
 		</text>
 		<text name="Compost">
 			<en>Compost</en>

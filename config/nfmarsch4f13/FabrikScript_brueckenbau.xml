@@ -9,54 +9,54 @@
 	</item>
 	<l10n>
 		<text name="FabrikScript_brueckenbau">
-			<en>FabrikScript_brueckenbau</en>
-			<de>{FabrikScript_brueckenbau}</de>
-			<fr>{FabrikScript_brueckenbau}</fr>
+			<en>Bridge construction</en>
+			<de>Brückenbau</de>
+			<fr>Construction de ponts</fr>
 		</text>
 		<text name="Sand">
 			<en>Sand</en>
-			<de>{Sand}</de>
-			<fr>{Sand}</fr>
+			<de>Sand</de>
+			<fr>Sable</fr>
 		</text>
 		<text name="sand">
-			<en>sand</en>
-			<de>Sable</de>
+			<en>Sand</en>
+			<de>Sand</de>
 			<fr>Sable</fr>
 		</text>
 		<text name="Kies">
-			<en>Kies</en>
-			<de>{Kies}</de>
-			<fr>{Kies}</fr>
+			<en>Gravel</en>
+			<de>Kies</de>
+			<fr>Gravier</fr>
 		</text>
 		<text name="gravel">
-			<en>gravel</en>
-			<de>{gravel}</de>
-			<fr>{gravel}</fr>
+			<en>Gravel</en>
+			<de>Kies</de>
+			<fr>Gravier</fr>
 		</text>
 		<text name="Zement">
-			<en>Zement</en>
-			<de>{Zement}</de>
-			<fr>{Zement}</fr>
+			<en>Cement</en>
+			<de>Zement</de>
+			<fr>Cement</fr>
 		</text>
 		<text name="cement">
-			<en>cement</en>
-			<de>{cement}</de>
-			<fr>{cement}</fr>
+			<en>Cement</en>
+			<de>Zement</de>
+			<fr>Cement</fr>
 		</text>
 		<text name="Stahl">
-			<en>Stahl</en>
-			<de>{Stahl}</de>
-			<fr>{Stahl}</fr>
+			<en>Steel</en>
+			<de>Stahl</de>
+			<fr>Acier</fr>
 		</text>
 		<text name="stahl">
-			<en>stahl</en>
-			<de>{stahl}</de>
-			<fr>{stahl}</fr>
+			<en>Steel</en>
+			<de>Stahl</de>
+			<fr>Acier</fr>
 		</text>
 		<text name="Brueckenbau">
-			<en>Brueckenbau</en>
-			<de>{Brueckenbau}</de>
-			<fr>{Brueckenbau}</fr>
+			<en>Bridge construction</en>
+			<de>Brückenbau</de>
+			<fr>Construction de ponts</fr>
 		</text>
 	</l10n>
 </mapconfig>

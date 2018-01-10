@@ -6,19 +6,19 @@
 	</item>
 	<l10n>
 		<text name="FabrikScript_Lager_Krabben">
-			<en>FabrikScript_Lager_Krabben</en>
+			<en>Pallet storage</en>
 			<de>Palettenlager</de>
 			<fr>Entrepôt à palettes</fr>
 		</text>
 		<text name="Krabbenpalette">
-			<en>Krabbenpalette</en>
+			<en>Pawns</en>
 			<de>Krabben</de>
-			<fr>[de]Krabben</fr>
+			<fr>Gambas</fr>
 		</text>
 		<text name="krabben">
-			<en>krabben</en>
+			<en>Pawns</en>
 			<de>Krabben</de>
-			<fr>Krabben</fr>
+			<fr>Gambas</fr>
 		</text>
 	</l10n>
 </mapconfig>

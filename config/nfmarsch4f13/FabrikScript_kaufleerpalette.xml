@@ -6,17 +6,17 @@
 	</item>
 	<l10n>
 		<text name="FabrikScript_kaufleerpalette">
-			<en>FabrikScript_kaufleerpalette</en>
-			<de>{FabrikScript_kaufleerpalette}</de>
-			<fr>{FabrikScript_kaufleerpalette}</fr>
+			<en>DIY store</en>
+			<de>Baumark</de>
+			<fr>Magasin de bricolage</fr>
 		</text>
 		<text name="geld">
-			<en>geld</en>
+			<en>Money</en>
 			<de>Geld</de>
 			<fr>Argent</fr>
 		</text>
 		<text name="emptypallet">
-			<en>emptypallet</en>
+			<en>Empty pallet</en>
 			<de>Leere Paletten</de>
 			<fr>Palette vide</fr>
 		</text>

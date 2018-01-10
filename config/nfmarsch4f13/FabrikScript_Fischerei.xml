@@ -8,44 +8,44 @@
 	</item>
 	<l10n>
 		<text name="FabrikScript_Fischerei">
-			<en>FabrikScript_Fischerei</en>
+			<en>Fishery</en>
 			<de>Fischerei</de>
-			<fr>[de]Fischerei</fr>
+			<fr>Pêcherie</fr>
 		</text>
 		<text name="emptypallet">
-			<en>emptypallet</en>
+			<en>Empty pallet</en>
 			<de>Leere Paletten</de>
 			<fr>Palette vide</fr>
 		</text>
 		<text name="cm_inputFuel">
-			<en>cm_inputFuel</en>
+			<en>Diesel</en>
 			<de>Diesel</de>
 			<fr>Diesel</fr>
 		</text>
 		<text name="fuel">
-			<en>fuel</en>
+			<en>Diesel</en>
 			<de>Diesel</de>
 			<fr>Diesel</fr>
 		</text>
 		<text name="Krabben">
-			<en>Krabben</en>
+			<en>Pawns</en>
 			<de>Krabben</de>
-			<fr>Krabben</fr>
+			<fr>Gambas</fr>
 		</text>
 		<text name="krabben">
-			<en>krabben</en>
+			<en>Pawns</en>
 			<de>Krabben</de>
-			<fr>Krabben</fr>
+			<fr>Gambas</fr>
 		</text>
 		<text name="Fisch">
-			<en>Fisch</en>
+			<en>Fish</en>
 			<de>Fisch</de>
-			<fr>Fisch</fr>
+			<fr>Pêcher</fr>
 		</text>
 		<text name="fisch">
-			<en>fisch</en>
+			<en>Fish</en>
 			<de>Fisch</de>
-			<fr>Fisch</fr>
+			<fr>Pêcher</fr>
 		</text>
 	</l10n>
 </mapconfig>

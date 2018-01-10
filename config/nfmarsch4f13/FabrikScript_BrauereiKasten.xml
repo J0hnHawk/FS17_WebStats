@@ -9,47 +9,47 @@
 	</item>
 	<l10n>
 		<text name="FabrikScript_BrauereiKasten">
-			<en>FabrikScript_BrauereiKasten</en>
+			<en>Brewery case</en>
 			<de>Brauerei Kasten</de>
 			<fr>Brasserie caisse</fr>
 		</text>
 		<text name="Tip_RSbarley">
-			<en>Tip_RSbarley</en>
+			<en>Barley</en>
 			<de>Gerste</de>
 			<fr>Orge</fr>
 		</text>
 		<text name="barley">
-			<en>barley</en>
+			<en>Barley</en>
 			<de>Gerste</de>
 			<fr>Orge</fr>
 		</text>
 		<text name="hops">
-			<en>hops</en>
+			<en>Hops</en>
 			<de>Hopfen</de>
 			<fr>Houblon</fr>
 		</text>
 		<text name="emptypallet">
-			<en>emptypallet</en>
+			<en>Empty pallet</en>
 			<de>Leere Paletten</de>
 			<fr>Palette vide</fr>
 		</text>
 		<text name="Tip_RSwater">
-			<en>Tip_RSwater</en>
+			<en>Water</en>
 			<de>Wasser</de>
 			<fr>Eau</fr>
 		</text>
 		<text name="water">
-			<en>water</en>
+			<en>Water</en>
 			<de>Wasser</de>
 			<fr>Eau</fr>
 		</text>
 		<text name="bierpalettekasten">
-			<en>bierpalettekasten</en>
+			<en>Case of beer</en>
 			<de>Bierkasten</de>
 			<fr>Caisse de bière</fr>
 		</text>
 		<text name="beer">
-			<en>beer</en>
+			<en>Case of beer</en>
 			<de>Bierkasten</de>
 			<fr>Bière</fr>
 		</text>

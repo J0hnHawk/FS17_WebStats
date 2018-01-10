@@ -13,92 +13,92 @@
 	</item>
 	<l10n>
 		<text name="FabrikScript_Molkerei">
-			<en>FabrikScript_Molkerei</en>
+			<en>Dairy</en>
 			<de>Molkerei</de>
 			<fr>Produits laitiers</fr>
 		</text>
 		<text name="Tip_RSmilk">
-			<en>Tip_RSmilk</en>
+			<en>Milk</en>
 			<de>Milch</de>
 			<fr>Lait</fr>
 		</text>
 		<text name="milk">
-			<en>milk</en>
+			<en>Milk</en>
 			<de>Milch</de>
 			<fr>Lait</fr>
 		</text>
 		<text name="Tip_RSwater">
-			<en>Tip_RSwater</en>
+			<en>Water</en>
 			<de>Wasser</de>
 			<fr>Eau</fr>
 		</text>
 		<text name="water">
-			<en>water</en>
+			<en>Water</en>
 			<de>Wasser</de>
 			<fr>Eau</fr>
 		</text>
 		<text name="emptypallet">
-			<en>emptypallet</en>
+			<en>Empty pallet</en>
 			<de>Leere Paletten</de>
 			<fr>Palette vide</fr>
 		</text>
 		<text name="palettepapier">
-			<en>palettepapier</en>
+			<en>Paper</en>
 			<de>Papier</de>
 			<fr>Papier</fr>
 		</text>
 		<text name="papier">
-			<en>papier</en>
+			<en>Paper</en>
 			<de>Papier</de>
 			<fr>Papier</fr>
 		</text>
 		<text name="palettebutter">
-			<en>palettebutter</en>
+			<en>Butter</en>
 			<de>Butter</de>
 			<fr>Beure</fr>
 		</text>
 		<text name="butter">
-			<en>butter</en>
+			<en>Butter</en>
 			<de>Butter</de>
 			<fr>Beure</fr>
 		</text>
 		<text name="palettemilch">
-			<en>palettemilch</en>
+			<en>Whole milk</en>
 			<de>Vollmilch</de>
 			<fr>Lait entier</fr>
 		</text>
 		<text name="milch">
-			<en>milch</en>
+			<en>Whole milk</en>
 			<de>Vollmilch</de>
 			<fr>Lait entier</fr>
 		</text>
 		<text name="palettesahne">
-			<en>palettesahne</en>
+			<en>Cream</en>
 			<de>Sahne</de>
 			<fr>Crème</fr>
 		</text>
 		<text name="sahne">
-			<en>sahne</en>
+			<en>Chream</en>
 			<de>Sahne</de>
 			<fr>Crème</fr>
 		</text>
 		<text name="palettequark">
-			<en>palettequark</en>
+			<en>Curd</en>
 			<de>Quark</de>
 			<fr>Fromage blanc</fr>
 		</text>
 		<text name="quark">
-			<en>quark</en>
+			<en>Curd</en>
 			<de>Quark</de>
 			<fr>Fromage blanc</fr>
 		</text>
 		<text name="paletteyogurt">
-			<en>paletteyogurt</en>
+			<en>Yogurt</en>
 			<de>Joghurt</de>
 			<fr>Yaourt</fr>
 		</text>
 		<text name="yogurt">
-			<en>yogurt</en>
+			<en>Yogurt</en>
 			<de>Joghurt</de>
 			<fr>Yaourt</fr>
 		</text>

@@ -8,27 +8,27 @@
 	</item>
 	<l10n>
 		<text name="FabrikScript_Blumenkohlzucht">
-			<en>FabrikScript_Blumenkohlzucht</en>
+			<en>Greenhouse (cauliflower)</en>
 			<de>Gewächshaus (Blumenkohl)</de>
 			<fr>Serre (chou-fleur)</fr>
 		</text>
 		<text name="water">
-			<en>water</en>
+			<en>Water</en>
 			<de>Wasser</de>
 			<fr>Eau</fr>
 		</text>
 		<text name="compost">
-			<en>compost</en>
+			<en>Compost</en>
 			<de>Kompost</de>
 			<fr>Compost</fr>
 		</text>
 		<text name="emptypallet">
-			<en>emptypallet</en>
+			<en>Empty pallet</en>
 			<de>Leere Paletten</de>
 			<fr>Palette vide</fr>
 		</text>
 		<text name="blumenkohl">
-			<en>blumenkohl</en>
+			<en>Cauliflower</en>
 			<de>Blumenkohl</de>
 			<fr>Chou-fleur</fr>
 		</text>
