@@ -53,33 +53,23 @@ $backgroundColor = "#4dafd7";
 $storage = $mapEntries = array ();
 
 // Positionen der Paletten und Ballen für die Karte
-if (isset ( $positions ['FillablePallet'] )) {
-	foreach ( $positions ['FillablePallet'] as $fillType => $items ) {
-		if ($fillType == $l_object) {
-			foreach ( $items as $position ) {
-				$mapEntries [] = addEntry ( $position ['position'], '##PALLET##', 'tool.png' );
-			}
-		}
-	}
+foreach($positions as $className => $fillTypes) {
+    foreach ( $fillTypes as $fillType => $items ) {
+        if ($fillType == $l_object) {
+            foreach ( $items as $position ) {
+                if (stristr($className, 'pallet') !== false) {                    
+                    $mapEntries [] = addEntry ( $position ['position'], '##PALLET##', 'tool.png' );
+                } elseif($className == 'Bale') {
+                    $mapEntries [] = addEntry ( $position ['position'], '##BALE##', 'tool.png' );
+                } elseif($className == 'vehicle') {
+                    $mapEntries [] = addEntry ( $position ['position'], '##' . $position ['name'] . '##', 'trailer.png' );
+                }
+            }
+        }
+    }
+    
 }
-if (isset ( $positions ['Bale'] )) {
-	foreach ( $positions ['Bale'] as $fillType => $items ) {
-		if ($fillType == $l_object) {
-			foreach ( $items as $position ) {
-				$mapEntries [] = addEntry ( $position ['position'], '##BALE##', 'tool.png' );
-			}
-		}
-	}
-}
-if (isset ( $positions ['vehicle'] )) {
-	foreach ( $positions ['vehicle'] as $fillType => $items ) {
-		if ($fillType == $l_object) {
-			foreach ( $items as $position ) {
-				$mapEntries [] = addEntry ( $position ['position'], '##' . $position ['name'] . '##', 'trailer.png' );
-			}
-		}
-	}
-}
+
 // Warengruppe
 if ($commodities [$l_object] ['isCombine']) {
 	$combineCommodities = array ();

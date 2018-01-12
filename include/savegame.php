@@ -92,7 +92,7 @@ foreach ($careerVehicles->item as $item) {
     $className = strval($item['className']);
     $fillType = false;
     $location = getLocation($item['position']);
-    if ($className == 'FillablePallet' || $className == 'Bale') {
+    if (stristr($className, 'pallet') !== false || $className == 'Bale') {
         if (isset($item['i3dFilename'])) {
             $fillType = cleanFileName($item['i3dFilename']);
         } else {
