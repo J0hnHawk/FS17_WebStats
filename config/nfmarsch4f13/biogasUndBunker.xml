@@ -19,21 +19,6 @@
 			<de>BGA Mitte</de>
 			<fr>BGA Centre</fr>
 		</text>
-		<text name="silage">
-			<en>Silage</en>
-			<de>Silage</de>
-			<fr>Ensilage</fr>
-		</text>
-		<text name="liquidManure">
-			<en>Liquid manure</en>
-			<de>Gülle</de>
-			<fr>Lisier</fr>
-		</text>
-		<text name="digestate">
-			<en>Digestate</en>
-			<de>Gärreste</de>
-			<fr>Digestat</fr>
-		</text>
 		<!-- No translation nessesary for "bunkerFillLevel", "liquidManureFillLevel" and "digestateSiloFillLevel" -->
 		<text name="BunkerSilo_cowSilo">
 			<en>Cow silo</en>
