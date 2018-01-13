@@ -456,16 +456,6 @@
 			<de>Speiseöl</de>
 			<fr>Huile</fr>
 		</text>
-		<text name="palette_karton">
-			<en>Cardboard</en>
-			<de>Karton</de>
-			<fr>Carton</fr>
-		</text>
-		<text name="palette_pellets">
-			<en>Pellets</en>
-			<de>Pellets</de>
-			<fr>Pellets</fr>
-		</text>
 		<text name="palettebutter">
 			<en>Butter</en>
 			<de>Butter</de>
@@ -525,11 +515,6 @@
 			<en>Yogurt</en>
 			<de>Joghurt</de>
 			<fr>Yaourt</fr>
-		</text>
-		<text name="palletPallet">
-			<en>Empty pallet</en>
-			<de>Leere Paletten</de>
-			<fr>Palette vide</fr>
 		</text>
 		<text name="papier">
 			<en>Paper</en>
@@ -602,9 +587,9 @@
 			<fr>Protéine</fr>
 		</text>
 		<text name="Rinder">
-			<en>Cattle</en>
+			<en>Cow</en>
 			<de>Rinder</de>
-			<fr>Bovins</fr>
+			<fr>Vache</fr>
 		</text>
 		<text name="RM_Output">
 			<en>Diesel</en>
@@ -684,7 +669,7 @@
 		<text name="sausage">
 			<en>Sausage</en>
 			<de>Wurst</de>
-			<fr>Wurst</fr>
+			<fr>Saucisse</fr>
 		</text>
 		<text name="Schweinefutter">
 			<en>Pig food</en>
@@ -813,23 +798,18 @@
 		</text>
 		<text name="tomaten">
 			<en>Tomatoes</en>
-			<de>Tomate</de>
+			<de>Tomaten</de>
 			<fr>Tomate</fr>
 		</text>
 		<text name="Tomaten">
 			<en>Tomatoes</en>
-			<de>Tomate</de>
+			<de>Tomaten</de>
 			<fr>Tomate</fr>
 		</text>
 		<text name="Tomatenpalette">
 			<en>Tomatoes</en>
-			<de>Tomate</de>
+			<de>Tomaten</de>
 			<fr>Tomate</fr>
-		</text>
-		<text name="treeSaplingPallet">
-			<en>Sapling</en>
-			<de>Setzlinge</de>
-			<fr>Semence</fr>
 		</text>
 		<text name="treeSaplings">
 			<en>Sapling</en>
@@ -884,9 +864,14 @@
 		<text name="Zement">
 			<en>Cement</en>
 			<de>Zement</de>
-			<fr>Cement</fr>
+			<fr>Ciment</fr>
 		</text>
 		<text name="zucker">
+			<en>Sugar</en>
+			<de>Zucker</de>
+			<fr>Sucre</fr>
+		</text>
+		<text name="Zuckerpalette">
 			<en>Sugar</en>
 			<de>Zucker</de>
 			<fr>Sucre</fr>
