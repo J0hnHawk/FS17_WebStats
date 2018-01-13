@@ -317,7 +317,7 @@ function readMapObject($object, $location, &$plants, &$mapconfig)
             }
             $plants[$plant]['productivity'] = $productivity;
             if ($numAnimals > 1) {
-                $reproRate = $mapconfig[$location]['reproRate'] / $numAnimals * 3600 * 100 / $productivity;
+                $reproRate = intval($mapconfig[$location]['reproRate'] / $numAnimals * 3600 * 100 / $productivity);
             } else {
                 $reproRate = 0;
             }
