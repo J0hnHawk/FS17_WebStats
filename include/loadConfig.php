@@ -55,7 +55,7 @@ while ( ($entry = $stylesDir->read ()) != false ) {
 $stylesDir->close ();
 
 // Kartendetails laden
-list ( $mapName, $mapShort, $mapVersion, $mapLink, $mapCopyright, $mapSize, $configBy, $configVersion ) = file ( "./config/$mapPath/map.txt" );
+list ( $mapName, $mapShort, $mapVersion, $mapLink, $mapCopyright, $mapSize, $configBy, $configVersion, $configFormat ) = file ( "./config/$mapPath/map.txt" );
 
 $map = array (
 		'Name' => $mapName,
@@ -66,55 +66,57 @@ $map = array (
 		'Copyright' => $mapCopyright,
 		'Size' => $mapSize,
 		'configBy' => $configBy,
-		'configVersion' => $configVersion 
+		'configVersion' => $configVersion,
+		'configFormat' => $configFormat 
 );
 $smarty->assign ( 'map', $map );
-/*
- * require ("./config/$mapPath/mapconfig.php");
- * if (! file_exists("./config/$mapPath/translation/{$_SESSION ['language']}.php")) {
- * require ("./config/$mapPath/translation/$defaultLanguage.php");
- * } else {
- * require ("./config/$mapPath/translation/{$_SESSION ['language']}.php");
- * }
- */
 $userLang = $_SESSION ['language'];
 
-// Kartenkonfiguration aus XML Dateien laden
-$lang = $mapconfig = array ();
-foreach ( glob ( "./config/$mapPath/*.xml" ) as $filename ) {
-	$object = simplexml_load_file ( $filename );
-	if (isset ( $object->item )) {
-		foreach ( $object->item as $item ) {
-			$className = strval ( $item ['name'] );
-			$mapconfig = array_merge ( $mapconfig, array (
-					$className => array () 
-			) );
-			foreach ( $item->attributes () as $attribute => $value ) {
-				if ($attribute != 'filename') {
-					$mapconfig [$className] [$attribute] = get_bool ( $value );
+if (trim($configFormat) != 'xml') {
+	require ("./config/$mapPath/mapconfig.php");
+	if (! file_exists ( "./config/$mapPath/translation/{$_SESSION ['language']}.php" )) {
+		require ("./config/$mapPath/translation/$defaultLanguage.php");
+	} else {
+		require ("./config/$mapPath/translation/{$_SESSION ['language']}.php");
+	}
+} else {
+	// Kartenkonfiguration aus XML Dateien laden
+	$lang = $mapconfig = array ();
+	foreach ( glob ( "./config/$mapPath/*.xml" ) as $filename ) {
+		$object = simplexml_load_file ( $filename );
+		if (isset ( $object->item )) {
+			foreach ( $object->item as $item ) {
+				$className = strval ( $item ['name'] );
+				$mapconfig = array_merge ( $mapconfig, array (
+						$className => array () 
+				) );
+				foreach ( $item->attributes () as $attribute => $value ) {
+					if ($attribute != 'filename') {
+						$mapconfig [$className] [$attribute] = get_bool ( $value );
+					}
 				}
-			}
-			foreach ( $item->children () as $childName => $childData ) {
-				if (empty ( $mapconfig [$className] [$childName] ) || ! is_array ( $mapconfig [$className] [$childName] )) {
-					$mapconfig [$className] [$childName] = array ();
-				}
-				$fillType = strval ( $childData ['name'] );
-				$mapconfig [$className] [$childName] [$fillType] = array ();
-				foreach ( $childData->attributes () as $attribute => $value ) {
-					if ($attribute != 'name') {
-						$mapconfig [$className] [$childName] [$fillType] [$attribute] = get_bool ( $value );
+				foreach ( $item->children () as $childName => $childData ) {
+					if (empty ( $mapconfig [$className] [$childName] ) || ! is_array ( $mapconfig [$className] [$childName] )) {
+						$mapconfig [$className] [$childName] = array ();
+					}
+					$fillType = strval ( $childData ['name'] );
+					$mapconfig [$className] [$childName] [$fillType] = array ();
+					foreach ( $childData->attributes () as $attribute => $value ) {
+						if ($attribute != 'name') {
+							$mapconfig [$className] [$childName] [$fillType] [$attribute] = get_bool ( $value );
+						}
 					}
 				}
 			}
 		}
-	}
-	if (isset ( $object->l10n )) {
-		foreach ( $object->l10n->text as $text ) {
-			$key = strval ( $text ['name'] );
-			$value = strval ( $text->$userLang );
-			$lang = array_merge ( $lang, array (
-					$key => $value 
-			) );
+		if (isset ( $object->l10n )) {
+			foreach ( $object->l10n->text as $text ) {
+				$key = strval ( $text ['name'] );
+				$value = strval ( $text->$userLang );
+				$lang = array_merge ( $lang, array (
+						$key => $value 
+				) );
+			}
 		}
 	}
 }
