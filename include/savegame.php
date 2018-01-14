@@ -316,7 +316,7 @@ function readMapObject($object, $location, &$plants, &$mapconfig)
                 $productivity = getAnimalProductivity($location, $tipTriggers) * (($cleanlinessFactor < 0.1) ? 0.9 : 1);
             }
             $plants[$plant]['productivity'] = $productivity;
-            if ($numAnimals > 1) {
+            if ($numAnimals > 1 && $productivity != 0) {
                 $reproRate = intval($mapconfig[$location]['reproRate'] / $numAnimals * 3600 * 100 / $productivity);
             } else {
                 $reproRate = 0;
