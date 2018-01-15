@@ -76,7 +76,7 @@ TOGGLE=Toggle navigation
 SERVER=Server
 STORAGE=Lager
 PRODUCTION=Produktion
-FACTORY=Fabrik
+FACTORY=Fabriken
 INFO=Info
 
 //commodity.tpl
