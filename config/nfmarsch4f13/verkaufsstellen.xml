@@ -1,28 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <mapconfig>
-	<item name="TipTrigger_BAHNHOF" locationType="TipTrigger" position="-459 0 -110" />
-	<item name="TipTrigger_BANK" locationType="TipTrigger" position="-405 0 -470" />
-	<item name="TipTrigger_BIOGAS" locationType="TipTrigger" position="-145 0 -952" />
-	<item name="TipTrigger_DEPOT" locationType="TipTrigger" position="847 0 460" />
-	<item name="TipTrigger_GETREIDEAG" locationType="TipTrigger" position="-349 0 1379" />
-	<item name="TipTrigger_GETREIDEHANDEL" locationType="TipTrigger" position="270 0 -732" />
-	<item name="TipTrigger_HAFEN" locationType="TipTrigger" position="-948 0 -989" />
-	<item name="TipTrigger_HEIZWERK" locationType="TipTrigger" position="-746 0 758" />
-	<item name="TipTrigger_PFERDEHOF" locationType="TipTrigger" position="947 0 -1621" />
-	<item name="TipTrigger_RAIFFEISEN" locationType="TipTrigger" position="467 0 -232" />
-	<item name="TipTrigger_SAWMILL" locationType="TipTrigger" position="-867 0 723" />
-	<item name="TipTrigger_STADION" locationType="TipTrigger" position="-156 0 -741" />
-	<item name="TipTrigger_STROHKRAFTWERK" locationType="TipTrigger" position="1426 0 -366" />
-	<item name="TipTrigger_SUPERMARKT" locationType="TipTrigger" position="-511 0 -567" />
-	<item name="TipTrigger_SUPERMARKT1" locationType="TipTrigger" position="-248 0 -658" />
-	<item name="TipTrigger_SUPERMARKT2" locationType="TipTrigger" position="1387 0 1280" />
-	<item name="TipTrigger_TANKE" locationType="TipTrigger" position="-191 0 -299" />
-	<item name="TipTrigger_TANKE2" locationType="TipTrigger" position="782 0 -850" />
-	<item name="TipTrigger_TANKE3" locationType="TipTrigger" position="1368 0 1126" />
-	<item name="TipTrigger_WASSERKAUF" locationType="TipTrigger" position="-420 0 -342" />
-	<item name="TipTrigger_WINDROW_SALE" locationType="TipTrigger" position="251 0 112" />
-	<item name="TipTrigger_WOLLEVERKAUF" locationType="TipTrigger" position="824 0 315" />
-	<item name="TipTrigger_WOLLEVERKAUF1" locationType="TipTrigger" position="-916 0 -960" />
+	<item name="TipTrigger_BAHNHOF" locationType="TipTrigger" position="-459 0 -110" isSellingPoint="true" />
+	<item name="TipTrigger_BANK" locationType="TipTrigger" position="-405 0 -470" isSellingPoint="true" />
+	<item name="TipTrigger_BIOGAS" locationType="TipTrigger" position="-145 0 -952" isSellingPoint="true" />
+	<item name="TipTrigger_DEPOT" locationType="TipTrigger" position="847 0 460" isSellingPoint="true" />
+	<item name="TipTrigger_GETREIDEAG" locationType="TipTrigger" position="-349 0 1379" isSellingPoint="true" />
+	<item name="TipTrigger_GETREIDEHANDEL" locationType="TipTrigger" position="270 0 -732" isSellingPoint="true" />
+	<item name="TipTrigger_HAFEN" locationType="TipTrigger" position="-948 0 -989" isSellingPoint="true" />
+	<item name="TipTrigger_HEIZWERK" locationType="TipTrigger" position="-746 0 758" isSellingPoint="true" />
+	<item name="TipTrigger_PFERDEHOF" locationType="TipTrigger" position="947 0 -1621" isSellingPoint="true" />
+	<item name="TipTrigger_RAIFFEISEN" locationType="TipTrigger" position="467 0 -232" isSellingPoint="true" />
+	<item name="TipTrigger_SAWMILL" locationType="TipTrigger" position="-867 0 723" isSellingPoint="true" />
+	<item name="TipTrigger_STADION" locationType="TipTrigger" position="-156 0 -741" isSellingPoint="true" />
+	<item name="TipTrigger_STROHKRAFTWERK" locationType="TipTrigger" position="1426 0 -366" isSellingPoint="true" />
+	<item name="TipTrigger_SUPERMARKT" locationType="TipTrigger" position="-511 0 -567" isSellingPoint="true" />
+	<item name="TipTrigger_SUPERMARKT1" locationType="TipTrigger" position="-248 0 -658" isSellingPoint="true" />
+	<item name="TipTrigger_SUPERMARKT2" locationType="TipTrigger" position="1387 0 1280" isSellingPoint="true" />
+	<item name="TipTrigger_TANKE" locationType="TipTrigger" position="-191 0 -299" isSellingPoint="true" />
+	<item name="TipTrigger_TANKE2" locationType="TipTrigger" position="782 0 -850" isSellingPoint="true" />
+	<item name="TipTrigger_TANKE3" locationType="TipTrigger" position="1368 0 1126" isSellingPoint="true" />
+	<item name="TipTrigger_WASSERKAUF" locationType="TipTrigger" position="-420 0 -342" isSellingPoint="true" />
+	<item name="TipTrigger_WINDROW_SALE" locationType="TipTrigger" position="251 0 112" isSellingPoint="true" />
+	<item name="TipTrigger_WOLLEVERKAUF" locationType="TipTrigger" position="824 0 315" isSellingPoint="true" />
+	<item name="TipTrigger_WOLLEVERKAUF1" locationType="TipTrigger" position="-916 0 -960" isSellingPoint="true" />
 	<l10n>
 		<text name="TipTrigger_BAHNHOF">
 			<en>TipTrigger_BAHNHOF</en>

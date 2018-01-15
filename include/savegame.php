@@ -157,44 +157,47 @@ foreach ($careerVehicles->vehicle as $vehicle) {
 // Analysierung von CreateLoadedObjects
 foreach ($careerVehicles->onCreateLoadedObject as $object) {
     $location = strval($object['saveId']);
-    // Verkaufspreise ermitteln
-    if ((strstr($location, 'TipTrigger') !== false || $location == "Bga") && strstr($location, 'TipTrigger_FARM_SILO') === false) {
-        $foreach = $object->stats;
-        $l_location = translate($location);
-        $tipTrigger[$l_location] = $location;
-        if ($location == 'Bga') {
-            $foreach = $object->tipTrigger->stats;
-        }
-        foreach ($foreach as $triggerStats) {
-            $fillType = strval($triggerStats['fillType']);
-            $l_fillType = translate($fillType);
-            if (! isset($prices[$l_fillType])) {
-                $prices[$l_fillType] = array(
-                    'i3dName' => $fillType,
-                    'locations' => array()
-                );
-            }
-            $curve0 = $triggerStats->curveBaseCurve;
-            $curve1 = $triggerStats->curve1;
-            $sin1 = floatval($curve0['amplitude']) * sin((2 * pi() / floatval($curve0['period'])) * floatval($curve0['time']));
-            $sin2 = floatval($curve1['amplitude']) * sin((2 * pi() / floatval($curve1['period'])) * floatval($curve1['time'])) + floatval($curve1['nominalAmplitude']) * 10;
-            $price = intval(($sin1 + $sin2) * 1000);
-            $prices[$l_fillType]['locations'][$l_location] = array(
-                'price' => $price,
-                'i3dName' => $location
-            );
-        }
-    }
     // Lager, Fabriken usw. analysieren
     if (! isset($mapconfig[$location]['locationType'])) {
+        // Objekte, die nicht in der Kartenkonfiguration aufgeführt sind, werden ignoriert
         continue;
     } else {
+        // zunächst schauen, ob es sich um eine Verkaufsstelle handelt
+        if(isset($mapconfig[$location]['isSellingPoint']) && $mapconfig[$location]['isSellingPoint']) {
+            $l_location = translate($location);
+            $sellingPoints[$l_location] = $location;
+            if ($mapconfig[$location]['locationType'] == 'bga') {
+                // Preise der BGA in weiterem Kind-Element
+                $foreach = $object->tipTrigger->stats;
+            } else {
+                $foreach = $object->stats;
+            }
+            foreach ($foreach as $triggerStats) {
+                $fillType = strval($triggerStats['fillType']);
+                $l_fillType = translate($fillType);
+                if (! isset($prices[$l_fillType])) {
+                    $prices[$l_fillType] = array(
+                        'i3dName' => $fillType,
+                        'locations' => array()
+                    );
+                }
+                $curve0 = $triggerStats->curveBaseCurve;
+                $curve1 = $triggerStats->curve1;
+                $sin1 = floatval($curve0['amplitude']) * sin((2 * pi() / floatval($curve0['period'])) * floatval($curve0['time']));
+                $sin2 = floatval($curve1['amplitude']) * sin((2 * pi() / floatval($curve1['period'])) * floatval($curve1['time'])) + floatval($curve1['nominalAmplitude']) * 10;
+                $price = intval(($sin1 + $sin2) * 1000);
+                $prices[$l_fillType]['locations'][$l_location] = array(
+                    'price' => $price,
+                    'i3dName' => $location
+                );
+            }
+        }
+        // weitere Analyse
         readMapObject($object, $location, $plants, $mapconfig);
     }
 }
 
-function readMapObject($object, $location, &$plants, &$mapconfig)
-{
+function readMapObject($object, $location, &$plants, &$mapconfig) {
     global $commodities;
     switch ($mapconfig[$location]['locationType']) {
         case 'storage':

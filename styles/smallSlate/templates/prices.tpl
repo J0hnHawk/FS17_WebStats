@@ -21,7 +21,7 @@
 				{/if}
 				{/foreach}
 			</tr>
-			{foreach $tipTrigger as $location => $i3dName}
+			{foreach $sellingPoints as $location => $i3dName}
 			<tr>
 				<th nowrap>{$location}</th>
 				{foreach $prices as $fillType => $fillTypeData}
