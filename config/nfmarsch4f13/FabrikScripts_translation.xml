@@ -178,22 +178,22 @@
 		</text>
 		<text name="FabrikScript_kaufbretterpalette">
 			<en>DIY store</en>
-			<de>Baumarkt</de>
+			<de>Baumarkt (Bretter)</de>
 			<fr>Magasin de bricolage</fr>
 		</text>
 		<text name="FabrikScript_kaufkartonpalette">
 			<en>DIY store</en>
-			<de>Baumark</de>
+			<de>Baumarkt (Karton)</de>
 			<fr>Magasin de bricolage</fr>
 		</text>
 		<text name="FabrikScript_kaufleerpalette">
 			<en>DIY store</en>
-			<de>Baumark</de>
+			<de>Baumarkt (Leere Palette)</de>
 			<fr>Magasin de bricolage</fr>
 		</text>
 		<text name="FabrikScript_kaufstahlpalette">
 			<en>DIY store</en>
-			<de>Baumark</de>
+			<de>Baumarkt (Stahl)</de>
 			<fr>Magasin de bricolage</fr>
 		</text>
 		<text name="FabrikScript_kies">
