@@ -92,10 +92,7 @@ function getMaps() {
 	// Dateien die im Kartenordner vorhanden sein müssen
 	$mapFiles = array (
 			'map.txt',
-			'mapconfig.php',
-			'pda_map_H.jpg',
-			'translation',
-			'translation/de.php' 
+			'pda_map_H.jpg' 
 	);
 	// Verzeichnis mit Karten druchsuchen
 	if (is_dir ( './config' )) {
@@ -248,7 +245,7 @@ function getAnimalProductivity($location, $tipTriggers) {
 	}
 	foreach ( $mapconfig [$location] ['productivity'] as $trigger => $value ) {
 		if (strpos ( $tipTriggers, $trigger ) !== false) {
-			$productivity += $value;
+			$productivity += intval($value);
 		}
 	}
 	return $productivity;

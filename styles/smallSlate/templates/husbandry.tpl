@@ -42,7 +42,7 @@
 			{foreach $plants.$animalPlant.output as $fillType => $fillTypeData}
 			<tr>
 				<th class="col-xs-8">{$fillType}</th>
-				{if $fillTypeData.i3dName == 'woolPallet'}
+				{if in_array($fillTypeData.i3dName,$animalPallets)}
 				<td class="col-xs-1 text-right">{$fillTypeData.fillLevel|number_format:0:":":"."}</td>
 				<td class="col-xs-3">{if $fillTypeData.fillMax}{math equation="round(100 / fillMax * fillLevel)" fillMax=$fillTypeData.fillMax
 					fillLevel=$fillTypeData.fillLevel assign="percent"}{else}{$percent=0}{/if} {$progress_bar = "success"} {if $percent > 90}{$progress_bar = "danger"} {elseif $percent >
@@ -51,7 +51,7 @@
 						<div class="progress-bar progress-bar-{$progress_bar}" role="progressbar" aria-valuenow="{$percent}" aria-valuemin="0" aria-valuemax="100"
 							style="width: {$percent}%"></div>
 					</div> {else} 
-					<td class="col-xs-1 text-right">{$fillTypeData.fillLevel|number_format:0:":":"."}</td>{/if}
+					<td colspan="2" class="col-xs-1 text-right">{$fillTypeData.fillLevel|number_format:0:":":"."}</td>{/if}
 				</td>
 			</tr>
 			{/foreach}

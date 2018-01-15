@@ -163,7 +163,7 @@ foreach ($careerVehicles->onCreateLoadedObject as $object) {
         continue;
     } else {
         // zunächst schauen, ob es sich um eine Verkaufsstelle handelt
-        if(isset($mapconfig[$location]['isSellingPoint']) && $mapconfig[$location]['isSellingPoint']) {
+        if (isset($mapconfig[$location]['isSellingPoint']) && $mapconfig[$location]['isSellingPoint']) {
             $l_location = translate($location);
             $sellingPoints[$l_location] = $location;
             if ($mapconfig[$location]['locationType'] == 'bga') {
@@ -197,8 +197,9 @@ foreach ($careerVehicles->onCreateLoadedObject as $object) {
     }
 }
 
-function readMapObject($object, $location, &$plants, &$mapconfig) {
-    global $commodities;
+function readMapObject($object, $location, &$plants, &$mapconfig)
+{
+    global $commodities, $animalPallets;
     switch ($mapconfig[$location]['locationType']) {
         case 'storage':
             // Farmsilo und andere Lager
@@ -330,14 +331,6 @@ function readMapObject($object, $location, &$plants, &$mapconfig) {
             $output = array();
             switch ($location) {
                 case 'Animals_sheep':
-                    // Wolle
-                    $fillType = 'woolPallet';
-                    $l_fillType = translate($fillType);
-                    $factor = $mapconfig[$location]['output'][$fillType]['production_factor'];
-                    $fillLevel = isset($commodities[$l_fillType]['locations'][$plant]['fillLevel']) ? $commodities[$l_fillType]['locations'][$plant]['fillLevel'] : 0;
-                    $fillMax = $mapconfig[$location]['output'][$fillType]['palettPlaces'] * $mapconfig[$location]['output'][$fillType]['capacity'];
-                    $state = getState($fillMax - $fillLevel, $fillMax);
-                    $plants[$plant]['output'][$l_fillType] = addFillType($fillType, $fillLevel, $fillMax, $ProdPerHour, $factor, $state);
                     break;
                 case 'Animals_cow':
                     // Milch
@@ -351,7 +344,22 @@ function readMapObject($object, $location, &$plants, &$mapconfig) {
                         $factor = $mapconfig[$location]['output'][$fillType]['production_factor'];
                         $plants[$plant]['output'][translate($fillType)] = addFillType($fillType, $fillLevel, '&infin;', $ProdPerHour, $factor, 0);
                     }
-                    break;
+                     break;
+            }
+            // Prüfung auf Herstellung von Paletten
+            foreach ($mapconfig[$location]['output'] as $fillType => $fillTypeData) {
+                if (isset($fillTypeData['palettPlaces'])) {
+                    if (empty($animalPallets) || ! is_array($animalPallets)) {
+                        $animalPallets = array();
+                    }
+                    $animalPallets[] = $fillType;
+                    $l_fillType = translate($fillType);
+                    $factor = $mapconfig[$location]['output'][$fillType]['production_factor'];
+                    $fillLevel = isset($commodities[$l_fillType]['locations'][$plant]['fillLevel']) ? $commodities[$l_fillType]['locations'][$plant]['fillLevel'] : 0;
+                    $fillMax = $mapconfig[$location]['output'][$fillType]['palettPlaces'] * $mapconfig[$location]['output'][$fillType]['capacity'];
+                    $state = getState($fillMax - $fillLevel, $fillMax);
+                    $plants[$plant]['output'][$l_fillType] = addFillType($fillType, $fillLevel, $fillMax, $ProdPerHour, $factor, $state);
+                }
             }
             break;
         case 'FabrikScript':
