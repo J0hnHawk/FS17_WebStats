@@ -44,7 +44,7 @@ if ($stats) {
     return;
 }
 
-$commodities = $outOfMap = $positions = $plants = $placeables = $tipTrigger = $prices = array();
+$commodities = $outOfMap = $positions = $plants = $placeables = $sellingPoints = $prices = array();
 
 // Stand der Daten ermitteln (Ingame-Zeitpunkt der Speicherung)
 $currentDay = $careerSavegame->environment->currentDay;
