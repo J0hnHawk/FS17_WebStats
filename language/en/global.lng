@@ -12,6 +12,7 @@ PLANTS=Production plants
 SETTINGS=Settings
 STOCK=Stock
 STOCKS=Stocks
+PRICES=Selling prices
 
 //install.tpl
 CHOOSE_LANGUAGE_LABEL=Select language
@@ -116,6 +117,7 @@ SUGGESTION_POSITION=Suggested Position
 
 //options.tpl
 GENERAL=General
+CHOOSE_STYLE=Stylesheet wählen
 AUTO_RELOAD=automatic reload
 SORT_ORDER=sorting
 ALPHABETICALLY=alphabetically
@@ -124,6 +126,8 @@ SHOW=display
 HIDE=hide
 VEHICLE_LOAD=Vehicle load
 ONLY_PALETTS=Only display pallets
+TOOLTIP=Show tooltip with stocks
+TOOLTIP_HELP=Im Tooltip werden werden die Bestände aus allen Lagern und Produktionsstätten summiert.  
 YES=yes
 NO=no
 SHOW_ZERO_STOCK=Displaying Zero Stock
@@ -139,3 +143,14 @@ SERVER_SETTINGS=Delete server settings
 ADMIN_AREA=Server management
 ADMIN_DESCRIPTION=Warning! After entering the password, the settings for the Dedicated Server or Savegame are deleted. FS17 WebStats can then be reinitialized.
 ENTER_PASSWORD=Enter Password
+
+//animals.tpl
+ANIMALS=Animals
+SHEEP_COUNT=Sheep owned
+PIG_COUNT=Pigs owned
+COW_COUNT=Cows owned
+PRODUCTIVITY=Produkcivity
+REPRO_RATE=Reproduction rate
+NEXT_ANIMAL=Next animal in
+CLEANNESS=Cleanliness
+
