@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mapconfig>
+	<l10n>
+		<!-- FS17_kotteUniversalPack -->
+		<text name="kotteUniSemi">
+			<en>Universal Sattelauflieger</en>
+			<de>Universal Sattelauflieger</de>
+			<fr>Universal Sattelauflieger</fr>
+		</text>
+		<!-- krampeSB3060_Mod -->
+		<text name="krampeSB3060_Mod">
+			<en>Bandit SB 30/60</en>
+			<de>Bandit SB 30/60</de>
+			<fr>Bandit SB 30/60</fr>
+		</text>
+		<!-- Fortuna Pack -->
+		<text name="SA_T">
+			<en>SA T</en>
+			<de>SA T</de>
+			<fr>SA T</fr>
+		</text>
+		<!-- Claas Lexion -->
+		<text name="Lexion">
+			<en>Lexion</en>
+			<de>Lexion</de>
+			<fr>Lexion</fr>
+		</text>
+	</l10n>	
+</mapconfig>

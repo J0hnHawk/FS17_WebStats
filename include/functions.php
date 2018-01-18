@@ -70,6 +70,53 @@ function addFillType($i3dName, $fillLevel, $fillMax, $prodPerHour, $factor, $sta
 			'state' => $state 
 	);
 }
+
+// Load XML configurations files
+function loadXMLMapConfig($directory, $language) {
+	$objects = $translations = array ();
+	foreach ( glob ( "./config/$directory/*.xml" ) as $filename ) {
+		$object = simplexml_load_file ( $filename );
+		if (isset ( $object->item )) {
+			foreach ( $object->item as $item ) {
+				$className = strval ( $item ['name'] );
+				$objects = array_merge ( $objects, array (
+						$className => array ()
+				) );
+				foreach ( $item->attributes () as $attribute => $value ) {
+					if ($attribute != 'filename') {
+						$objects [$className] [$attribute] = get_bool ( $value );
+					}
+				}
+				foreach ( $item->children () as $childName => $childData ) {
+					if (empty ( $objects [$className] [$childName] ) || ! is_array ( $objects [$className] [$childName] )) {
+						$objects [$className] [$childName] = array ();
+					}
+					$fillType = strval ( $childData ['name'] );
+					$objects [$className] [$childName] [$fillType] = array ();
+					foreach ( $childData->attributes () as $attribute => $value ) {
+						if ($attribute != 'name') {
+							$objects [$className] [$childName] [$fillType] [$attribute] = get_bool ( $value );
+						}
+					}
+				}
+			}
+		}
+		if (isset ( $object->l10n )) {
+			foreach ( $object->l10n->text as $text ) {
+				$key = strval ( $text ['name'] );
+				$value = strval ( $text->$language );
+				$translations = array_merge ( $translations, array (
+						$key => $value
+				) );
+			}
+		}
+	}
+	return array (
+			$objects,
+			$translations
+	);
+}
+
 // convert values while reading xml files
 function get_bool($value) {
 	$value = strval ( $value );
@@ -84,6 +131,27 @@ function get_bool($value) {
 			}
 	}
 	return $value;
+}
+
+// Load CFG configurations files
+function loadCFGfiles ($readFile) {
+	$returnArray = array ();
+	if (file_exists ( $readFile )) {
+		$entries = file ( $readFile );
+		foreach ( $entries as $row ) {
+			if (substr ( ltrim ( $row ), 0, 2 ) == '//' || trim ( $row ) == '') { // ignore comments and emtpty rows
+				continue;
+			}
+			$keyValuePair = explode ( '=', $row );
+			$key = trim ( $keyValuePair [0] );
+			$value = $keyValuePair [1];
+			if (! empty ( $key )) {
+				$returnArray [$key] = chop ( $value );
+			}
+		}
+		return $returnArray;
+	}
+	return false;
 }
 
 // Karten laden

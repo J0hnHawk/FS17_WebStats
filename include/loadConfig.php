@@ -21,15 +21,13 @@
 if (! defined ( 'IN_NFMWS' )) {
 	exit ();
 }
-// Serverkonfiguration laden - wenn nicht vorhanden Instalation starten
+
+// Load server configuration - start install if it does not exists
 $configFile = './config/server.conf';
 if (file_exists ( $configFile )) {
 	$server = file ( $configFile );
 	$serverConfig = unserialize ( $server [0] );
 	list ( $dSrvIp, $dSrvPort, $dSrvCode, $savegame, $isDediServer, $mapPath ) = $serverConfig;
-	if ($mapPath == '') {
-		$mapPath = 'nfmarsch29';
-	}
 	$smarty->assign ( 'isDediServer', $isDediServer );
 } else {
 	define ( 'IN_INSTALL', true );
@@ -54,25 +52,24 @@ while ( ($entry = $stylesDir->read ()) != false ) {
 }
 $stylesDir->close ();
 
-// Kartendetails laden
-list ( $mapName, $mapShort, $mapVersion, $mapLink, $mapCopyright, $mapSize, $configBy, $configVersion, $configFormat ) = file ( "./config/$mapPath/map.txt" );
-
-$map = array (
-		'Name' => $mapName,
-		'Path' => $mapPath,
-		'Short' => $mapShort,
-		'Version' => $mapVersion,
-		'Link' => $mapLink,
-		'Copyright' => $mapCopyright,
-		'Size' => $mapSize,
-		'configBy' => $configBy,
-		'configVersion' => $configVersion,
-		'configFormat' => $configFormat 
-);
+// Load map infomations
+$map = array_merge ( array (
+		'Name' => '',
+		'Path' => '',
+		'Short' => '',
+		'Version' => '',
+		'Link' => '',
+		'Copyright' => '',
+		'Size' => 2048,
+		'configBy' => '',
+		'configVersion' => '',
+		'configFormat' => 'xml' 
+), loadCFGfiles ( "./config/$mapPath/map.cfg" ) );
 $smarty->assign ( 'map', $map );
-$userLang = $_SESSION ['language'];
 
-if (trim($configFormat) != 'xml') {
+// Load map config
+$userLang = $_SESSION ['language'];
+if (trim ( $map ['configFormat'] ) != 'xml') {
 	require ("./config/$mapPath/mapconfig.php");
 	if (! file_exists ( "./config/$mapPath/translation/{$_SESSION ['language']}.php" )) {
 		require ("./config/$mapPath/translation/$defaultLanguage.php");
@@ -81,80 +78,13 @@ if (trim($configFormat) != 'xml') {
 	}
 } else {
 	// Kartenkonfiguration aus XML Dateien laden
-	$lang = $mapconfig = array ();
-	foreach ( glob ( "./config/$mapPath/*.xml" ) as $filename ) {
-		$object = simplexml_load_file ( $filename );
-		if (isset ( $object->item )) {
-			foreach ( $object->item as $item ) {
-				$className = strval ( $item ['name'] );
-				$mapconfig = array_merge ( $mapconfig, array (
-						$className => array () 
-				) );
-				foreach ( $item->attributes () as $attribute => $value ) {
-					if ($attribute != 'filename') {
-						$mapconfig [$className] [$attribute] = get_bool ( $value );
-					}
-				}
-				foreach ( $item->children () as $childName => $childData ) {
-					if (empty ( $mapconfig [$className] [$childName] ) || ! is_array ( $mapconfig [$className] [$childName] )) {
-						$mapconfig [$className] [$childName] = array ();
-					}
-					$fillType = strval ( $childData ['name'] );
-					$mapconfig [$className] [$childName] [$fillType] = array ();
-					foreach ( $childData->attributes () as $attribute => $value ) {
-						if ($attribute != 'name') {
-							$mapconfig [$className] [$childName] [$fillType] [$attribute] = get_bool ( $value );
-						}
-					}
-				}
-			}
-		}
-		if (isset ( $object->l10n )) {
-			foreach ( $object->l10n->text as $text ) {
-				$key = strval ( $text ['name'] );
-				$value = strval ( $text->$userLang );
-				$lang = array_merge ( $lang, array (
-						$key => $value 
-				) );
-			}
-		}
-	}
+	$loadedConfig = loadXMLMapConfig ( $mapPath, $userLang );
+	$mapconfig = $loadedConfig [0];
+	$lang = $loadedConfig [1];
 }
-$lang = array_merge ( $lang, getVehicleNames () );
 
-// load installed placeables
-$placeableObjects = $placeablesLang = array ();
+// load installed mods
+$loadedConfig = loadXMLMapConfig ( 'mods', $userLang );
+$placeableObjects = $loadedConfig [0];
+$placeablesLang = $loadedConfig [1];
 
-foreach ( glob ( './config/placeables/*.xml' ) as $filename ) {
-	$placeable = simplexml_load_file ( $filename );
-	foreach ( $placeable->item as $item ) {
-		$className = strval ( $item ['filename'] );
-		$placeableObjects = array_merge ( $placeableObjects, array (
-				$className => array () 
-		) );
-		foreach ( $item->attributes () as $attribute => $value ) {
-			if ($attribute != 'filename') {
-				$placeableObjects [$className] [$attribute] = get_bool ( $value );
-			}
-		}
-		foreach ( $item->children () as $childName => $childData ) {
-			if (empty ( $placeableObjects [$className] [$childName] ) || ! is_array ( $placeableObjects [$className] [$childName] )) {
-				$placeableObjects [$className] [$childName] = array ();
-			}
-			$fillType = strval ( $childData ['name'] );
-			$placeableObjects [$className] [$childName] [$fillType] = array ();
-			foreach ( $childData->attributes () as $attribute => $value ) {
-				if ($attribute != 'name') {
-					$placeableObjects [$className] [$childName] [$fillType] [$attribute] = get_bool ( $value );
-				}
-			}
-		}
-	}
-	foreach ( $placeable->l10n->text as $text ) {
-		$key = strval ( $text ['name'] );
-		$value = strval ( $text->$userLang );
-		$placeablesLang = array_merge ( $placeablesLang, array (
-				$key => $value 
-		) );
-	}
-}
