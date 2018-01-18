@@ -52,42 +52,42 @@
 			<fr>Bergerie</fr>
 		</text>
 		<text name="silage_dryGrass_windrow">
-			<en>silage_dryGrass_windrow</en>
+			<en>Silage or dry grass</en>
 			<de>Silage oder Heu</de>
 			<fr>Ensilage ou foin</fr>
 		</text>
 		<text name="powerFood">
-			<en>powerFood</en>
+			<en>Power food</en>
 			<de>Mischfutter</de>
 			<fr>Aliments composés</fr>
 		</text>
 		<text name="maize_pigFood">
-			<en>maize_pigFood</en>
+			<en>Maize</en>
 			<de>Körnermais</de>
 			<fr>Maïs</fr>
 		</text>
 		<text name="wheat_barley_pigFood">
-			<en>wheat_barley_pigFood</en>
+			<en>Wheat or barley</en>
 			<de>Weizen oder Gerste</de>
 			<fr>Blé ou orge</fr>
 		</text>
 		<text name="rape_sunflower_soybean_pigFood">
-			<en>rape_sunflower_soybean_pigFood</en>
+			<en>Rape, sunflower or soybean</en>
 			<de>Raps, Sonnenblumen oder Sojabohnen</de>
 			<fr>Colza, tournesol ou soja</fr>
 		</text>
 		<text name="potato_sugarBeet_pigFood">
-			<en>potato_sugarBeet_pigFood</en>
+			<en>Potatoes or sugar beet</en>
 			<de>Kartoffeln oder Zuckerrüben</de>
 			<fr>Pommes de terre ou betteraves à sucre</fr>
 		</text>
 		<text name="grass_windrow_dryGrass_windrow">
-			<en>grass_windrow_dryGrass_windrow</en>
+			<en>Grass or dry grass</en>
 			<de>Gras oder Heu</de>
 			<fr>Herbe ou foin</fr>
 		</text>
 		<text name="woolPallet">
-			<en>woolPallet</en>
+			<en>Wool pallet</en>
 			<de>Wolle</de>
 			<fr>Laine</fr>
 		</text>
