@@ -1,10 +1,8 @@
-//Translated from German to English with DEEPL to be faster. I think there are better descriptions/translations. 
-
 //global
 CLOSE=Close
 SAVE=Save
-SUBMIT=Absenden
-RESET=Zurücksetzen
+SUBMIT=Submit
+RESET=Reset
 SAVETIME=Savegame time
 DAY=Day
 COMMODITY=Commodity
@@ -16,58 +14,58 @@ STOCK=Stock
 STOCKS=Stocks
 
 //install.tpl
-CHOOSE_LANGUAGE_LABEL=Sprache wählen
-CHOOSE_LANGUAGE=Ändern
-CONFIG_SAVED=Konfiguration erfolgreich gespeichert.
-CONTINUE=zur Übersicht wechseln
-DESCRIPTON=Auf dieser Webseite für Dedicated Server und lokale Spielstände von Farming Simulator 17 können Spieler, Fahrzeuge, Lagerbestände und Produktionsanlagen angezeigt werden. Fehlende Rohstoffe sowie volle Produktlager werden kenntlich gemacht.
+CHOOSE_LANGUAGE_LABEL=Select language
+CHOOSE_LANGUAGE=Change
+CONFIG_SAVED=Configuration saved successfully.
+CONTINUE=Go to overview
+DESCRIPTON=Farming Simulator 17 game statistics can be used to view players, vehicles, inventory and production facilities. Missing factory inputs as well as full product warehouses are identified.
 INSTALL_TITLE=Installation
-DEDICATED=Dedicaded Server
-LOCAL=lokaler Spielstand
-DS_LABEL1=Server IP-Adresse
-DS_PLACEHOLDE1=IP-Adresse
-DS_HELP_BLOCK1=IP-Adresse des Farming Simulator 17 Dedicated Servers.
-DS_LABEL2=Server-Port
+DEDICATED=Dedicated Server
+LOCAL=local statistics
+DS_LABEL1=Server IP Address
+DS_PLACEHOLDE1=IP Address
+DS_HELP_BLOCK1=Farming Simulator 17 Dedicated Server IP Address
+DS_LABEL2=Server Port
 DS_PLACEHOLDE2=Port
-DS_HELP_BLOCK2=Port der Web-API, nicht der Port für den Spiel-Client.
-DS_LABEL3=Server-Code
+DS_HELP_BLOCK2=Web API port (not the game client port)
+DS_LABEL3=Server Code
 DS_PLACEHOLDE3=Code
-DS_HELP_BLOCK3=Web-API Zugriffscode.
+DS_HELP_BLOCK3=Web API Access Code
 DS_LABEL4=Mod Map
-DS_HELP_BLOCK4=Installierte Karte auf dem Server auswählen.
+DS_HELP_BLOCK4=Select map installed on the server
 DS_LABEL5=WebStats Password
 DS_PLACEHOLDE5=Password
-DS_PLACEHOLDE6=Password wiederholen
+DS_PLACEHOLDE6=Confirm Password
 DS_HELP_BLOCK5=The password can be used to change the server settings and change the map.
-NO_INSTALL_1=Auf diesem Webserver kann FS17 Webstats leider nicht mit einem Dedicated Server verwendet werden, da die Funktion <code>fsockopen()</code> nicht unterstützt wird.
-NO_INSTALL_2=Bitte prüfe bei deinem Webhoster, ob die Funktion in der <code>php.ini</code> aktiviert werden kann.
-INTRO1=Bitte beachte, dass in Farming Simulator der Spielstand grundsätzlich nicht automatisch gespeichert wird. Damit auf dieser Webseite korrekte Lagerbestände angezeigt werden, muss der Spielstand zuvor gespeichert werden. Alternativ installiere die Mod
-INTRO2=, um den Spielstand automatisch alle 5 Minuten zu speichern.
+NO_INSTALL_1=Unfortunately, WebStats cannot be used with a Farming Simulator 17 Dedicated Server on this web server because the <code>fsockopen()</ code> function is not supported.
+NO_INSTALL_2=Please consult your web hosting provider in order to determine if the function can be activated within the <code>php.ini</code> configuration.
+INTRO1=Please note that statistics are not saved automatically within Farming Simulator 17. In order for correct statistics to be displayed here, the game must first be saved. Alternatively, install the 
+INTRO2=Autosave mod to automatically save the game every 5 minutes.
 LINK_TEXT=Map Autosave
-LS_LABEL1=Pfad zum Spielstand
-LS_PLACEHOLDE1=Pfad
-LS_HELP_BLOCK1=Standartmäßig speichert Farming Simulator Spielstände unter:<br> <code>C:\Users\"deinusername"\Documents\My	Games\FarmingSimulator2017\savegamex</code>
+LS_LABEL1=Statistics Path
+LS_PLACEHOLDE1=Path
+LS_HELP_BLOCK1=By default, Farming Simulator 17 saves saved games under: <br><code>%USERPROFILE%\Documents\My Games\FarmingSimulator2017\savegame[n]</code>
 LS_LABEL2=Mod Map
-LS_HELP_BLOCK2=Karte des Spielstands auswählen.
-SAVE_CONFIG=Konfiguration speichern
-ERROR_CODE=Der eingegebene Code ist ungültig.
-ERROR_PORT=Der eingegebene Port ist ungültig.
-ERROR_IP=Die eingegebene IP Adresse ist nicht gültig.
-ERROR_MAP=Die Karte ist ungültig.
-ERROR_OFFLINE=Server ist offline oder die IP Adresse ist falsch.
-ERROR_SAVEGAME=Unter dem angegebenen Pfad wurde kein Spielstand gefunden.
-PASSWORD_MATCH=Die Passwörter stimmen nicht überein.
-PASSWORD_SHORT=Das Passwort muss mindestens 6 Zeichen lang sein.
+LS_HELP_BLOCK2=Select the map for the statistics
+SAVE_CONFIG=Save configuration
+ERROR_CODE=The code is invalid.
+ERROR_PORT=The port is invalid.
+ERROR_IP=The IP address is invalid.
+ERROR_MAP=The map is invalid.
+ERROR_OFFLINE=The server is either offline or the IP address is incorrect.
+ERROR_SAVEGAME=No game statistics found at the specified path.
+PASSWORD_MATCH=The passwords do not match.
+PASSWORD_SHORT=The password must be at least 6 characters long.
 ERROR=Error!
 
 //index.tpl
 TPL_ERROR_1=Error during page load
-TPL_ERROR_2=The File
-TPL_ERROR_3=does not exists.
-CON_ERROR_1=Connectionerror
-CON_ERROR_2=No data could be retrieved from the dedicated server. Please check the server address or internet connection. The <code>fsockopen ()</code> function must be allowed on the web server.
+TPL_ERROR_2=The file
+TPL_ERROR_3=does not exist.
+CON_ERROR_1=Connection Error
+CON_ERROR_2=No data could be retrieved from the dedicated server. Please check the server address or internet connection. The <code>fsockopen()</code> function must be enabled on the web server.
 INFO_1=Web page to display the server status and monitor the production facilities and stock levels.
-INFO_2=Tipps, help and suggestions for improvement from
+INFO_2=Tips, help and suggestions for improvement
 LICENSE=Licensing information
 
 //navbar.tpl
@@ -86,42 +84,42 @@ AMOUNT=amount
 WHOLE_AMOUNT=total warehouse stock
 DEMAND=demand
 WHOLE_DEMAND=Total demand
-ITEM_POSITIONS=Pallet / bale positions
+ITEM_POSITIONS=Pallet/Bale positions
 
 //factories.tpl
 CHOOSE_PLANT=Select production plant
-REQUIRED=Required raw materials
-CAPACITY=capacitance
-REQUIRE_HOUR=Demand/hour
-REQUIRE_DAY=Demand/day
-PRODUCED_GOODS=Produced goods
-PRODUCT_HOUR=Production/hour
-PRODUCT_DAY=Production/day
+REQUIRED=Required inputs
+CAPACITY=capacity
+REQUIRE_HOUR=Demand per hour
+REQUIRE_DAY=Demand per day
+PRODUCED_GOODS=Products
+PRODUCT_HOUR=Production per hour
+PRODUCT_DAY=Production per day
 
 //production.tpl
 PRODUCTION_OVERVIEW=production overview
-RAW_MATERIALS=raw materials
-PRODUCTS=product
+RAW_MATERIALS=inputs
+PRODUCTS=products
 MORE_DETAILS=more details
 
 //storage.tpl
 CAUTION=Caution
 DETAILS=Details
 PALLET=Pallet
-PALETTES=Palettes
+PALETTES=Pallets
 BALE=Bale
 BALES=Bales
-INCORRECT_POSITIONS_TITLE=Faulty positions of pallets and bales
-INCORRECT_POSITIONS_TEXT=The positions of the following bales or pallets in the <code>vehicle.xml</code> are invalid.
+INCORRECT_POSITIONS_TITLE=Invalid positions of pallets and bales
+INCORRECT_POSITIONS_TEXT=The positions of the following bales/pallets in the <code>vehicle.xml</code> are invalid:
 INCORRECT_POSITION=invalid position
-SUGGESTION_POSITION=Suggestion Position
+SUGGESTION_POSITION=Suggested Position
 
 //options.tpl
 GENERAL=General
 AUTO_RELOAD=automatic reload
 SORT_ORDER=sorting
 ALPHABETICALLY=alphabetically
-FILL_LEVEL=according to filling level
+FILL_LEVEL=according to fill level
 SHOW=display
 HIDE=hide
 VEHICLE_LOAD=Vehicle load
@@ -135,9 +133,9 @@ IGNORE_FULL_PRODUCTS=ignore during sorting
 SHOW_HIDDEN_PLANTS=Show production plants
 MOD_MAP=Mod Map
 LAYOUT=Layout
-3COLUMN=3 Spalten
-4COLUMN=4 Spalten
-SERVER_SETTINGS=Servereinstellungen löschen
-ADMIN_AREA=Serververwaltung
-ADMIN_DESCRIPTION=Achtung nach Eingabe des Passworts die Einstellungen zum Dedicated Server oder des Savegames gelöscht. FS17 WebStats kann danach neu initialisiert werden.
-ENTER_PASSWORD=Bitte Passwort eingeben
+3COLUMN=3 Columns
+4COLUMN=4 Columns
+SERVER_SETTINGS=Delete server settings
+ADMIN_AREA=Server management
+ADMIN_DESCRIPTION=Warning! After entering the password, the settings for the Dedicated Server or Savegame are deleted. FS17 WebStats can then be reinitialized.
+ENTER_PASSWORD=Enter Password
