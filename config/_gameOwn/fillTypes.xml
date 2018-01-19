@@ -3,257 +3,266 @@
 	<l10n>
 		<!-- Square bales -->
 		<text name="baleGrass240">
-			<en></en>
+			<en>Grass</en>
 			<de>Gras</de>
-			<fr></fr>
+			<fr>Herbe</fr>
 		</text>
 		<text name="baleHay240">
-			<en></en>
+			<en>Dry grass</en>
 			<de>Heu</de>
-			<fr></fr>
+			<fr>Foin</fr>
 		</text>
 		<text name="baleStraw240">
-			<en></en>
+			<en>Straw</en>
 			<de>Stroh</de>
-			<fr></fr>
+			<fr>Paille</fr>
 		</text>
 		<!-- Round bales -->
 		<text name="roundbaleGrass_w112_d130">
-			<en></en>
+			<en>Grass</en>
 			<de>Gras</de>
-			<fr></fr>
+			<fr>Herbe</fr>
 		</text>
 		<text name="roundbaleHay_w112_d130">
-			<en></en>
+			<en>Dry grass</en>
 			<de>Heu</de>
-			<fr></fr>
+			<fr>Foin</fr>
 		</text>
 		<text name="roundbaleSilage_w112_d130">
-			<en></en>
+			<en>Silage</en>
 			<de>Silage</de>
 			<fr></fr>
 		</text>
 		<text name="roundbaleStraw_w112_d130">
-			<en></en>
+			<en>Straw</en>
 			<de>Stroh</de>
-			<fr></fr>
+			<fr>Paille</fr>
 		</text>
 		<!-- Big bags -->
 		<text name="bigBagContainerFertilizer">
-			<en></en>
+			<en>Fertilizer</en>
 			<de>Dünger</de>
-			<fr></fr>
+			<fr>Engrais</fr>
 		</text>
 		<text name="bigBagContainerPigFood">
-			<en></en>
+			<en>Pig food</en>
 			<de>Schweinefutter</de>
-			<fr></fr>
+			<fr>Aliment pour les cochons</fr>
 		</text>
 		<text name="bigBagContainerSeeds">
-			<en></en>
+			<en>Seeds</en>
 			<de>Saatgut</de>
-			<fr></fr>
+			<fr>Semence</fr>
 		</text>
 		<!-- Pallets -->
 		<text name="fertilizerTank">
-			<en></en>
+			<en>Liquid fertilizer</en>
 			<de>Flüssigdünger</de>
-			<fr></fr>
+			<fr>Engrais liquide</fr>
 		</text>
 		<text name="palletPoplar">
-			<en></en>
+			<en>Poplar sapling</en>
 			<de>Papplsetzlinge</de>
-			<fr></fr>
+			<fr>Plants de peuplier</fr>
 		</text>
 		<text name="palletPotato">
-			<en></en>
+			<en>Potatoes</en>
 			<de>Kartoffeln</de>
-			<fr></fr>
+			<fr>Pommes de terre</fr>
 		</text>
 		<text name="palletSugarBeet">
-			<en></en>
+			<en>Sugar beet</en>
 			<de>Zuckerrüben</de>
-			<fr></fr>
+			<fr>Betterave à sucre</fr>
 		</text>
 		<text name="treeSaplingPallet">
-			<en></en>
+			<en>Saplings</en>
 			<de>Setzlinge</de>
-			<fr></fr>
+			<fr>Semence</fr>
 		</text>
 		<text name="woolPallet">
-			<en></en>
+			<en>Wool</en>
 			<de>Wolle</de>
-			<fr></fr>
+			<fr>Laine</fr>
 		</text>
 		<!-- Animals -->
 		<text name="cow">
-			<en></en>
+			<en>Cows</en>
 			<de>Kühe</de>
-			<fr></fr>
+			<fr>Vache</fr>
 		</text>
 		<text name="pig">
-			<en></en>
+			<en>Pigs</en>
 			<de>Schweine</de>
-			<fr></fr>
+			<fr>Cochon</fr>
 		</text>
 		<text name="sheep">
-			<en></en>
+			<en>Sheep</en>
 			<de>Schafe</de>
-			<fr></fr>
+			<fr>Mouton</fr>
 		</text>
 		<!-- Fruits -->
 		<text name="wheat">
-			<en></en>
+			<en>Wheat</en>
 			<de>Weizen</de>
-			<fr></fr>
+			<fr>Blé</fr>
 		</text>
 		<text name="barley">
-			<en></en>
+			<en>Barley</en>
 			<de>Gerste</de>
-			<fr></fr>
+			<fr>Orge</fr>
 		</text>
 		<text name="rape">
-			<en></en>
+			<en>Canola</en>
 			<de>Raps</de>
-			<fr></fr>
+			<fr>Colza</fr>
 		</text>
 		<text name="sunflower">
-			<en></en>
+			<en>Sunflower</en>
 			<de>Sonnenblumen</de>
-			<fr></fr>
+			<fr>Tournesol</fr>
 		</text>
 		<text name="soybean">
-			<en></en>
+			<en>Soybean</en>
 			<de>Sojabohnen</de>
-			<fr></fr>
+			<fr>Soja</fr>
 		</text>
 		<text name="maize">
-			<en></en>
+			<en>Maize</en>
 			<de>Körnermais</de>
-			<fr></fr>
+			<fr>Maïs</fr>
 		</text>
 		<text name="potato">
-			<en></en>
+			<en>Potatoes</en>
 			<de>Kartoffeln</de>
-			<fr></fr>
+			<fr>Pommes de terre</fr>
 		</text>
 		<text name="sugarBeet">
-			<en></en>
+			<en>Sugar beet</en>
 			<de>Zuckerrüben</de>
-			<fr></fr>
+			<fr>Betterave à sucre</fr>
 		</text>
 		<text name="sugarCane">
-			<en></en>
+			<en>Sugar cane</en>
 			<de>Zuckerrohr</de>
-			<fr></fr>
+			<fr>Canne à sucre</fr>
 		</text>
 		<text name="water">
-			<en></en>
+			<en>Water</en>
 			<de>Wasser</de>
-			<fr></fr>
+			<fr>Eau</fr>
 		</text>
 		<!-- Products -->
 		<text name="fuel">
-			<en></en>
+			<en>Fuel</en>
 			<de>Treibstoff</de>
-			<fr></fr>
+			<fr>Carburant</fr>
 		</text>
 		<text name="fertilizer">
-			<en></en>
+			<en>Fertilizer</en>
 			<de>Dünger</de>
-			<fr></fr>
+			<fr>Engrais</fr>
 		</text>
 		<text name="seeds">
-			<en></en>
+			<en>Seeds</en>
 			<de>Saatgut</de>
-			<fr></fr>
+			<fr>Semence</fr>
 		</text>
 		<text name="liquidManure">
-			<en></en>
+			<en>Liquid manure</en>
 			<de>Gülle</de>
-			<fr></fr>
+			<fr>Lisier</fr>
 		</text>
 		<text name="manure">
-			<en></en>
+			<en>Manure</en>
 			<de>Mist</de>
-			<fr></fr>
+			<fr>Fumier</fr>
 		</text>
 		<text name="milk">
-			<en></en>
+			<en>Milk</en>
 			<de>Milch</de>
-			<fr></fr>
+			<fr>Lait</fr>
 		</text>
 		<text name="straw">
-			<en></en>
+			<en>Straw</en>
 			<de>Stroh</de>
-			<fr></fr>
+			<fr>Paille</fr>
 		</text>
 		<text name="grass_windrow">
-			<en></en>
+			<en>Grass</en>
 			<de>Gras</de>
-			<fr></fr>
+			<fr>Herbe</fr>
 		</text>
 		<text name="chaff">
-			<en></en>
+			<en>Chaff</en>
 			<de>Häckselgut</de>
-			<fr></fr>
+			<fr>Haché</fr>
 		</text>
 		<text name="digestate">
-			<en></en>
+			<en>Digestate</en>
 			<de>Gärreste</de>
-			<fr></fr>
+			<fr>Digestat</fr>
 		</text>
 		<text name="dryGrass_windrow">
-			<en></en>
+			<en>dry Grass</en>
 			<de>Heu</de>
-			<fr></fr>
+			<fr>Foin</fr>
 		</text>
 		<text name="silage">
-			<en></en>
+			<en>Silage</en>
 			<de>Silage</de>
-			<fr></fr>
+			<fr>Ensilage</fr>
 		</text>
-
+		<text name="forage">
+			<en>Forage</en>
+			<de>Mischfutter</de>
+			<fr>Aliments composés</fr>
+		</text>
+		<text name="woodChips">
+			<en>Wood chips</en>
+			<de>Hackschnitzel</de>
+			<fr>Copeaux de bois</fr>
+		</text>
 		<!-- Animals troughs -->
 		<text name="grass_windrow_dryGrass_windrow">
-			<en></en>
+			<en>Grass, Dry gras</en>
 			<de>Gras, Heu</de>
-			<fr></fr>
+			<fr>Herbe, Foin</fr>
 		</text>
 		<text name="maize_pigFood">
-			<en></en>
+			<en>Maize</en>
 			<de>Körnermais</de>
-			<fr></fr>
+			<fr>Maïs</fr>
 		</text>
 		<text name="wheat_barley_pigFood">
-			<en></en>
+			<en>Wheat, Barley</en>
 			<de>Weizen, Gerste</de>
-			<fr></fr>
+			<fr>Blé, Orge</fr>
 		</text>
 		<text name="rape_sunflower_soybean_pigFood">
-			<en></en>
+			<en>Canola, Sunflower, Soybean</en>
 			<de>Raps, Sonnenblumen, Sojabohnen</de>
-			<fr></fr>
+			<fr>Colza, Tournesols, Soja</fr>
 		</text>
 		<text name="potato_sugarBeet_pigFood">
-			<en></en>
+			<en>Potatoes, sugar beet</en>
 			<de>Kartoffeln, Zuckerrüben</de>
-			<fr></fr>
+			<fr>Pommes de terre, Betterave à sucre</fr>
 		</text>
 		<text name="pigFood">
-			<en></en>
+			<en>Pig food</en>
 			<de>Schweinefutter</de>
-			<fr></fr>
+			<fr>Aliment pour les cochons</fr>
 		</text>
 		<text name="silage_dryGrass_windrow">
-			<en></en>
+			<en>Silage, dry grass</en>
 			<de>Silage, Heu</de>
-			<fr></fr>
+			<fr>Ensilage, Foin</fr>
 		</text>
 		<text name="powerFood">
-			<en></en>
+			<en>Power food</en>
 			<de>Kraftfutter</de>
-			<fr></fr>
+			<fr>Aliments composés</fr>
 		</text>
 	</l10n>
 </mapconfig>

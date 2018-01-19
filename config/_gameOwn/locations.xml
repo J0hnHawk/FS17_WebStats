@@ -12,24 +12,19 @@
 			<fr>En dehors de la carte</fr>
 		</text>
 		<text name="Animals_cow">
-			<en></en>
+			<en>Cows</en>
 			<de>Kuhstall</de>
-			<fr></fr>
+			<fr>Vaches</fr>
 		</text>
 		<text name="Animals_sheep">
-			<en></en>
+			<en>Sheep</en>
 			<de>Schafstall</de>
-			<fr></fr>
+			<fr>Moutons</fr>
 		</text>
 		<text name="Animals_pig">
-			<en></en>
+			<en>Pig</en>
 			<de>Schweinestall</de>
-			<fr></fr>
-		</text>
-		<text name="">
-			<en></en>
-			<de></de>
-			<fr></fr>
+			<fr>Cochons</fr>
 		</text>
 	</l10n>
 </mapconfig>
