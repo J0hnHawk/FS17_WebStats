@@ -43,14 +43,14 @@
 			<fr>Mary's Farm</fr>
 		</text>
 		<text name="TipTrigger_WINDROW_STORAGE">
-			<en>Scheune</en>
+			<en>Barn</en>
 			<de>Scheune</de>
-			<fr>Scheune</fr>
+			<fr>Grange</fr>
 		</text>
 		<text name="TipTrigger_SPINNERY">
-			<en>Spinnerei</en>
+			<en>Spinnery</en>
 			<de>Spinnerei</de>
-			<fr>Spinnerei</fr>
+			<fr>Filature</fr>
 		</text>
 		<text name="TipTrigger_SAWMILL">
 			<en>Santon Sawmill</en>
