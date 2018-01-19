@@ -80,7 +80,7 @@ function loadXMLMapConfig($directory, $language) {
 			foreach ( $object->item as $item ) {
 				$className = strval ( $item ['name'] );
 				$objects = array_merge ( $objects, array (
-						$className => array ()
+						$className => array () 
 				) );
 				foreach ( $item->attributes () as $attribute => $value ) {
 					if ($attribute != 'filename') {
@@ -104,16 +104,20 @@ function loadXMLMapConfig($directory, $language) {
 		if (isset ( $object->l10n )) {
 			foreach ( $object->l10n->text as $text ) {
 				$key = strval ( $text ['name'] );
-				$value = strval ( $text->$language );
+				if (isset ( $text->all )) {
+					$value = strval ( $text->all );
+				} else {
+					$value = strval ( $text->$language );
+				}
 				$translations = array_merge ( $translations, array (
-						$key => $value
+						$key => $value 
 				) );
 			}
 		}
 	}
 	return array (
 			$objects,
-			$translations
+			$translations 
 	);
 }
 
@@ -134,7 +138,7 @@ function get_bool($value) {
 }
 
 // Load CFG configurations files
-function loadCFGfiles ($readFile) {
+function loadCFGfiles($readFile) {
 	$returnArray = array ();
 	if (file_exists ( $readFile )) {
 		$entries = file ( $readFile );
@@ -279,7 +283,7 @@ function addCommodity($fillType, $fillLevel, $location, $className = 'none', $is
 function getLocation($position) {
 	list ( $posx, $posy, $posz ) = explode ( ' ', $position );
 	global $map, $mapconfig;
-	$mapSize = intval($map ['Size']) / 2;
+	$mapSize = intval ( $map ['Size'] ) / 2;
 	if ($posx < (0 - $mapSize) || $posx > $mapSize || $posy < 0 || $posy > 255 || $posz < (0 - $mapSize) || $posz > $mapSize) {
 		return 'outOfMap';
 	}
@@ -313,7 +317,7 @@ function getAnimalProductivity($location, $tipTriggers) {
 	}
 	foreach ( $mapconfig [$location] ['productivity'] as $trigger => $value ) {
 		if (strpos ( $tipTriggers, $trigger ) !== false) {
-			$productivity += intval($value);
+			$productivity += intval ( $value );
 		}
 	}
 	return $productivity;

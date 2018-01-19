@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mapconfig>
+	<l10n>
+		<text name="onMap">
+			<en>Landscape</en>
+			<de>Landschaft</de>
+			<fr>Campagne</fr>
+		</text>
+		<text name="outOfMap">
+			<en>Out of map</en>
+			<de>Außerhalb der Karte</de>
+			<fr>En dehors de la carte</fr>
+		</text>
+		<text name="Animals_cow">
+			<en></en>
+			<de>Kuhstall</de>
+			<fr></fr>
+		</text>
+		<text name="Animals_sheep">
+			<en></en>
+			<de>Schafstall</de>
+			<fr></fr>
+		</text>
+		<text name="Animals_pig">
+			<en></en>
+			<de>Schweinestall</de>
+			<fr></fr>
+		</text>
+		<text name="">
+			<en></en>
+			<de></de>
+			<fr></fr>
+		</text>
+	</l10n>
+</mapconfig>

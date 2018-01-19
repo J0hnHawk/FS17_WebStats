@@ -69,6 +69,10 @@ $smarty->assign ( 'map', $map );
 
 // Load map config
 $userLang = $_SESSION ['language'];
+// Kartenkonfiguration aus XML Dateien laden
+$loadedConfig = loadXMLMapConfig ( '_gameOwn', $userLang );
+$mapconfig = $loadedConfig [0];
+$lang = $loadedConfig [1];
 if (trim ( $map ['configFormat'] ) != 'xml') {
 	require ("./config/$mapPath/mapconfig.php");
 	if (! file_exists ( "./config/$mapPath/translation/{$_SESSION ['language']}.php" )) {
@@ -79,12 +83,12 @@ if (trim ( $map ['configFormat'] ) != 'xml') {
 } else {
 	// Kartenkonfiguration aus XML Dateien laden
 	$loadedConfig = loadXMLMapConfig ( $mapPath, $userLang );
-	$mapconfig = $loadedConfig [0];
-	$lang = $loadedConfig [1];
+	$mapconfig = array_merge ( $mapconfig, $loadedConfig [0] );
+	$lang = array_merge ( $lang, $loadedConfig [1] );
 }
 
 // load installed mods
-$loadedConfig = loadXMLMapConfig ( 'mods', $userLang );
+$loadedConfig = loadXMLMapConfig ( '_mods', $userLang );
 $placeableObjects = $loadedConfig [0];
 $placeablesLang = $loadedConfig [1];
 
