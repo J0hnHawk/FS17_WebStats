@@ -1,6 +1,6 @@
 # Support of placeable mods in FS17 WebStats
 
-You can create own configuration files for placeable mods. Just store them in the folder placeables as xml file. 
+You can create own configuration files for placeable mods. Just store them in the folder './config/_mods' as xml file. 
 
 Here are 3 examples for placeable mods:
 
