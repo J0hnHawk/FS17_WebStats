@@ -138,8 +138,19 @@ function get_bool($value) {
 }
 
 // Load CFG configurations files
-function loadCFGfiles($readFile) {
-	$returnArray = array ();
+function loadMapCFGfile($readFile) {
+	$returnArray = array (
+			'Name' => '',
+			'Path' => '',
+			'Short' => '',
+			'Version' => '',
+			'Link' => '',
+			'Copyright' => '',
+			'Size' => 2048,
+			'configBy' => '',
+			'configVersion' => '',
+			'configFormat' => 'xml' 
+	);
 	if (file_exists ( $readFile )) {
 		$entries = file ( $readFile );
 		foreach ( $entries as $row ) {
@@ -161,31 +172,46 @@ function loadCFGfiles($readFile) {
 // Karten laden
 function getMaps() {
 	$maps = array ();
-	// Dateien die im Kartenordner vorhanden sein müssen
+	// Nur PHP-Konfig: Dateien die im Kartenordner vorhanden sein müssen
 	$mapFiles = array (
-			'map.txt',
-			'pda_map_H.jpg' 
-	);
-	// Verzeichnis mit Karten druchsuchen
+			'map.cfg',
+			'mapconfig.php',
+			'pda_map_H.jpg',
+			'translation',
+			'translation/de.php' 
+	); // Verzeichnis mit Karten druchsuchen
 	if (is_dir ( './config' )) {
 		if ($dh = opendir ( './config/' )) {
 			while ( ($mapDir = readdir ( $dh )) !== false ) {
 				if ($mapDir != "." && $mapDir != ".." && is_dir ( "./config/$mapDir" )) {
-					$mapIsOK = true;
-					foreach ( $mapFiles as $mapFile ) {
-						if (! file_exists ( "./config/$mapDir/$mapFile" )) {
-							$mapIsOK = false;
+					if (file_exists ( "./config/$mapDir/map.cfg" )) {
+						if (! file_exists ( "./config/$mapDir/pda_map_H.jpg" )) {
+							continue;
 						}
-					}
-					if ($mapIsOK) {
-						list ( $mapName, $mapShort, $mapVersion, $mapLink, $mapCopyright ) = file ( "./config/$mapDir/map.txt" );
+						$map = loadMapCFGfile ( "./config/$mapDir/map.cfg" );
+						if ($map ['configFormat'] == 'php') {
+							$mapIsOK = true;
+							foreach ( $mapFiles as $mapFile ) {
+								if (! file_exists ( "./config/$mapDir/$mapFile" )) {
+									$mapIsOK = false;
+								}
+							}
+							if (! $mapIsOK)
+								continue;
+						}
+						if ($map ['configFormat'] == 'xml' && ! glob ( "./config/$mapDir/*.xml" )) {
+							continue;
+						}
 						$maps [$mapDir] = array (
-								'Name' => $mapName,
+								'Name' => $map ['Name'],
 								'Path' => $mapDir,
-								'Short' => $mapShort,
-								'Version' => $mapVersion,
-								'Link' => $mapLink,
-								'Copyright' => $mapCopyright 
+								'Short' => $map ['Short'],
+								'Version' => $map ['Version'],
+								'Link' => $map ['Link'],
+								'Size' => $map ['Size'],
+								'configBy' => $map ['configBy'],
+								'configVersion' => $map ['configVersion'],
+								'configFormat' => $map ['configFormat'] 
 						);
 					}
 				}
