@@ -5,9 +5,12 @@
 **Änderungen und Erweiterungen:**
 - Unterstützung von platzierbaren Objekten/Mods
 - Ermittlung und Anzeige der Verkaufspreise sowie der Verkaufsstellen (#15)
+- neues Format für Kartenkonfigurationen
+- Unterstützung für Nordfriesische Marsch 4fach 1.3
 - Unterstützung von Stylesheets, 2 neue Stylesheets ergänzt
+- Englische Übersetzung, danke an Slivicon
 - verbesserte Darstellung auf kleinen Bildschirmen oder Tablets
-- kein Zeilenumbruch um Tooltip auf der Produktionsseite 
+- kein Zeilenumbruch im Tooltip auf der Produktionsseite 
 
 **Berichtigte Fehler:**
 - Futterbedarf bei den Schweinen
