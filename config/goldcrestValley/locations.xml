@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mapconfig>
+	<l10n>
+		<text name="Bga">
+			<en>McLean Biogas Plant</en>
+			<de>McLean Biogas Plant</de>
+			<fr>McLean Biogas Plant</fr>
+		</text>
+		<text name="BunkerSilo_silo001">
+			<en>BGA silo 1</en>
+			<de>BGA Fahrsilo 1</de>
+			<fr>BGA silo 1</fr>
+		</text>
+		<text name="BunkerSilo_silo002">
+			<en>BGA silo 2</en>
+			<de>BGA Fahrsilo 2</de>
+			<fr>BGA silo 2</fr>
+		</text>
+		<text name="BunkerSilo_silo003">
+			<en>BGA silo 3</en>
+			<de>BGA Fahrsilo 3</de>
+			<fr>BGA silo 3</fr>
+		</text>
+		<text name="BunkerSilo_silo004">
+			<en>BGA silo 4</en>
+			<de>BGA Fahrsilo 4</de>
+			<fr>BGA silo 4</fr>
+		</text>
+		<text name="BunkerSilo_silo005">
+			<en>BGA silo 5</en>
+			<de>BGA Fahrsilo 5</de>
+			<fr>BGA silo 5</fr>
+		</text>
+		<text name="BunkerSilo_cowSilo">
+			<en>Cow silo</en>
+			<de>Kuhstall Fahrsilo</de>
+			<fr>Etable silo</fr>
+		</text>
+	</l10n>
+</mapconfig>
