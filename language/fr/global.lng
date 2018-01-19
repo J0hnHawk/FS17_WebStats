@@ -146,10 +146,10 @@ ENTER_PASSWORD=Entrez votre mot de passe
 
 //animals.tpl
 ANIMALS=Animaux
-SHEEP_COUNT=Moutons
-PIG_COUNT=Cochons
-COW_COUNT=Vaches
+SHEEP_COUNT=Moutons en votre possession
+PIG_COUNT=Cochons possédés
+COW_COUNT=Vaches en votre possession
 PRODUCTIVITY=Productivité
-REPRO_RATE=Naissance toutes les
-NEXT_ANIMAL=Prochaine naissance dans
+REPRO_RATE=Taux de reproduction
+NEXT_ANIMAL=Prochaine animal dans
 CLEANNESS=Propreté
