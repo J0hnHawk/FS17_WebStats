@@ -19,9 +19,11 @@
  *
  */
 define('IN_NFMWS', true);
-$map = 'nfmarsch30';
+$map = 'goldcrestValley';
 include ("../config/$map/mapconfig.php");
 include ('../include/functions.php');
+
+echo("<h4>Loading map from folder '$map'</h4>");
 
 /**
  * PLANNED BUT NOT YET REALIZED !!!
@@ -79,6 +81,7 @@ foreach ($mapconfig as $location => $locationData) {
     }
 }
 $result = $xml_mapconfig->asXML("./xml/mapconfg.xml");
+if($result) echo("<p>/xml/mapconfg.xml saved</p>");
 
 $xml_mapconfig = new SimpleXMLElement('<?xml version="1.0" encoding="UTF-8"?><mapconfig></mapconfig>');
 include ("../config/$map/translation/de.php");
@@ -89,5 +92,5 @@ foreach($lang as $text => $translation) {
 	$l10nText->de = htmlspecialchars(translate($text));	
 }
 $result = $xml_mapconfig->asXML("./xml/translations.xml");
-
+if($result) echo("<p>/xml/translations.xml saved</p>");
 
