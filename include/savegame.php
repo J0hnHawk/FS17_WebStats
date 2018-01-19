@@ -341,8 +341,15 @@ function readMapObject($object, $location, &$plants, &$mapconfig)
                     $output['liquidManure'] = intval($object['liquidManureFillLevel']);
                     foreach ($output as $fillType => $fillLevel) {
                         addCommodity($fillType, $fillLevel, $location);
+                        if(isset($mapconfig[$location]['output'][$fillType]['capacity'])) {
+                        	$fillMax = $mapconfig[$location]['output'][$fillType]['capacity'];
+                        	$state = getState($fillMax - $fillLevel, $fillMax);
+                        } else {
+                        	$fillMax = '&infin;';
+                        	$state=0;
+                        }
                         $factor = $mapconfig[$location]['output'][$fillType]['production_factor'];
-                        $plants[$plant]['output'][translate($fillType)] = addFillType($fillType, $fillLevel, '&infin;', $ProdPerHour, $factor, 0);
+                        $plants[$plant]['output'][translate($fillType)] = addFillType($fillType, $fillLevel, $fillMax, $ProdPerHour, $factor, $state);
                     }
                      break;
             }
