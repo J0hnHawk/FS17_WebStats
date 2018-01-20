@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <mapconfig>
-	<!--  Kuhstallsilo -->
-	<item name="BunkerSilo_cowSilo" locationType="bunker" position="-506 0 668" />
 	<!--  BGA Mitte -->
 	<item name="Bga" locationType="bga" ProdPerHour="1000" position="-250 0 650" showInProduction="true" isSellingPoint="true">
 		<input name="silage" capacity="50000" factor="360" fillTypes="bunkerFillLevel" showInStorage="false" />
@@ -17,29 +15,29 @@
 	<item name="BunkerSilo_Silo1" locationType="bunker" position="-66 0 -992" />
 	<item name="BunkerSilo_Silo2" locationType="bunker" position="-66 0 -963" />
 	<!--  BGA Ost -->
-	<item name="BGAOst" locationType="bga" ProdPerHour="1000" position="-250 0 650" showInProduction="true" isSellingPoint="true">
+	<item name="BGAOst" locationType="bga" ProdPerHour="1000" position="1302 0 -438" showInProduction="true" isSellingPoint="true">
 		<input name="silage" capacity="50000" factor="360" fillTypes="bunkerFillLevel" showInStorage="false" />
 		<input name="liquidManure" capacity="&#8734;" factor="180" fillTypes="liquidManureFillLevel" showInStorage="false" />
 		<output name="digestate" capacity="800000" factor="87" fillTypes="digestateSiloFillLevel" showInStorage="true" />
 	</item>
-	<item name="BGA_Ost1" locationType="bunker" position="0 0 0" />
-	<item name="BGA_Ost2" locationType="bunker" position="0 0 0" />
-	<item name="BGA_Ost3" locationType="bunker" position="0 0 0" />
-	<item name="BGA_Ost4" locationType="bunker" position="0 0 0" />
-	<item name="BGA_Ost5" locationType="bunker" position="0 0 0" />
-	<item name="BGA_Ost_Keil1" locationType="bunker" position="0 0 0" />
-	<item name="BGA_Ost_Keil1" locationType="bunker" position="0 0 0" />
+	<item name="BGA_Ost1" locationType="bunker" position="1368 0 -471" />
+	<item name="BGA_Ost2" locationType="bunker" position="1378 0 -471" />
+	<item name="BGA_Ost3" locationType="bunker" position="1388 0 -471" />
+	<item name="BGA_Ost4" locationType="bunker" position="1398 0 -471" />
+	<item name="BGA_Ost5" locationType="bunker" position="1408 0 -471" />
+	<item name="BGA_Ost_Keil1" locationType="bunker" position="1268 0 -368" />
+	<item name="BGA_Ost_Keil2" locationType="bunker" position="1336 0 -368" />
 	<!--  BGA Süd -->
-	<item name="BGASued" locationType="bga" ProdPerHour="1000" position="-250 0 650" showInProduction="true" isSellingPoint="true">
+	<item name="BGASued" locationType="bga" ProdPerHour="1000" position="728 0 1658" showInProduction="true" isSellingPoint="true">
 		<input name="silage" capacity="50000" factor="360" fillTypes="bunkerFillLevel" showInStorage="false" />
 		<input name="liquidManure" capacity="&#8734;" factor="180" fillTypes="liquidManureFillLevel" showInStorage="false" />
 		<output name="digestate" capacity="800000" factor="87" fillTypes="digestateSiloFillLevel" showInStorage="true" />
 	</item>
-	<item name="BGASued1" locationType="bunker" position="0 0 0" />
-	<item name="BGASued2" locationType="bunker" position="0 0 0" />
-	<item name="BGASuedklein1" locationType="bunker" position="0 0 0" />
-	<item name="BGASuedklein2" locationType="bunker" position="0 0 0" />
-	<item name="BGASuedklein3" locationType="bunker" position="0 0 0" />
+	<item name="BGASued1" locationType="bunker" position="673 0 1687" />
+	<item name="BGASued2" locationType="bunker" position="673 0 1656" />
+	<item name="BGASuedklein1" locationType="bunker" position="673 0 1640" />
+	<item name="BGASuedklein2" locationType="bunker" position="673 0 1630" />
+	<item name="BGASuedklein3" locationType="bunker" position="673 0 1620" />
 	<l10n>
 		<text name="Bga">
 			<en>BGA centre</en>
@@ -96,6 +94,66 @@
 			<en>BunkerSilo_Silo2</en>
 			<de>BGA Nord Fahrsilo 2</de>
 			<fr>BGA Nord silo 2</fr>
+		</text>
+		<text name="BGA_Ost1">
+			<en>BGA east silo 1</en>
+			<de>BGA Ost Fahrsilo 1</de>
+			<fr>BGA oriental silo 1</fr>
+		</text>
+		<text name="BGA_Ost2">
+			<en>BGA east silo 2</en>
+			<de>BGA Ost Fahrsilo 2</de>
+			<fr>BGA oriental silo 2</fr>
+		</text>
+		<text name="BGA_Ost3">
+			<en>BGA east silo 3</en>
+			<de>BGA Ost Fahrsilo 3</de>
+			<fr>BGA oriental silo 31</fr>
+		</text>
+		<text name="BGA_Ost4">
+			<en>BGA east silo 4</en>
+			<de>BGA Ost Fahrsilo 4</de>
+			<fr>BGA oriental silo 4</fr>
+		</text>
+		<text name="BGA_Ost5">
+			<en>BGA east silo 5</en>
+			<de>BGA Ost Fahrsilo 5</de>
+			<fr>BGA oriental silo 5</fr>
+		</text>
+		<text name="BGA_Ost_Keil1">
+			<en>BGA east silo keil 1</en>
+			<de>BGA Ost Fahrsilo Keil 1</de>
+			<fr>BGA oriental silo Keil 1</fr>
+		</text>
+		<text name="BGA_Ost_Keil2">
+			<en>BGA east silo keil 2</en>
+			<de>BGA Ost Fahrsilo Keil 2</de>
+			<fr>BGA oriental silo Keil 2</fr>
+		</text>
+		<text name="BGASued1">
+			<en>BGA south silo 1</en>
+			<de>BGA Süd Fahrsilo 1</de>
+			<fr>BGA sud silo 1</fr>
+		</text>
+		<text name="BGASued2">
+			<en>BGA south silo 2</en>
+			<de>BGA Süd Fahrsilo 2</de>
+			<fr>BGA sud silo 2</fr>
+		</text>
+		<text name="BGASuedklein1">
+			<en>BGA south silo small 1</en>
+			<de>BGA Süd Fahrsilo klein 1</de>
+			<fr>BGA sud silo minime 1</fr>
+		</text>
+		<text name="BGASuedklein2">
+			<en>BGA south silo small 2</en>
+			<de>BGA Süd Fahrsilo klein 2</de>
+			<fr>BGA sud silo minime 2</fr>
+		</text>
+		<text name="BGASuedklein3">
+			<en>BGA south silo small 3</en>
+			<de>BGA Süd Fahrsilo klein 3</de>
+			<fr>BGA sud silo minime 3</fr>
 		</text>
 	</l10n>
 </mapconfig>

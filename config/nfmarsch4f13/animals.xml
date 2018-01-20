@@ -14,6 +14,7 @@
 		<productivity name="silage_dryGrass_windrow" factor="45" />
 		<productivity name="powerFood" factor="27" />
 	</item>
+	<item name="BunkerSilo_cowSilo" locationType="bunker" position="-506 0 668" />
 	<item name="Animals_pig" locationType="animal" position="250 0 400" reproRate="144">
 		<input name="water" trough_factor="10" consumption_factor="10" fillTypes="water" showInStorage="false" />
 		<input name="straw" trough_factor="20" consumption_factor="20" fillTypes="straw" showInStorage="false" />
@@ -32,64 +33,7 @@
 	<item name="Animals_sheep" locationType="animal" position="570 0 -19" reproRate="960">
 		<input name="water" trough_factor="15" consumption_factor="15" fillTypes="water" showInStorage="false" />
 		<input name="grass_windrow_dryGrass_windrow" trough_factor="30" consumption_factor="36" fillTypes="grass_windrow dryGrass_windrow" showInStorage="false" />
-		<output name="woolPallet" production_factor="24" capacity="2000" fillType="woolPallet" palettArea="578.3 -25.7 594.8 -21.3" palettPlaces="15" showInStorage="false" />
+		<output name="woolPallet" production_factor="24" capacity="2000" fillType="woolPallet" palettArea="578.3 -25.7 594.8 -21.3" palettPlaces="16" showInStorage="false" />
 		<productivity name="grass_windrow_dryGrass_windrow" factor="90" />
 	</item>
-	<l10n>
-		<text name="Animals_cow">
-			<en>Animals_cow</en>
-			<de>Kuhstall</de>
-			<fr>Etable</fr>
-		</text>
-		<text name="Animals_pig">
-			<en>Animals_pig</en>
-			<de>Schweinestall</de>
-			<fr>Porcherie</fr>
-		</text>
-		<text name="Animals_sheep">
-			<en>Animals_sheep</en>
-			<de>Schafweide</de>
-			<fr>Bergerie</fr>
-		</text>
-		<text name="silage_dryGrass_windrow">
-			<en>Silage or dry grass</en>
-			<de>Silage oder Heu</de>
-			<fr>Ensilage ou foin</fr>
-		</text>
-		<text name="powerFood">
-			<en>Power food</en>
-			<de>Mischfutter</de>
-			<fr>Aliments composés</fr>
-		</text>
-		<text name="maize_pigFood">
-			<en>Maize</en>
-			<de>Körnermais</de>
-			<fr>Maïs</fr>
-		</text>
-		<text name="wheat_barley_pigFood">
-			<en>Wheat or barley</en>
-			<de>Weizen oder Gerste</de>
-			<fr>Blé ou orge</fr>
-		</text>
-		<text name="rape_sunflower_soybean_pigFood">
-			<en>Rape, sunflower or soybean</en>
-			<de>Raps, Sonnenblumen oder Sojabohnen</de>
-			<fr>Colza, tournesol ou soja</fr>
-		</text>
-		<text name="potato_sugarBeet_pigFood">
-			<en>Potatoes or sugar beet</en>
-			<de>Kartoffeln oder Zuckerrüben</de>
-			<fr>Pommes de terre ou betteraves à sucre</fr>
-		</text>
-		<text name="grass_windrow_dryGrass_windrow">
-			<en>Grass or dry grass</en>
-			<de>Gras oder Heu</de>
-			<fr>Herbe ou foin</fr>
-		</text>
-		<text name="woolPallet">
-			<en>Wool pallet</en>
-			<de>Wolle</de>
-			<fr>Laine</fr>
-		</text>
-	</l10n>
 </mapconfig>

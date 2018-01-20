@@ -7,6 +7,11 @@
 			<de>Universal Sattelauflieger</de>
 			<fr>Universal Sattelauflieger</fr>
 		</text>
+		<text name="kotteUni_semi">
+			<en>Universal Sattelauflieger</en>
+			<de>Universal Sattelauflieger</de>
+			<fr>Universal Sattelauflieger</fr>
+		</text>
 		<!-- krampeSB3060_Mod -->
 		<text name="krampeSB3060_Mod">
 			<en>Bandit SB 30/60</en>
@@ -24,6 +29,12 @@
 			<en>Lexion</en>
 			<de>Lexion</de>
 			<fr>Lexion</fr>
+		</text>
+		<!--  -->
+		<text name="SRB35">
+			<en>kroegerSRB35</en>
+			<de>kroegerSRB35</de>
+			<fr>kroegerSRB35</fr>
 		</text>
 	</l10n>	
 </mapconfig>

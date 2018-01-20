@@ -4,10 +4,10 @@
 	<item name="fuelStation_Tankstelle_BGA_Nord" locationType="fuelStation" position="-180 0 -890" />
 	<item name="fuelStation_Tankstelle_BGA_Sued" locationType="fuelStation" position="-400 0 630" />
 	<item name="fuelStation_Tankstelle_Raffinerie" locationType="fuelStation" position="-920 0 630" />
-	<item name="fuelStation_Tankstelle_Insel" locationType="fuelStation" position="0 0 0" />
-	<item name="fuelStation_Tankstelle_Rinderhof" locationType="fuelStation" position="0 0 0" />
-	<item name="fuelStation_Tankstelle_SandKies" locationType="fuelStation" position="0 0 0" />
-	<item name="fuelStation_Tankstelle_Huehnerhof" locationType="fuelStation" position="0 0 0" />
+	<item name="fuelStation_Tankstelle_Insel" locationType="fuelStation" position="-1417 0 -874" />
+	<item name="fuelStation_Tankstelle_Rinderhof" locationType="fuelStation" position="533 0 1604" />
+	<item name="fuelStation_Tankstelle_SandKies" locationType="fuelStation" position="1625 0 277" />
+	<item name="fuelStation_Tankstelle_Huehnerhof" locationType="fuelStation" position="1454 0 -792" />
 	<l10n>
 		<text name="fuelStation_Tankstelle_Huehnerhof">
 			<en>fuelStation_Tankstelle_Huehnerhof</en>

@@ -73,18 +73,18 @@
 		</text>
 		<text name="FabrikScript_Duenger_Prod">
 			<en>Fertilizer production</en>
-			<de>Düngerproduktion</de>
+			<de>Düngerproduktion (Hof)</de>
 			<fr>Usine à engrais</fr>
 		</text>
 		<text name="FabrikScript_Duenger_Prod2">
 			<en>Fertilizer production 2</en>
-			<de>Düngerproduktion 2</de>
+			<de>Düngerproduktion (Rinderhof)</de>
 			<fr>Usine à engrais 2</fr>
 		</text>
 		<text name="FabrikScript_Eierhof">
-			<en>Egg farm</en>
-			<de>Eier Produktion</de>
-			<fr>Élevage d'œufs</fr>
+			<en>Egg farm 1</en>
+			<de>Eier Produktion 1</de>
+			<fr>Élevage d'œufs 1</fr>
 		</text>
 		<text name="FabrikScript_Eierhof2">
 			<en>Egg farm 2</en>
@@ -468,12 +468,12 @@
 		</text>
 		<text name="FabrikScript_Saat_Prod">
 			<en>Seed production</en>
-			<de>Saatgutproduktion</de>
+			<de>Saatgutproduktion (Hof)</de>
 			<fr>Usine à semences</fr>
 		</text>
 		<text name="FabrikScript_Saat_Prod2">
 			<en>Seed production 2</en>
-			<de>Saatgutproduktion 2</de>
+			<de>Saatgutproduktion (Rinderhof)</de>
 			<fr>Usine à semences 2</fr>
 		</text>
 		<text name="FabrikScript_Saatgut">
