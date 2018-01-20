@@ -322,7 +322,6 @@ function readMapObject($object, $location, &$plants, &$mapconfig) {
 			if ($numAnimals == 0) {
 				$productivity = 0;
 			} else {
-				var_dump ( $tipTriggers );
 				$productivity = getAnimalProductivity ( $location, $tipTriggers ) * (($cleanlinessFactor < 0.1) ? 0.9 : 1);
 			}
 			$plants [$plant] ['productivity'] = $productivity;
