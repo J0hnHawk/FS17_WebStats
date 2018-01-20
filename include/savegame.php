@@ -420,7 +420,7 @@ function readMapObject($object, $location, &$plants, &$mapconfig)
                     } else {
                         $fillLevel = isset($commodities[$l_fillType]['locations'][$plant]['fillLevel']) ? $commodities[$l_fillType]['locations'][$plant]['fillLevel'] : 0;
                         $capacity = $outputConfig['capacity'];
-                        $fillMax = (isset($outputConfig['palettPlaces']))?$outputConfig['palettPlaces']:1 * $capacity;
+                        $fillMax = ((isset($outputConfig['palettPlaces']))?$outputConfig['palettPlaces']:1) * $capacity;
                     }
                     $state = getState($fillMax - $fillLevel, $fillMax);
                     $plants[$plant]['output'][$l_fillType] = addFillType($fillType, $fillLevel, $fillMax, $prodPerHour, $factor, $state);
