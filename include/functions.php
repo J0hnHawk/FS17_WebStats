@@ -303,6 +303,8 @@ function addCommodity($fillType, $fillLevel, $location, $className = 'none', $is
 		$commodities [$l_fillType] ['locations'] [$l_location] [$className] ++;
 		$commodities [$l_fillType] ['locations'] [$l_location] ['fillLevel'] += $fillLevel;
 	}
+	
+	ksort ( $commodities [$l_fillType] ['locations'] );
 }
 
 // Positionen von Paletten ermitteln
@@ -336,14 +338,18 @@ function getAnimalProductivity($location, $tipTriggers) {
 	if (strpos ( $tipTriggers, 'water' ) === false) {
 		return 0;
 	}
-	global $mapconfig;
+	global $mapconfig, $map;
 	$productivity = 0;
 	if ($location == 'Animals_sheep') {
 		$productivity = 10;
 	}
 	foreach ( $mapconfig [$location] ['productivity'] as $trigger => $value ) {
 		if (strpos ( $tipTriggers, $trigger ) !== false) {
-			$productivity += intval ( $value );
+			if (trim ( $map ['configFormat'] ) == 'xml') {
+				$productivity += floatval ( $value ['factor'] );
+			} else {
+				$productivity += floatval ( $value );
+			}
 		}
 	}
 	return $productivity;
