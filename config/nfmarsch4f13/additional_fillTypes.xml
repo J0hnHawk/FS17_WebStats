@@ -861,26 +861,6 @@
 			<de>Mehl</de>
 			<fr>Farine</fr>
 		</text>
-		<text name="baleStraw240">
-			<en>Straw</en>
-			<de>Stroh</de>
-			<fr>Paille</fr>
-		</text>
-		<text name="baleGrass240">
-			<en>Grass</en>
-			<de>Stroh</de>
-			<fr>Herbe</fr>
-		</text>
-		<text name="roundbaleHay_w112_d130">
-			<en></en>
-			<de>Heu</de>
-			<fr>Foin</fr>
-		</text>
-		<text name="woolPallet">
-			<en>Wool</en>
-			<de>Wolle</de>
-			<fr>Laine</fr>
-		</text>
 		<text name="palettesahne">
 			<en>Cream</en>
 			<de>Sahne</de>
