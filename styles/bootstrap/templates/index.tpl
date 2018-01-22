@@ -46,7 +46,7 @@
 					<p>{$webStatsVersion}</p>
 					<p>Copyright (C) 2017-2018, John Hawk</p>
 					<p>##INFO_1##</p>
-					<p>##INFO_2## Billy5haw, Marfulak</p>
+					<p>##INFO_2## alex83we, bl4ckdog, Billy5haw, chin0x, extreme_farmer, JanSe, lnoyelle, Marfulak, Slivicon</p>
 					<p>
 						##INFO_3##: John Hawk &lt;<a href="mailto:John Hawk <john.hawk@ gmx.net>">john.hawk@gmx.net</a>&gt;
 					</p>
