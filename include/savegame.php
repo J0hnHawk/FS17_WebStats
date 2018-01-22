@@ -226,9 +226,7 @@ function readMapObject($object, $location, &$plants, &$mapconfig)
             // Fahrsilos
             $state = intval($object['state']);
             $fillLevel = intval($object['fillLevel']);
-            /*if (isset($object['inputfilltype'])) {
-                $fillType = $object['inputfilltype'];
-            } else*/if ($state < 2) {
+            if ($state < 2) {
                 $fillType = 'chaff';
             } else {
                 $fillType = 'silage';
