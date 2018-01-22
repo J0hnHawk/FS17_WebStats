@@ -53,7 +53,7 @@ while ( ($entry = $stylesDir->read ()) != false ) {
 $stylesDir->close ();
 
 // Load map infomations
-$map = loadMapCFGfile ( "./config/$mapPath/map.cfg" );
+$map = loadMapCFGfile ( $mapPath );
 $smarty->assign ( 'map', $map );
 
 // Load map config
