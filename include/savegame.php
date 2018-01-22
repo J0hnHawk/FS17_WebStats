@@ -226,7 +226,9 @@ function readMapObject($object, $location, &$plants, &$mapconfig)
             // Fahrsilos
             $state = intval($object['state']);
             $fillLevel = intval($object['fillLevel']);
-            if ($state < 2) {
+            /*if (isset($object['inputfilltype'])) {
+                $fillType = $object['inputfilltype'];
+            } else*/if ($state < 2) {
                 $fillType = 'chaff';
             } else {
                 $fillType = 'silage';
@@ -374,6 +376,14 @@ function readMapObject($object, $location, &$plants, &$mapconfig)
                     $state = getState($fillMax - $fillLevel, $fillMax);
                     $plants[$plant]['output'][$l_fillType] = addFillType($fillType, $fillLevel, $fillMax, $ProdPerHour, $factor, $state);
                 }
+            }
+            break;
+        case 'extraFilePHP':
+            // Lade extra spezialScript nach
+            global $map;
+            $scriptFile = sprintf('./config/%s/%s',$map['Path'],$mapconfig[$location]['scriptFile']);
+            if(file_exists($scriptFile)) {
+                include($scriptFile);
             }
             break;
         case 'FabrikScript':

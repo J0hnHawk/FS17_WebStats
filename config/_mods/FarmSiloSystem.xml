@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<placeable>
+	<MOD name="FarmSiloSystem" Version="1.1.0.0" Author="kevink98" Link="https://ls-modcompany.com/filebase/file/47-farmsilosystem/"></MOD>
+	<item name="FarmSiloSystem08" locationType="extraFilePHP" scriptFile="farmSiloSystem.php" position="-940 0 10" showInProduction="false">
+		<FillLevel name="1" fillType="wheat" showInStorage="true"/>
+		<FillLevel name="2" fillType="barley" showInStorage="false" />
+		<FillLevel name="3" fillType="rape" />
+		<FillLevel name="4" fillType="maize" />
+		<FillLevel name="5" fillType="sunflower" />
+		<FillLevel name="6" fillType="soybean" />
+	</item>
+	<l10n>
+		<text name="FarmSiloSystem08">
+			<en>Farm silo system</en>
+			<de>Farmsilosystem</de>
+		</text>
+		<!-- fillTypes already translated in gameOwn translations -->
+	</l10n>
+</placeable>
