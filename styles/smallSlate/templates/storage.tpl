@@ -58,7 +58,7 @@
 										{/if}
 									{/if}
 								<tr>
-									<td>{$locationName}{if $addInfo} ({$addInfo}){/if}</td>
+									<td>{if isset($plants.$locationName)}<a href="index.php?page=factories&object={$plants.$locationName.i3dName}">{$locationName}</a>{else}{$locationName}{/if}{if $addInfo} ({$addInfo}){/if}</td>
 									<td class="text-right">{$location.fillLevel|number_format:0:",":"."}</td>
 								</tr>
 								{/foreach}

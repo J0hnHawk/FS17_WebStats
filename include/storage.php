@@ -67,5 +67,6 @@ if (! $options ['storage'] ['sortByName']) {
 }
 
 $smarty->assign ( 'commodities', $commodities );
+$smarty->assign ( 'plants', $plants );
 $smarty->assign ( 'outOfMap', $outOfMap );
 $smarty->assign ( 'options', $options ['storage'] );
