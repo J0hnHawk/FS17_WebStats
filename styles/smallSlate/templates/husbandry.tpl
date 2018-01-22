@@ -114,7 +114,8 @@
 					<th class="col-xs-8">##NEXT_ANIMAL##</th>
 					<td colspan="2" class="col-xs-4 text-right">{$plants.$animalPlant.nextAnimal}</td>
 				</tr>
-				<tr>
+				{foreach $plants.$animalPlant.output as $fillType => $fillTypeData}
+			<tr>
 				<th class="col-xs-8">{$fillType}</th>
 				{if in_array($fillTypeData.i3dName,$animalPallets)}
 				<td class="col-xs-1 text-right">{$fillTypeData.fillLevel|number_format:0:":":"."}</td>
@@ -127,7 +128,8 @@
 					</div> {else} 
 					<td colspan="2" class="col-xs-1 text-right">{$fillTypeData.fillLevel|number_format:0:":":"."}</td>{/if}
 				</td>
-				</tr>
+			</tr>
+			{/foreach}
 				<tr>
 					<th class="col-xs-8">##CLEANNESS##</th>
 					<td class="col-xs-1 text-right">{$plants.$animalPlant.cleanlinessFactor}%</td>
