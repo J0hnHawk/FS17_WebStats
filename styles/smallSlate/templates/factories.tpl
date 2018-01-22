@@ -7,8 +7,9 @@
 <div class="row">
 	<div class="col-sm-8 col-sm-offset-1">
 		{$plantData = $plants.$plantName}
+		{if $plantData.input|@count > 0}
 		<h4>##REQUIRED##</h4>
-		<table class="table">
+		<table class="table table-striped">
 			<thead>
 				<tr>
 					<th width="28%">##COMMODITIES##</th>
@@ -30,9 +31,13 @@
 			{/foreach}
 			</tbody>
 		</table>
+		{if $plantData.output|@count > 0}
 		<hr>
+		{/if}
+		{/if}
+		{if $plantData.output|@count > 0}
 		<h4>##PRODUCED_GOODS##</h4>
-		<table class="table">
+		<table class="table table-striped">
 			<thead>
 				<tr>
 					<th width="28%">##COMMODITIES##</th>
@@ -54,6 +59,7 @@
 			{/foreach}
 			</tbody>
 		</table>
+		{/if}
 	</div>
 </div>
 <div class="modal fade" id="modalMenu" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
