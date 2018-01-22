@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <placeable>
 	<mod name="aaa_WEINPACKohneTipping_placeable" version="4.0.0" author="susi29" link="https://www.modhoster.de/mods/weinberg--2" />
-	<item filename="winzerei" locationType="FabrikScript" ProdPerHour="1000" showInProduction="true">
+	<item name="winzerei" locationType="FabrikScript" ProdPerHour="1000" showInProduction="true">
 		<input name="Wasser" capacity="50000" factor="1.8" fillTypes="water" showInStorage="false" />
 		<input name="Trauben" capacity="50000" factor="3" fillTypes="grape" showInStorage="false" />
 		<output name="WeinfassKlein" capacity="50" factor="0.054" fillType="Winesmall" palettArea="-20 -20 20 20" palettPlaces="999" showInStorage="false" />
 		<output name="Traubensaft" capacity="1500" factor="1.632" fillType="grapejuice" palettArea="-20 -20 20 20" palettPlaces="999" showInStorage="false" />
 		<output name="Wein" capacity="1500" factor="1.632" fillType="Wine" palettArea="-20 -20 20 20" palettPlaces="999" showInStorage="false" />
 	</item>
-	<item filename="weinverkauf" locationType="FabrikScript" ProdPerHour="1000" showInProduction="true">
+	<item name="weinverkauf" locationType="FabrikScript" ProdPerHour="1000" showInProduction="true">
 		<input name="Wein" capacity="15000" factor="0.3" fillTypes="Wine" showInStorage="false" />
 		<input name="WeinfassKlein" capacity="5000" factor="0.02" fillTypes="Winesmall" showInStorage="false" />
 		<input name="Traubensaft" capacity="15000" factor="0.3" fillTypes="grapejuice" showInStorage="false" />
 		<output name="Weinruecknahme" capacity="2147483647" factor="0.01" fillType="Wine" palettArea="-30 -30 30 30" palettPlaces="999" showInStorage="false" />
 		<output name="Wein" capacity="2000" factor="1" fillType="Wine" palettArea="-30 -30 30 30" palettPlaces="999" showInStorage="false" />
 	</item>
-	<item filename="wein" locationType="FabrikScript" ProdPerHour="1000" showInProduction="true">
+	<item name="wein" locationType="FabrikScript" ProdPerHour="1000" showInProduction="true">
 		<input name="Mist" capacity="25000" factor="1.7" fillTypes="manure" showInStorage="false" />
 		<input name="Duenger" capacity="25000" factor="1.8" fillTypes="fertilizer" showInStorage="false" />
 		<input name="Wasser" capacity="80000" factor="2" fillTypes="water" showInStorage="false" />

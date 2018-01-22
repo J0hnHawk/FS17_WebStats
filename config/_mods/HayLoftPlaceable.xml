@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <placeable>
 	<MOD name="FS17_dogfaceRootStorage" version="1.0.0.1" author="Dogface" link="http://www.farming-simulator.com/mod.php?mod_id=72085"></MOD>
-	<item filename="dogfaceRootStorage" locationType="storage" />
+	<item name="dogfaceRootStorage" locationType="storage" />
 	<l10n>
 		<text name="dogfaceRootStorage">
 			<en>Root Crop Storage</en>

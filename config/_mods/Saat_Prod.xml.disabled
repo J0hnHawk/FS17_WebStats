@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <placeable>
 	<MOD name="FS17_FabrikScript_Saat_Prod" Version="" Author="" Link=""></MOD>
-	<item className="FabrikScript_Saat_Prod" locationType="FabrikScript" ProdPerHour="10000" showInProduction="true">
+	<item name="FabrikScript_Saat_Prod" locationType="FabrikScript" ProdPerHour="10000" showInProduction="true">
 		<input name="grain" capacity="100000" factor="1" fillTypes="wheat maize barley rape" showInStorage="false" />
 		<input name="fertilizer" capacity="100000" factor="0.3" fillTypes="fertilizer" showInStorage="false" />
 		<output name="seeds" capacity="100000" factor="1" fillType="seeds" showInStorage="true" />

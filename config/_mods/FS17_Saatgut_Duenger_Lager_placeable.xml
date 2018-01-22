@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <placeable>
 	<mod name="FS17_Saatgut_Duenger_Lager_placeable" version="3.0" author="kevink98/Nils23" link="https://www.farming-simulator.com/mod.php?mod_id=63285" />
-	<item filename="Fertilizer" locationType="FabrikScript" ProdPerHour="2147483647" showInProduction="false">
+	<item name="Fertilizer" locationType="FabrikScript" ProdPerHour="2147483647" showInProduction="false">
 		<input name="FS_fertilizer" capacity="500000" factor="1" fillTypes="fertilizer" showInStorage="true" />
 		<output name="FS_fertilizer" capacity="500000" factor="1" fillType="fertilizer" showInStorage="true" />
 	</item>
-	<item filename="Saatgut" locationType="FabrikScript" ProdPerHour="2147483647" showInProduction="false">
+	<item name="Saatgut" locationType="FabrikScript" ProdPerHour="2147483647" showInProduction="false">
 		<input name="FS_Seeds" capacity="500000" factor="1" fillTypes="seeds" showInStorage="true" />
 		<output name="FS_Seeds" capacity="500000" factor="1" fillType="seeds" showInStorage="true" />
 	</item>
