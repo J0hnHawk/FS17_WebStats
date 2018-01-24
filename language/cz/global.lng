@@ -130,7 +130,7 @@ PALETTES=Palety
 BALE=Balík
 BALES=Balíků
 INCORRECT_POSITIONS_TITLE=Chybná poloha balíku nebo palety
-INCORRECT_POSITIONS_TEXT=Umístění následujících balíků nebo palet v souboru <code> vehicle.xml </ code> jsou neplatné.
+INCORRECT_POSITIONS_TEXT=Umístění následujících balíků nebo palet v souboru <code>vehicle.xml</code> jsou neplatné.
 INCORRECT_POSITION=neplatná pozice
 SUGGESTION_POSITION=Navrhovaná pozice
 
