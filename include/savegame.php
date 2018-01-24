@@ -460,7 +460,7 @@ foreach ($mapconfig as $plantName => $plant) {
                 foreach ($fillTypes as $fillType) {
                     $l_fillType = translate($fillType);
                     if (! isset($commodities[$l_fillType])) {
-                        addCommodity($fillType, 0, NULL, NULL, true);
+                        addCommodity($fillType, 0, NULL, NULL, false);
                     }
                     $fillLevel = $commodities[$l_fillType]['overall'];
                     addCommodity($combineFillType, $fillLevel, NULL, NULL, true);
