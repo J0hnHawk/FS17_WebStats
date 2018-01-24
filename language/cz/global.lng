@@ -1,0 +1,161 @@
+//Translated from German to Czech with DEEPL to be faster. I think there are better descriptions/translations. 
+
+//global
+CLOSE=Zavřít
+SAVE=Uložit
+SUBMIT=Potvrdit
+RESET=Reset
+SAVETIME=Uloženo
+DAY=Den
+ANIMALS=Zvířata
+ANIMALS2=Zvířata:
+COMMODITY=Komodita
+COMMODITIES=Komodity
+PLANT=Výrobní závod
+PLANTS=Výrobní závody
+SETTINGS=Nastavení
+STOCK=Sklad
+STOCKS=Sklad:
+QUANTITY=Množství
+PRICES=Ceny
+PRICE_INFO=Info Ceny
+CHOOSE_STYLE= Vyberte styl
+TOOLTIP=Nápověda
+TOOLTIP_HELP=Zobrazit stav skladu
+
+//install.tpl
+CHOOSE_LANGUAGE_LABEL=Vyberte jazyk
+CHOOSE_LANGUAGE=Změna
+CONFIG_SAVED=Konfigurace byla úspěšně uložena
+CONTINUE=Přepněte na přehled
+DESCRIPTON=Stránka je věnovaná serverům Farming Simulator 17 a zobrazuje hráče, vozidla, inventář a výrobní zařízení. Chybějící suroviny i kompletní sklady výrobků jsou identifikovány.
+INSTALL_TITLE=Instalace
+DEDICATED=Dedikovaný server
+LOCAL=Místní save
+DS_LABEL1=IP-adresa serveru
+DS_PLACEHOLDE1=IP-adresa
+DS_HELP_BLOCK1=IP-adresa Farming Simulator 17 dedikovaného serveru.
+DS_LABEL2=Port serveru
+DS_PLACEHOLDE2=Port
+DS_HELP_BLOCK2=Port v IP adrese nikoliv klienta.
+DS_LABEL3=Server-kód
+DS_PLACEHOLDE3=kód
+DS_HELP_BLOCK3=Web-API přístupový kód.
+DS_LABEL4=Mapa modu
+DS_HELP_BLOCK4=Vyberte nainstalovanou kartu na serveru.
+DS_LABEL5=WebStats heslo
+DS_PLACEHOLDE5=heslo
+DS_PLACEHOLDE6=Opakujte heslo
+DS_HELP_BLOCK5=Heslo slouží pro změnu mapy nebo serveru.
+NO_INSTALL_1=Bohužel FS17 Webstats nelze použít s dedikovaným serverem na tomto webovém serveru, protože funkce <code> fsockopen () </ code> není podporována.
+NO_INSTALL_2=Zkontrolujte, prosím, u vašeho webhostingu, zda lze aktivovat funkci v kódu <code> php.ini </ code>.
+INTRO1=Vezměte prosím na vědomí, že ve hře Farming Simulator se save automaticky neuloží. Aby se na tomto webu zobrazovala správná data, musí být skóre nejprve uloženo. Alternativně nainstalujte do hry mod
+INTRO2=, uložit hru automaticky každých 5 minut.
+LINK_TEXT=Map Autosave
+LS_LABEL1=Cesta k výsledku
+LS_PLACEHOLDE1=Cesta
+LS_HELP_BLOCK1=Farming Simulator ve výchozím nastavení najdete v<br> <code>C:\Users\"uživatel"\Documents\My	Games\FarmingSimulator2017\savegameX</code> X je číslo uložení.
+LS_LABEL2=Mod Map
+LS_HELP_BLOCK2=Vyberte mapu
+SAVE_CONFIG=Uložit konfiguraci
+ERROR_CODE=Zadaný kód je neplatný.
+ERROR_PORT=Zadaný port je neplatný.
+ERROR_IP=Zadaná adresa IP není platná.
+ERROR_MAP=Karta je neplatná.
+ERROR_OFFLINE=Server je offline nebo je nesprávná adresa IP.
+ERROR_SAVEGAME=Nebylo nalezeno žádné skóre pod danou cestou.
+PASSWORD_MATCH=Hesla neodpovídají.
+PASSWORD_SHORT=Heslo musí mít délku nejméně 6 znaků.
+ERROR=Chyba!
+
+//index.tpl
+TPL_ERROR_1=Při načítání stránky došlo k chybě
+TPL_ERROR_2=Soubor
+TPL_ERROR_3=neexistuje.
+CON_ERROR_1=chyba připojení
+CON_ERROR_2=Z dedikovaného serveru nebylo možné načíst žádná data. Zkontrolujte prosím adresu serveru nebo připojení k internetu. Funkce <code> fsockopen () </ code> musí být povolena na webovém serveru.
+INFO_1=Webová stránka zobrazuje stav serveru a monitoruje výrobní zařízení a úrovně zásob.
+INFO_2=Tipy, nápověda a návrhy pro zlepšení
+INFO_3=Programátor
+INFO_4=Konfigurace karty
+LICENSE=Informace o licencích
+SHEEP_COUNT=Počet ovcí
+PRODUCTIVITY=Produktivita
+REPRO_RATE=Rychlost reprodukce
+NEXT_ANIMAL=Další zvíře
+CLEANNESS=Čistota
+PIG_COUNT=Počet prasat
+COW_COUNT=Počet krav
+
+//navbar.tpl
+TOGGLE=Přepnout navigaci
+SERVER=Server
+STORAGE=Sklad
+PRODUCTION=Výroba
+FACTORY=Továrny
+INFO=Info
+
+//commodity.tpl
+DETAILVIEW=podrobný náhled
+CHOOSE_COMMODITY=Vyber komoditu
+PLACE=Umístění skladu
+AMOUNT=Množství
+Menge=Počet
+WHOLE_AMOUNT=celkové skladové zásoby
+DEMAND=Poptávka
+WHOLE_DEMAND=Celková poptávka
+ITEM_POSITIONS=Pozice palet/balíků
+
+//factories.tpl
+CHOOSE_PLANT=Vyber továrnu
+REQUIRED=Požadované suroviny
+CAPACITY=Kapacita
+REQUIRE_HOUR=Poptávka/hodinu
+REQUIRE_DAY=Poptávka/den
+PRODUCED_GOODS=Vyráběné zboží
+PRODUCT_HOUR=Produkce/hodinu
+PRODUCT_DAY=Produkce/den
+
+//production.tpl
+PRODUCTION_OVERVIEW=Přehled produkce:
+RAW_MATERIALS=Suroviny
+PRODUCTS=Výrobky
+MORE_DETAILS=další podrobnosti
+
+//storage.tpl
+CAUTION=Varování
+DETAILS=Podrobnosti
+PALLET=Paleta
+PALETTES=Palety
+BALE=Balík
+BALES=Balíků
+INCORRECT_POSITIONS_TITLE=Chybná poloha balíku nebo palety
+INCORRECT_POSITIONS_TEXT=Umístění následujících balíků nebo palet v souboru <code> vehicle.xml </ code> jsou neplatné.
+INCORRECT_POSITION=neplatná pozice
+SUGGESTION_POSITION=Navrhovaná pozice
+
+//options.tpl
+GENERAL=Obecné
+AUTO_RELOAD=Automatické načtení
+SORT_ORDER=Třídit
+ALPHABETICALLY=abecedně
+FILL_LEVEL=podle úrovně plnění
+SHOW=zobrazit
+HIDE=nezobrazovat
+VEHICLE_LOAD=Náplň vozidla
+ONLY_PALETTS=Zobrazit pouze palety
+YES=ano
+NO=ne
+SHOW_ZERO_STOCK=Zobrazení nulových zásob
+FULL_PRODUCT_STORAGE=Naplnění skladu
+SORT_FULL_PRODUCTS=brát v úvahu při třídění
+IGNORE_FULL_PRODUCTS=ignorovat během třídění
+SHOW_HIDDEN_PLANTS=Zobrazit výrobní závody
+MOD_MAP=Mod Mapa
+LAYOUT=Dispozice
+3COLUMN=3 sloupce
+4COLUMN=4 sloupce
+SERVER_SETTINGS=Odstranění nastavení serveru
+ADMIN_AREA=Správa serveru
+ADMIN_DESCRIPTION=Pozor po zadání hesla dojde ke smazání nastavení serveru.
+ENTER_PASSWORD=Zadejte prosím heslo
