@@ -188,7 +188,7 @@ function getMaps() {
                         if (! file_exists("./config/$mapDir/pda_map_H.jpg")) {
                             continue;
                         }
-                        $map = loadMapCFGfile("./config/$mapDir/map.cfg");
+                        $map = loadMapCFGfile($mapDir);
                         if ($map['configFormat'] == 'php') {
                             $mapIsOK = true;
                             foreach ($mapFiles as $mapFile) {
