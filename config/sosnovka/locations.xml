@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mapconfig>
+	<l10n>
+		<text name="Bga">
+			<en>BGA</en>
+			<de>BGA</de>
+			<fr>BGA</fr>
+		</text>
+		<text name="BunkerSilo_silo1">
+			<en>BGA silo 1</en>
+			<de>BGA Fahrsilo 1</de>
+			<fr>BGA silo 1</fr>
+		</text>
+		<text name="BunkerSilo_silo2">
+			<en>BGA silo 2</en>
+			<de>BGA Fahrsilo 2</de>
+			<fr>BGA silo 2</fr>
+		</text>
+		<text name="BunkerSilo_silo3">
+			<en>BGA silo 3</en>
+			<de>BGA Fahrsilo 3</de>
+			<fr>BGA silo 3</fr>
+		</text>
+		<text name="BunkerSilo_silo4">
+			<en>BGA silo 4</en>
+			<de>BGA Fahrsilo 4</de>
+			<fr>BGA silo 4</fr>
+		</text>
+		<text name="BunkerSilo_silo5">
+			<en>BGA silo 5</en>
+			<de>BGA Fahrsilo 5</de>
+			<fr>BGA silo 5</fr>
+		</text>
+		<text name="BunkerSilo_silo6">
+			<en>BGA silo 6</en>
+			<de>BGA Fahrsilo 6</de>
+			<fr>BGA silo 6</fr>
+		</text>
+		<text name="BunkerSilo_silo7">
+			<en>BGA silo 7</en>
+			<de>BGA Fahrsilo 7</de>
+			<fr>BGA silo 7</fr>
+		</text>
+		<text name="BunkerSilo_silo8">
+			<en>BGA silo 8</en>
+			<de>BGA Fahrsilo 8</de>
+			<fr>BGA silo 8</fr>
+		</text>
+		<text name="BunkerSilo_silo9">
+			<en>BGA silo 9</en>
+			<de>BGA Fahrsilo 9</de>
+			<fr>BGA silo 9</fr>
+		</text>
+		<text name="BunkerSilo_silo10">
+			<en>BGA silo 10</en>
+			<de>BGA Fahrsilo 10</de>
+			<fr>BGA silo 10</fr>
+		</text>
+	</l10n>
+</mapconfig>

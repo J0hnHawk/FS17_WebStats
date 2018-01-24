@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mapconfig>
+	<item name="TipTrigger_VILLAGE_GRAINELEVATOR" locationType="TipTrigger" position="311 0 -690" isSellingPoint="true" />
+	<item name="TipTrigger_WINDROW_STORAGE" locationType="TipTrigger" position="-949 0 571" isSellingPoint="true" />
+	<item name="TipTrigger_ELEVATOR" locationType="TipTrigger" position="333 0 -650" isSellingPoint="true" />
+	<item name="TipTrigger_BAKERY" locationType="TipTrigger" position="694 0 -853" isSellingPoint="true" />
+	<item name="TipTrigger_GRAINELEVATOR" locationType="TipTrigger" position="-135 0 869" isSellingPoint="true" />
+	<item name="TipTrigger_BIOMASS_HEATING_PLANT" locationType="TipTrigger" position="664 0 478" isSellingPoint="true" />
+	<item name="TipTrigger_VEGETABLEBASE" locationType="TipTrigger" position="-522 0 -585" isSellingPoint="true" />
+	<item name="TipTrigger_GARDENCENTER" locationType="TipTrigger" position="-32 0 302" isSellingPoint="true" />
+	<item name="TipTrigger_SPINNERY" locationType="TipTrigger" position="-379 0 23836" isSellingPoint="true" />
+	<l10n>
+		<text name="TipTrigger_VILLAGE_GRAINELEVATOR">
+			<en>Goldcrest Pacific Grain</en>
+			<de>Dorfgetreidespeicher</de>
+			<fr>Goldcrest Pacific Grain</fr>
+		</text>
+		<text name="TipTrigger_WINDROW_STORAGE">
+			<en>Gomez Ridge Acres</en>
+			<de>Scheune</de>
+			<fr>Gomez Ridge Acres</fr>
+		</text>
+		<text name="TipTrigger_ELEVATOR">
+			<en>Maplefield Mill</en>
+			<de>Dorfgetreidespeicher</de>
+			<fr>Maplefield Mill</fr>
+		</text>
+		<text name="TipTrigger_BAKERY">
+			<en>Wright Agribusiness</en>
+			<de>Bäckerei</de>
+			<fr>Wright Agribusiness</fr>
+		</text>
+		<text name="TipTrigger_GRAINELEVATOR">
+			<en>Denton Bakery</en>
+			<de>Getreidespeicher</de>
+			<fr>Denton Bakery</fr>
+		</text>
+		<text name="TipTrigger_BIOMASS_HEATING_PLANT">
+			<en>Mary's Farm</en>
+			<de>Biomasse-Heizwerk</de>
+			<fr>Mary's Farm</fr>
+		</text>
+		<text name="TipTrigger_VEGETABLEBASE">
+			<en>Barn</en>
+			<de>Gemüselager</de>
+			<fr>Grange</fr>
+		</text>
+		<text name="TipTrigger_GARDENCENTER">
+			<en>Spinnery</en>
+			<de>Gartencenter</de>
+			<fr>Filature</fr>
+		</text>
+		<text name="TipTrigger_SPINNERY">
+			<en>Spinnery</en>
+			<de>Spinnerei</de>
+			<fr>Filature</fr>
+		</text>
+	</l10n>
+</mapconfig>

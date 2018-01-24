@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mapconfig>
+	<item name="Storage_storage1" locationType="storage" position="382 0 -236" />
+	<l10n>
+		<text name="Storage_storage1">
+			<en>Farm silo</en>
+			<de>Hofsilo</de>
+			<fr>Silo agricole</fr>
+		</text>
+	</l10n>
+</mapconfig>
