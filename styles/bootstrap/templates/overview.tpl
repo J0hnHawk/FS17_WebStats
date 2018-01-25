@@ -1,5 +1,5 @@
 <div class="page-header">
-	<h3>{$game.game} &bull; Version {$game.version} &bull; {$game.mapName}</h3>
+	<h3>{$game.game} &bull; ##VERSION## {$game.version} &bull; {$game.mapName}</h3>
 </div>
 <div class="row">
 	<div class="col-sm-12">
