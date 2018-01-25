@@ -24,7 +24,7 @@
 					<th class="text-right">##AMOUNT##</th>
 				</tr>
 			</thead>
-			{if !$combineCommodities} {foreach $commodities.$l_object.locations
+			{if !$combineCommodities} {if $commodities.$l_object.locations|@count>0} {foreach $commodities.$l_object.locations
 			as $locationName => $location} {$addInfo=false} {if
 			isset($location.FillablePallet)} {if $location.FillablePallet==1}
 			{$addInfo="1 ##PALLET##"} {else}
@@ -39,7 +39,7 @@
 				</td>
 				<td class="text-right">{$location.fillLevel|number_format:0:":":"."}</td>
 			</tr>
-			{/foreach} {else} {foreach $combineCommodities as $fillType}
+			{/foreach} {else}<tr><td colspan="2" class="text-center">##NO_STOCK##</td></tr>{/if}{else} {foreach $combineCommodities as $fillType}
 			<tr>
 				<td><a
 					href="index.php?page=commodity&object={$commodities.$fillType.i3dName}">{$fillType}</a></td>

@@ -226,12 +226,8 @@ function readMapObject($object, $location, &$plants, &$mapconfig)
             // Fahrsilos
             $state = intval($object['state']);
             $fillLevel = intval($object['fillLevel']);
-            if ($state < 2) {
-                $fillType = 'chaff';
-            } else {
-                $fillType = 'silage';
-            }
-            addCommodity($fillType, $fillLevel, $location);
+            addCommodity('chaff', ($state < 2)?$fillLevel:0, $location);
+            addCommodity('silage', ($state < 2)?0:$fillLevel, $location);
             break;
         case 'bga':
             $fillType = 'digestate';
@@ -373,6 +369,7 @@ function readMapObject($object, $location, &$plants, &$mapconfig)
                     $fillMax = $mapconfig[$location]['output'][$fillType]['palettPlaces'] * $mapconfig[$location]['output'][$fillType]['capacity'];
                     $state = getState($fillMax - $fillLevel, $fillMax);
                     $plants[$plant]['output'][$l_fillType] = addFillType($fillType, $fillLevel, $fillMax, $ProdPerHour, $factor, $state);
+                    addCommodity($fillType, $fillLevel, $location);
                 }
             }
             break;
@@ -397,7 +394,9 @@ function readMapObject($object, $location, &$plants, &$mapconfig)
                 $fillType = strval($out['Name']);
                 $fillLevel = getPositiveInt($out['Lvl']);
                 if ($mapconfig[$location]['output'][$fillType]['showInStorage']) {
-                    addCommodity($fillType, $fillLevel, $location);
+                	addCommodity($fillType, $fillLevel, $location);
+                } else {
+                	addCommodity($fillType, 0, $location);
                 }
             }
             // Fabriken für Produktionsübersicht
@@ -460,7 +459,7 @@ foreach ($mapconfig as $plantName => $plant) {
                 foreach ($fillTypes as $fillType) {
                     $l_fillType = translate($fillType);
                     if (! isset($commodities[$l_fillType])) {
-                        addCommodity($fillType, 0, NULL, NULL, false);
+                    	addCommodity($fillType, 0, NULL, NULL, false);
                     }
                     $fillLevel = $commodities[$l_fillType]['overall'];
                     addCommodity($combineFillType, $fillLevel, NULL, NULL, true);
