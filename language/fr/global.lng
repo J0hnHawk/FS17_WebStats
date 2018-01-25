@@ -79,6 +79,7 @@ FACTORY=Usine
 INFO=Info
 
 //overview.tpl
+VERSION=Version
 PLAYER=Player
 UPTIME=Uptime
 ISADMIN=Is admin
@@ -91,6 +92,7 @@ DETAILVIEW=Vue détaillée
 CHOOSE_COMMODITY=Choisissez une marchandise
 PLACE=Localisation des entrepots
 AMOUNT=Montant
+NO_STOCK=no stocks
 WHOLE_AMOUNT=Stock total des entrepots
 DEMAND=demande
 WHOLE_DEMAND=demande totale

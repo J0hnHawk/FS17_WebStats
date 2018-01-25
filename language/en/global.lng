@@ -90,6 +90,7 @@ DETAILVIEW=detailed view
 CHOOSE_COMMODITY=Select goods
 PLACE=storage location
 AMOUNT=amount
+NO_STOCK=no stocks
 WHOLE_AMOUNT=total warehouse stock
 DEMAND=demand
 WHOLE_DEMAND=Total demand

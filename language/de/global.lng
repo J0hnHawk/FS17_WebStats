@@ -80,6 +80,7 @@ FACTORY=Fabriken
 INFO=Info
 
 //overview.tpl
+VERSION=Version
 PLAYER=Spieler
 UPTIME=Spielzeit
 ISADMIN=Admin
