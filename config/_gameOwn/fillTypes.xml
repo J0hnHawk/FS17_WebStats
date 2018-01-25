@@ -188,6 +188,11 @@
 			<de>Stroh</de>
 			<fr>Paille</fr>
 		</text>
+		<text name="grass">
+			<en>Grass</en>
+			<de>Gras</de>
+			<fr>Herbe</fr>
+		</text>
 		<text name="grass_windrow">
 			<en>Grass</en>
 			<de>Gras</de>
