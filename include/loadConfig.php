@@ -74,6 +74,11 @@ if (trim ( $map ['configFormat'] ) != 'xml') {
 	$loadedConfig = loadXMLMapConfig ( $mapPath, $userLang );
 	$mapconfig = array_merge ( $mapconfig, $loadedConfig [0] );
 	$lang = array_merge ( $lang, $loadedConfig [1] );
+	if(is_dir('./config/ZZZ_additional')){
+		$loadedConfig = loadXMLMapConfig ( 'ZZZ_additional', $userLang );
+		$mapconfig = array_merge ( $mapconfig, $loadedConfig [0] );
+		$lang = array_merge ( $lang, $loadedConfig [1] );
+	}
 }
 
 // load installed mods
