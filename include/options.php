@@ -39,6 +39,7 @@ if ($_SERVER ['REQUEST_METHOD'] == 'POST') {
 			$options ['storage'] ['onlyPallets'] = filter_var ( GetParam ( 's_onlyPallets', 'P', 1 ), FILTER_VALIDATE_BOOLEAN );
 			$options ['storage'] ['hideZero'] = filter_var ( GetParam ( 's_hideZero', 'P', 1 ), FILTER_VALIDATE_BOOLEAN );
 			$options ['storage'] ['3column'] = filter_var ( GetParam ( 's_3column', 'P', 1 ), FILTER_VALIDATE_BOOLEAN );
+			$options ['storage'] ['hideAnimalsInStorage'] = filter_var ( GetParam ( 's_hideAnimalsInStorage', 'P', 1 ), FILTER_VALIDATE_BOOLEAN );
 			$options ['production'] ['sortByName'] = filter_var ( GetParam ( 'p_sortByName', 'P', 1 ), FILTER_VALIDATE_BOOLEAN );
 			$options ['production'] ['sortFullProducts'] = filter_var ( GetParam ( 'p_sortFullProducts', 'P', 1 ), FILTER_VALIDATE_BOOLEAN );
 			$options ['production'] ['showTooltip'] = filter_var ( GetParam ( 'p_showTooltip', 'P', 1 ), FILTER_VALIDATE_BOOLEAN );

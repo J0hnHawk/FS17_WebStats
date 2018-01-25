@@ -17,7 +17,7 @@
 	{/if}
 	{for $i=0 to $end}
 	<div class="{$class}">
-		<table class="table table-hover">
+		<table class="table table-hover table-striped">
 			<thead>
 				<tr>
 					<th>##COMMODITY##</th>
@@ -31,7 +31,7 @@
 					<td class="text-right">{$commodity.overall|number_format:0:",":"."}</td>
 				</tr>
 				{if $commodity.overall>-1}
-				<tr class="collapse" id="collapse{$commodity.i3dName}">
+				<tr class="collapse" id="collapse{$commodity.i3dName}" >
 					<td colspan="3">
 						<table class="table" style="margin-bottom: 0px;">
 							<thead>
@@ -66,6 +66,7 @@
 						</table>
 					</td>
 				</tr>
+				<tr></tr>
 				{/if} {/if} {/foreach}
 			</tbody>
 		</table>
@@ -115,6 +116,14 @@
 							</label>
 						</div>
 					</div>
+					<div class="form-group">
+						<label for="sortType" class="col-sm-5 control-label">##HIDE_ANIMALS##</label>
+						<div class="col-sm-7">
+							<label class="radio-inline"> <input type="radio" name="hideAnimalsInStorage" value="1"{if $options.hideAnimalsInStorage}checked{/if}> ##YES##
+							</label> <label class="radio-inline"> <input type="radio" name="hideAnimalsInStorage" value="0"{if !$options.hideAnimalsInStorage}checked{/if}> ##NO##
+							</label>
+						</div>
+					</div>
 				<div class="form-group">
 					<label for="3column" class="col-sm-5 control-label">##LAYOUT##</label>
 					<div class="col-sm-7">
@@ -127,7 +136,7 @@
 			</div>
 			<div class="modal-footer">
 				<button type="button" class="btn btn-default" data-dismiss="modal">##CLOSE##</button>
-				<button type="submit" class="btn btn-primary">##SAVE##</button>
+				<button type="submit" class="btn btn-success">##SAVE##</button>
 			</div>
 		</div>
 		</form>

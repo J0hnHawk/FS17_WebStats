@@ -157,6 +157,7 @@ ONLY_PALETTS=Zobrazit pouze palety
 YES=ano
 NO=ne
 SHOW_ZERO_STOCK=Zobrazení nulových zásob
+HIDE_ANIMALS=Hide Animals
 FULL_PRODUCT_STORAGE=Naplnění skladu
 SORT_FULL_PRODUCTS=brát v úvahu při třídění
 IGNORE_FULL_PRODUCTS=ignorovat během třídění

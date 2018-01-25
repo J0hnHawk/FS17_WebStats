@@ -116,6 +116,14 @@
 							</label>
 						</div>
 					</div>
+					<div class="form-group">
+						<label for="sortType" class="col-sm-5 control-label">##HIDE_ANIMALS##</label>
+						<div class="col-sm-7">
+							<label class="radio-inline"> <input type="radio" name="hideAnimalsInStorage" value="1"{if $options.hideAnimalsInStorage}checked{/if}> ##YES##
+							</label> <label class="radio-inline"> <input type="radio" name="hideAnimalsInStorage" value="0"{if !$options.hideAnimalsInStorage}checked{/if}> ##NO##
+							</label>
+						</div>
+					</div>
 				<div class="form-group">
 					<label for="3column" class="col-sm-5 control-label">##LAYOUT##</label>
 					<div class="col-sm-7">

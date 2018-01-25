@@ -21,13 +21,13 @@
 if (! defined ( 'IN_NFMWS' )) {
 	exit ();
 }
-
 if ($_SERVER ['REQUEST_METHOD'] == 'POST') {
 	$options ['storage'] ['sortByName'] = filter_var ( GetParam ( 'sortByName', 'P', 1 ), FILTER_VALIDATE_BOOLEAN );
 	$options ['storage'] ['hideZero'] = filter_var ( GetParam ( 'hideZero', 'P', 1 ), FILTER_VALIDATE_BOOLEAN );
 	$options ['storage'] ['showVehicles'] = filter_var ( GetParam ( 'showVehicles', 'P', 1 ), FILTER_VALIDATE_BOOLEAN );
 	$options ['storage'] ['onlyPallets'] = filter_var ( GetParam ( 'onlyPallets', 'P', 1 ), FILTER_VALIDATE_BOOLEAN );
 	$options ['storage'] ['3column'] = filter_var ( GetParam ( '3column', 'P', 1 ), FILTER_VALIDATE_BOOLEAN );
+	$options ['storage'] ['hideAnimalsInStorage'] = filter_var ( GetParam ( 'hideAnimalsInStorage', 'P', 0 ), FILTER_VALIDATE_BOOLEAN );
 	$options ['version'] = $cookieVersion;
 	setcookie ( 'nfmarsch', json_encode ( $options ), time () + 31536000 );
 }
@@ -41,6 +41,9 @@ foreach ( $commodities as $name => $commodity ) {
 			$commodities [$name] ['overall'] -= $locationData ['fillLevel'];
 			unset ( $commodities [$name] ['locations'] [$location] );
 		} elseif (! $options ['storage'] ['showVehicles'] && isset ( $locationData ['isVehicle'] )) {
+			$commodities [$name] ['overall'] -= $locationData ['fillLevel'];
+			unset ( $commodities [$name] ['locations'] [$location] );
+		} elseif ($options ['storage'] ['hideAnimalsInStorage'] && isset ( $locationData ['animal'] )) {
 			$commodities [$name] ['overall'] -= $locationData ['fillLevel'];
 			unset ( $commodities [$name] ['locations'] [$location] );
 		}

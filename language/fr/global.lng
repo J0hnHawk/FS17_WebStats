@@ -141,6 +141,7 @@ ONLY_PALETTS=Afficher seulement les palettes
 YES=oui
 NO=non
 SHOW_ZERO_STOCK=Affichage Zero Stock
+HIDE_ANIMALS=Hide Animals
 FULL_PRODUCT_STORAGE=Stock complet
 SORT_FULL_PRODUCTS=prendre en compte lors du tri
 IGNORE_FULL_PRODUCTS=ignorer lors du tri

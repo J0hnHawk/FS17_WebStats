@@ -140,6 +140,7 @@ TOOLTIP_HELP=The tooltip displays the total stock from all warehouses and produc
 YES=yes
 NO=no
 SHOW_ZERO_STOCK=Displaying Zero Stock
+HIDE_ANIMALS=Hide Animals
 FULL_PRODUCT_STORAGE=Full product storage
 SORT_FULL_PRODUCTS=take into account when sorting
 IGNORE_FULL_PRODUCTS=ignore during sorting

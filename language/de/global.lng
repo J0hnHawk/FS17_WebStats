@@ -149,6 +149,7 @@ TOOLTIP_HELP=Im Tooltip werden werden die Bestände aus allen Lagern und Produkt
 YES=ja
 NO=nein
 SHOW_ZERO_STOCK=Null-Bestände anzeigen
+HIDE_ANIMALS=Tiere nicht anzeigen
 FULL_PRODUCT_STORAGE=Volle Produktlager
 SORT_FULL_PRODUCTS=bei Sortierung berücksichtigen
 IGNORE_FULL_PRODUCTS=bei Sortierung ignorieren

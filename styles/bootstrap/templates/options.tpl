@@ -69,6 +69,14 @@
 					</div>
 				</div>
 				<div class="form-group">
+					<label for="s_hideAnimalsInStorage" class="col-sm-2 control-label">##HIDE_ANIMALS##</label>
+					<div class="col-sm-10">
+						<label class="radio-inline"> <input type="radio" name="s_hideAnimalsInStorage" value="1"{if $options.storage.hideAnimalsInStorage}checked{/if}> ##YES##
+						</label> <label class="radio-inline"> <input type="radio" name="s_hideAnimalsInStorage" value="0"{if !$options.storage.hideAnimalsInStorage}checked{/if}> ##NO##
+						</label>
+					</div>
+				</div>
+				<div class="form-group">
 					<label for="s_3column" class="col-sm-2 control-label">##LAYOUT##</label>
 					<div class="col-sm-10">
 						<label class="radio-inline"> <input type="radio" name="s_3column" value="1"{if !$options.storage.hideZero}checked{/if}> ##3COLUMN##
@@ -108,7 +116,7 @@
 					</div>
 					<div class="col-sm-6">
 						<button type="reset" class="btn btn-default">##RESET##</button>
-						<button type="submit" class="btn btn-primary" name="submit" value="options">##SAVE##</button>
+						<button type="submit" class="btn btn-success" name="submit" value="options">##SAVE##</button>
 					</div>
 				</div>
 			</fieldset>

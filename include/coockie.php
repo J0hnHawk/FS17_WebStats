@@ -24,7 +24,7 @@ if (! defined ( 'IN_NFMWS' )) {
 }
 
 // Coockie laden, wenn vorhanden
-$cookieVersion = 9;
+$cookieVersion = 10;
 $options = array ();
 if (isset ( $_COOKIE ['nfmarsch'] )) {
 	$options = json_decode ( $_COOKIE ['nfmarsch'], true );
@@ -45,6 +45,7 @@ if (! isset ( $options ['storage'] )) {
 	$options ['storage'] ['showVehicles'] = true;
 	$options ['storage'] ['onlyPallets'] = false;
 	$options ['storage'] ['3column'] = true;
+	$options ['storage'] ['hideAnimalsInStorage'] = false;
 }
 
 if (! isset ( $options ['production'] )) {

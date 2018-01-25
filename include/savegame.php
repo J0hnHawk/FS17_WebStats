@@ -275,7 +275,7 @@ function readMapObject($object, $location, &$plants, &$mapconfig)
         case 'animal':
             // Viehhaltung
             $numAnimals = intval($object['numAnimals0']);
-            addCommodity(substr($location, 8, 99), $numAnimals, $location);
+            addCommodity(substr($location, 8, 99), $numAnimals, $location,'animal');
             $cleanlinessFactor = floatval($object['cleanlinessFactor']);
             $ProdPerHour = $numAnimals / 24;
             $plant = translate($location);
