@@ -96,12 +96,12 @@ FACTORY=Továrny
 INFO=Info
 
 //overview.tpl
-PLAYER=Player
-UPTIME=Uptime
-ISADMIN=Is admin
-POSITION=Position
-INVEHICLE=In Vehicle
-NOPLAYER=At the moment is no player online.
+PLAYER=Hráč
+UPTIME=Čas online
+ISADMIN=Admin
+POSITION=Pozice
+INVEHICLE=Ve vozidle
+NOPLAYER=Momentálně není nikdo online.
 
 //commodity.tpl
 DETAILVIEW=podrobný náhled
