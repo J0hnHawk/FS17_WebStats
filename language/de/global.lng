@@ -79,11 +79,20 @@ PRODUCTION=Produktion
 FACTORY=Fabriken
 INFO=Info
 
+//overview.tpl
+PLAYER=Spieler
+UPTIME=Spielzeit
+ISADMIN=Admin
+POSITION=Position
+INVEHICLE=im Fahrzeug
+NOPLAYER=Zur Zeit sind keine Spieler online.
+
 //commodity.tpl
 DETAILVIEW=Detailansicht
 CHOOSE_COMMODITY=Ware auswählen
 PLACE=Lagerort
 AMOUNT=Menge
+NO_STOCK=Keine Lagerbestände
 WHOLE_AMOUNT=Gesamter Lagerbestand
 SELLTRIGGERS=Verkaufsstellen
 SELLTRIGGER=Verkaufsstelle

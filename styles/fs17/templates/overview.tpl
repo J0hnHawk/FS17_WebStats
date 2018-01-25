@@ -6,10 +6,10 @@
 		<table class="table table-bordered table-striped">
 			<thead>
 				<tr>
-					<th>Spieler</th>
-					<th>Spielzeit</th>
-					<th>Admin</th>
-					<th>Position</th>
+					<th>##PLAYER##</th>
+					<th>##UPTIME##</th>
+					<th>##ISADMIN##</th>
+					<th>##POSITION##</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -17,12 +17,12 @@
 				<tr>
 					<td>{$player.name}</td>
 					<td>{$player.online}</td>
-					<td>{if $player.isAdmin}ja{else}nein{/if}</td>
+					<td>{if $player.isAdmin}##YES##{else}##NO##{/if}</td>
 					<td>{$player.position}</td>
 				</tr>
 				{/foreach} {else}
 				<tr>
-					<td colspan="4">Zur Zeit sind keine Spieler online.</td>
+					<td colspan="4">##NOPLAYER##</td>
 				</tr>
 				{/if}
 			</tbody>

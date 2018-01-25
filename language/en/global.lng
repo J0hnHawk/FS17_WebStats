@@ -77,6 +77,14 @@ PRODUCTION=Production
 FACTORY=Factory
 INFO=Info
 
+//overview.tpl
+PLAYER=Player
+UPTIME=Uptime
+ISADMIN=Is admin
+POSITION=Position
+INVEHICLE=In Vehicle
+NOPLAYER=At the moment is no player online.
+
 //commodity.tpl
 DETAILVIEW=detailed view
 CHOOSE_COMMODITY=Select goods

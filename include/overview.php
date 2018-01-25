@@ -55,7 +55,7 @@ if ($stats) {
 			if (isset ( $x ) && isset ( $y ) && isset ( $z )) {
 				$position = $x . " " . $y . " " . $z;
 			} else {
-				$position = 'im Fahrzeug';
+				$position = '##INVEHICLE##';
 			}
 			$players [] = array (
 					'name' => $player,
