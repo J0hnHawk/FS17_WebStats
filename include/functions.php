@@ -73,6 +73,7 @@ function addFillType($i3dName, $fillLevel, $fillMax, $prodPerHour, $factor, $sta
 
 // Load XML configurations files
 function loadXMLMapConfig($directory, $language) {
+	global $defaultLanguage;
 	$objects = $translations = array ();
 	foreach ( glob ( "./config/$directory/*.xml" ) as $filename ) {
 		$object = simplexml_load_file ( $filename );
@@ -106,8 +107,10 @@ function loadXMLMapConfig($directory, $language) {
 				$key = strval ( $text ['name'] );
 				if (isset ( $text->all )) {
 					$value = strval ( $text->all );
-				} else {
+				} elseif (isset($text->$language)) {
 					$value = strval ( $text->$language );
+				} else {
+					$value = strval ( $text->$defaultLanguage );
 				}
 				$translations = array_merge ( $translations, array (
 						$key => $value 
