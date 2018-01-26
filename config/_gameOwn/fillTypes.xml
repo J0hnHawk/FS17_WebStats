@@ -47,19 +47,19 @@
 		</text>
 		<!-- Big bags -->
 		<text name="bigBagContainerFertilizer">
-			<cz>Pevným hnojivem</cz>
+			<cz>Pevné hnojivo</cz>
 			<en>Fertilizer</en>
 			<de>Dünger</de>
 			<fr>Engrais</fr>
 		</text>
 		<text name="bigBagContainerPigFood">
-			<cz>Prasečí krmivem</cz>
+			<cz>Prasečí krmivo</cz>
 			<en>Pig food</en>
 			<de>Schweinefutter</de>
 			<fr>Aliment pour les cochons</fr>
 		</text>
 		<text name="bigBagContainerSeeds">
-			<cz>Osivem</cz>
+			<cz>Osivo</cz>
 			<en>Seeds</en>
 			<de>Saatgut</de>
 			<fr>Semence</fr>
@@ -89,7 +89,7 @@
 			<fr>Betterave à sucre</fr>
 		</text>
 		<text name="treeSaplingPallet">
-			<cz>Sazenic</cz>
+			<cz>Sazenice</cz>
 			<en>Saplings</en>
 			<de>Setzlinge</de>
 			<fr>Semence</fr>
@@ -128,7 +128,7 @@
 		</text>
 		<text name="barley">
 			<cz>Ječmen</cz>
-			<en>Barleyp</en>
+			<en>Barley</en>
 			<de>Gerste</de>
 			<fr>Orge</fr>
 		</text>
@@ -188,13 +188,13 @@
 			<fr>Carburant</fr>
 		</text>
 		<text name="fertilizer">
-			<cz>Pevným hnojivem</cz>
+			<cz>Pevné hnojivo</cz>
 			<en>Fertilizer</en>
 			<de>Dünger</de>
 			<fr>Engrais</fr>
 		</text>
 		<text name="seeds">
-			<cz>Osivem</cz>
+			<cz>Osivo</cz>
 			<en>Seeds</en>
 			<de>Saatgut</de>
 			<fr>Semence</fr>
@@ -303,7 +303,7 @@
 			<fr>Pommes de terre, Betterave à sucre</fr>
 		</text>
 		<text name="pigFood">
-			<cz>Prasečí krmivem</cz>p
+			<cz>Prasečí krmivo</cz>
 			<en>Pig food</en>
 			<de>Schweinefutter</de>
 			<fr>Aliment pour les cochons</fr>
