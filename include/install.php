@@ -93,7 +93,7 @@ if ($_SERVER ['REQUEST_METHOD'] == 'POST') {
 					$error .= '<div class="alert alert-danger"><strong>##ERROR##</strong> ##ERROR_CODE##</div>';
 				}
 			} else {
-				$error .= '<div class="alert alert-danger"><strong>##ERROR##</strong> ##ERROR_OFFLLINE##</div>';
+				$error .= '<div class="alert alert-danger"><strong>##ERROR##</strong> ##ERROR_OFFLINE##</div>';
 			}
 		}
 	} elseif ($submit == 'local') {
