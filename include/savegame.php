@@ -258,6 +258,7 @@ function readMapObject($object, $location, &$plants, &$mapconfig)
                     } elseif ($fillLevel == 0) {
                         $state = 2;
                     }
+                    addCommodity($fillType, 0, NULL, NULL, false);
                     $plants[$plant]['input'][$l_fillType] = addFillType($fillType, $fillLevel, $fillMax, $prodPerHour, $mapconfig[$location]['input'][$fillType]['factor'], $state);
                 }
                 foreach ($mapconfig[$location]['output'] as $fillType => $fillTypeData) {
@@ -453,7 +454,7 @@ function readMapObject($object, $location, &$plants, &$mapconfig)
 foreach ($mapconfig as $plantName => $plant) {
     if (isset($plant['input'])) {
         foreach ($plant['input'] as $combineFillType => $data) {
-            $l_combineFillType = translate($combineFillType);
+        	$l_combineFillType = translate($combineFillType);
             $fillTypes = explode(' ', $data['fillTypes']);
             if (! isset($commodities[$l_combineFillType])) { // && sizeof ( $fillTypes ) > 1
                 foreach ($fillTypes as $fillType) {
