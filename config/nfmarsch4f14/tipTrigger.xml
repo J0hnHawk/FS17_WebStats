@@ -2,6 +2,7 @@
 <mapconfig>
 	<item name="TipTrigger_BAHNHOF" locationType="TipTrigger" position="-459 0 -110" isSellingPoint="true" />
 	<item name="TipTrigger_BANK" locationType="TipTrigger" position="-405 0 -470" isSellingPoint="true" />
+	<item name="TipTrigger_Baumarkt" locationType="TipTrigger" position="-521 0 -553" isSellingPoint="true" />
 	<item name="TipTrigger_BIOGAS" locationType="TipTrigger" position="-145 0 -952" isSellingPoint="true" />
 	<item name="TipTrigger_DEPOT" locationType="TipTrigger" position="847 0 460" isSellingPoint="true" />
 	<item name="TipTrigger_GETREIDEAG" locationType="TipTrigger" position="-349 0 1379" isSellingPoint="true" />
@@ -33,6 +34,11 @@
 			<en>TipTrigger_BANK</en>
 			<de>VR Bank</de>
 			<fr>VR Bank</fr>
+		</text>
+		<text name="TipTrigger_Baumarkt">
+			<en>DIY store</en>
+			<de>Baumarkt</de>
+			<fr>Magasin de bricolage</fr>
 		</text>
 		<text name="TipTrigger_BIOGAS">
 			<en>TipTrigger_BIOGAS</en>
