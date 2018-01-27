@@ -73,8 +73,8 @@
 			</div>
 			<div class="modal-body">
 				<div class="row">
-					{$colmax[0] = -1} {$colmax[1] = ($plants|@count/3)|ceil} {$colmax[2] = $colmax[1] *2} {$colmax[3] = $plants|@count} {for $i=0 to 2}
-					<div class="col-sm-4">
+					{$colmax[0] = -1} {$colmax[1] = ($plants|@count/4)|ceil} {$colmax[2] = $colmax[1] *2} {$colmax[3] = $colmax[1] *3} {$colmax[4] = $plants|@count} {for $i=0 to 3}
+					<div class="col-sm-3">
 						<ul class="nav nav-pills nav-stacked">
 							{foreach $plants as $plantName => $plantData} {if $plantData@iteration > $colmax[$i] && $plantData@iteration <= $colmax[$i+1] }							
 							<li role="menu" {if $selectedPlant == $plantData.i3dName} class="active"{/if}><a href="index.php?page=factories&object={$plantData.i3dName}">{$plantName}</a></li> {/if}{/foreach}
