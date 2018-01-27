@@ -31,6 +31,14 @@
 						</select>
 					</div>
 				</div>
+				<div class="form-group">
+					<label class="col-sm-2 control-label">##HIDE_FOOTER##</label>
+					<div class="col-sm-10">
+						<label class="radio-inline"> <input type="radio" name="g_hideFooter" value="1"{if $options.general.hideFooter}checked{/if}> ##YES##
+						</label> <label class="radio-inline"> <input type="radio" name="g_hideFooter" value="0"{if !$options.general.hideFooter}checked{/if}> ##NO##
+						</label>
+					</div>
+				</div>
 			</fieldset>
 			<fieldset>
 				<legend>##STOCKS##</legend>

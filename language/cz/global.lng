@@ -78,6 +78,7 @@ INFO_1=Webová stránka zobrazuje stav serveru a monitoruje výrobní zařízen�
 INFO_2=Tipy, nápověda a návrhy pro zlepšení
 INFO_3=Programátor
 INFO_4=Konfigurace karty
+USER_ONLINE=Návštěvník online
 LICENSE=Informace o licencích
 SHEEP_COUNT=Počet ovcí
 PRODUCTIVITY=Produktivita
@@ -147,6 +148,7 @@ SUGGESTION_POSITION=Navrhovaná pozice
 //options.tpl
 GENERAL=Obecné
 AUTO_RELOAD=Automatické načtení
+HIDE_FOOTER=Skrýt zápatí
 SORT_ORDER=Třídit
 ALPHABETICALLY=abecedně
 FILL_LEVEL=podle úrovně plnění

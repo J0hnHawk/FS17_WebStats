@@ -45,9 +45,11 @@ $smarty = new Smarty ();
 $smarty->debugging = false;
 $smarty->caching = false;
 $smarty->setTemplateDir ( "./styles/$style/templates" );
-$smarty->assign ( 'webStatsVersion', '1.4.0-843 (27.01.2018)' );
+$smarty->assign ( 'webStatsVersion', '1.4.0-896 (28.01.2018)' );
 
 include ('./include/loadConfig.php');
+$smarty->assign ( 'onlineUser', sizeof ( $onlineUser ) );
+$smarty->assign ('hideFooter',$options ['general'] ['hideFooter']);
 
 require ('./include/savegame.php');
 

@@ -65,6 +65,7 @@ TPL_ERROR_2=The file
 TPL_ERROR_3=does not exist.
 CON_ERROR_1=Connection Error
 CON_ERROR_2=No data could be retrieved from the dedicated server. Please check the server address or internet connection. The <code>fsockopen()</code> function must be enabled on the web server.
+USER_ONLINE=Visitor online
 INFO_1=Web page to display the server status and monitor the production facilities and stock levels.
 INFO_2=Tips, help and suggestions for improvement
 LICENSE=Licensing information
@@ -127,6 +128,7 @@ SUGGESTION_POSITION=Suggested Position
 //options.tpl
 GENERAL=General
 CHOOSE_STYLE=Select style
+HIDE_FOOTER=Hide footer
 AUTO_RELOAD=automatic reload
 SORT_ORDER=sorting
 ALPHABETICALLY=alphabetically

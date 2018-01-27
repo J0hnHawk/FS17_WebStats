@@ -86,3 +86,21 @@ $loadedConfig = loadXMLMapConfig ( '_mods', $userLang );
 $placeableObjects = $loadedConfig [0];
 $placeablesLang = $loadedConfig [1];
 
+// count active user
+$userFile='./config/onlineUser.conf';
+$onlineUser=array();
+if(file_exists($userFile)) {
+	$user=file($userFile);
+	foreach($user as $row) {
+		list($id,$time,$ip) = explode('||', trim($row));
+		if($time+300>time()) {
+			$onlineUser[$id] = $time;
+		}
+	}
+}
+$onlineUser[$_SERVER["REMOTE_ADDR"]] = time();
+$fp=fopen($userFile,'w');
+foreach($onlineUser as $id => $time) {
+	fwrite($fp, "$id||$time\r\n");
+}
+fclose($fp);

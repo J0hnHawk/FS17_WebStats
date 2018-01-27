@@ -66,6 +66,7 @@ TPL_ERROR_2=Le fichier
 TPL_ERROR_3=n'existe pas.
 CON_ERROR_1=Erreur de connection
 CON_ERROR_2=Aucunes données ne peut être récupérées du serveur dédié. Vérifiez l'adresse du serveur ou votre connection à Internet. La fonction <code>fsockopen ()</code> doit être autorisée sur le serveur Web.
+USER_ONLINE=Visiteur en ligne
 INFO_1= Page Web permettant d'afficher le statut du serveur et de controler la production des usines et les niveaux de stocks.
 INFO_2=Conseils, aide et suggestions pour l'amélioration de
 LICENSE=License
@@ -131,6 +132,7 @@ QUANTITY=Quantité
 //options.tpl
 GENERAL=Général
 AUTO_RELOAD=rechargement automatique
+HIDE_FOOTER=Cacher le pied de page
 SORT_ORDER=Trié
 ALPHABETICALLY=alphabétiquement
 FILL_LEVEL=selon le niveau de remplissage

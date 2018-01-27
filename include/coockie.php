@@ -24,7 +24,7 @@ if (! defined ( 'IN_NFMWS' )) {
 }
 
 // Coockie laden, wenn vorhanden
-$cookieVersion = 10;
+$cookieVersion = 11;
 $options = array ();
 if (isset ( $_COOKIE ['nfmarsch'] )) {
 	$options = json_decode ( $_COOKIE ['nfmarsch'], true );
@@ -37,6 +37,7 @@ if (! isset ( $options ['general'] )) {
 	$options ['general'] ['reload'] = true;
 	$options ['general'] ['language'] = $defaultLanguage;
 	$options ['general'] ['style'] = $defaultStyle;
+	$options ['general'] ['hideFooter'] = 0;
 }
 
 if (! isset ( $options ['storage'] )) {
