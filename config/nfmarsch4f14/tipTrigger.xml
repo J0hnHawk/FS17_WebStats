@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mapconfig>
+	<item name="TipTrigger_BAHNHOF" locationType="TipTrigger" position="-459 0 -110" isSellingPoint="true" />
+	<item name="TipTrigger_BANK" locationType="TipTrigger" position="-405 0 -470" isSellingPoint="true" />
+	<item name="TipTrigger_BIOGAS" locationType="TipTrigger" position="-145 0 -952" isSellingPoint="true" />
+	<item name="TipTrigger_DEPOT" locationType="TipTrigger" position="847 0 460" isSellingPoint="true" />
+	<item name="TipTrigger_GETREIDEAG" locationType="TipTrigger" position="-349 0 1379" isSellingPoint="true" />
+	<item name="TipTrigger_GETREIDEHANDEL" locationType="TipTrigger" position="270 0 -732" isSellingPoint="true" />
+	<item name="TipTrigger_HAFEN" locationType="TipTrigger" position="-948 0 -989" isSellingPoint="true" />
+	<item name="TipTrigger_HEIZWERK" locationType="TipTrigger" position="-746 0 758" isSellingPoint="true" />
+	<item name="TipTrigger_PFERDEHOF" locationType="TipTrigger" position="947 0 -1621" isSellingPoint="true" />
+	<item name="TipTrigger_RAIFFEISEN" locationType="TipTrigger" position="467 0 -232" isSellingPoint="true" />
+	<item name="TipTrigger_SAWMILL" locationType="TipTrigger" position="-867 0 723" isSellingPoint="true" />
+	<item name="TipTrigger_STADION" locationType="TipTrigger" position="-156 0 -741" isSellingPoint="true" />
+	<item name="TipTrigger_STROHKRAFTWERK" locationType="TipTrigger" position="1426 0 -366" isSellingPoint="true" />
+	<item name="TipTrigger_SUPERMARKT" locationType="TipTrigger" position="-511 0 -567" isSellingPoint="true" />
+	<item name="TipTrigger_SUPERMARKT1" locationType="TipTrigger" position="-248 0 -658" isSellingPoint="true" />
+	<item name="TipTrigger_SUPERMARKT2" locationType="TipTrigger" position="1387 0 1280" isSellingPoint="true" />
+	<item name="TipTrigger_TANKE" locationType="TipTrigger" position="-191 0 -299" isSellingPoint="true" />
+	<item name="TipTrigger_TANKE2" locationType="TipTrigger" position="782 0 -850" isSellingPoint="true" />
+	<item name="TipTrigger_TANKE3" locationType="TipTrigger" position="1368 0 1126" isSellingPoint="true" />
+	<item name="TipTrigger_WASSERKAUF" locationType="TipTrigger" position="-420 0 -342" isSellingPoint="true" />
+	<item name="TipTrigger_WINDROW_SALE" locationType="TipTrigger" position="251 0 112" isSellingPoint="true" />
+	<item name="TipTrigger_WOLLEVERKAUF" locationType="TipTrigger" position="824 0 315" isSellingPoint="true" />
+	<item name="TipTrigger_WOLLEVERKAUF1" locationType="TipTrigger" position="-916 0 -960" isSellingPoint="true" />
+	<l10n>
+		<text name="TipTrigger_BAHNHOF">
+			<en>TipTrigger_BAHNHOF</en>
+			<de>Bahnhof</de>
+			<fr>Bahnhof</fr>
+		</text>
+		<text name="TipTrigger_BANK">
+			<en>TipTrigger_BANK</en>
+			<de>VR Bank</de>
+			<fr>VR Bank</fr>
+		</text>
+		<text name="TipTrigger_BIOGAS">
+			<en>TipTrigger_BIOGAS</en>
+			<de>BGA Nord</de>
+			<fr>BGA Nord</fr>
+		</text>
+		<text name="TipTrigger_DEPOT">
+			<en>TipTrigger_DEPOT</en>
+			<de>Depot</de>
+			<fr>Depot</fr>
+		</text>
+		<text name="TipTrigger_GETREIDEAG">
+			<en>TipTrigger_GETREIDEAG</en>
+			<de>Getreide AG</de>
+			<fr>Getreide AG</fr>
+		</text>
+		<text name="TipTrigger_GETREIDEHANDEL">
+			<en>TipTrigger_GETREIDEHANDEL</en>
+			<de>Getreidehandel</de>
+			<fr>Getreidehandel</fr>
+		</text>
+		<text name="TipTrigger_HAFEN">
+			<en>TipTrigger_HAFEN</en>
+			<de>Hafen</de>
+			<fr>Hafen</fr>
+		</text>
+		<text name="TipTrigger_HEIZWERK">
+			<en>TipTrigger_HEIZWERK</en>
+			<de>Heizwerk</de>
+			<fr>Heizwerk</fr>
+		</text>
+		<text name="TipTrigger_PFERDEHOF">
+			<en>TipTrigger_PFERDEHOF</en>
+			<de>Pferdehof</de>
+			<fr>Pferdehof</fr>
+		</text>
+		<text name="TipTrigger_RAIFFEISEN">
+			<en>TipTrigger_RAIFFEISEN</en>
+			<de>Raiffeisen</de>
+			<fr>Raiffeisen</fr>
+		</text>
+		<text name="TipTrigger_SAWMILL">
+			<en>TipTrigger_SAWMILL</en>
+			<de>Sägewerk</de>
+			<fr>Sägewerk</fr>
+		</text>
+		<text name="TipTrigger_STADION">
+			<en>TipTrigger_STADION</en>
+			<de>Stadion</de>
+			<fr>Stadion</fr>
+		</text>
+		<text name="TipTrigger_STROHKRAFTWERK">
+			<en>TipTrigger_STROHKRAFTWERK</en>
+			<de>Strohkraftwerk</de>
+			<fr>Strohkraftwerk</fr>
+		</text>
+		<text name="TipTrigger_SUPERMARKT">
+			<en>TipTrigger_SUPERMARKT</en>
+			<de>Edeka</de>
+			<fr>Edeka</fr>
+		</text>
+		<text name="TipTrigger_SUPERMARKT1">
+			<en>TipTrigger_SUPERMARKT1</en>
+			<de>Lidl</de>
+			<fr>Lidl</fr>
+		</text>
+		<text name="TipTrigger_SUPERMARKT2">
+			<en>TipTrigger_SUPERMARKT2</en>
+			<de>Aldi</de>
+			<fr>Aldi</fr>
+		</text>
+		<text name="TipTrigger_TANKE">
+			<en>TipTrigger_TANKE</en>
+			<de>Araltankstelle 1</de>
+			<fr>Araltankstelle 1</fr>
+		</text>
+		<text name="TipTrigger_TANKE2">
+			<en>TipTrigger_TANKE2</en>
+			<de>Araltankstelle 2</de>
+			<fr>Araltankstelle 2</fr>
+		</text>
+		<text name="TipTrigger_TANKE3">
+			<en>TipTrigger_TANKE3</en>
+			<de>Araltankstelle 3</de>
+			<fr>Araltankstelle 3</fr>
+		</text>
+		<text name="TipTrigger_WASSERKAUF">
+			<en>TipTrigger_WASSERKAUF</en>
+			<de>Wasserverkauf</de>
+			<fr>Wasserverkauf</fr>
+		</text>
+		<text name="TipTrigger_WINDROW_SALE">
+			<en>TipTrigger_WINDROW_SALE</en>
+			<de>Stroh- und Grasverkauf</de>
+			<fr>Stroh- und Grasverkauf</fr>
+		</text>
+		<text name="TipTrigger_WOLLEVERKAUF">
+			<en>TipTrigger_WOLLEVERKAUF</en>
+			<de>Palettenverkauf</de>
+			<fr>Palettenverkauf</fr>
+		</text>
+		<text name="TipTrigger_WOLLEVERKAUF1">
+			<en>TipTrigger_WOLLEVERKAUF1</en>
+			<de>Palettenverkauf (Hafen)</de>
+			<fr>Palettenverkauf (Hafen)</fr>
+		</text>
+	</l10n>
+</mapconfig>
