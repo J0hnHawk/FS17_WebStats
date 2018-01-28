@@ -8,7 +8,7 @@
 text-danger")} {$textcolors = array("","text-warning","text-danger")}
 <div class="row">
 	<div class="col-sm-12">
-		<table class="table table-hover">
+		<table class="table table-hover table-striped">
 			<thead>
 				<tr>
 					<th width="20%">##PLANT##</th>
@@ -34,7 +34,7 @@ text-danger")} {$textcolors = array("","text-warning","text-danger")}
 						class="{$glyphicons[$fillLevel.state]}" aria-hidden="true"></span> {$fillType} </span>{/foreach}
 					</td>
 				</tr>
-				<tr class="collapse" id="collapse{$plantData.i3dName}">
+				<tr class="collapse" id="collapse{$plantData.i3dName}" style="background-color:#262626">
 					<td colspan="4">
 						<div class="col-sm-8 col-sm-offset-1">
 							<table class="table" style="margin-bottom: 0px;">
@@ -71,6 +71,7 @@ text-danger")} {$textcolors = array("","text-warning","text-danger")}
 						</div>
 					</td>
 				</tr>
+				<tr></tr>
 				{/foreach}
 			</tbody>
 		</table>
@@ -111,6 +112,14 @@ text-danger")} {$textcolors = array("","text-warning","text-danger")}
 							</label><span id="helpBlock" class="help-block">##TOOLTIP_HELP##</span>
 						</div>
 					</div>
+					<div class="form-group">
+						<label class="col-sm-5 control-label">##HIDE_NOT_USED##</label>
+						<div class="col-sm-7">
+							<label class="radio-inline"> <input type="radio" name="hideNotUsed" value="1"{if $options.hideNotUsed}checked{/if}> ##YES##
+							</label><br> <label class="radio-inline"> <input type="radio" name="hideNotUsed" value="0"{if !$options.hideNotUsed}checked{/if}> ##NO##
+							</label><span id="helpBlock" class="help-block">##HIDE_NOT_USED_HELP##</span>
+						</div>
+					</div>
 					{if $options.hidePlant|@count>0}
 					<div class="form-group">
 						<label class="col-sm-5 control-label">##SHOW_HIDDEN_PLANTS##</label>
@@ -128,7 +137,7 @@ text-danger")} {$textcolors = array("","text-warning","text-danger")}
 			</div>
 			<div class="modal-footer">
 				<button type="button" class="btn btn-default" data-dismiss="modal">##CLOSE##</button>
-				<button type="submit" class="btn btn-primary">##SAVE##</button>
+				<button type="submit" class="btn btn-success">##SAVE##</button>
 			</div>
 		</div>
 		</form>

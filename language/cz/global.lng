@@ -148,7 +148,7 @@ SUGGESTION_POSITION=Navrhovaná pozice
 //options.tpl
 GENERAL=Obecné
 AUTO_RELOAD=Automatické načtení
-HIDE_FOOTER=Skrýt zápatí
+HIDE_FOOTER=Zápatí
 SORT_ORDER=Třídit
 ALPHABETICALLY=abecedně
 FILL_LEVEL=podle úrovně plnění
@@ -164,6 +164,8 @@ FULL_PRODUCT_STORAGE=Naplnění skladu
 SORT_FULL_PRODUCTS=brát v úvahu při třídění
 IGNORE_FULL_PRODUCTS=ignorovat během třídění
 SHOW_HIDDEN_PLANTS=Zobrazit výrobní závody
+HIDE_NOT_USED=Automatické skrytí
+HIDE_NOT_USED_HELP=Výrobní závody, bez vstupů nebo produktů v zásobách, jsou automaticky skryty.
 MOD_MAP=Mod Mapa
 LAYOUT=Dispozice
 3COLUMN=3 sloupce

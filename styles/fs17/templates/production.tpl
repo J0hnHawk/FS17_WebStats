@@ -112,6 +112,14 @@ text-danger")} {$textcolors = array("","text-warning","text-danger")}
 							</label><span id="helpBlock" class="help-block">##TOOLTIP_HELP##</span>
 						</div>
 					</div>
+					<div class="form-group">
+						<label class="col-sm-5 control-label">##HIDE_NOT_USED##</label>
+						<div class="col-sm-7">
+							<label class="radio-inline"> <input type="radio" name="hideNotUsed" value="1"{if $options.hideNotUsed}checked{/if}> ##YES##
+							</label><br> <label class="radio-inline"> <input type="radio" name="hideNotUsed" value="0"{if !$options.hideNotUsed}checked{/if}> ##NO##
+							</label><span id="helpBlock" class="help-block">##HIDE_NOT_USED_HELP##</span>
+						</div>
+					</div>
 					{if $options.hidePlant|@count>0}
 					<div class="form-group">
 						<label class="col-sm-5 control-label">##SHOW_HIDDEN_PLANTS##</label>

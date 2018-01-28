@@ -34,7 +34,7 @@ if ($_SERVER ['REQUEST_METHOD'] == 'POST') {
 			$options ['general'] ['reload'] = filter_var ( GetParam ( 'g_reload', 'P', 1 ), FILTER_VALIDATE_BOOLEAN );
 			$options ['general'] ['language'] = GetParam ( 'g_language', 'P', 'de' );
 			$options ['general'] ['style'] = GetParam ( 'g_style', 'P', 'fs17' );
-			$options ['general'] ['hideFooter'] = filter_var ( GetParam ( 'g_hideFooter', 'P', 0 ), FILTER_VALIDATE_BOOLEAN );
+			$options ['general'] ['hideFooter'] = filter_var ( GetParam ( 'g_hideFooter', 'P', 1 ), FILTER_VALIDATE_BOOLEAN );
 			$options ['storage'] ['sortByName'] = filter_var ( GetParam ( 's_sortByName', 'P', 1 ), FILTER_VALIDATE_BOOLEAN );
 			$options ['storage'] ['showVehicles'] = filter_var ( GetParam ( 's_showVehicles', 'P', 1 ), FILTER_VALIDATE_BOOLEAN );
 			$options ['storage'] ['onlyPallets'] = filter_var ( GetParam ( 's_onlyPallets', 'P', 1 ), FILTER_VALIDATE_BOOLEAN );
@@ -44,6 +44,7 @@ if ($_SERVER ['REQUEST_METHOD'] == 'POST') {
 			$options ['production'] ['sortByName'] = filter_var ( GetParam ( 'p_sortByName', 'P', 1 ), FILTER_VALIDATE_BOOLEAN );
 			$options ['production'] ['sortFullProducts'] = filter_var ( GetParam ( 'p_sortFullProducts', 'P', 1 ), FILTER_VALIDATE_BOOLEAN );
 			$options ['production'] ['showTooltip'] = filter_var ( GetParam ( 'p_showTooltip', 'P', 1 ), FILTER_VALIDATE_BOOLEAN );
+			$options ['production'] ['hideNotUsed'] = filter_var ( GetParam ( 'p_hideNotUsed', 'P', 0 ), FILTER_VALIDATE_BOOLEAN );
 			setcookie ( 'nfmarsch', json_encode ( $options ), time () + 31536000 );
 			header ( "Refresh:0" );
 			break;
