@@ -8,7 +8,7 @@
 		{foreach $animalPlants as $animalPlant}
 		<div class="col-sm-4">
 			<h4 class="text-center">
-				<strong>{$animalPlant}</strong>
+				<strong><a href="index.php?page=factories&object={$plants.$animalPlant.i3dName}">{$animalPlant}</a></strong>
 			</h4>
 			<table class="table table-striped">
 				<tr>
@@ -91,7 +91,7 @@
 		{foreach $animalPlants as $animalPlant}
 		<div class="col-xs-12">
 			<h4 class="text-center">
-				<strong>{$animalPlant}</strong>
+				<strong><a href="index.php?page=factories&object={$plants.$animalPlant.i3dName}">{$animalPlant}</a></strong>
 			</h4>
 			<table class="table table-striped">
 				<tr>
