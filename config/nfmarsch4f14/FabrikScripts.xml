@@ -493,7 +493,7 @@
 		<output name="Brueckenbau" capacity="200000" factor="1" fillType="sand" showInStorage="true" />
 	</item>
 	<item name="FabrikScript_compostMaster2k17" locationType="FabrikScript" ProdPerHour="50000" position="20 0 -700" showInProduction="true">
-		<input name="cm_inputWaste" capacity="300000" factor="2" fillTypes="compost potato sugarBeet chaff silage grass grass_windrow dryGrass_windrow woodChips manure straw rye oat wheat barley rape" showInStorage="false" />
+		<input name="cm_inputWaste" capacity="300000" factor="2" fillTypes="compost potato sugarBeet chaff silage grass dryGrass_windrow woodChips manure straw rye oat wheat barley rape" showInStorage="false" />
 		<output name="cm_outputCompost" capacity="300000" factor="1" fillType="compost" showInStorage="true" />
 	</item>
 	<item name="FabrikScript_compostlager" locationType="FabrikScript" ProdPerHour="2147483647" position="896 0 -942" showInProduction="false">
