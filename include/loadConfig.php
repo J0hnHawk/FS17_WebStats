@@ -92,7 +92,7 @@ $onlineUser=array();
 if(file_exists($userFile)) {
 	$user=file($userFile);
 	foreach($user as $row) {
-		list($id,$time,$ip) = explode('||', trim($row));
+		list($id,$time) = explode('||', trim($row));
 		if($time+300>time()) {
 			$onlineUser[$id] = $time;
 		}
