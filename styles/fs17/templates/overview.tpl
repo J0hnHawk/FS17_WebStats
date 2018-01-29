@@ -31,7 +31,7 @@
 			<img src="{$linkToImage}" onerror="this.onerror=null;this.src='./config/{$map.Path}/pda_map_H.jpg';" height="1024" width="1024"/>
 			<div id="mapElementsContainer">
 				{foreach $mapEntries as $key => $mapEntry}
-				<div id="vehicle{$key}Container" style="position: absolute; left: {$mapEntry.xpos}px; top: {$mapEntry.zpos}px;" onmouseout="document.getElementById('vehicle{$key}').style.display='none'; document.getElementById('vehicle{$key}Image').src='./images/{$mapEntry.icon}'; document.getElementById('vehicle{$key}Container').style.zIndex=1;"
+				<div id="vehicle{$key}Container" style="position: absolute; left: {$mapEntry.xpos}px; top: {$mapEntry.zpos}px;" onmouseout="document.getElementById('vehicle{$key}').style.display='none'; document.getElementById('vehicle{$key}Image').src='./styles/{$style}/images/{$mapEntry.icon}'; document.getElementById('vehicle{$key}Container').style.zIndex=1;"
 					onmouseover="document.getElementById('vehicle{$key}').style.display='block'; document.getElementById('vehicle{$key}Image').src='./styles/{$style}/images/{$mapEntry.iconHover}'; document.getElementById('vehicle{$key}Container').style.zIndex=10; ">
 					<img id="vehicle{$key}Image" src="./styles/{$style}/images/{$mapEntry.icon}" width="{$machineIconSize}" height="{$machineIconSize}">
 					<div id="vehicle{$key}" style="display: none; position: absolute; bottom: 0px; left: 11px; background: {$backgroundColor}; padding-left: 8px; padding-right: 8px; color: #ffffff;">
