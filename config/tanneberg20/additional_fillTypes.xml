@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mapconfig>
+	<l10n>
+		<text name="Tip_RS">
+			<de>Raps oder Sonnenblumen</de>
+		</text>
+		<text name="RM_Output">
+			<de>Diesel</de>
+		</text>
+		<text name="HFUIN">
+			<de>Diesel</de>
+		</text>
+		<text name="FUOUT">
+			<de>Diesel</de>
+		</text>
+		<text name="RS_forage">
+			<de>Eiweisfuttermittel</de>
+		</text>
+		<text name="DS_digestate">
+			<de>Gärreste</de>
+		</text>
+		<text name="liquidFertilizer">
+			<de>Flüssigdünger</de>
+		</text>
+		<text name="Weinfaesser">
+			<de>Wein</de>
+		</text>
+		<text name="weinPallet">
+			<de>Wein</de>
+		</text>
+		<text name="grain">
+			<de>Getreide</de>
+		</text>
+		<text name="Traubensaft">
+			<de>Traubensaft</de>
+		</text>
+		<text name="traubensaft">
+			<de>Traubensaft</de>
+		</text>
+		<text name="Wine">
+			<de>Traubensaft</de>
+		</text>
+		<text name="slow_soja_water">
+			<de>Wasser</de>
+		</text>
+		<text name="Trauben">
+			<de>Weintrauben</de>
+		</text>
+		<text name="grape">
+			<de>Weintrauben</de>
+		</text>
+		<text name="cm_inputWaste">
+			<de>Abfall</de>
+		</text>
+		<text name="fuel">
+			<de>Diesel</de>
+		</text>
+		<text name="cm_outputCompost">
+			<de>Kompost</de>
+		</text>
+		<text name="Mist">
+			<de>Mist</de>
+		</text>
+		<text name="Duenger">
+			<de>Dünger</de>
+		</text>
+		<text name="Holz">
+			<de>Holzstämme</de>
+		</text>
+		<text name="boardwood">
+			<de>Bretter</de>
+		</text>
+		<text name="slow_soja_soja">
+			<de>Sojabohnen</de>
+		</text>
+		<text name="slow_soja_fuel">
+			<de>Diesel</de>
+		</text>
+		<text name="slow_soja_pig">
+			<de>Schweinefutter</de>
+		</text>
+		<text name="slow_soja_liquid">
+			<de>Gülle</de>
+		</text>
+		<text name="slow_soja_milk">
+			<de>Milch</de>
+		</text>
+		<text name="boardPallet">
+			<de>Bretter</de>
+		</text>
+		<text name="compost">
+			<de>Kompost</de>
+		</text>
+		<text name="forage_mixing">
+			<de>Futter</de>
+		</text>
+	</l10n>
+</mapconfig>

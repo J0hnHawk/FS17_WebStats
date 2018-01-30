@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mapconfig>
+	<item name="FabrikScript_Diesellager" locationType="FabrikScript" ProdPerHour="987654321" position="-186.855 -29.9992 -702.259" showInProduction="false">
+		<input name="HFUIN" capacity="999999" factor="1" fillTypes="fuel" showInStorage="true" />
+		<output name="FUOUT" capacity="999999" factor="1" fillType="fuel" showInStorage="true" />
+	</item>
+	<item name="FabrikScript_Fabrik" locationType="FabrikScript" ProdPerHour="3000" position="-580.678 79.98 -752.146" showInProduction="true">
+		<input name="fuel" capacity="50000" factor="0.1" fillTypes="fuel" showInStorage="false" />
+		<input name="Holz" capacity="50000" factor="1" fillTypes="woodChips" showInStorage="false" />
+		<output name="woodChips" capacity="50000" factor="0.9" fillType="woodChips" showInStorage="true" />
+		<output name="boardwood" capacity="4000" factor="1" fillType="boardwood" palettArea="-192 231 -187 240" palettPlaces="5" showInStorage="false" />
+	</item>
+	<item name="FabrikScript_compostMaster2k17" locationType="FabrikScript" ProdPerHour="50000" position="-585.228 99.85 49.5958" showInProduction="true">
+		<input name="cm_inputWaste" capacity="50000" factor="1" fillTypes="compost potato sugarBeet chaff silage grass dryGrass_windrow woodChips manure straw" showInStorage="false" />
+		<input name="fuel" capacity="50000" factor="0.1" fillTypes="fuel" showInStorage="false" />
+		<output name="cm_outputCompost" capacity="100000" factor="1" fillType="compost" showInStorage="true" />
+	</item>
+	<item name="FabrikScript_Raffinerie" locationType="FabrikScript" ProdPerHour="10000" position="525.584 110.45 -723.93" showInProduction="true">
+		<input name="Tip_RS" capacity="250000" factor="1" fillTypes="rape sunflower" showInStorage="false" />
+		<output name="RS_forage" capacity="100000" factor="0.22" fillType="forage" showInStorage="true" />
+		<output name="RM_Output" capacity="200000" factor="0.66" fillType="fuel" showInStorage="true" />
+		<output name="DS_digestate" capacity="100000" factor="0.22" fillType="digestate" showInStorage="true" />
+	</item>
+	<item name="FabrikScript_Fertilizer" locationType="FabrikScript" ProdPerHour="3000" position="411.111 111 -761.788" showInProduction="true">
+		<input name="manure" capacity="20000" factor="1" fillTypes="manure" showInStorage="false" />
+		<input name="liquidManure" capacity="20000" factor="1" fillTypes="liquidManure" showInStorage="false" />
+		<output name="fertilizer" capacity="60000" factor="1" fillType="fertilizer" showInStorage="true" />
+	</item>
+	<item name="FabrikScript_liquidFertilizer" locationType="FabrikScript" ProdPerHour="3000" position="484.23 111 -761.801" showInProduction="true">
+		<input name="fertilizer" capacity="20000" factor="1" fillTypes="fertilizer" showInStorage="false" />
+		<input name="water" capacity="20000" factor="1" fillTypes="water" showInStorage="false" />
+		<output name="liquidFertilizer" capacity="50000" factor="1.5" fillType="liquidFertilizer" showInStorage="true" />
+	</item>
+	<item name="FabrikScript_Seeds" locationType="FabrikScript" ProdPerHour="3000" position="394.758 111 -729.035" showInProduction="true">
+		<input name="grain" capacity="20000" factor="1" fillTypes="wheat maize barley rape sunflower" showInStorage="false" />
+		<input name="fertilizer" capacity="20000" factor="1" fillTypes="fertilizer" showInStorage="false" />
+		<output name="seeds" capacity="60000" factor="1" fillType="seeds" showInStorage="true" />
+	</item>
+	<item name="FabrikScript_Weinberg" locationType="FabrikScript" ProdPerHour="1000" position="274.959 103.769 110.121" showInProduction="true">
+		<input name="Mist" capacity="35000" factor="1.7" fillTypes="manure" showInStorage="false" />
+		<input name="Duenger" capacity="35000" factor="1.8" fillTypes="fertilizer" showInStorage="false" />
+		<input name="slow_soja_water" capacity="90000" factor="3" fillTypes="water" showInStorage="false" />
+		<output name="grape" capacity="80000" factor="1.5" fillType="grape" showInStorage="true" />
+	</item>
+	<item name="FabrikScript_Winzerei" locationType="FabrikScript" ProdPerHour="1000" position="309.777 115 -796.872" showInProduction="true">
+		<input name="Trauben" capacity="50000" factor="3" fillTypes="grape" showInStorage="false" />
+		<input name="slow_soja_water" capacity="90000" factor="3" fillTypes="water" showInStorage="false" />
+		<output name="Traubensaft" capacity="1500" factor="1.632" fillType="Wine" palettArea="313.2 -779.6 323.6 -777.3" palettPlaces="5" showInStorage="false" />
+		<output name="Weinfaesser" capacity="1500" factor="1.632" fillType="Wine" palettArea="307.3 -775.8 317.6 -773.5" palettPlaces="5" showInStorage="false" />
+	</item>
+	<item name="FabrikScript_SojamilchProduktion" locationType="FabrikScript" ProdPerHour="3000" position="154.992 109 227.117" showInProduction="true">
+		<input name="slow_soja_soja" capacity="50000" factor="1" fillTypes="soybean" showInStorage="false" />
+		<input name="slow_soja_water" capacity="90000" factor="3" fillTypes="water" showInStorage="false" />
+		<input name="slow_soja_fuel" capacity="25000" factor="0.3" fillTypes="fuel" showInStorage="false" />
+		<output name="slow_soja_liquid" capacity="100000" factor="1.5" fillType="liquidManure" showInStorage="true" />
+		<output name="slow_soja_milk" capacity="50000" factor="1" fillType="milk" showInStorage="true" />
+		<output name="slow_soja_pig" capacity="50000" factor="0.3" fillType="pigFood" showInStorage="true" />
+	</item>
+</mapconfig>

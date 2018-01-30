@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mapconfig>
+	<l10n>
+		<text name="Storage_storage1">
+			<de>Hofsilo</de>
+		</text>
+		<text name="Storage_storage3">
+			<de>Außenlager am Bahnhof</de>
+		</text>
+		<text name="Bga">
+			<de>BGA</de>
+		</text>
+		<text name="Animals_pig">
+			<de>Schweinestall</de>
+		</text>
+		<text name="Animals_cow">
+			<de>Kuhstall</de>
+		</text>
+		<text name="Animals_sheep">
+			<de>Schafweide</de>
+		</text>
+		<text name="FabrikScript_Diesellager">
+			<de>Diesellager</de>
+		</text>
+		<text name="FabrikScript_compostMaster2k17">
+			<de>compostMaster2k17</de>
+		</text>
+		<text name="FabrikScript_Fertilizer">
+			<de>Düngerproduktion</de>
+		</text>
+		<text name="FabrikScript_liquidFertilizer">
+			<de>Flüssigdüngerproduktion</de>
+		</text>
+		<text name="FabrikScript_Raffinerie">
+			<de>Raffinierie</de>
+		</text>
+		<text name="FabrikScript_Seeds">
+			<de>Saatgutproduktion</de>
+		</text>
+		<text name="FabrikScript_Weinberg">
+			<de>Weinberg</de>
+		</text>
+		<text name="FabrikScript_Winzerei">
+			<de>Winzerei</de>
+		</text>
+		<text name="FabrikScript_Fabrik">
+			<de>Sägewerk</de>
+		</text>
+		<text name="FabrikScript_SojamilchProduktion">
+			<de>Sojamich Produktion</de>
+		</text>
+	</l10n>
+</mapconfig>
