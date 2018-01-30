@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mapconfig>
+	<item name="Storage_storage1" locationType="storage" position="210 0 120" />
+	<item name="Storage_storage3" locationType="storage" position="625 0 1672" />
+	<item name="Storage_storage5" locationType="storage" position="1390 0 -667" />
+	<l10n>
+		<text name="Storage_storage5">
+			<en>Storage_storage5</en>
+			<de>Hofsilo am Eierhof</de>
+			<fr>Hofsilo am Eierhof</fr>
+		</text>
+		<text name="Storage_storage3">
+			<en>Storage_storage3</en>
+			<de>Hofsilo am Rinderhof</de>
+			<fr>Hofsilo am Rinderhof</fr>
+		</text>
+		<text name="Storage_storage1">
+			<en>Farm silo</en>
+			<de>Hofsilo</de>
+			<fr>Silo agricole</fr>
+		</text>
+	</l10n>
+</mapconfig>

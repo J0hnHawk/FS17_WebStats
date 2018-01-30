@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mapconfig>
+	<item name="fuelStation_Hoftankstelle" locationType="fuelStation" position="180 0 200" />
+	<item name="fuelStation_Tankstelle_BGA_Nord" locationType="fuelStation" position="-180 0 -890" />
+	<item name="fuelStation_Tankstelle_BGA_Sued" locationType="fuelStation" position="-400 0 630" />
+	<item name="fuelStation_Tankstelle_Raffinerie" locationType="fuelStation" position="-920 0 630" />
+	<item name="fuelStation_Tankstelle_Insel" locationType="fuelStation" position="-1417 0 -874" />
+	<item name="fuelStation_Tankstelle_Rinderhof" locationType="fuelStation" position="533 0 1604" />
+	<item name="fuelStation_Tankstelle_SandKies" locationType="fuelStation" position="1625 0 277" />
+	<item name="fuelStation_Tankstelle_Huehnerhof" locationType="fuelStation" position="1454 0 -792" />
+	<l10n>
+		<text name="fuelStation_Tankstelle_Huehnerhof">
+			<en>fuelStation_Tankstelle_Huehnerhof</en>
+			<de>Tankstelle Hühnerhof</de>
+			<fr>fuelStation_Tankstelle_Huehnerhof</fr>
+		</text>
+		<text name="fuelStation_Tankstelle_SandKies">
+			<en>fuelStation_Tankstelle_SandKies</en>
+			<de>Tankstelle Kieswerk</de>
+			<fr>fuelStation_Tankstelle_SandKies</fr>
+		</text>
+		<text name="fuelStation_Tankstelle_Rinderhof">
+			<en>fuelStation_Tankstelle_Rinderhof</en>
+			<de>Tankstelle Rinderhof</de>
+			<fr>fuelStation_Tankstelle_Rinderhof</fr>
+		</text>
+		<text name="fuelStation_Tankstelle_Insel">
+			<en>fuelStation_Tankstelle_Insel</en>
+			<de>Tankstelle Insel</de>
+			<fr>fuelStation_Tankstelle_Insel</fr>
+		</text>
+		<text name="fuelStation_Tankstelle_Raffinerie">
+			<en>fuelStation_Tankstelle_Raffinerie</en>
+			<de>Tankstelle Raffinerie</de>
+			<fr>Station-service Raffinerie</fr>
+		</text>
+		<text name="fuelStation_Tankstelle_BGA_Sued">
+			<en>fuelStation_Tankstelle_BGA_Sued</en>
+			<de>Tankstelle BGA Mitte</de>
+			<fr>Station-service BGA Sud</fr>
+		</text>
+		<text name="fuelStation_Tankstelle_BGA_Nord">
+			<en>fuelStation_Tankstelle_BGA_Nord</en>
+			<de>Tankstelle BGA Nord</de>
+			<fr>Station-service BGA Nord</fr>
+		</text>
+		<text name="fuelStation_Hoftankstelle">
+			<en>fuelStation_Hoftankstelle</en>
+			<de>Hoftankstelle</de>
+			<fr>Station-service agricole</fr>
+		</text>
+	</l10n>
+</mapconfig>
