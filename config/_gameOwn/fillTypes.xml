@@ -217,6 +217,12 @@
 			<de>Milch</de>
 			<fr>Lait</fr>
 		</text>
+		<text name="wool">
+			<cz>Bavlna</cz>
+			<en>Wool</en>
+			<de>Wolle</de>
+			<fr>Laine</fr>
+		</text>
 		<text name="straw">
 			<cz>Sláma</cz>
 			<en>Straw</en>
