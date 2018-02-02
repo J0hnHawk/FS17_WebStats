@@ -23,7 +23,7 @@
 				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
 					<span class="sr-only">##TOGGLE##</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="index.php">FS17 WebStats</a>
+				<a class="navbar-brand" href="index.php">&nbsp;&nbsp;FS17 WebStats&nbsp;&nbsp;</a>
 			</div>
 			<div id="navbar" class="navbar-collapse collapse">
 				<form class="navbar-form navbar-right" action="index.php?page=install" method="post">

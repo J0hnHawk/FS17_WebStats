@@ -1,19 +1,24 @@
 # Changelog
 
-## [Version 1.4.0-alpha]
+## [Version 1.4.0](https://github.com/J0hnHawk/FS17_WebStats/releases/tag/v1.4.0) (02.02.2018)
 
 **Änderungen und Erweiterungen:**
 - Unterstützung von platzierbaren Objekten/Mods
 - Ermittlung und Anzeige der Verkaufspreise sowie der Verkaufsstellen (#15)
 - neues Format für Kartenkonfigurationen
-- Unterstützung für Nordfriesische Marsch 4fach 1.3
+- Unterstützung für Nordfriesische Marsch 4fach 1.4
+- Unterstützung für Nordfriesische Marsch 3.1
 - Unterstützung von Stylesheets, 2 neue Stylesheets ergänzt
 - Englische Übersetzung, danke an Slivicon
+- Tschechische Übersetzung, danke an JanSe
 - verbesserte Darstellung auf kleinen Bildschirmen oder Tablets
+- Menüleiste angepasst
 - kein Zeilenumbruch im Tooltip auf der Produktionsseite 
 
 **Berichtigte Fehler:**
 - Futterbedarf bei den Schweinen
+- Lagerplatz von Gülle bei Kühen und Schweinen ist nicht mehr endlos
+- Serverübersicht jetzt mehrsprachfähig
 - Lizenzinformationen
 - Anpassung für PHP 7.1 
 - Palettengröße von leeren Paletten (NF Marsch 3.0)

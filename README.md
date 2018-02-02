@@ -1,10 +1,7 @@
-# FS17 WebStats v1.4.0 (alpha)
+# FS17 WebStats v1.4.0
 
 ### Statuswebseite für die Farming Simulator 17
-Die Webseite generiert Übersichtsseiten von lokale Spielständen oder dedizierten Servern
-
-#### Serverstatus
-Anzeige der Spieler sowie Fahrzeuge auf der Karte. (nur dedizierter Server)
+Die Webseite generiert Übersichtsseiten von lokale Spielständen oder dedizierten Servern.
 
 #### Lagerübersicht
 Übersicht über alle Lagerbestände im Farmsilo, dem Palettenlager diverser Lager für Saatgut, Dünger usw.
@@ -13,6 +10,9 @@ Lagerbestände in Fahrzeugen und bei den Produktionsstätten werden mit einbezog
 #### Produktionsübersicht
 Übersicht über alle Produktionsstätten. Fehlende Rohstoffe bzw. volle Lager werden farblich markiert. Alphabetische Sortierung oder nach Füllstand.
 
+#### Serverstatus
+Anzeige der Spieler sowie Fahrzeuge auf der Karte. (nur dedizierter Server)
+
 #### Viehzucht
 Übersicht über Schafweide, Schweine- und Kuhstall (wie Ingameübersicht).
 
@@ -20,7 +20,10 @@ Lagerbestände in Fahrzeugen und bei den Produktionsstätten werden mit einbezog
 Anzeige zusätzlicher Details der Produktionsanlagen. Neben Lagermengen und Kapazitäten werden auch der Verbrauch und die Produktion pro Stunde und Tag angezeigt.
 
 #### Warendetails
-Anzeige der Lagerorte/-mengen und dem Warenbedarf. Übersichtskarte mit eingezeichneteten Lager- und Produktionsstätten sowie der Paletten und Ballen.
+Anzeige der Lagerorte/-mengen, Verkaufspreise und dem Warenbedarf. Übersichtskarte mit eingezeichneteten Lager- und Produktionsstätten sowie der Paletten und Ballen.
+
+#### Verkaufspreise
+Verkaufspreisübersicht aller Waren und Verkaufsstellen (wie im Spiel).
 
 ## Instalation
 
