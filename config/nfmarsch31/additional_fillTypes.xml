@@ -536,6 +536,24 @@
 			<de>Schweinefutter</de>
 			<fr>Aliment pour les cochons</fr>
 		</text>
+		<text name="Stroh">
+			<cz>Sláma</cz>
+			<en>Straw</en>
+			<de>Stroh</de>
+			<fr>Paille</fr>
+		</text>
+		<text name="Gras">
+			<cz>Tráva</cz>
+			<en>Grass</en>
+			<de>Gras</de>
+			<fr>Herbe</fr>
+		</text>
+		<text name="Silage">
+			<cz>Siláž</cz>
+			<en>Silage</en>
+			<de>Silage</de>
+			<fr>Ensilage</fr>
+		</text>
 		<text name="Stroh_Hackschnitzel">
 			<en>Straw of wood chips</en>
 			<de>Stroh oder Hackschnitzel</de>
