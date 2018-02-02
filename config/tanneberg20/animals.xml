@@ -32,7 +32,7 @@
 	<item name="Animals_sheep" locationType="animal" position="157 0 -248" reproRate="960">
 		<input name="water" trough_factor="15" consumption_factor="15" fillTypes="water" showInStorage="false" />
 		<input name="grass_windrow_dryGrass_windrow" trough_factor="30" consumption_factor="36" fillTypes="grass_windrow dryGrass_windrow" showInStorage="false" />
-		<output name="woolPallet" production_factor="24" capacity="2000" fillType="woolPallet" palettArea="134.9 -274.0 143.4 -266.0" palettPlaces="6" showInStorage="false" />
-		<productivity name="grass_windrow_dryGrass_windrow" factor="90" />
+		<output name="woolPallet" production_factor="24" capacity="2000" fillType="woolPallet" palettArea="136.5 -272.7 142.3 -267.3" palettPlaces="6" showInStorage="false" />
+		<productivity name="grass_windrow_dryGrass_windrow" factor="90" />                                 
 	</item>
 </mapconfig>

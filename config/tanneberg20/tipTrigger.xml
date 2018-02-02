@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mapconfig>
+	<item name="TipTrigger_BayWa2" locationType="TipTrigger" position="751 0 -299" isSellingPoint="true" />
+	<item name="TipTrigger_BayWa" locationType="TipTrigger" position="-946 0 -26" isSellingPoint="true" />
+	<item name="TipTrigger_Wolleverkauf" locationType="TipTrigger" position="-727 0 -820" isSellingPoint="true" />
+	<item name="TipTrigger_Gardencenter" locationType="TipTrigger" position="-727 0 -820" isSellingPoint="true" />
+	<item name="TipTrigger_WINDROW_STORAGE" locationType="TipTrigger" position="-157 0 503" isSellingPoint="true" />
+	<item name="TipTrigger_Agrarvis2" locationType="TipTrigger" position="834 0 820" isSellingPoint="true" />
+	<item name="TipTrigger_Gardencenter1" locationType="TipTrigger" position="834 0 820" isSellingPoint="true" />
+	<item name="TipTrigger_GetreideAG1" locationType="TipTrigger" position="190 0 45" isSellingPoint="true" />
+	<item name="TipTrigger_GetreideAG" locationType="TipTrigger" position="-425 0 501" isSellingPoint="true" />
+	<item name="TipTrigger_Netto" locationType="TipTrigger" position="-727 0 -289" isSellingPoint="true" />
+	<item name="TipTrigger_Hackschnitzel" locationType="TipTrigger" position="-727 0 -289" isSellingPoint="true" />
+	<item name="TipTrigger_Agrarvis" locationType="TipTrigger" position="-727 0 -289" isSellingPoint="true" />
+	<item name="TipTrigger_TRAIN_STATION_2_TRAIN_IN" locationType="TipTrigger" position="-727 0 -289" isSellingPoint="true" />
+	<item name="TipTrigger_Guelle_Mist" locationType="TipTrigger" position="-727 0 -289" isSellingPoint="true" />
+	<item name="TipTrigger_Palette" locationType="TipTrigger" position="-727 0 -289" isSellingPoint="true" />
+	<item name="TipTrigger_TRAIN_STATION_2_TRAILER_IN" locationType="TipTrigger" position="-727 0 -289" isSellingPoint="true" />
+	<item name="TipTrigger_FARMER_3_SLURRY" locationType="TipTrigger" position="-727 0 -289" isSellingPoint="true" />
+	<l10n>
+		<text name="TipTrigger_TRAIN_STATION_2_TRAILER_IN">
+			<all>Außenlager (Trailer)</all>
+		</text>
+		<text name="TipTrigger_TRAIN_STATION_2_TRAIN_IN">
+			<all>Außenlager (Zug)</all>
+		</text>
+		<text name="TipTrigger_Agrarvis2">
+			<all>Agrarvis</all>
+		</text>
+		<text name="TipTrigger_Gardencenter1">
+			<all>Gardencenter</all>
+		</text>
+		<text name="TipTrigger_Netto">
+			<all>Netto</all>
+		</text>
+		<text name="TipTrigger_WINDROW_STORAGE">
+			<all>Scheune</all>
+		</text>
+		<text name="TipTrigger_Wolleverkauf">
+			<all>Wolleverkauf</all>
+		</text>
+		<text name="TipTrigger_Guelle_Mist">
+			<all>Gardencenter</all>
+		</text>
+		<text name="TipTrigger_FARMER_3_SLURRY">
+			<all>Gardencenter</all>
+		</text>
+		<text name="TipTrigger_Palette">
+			<all>Holzpaletten</all>
+		</text>
+		<text name="TipTrigger_Hackschnitzel">
+			<all>Hackschnitzel</all>
+		</text>
+		<text name="TipTrigger_GetreideAG">
+			<all>GetreideAG-Cargo</all>
+		</text>
+		<text name="TipTrigger_GetreideAG1">
+			<all>GetreideAG</all>
+		</text>
+		<text name="TipTrigger_Gardencenter">
+			<all>Gardencenter</all>
+		</text>
+		<text name="TipTrigger_BayWa">
+			<all>BayWa</all>
+		</text>
+		<text name="TipTrigger_BayWa2">
+			<all>BayWa</all>
+		</text>
+		<text name="TipTrigger_Agrarvis">
+			<all>Agrarvis</all>
+		</text>
+	</l10n>
+</mapconfig>

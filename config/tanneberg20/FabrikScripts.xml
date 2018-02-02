@@ -8,7 +8,7 @@
 		<input name="fuel" capacity="50000" factor="0.1" fillTypes="fuel" showInStorage="false" />
 		<input name="Holz" capacity="50000" factor="1" fillTypes="woodChips" showInStorage="false" />
 		<output name="woodChips" capacity="50000" factor="0.9" fillType="woodChips" showInStorage="true" />
-		<output name="boardwood" capacity="4000" factor="1" fillType="boardwood" palettArea="-192 231 -187 240" palettPlaces="5" showInStorage="false" />
+		<output name="boardwood" capacity="4000" factor="1" fillType="boardwood" palettArea="-190.9 231.1 -187.4 240.2" palettPlaces="5" showInStorage="false" />
 	</item>
 	<item name="FabrikScript_compostMaster2k17" locationType="FabrikScript" ProdPerHour="50000" position="-585.228 99.85 49.5958" showInProduction="true">
 		<input name="cm_inputWaste" capacity="50000" factor="1" fillTypes="compost potato sugarBeet chaff silage grass dryGrass_windrow woodChips manure straw" showInStorage="false" />
@@ -45,8 +45,8 @@
 	<item name="FabrikScript_Winzerei" locationType="FabrikScript" ProdPerHour="1000" position="309.777 115 -796.872" showInProduction="true">
 		<input name="Trauben" capacity="50000" factor="3" fillTypes="grape" showInStorage="false" />
 		<input name="slow_soja_water" capacity="90000" factor="3" fillTypes="water" showInStorage="false" />
-		<output name="Traubensaft" capacity="1500" factor="1.632" fillType="Wine" palettArea="313.2 -779.6 323.6 -777.3" palettPlaces="5" showInStorage="false" />
-		<output name="Weinfaesser" capacity="1500" factor="1.632" fillType="Wine" palettArea="307.3 -775.8 317.6 -773.5" palettPlaces="5" showInStorage="false" />
+		<output name="Traubensaft" capacity="1500" factor="1.632" fillType="Wine" palettArea="313.7 -779.1 323.1 -777.7" palettPlaces="5" showInStorage="false" />
+		<output name="Weinfaesser" capacity="1500" factor="1.632" fillType="Wine" palettArea="307.7 -775.4 317.1 -774.0" palettPlaces="5" showInStorage="false" />
 	</item>
 	<item name="FabrikScript_SojamilchProduktion" locationType="FabrikScript" ProdPerHour="3000" position="154.992 109 227.117" showInProduction="true">
 		<input name="slow_soja_soja" capacity="50000" factor="1" fillTypes="soybean" showInStorage="false" />
