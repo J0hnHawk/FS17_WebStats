@@ -340,6 +340,11 @@
 			<de>Korn</de>
 			<fr>Grains</fr>
 		</text>
+		<text name="korn">
+			<en>Korn</en>
+			<de>Korn</de>
+			<fr>Grains</fr>
+		</text>
 		<text name="krabben">
 			<en>Pawns</en>
 			<de>Krabben</de>
@@ -360,7 +365,7 @@
 			<de>Kuchen</de>
 			<fr>Gâteau</fr>
 		</text>
-		<text name="Kuchen">
+		<text name="kuchen">
 			<en>Cake</en>
 			<de>Kuchen</de>
 			<fr>Gâteau</fr>
