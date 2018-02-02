@@ -106,10 +106,10 @@
 		<input name="emptypallet" capacity="280000" factor="0.25" fillTypes="emptypallet" showInStorage="false" />
 		<input name="palette_karton" capacity="175000" factor="0.15" fillTypes="karton" showInStorage="false" />
 		<input name="palettespeiseoel" capacity="225000" factor="0.15" fillTypes="oel" showInStorage="false" />
-		<output name="palettechips" capacity="5000" factor="0.35" fillType="chips" palettArea="877.6 -918.4 893.8 -914.2" palettPlaces="15" showInStorage="false" />
-		<output name="palettepommes" capacity="5000" factor="0.35" fillType="pommes" palettArea="-695.1 807.4 -690.8 823.6" palettPlaces="15" showInStorage="false" />
-		<output name="palettekartoffelsack" capacity="5000" factor="0.35" fillType="kartoffelsack" palettArea="-675.9 807.4 -671.7 823.6" palettPlaces="15" showInStorage="false" />
-	</item>
+		<output name="palettechips" capacity="5000" factor="0.35" fillType="chips" palettArea="-675.5 807.8 -672.1 823.2" palettPlaces="15" showInStorage="false" />
+		<output name="palettepommes" capacity="5000" factor="0.35" fillType="pommes" palettArea="-694.6 807.8 -691.2 823.2" palettPlaces="15" showInStorage="false" />
+		<output name="palettekartoffelsack" capacity="5000" factor="0.35" fillType="kartoffelsack" palettArea="-712.8 807.8 -709.4 823.2" palettPlaces="15" showInStorage="false" />
+	</item>	
 	<item name="FabrikScript_Brennerei_Korn" locationType="FabrikScript" ProdPerHour="400" position="-125 0 -800" showInProduction="true">
 		<input name="Getreide" capacity="250000" factor="0.4" fillTypes="wheat rye oat barley" showInStorage="false" />
 		<input name="Tip_RSwater" capacity="200000" factor="0.5" fillTypes="water" showInStorage="false" />
@@ -128,39 +128,39 @@
 	</item>
 	<item name="FabrikScript_HofladenApfel" locationType="FabrikScript" ProdPerHour="60" position="224 0 79" showInProduction="true">
 		<input name="Apfel" capacity="15000" factor="1" fillTypes="apfel" showInStorage="false" />
-		<output name="Geldkassette" capacity="25000" factor="3" fillType="geld" palettArea="220.7 80.5 220.9 80.7" palettPlaces="1" showInStorage="false" />
+		<output name="Geldkassette" capacity="15000" factor="3" fillType="geld" palettArea="220.7 80.5 220.9 80.7" palettPlaces="1" showInStorage="false" />
 	</item>
 	<item name="FabrikScript_HofladenBirne" locationType="FabrikScript" ProdPerHour="60" position="224 0 81" showInProduction="true">
 		<input name="Birne" capacity="15000" factor="1" fillTypes="birne" showInStorage="false" />
-		<output name="Geldkassette" capacity="25000" factor="3" fillType="geld" palettArea="220.7 83.2 220.9 83.4" palettPlaces="1" showInStorage="false" />
+		<output name="Geldkassette" capacity="15000" factor="3" fillType="geld" palettArea="220.7 83.2 220.9 83.4" palettPlaces="1" showInStorage="false" />
 	</item>
 	<item name="FabrikScript_HofladenPflaume" locationType="FabrikScript" ProdPerHour="60" position="225 0 85" showInProduction="true">
 		<input name="Pflaumen" capacity="15000" factor="1" fillTypes="pflaume" showInStorage="false" />
-		<output name="Geldkassette" capacity="25000" factor="3" fillType="geld" palettArea="227.7 83.2 227.9 83.4" palettPlaces="1" showInStorage="false" />
+		<output name="Geldkassette" capacity="15000" factor="3" fillType="geld" palettArea="227.7 83.2 227.9 83.4" palettPlaces="1" showInStorage="false" />
 	</item>
 	<item name="FabrikScript_Hofladenkirsche" locationType="FabrikScript" ProdPerHour="60" position="225 0 83" showInProduction="true">
 		<input name="Kirschen" capacity="15000" factor="1" fillTypes="kirsche" showInStorage="false" />
-		<output name="Geldkassette" capacity="25000" factor="3" fillType="geld" palettArea="227.7 80.5 227.9 80.7" palettPlaces="1" showInStorage="false" />
+		<output name="Geldkassette" capacity="15000" factor="3" fillType="geld" palettArea="227.7 80.5 227.9 80.7" palettPlaces="1" showInStorage="false" />
 	</item>
 	<item name="FabrikScript_Hofladentomaten" locationType="FabrikScript" ProdPerHour="60" position="216 0 83" showInProduction="true">
 		<input name="Tomaten" capacity="15000" factor="1" fillTypes="tomaten" showInStorage="false" />
-		<output name="Geldkassette" capacity="25000" factor="3" fillType="geld" palettArea="218.7 80.5 218.9 80.7" palettPlaces="1" showInStorage="false" />
+		<output name="Geldkassette" capacity="15000" factor="3" fillType="geld" palettArea="218.7 80.5 218.9 80.7" palettPlaces="1" showInStorage="false" />
 	</item>
 	<item name="FabrikScript_Hofladensalat" locationType="FabrikScript" ProdPerHour="60" position="216 0 85" showInProduction="true">
 		<input name="Salat" capacity="15000" factor="1" fillTypes="salat" showInStorage="false" />
-		<output name="Geldkassette" capacity="25000" factor="3" fillType="geld" palettArea="218.7 83.2 218.9 83.4" palettPlaces="1" showInStorage="false" />
+		<output name="Geldkassette" capacity="15000" factor="3" fillType="geld" palettArea="218.7 83.2 218.9 83.4" palettPlaces="1" showInStorage="false" />
 	</item>
 	<item name="FabrikScript_HofladenBlumenkohl" locationType="FabrikScript" ProdPerHour="60" position="215 0 79" showInProduction="true">
 		<input name="Blumenkohl" capacity="15000" factor="1" fillTypes="blumenkohl" showInStorage="false" />
-		<output name="Geldkassette" capacity="25000" factor="3" fillType="geld" palettArea="211.9 80.5 212.1 80.7" palettPlaces="1" showInStorage="false" />
+		<output name="Geldkassette" capacity="15000" factor="3" fillType="geld" palettArea="211.9 80.5 212.1 80.7" palettPlaces="1" showInStorage="false" />
 	</item>
 	<item name="FabrikScript_HofladenRotkohl" locationType="FabrikScript" ProdPerHour="60" position="215 0 81" showInProduction="true">
 		<input name="Rotkohl" capacity="15000" factor="1" fillTypes="rotkohl" showInStorage="false" />
-		<output name="Geldkassette" capacity="25000" factor="3" fillType="geld" palettArea="211.9 83.1 212.1 83.3" palettPlaces="1" showInStorage="false" />
+		<output name="Geldkassette" capacity="15000" factor="3" fillType="geld" palettArea="211.9 83.1 212.1 83.3" palettPlaces="1" showInStorage="false" />
 	</item>
 	<item name="FabrikScript_geldboxen" locationType="FabrikScript" ProdPerHour="100000" position="290 0 110" showInProduction="true">
 		<input name="geld" capacity="250000" factor="1" fillTypes="geld" showInStorage="false" />
-		<output name="geld" capacity="250000" factor="1" fillType="geld" palettArea="0 0 1 1" palettPlaces="1" showInStorage="false" />
+		<output name="geld" capacity="250000" factor="1" fillType="geld" palettArea="304.8 98 306.2 99.4" palettPlaces="1" showInStorage="false" />
 	</item>
 	<item name="FabrikScript_Pellets_Fabrik" locationType="FabrikScript" ProdPerHour="7500" position="890 0 680" showInProduction="true">
 		<input name="Stroh_Hackschnitzel" capacity="500000" factor="1" fillTypes="straw woodChips" showInStorage="false" />
@@ -294,7 +294,7 @@
 		<input name="zuckerpalette" capacity="120000" factor="0.3" fillTypes="zucker" showInStorage="false" />
 		<input name="Milchpalette" capacity="120000" factor="0.2" fillTypes="milch" showInStorage="false" />
 		<input name="Butterpalette" capacity="120000" factor="0.15" fillTypes="butter" showInStorage="false" />
-		<output name="Backwaren" capacity="5000" factor="1" fillType="backwaren" palettArea="-936.6 -36.2 931.0 -13.9" palettPlaces="21" showInStorage="false" />
+		<output name="Backwaren" capacity="5000" factor="1" fillType="backwaren" palettArea="-935.8 -35.8 -931.5 -14.3" palettPlaces="21" showInStorage="false" />
 	</item>
 	<item name="FabrikScript_Backerei_Kuchen" locationType="FabrikScript" ProdPerHour="5000" position="-940 0 10" showInProduction="true">
 		<input name="emptypallet" capacity="120000" factor="0.12" fillTypes="emptypallet" showInStorage="false" />
@@ -304,7 +304,7 @@
 		<input name="Zuckerpalette" capacity="120000" factor="0.3" fillTypes="zucker" showInStorage="false" />
 		<input name="Quarkpalette" capacity="120000" factor="0.2" fillTypes="quark" showInStorage="false" />
 		<input name="Sahnepalette" capacity="120000" factor="0.15" fillTypes="sahne" showInStorage="false" />
-		<output name="Kuchen" capacity="5000" factor="1" fillType="kuchen" palettArea="-927.8 -36.8 -922.5 -14.4" palettPlaces="21" showInStorage="false" />
+		<output name="Kuchen" capacity="5000" factor="1" fillType="kuchen" palettArea="-927.3 -36.2 -923.0 -14.8" palettPlaces="21" showInStorage="false" />
 	</item>
 	<item name="FabrikScript_Lager_Backwaren" locationType="FabrikScript" ProdPerHour="14400001" position="-879.97 99.955 -746.65" showInProduction="false">
 		<input name="Backwaren" capacity="625000" factor="1" fillTypes="backwaren" showInStorage="true" />
@@ -440,15 +440,15 @@
 	</item>
 	<item name="FabrikScript_kaufleerpalette" locationType="FabrikScript" ProdPerHour="14400001" position="-514.317 99.9572 -591.976" showInProduction="true">
 		<input name="geld" capacity="250000" factor="1" fillTypes="geld" showInStorage="false" />
-		<output name="emptypallet" capacity="5000" factor="1" fillType="emptypallet" palettArea="0 0 1 1" palettPlaces="999" showInStorage="false" />
+		<output name="emptypallet" capacity="5000" factor="1" fillType="emptypallet" palettArea="-534.6 -586.0 -534.4 -585.8" palettPlaces="1" showInStorage="false" />
 	</item>
 	<item name="FabrikScript_kaufkartonpalette" locationType="FabrikScript" ProdPerHour="14400001" position="-514.317 99.9572 -589.682" showInProduction="true">
 		<input name="geld" capacity="250000" factor="1" fillTypes="geld" showInStorage="false" />
-		<output name="palette_karton" capacity="5000" factor="1" fillType="karton" palettArea="0 0 1 1" palettPlaces="999" showInStorage="false" />
+		<output name="palette_karton" capacity="5000" factor="1" fillType="karton" palettArea="-534.6 -583.7 -534.4 -583.5" palettPlaces="1" showInStorage="false" />
 	</item>
 	<item name="FabrikScript_kaufbretterpalette" locationType="FabrikScript" ProdPerHour="14400001" position="-514.317 99.9572 -585.781" showInProduction="true">
 		<input name="geld" capacity="250000" factor="1" fillTypes="geld" showInStorage="false" />
-		<output name="boardwood" capacity="8000" factor="1.1" fillType="woodChips" palettArea="0 0 1 1" palettPlaces="999" showInStorage="false" />
+		<output name="boardwood" capacity="8000" factor="1.1" fillType="woodChips" palettArea="-534.6 -559.7 -534.4 -559.5" palettPlaces="1" showInStorage="false" />
 	</item>
 	<item name="FabrikScript_Lager_Fisch" locationType="FabrikScript" ProdPerHour="14400001" position="-882.695 99.955 -674.11" showInProduction="false">
 		<input name="Fischpalette" capacity="625000" factor="1" fillTypes="fisch" showInStorage="true" />

@@ -281,7 +281,7 @@
 			<de>Kuchen</de>
 			<fr>Gâteau</fr>
 		</text>
-		<text name="Kuchen">
+		<text name="kuchen">
 			<en>Cake</en>
 			<de>Kuchen</de>
 			<fr>Gâteau</fr>
@@ -531,6 +531,11 @@
 			<de>Stoffrolle</de>
 			<fr>Rouleau de tissu</fr>
 		</text>
+		<text name="Schweinefutter">
+			<en>Pig food</en>
+			<de>Schweinefutter</de>
+			<fr>Aliment pour les cochons</fr>
+		</text>
 		<text name="Stroh_Hackschnitzel">
 			<en>Straw of wood chips</en>
 			<de>Stroh oder Hackschnitzel</de>
@@ -677,6 +682,11 @@
 			<fr>Carton</fr>
 		</text>
 		<text name="palette_korn">
+			<en>Korn</en>
+			<de>Korn</de>
+			<fr>Grains</fr>
+		</text>
+		<text name="korn">
 			<en>Korn</en>
 			<de>Korn</de>
 			<fr>Grains</fr>
