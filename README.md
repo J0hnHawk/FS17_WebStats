@@ -25,6 +25,10 @@ Anzeige der Lagerorte/-mengen, Verkaufspreise und dem Warenbedarf. Übersichtska
 #### Verkaufspreise
 Verkaufspreisübersicht aller Waren und Verkaufsstellen (wie im Spiel).
 
+## Download
+Die aktuellste stabile Version hier herunterladen:
+https://github.com/J0hnHawk/FS17_WebStats/releases/latest
+
 ## Instalation
 
 Herunterladen und entpacken der Zipdatei auf einem PHP 5 fähigen Webserver. Der Webserver muss die PHP-Funktion fsockopen() unterstützen. Eine Datenbank wird nicht benötigt. Die benötigten Daten werden beim ersten Aufruf der Seite abgefragt. Beim ersten Aufruf der Seite werden die benötigten Daten abgefragt: 
