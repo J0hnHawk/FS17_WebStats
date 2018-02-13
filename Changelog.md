@@ -1,5 +1,13 @@
 # Changelog
 
+## [Version 1.4.1](https://github.com/J0hnHawk/FS17_WebStats/releases/tag/v1.4.1) (13.02.2018)
+
+**Änderungen und Erweiterungen:**
+- Anpassung der Erkennung von Paletten auf Anhängern. ("wood2"-Paletten werden jetzt erkannt)
+
+**Berichtigte Fehler:**
+- Fehlende Übersetzungen ergänzt, bzw. angepasst (NF Marsch 3.1)
+
 ## [Version 1.4.0](https://github.com/J0hnHawk/FS17_WebStats/releases/tag/v1.4.0) (02.02.2018)
 
 **Änderungen und Erweiterungen:**
@@ -21,9 +29,9 @@
 - Serverübersicht jetzt mehrsprachfähig
 - Lizenzinformationen
 - Anpassung für PHP 7.1 
-- Palettengröße von leeren Paletten (NF Marsch 3.0)
-- Fehlende Übersetzungen ergänzt (NF Marsch 3.0)
-- Hafenposition berichtigt, danke an alex83we (NF Marsch 3.0)
+- Palettengröße von leeren Paletten (NF Marsch 3.1)
+- Fehlende Übersetzungen ergänzt (NF Marsch 3.1)
+- Hafenposition berichtigt, danke an alex83we (NF Marsch 3.1)
 
 ## [Version 1.3.0](https://github.com/J0hnHawk/FS17_WebStats/releases/tag/v1.3.0) (02.10.2017)
 
