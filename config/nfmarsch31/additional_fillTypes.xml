@@ -116,6 +116,12 @@
 			<de>Diesel</de>
 			<fr>Diesel</fr>
 		</text>
+		<text name="fuel"> 
+			<!-- für die Einheitlichkeit -->
+			<en>Diesel</en>
+			<de>Diesel</de>
+			<fr>Diesel</fr>
+		</text>
 		<text name="cm_inputWaste">
 			<en>Waste</en>
 			<de>Abfall</de>
