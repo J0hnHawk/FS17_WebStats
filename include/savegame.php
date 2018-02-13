@@ -160,28 +160,22 @@ foreach ( $careerVehicles->vehicle as $vehicle ) {
 		}
 	}
 	if (isset ( $vehicle ['numBales'] )) {
-		if (isset ( $vehicle->rbale )) {
-			$className = "Bale";
-			foreach ( $vehicle->rbale as $rbale ) {
-				$fillType = cleanFileName ( $rbale ['filename'] );
-				$fillLevel = intval ( $rbale ['fillLevel'] );
-				addCommodity ( $fillType, $fillLevel, $location, $className );
-				$positions ['vehicle'] [translate ( $fillType )] [] = array (
-						'name' => $location,
-						'position' => explode ( ' ', $position ) 
-				);
-			}
-		}
-		if (isset ( $vehicle->wool )) {
-			$className = "FillablePallet";
-			foreach ( $vehicle->wool as $wool ) {
-				$fillType = cleanFileName ( $wool ['filename'] );
-				$fillLevel = intval ( $wool ['fillLevel'] );
-				addCommodity ( $fillType, $fillLevel, $location, $className );
-				$positions ['vehicle'] [translate ( $fillType )] [] = array (
-						'name' => $location,
-						'position' => explode ( ' ', $position ) 
-				);
+		$cargos = array (
+				'rbale' => 'Bale',
+				'wool' => 'FillablePallet',
+				'wood2' => 'FillablePallet' 
+		);
+		foreach ( $cargos as $elements => $className ) {
+			if (isset ( $vehicle->$elements )) {
+				foreach ( $vehicle->$elements as $element ) {
+					$fillType = cleanFileName ( $element ['filename'] );
+					$fillLevel = intval ( $element ['fillLevel'] );
+					addCommodity ( $fillType, $fillLevel, $location, $className );
+					$positions ['vehicle'] [translate ( $fillType )] [] = array (
+							'name' => $location,
+							'position' => explode ( ' ', $position ) 
+					);
+				}
 			}
 		}
 	}
