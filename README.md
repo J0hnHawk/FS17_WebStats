@@ -1,4 +1,4 @@
-# FS17 WebStats v1.4.1
+# FS17 WebStats v1.4.2
 
 ### Statuswebseite für die Farming Simulator 17
 Die Webseite generiert Übersichtsseiten von lokale Spielständen oder dedizierten Servern.

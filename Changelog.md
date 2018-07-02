@@ -1,5 +1,10 @@
 # Changelog
 
+## Version 1.4.2 (02.07.2018)
+
+**Berichtigte Fehler:**
+- Wenn die Verbindung fehlschlägt, weil der Server nicht erreichbar ist, wird bei aktiviertem automatischen Neuladen keine leere Seite mehr angezeigt.
+
 ## [Version 1.4.1](https://github.com/J0hnHawk/FS17_WebStats/releases/tag/v1.4.1) (13.02.2018)
 
 **Änderungen und Erweiterungen:**
