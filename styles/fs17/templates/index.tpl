@@ -71,7 +71,7 @@
 			</div>
 		</div>
 	</div>
-	{if $reloadPage}
+	{if $reloadPage && $serverOnline}
 	<script type="text/javascript">
 	var time = new Date().getTime();
 	$(document.body).bind("mousemove keypress", function () {

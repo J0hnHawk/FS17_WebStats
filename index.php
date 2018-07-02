@@ -45,7 +45,7 @@ $smarty = new Smarty ();
 $smarty->debugging = false;
 $smarty->caching = false;
 $smarty->setTemplateDir ( "./styles/$style/templates" );
-$smarty->assign ( 'webStatsVersion', '1.4.1-1123 (13.02.2018)' );
+$smarty->assign ( 'webStatsVersion', '1.4.2-1125 (02.07.2018)' );
 
 include ('./include/loadConfig.php');
 $smarty->assign ( 'onlineUser', sizeof ( $onlineUser ) );
