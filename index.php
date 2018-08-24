@@ -28,8 +28,6 @@ define ( 'IN_NFMWS', true );
 if (function_exists ( 'date_default_timezone_set' )) {
 	date_default_timezone_set ( 'Europe/Berlin' );
 }
-setlocale ( LC_ALL, 'de_DE@euro', 'de_DE', 'de', 'ge' );
-$defaultLanguage = 'de'; // if you change the default language make sure the language file exists
 
 $defaultStyle = 'fs17';
 
@@ -44,7 +42,6 @@ $style = $options ['general'] ['style'];
 $smarty = new Smarty ();
 $smarty->debugging = false;
 $smarty->caching = false;
-$smarty->setTemplateDir ( "./styles/$style/templates" );
 $smarty->assign ( 'webStatsVersion', '1.4.2-1125 (02.07.2018)' );
 
 include ('./include/loadConfig.php');
@@ -75,6 +72,7 @@ if ($serverOnline) {
 }
 $smarty->assign ( 'reloadPage', $options ['general'] ['reload'] );
 $smarty->assign ( 'serverOnline', $serverOnline );
+$smarty->setTemplateDir ( "./styles/$style/templates" );
 $smarty->assign ( 'style', $style );
 // $smarty->display ( 'index.htpl', $style, $style );
 $tpl_source = $smarty->fetch ( 'index.tpl', $style, $style );

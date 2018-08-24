@@ -25,6 +25,8 @@ if (! defined ( 'IN_NFMWS' ) && ! defined ( 'IN_INSTALL' )) {
 
 $smarty->assign ( 'maps', getMaps () );
 $smarty->assign ( 'languages', getLanguages () );
+$smarty->assign ( 'styles', $styles );
+
 
 $error = $success = false;
 $serverConfig = array (
@@ -44,6 +46,9 @@ if ($_SERVER ['REQUEST_METHOD'] == 'POST') {
 	}
 	if ($submit == 'language') {
 		$_SESSION ['language'] = $options ['general'] ['language'] = GetParam ( 'language' );
+		setcookie ( 'nfmarsch', json_encode ( $options ), time () + 31536000 );
+	} elseif ($submit == 'style') {
+		$style = $options ['general'] ['style'] = GetParam ( 'style', 'P', 'fs17' );
 		setcookie ( 'nfmarsch', json_encode ( $options ), time () + 31536000 );
 	} elseif ($submit == 'server') {
 		$serverConfig [0] = GetParam ( 'serverip', 'P', '127.0.0.1' );
@@ -122,6 +127,8 @@ if ($_SERVER ['REQUEST_METHOD'] == 'POST') {
 		}
 	}
 }
+$smarty->setTemplateDir ( "./styles/$style/templates" );
+$smarty->assign ( 'style', $style );
 $smarty->assign ( 'fsockopen', function_exists ( 'fsockopen' ) );
 $smarty->assign ( 'error', $error );
 $smarty->assign ( 'success', $success );

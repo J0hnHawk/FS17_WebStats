@@ -24,6 +24,7 @@ TOOLTIP=Nápověda
 TOOLTIP_HELP=Zobrazit stav skladu
 
 //install.tpl
+CHANGE_BUTTON=Změna
 CHOOSE_LANGUAGE_LABEL=Vyberte jazyk
 CHOOSE_LANGUAGE=Změna
 CONFIG_SAVED=Konfigurace byla úspěšně uložena

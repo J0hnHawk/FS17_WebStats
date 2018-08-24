@@ -31,9 +31,18 @@
 							<option value="{$language.path}" {if $language.path==$smarty.session.language}selected{/if}>{$language.localName}</option> {/foreach}
 						</select>
 					</div>
-					<button type="submit" name="submit" value="language" class="btn btn-success">##CHOOSE_LANGUAGE##</button>
+					<button type="submit" name="submit" value="language" class="btn btn-success">##CHANGE_BUTTON##</button>
 				</form>
 				<span class="navbar-right navbar-text">##CHOOSE_LANGUAGE_LABEL##:</span>
+				<form class="navbar-form navbar-right" action="index.php?page=install" method="post">
+					<div class="form-group">
+						<select class="form-control" name="style"> {foreach $styles as $styleData}
+							<option value="{$styleData.path}" {if $styleData.path==$style}selected{/if}>{$styleData.name}</option> {/foreach}
+						</select>
+					</div>
+					<button type="submit" name="submit" value="style" class="btn btn-success">##CHANGE_BUTTON##</button>
+				</form>
+				<span class="navbar-right navbar-text">##CHOOSE_STYLE##:</span>
 			</div>
 		</div>
 	</nav>

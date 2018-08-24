@@ -15,6 +15,7 @@ STOCKS=Stocks
 PRICES=Selling prices
 
 //install.tpl
+CHANGE_BUTTON=Change
 CHOOSE_LANGUAGE_LABEL=Select language
 CHOOSE_LANGUAGE=Change
 CONFIG_SAVED=Configuration saved successfully.

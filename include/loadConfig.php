@@ -22,6 +22,23 @@ if (! defined ( 'IN_NFMWS' )) {
 	exit ();
 }
 
+// load Styles
+$styles = array ();
+$stylesDir = dir ( 'styles' );
+while ( ($entry = $stylesDir->read ()) != false ) {
+	if ($entry != "." && $entry != ".." && is_dir ( './styles/' . $entry )) {
+		if (file_exists ( './styles/' . $entry . '/style.cfg' )) {
+			$styleFile = file ( './styles/' . $entry . '/style.cfg' );
+			$keyValuePair = explode ( '=', $styleFile [0] );
+			$styles [$entry] = array (
+					'path' => $entry,
+					'name' => trim ( $keyValuePair [1] )
+			);
+		}
+	}
+}
+$stylesDir->close ();
+
 // Load server configuration - start install if it does not exists
 $configFile = './config/server.conf';
 if (file_exists ( $configFile )) {
@@ -34,23 +51,6 @@ if (file_exists ( $configFile )) {
 	include ('./include/install.php');
 	exit ();
 }
-
-// load Styles
-$styles = array ();
-$stylesDir = dir ( 'styles' );
-while ( ($entry = $stylesDir->read ()) != false ) {
-	if ($entry != "." && $entry != ".." && is_dir ( './styles/' . $entry )) {
-		if (file_exists ( './styles/' . $entry . '/style.cfg' )) {
-			$styleFile = file ( './styles/' . $entry . '/style.cfg' );
-			$keyValuePair = explode ( '=', $styleFile [0] );
-			$styles [$entry] = array (
-					'path' => $entry,
-					'name' => trim ( $keyValuePair [1] ) 
-			);
-		}
-	}
-}
-$stylesDir->close ();
 
 // Load map infomations
 $map = loadMapCFGfile ( $mapPath );

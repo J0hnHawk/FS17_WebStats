@@ -22,10 +22,14 @@ if (! defined ( 'IN_NFMWS' )) {
 	exit ();
 }
 
-/**
- * This file should be a class later.
- * At the moment it is a placeholder for later support of multiple languages
- */
+$languageFromBrowser = substr($_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, 2);
+if (file_exists ( './language/' . $languageFromBrowser . '/global.lng' )) {
+	$defaultLanguage = $languageFromBrowser;
+} else {
+	$defaultLanguage = 'en'; // if you change the default language make sure the language file exists
+}
+//setlocale ( LC_ALL, 'de_DE@euro', 'de_DE', 'de', 'ge' );
+
 if (! isset ( $_SESSION ['language'] )) {
 	$_SESSION ['language'] = $defaultLanguage;
 }

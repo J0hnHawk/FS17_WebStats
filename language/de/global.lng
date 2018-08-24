@@ -15,6 +15,7 @@ STOCKS=Lagerbestände
 PRICES=Verkaufspreise
 
 //install.tpl
+CHANGE_BUTTON=Ändern
 CHOOSE_LANGUAGE_LABEL=Sprache wählen
 CHOOSE_LANGUAGE=Ändern
 CONFIG_SAVED=Konfiguration erfolgreich gespeichert.

@@ -16,6 +16,7 @@ STOCK=Stock
 STOCKS=Stocks
 
 //install.tpl
+CHANGE_BUTTON=Changement
 CHOOSE_LANGUAGE_LABEL=Sélectionnez la langue
 CHOOSE_LANGUAGE=Changement
 CONFIG_SAVED=Configuration enregistrée avec succès.
