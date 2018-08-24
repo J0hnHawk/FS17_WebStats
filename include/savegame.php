@@ -28,7 +28,8 @@ if ($isDediServer) {
 	$stats = getServerStatsSimpleXML ( sprintf ( $serverAddress, 'dedicated-server-stats.xml?' ) );
 	$careerVehicles = getServerStatsSimpleXML ( sprintf ( $serverAddress, 'dedicated-server-savegame.html?file=vehicles&' ) );
 	$careerSavegame = getServerStatsSimpleXML ( sprintf ( $serverAddress, 'dedicated-server-savegame.html?file=careerSavegame&' ) );
-	if (! $careerVehicles || ! $careerVehicles) {
+	$careerEconomy = getServerStatsSimpleXML ( sprintf ( $serverAddress, 'dedicated-server-savegame.html?file=economy&' ) );
+	if (! $careerVehicles || ! $careerVehicles || ! $careerEconomy) {
 		$stats = false;
 	}
 } else {
@@ -43,6 +44,11 @@ if ($isDediServer) {
 	} else {
 		$stats = false;
 	}
+	if (file_exists ( $savegame . 'economy.xml' )) {
+		$careerEconomy = simplexml_load_file ( $savegame . 'economy.xml' );
+	} else {
+		$stats = false;
+	}
 }
 if ($stats) {
 	$serverOnline = true;
@@ -51,7 +57,7 @@ if ($stats) {
 	return;
 }
 
-$commodities = $outOfMap = $positions = $plants = $placeables = $sellingPoints = $prices = array ();
+$commodities = $outOfMap = $positions = $plants = $placeables = $sellingPoints = $prices = $greatDemands = array ();
 
 // Stand der Daten ermitteln (Ingame-Zeitpunkt der Speicherung)
 $currentDay = $careerSavegame->environment->currentDay;
@@ -59,6 +65,28 @@ $dayTime = $careerSavegame->environment->dayTime * 60;
 $dayTime = gmdate ( "H:i", $dayTime );
 $smarty->assign ( 'currentDay', $currentDay );
 $smarty->assign ( 'dayTime', $dayTime );
+
+foreach ( $careerEconomy->greatDemands->greatDemand as $greatDemand ) {
+	$stationName = strval ( $greatDemand ['stationName'] );
+	$fillTypeName = strval ( $greatDemand ['fillTypeName'] );
+	$demandMultiplier = floatval ( $greatDemand ['demandMultiplier'] );
+	$isRunning = get_bool ( $greatDemand ['isRunning'] );
+	if (isset ( $greatDemands [$fillTypeName] )) {
+		$greatDemands [$fillTypeName] += array (
+				$stationName => array (
+						'demandMultiplier' => $demandMultiplier,
+						'isRunning' => $isRunning 
+				) 
+		);
+	} else {
+		$greatDemands [$fillTypeName] = array (
+				$stationName => array (
+						'demandMultiplier' => $demandMultiplier,
+						'isRunning' => $isRunning 
+				) 
+		);
+	}
+}
 
 // Platzierbare Objekte suchen, mapconfig ergänzen
 foreach ( $careerVehicles->item as $item ) {
@@ -201,22 +229,50 @@ foreach ( $careerVehicles->onCreateLoadedObject as $object ) {
 			}
 			foreach ( $foreach as $triggerStats ) {
 				$fillType = strval ( $triggerStats ['fillType'] );
+				$isInPlateau = get_bool ( $triggerStats ['isInPlateau'] );
 				$l_fillType = translate ( $fillType );
 				if (! isset ( $prices [$l_fillType] )) {
 					$prices [$l_fillType] = array (
 							'i3dName' => $fillType,
+							'bestPrice' => 0,
+							'maxPrice' => 0,
+							'minPrice' => 65535,
+							'priceTrend' => 0,
+							'bestLocation' => '',
+							'greatDemand' => false,
 							'locations' => array () 
 					);
 				}
-				$curve0 = $triggerStats->curveBaseCurve;
-				$curve1 = $triggerStats->curve1;
-				$sin1 = floatval ( $curve0 ['amplitude'] ) * sin ( (2 * pi () / floatval ( $curve0 ['period'] )) * floatval ( $curve0 ['time'] ) );
-				$sin2 = floatval ( $curve1 ['amplitude'] ) * sin ( (2 * pi () / floatval ( $curve1 ['period'] )) * floatval ( $curve1 ['time'] ) ) + floatval ( $curve1 ['nominalAmplitude'] ) * 10;
-				$price = intval ( ($sin1 + $sin2) * 1000 );
+				extract ( getPrices ( $triggerStats->curveBaseCurve, $triggerStats->curve1 ) );
+				if ($isInPlateau) {
+					$priceTrend = 0;
+				}
+				$greatDemand = 1;
+				if (isset ( $greatDemands [$fillType] [$l_location] )) {
+					if ($greatDemands [$fillType] [$l_location] ['isRunning']) {
+						$greatDemand = $greatDemands [$fillType] [$l_location] ['demandMultiplier'];
+					}
+				}
 				$prices [$l_fillType] ['locations'] [$l_location] = array (
-						'price' => $price,
-						'i3dName' => $location 
+						'i3dName' => $location,
+						'price' => $currentPrice * $greatDemand,
+						'greatDemand' => ($greatDemand > 1) ? true : false,
+						'maxPrice' => $maxPrice,
+						'minPrice' => $minPrice,
+						'priceTrend' => $priceTrend 
 				);
+				if ($currentPrice > $prices [$l_fillType] ['bestPrice']) {
+					$prices [$l_fillType] ['bestPrice'] = $currentPrice * $greatDemand;
+					$prices [$l_fillType] ['bestLocation'] = $l_location;
+					$prices [$l_fillType] ['greatDemand'] = ($greatDemand > 1) ? true : false;
+					$prices [$l_fillType] ['priceTrend'] = $priceTrend;
+				}
+				if ($maxPrice > $prices [$l_fillType] ['maxPrice']) {
+					$prices [$l_fillType] ['maxPrice'] = $maxPrice;
+				}
+				if ($minPrice < $prices [$l_fillType] ['minPrice']) {
+					$prices [$l_fillType] ['minPrice'] = $minPrice;
+				}
 			}
 		}
 		// weitere Analyse
@@ -487,4 +543,60 @@ foreach ( $mapconfig as $plantName => $plant ) {
 			}
 		}
 	}
+}
+function getPrice($amplitude0, $amplitude1, $period0, $period1, $time0, $time1, $nominalAmplitude1) {
+	$sin1 = $amplitude0 * sin ( (2 * pi () / $period0) * $time0 );
+	$sin2 = $amplitude1 * sin ( (2 * pi () / $period1) * $time1 ) + $nominalAmplitude1 * 10;
+	return ($sin1 + $sin2) * 1000;
+}
+function getPrices($curve0, $curve1) {
+	$curve0 = objects2float ( $curve0 );
+	$curve1 = objects2float ( $curve1 );
+	$currentPrice = getPrice ( $curve0 ['amplitude'], $curve1 ['amplitude'], $curve0 ['period'], $curve1 ['period'], $curve0 ['time'], $curve1 ['time'], $curve1 ['nominalAmplitude'] );
+	$offset = 1000;
+	$nextPrice = getPrice ( $curve0 ['amplitude'], $curve1 ['amplitude'], $curve0 ['period'], $curve1 ['period'], $curve0 ['time'] + $offset, $curve1 ['time'] + $offset, $curve1 ['nominalAmplitude'] );
+	$maxPrice = 0;
+	$minPrice = 65535;
+	$timeDifference = $curve1 ['time'] - $curve0 ['time'];
+	$possibleAmplitude0 = $curve0 ['nominalAmplitude'] + $curve0 ['nominalAmplitudeVariation'];
+	$possibleAmplitude1 = $curve1 ['nominalAmplitude'] + $curve1 ['nominalAmplitudeVariation'];
+	$possiblePeriod0 = $curve0 ['nominalPeriod'] + $curve0 ['nominalPeriodVariation'];
+	$possiblePeriod1 = $curve1 ['nominalPeriod'] + $curve1 ['nominalPeriodVariation'];
+	$maxSin = 0;
+	$minSin = 65535;
+	for($time = 0; $time < $possiblePeriod0; $time += $possiblePeriod0 / 800) {
+		$sin = $possibleAmplitude0 * sin ( (2 * pi () / $possiblePeriod0) * $time );
+		if ($sin > $maxSin)
+			$maxSin = $sin;
+		if ($sin < $minSin)
+			$minSin = $sin;
+	}
+	$max0 = $maxSin;
+	$min0 = $minSin;
+	$maxSin = 0;
+	$minSin = 65535;
+	for($time = 0; $time < $possiblePeriod1; $time += $possiblePeriod1 / 800) {
+		$sin = $possibleAmplitude1 * sin ( (2 * pi () / $possiblePeriod1) * $time ) + $curve1 ['nominalAmplitude'] * 10;
+		if ($sin > $maxSin)
+			$maxSin = $sin;
+		if ($sin < $minSin)
+			$minSin = $sin;
+	}
+	$max1 = $maxSin;
+	$min1 = $minSin;
+	$maxPrice = ($max0 + $max1) * 1000;
+	$minPrice = ($min0 + $min1) * 1000;
+	return array (
+			'currentPrice' => $currentPrice,
+			'minPrice' => $minPrice,
+			'maxPrice' => $maxPrice,
+			'priceTrend' => $nextPrice > $currentPrice ? 1 : ($currentPrice > $nextPrice ? - 1 : 0) 
+	);
+}
+function objects2float($objectArray) {
+	$floatArray = array ();
+	foreach ( $objectArray->attributes () as $key => $value ) {
+		$floatArray [$key] = floatval ( $value );
+	}
+	return $floatArray;
 }

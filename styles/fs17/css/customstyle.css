@@ -99,3 +99,12 @@ body {
 .table>tfoot>tr>th {
 	border-top: 2px solid #7FC032;
 }
+
+/* https://stackoverflow.com/questions/44273567/datatables-fixed-column-transparent-with-bootstrap-4-striped-table */
+table.dataTable.table-striped.DTFC_Cloned tbody tr:nth-of-type(odd) {
+        background: #262626;
+}
+
+table.dataTable.table-striped.DTFC_Cloned tbody tr:nth-of-type(even) {
+        background: transparent;
+}

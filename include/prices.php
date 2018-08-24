@@ -23,5 +23,6 @@ foreach ( $prices as $fillType => $fillTyleData ) {
 	ksort ( $prices [$fillType] ['locations'] );
 }
 $smarty->assign('prices', $prices);
+$smarty->assign('commodities', $commodities);
 ksort($sellingPoints);
 $smarty->assign('sellingPoints', $sellingPoints);

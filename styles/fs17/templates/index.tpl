@@ -9,11 +9,13 @@
 <meta name="author" content="John Hawk">
 <link rel="icon" href="{#IMAGES#}/favicon.ico">
 <title>{$map.Short} {$map.Version} WebStats</title>
-<link href="{#CSS#}/bootstrap.min.css" rel="stylesheet">
-<link href="{#CSS#}/theme.min.css?{$smarty.now}" rel="stylesheet">
-<link href="{#CSS#}/customstyle.css?{$smarty.now}" rel="stylesheet">
-<script src="{#SCRIPTS#}/jquery.min.js"></script>
-<script src="{#SCRIPTS#}/bootstrap.min.js"></script>
+<link rel="stylesheet"href="{#CSS#}/bootstrap.min.css">
+<link rel="stylesheet"href="{#CSS#}/theme.min.css?{$smarty.now}">
+<link rel="stylesheet"href="{#CSS#}/customstyle.css?{$smarty.now}">
+<link rel="stylesheet" type="text/css" href="{#CSS#}/datatables.min.css"/>
+<script type="text/javascript" src="{#SCRIPTS#}/jquery.min.js"></script>
+<script type="text/javascript" src="{#SCRIPTS#}/bootstrap.min.js"></script>
+<script type="text/javascript" src="{#SCRIPTS#}/datatables.min.js"></script>
 </head>
 <body>
 	<div class="container">

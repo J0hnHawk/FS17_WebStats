@@ -177,6 +177,10 @@ REPRO_RATE=Reproduktionsrate
 NEXT_ANIMAL=Nächstes Tier in
 CLEANNESS=Sauberkeit
 
-
-
+//prices.tpl
+MIN_PRICE=niedrigster Verkaufspreis
+MAX_PRICE=maximaler Verkaufspreis
+BEST_PRICE=bester Verkaufspreis
+PROCEEDS=möglicher Verkaufserlös
+PERCENT=%
 
