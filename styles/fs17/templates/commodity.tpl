@@ -68,7 +68,7 @@
 				{foreach $prices.$l_object.locations as $tipTrigger=>$tipTriggerData}
 				<tr>
 					<td>{$tipTrigger}</td>
-					<td class="text-right">{$tipTriggerData.price|number_format:0:":":"."}</td>
+					<td class="text-right">{$tipTriggerData.price|number_format:0:":":"."} {if $tipTriggerData.priceTrend == 1} <span class="glyphicon glyphicon-triangle-top text-success" aria-hidden="true"></span>{elseif $tipTriggerData.priceTrend == -1} <span class="glyphicon glyphicon-triangle-bottom text-danger" aria-hidden="true"></span>{else} <span class="glyphicon glyphicon-arrow-down" style="visibility: hidden"><span>{/if}</td>
 				</tr>
 				{/foreach}
 			</tbody>
