@@ -127,8 +127,8 @@
 		</text>
 		<text name="TipTrigger_WASSERKAUF">
 			<en>TipTrigger_WASSERKAUF</en>
-			<de>Wasserverkauf</de>
-			<fr>Wasserverkauf</fr>
+			<de>Wasserankauf</de>
+			<fr>Wasserankauf</fr>
 		</text>
 		<text name="TipTrigger_WINDROW_SALE">
 			<en>TipTrigger_WINDROW_SALE</en>

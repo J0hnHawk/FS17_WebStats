@@ -2,6 +2,7 @@
 
 ## Entwicklerversion (24.08.2018)
 - Überarbeitung der Preisübersicht; Anzeige des niedrigst- und höchstmöglichen Verkaufspreis, aktueller Höchstpreis und berücksichtigung von großen Nachfragen
+- Update auf jQuery v3.3.1
 
 ## Version 1.4.2 (02.07.2018)
 
