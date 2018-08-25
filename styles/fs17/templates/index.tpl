@@ -18,7 +18,7 @@
 <script type="text/javascript" src="{#SCRIPTS#}/datatables.min.js"></script>
 </head>
 <body>
-	<div class="container">
+	<div class="container" style="padding-left: 10px; padding-right: 10px">
 		{include file='navbar.tpl'} {if $serverOnline}{assign var="fullPathToTemplate" value="./styles/$style/templates/$page.tpl"} {if
 		file_exists($fullPathToTemplate)} {include file="$page.tpl"} {else}
 		<div class="container theme-showcase" role="main">
