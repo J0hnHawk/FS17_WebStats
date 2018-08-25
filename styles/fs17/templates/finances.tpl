@@ -9,10 +9,10 @@
 			<thead>
 				<tr>
 					<th>##INCOME_EXPENDITURE##</th>
-					<th class="text-right">##{$weekdays[$currentDay-4]}##</th>
-					<th class="text-right">##{$weekdays[$currentDay-3]}##</th>
-					<th class="text-right">##{$weekdays[$currentDay-2]}##</th>
-					<th class="text-right">##{$weekdays[$currentDay-1]}##</th>
+					<th class="text-right">##{$weekdays[($currentDay-4)%7]}##</th>
+					<th class="text-right">##{$weekdays[($currentDay-3)%7]}##</th>
+					<th class="text-right">##{$weekdays[($currentDay-2)%7]}##</th>
+					<th class="text-right">##{$weekdays[($currentDay-1)%7]}##</th>
 					<th class="text-right">##TODAY##</th>
 				</tr>
 			</thead>

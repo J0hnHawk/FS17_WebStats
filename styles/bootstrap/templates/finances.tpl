@@ -9,10 +9,10 @@
 			<thead>
 				<tr>
 					<th>##INCOME_EXPENDITURE##</th>
-					<th class="text-right">##{$weekdays[$currentDay-4]}##</th>
-					<th class="text-right">##{$weekdays[$currentDay-3]}##</th>
-					<th class="text-right">##{$weekdays[$currentDay-2]}##</th>
-					<th class="text-right">##{$weekdays[$currentDay-1]}##</th>
+					<th class="text-right">##{$weekdays[($currentDay-4)%7]}##</th>
+					<th class="text-right">##{$weekdays[($currentDay-3)%7]}##</th>
+					<th class="text-right">##{$weekdays[($currentDay-2)%7]}##</th>
+					<th class="text-right">##{$weekdays[($currentDay-1)%7]}##</th>
 					<th class="text-right">##TODAY##</th>
 				</tr>
 			</thead>
@@ -30,13 +30,12 @@
 					<th class="text-right" style="width: 13%">{$financeHistory.$day.total|number_format:0:",":"."}</th> {/for}
 				</tr>
 				<tr>
-					<td colspan="4"><strong>##BALANCE1##</strong></td>
-					<td class="text-right" colspan="2"><strong>{$money|number_format:0:",":"."}</strong></td>
+					<th colspan="4">##BALANCE1##</th>
+					<th class="text-right" colspan="2">{$money|number_format:0:",":"."}</th>
 				</tr>
 				<tr>
-					<td colspan="4"><strong>##BALANCE2##</strong></td>
-					<td class="text-right {if $money-$loan < 0}text-danger{else}text-success{/if}" colspan="2"><strong>(##LOAN##: {{$loan|number_format:0:",":"."}})
-						{($money-$loan)|number_format:0:",":"."}</strong></td>
+					<th colspan="4">##BALANCE2##</th>
+					<th class="text-right" colspan="2">(##LOAN##: {{$loan|number_format:0:",":"."}}) {($money-$loan)|number_format:0:",":"."}</th>
 				</tr>
 			</tfoot>
 		</table>
