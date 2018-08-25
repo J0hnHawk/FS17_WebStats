@@ -1,8 +1,14 @@
 # Changelog
 
-## Entwicklerversion (24.08.2018)
-- Überarbeitung der Preisübersicht; Anzeige des niedrigst- und höchstmöglichen Verkaufspreis, aktueller Höchstpreis und berücksichtigung von großen Nachfragen
-- Update auf jQuery v3.3.1
+## Entwicklerversion (25.08.2018)
+
+**Änderungen und Erweiterungen:**
+- Überarbeitung der Preisübersicht
+	- Anzeige des niedrigst- und höchstmöglichen Verkaufspreis
+	- aktueller Höchstpreis unter Berücksichtigung von großen Nachfragen
+	- Anzeige des Lagerbestand und möglicher Verkaufserlös
+- Erweiterung des Installationsdialogs - Auswahl des Styles, Erkennung der Browsersprache
+- Erweiterte Übersichtsseite mit Sonderangeboten, Wettervorhersage, Mini-Finanzbericht
 
 ## Version 1.4.2 (02.07.2018)
 

@@ -18,10 +18,60 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  *
  */
-
 if (! defined ( 'IN_NFMWS' )) {
 	exit ();
 }
+include ('./include/finances.php');
+$smarty->assign ( 'financeSummary', $financeSummary );
+$smarty->assign ( 'operatingResult', $operatingResult );
+$forecast = array ();
+foreach ( $careerSavegame->environment->rains->rain as $rain ) {
+	$startday = intval ( $rain ['startDay'] );
+	$rainTypeId = strval ( $rain ['rainTypeId'] );
+	$forecast [$startday] = $rainTypeId;
+}
+$smarty->assign ( 'forecast', $forecast );
+$smarty->assign ( 'demandIsRunning', $demandIsRunning );
+$smarty->assign ( 'greatDemands', $greatDemands );
+$smarty->assign ( 'prices', $prices );
+
+$sales = array ();
+foreach ( $careerEconomy->vehicleShopSales->vehicleShopSale as $vehicleShopSale ) {
+	$filename = translate ( cleanFileName ( $vehicleShopSale ['xmlFilename'] ) );
+	$discount = intval ( $vehicleShopSale ['discount'] );
+	$saleStartDay = intval ( $vehicleShopSale ['saleStartDay'] );
+	$saleStartHour = intval ( $vehicleShopSale ['saleStartHour'] );
+	$saleDuration = intval ( $vehicleShopSale ['saleDuration'] );
+	$isRunning = get_bool ( $vehicleShopSale ['isRunning'] );
+	$sales [$saleStartDay + $saleStartHour] = array (
+			'saleStartDay' => $saleStartDay,
+			'saleStartHour' => $saleStartHour,
+			'saleDuration' => $saleDuration,
+			'isRunning' => $isRunning,
+			'isBrandSale' => false,
+			'discount' => $discount,
+			'filename' => "$filename" 
+	);
+}
+foreach ( $careerEconomy->brandSale as $brandSale ) {
+	$filename = translate ( cleanFileName ( $brandSale ['xmlFilename'] ) );
+	$discount = intval ( $brandSale ['discount'] );
+	$saleStartDay = intval ( $brandSale ['saleStartDay'] );
+	$saleStartHour = intval ( $brandSale ['saleStartHour'] );
+	$saleDuration = intval ( $brandSale ['saleDuration'] );
+	$isRunning = get_bool ( $brandSale ['isRunning'] );
+	$sales [$saleStartDay + $saleStartHour] = array (
+			'saleStartDay' => $saleStartDay,
+			'saleStartHour' => $saleStartHour,
+			'saleDuration' => $saleDuration,
+			'isRunning' => $isRunning,
+			'isBrandSale' => true,
+			'discount' => $discount,
+			'filename' => "$filename" 
+	);
+}
+sort ( $sales );
+$smarty->assign ( 'sales', $sales );
 
 // Serverstats
 if ($stats) {
@@ -35,8 +85,8 @@ if ($stats) {
 			'mapName' => $stats ["mapName"],
 			'mapSize' => $stats ["mapSize"],
 			'money' => $stats ["money"],
-			'dayTime' => gmdate("H:i:s",($stats ["dayTime"]+0)/1000)
-			//'dayTime' => $stats ["dayTime"] 
+			'dayTime' => gmdate ( "H:i:s", ($stats ["dayTime"] + 0) / 1000 ) 
+		// 'dayTime' => $stats ["dayTime"]
 	);
 	$smarty->assign ( 'game', $game );
 	
@@ -105,7 +155,7 @@ if ($stats) {
 	$linkToServer = sprintf ( $serverAddress, 'dedicated-server-stats-map.jpg?' );
 	// $linkToServer = str_replace ( "dedicated-server-stats.xml", "dedicated-server-stats-map.jpg", $serverAddress );
 	$imageQuality = 90; // 60, 75, 90
-	$imageSize = 1024; // 256, 512, 1024, 2048
+	$imageSize = 512; // 256, 512, 1024, 2048
 	$mapSize = floatval ( $stats ["mapSize"] );
 	$mapSizeHalf = $mapSize / 2.0;
 	$linkToImage = sprintf ( "%s&quality=%s&size=%s", $linkToServer, $imageQuality, $imageSize );

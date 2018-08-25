@@ -82,6 +82,7 @@ LICENSE=Informationen zur Lizenzierung
 
 //navbar.tpl
 TOGGLE=Toggle navigation
+OVERVIEW=Überblick
 SERVER=Server
 STORAGE=Lager
 PRODUCTION=Produktion
@@ -96,6 +97,26 @@ ISADMIN=Admin
 POSITION=Position
 INVEHICLE=im Fahrzeug
 NOPLAYER=Zur Zeit sind keine Spieler online.
+WEATHER=Wettervorhersage
+NEWS=Nachrichten
+GREAT_DEMAND=Große Nachfrage
+PAYS_ACTUAL=zahlt aktuell
+FOR=für
+SALES=Sonderangebote
+ACTUAL=aktuell
+STARTING=Ab
+DISCOUNT=Rabatt auf
+WHOLE_BRAND=und alle weiteren Fahrzeuge und Geräte der Marke.
+FINANCES5DAYS=Finanzen (letzten 5 Tage)
+OPERATING_RESULT=Betriebsergebnis
+LIFESTOCK_NSU=Tierproduktion
+HARVEST=Ernteeinnahmen
+WAGE_PAYMENT=Lohnzahlungen
+VEHICLES_NCS=Neue/Verkaufte Fahrzeuge
+PROPERTY_CSP=Neue/Verkaufte Gebäude
+VEHICLES_U=Betriebskosten Fahrzeuge
+PROPERTY_MI=Betriebskosten/Einnahmen Gebäude
+BALANCE=Kontostand
 
 //commodity.tpl
 DETAILVIEW=Detailansicht
@@ -197,7 +218,7 @@ FINANCES=Finanzen
 INCOME_EXPENDITURE=Einnahmen/Ausgaben
 TODAY=Heute
 NEWVEHICLESCOST=Neue Fahrzeuge
-SOLDVEHICLES=Verkaufte Fahrzeige
+SOLDVEHICLES=Verkaufte Fahrzeuge
 NEWANIMALSCOST=Neue Tiere
 SOLDANIMALS=Verkaufte Tiere
 CONSTRUCTIONCOST=Baukosten
