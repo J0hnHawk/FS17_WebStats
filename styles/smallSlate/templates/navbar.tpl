@@ -18,6 +18,8 @@
 						{if $isDediServer}
 						<li class="{if $page == 'status'}active{/if}"><a href="index.php?page=overview"> <span class="glyphicon glyphicon-home"></span> ##SERVER##
 						</a></li> {/if}
+						<li class="{if $page == 'finances'}active{/if}"><a href="index.php?page=finances"> <span class="glyphicon glyphicon-transfer"></span> ##FINANCES##
+						</a></li>
 						<li class="{if $page == 'husbandry'}active{/if}"><a href="index.php?page=husbandry"> <span class="glyphicon glyphicon-piggy-bank"></span> ##ANIMALS##
 						</a></li>
 						<li class="{if $page == 'factories'}active{/if}"><a href="index.php?page=factories"> <span class="glyphicon glyphicon-home"></span> ##FACTORY##

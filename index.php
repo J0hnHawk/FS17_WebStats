@@ -59,6 +59,7 @@ $pages = array (
 		'commodity',
 		'options',
 		'lizenz',
+		'finances',
 		'prices',
 		'factories' 
 );

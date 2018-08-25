@@ -20,6 +20,8 @@
 						</a></li> {/if}
 						<li class="{if $page == 'husbandry'}active{/if}"><a href="index.php?page=husbandry"> <span class="glyphicon glyphicon-piggy-bank"></span> ##ANIMALS##
 						</a></li>
+						<li class="{if $page == 'finances'}active{/if}"><a href="index.php?page=finances"> <span class="glyphicon glyphicon-transfer"></span> ##FINANCES##
+						</a></li>
 						<li class="{if $page == 'factories'}active{/if}"><a href="index.php?page=factories"> <span class="glyphicon glyphicon-home"></span> ##FACTORY##
 						</a></li>
 						<li class="{if $page == 'commodity'}active{/if}"><a href="index.php?page=commodity"> <span class="glyphicon glyphicon-object-align-bottom"></span> ##COMMODITIES##
