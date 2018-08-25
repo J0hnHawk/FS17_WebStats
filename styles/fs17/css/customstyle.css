@@ -91,6 +91,11 @@ body {
 	}
 }
 
+.dl-horizontal a {
+	text-decoration: none;
+	color: #7FC032;
+}
+
 .table a {
 	text-decoration: none;
 	color: #7FC032;
