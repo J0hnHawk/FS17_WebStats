@@ -65,24 +65,30 @@ $dayTime = $careerSavegame->environment->dayTime * 60;
 $dayTime = gmdate ( "H:i", $dayTime );
 $smarty->assign ( 'currentDay', $currentDay );
 $smarty->assign ( 'dayTime', $dayTime );
+$demandIsRunning = false;
 
 foreach ( $careerEconomy->greatDemands->greatDemand as $greatDemand ) {
 	$stationName = strval ( $greatDemand ['stationName'] );
 	$fillTypeName = strval ( $greatDemand ['fillTypeName'] );
 	$demandMultiplier = floatval ( $greatDemand ['demandMultiplier'] );
 	$isRunning = get_bool ( $greatDemand ['isRunning'] );
-	if (isset ( $greatDemands [$fillTypeName] )) {
-		$greatDemands [$fillTypeName] += array (
+	$demandIsRunning = $demandIsRunning || $isRunning;
+	$l_fillType = translate ( $fillTypeName );
+	if (isset ( $greatDemands [$l_fillType] )) {
+		$greatDemands [$l_fillType] ['locations'] += array (
 				$stationName => array (
 						'demandMultiplier' => $demandMultiplier,
 						'isRunning' => $isRunning 
 				) 
 		);
 	} else {
-		$greatDemands [$fillTypeName] = array (
-				$stationName => array (
-						'demandMultiplier' => $demandMultiplier,
-						'isRunning' => $isRunning 
+		$greatDemands [$l_fillType] = array (
+				'i3dName' => $fillTypeName,
+				'locations' => array (
+						$stationName => array (
+								'demandMultiplier' => $demandMultiplier,
+								'isRunning' => $isRunning 
+						) 
 				) 
 		);
 	}
@@ -248,9 +254,9 @@ foreach ( $careerVehicles->onCreateLoadedObject as $object ) {
 					$priceTrend = 0;
 				}
 				$greatDemand = 1;
-				if (isset ( $greatDemands [$fillType] [$l_location] )) {
-					if ($greatDemands [$fillType] [$l_location] ['isRunning']) {
-						$greatDemand = $greatDemands [$fillType] [$l_location] ['demandMultiplier'];
+				if (isset ( $greatDemands [$l_fillType] ['locations'] [$l_location] )) {
+					if ($greatDemands [$l_fillType] ['locations'] [$l_location] ['isRunning']) {
+						$greatDemand = $greatDemands [$l_fillType] ['locations'] [$l_location] ['demandMultiplier'];
 					}
 				}
 				$prices [$l_fillType] ['locations'] [$l_location] = array (
