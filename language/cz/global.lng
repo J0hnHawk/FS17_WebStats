@@ -1,5 +1,3 @@
-//Translated from German to Czech with DEEPL to be faster. I think there are better descriptions/translations. 
-
 //global
 CLOSE=Zavřít
 SAVE=Uložit
@@ -7,8 +5,6 @@ SUBMIT=Potvrdit
 RESET=Reset
 SAVETIME=Uloženo
 DAY=Den
-ANIMALS=Zvířata
-ANIMALS2=Zvířata:
 COMMODITY=Komodita
 COMMODITIES=Komodity
 PLANT=Výrobní závod
@@ -16,12 +12,14 @@ PLANTS=Výrobní závody
 SETTINGS=Nastavení
 STOCK=Sklad
 STOCKS=Sklad:
-QUANTITY=Množství
 PRICES=Ceny
-PRICE_INFO=Info Ceny
-CHOOSE_STYLE= Vyberte styl
-TOOLTIP=Nápověda
-TOOLTIP_HELP=Zobrazit stav skladu
+MONDAY=Pondělí
+TUESDAY=Úterý
+WEDNESDAY=Středa
+THURSDAY=Čtvrtek
+FRIDAY=Pátek
+SATURDAY=Sobota
+SUNDAY=Neděle
 
 //install.tpl
 CHANGE_BUTTON=Změna
@@ -81,16 +79,10 @@ INFO_3=Programátor
 INFO_4=Konfigurace karty
 USER_ONLINE=Návštěvník online
 LICENSE=Informace o licencích
-SHEEP_COUNT=Počet ovcí
-PRODUCTIVITY=Produktivita
-REPRO_RATE=Rychlost reprodukce
-NEXT_ANIMAL=Další zvíře
-CLEANNESS=Čistota
-PIG_COUNT=Počet prasat
-COW_COUNT=Počet krav
 
 //navbar.tpl
 TOGGLE=Přepnout navigaci
+OVERVIEW=Přehled
 SERVER=Server
 STORAGE=Sklad
 PRODUCTION=Výroba
@@ -105,6 +97,26 @@ ISADMIN=Admin
 POSITION=Pozice
 INVEHICLE=Ve vozidle
 NOPLAYER=Momentálně není nikdo online.
+WEATHER=Počasí
+NEWS=Novinky
+GREAT_DEMAND=Poptávka
+PAYS_ACTUAL=v současné době platí
+FOR=pro
+SALES=Speciální nabídka:
+ACTUAL=aktuální
+STARTING=Platná od
+DISCOUNT=sleva na
+WHOLE_BRAND=a všechny ostatní vozidla a zařízení značky.
+FINANCES5DAYS=Finance (posledních 5 dní)
+OPERATING_RESULT=Provozní zisk
+LIFESTOCK_NSU=Chov zvířat
+HARVEST=Příjmy ze sklizně
+WAGE_PAYMENT=Výplaty
+VEHICLES_NCS=Nové / prodané vozy
+PROPERTY_CSP=Nové / prodané budovy
+VEHICLES_U=Provozní náklady vozidel
+PROPERTY_MI=Údržba majetku
+BALANCE=Zůstatek
 
 //commodity.tpl
 DETAILVIEW=podrobný náhled
@@ -112,11 +124,15 @@ CHOOSE_COMMODITY=Vyber komoditu
 PLACE=Umístění skladu
 AMOUNT=Množství
 NO_STOCK=Žádné zásoby
-Menge=Počet
 WHOLE_AMOUNT=celkové skladové zásoby
+SELLTRIGGERS=Prodejní místa
+SELLTRIGGER=Prodejní místo
+CURRENT_PRICE=aktuální prodejní cena
+PRICE_INFO=POZOR: Prodejní ceny nemusí být aktuální.
 DEMAND=Poptávka
 WHOLE_DEMAND=Celková poptávka
 ITEM_POSITIONS=Pozice palet/balíků
+NOT_FOUND=Objekt nenalezen :-/
 
 //factories.tpl
 CHOOSE_PLANT=Vyber továrnu
@@ -137,6 +153,7 @@ MORE_DETAILS=další podrobnosti
 //storage.tpl
 CAUTION=Varování
 DETAILS=Podrobnosti
+QUANTITY=Množství
 PALLET=Paleta
 PALETTES=Palety
 BALE=Balík
@@ -148,6 +165,7 @@ SUGGESTION_POSITION=Navrhovaná pozice
 
 //options.tpl
 GENERAL=Obecné
+CHOOSE_STYLE= Vyberte styl
 AUTO_RELOAD=Automatické načtení
 HIDE_FOOTER=Zápatí
 SORT_ORDER=Třídit
@@ -157,6 +175,8 @@ SHOW=zobrazit
 HIDE=nezobrazovat
 VEHICLE_LOAD=Náplň vozidla
 ONLY_PALETTS=Zobrazit pouze palety
+TOOLTIP=Nápověda
+TOOLTIP_HELP=Zobrazit stav skladu
 YES=ano
 NO=ne
 SHOW_ZERO_STOCK=Zobrazení nulových zásob
@@ -175,3 +195,56 @@ SERVER_SETTINGS=Odstranění nastavení serveru
 ADMIN_AREA=Správa serveru
 ADMIN_DESCRIPTION=Pozor po zadání hesla dojde ke smazání nastavení serveru.
 ENTER_PASSWORD=Zadejte prosím heslo
+
+//animals.tpl
+ANIMALS=Zvířata
+SHEEP_COUNT=Počet ovcí
+PIG_COUNT=Počet prasat
+COW_COUNT=Počet krav
+PRODUCTIVITY=Produktivita
+REPRO_RATE=Rychlost reprodukce
+NEXT_ANIMAL=Další zvíře
+CLEANNESS=Čistota
+
+//prices.tpl
+MIN_PRICE=Nejnižší prodejní cena
+MAX_PRICE=Maximální prodejní cena
+BEST_PRICE=Nejlepší prodejní cena
+PROCEEDS=možný výnos z prodeje
+PERCENT=%
+
+//finances.tpl
+FINANCES=Finance
+INCOME_EXPENDITURE=Příjmy / výdaje
+TODAY=Dnes
+NEWVEHICLESCOST=Nové vozy
+SOLDVEHICLES=Prodané vozy
+NEWANIMALSCOST=Nové zvířata
+SOLDANIMALS=Prodaná zvířata
+CONSTRUCTIONCOST=Stavba
+SOLDBUILDINGS=Prodáno budovy
+FIELDPURCHASE=Nová pole
+VEHICLERUNNINGCOST=Provozní náklady vozidel
+VEHICLELEASINGCOST=Pronajatá vozidla
+ANIMALUPKEEP=Náklady na zvířata
+PROPERTYMAINTENANCE=Údržba majetku
+PROPERTYINCOME=Příjem z vlastnictví
+SOLDWOOD=Prodané dřevo
+SOLDBALES=Prodané balíky
+SOLDWOOL=Prodaná vlna
+SOLDMILK=Prodané mléko
+PURCHASEFUEL=Náklady na palivo
+PURCHASESEEDS=Náklady na osivo
+PURCHASEFERTILIZER=Náklady na hnojivo
+PURCHASESAPLINGS=Náklady na sazenice
+PURCHASEWATER=Náklady na vodu
+HARVESTINCOME=Příjem ze sklizně
+INCOMEBGA=Příjem z BGA
+MISSIONINCOME=Příjem z misí
+WAGEPAYMENT=Výplaty
+OTHER=Ostatní
+LOANINTEREST=Úrok z půjčky
+TOTAL=Celkem
+BALANCE1=Bankovní konto
+LOAN=Úvěr
+BALANCE2=Zůstatek
