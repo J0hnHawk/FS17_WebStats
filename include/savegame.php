@@ -63,7 +63,7 @@ $commodities = $outOfMap = $positions = $plants = $placeables = $sellingPoints =
 $currentDay = $careerSavegame->environment->currentDay;
 $dayTime = $careerSavegame->environment->dayTime * 60;
 $dayTime = gmdate ( "H:i", $dayTime );
-$smarty->assign ( 'currentDay', $currentDay );
+$smarty->assign ( 'currentDay', intval ( $currentDay ) );
 $smarty->assign ( 'dayTime', $dayTime );
 $demandIsRunning = false;
 
