@@ -67,7 +67,11 @@ foreach ( $careerEconomy->financeStatsHistory->financeStats as $financeStats ) {
 	$financeHistory [$mapping [$day]] = array ();
 	foreach ( $financeElements as $element => $category ) {
 		$value = floatval ( $financeStats->$element );
-		$financeSummary [$summary [$category]] += $value;
+		if (isset ( $financeSummary [$summary [$category]] )) {
+			$financeSummary [$summary [$category]] += $value;
+		} else {
+			$financeSummary [$summary [$category]] = $value;
+		}
 		$operatingResult += $value;
 		$financeHistory [$mapping [$day]] [$element] = round ( $value, 1, PHP_ROUND_HALF_UP );
 	}
